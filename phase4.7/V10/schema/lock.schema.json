@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-lock-v10",
+  "title": "p47 lock/reclaim record",
+  "type": "object",
+  "required": ["schema", "token", "pid", "created", "purpose", "txid"],
+  "properties": {
+    "schema": { "const": "p47-lock-v10" },
+    "token": { "type": "string", "pattern": "^[0-9a-f]{32}$" },
+    "pid": { "type": "integer", "minimum": 1 },
+    "created": { "type": "string", "format": "date-time" },
+    "purpose": { "enum": ["publish", "recover", "undo", "accept"] },
+    "txid": { "type": ["string", "null"] },
+    "target_token": { "type": "string" },
+    "target_pid": { "type": "integer" }
+  },
+  "additionalProperties": false
+}

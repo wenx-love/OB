@@ -1,0 +1,74 @@
+{
+  "schema": "p47-protect-policy-v10",
+  "revision": "v10.0-static",
+  "rules": [
+    {
+      "id": "business-original-readonly",
+      "layer": "business",
+      "paths": ["ORIGINAL", "baseline/m0.json", "baseline/v7", "baseline/v8", "baseline/v9"],
+      "ops": ["read"],
+      "phases": ["always"],
+      "content": "readonly",
+      "acl_exception": {
+        "allowed": true,
+        "subject_ids": ["C02-E01"],
+        "ops": ["acl"],
+        "metadata_only": true
+      }
+    },
+    {
+      "id": "product-own-part",
+      "layer": "business",
+      "paths": ["out/audit/C10-P-E01"],
+      "subject_ids": ["C10-P-E01"],
+      "subject_kinds": ["exec"],
+      "ops": ["create", "append"],
+      "phases": ["run"]
+    },
+    {
+      "id": "control-genesis",
+      "layer": "control",
+      "paths": ["out/audit/chain-head.jsonl"],
+      "subject_ids": ["C01-E01"],
+      "subject_kinds": ["exec"],
+      "ops": ["create"],
+      "phases": ["bootstrap"]
+    },
+    {
+      "id": "control-segment-c12",
+      "layer": "control",
+      "paths": ["out/audit/C12-E01"],
+      "subject_ids": ["C12-E01", "op:dispatcher"],
+      "subject_kinds": ["exec", "operation"],
+      "ops": ["create", "append"],
+      "phases": ["run"]
+    },
+    {
+      "id": "control-summary-c19",
+      "layer": "control",
+      "paths": ["out/audit/C19-E01/summary.json"],
+      "subject_ids": ["C19-E01"],
+      "subject_kinds": ["exec"],
+      "ops": ["create"],
+      "phases": ["summary"]
+    },
+    {
+      "id": "control-seal",
+      "layer": "control",
+      "paths": ["out/audit/terminal-seal.json"],
+      "subject_ids": ["C20-SEAL-E01"],
+      "subject_kinds": ["exec"],
+      "ops": ["create"],
+      "phases": ["seal"]
+    },
+    {
+      "id": "staging-tools",
+      "layer": "staging",
+      "paths": ["tools"],
+      "subject_ids": ["C04-E01"],
+      "subject_kinds": ["exec"],
+      "ops": ["create"],
+      "phases": ["staging"]
+    }
+  ]
+}

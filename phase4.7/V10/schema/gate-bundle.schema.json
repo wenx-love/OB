@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-gate-bundle-v10",
+  "title": "p47 gate bundle",
+  "type": "object",
+  "required": ["schema", "txid", "rid", "old_index_digest", "new_index_digest", "required_gates", "invocations", "tool_versions", "policy_digest", "canonicalization", "bundle_digest", "retry_allowed"],
+  "properties": {
+    "schema": { "const": "p47-gate-bundle-v10" },
+    "txid": { "type": "string" },
+    "rid": { "type": "string" },
+    "old_index_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "new_index_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "required_gates": { "type": "array", "items": { "type": "object" } },
+    "invocations": { "type": "array", "items": { "type": "object" } },
+    "tool_versions": { "type": "object", "additionalProperties": { "type": "string" } },
+    "policy_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "canonicalization": { "const": "p47-canon-v1" },
+    "bundle_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "retry_allowed": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

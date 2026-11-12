@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-fragment-seal-v10",
+  "title": "p47 fragment seal (non-authoritative)",
+  "type": "object",
+  "required": ["schema", "authoritative", "mode", "excerpt_digest"],
+  "properties": {
+    "schema": { "const": "p47-fragment-seal-v10" },
+    "authoritative": { "const": false },
+    "mode": { "const": "fragment" },
+    "excerpt_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "source_chain_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+  },
+  "additionalProperties": false
+}

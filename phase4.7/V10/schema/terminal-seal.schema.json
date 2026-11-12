@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-terminal-seal-v10",
+  "title": "p47 terminal seal",
+  "type": "object",
+  "required": ["schema", "mode", "exit_status", "run_state", "open_segments", "chain_state"],
+  "properties": {
+    "schema": { "const": "p47-terminal-seal-v10" },
+    "mode": { "enum": ["sealed-full", "aborted", "degraded-prefix"] },
+    "exit_status": { "enum": ["complete", "aborted", "exit-not-met"] },
+    "run_state": { "enum": ["completed", "aborted"] },
+    "open_segments": { "type": "array", "items": { "type": "object" } },
+    "chain_state": { "enum": ["validated-closed", "validated-skip-tail", "validated-open"] },
+    "tail": { "type": ["string", "null"] },
+    "counts": { "type": "object" }
+  },
+  "additionalProperties": true
+}

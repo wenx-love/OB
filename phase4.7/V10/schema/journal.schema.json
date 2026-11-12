@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-journal-v10",
+  "title": "p47 transaction journal",
+  "type": "object",
+  "required": ["schema", "txid", "rid", "state", "files", "members", "created"],
+  "properties": {
+    "schema": { "const": "p47-journal-v10" },
+    "txid": { "type": "string" },
+    "rid": { "type": "string" },
+    "state": {
+      "enum": ["prepared", "switching", "pending-acceptance", "accepting", "verified", "rolled-back", "rollback-failed"]
+    },
+    "created": { "type": "string", "format": "date-time" },
+    "old_current": { "type": ["object", "null"] },
+    "files": { "type": "array", "items": { "type": "object" } },
+    "members": { "type": "object" },
+    "gate_bundle_digest": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "rollback": { "type": ["object", "null"] }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-failure-code-sidecar-v10",
+  "title": "p47 failure code sidecar",
+  "type": "object",
+  "required": ["schema", "exec_id", "exit_code", "result", "failure_class", "security_trigger", "failure_code", "produced_by", "produced_utc", "segment_dir"],
+  "properties": {
+    "schema": { "const": "p47-failure-code-sidecar-v10" },
+    "exec_id": { "type": "string" },
+    "exit_code": { "type": "integer" },
+    "result": { "enum": ["failed", "aborted"] },
+    "failure_class": { "enum": ["gate", "fatal", "security"] },
+    "security_trigger": { "type": ["string", "null"] },
+    "failure_code": { "type": "string", "minLength": 1 },
+    "produced_by": { "type": "string" },
+    "produced_utc": { "type": "string", "format": "date-time" },
+    "segment_dir": { "type": "string" }
+  },
+  "additionalProperties": false
+}

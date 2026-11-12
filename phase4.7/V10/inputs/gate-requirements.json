@@ -1,0 +1,19 @@
+{
+  "schema": "p47-gate-requirements-v10",
+  "revision": "v10.0-static",
+  "txid": "tx-static-0001",
+  "rid": "rid-static-0001",
+  "new_index_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+  "policy_digest": "2222222222222222222222222222222222222222222222222222222222222222",
+  "tool_versions": {
+    "checker": "v10.0-static",
+    "verifier": "v10.0-static"
+  },
+  "required": [
+    { "gate_id": "checker", "mode": "staging", "subject_id": "op:checker" },
+    { "gate_id": "checker", "mode": "pending", "subject_id": "op:checker" },
+    { "gate_id": "checker", "mode": "accepting", "subject_id": "op:checker" },
+    { "gate_id": "verifier", "mode": "release", "subject_id": "op:verifier" },
+    { "gate_id": "verifier", "mode": "accepting", "subject_id": "op:verifier" }
+  ]
+}

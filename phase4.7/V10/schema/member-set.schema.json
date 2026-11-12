@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-member-set-v10",
+  "title": "p47 formal member set",
+  "type": "object",
+  "required": ["schema", "members"],
+  "properties": {
+    "schema": { "const": "p47-member-set-v10" },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "kind"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["file"] },
+          "bytes": { "type": ["integer", "null"], "minimum": 0 },
+          "sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

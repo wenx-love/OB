@@ -1,0 +1,25 @@
+{
+  "schema": "p47-trigger-registry-v10",
+  "revision": "v10.0",
+  "v9_trigger_count": 12,
+  "added_triggers": [
+    "SEC-TOOL-IDENTITY",
+    "SEC-MANIFEST-IDENTITY"
+  ],
+  "triggers": [
+    "SEC-AUDIT-MISMATCH",
+    "SEC-CHAIN-MISMATCH",
+    "SEC-DENIED-READ-SUCCEEDED",
+    "SEC-DEST-PROTECTED",
+    "SEC-GUARD-MISSING",
+    "SEC-IDENTITY",
+    "SEC-MANIFEST-IDENTITY",
+    "SEC-OBSERVER",
+    "SEC-ORIGINAL-CHANGED",
+    "SEC-PATH-ESCAPE",
+    "SEC-REPARSE",
+    "SEC-STAGED-MISMATCH",
+    "SEC-TOOL-IDENTITY",
+    "SEC-UNLISTED-WRITE-SUCCEEDED"
+  ]
+}

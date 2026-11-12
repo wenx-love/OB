@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-failure-code-map-v10",
+  "title": "p47 failure code map",
+  "type": "object",
+  "required": ["schema", "revision", "exec_registry_digest", "codes"],
+  "properties": {
+    "schema": { "const": "p47-failure-code-map-v10" },
+    "revision": { "type": "string" },
+    "supersedes": { "type": "string" },
+    "trigger_registry": { "type": "string" },
+    "exec_registry": { "type": "string" },
+    "exec_registry_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "codes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "failure_class", "security_trigger"],
+        "properties": {
+          "code": { "type": "string", "minLength": 1 },
+          "failure_class": { "enum": ["gate", "fatal", "security"] },
+          "security_trigger": { "type": ["string", "null"] },
+          "diagnostic_tags": { "type": "array", "items": { "type": "string" } },
+          "allowed_exec_ids": { "type": "array", "items": { "type": "string" } },
+          "allowed_operations": { "type": "array", "items": { "type": "string" } },
+          "allowed_exec_scope": { "const": "all-v10-execs" },
+          "exit_codes": { "type": "array", "items": { "type": "integer" } }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

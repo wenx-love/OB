@@ -1,0 +1,465 @@
+{
+  "schema": "p47-static-vectors-v10",
+  "revision": "v10.0-static",
+  "vectors": [
+    {
+      "id": "H1-01-valid-close",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C12-E01", "command_id": "C12", "segment_dir": "out/audit/C12-E01" },
+        { "record": "segment_close", "exec_id": "C12-E01", "command_id": "C12", "result": "ok", "exit_code": 0, "failure_class": null, "security_trigger": null, "summary_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "summary_bytes": 1 }
+      ],
+      "sealCtx": { "complete": true, "allSuccess": true, "planComplete": true, "stagedState": "complete", "stagedRecheck": "pass", "skipped": [] },
+      "expect": { "state": "validated-closed", "errors": 0, "sealMode": "sealed-full", "sealExit": "complete" }
+    },
+    {
+      "id": "H1-02-valid-skip-tail",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C14-E01", "command_id": "C14", "segment_dir": "out/audit/C14-E01" },
+        { "record": "segment_close", "exec_id": "C14-E01", "command_id": "C14", "result": "failed", "exit_code": 1, "failure_class": "fatal", "security_trigger": null, "summary_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "summary_bytes": 1 },
+        { "record": "segment_skip", "exec_id": "C15-E01", "command_id": "C15", "reason": "dependency-failed", "failed_dependency": "C14-E01" }
+      ],
+      "sealCtx": { "complete": false, "allSuccess": false, "planComplete": false, "stagedState": "complete", "stagedRecheck": "pass", "skipped": ["C15-E01"], "securityFailure": false },
+      "expect": { "state": "validated-skip-tail", "errors": 0, "sealMode": "degraded-prefix", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-03-open-orphan",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C10-N-E01", "command_id": "C10", "segment_dir": "out/audit/C10-N-E01" }
+      ],
+      "sealCtx": { "complete": false, "allSuccess": false, "planComplete": false, "stagedState": "complete", "stagedRecheck": "pass", "skipped": [] },
+      "expect": { "state": "validated-open", "errors": 0, "openSegments": 1, "sealMode": "aborted", "sealExit": "aborted" }
+    },
+    {
+      "id": "H1-04-open-then-skip",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C10-N-E01", "command_id": "C10", "segment_dir": "out/audit/C10-N-E01" },
+        { "record": "segment_skip", "exec_id": "C11-E01", "command_id": "C11", "reason": "run-stopped", "failed_dependency": "C10-N-E01" }
+      ],
+      "sealCtx": { "complete": false, "allSuccess": false, "planComplete": false, "stagedState": "complete", "stagedRecheck": "pass", "skipped": ["C11-E01"] },
+      "expect": { "state": "validated-open", "errors": 0, "openSegments": 1, "tail": "segment_skip", "sealMode": "aborted", "sealExit": "aborted" }
+    },
+    {
+      "id": "H1-05-bad-hash",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C12-E01", "command_id": "C12", "segment_dir": "out/audit/C12-E01" }
+      ],
+      "mutate": [{ "index": 1, "set": { "prev_record_sha256": "0000000000000000000000000000000000000000000000000000000000000000" } }],
+      "sealCtx": { "complete": false },
+      "expect": { "state": "corrupt", "errorsMin": 1, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-06-seq-gap",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C12-E01", "command_id": "C12", "segment_dir": "out/audit/C12-E01" }
+      ],
+      "mutate": [{ "index": 1, "set": { "chain_seq": 9 } }],
+      "sealCtx": { "complete": false },
+      "expect": { "state": "corrupt", "errorsMin": 1, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-07-close-without-open",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_close", "exec_id": "C12-E01", "command_id": "C12", "result": "ok", "exit_code": 0, "failure_class": null, "security_trigger": null, "summary_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "summary_bytes": 1 }
+      ],
+      "sealCtx": { "complete": false },
+      "expect": { "state": "corrupt", "errorsMin": 1, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-08-no-genesis-legal",
+      "kind": "chain",
+      "chainSpecs": [],
+      "chainOrigin": "absent",
+      "sealCtx": { "complete": false },
+      "expect": { "state": "no-chain", "errors": 0, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-09-genesis-missing-but-records",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "segment_open", "exec_id": "C12-E01", "command_id": "C12", "segment_dir": "out/audit/C12-E01" }
+      ],
+      "chainOrigin": "expected",
+      "sealCtx": { "complete": false },
+      "expect": { "state": "corrupt", "errorsMin": 1, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-12-expected-chain-absent",
+      "kind": "chain",
+      "chainSpecs": [],
+      "chainOrigin": "expected",
+      "sealCtx": { "complete": false },
+      "expect": { "state": "corrupt", "errorsMin": 1, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-10-security-close-aborted",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C12-E01", "command_id": "C12", "segment_dir": "out/audit/C12-E01" },
+        { "record": "segment_close", "exec_id": "C12-E01", "command_id": "C12", "result": "failed", "exit_code": 9, "failure_class": "security", "security_trigger": "SEC-UNLISTED-WRITE-SUCCEEDED", "summary_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "summary_bytes": 1 }
+      ],
+      "sealCtx": { "complete": false, "securityFailure": true, "stagedState": "complete", "stagedRecheck": "pass", "skipped": [] },
+      "expect": { "state": "validated-closed", "errors": 0, "sealMode": "aborted", "sealExit": "aborted" }
+    },
+    {
+      "id": "H1-11-non-security-fatal-degraded",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C14-E01", "command_id": "C14", "segment_dir": "out/audit/C14-E01" },
+        { "record": "segment_close", "exec_id": "C14-E01", "command_id": "C14", "result": "failed", "exit_code": 1, "failure_class": "fatal", "security_trigger": null, "summary_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "summary_bytes": 1 }
+      ],
+      "sealCtx": { "complete": false, "securityFailure": false, "stagedState": "complete", "stagedRecheck": "pass", "skipped": [] },
+      "expect": { "state": "validated-closed", "errors": 0, "sealMode": "degraded-prefix", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H2-01-gate-continue",
+      "kind": "stop",
+      "input": { "failure": { "class": "gate", "execClass": "target", "execId": "C11-E01" }, "targetStarted": true, "trustedClose": true, "chainState": "validated-closed" },
+      "expect": { "stop_class": "CONTINUE", "allow_finalizer": true, "allow_unique_after": true, "allow_independent": true }
+    },
+    {
+      "id": "H2-02-fatal-target-business-halt",
+      "kind": "stop",
+      "input": { "failure": { "class": "fatal", "execClass": "target", "execId": "C08-E01" }, "targetStarted": true, "trustedClose": true, "chainState": "validated-closed" },
+      "expect": { "stop_class": "BUSINESS_HALT", "allow_finalizer": true, "allow_unique_after": true, "allow_independent": false }
+    },
+    {
+      "id": "H2-03-fatal-infra-halt-all",
+      "kind": "stop",
+      "input": { "failure": { "class": "fatal", "execClass": "infra", "execId": "C06-E01" }, "targetStarted": false, "trustedClose": true, "chainState": "validated-closed" },
+      "expect": { "stop_class": "HALT_ALL", "allow_finalizer": false, "allow_unique_after": false, "allow_independent": false }
+    },
+    {
+      "id": "H2-04-fatal-before-halt-all",
+      "kind": "stop",
+      "input": { "failure": { "class": "fatal", "execClass": "before", "execId": "C07-B-C12-E01" }, "targetStarted": false, "trustedClose": true, "chainState": "validated-closed" },
+      "expect": { "stop_class": "HALT_ALL", "allow_finalizer": false, "allow_unique_after": false }
+    },
+    {
+      "id": "H2-05-security-halt",
+      "kind": "stop",
+      "input": { "failure": { "class": "security", "execClass": "target", "execId": "C12-E01" }, "targetStarted": true, "trustedClose": true, "chainState": "validated-closed" },
+      "expect": { "stop_class": "SECURITY_HALT", "allow_finalizer": false, "allow_unique_after": true, "allow_seal": true }
+    },
+    {
+      "id": "H2-06-security-not-downgraded",
+      "kind": "stop",
+      "input": { "failure": { "class": "fatal", "execClass": "after", "execId": "C07-A-C12-E01" }, "securitySeen": true, "targetStarted": true, "trustedClose": true, "chainState": "validated-closed" },
+      "expect": { "stop_class": "SECURITY_HALT", "allow_finalizer": false, "allow_unique_after": true }
+    },
+    {
+      "id": "H2-07-pre-run-no-fake-chain",
+      "kind": "stop",
+      "input": { "failure": { "class": "fatal", "execClass": "pre-run", "execId": "C00-E01" }, "preRunFailed": true, "chainState": "no-chain" },
+      "expect": { "stop_class": "PRE_RUN_HALT", "allow_seal": false, "allow_finalizer": false, "allow_unique_after": false }
+    },
+    {
+      "id": "H2-08-orphan-no-a",
+      "kind": "stop",
+      "input": { "failure": { "class": "fatal", "execClass": "target", "execId": "C10-N-E01" }, "chainState": "validated-open", "targetStarted": true, "trustedClose": false },
+      "expect": { "stop_class": "ORPHAN_HALT", "allow_unique_after": false, "allow_finalizer": false, "allow_seal": true }
+    },
+    {
+      "id": "H2-09-chain-fatal-no-seal",
+      "kind": "stop",
+      "input": { "failure": { "class": "fatal", "execClass": "target", "execId": "C12-E01" }, "chainState": "corrupt" },
+      "expect": { "stop_class": "CHAIN_FATAL", "allow_seal": false, "allow_unique_after": false }
+    },
+    {
+      "id": "H3-01-parts-summary-close",
+      "kind": "summary",
+      "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 1, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "P47-E-IO", "produced_by": "dispatcher" },
+      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": true }
+    },
+    {
+      "id": "H3-02-missing-summary",
+      "kind": "summary",
+      "eventOrder": ["parts_frozen", "close_appended"],
+      "summary": null,
+      "sidecar": null,
+      "expect": { "ok": false, "errorsInclude": "SUMMARY_MISSING" }
+    },
+    {
+      "id": "H3-03-close-before-summary",
+      "kind": "summary",
+      "eventOrder": ["parts_frozen", "close_appended", "summary_created"],
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher" },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "CLOSE_BEFORE_SUMMARY" }
+    },
+    {
+      "id": "H3-04-mutated-after-close",
+      "kind": "summary",
+      "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
+      "mutatedAfterClose": true,
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher" },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "SUMMARY_MUTATED_AFTER_CLOSE" }
+    },
+    {
+      "id": "H3-05-c19-not-universal",
+      "kind": "summary",
+      "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "C19-E01", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "C19-E01" },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "C19_NOT_UNIVERSAL_SUMMARY_WRITER" }
+    },
+    {
+      "id": "H3-06-wrong-summary-digest",
+      "kind": "summary",
+      "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 1, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "P47-E-IO", "produced_by": "dispatcher" },
+      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "tamper": "summary_sha",
+      "expect": { "ok": false, "errorsInclude": "CLOSE_SUMMARY_SHA" }
+    },
+    {
+      "id": "H3-07-wrong-sidecar-digest",
+      "kind": "summary",
+      "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 1, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "P47-E-IO", "produced_by": "dispatcher" },
+      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "tamper": "sidecar_sha",
+      "expect": { "ok": false, "errorsInclude": "SUMMARY_SIDECAR_SHA" }
+    },
+    {
+      "id": "H4-01-all-modes",
+      "kind": "gate",
+      "variant": "complete",
+      "expect": { "ok": true }
+    },
+    {
+      "id": "H4-02-missing-mode",
+      "kind": "gate",
+      "variant": "missing",
+      "expect": { "ok": false, "errorsInclude": "INVOCATION_MISSING" }
+    },
+    {
+      "id": "H4-03-duplicate-invocation",
+      "kind": "gate",
+      "variant": "duplicate",
+      "expect": { "ok": false, "errorsInclude": "INVOCATION_DUPLICATE" }
+    },
+    {
+      "id": "H4-04-extra-invocation",
+      "kind": "gate",
+      "variant": "extra",
+      "expect": { "ok": false, "errorsInclude": "INVOCATION_EXTRA" }
+    },
+    {
+      "id": "H4-05-wrong-txid",
+      "kind": "gate",
+      "variant": "wrong_txid",
+      "expect": { "ok": false, "errorsInclude": "BUNDLE_TXID" }
+    },
+    {
+      "id": "H4-06-wrong-evidence",
+      "kind": "gate",
+      "variant": "wrong_evidence",
+      "expect": { "ok": false, "errorsInclude": "EVIDENCE_DIGEST" }
+    },
+    {
+      "id": "H4-07-retry-allowed",
+      "kind": "gate",
+      "variant": "retry_allowed",
+      "expect": { "ok": true, "retry_used": true }
+    },
+    {
+      "id": "H4-08-retry-denied",
+      "kind": "gate",
+      "variant": "retry_denied",
+      "expect": { "ok": false, "errorsInclude": "RETRY_NOT_ALLOWED" }
+    },
+    {
+      "id": "H4-09-wrong-subject",
+      "kind": "gate",
+      "variant": "wrong_subject",
+      "expect": { "ok": false, "errorsInclude": "INVOCATION_MISSING" }
+    },
+    {
+      "id": "H4-10-bad-bundle-digest",
+      "kind": "gate",
+      "variant": "bad_digest",
+      "expect": { "ok": false, "errorsInclude": "BUNDLE_DIGEST" }
+    },
+    {
+      "id": "H5-01-sidecar-valid",
+      "kind": "sidecar",
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": true, "code": "FM-C15E01-02" }
+    },
+    {
+      "id": "H5-02-sidecar-unknown-code",
+      "kind": "sidecar",
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-NOT-A-CODE", "produced_by": "dispatcher" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "CODE_UNKNOWN" }
+    },
+    {
+      "id": "H5-03-sidecar-class-mismatch",
+      "kind": "sidecar",
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "FM-C15E01-02", "produced_by": "dispatcher" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "CODE_CLASS" }
+    },
+    {
+      "id": "H5-04-sidecar-wrong-exec",
+      "kind": "sidecar",
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C14-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C14-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "CODE_EXEC" }
+    },
+    {
+      "id": "H5-05-sidecar-missing",
+      "kind": "failure_projection",
+      "sidecar": null,
+      "summary": null,
+      "close": { "result": "failed" },
+      "expect": { "ok": false, "errorsInclude": "SIDECAR_REQUIRED" }
+    },
+    {
+      "id": "H5-06-sidecar-summary-hash-mismatch",
+      "kind": "sidecar",
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "tamper": "sidecar_sha",
+      "expect": { "ok": false, "errorsInclude": "SUMMARY_SIDECAR_SHA" }
+    },
+    {
+      "id": "T01-01-dead-reclaim-blocked",
+      "kind": "reclaim",
+      "input": { "main": { "schema": "p47-lock-v10", "token": "m", "pid": 10 }, "mainAlive": false, "reclaim": { "schema": "p47-reclaim-v10", "token": "r", "pid": 11 }, "reclaimAlive": false },
+      "expect": { "action": "BLOCKED_MANUAL" }
+    },
+    {
+      "id": "T01-02-absent-reclaim-install",
+      "kind": "reclaim",
+      "input": { "main": { "schema": "p47-lock-v10", "token": "m", "pid": 10 }, "mainAlive": false, "reclaim": null },
+      "expect": { "action": "RECLAIM_INSTALL" }
+    },
+    {
+      "id": "T01-03-live-reclaim",
+      "kind": "reclaim",
+      "input": { "main": { "schema": "p47-lock-v10", "token": "m", "pid": 10 }, "mainAlive": false, "reclaim": { "schema": "p47-reclaim-v10", "token": "r", "pid": 11 }, "reclaimAlive": true },
+      "expect": { "action": "LOCKED_RECLAIM" }
+    },
+    {
+      "id": "T01-04-main-incomplete",
+      "kind": "reclaim",
+      "input": { "main": { "schema": "p47-lock-v10" }, "mainAlive": false, "reclaim": null },
+      "expect": { "action": "BLOCKED_MANUAL" }
+    },
+    {
+      "id": "T04-01-business-chain-denied",
+      "kind": "protect",
+      "intent": { "path": "out/audit/chain-head.jsonl", "op": "create", "subject_kind": "exec", "subject_id": "C10-P-E01", "phase": "run" },
+      "expect": { "decision": "deny" }
+    },
+    {
+      "id": "T04-02-control-genesis-allowed",
+      "kind": "protect",
+      "intent": { "path": "out/audit/chain-head.jsonl", "op": "create", "subject_kind": "exec", "subject_id": "C01-E01", "phase": "bootstrap" },
+      "expect": { "decision": "allow", "rule_id": "control-genesis" }
+    },
+    {
+      "id": "T04-03-staging-before-allowed",
+      "kind": "protect",
+      "intent": { "path": "tools/p0v10-check.cjs", "op": "create", "subject_kind": "exec", "subject_id": "C04-E01", "phase": "staging" },
+      "expect": { "decision": "allow", "rule_id": "staging-tools" }
+    },
+    {
+      "id": "T04-04-staging-after-denied",
+      "kind": "protect",
+      "intent": { "path": "tools/p0v10-check.cjs", "op": "create", "subject_kind": "exec", "subject_id": "C04-E01", "phase": "sealed" },
+      "expect": { "decision": "deny" }
+    },
+    {
+      "id": "T04-05-acl-original-allowed",
+      "kind": "protect",
+      "intent": { "path": "ORIGINAL/file.txt", "op": "acl", "subject_kind": "exec", "subject_id": "C02-E01", "phase": "run", "acl_metadata": true },
+      "expect": { "decision": "allow", "rule_id": "business-original-readonly" }
+    },
+    {
+      "id": "T04-06-original-delete-denied",
+      "kind": "protect",
+      "intent": { "path": "ORIGINAL/file.txt", "op": "delete", "subject_kind": "exec", "subject_id": "C10-P-E01", "phase": "run" },
+      "expect": { "decision": "deny" }
+    },
+    {
+      "id": "T04-07-product-own-part-allowed",
+      "kind": "protect",
+      "intent": { "path": "out/audit/C10-P-E01/events-product.jsonl", "op": "create", "subject_kind": "exec", "subject_id": "C10-P-E01", "phase": "run" },
+      "expect": { "decision": "allow", "rule_id": "product-own-part" }
+    },
+    {
+      "id": "I02-01-file-to-dir-rejected",
+      "kind": "members",
+      "old": [{ "path": "file-a", "kind": "file", "bytes": 1, "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }],
+      "new": [{ "path": "file-a/b", "kind": "file", "bytes": 2, "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }],
+      "expect": { "ok": false, "conflict": true }
+    },
+    {
+      "id": "I02-02-normal-add-delete",
+      "kind": "members",
+      "old": [{ "path": "a", "kind": "file", "bytes": 1, "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }, { "path": "b", "kind": "file", "bytes": 1, "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }],
+      "new": [{ "path": "a", "kind": "file", "bytes": 1, "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }, { "path": "c", "kind": "file", "bytes": 1, "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" }],
+      "expect": { "ok": true, "add": 1, "delete": 1, "keep": 1 }
+    },
+    {
+      "id": "I02-03-dir-to-file-rejected",
+      "kind": "members",
+      "old": [{ "path": "a/b", "kind": "file", "bytes": 1, "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }],
+      "new": [{ "path": "a", "kind": "file", "bytes": 2, "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }],
+      "expect": { "ok": false, "conflict": true }
+    },
+    {
+      "id": "I03-01-fragment-non-authoritative",
+      "kind": "fragment",
+      "seal": { "schema": "p47-fragment-seal-v10", "authoritative": false, "mode": "fragment" },
+      "expect": { "ok": true }
+    },
+    {
+      "id": "I03-02-fragment-terminal-mode-rejected",
+      "kind": "fragment",
+      "seal": { "schema": "p47-fragment-seal-v10", "authoritative": false, "mode": "sealed-full" },
+      "expect": { "ok": false, "errorsInclude": "FRAGMENT_MODE" }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-protect-policy-v10",
+  "title": "p47 protect policy",
+  "type": "object",
+  "required": ["schema", "revision", "rules"],
+  "properties": {
+    "schema": { "const": "p47-protect-policy-v10" },
+    "revision": { "type": "string" },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "layer", "paths", "ops", "phases"],
+        "properties": {
+          "id": { "type": "string" },
+          "layer": { "enum": ["business", "control", "staging"] },
+          "paths": { "type": "array", "items": { "type": "string" } },
+          "subject_ids": { "type": "array", "items": { "type": "string" } },
+          "subject_kinds": { "type": "array", "items": { "enum": ["exec", "operation"] } },
+          "ops": { "type": "array", "items": { "type": "string" } },
+          "phases": { "type": "array", "items": { "type": "string" } },
+          "content": { "enum": ["readonly", "writable"] },
+          "acl_exception": { "type": "object" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

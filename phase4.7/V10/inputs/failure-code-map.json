@@ -1,0 +1,191 @@
+{
+  "schema": "p47-failure-code-map-v10",
+  "revision": "v10.0-static",
+  "supersedes": "V9 failure_modes static subset; full runtime map is generated in a later authorized phase",
+  "trigger_registry": "inputs/trigger-registry.json",
+  "exec_registry": "inputs/exec-registry.json",
+  "exec_registry_digest": "a2c596360065c8196f87fdc6e244b1ce9cbdba88008debce09e34be2a00e9dcd",
+  "codes": [
+    {
+      "code": "FM-C00E01-01",
+      "failure_class": "security",
+      "security_trigger": "SEC-IDENTITY",
+      "diagnostic_tags": [],
+      "allowed_exec_ids": ["C00-E01"],
+      "exit_codes": [45]
+    },
+    {
+      "code": "FM-C00E01-02",
+      "failure_class": "security",
+      "security_trigger": "SEC-IDENTITY",
+      "diagnostic_tags": [],
+      "allowed_exec_ids": ["C00-E01"],
+      "exit_codes": [46]
+    },
+    {
+      "code": "FM-C00E01-03",
+      "failure_class": "security",
+      "security_trigger": "SEC-IDENTITY",
+      "diagnostic_tags": [],
+      "allowed_exec_ids": ["C00-E01"],
+      "exit_codes": [47]
+    },
+    {
+      "code": "FM-C00E01-04",
+      "failure_class": "fatal",
+      "security_trigger": null,
+      "diagnostic_tags": ["cwd-or-run-conflict"],
+      "allowed_exec_ids": ["C00-E01"],
+      "exit_codes": [48]
+    },
+    {
+      "code": "FM-C00E01-05",
+      "failure_class": "security",
+      "security_trigger": "SEC-TOOL-IDENTITY",
+      "diagnostic_tags": ["runtime-binary-hash"],
+      "allowed_exec_ids": ["C00-E01"],
+      "exit_codes": [49]
+    },
+    {
+      "code": "FM-C00E01-06",
+      "failure_class": "security",
+      "security_trigger": "SEC-MANIFEST-IDENTITY",
+      "diagnostic_tags": ["manifest-hash-schema-key-tool-anchor"],
+      "allowed_exec_ids": ["C00-E01"],
+      "exit_codes": [43, 44]
+    },
+    {
+      "code": "FM-C03OBSE01-01",
+      "failure_class": "security",
+      "security_trigger": "SEC-IDENTITY",
+      "diagnostic_tags": ["account-not-candidate"],
+      "allowed_exec_ids": ["C03-OBS-E01"],
+      "exit_codes": [60]
+    },
+    {
+      "code": "FM-C03OBSE01-02",
+      "failure_class": "security",
+      "security_trigger": "SEC-IDENTITY",
+      "diagnostic_tags": ["not-in-codex-group"],
+      "allowed_exec_ids": ["C03-OBS-E01"],
+      "exit_codes": [60]
+    },
+    {
+      "code": "FM-C03PROBEE01-01",
+      "failure_class": "security",
+      "security_trigger": "SEC-IDENTITY",
+      "diagnostic_tags": ["account-not-candidate"],
+      "allowed_exec_ids": ["C03-PROBE-E01"],
+      "exit_codes": [51]
+    },
+    {
+      "code": "FM-C03PROBEE01-02",
+      "failure_class": "security",
+      "security_trigger": "SEC-IDENTITY",
+      "diagnostic_tags": ["current-account-mismatch"],
+      "allowed_exec_ids": ["C03-PROBE-E01"],
+      "exit_codes": [52]
+    },
+    {
+      "code": "FM-C03PROBEE01-04",
+      "failure_class": "security",
+      "security_trigger": "SEC-IDENTITY",
+      "diagnostic_tags": ["not-in-codex-group"],
+      "allowed_exec_ids": ["C03-PROBE-E01"],
+      "exit_codes": [54]
+    },
+    {
+      "code": "FM-C15E01-02",
+      "failure_class": "security",
+      "security_trigger": "SEC-TOOL-IDENTITY",
+      "diagnostic_tags": ["tsc-hash-mismatch"],
+      "allowed_exec_ids": ["C15-E01"],
+      "exit_codes": [2]
+    },
+    {
+      "code": "FM-C19E01-02",
+      "failure_class": "security",
+      "security_trigger": "SEC-CHAIN-MISMATCH",
+      "diagnostic_tags": ["segment-hash-mismatch"],
+      "allowed_exec_ids": ["C19-E01"],
+      "exit_codes": [1]
+    },
+    {
+      "code": "FM-C20SEALE01-02",
+      "failure_class": "security",
+      "security_trigger": "SEC-CHAIN-MISMATCH",
+      "diagnostic_tags": ["tail-not-close-legacy-predicate-retired"],
+      "allowed_exec_ids": ["C20-SEAL-E01"],
+      "exit_codes": [1]
+    },
+    {
+      "code": "FM-C20SEALE01-03",
+      "failure_class": "security",
+      "security_trigger": "SEC-CHAIN-MISMATCH",
+      "diagnostic_tags": ["segment-digest-mismatch"],
+      "allowed_exec_ids": ["C20-SEAL-E01"],
+      "exit_codes": [1]
+    },
+    {
+      "code": "FM-C14E01-01",
+      "failure_class": "security",
+      "security_trigger": "SEC-UNLISTED-WRITE-SUCCEEDED",
+      "diagnostic_tags": ["path-not-in-map"],
+      "allowed_exec_ids": ["C14-E01"],
+      "exit_codes": [1]
+    },
+    {
+      "code": "P47-E-IO",
+      "failure_class": "fatal",
+      "security_trigger": null,
+      "diagnostic_tags": ["ordinary-io"],
+      "allowed_exec_scope": "all-v10-execs",
+      "exec_registry_digest": "a2c596360065c8196f87fdc6e244b1ce9cbdba88008debce09e34be2a00e9dcd",
+      "allowed_operations": ["op:publish", "op:recover"]
+    },
+    {
+      "code": "P47-E-INPUT-HASH",
+      "failure_class": "fatal",
+      "security_trigger": null,
+      "diagnostic_tags": ["ordinary-business-input-digest"],
+      "allowed_exec_ids": ["C08-E01", "C09-E01", "C17-E01"]
+    },
+    {
+      "code": "P47-E-CHAIN-CORRUPT",
+      "failure_class": "security",
+      "security_trigger": "SEC-CHAIN-MISMATCH",
+      "diagnostic_tags": ["hash-seq-pair-corrupt"],
+      "allowed_exec_ids": ["C19-E01", "C20-SEAL-E01"],
+      "allowed_operations": ["op:checker"]
+    },
+    {
+      "code": "P47-E-CHAIN-REMOVED",
+      "failure_class": "security",
+      "security_trigger": "SEC-CHAIN-MISMATCH",
+      "diagnostic_tags": ["expected-chain-removed"],
+      "allowed_exec_ids": ["C19-E01", "C20-SEAL-E01"]
+    },
+    {
+      "code": "P47-E-UNKNOWN-CODE",
+      "failure_class": "fatal",
+      "security_trigger": null,
+      "diagnostic_tags": ["unknown-or-ambiguous-code"],
+      "allowed_operations": ["op:checker"]
+    },
+    {
+      "code": "P47-E-GATE-BUNDLE",
+      "failure_class": "fatal",
+      "security_trigger": null,
+      "diagnostic_tags": ["gate-bundle-missing-duplicate-wrong-tx-or-evidence"],
+      "allowed_operations": ["op:accept", "op:recover", "op:checker"]
+    },
+    {
+      "code": "P47-E-PROTECT-DENY",
+      "failure_class": "security",
+      "security_trigger": "SEC-DEST-PROTECTED",
+      "diagnostic_tags": ["protected-write-denied"],
+      "allowed_exec_ids": ["C18-E01"],
+      "allowed_operations": ["op:publish"]
+    }
+  ]
+}

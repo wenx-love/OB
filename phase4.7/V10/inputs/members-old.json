@@ -1,0 +1,7 @@
+{
+  "schema": "p47-member-set-v10",
+  "members": [
+    { "path": "file-a", "kind": "file", "bytes": 1, "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+    { "path": "keep", "kind": "file", "bytes": 2, "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }
+  ]
+}
