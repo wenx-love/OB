@@ -1,0 +1,44 @@
+{
+  "note": "probe: manual chrome.devtools.panels.create call inside the real devtools.html iframe, then rescan of the real DevTools frontend",
+  "iframeEvents": [],
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "before": {
+    "hits": [],
+    "tabCount": 11,
+    "tabIds": [
+      "tab-elements",
+      "tab-console",
+      "tab-sources",
+      "tab-network",
+      "tab-timeline",
+      "tab-styles",
+      "tab-computed",
+      "tab-elements.layout",
+      "tab-elements.event-listeners",
+      "tab-elements.dom-breakpoints",
+      "tab-elements.dom-properties"
+    ]
+  },
+  "manualCreate": {
+    "callback": true,
+    "lastError": null,
+    "panelType": "object"
+  },
+  "after": {
+    "hits": [],
+    "tabCount": 11,
+    "tabIds": [
+      "tab-elements",
+      "tab-console",
+      "tab-sources",
+      "tab-network",
+      "tab-timeline",
+      "tab-styles",
+      "tab-computed",
+      "tab-elements.layout",
+      "tab-elements.event-listeners",
+      "tab-elements.dom-breakpoints",
+      "tab-elements.dom-properties"
+    ]
+  }
+}

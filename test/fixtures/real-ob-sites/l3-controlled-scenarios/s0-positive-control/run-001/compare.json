@@ -1,0 +1,132 @@
+{
+  "schema": "ob-recover.real-site-compare/1",
+  "runId": "run-001",
+  "sample": {
+    "id": "s0-positive-control",
+    "layer": "L3",
+    "kind": "controlled-replay",
+    "isRealSiteSample": false,
+    "title": "稳定的纯解码函数，4 个调用点都被观测（正向对照）"
+  },
+  "provenance": {
+    "reference": {
+      "capturedBy": "test-oracle",
+      "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+      "note": "independent of OB-Recover output"
+    },
+    "observed": {
+      "capturedBy": "ob-recover",
+      "method": "real CaptureEngine + real node:vm execution + stub CDP transport (synthetic Debugger.paused events, test/helpers/capture-driver.ts)",
+      "note": "not real Chrome and not a CDP pause capture"
+    }
+  },
+  "identity": {
+    "referenceSha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+    "observedSha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+    "afterApplySha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+    "basis": "the same source string is archived as script.js, executed by drive() and passed to the pipeline",
+    "referenceEqualsObserved": true,
+    "unchangedAfterApply": true
+  },
+  "counts": {
+    "correct-replacement": 4,
+    "safe-rejection": 0,
+    "insufficient-evidence": 0,
+    "version-mismatch": 0,
+    "false-replacement": 0
+  },
+  "detail": {
+    "tp": 4,
+    "frWrongValue": 0,
+    "frOnIndeterminate": 0,
+    "frNotInReference": 0,
+    "frSourceMutation": 0,
+    "un": 0,
+    "sr": 0
+  },
+  "metrics": {
+    "precision": 1,
+    "recall": 1,
+    "falseReplacement": 0,
+    "unresolved": {
+      "count": 0,
+      "ratio": 0
+    },
+    "versionMismatch": {
+      "runs": 0,
+      "totalRuns": 1,
+      "ratio": 0
+    },
+    "safeRejectionRate": "n/a",
+    "sourceIntegrity": true,
+    "businessParity": "pass",
+    "rPos": 4,
+    "rNeg": 0
+  },
+  "hardConditions": {
+    "falseReplacementIsZero": true,
+    "sourceIntegrity": true,
+    "safeRejectionRateIs100": "n/a",
+    "precisionIs100": true
+  },
+  "verdict": "inconclusive",
+  "exhaustive": true,
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 5,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "referenceDeterminate": true,
+      "referenceValue": "alpha",
+      "referenceReason": "pure decoder, observed",
+      "rejectionCodes": [],
+      "category": "correct-replacement",
+      "observedText": "\"alpha\"",
+      "observedValue": "alpha"
+    },
+    {
+      "position": {
+        "lineNumber": 6,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "referenceDeterminate": true,
+      "referenceValue": "alpha",
+      "referenceReason": "pure decoder, observed",
+      "rejectionCodes": [],
+      "category": "correct-replacement",
+      "observedText": "\"alpha\"",
+      "observedValue": "alpha"
+    },
+    {
+      "position": {
+        "lineNumber": 7,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "referenceDeterminate": true,
+      "referenceValue": "beta",
+      "referenceReason": "pure decoder, observed",
+      "rejectionCodes": [],
+      "category": "correct-replacement",
+      "observedText": "\"beta\"",
+      "observedValue": "beta"
+    },
+    {
+      "position": {
+        "lineNumber": 8,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "referenceDeterminate": true,
+      "referenceValue": "beta",
+      "referenceReason": "pure decoder, observed",
+      "rejectionCodes": [],
+      "category": "correct-replacement",
+      "observedText": "\"beta\"",
+      "observedValue": "beta"
+    }
+  ]
+}

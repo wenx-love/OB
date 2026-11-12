@@ -1,0 +1,187 @@
+{
+  "note": "offline analysis of unmodified round-1 engine records; oracle = decoder called after the script finished (report cross-check only, never used by the product); hypotheticalDryRun clears functionSuspect on a COPY only to show which per-site check would reject next - diagnostic, not a pass criterion",
+  "records": 73,
+  "foreignRecords": 0,
+  "iifeEnd": 906,
+  "groups": 37,
+  "byStatus": {
+    "pending": 0,
+    "verified": 28,
+    "unstable": 9,
+    "failed": 0,
+    "insufficient": 0
+  },
+  "verified": {
+    "total": 28,
+    "single": 22,
+    "multiple": 6,
+    "returnEqualsOracle": 28,
+    "returnDiffersFromOracle": 0,
+    "withSiteInsideRotationIife": 0
+  },
+  "realDryRun": {
+    "candidates": 0,
+    "rejections": 37,
+    "byReason": {
+      "status-unstable": 9,
+      "function-suspect": 28
+    }
+  },
+  "byFunctionStatus": {
+    "_0x194f unstable": 9,
+    "_0x194f verified": 28
+  },
+  "unstable": {
+    "total": 9,
+    "withSiteInsideRotationIife": 9
+  },
+  "candidateOracle": {
+    "total": 0,
+    "match": 0,
+    "mismatch": 0,
+    "sample": []
+  },
+  "hypotheticalDryRun": {
+    "summary": {
+      "candidates": 0,
+      "rejections": 37,
+      "byReason": {
+        "status-unstable": 9,
+        "dynamic-arguments": 28
+      }
+    },
+    "firstRejections": [
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      },
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      },
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      },
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      },
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      }
+    ]
+  },
+  "verifiedMismatch": [],
+  "verifiedSamples": [
+    {
+      "fn": "_0x194f",
+      "status": "verified",
+      "evidence": "single-observation",
+      "args": [
+        435,
+        1186
+      ],
+      "observations": 1,
+      "distinct": 1,
+      "returns": [
+        "windbreaker"
+      ],
+      "oracle": "windbreaker",
+      "allMatchOracle": true,
+      "sites": 1,
+      "sitesInRotationIife": 0,
+      "suspect": true,
+      "siteText": [
+        "_0x194f(_0x59203d-0x2fe,_0x4a38e3);}out[_0x124122(0x4ae,0x4c"
+      ]
+    },
+    {
+      "fn": "_0x194f",
+      "status": "verified",
+      "evidence": "single-observation",
+      "args": [
+        431,
+        1206
+      ],
+      "observations": 1,
+      "distinct": 1,
+      "returns": [
+        "down-jacket"
+      ],
+      "oracle": "down-jacket",
+      "allMatchOracle": true,
+      "sites": 1,
+      "sitesInRotationIife": 0,
+      "suspect": true,
+      "siteText": [
+        "_0x194f(_0x59203d-0x2fe,_0x4a38e3);}out[_0x124122(0x4ae,0x4c"
+      ]
+    },
+    {
+      "fn": "_0x194f",
+      "status": "verified",
+      "evidence": "single-observation",
+      "args": [
+        411,
+        185
+      ],
+      "observations": 1,
+      "distinct": 1,
+      "returns": [
+        "fleece"
+      ],
+      "oracle": "fleece",
+      "allMatchOracle": true,
+      "sites": 1,
+      "sitesInRotationIife": 0,
+      "suspect": true,
+      "siteText": [
+        "_0x194f(_0x1acc64- -0xe7,_0x30495c);}var out=[];out[_0x1d59c"
+      ]
+    },
+    {
+      "fn": "_0x194f",
+      "status": "verified",
+      "evidence": "single-observation",
+      "args": [
+        438,
+        1216
+      ],
+      "observations": 1,
+      "distinct": 1,
+      "returns": [
+        "cny-199"
+      ],
+      "oracle": "cny-199",
+      "allMatchOracle": true,
+      "sites": 1,
+      "sitesInRotationIife": 0,
+      "suspect": true,
+      "siteText": [
+        "_0x194f(_0x59203d-0x2fe,_0x4a38e3);}out[_0x124122(0x4ae,0x4c"
+      ]
+    }
+  ]
+}

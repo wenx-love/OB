@@ -1,0 +1,15 @@
+{
+  "siteId": "s3-same-args-different-returns",
+  "runId": "run-001",
+  "layer": "L3",
+  "kind": "controlled-replay",
+  "isRealSiteSample": false,
+  "url": null,
+  "sha256": "8bd7505a51bf33815c562e3cae4caf100276922665bd238f958d899c262ff48c",
+  "bytes": 116,
+  "fetchedAt": null,
+  "fetchedAtNote": "synthetic script authored in test/real-site-l3.test.ts",
+  "capturedBy": "n/a-synthetic",
+  "tooling": "test/real-site-l3.test.ts",
+  "title": "同参数不同返回值（隐藏计数器）：不能被合并，不能替换"
+}

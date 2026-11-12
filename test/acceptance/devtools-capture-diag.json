@@ -1,0 +1,140 @@
+{
+  "note": "DIAGNOSIS: data-link vs render. Real DevTools frontend + real panel iframe + real SW. Compares engine captures (via SW test hook) with panel DOM at each stage.",
+  "steps": {
+    "show": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover",
+    "rafBaseline": "fired",
+    "reload": {
+      "scripts": 1,
+      "decoders": 0
+    },
+    "connect": "已连接",
+    "decodersBeforeCapture": {
+      "cards": 18,
+      "analyzed": "6",
+      "candidates": "18",
+      "calls": "91"
+    },
+    "startCaptureAndReload": {
+      "started": {
+        "cards": 0,
+        "empty": true,
+        "hits": "0",
+        "success": "0",
+        "failed": "0",
+        "status": "正在捕获"
+      },
+      "panelAfter": {
+        "cards": 0,
+        "empty": true,
+        "hits": "8",
+        "success": "8",
+        "failed": "0",
+        "status": "正在捕获"
+      },
+      "engine": {
+        "hook": true,
+        "active": true,
+        "breakpoints": 3,
+        "captures": 5,
+        "stats": {
+          "breakpointsSet": 6,
+          "hits": 8,
+          "pauses": 16,
+          "success": 8,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "first": {
+          "name": "_0x29ae5c",
+          "status": "success",
+          "count": 2,
+          "args": [
+            "number:0",
+            "undefined:undefined"
+          ],
+          "ret": "console"
+        }
+      }
+    },
+    "rafAfterCapture": "timeout",
+    "panelStateAfterCapture": {
+      "cards": 0,
+      "empty": true,
+      "hits": "8",
+      "success": "8",
+      "failed": "0",
+      "status": "正在捕获"
+    },
+    "engineStateAfterCapture": {
+      "hook": true,
+      "active": true,
+      "breakpoints": 3,
+      "captures": 5,
+      "stats": {
+        "breakpointsSet": 6,
+        "hits": 8,
+        "pauses": 16,
+        "success": 8,
+        "failed": 0,
+        "forcedResumes": 0,
+        "foreignPauses": 0
+      },
+      "first": {
+        "name": "_0x29ae5c",
+        "status": "success",
+        "count": 2,
+        "args": [
+          "number:0",
+          "undefined:undefined"
+        ],
+        "ret": "console"
+      }
+    },
+    "frontendSelectedTab": {
+      "selected": "sources"
+    },
+    "afterReshow": {
+      "vis": {
+        "vis": "visible",
+        "focus": false
+      },
+      "raf": "fired",
+      "panel": {
+        "cards": 5,
+        "empty": false,
+        "hits": "8",
+        "success": "8",
+        "failed": "0",
+        "status": "正在捕获"
+      },
+      "engine": {
+        "hook": true,
+        "active": true,
+        "breakpoints": 3,
+        "captures": 5,
+        "stats": {
+          "breakpointsSet": 6,
+          "hits": 8,
+          "pauses": 16,
+          "success": 8,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "first": {
+          "name": "_0x29ae5c",
+          "status": "success",
+          "count": 2,
+          "args": [
+            "number:0",
+            "undefined:undefined"
+          ],
+          "ret": "console"
+        }
+      }
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob"
+}

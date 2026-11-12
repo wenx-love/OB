@@ -1,0 +1,17 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ✓ test/capture-engine.test.ts (18 tests) 11ms
+ ✓ test/capture-call-locations.test.ts (6 tests) 9ms
+ ✓ test/capture-engine-step-expiry.test.ts (2 tests) 11ms
+ ✓ test/capture-stability.test.ts (10 tests) 32ms
+ ✓ test/capture-engine-stall.test.ts (5 tests) 11ms
+ ✓ test/capture-validation.test.ts (26 tests) 68ms
+
+ Test Files  6 passed (6)
+      Tests  67 passed (67)
+   Start at  10:11:13
+   Duration  1.19s (transform 474ms, setup 0ms, collect 1.97s, tests 142ms, environment 2ms, prepare 1.58s)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

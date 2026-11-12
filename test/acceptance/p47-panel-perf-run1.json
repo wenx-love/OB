@@ -1,0 +1,34 @@
+{
+  "schema": "ob-recover.panel-perf/1",
+  "runNo": "1",
+  "startedAt": "2026-11-10T14:52:30.329Z",
+  "note": "local page only; every non-local host is unresolvable; observation only; no capture started, no real site touched",
+  "conditions": {
+    "headless": false,
+    "resolverRules": "MAP * ~NOTFOUND , EXCLUDE 127.0.0.1",
+    "ports": {
+      "cdp": 9474,
+      "http": 8784
+    },
+    "probeTimeoutMs": 3000,
+    "analyzeWindowMs": 240000
+  },
+  "fixture": {
+    "path": "test/fixtures/p47-512kb-synthetic.js",
+    "bytes": 512064,
+    "sha256": "6a419264c85865c134c88ed52239eefd527fb2cbcb74ceb9af501d8e106ce207"
+  },
+  "dist": {
+    "background.js": "68d8055b0eee56277979858ef43a4a85eb66960dd44d72eb990be73ea7e3eea0",
+    "devtools.js": "870b0b747d5bfbe54af0fe8d81581f27bac8eb2a4ecea433f78f295c18edae65",
+    "panel.js": "accfac096ae00cb33158f550cdc2e10beeebea69bcf213dc27c0ce653291e807",
+    "sandbox.js": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4"
+  },
+  "steps": {},
+  "probes": [],
+  "panelLog": [],
+  "exceptions": [],
+  "fatal": "chrome devtools port unreachable",
+  "served": [],
+  "finishedAt": "2026-11-10T14:52:55.368Z"
+}

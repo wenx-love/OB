@@ -1,0 +1,140 @@
+{
+  "note": "real DevTools frontend + real panel.html iframe + real background. Panel shown via InspectorView.showPanel (programmatic). Drags use CDP Input.dispatchMouseEvent on the panel iframe (real mouse input events). Buttons use element.click() with userGesture. NOT a human-operated DevTools panel.",
+  "steps": {
+    "show": {
+      "selected": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover"
+    },
+    "dockBottom": {
+      "side": "bottom"
+    },
+    "rectsBefore": {
+      "vw": 1898,
+      "vh": 219,
+      "sidebar": {
+        "l": 0,
+        "t": 0,
+        "w": 220,
+        "h": 219,
+        "r": 220,
+        "b": 219
+      },
+      "handle": {
+        "l": 220,
+        "t": 0,
+        "w": 5,
+        "h": 219,
+        "r": 225,
+        "b": 219
+      },
+      "panelsHandle": {
+        "l": 1059,
+        "t": 65,
+        "w": 5,
+        "h": 140,
+        "r": 1064,
+        "b": 205
+      },
+      "dock": {
+        "l": 225,
+        "t": 205,
+        "w": 1673,
+        "h": 29,
+        "r": 1898,
+        "b": 234
+      },
+      "dockResize": {
+        "l": 0,
+        "t": 0,
+        "w": 0,
+        "h": 0,
+        "r": 0,
+        "b": 0
+      },
+      "orig": {
+        "l": 225,
+        "t": 65,
+        "w": 834,
+        "h": 140,
+        "r": 1059,
+        "b": 205
+      },
+      "rec": {
+        "l": 1064,
+        "t": 65,
+        "w": 834,
+        "h": 140,
+        "r": 1898,
+        "b": 205
+      },
+      "editors": {
+        "l": 225,
+        "t": 65,
+        "w": 1673,
+        "h": 140,
+        "r": 1898,
+        "b": 205
+      },
+      "code": {
+        "vbar": 0,
+        "hbar": 0,
+        "sh": 110,
+        "ch": 110,
+        "sw": 834,
+        "cw": 834
+      },
+      "dockOpen": "false",
+      "layout": "row"
+    },
+    "clipWrite": "ok",
+    "dragSidebar": {
+      "beforeW": 220,
+      "afterW": 317
+    },
+    "dragPanels": {
+      "beforeOrig": 786,
+      "afterOrig": 623,
+      "beforeRec": 786,
+      "afterRec": 949
+    },
+    "dragDock": {
+      "beforeDockH": 139,
+      "afterDockH": 149
+    },
+    "pixelSample": {
+      "skipped": "no both scrollbars",
+      "vbar": 0,
+      "hbar": 0,
+      "panel": {
+        "w": 1898,
+        "h": 219
+      }
+    },
+    "reloadPage": {
+      "scripts": 1,
+      "status": "捕获: capture-ext.js"
+    },
+    "connect": "已连接",
+    "startCapture": {
+      "cards": 0,
+      "firstOpen": null,
+      "bodyH": null,
+      "status": "正在捕获",
+      "hits": "4"
+    },
+    "expandCard": {
+      "skipped": "no capture cards",
+      "before": {
+        "cards": 0,
+        "firstOpen": null,
+        "bodyH": null,
+        "status": "正在捕获",
+        "hits": "4"
+      }
+    },
+    "screenshotPanel": {
+      "error": "Command can only be executed on top-level targets"
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob"
+}

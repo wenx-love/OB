@@ -1,0 +1,691 @@
+{
+  "note": "headed Chrome + dedicated profile + real extension + real panel iframe + real V8 pause. Breakpoint set via the DevTools frontend breakpoint manager; panel controls driven programmatically (NOT a human mouse). No Debugger.paused is synthesized. Backend negative-path commands go through background handlePanelCommand.",
+  "page": "http://127.0.0.1:8792/phase4-manual-real.html",
+  "bpLine": 14,
+  "expected": {
+    "decode": [
+      "sign",
+      "token"
+    ]
+  },
+  "dist": {
+    "background": "ff3df717e9ec1aa91f39a2a778916834de460cdf98973962c45866939951557e",
+    "panel": "5aae75674214f097f505d72bc2b07b2f68e236423d23d65f4af403d834e6b3bf",
+    "panelHtml": "b5a8d30ea8e7c9b3acf93e4cf3e6c9e5ae3501c24f9dab56725050a4cb4dc88a",
+    "sandbox": "f89cee60501de1231168f63e8f56710574ef4534b0386a967ab3c42972986fa9",
+    "manifest": "b3c737b4e6ea12a55d37ac75726fba8b2aad8778e26d092b0324997b18efcd55"
+  },
+  "phases": {
+    "setBreakpoint": {
+      "path": "BreakpointManager.setBreakpoint",
+      "returned": "object"
+    },
+    "initialPanel": {
+      "section": true,
+      "tag": "DETAILS",
+      "mode": "manual",
+      "state": "运行中",
+      "evalDisabled": true
+    },
+    "pause": {
+      "fePause": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 14,
+          "col": 19
+        }
+      },
+      "selected": [
+        "sources",
+        "sources",
+        "sources",
+        "sources",
+        "sources",
+        "sources"
+      ],
+      "stalled": {
+        "timeout": true
+      },
+      "stillPaused": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 14,
+          "col": 19
+        }
+      },
+      "frameOptions": [
+        "#0 innerSign @ phase4-manual-real.js:15:20",
+        "#1 midLevel @ phase4-manual-real.js:21:10",
+        "#2 topLevel @ phase4-manual-real.js:25:13"
+      ],
+      "manState": "已暂停"
+    },
+    "shot-1-paused": true,
+    "scopes": {
+      "frame0": "帧 #0 innerSign 的作用域（只读；页面传来的值按文本显示）\n[local innerSign]\n  payload = \"p1\"\n  localLabel = \"sign\"\n  localToken = \"token\"\n  combined = undefined\n[closure makeSigner]\n  closureSalt = \"salt-21\"\n  closureCount = 42\n[global]  global 作用域不展开",
+      "frame1": "帧 #1 midLevel 的作用域（只读；页面传来的值按文本显示）\n[local midLevel]\n  signer = function innerSign(payload) {\n    var localLabel = _0xdec(0x0);\n    var localToken = _0xdec(0x1);\n    var combined = loc…\n  payload = \"p1\"\n  midMarker = \"mid-p1\"\n[global]  global 作用域不展开"
+    },
+    "callSites": {
+      "sites": [
+        "L14:22  _0xdec(0x1)",
+        "L13:22  _0xdec(0x0)"
+      ],
+      "siteInfo": "共 2 个字面量参数的直接调用点。"
+    },
+    "eval1": {
+      "eval1": {
+        "idle": true,
+        "result": "✅ 已加入验证（手动求值，只算 1 次观测）\n_0xdec(0x0) → \"sign\"\n调用点 L13:22，在帧 #0 innerSign 中求值；绑定探针已确认该帧里的 _0xdec 与静态分析的是同一个函数。\n这是在暂停时重新执行一次调用，不是读取原调用当时的返回值；能否替换由 Phase 3.2 验证和 dry-run 决定，未通过验证的不会被替换。"
+      },
+      "verified1": true,
+      "total1": "1",
+      "evalCmds": [
+        "(function(f){var s=Function.prototype.toString.call(f);retur",
+        "_0xdec(0x0)"
+      ]
+    },
+    "eval2": {
+      "eval2": {
+        "idle": true,
+        "result": "✅ 已加入验证（手动求值，只算 1 次观测）\n_0xdec(0x0) → \"sign\"\n调用点 L13:22，在帧 #1 midLevel 中求值；绑定探针已确认该帧里的 _0xdec 与静态分析的是同一个函数。\n这是在暂停时重新执行一次调用，不是读取原调用当时的返回值；能否替换由 Phase 3.2 验证和 dry-run 决定，未通过验证的不会被替换。"
+      },
+      "verified2": "1",
+      "total2": "1"
+    },
+    "shot-2-evaluated": true,
+    "apply": {
+      "applyText": "当前脚本没有可替换的候选（0 个被拒绝）",
+      "recLabel": null,
+      "recToken": null,
+      "origLabel": "    var localLabel = _0xdec(0x0);"
+    },
+    "negatives": {
+      "n1": {
+        "success": false,
+        "error": "frameIndex 越界：99（当前共 3 帧）"
+      },
+      "n2": {
+        "success": false,
+        "error": "callFrameId 与 frameIndex 指向的帧不一致"
+      },
+      "n3": {
+        "success": false,
+        "error": "表达式不能为空"
+      },
+      "n4": {
+        "success": false,
+        "error": "必须提供 callFrameId 或 frameIndex"
+      },
+      "s1": {
+        "success": false,
+        "error": "frameIndex 越界：-1（当前共 3 帧）"
+      },
+      "s2": {
+        "success": false,
+        "error": "frameIndex 必须是整数"
+      },
+      "evBefore": 4,
+      "evAfter": 4
+    },
+    "afterResume": {
+      "done1": true,
+      "running": "运行中",
+      "framesAfter": [],
+      "evalDisabled": true,
+      "scopesHidden": true,
+      "g1": {
+        "success": false,
+        "error": "当前没有处于暂停状态的调用栈（未收到用户断点暂停，或执行已恢复）"
+      },
+      "g2": {
+        "success": false,
+        "error": "当前没有处于暂停状态的调用栈（未收到用户断点暂停，或执行已恢复）"
+      },
+      "g3": {
+        "success": false,
+        "error": "当前没有处于暂停状态的调用栈（未收到用户断点暂停，或执行已恢复）"
+      }
+    },
+    "modeRoundTrip": {
+      "gotAuto": true,
+      "gotManual": true,
+      "modeNow": "manual",
+      "hit2": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 14,
+          "col": 19
+        }
+      },
+      "listed2": [
+        "#0 innerSign @ phase4-manual-real.js:15:20",
+        "#1 midLevel @ phase4-manual-real.js:21:10",
+        "#2 topLevel @ phase4-manual-real.js:25:13"
+      ],
+      "state2": "已暂停",
+      "done2": true
+    },
+    "commands": {
+      "counts": {
+        "Debugger.enable": 1,
+        "Debugger.getScriptSource": 28,
+        "Runtime.enable": 1,
+        "Runtime.getProperties": 3,
+        "Debugger.evaluateOnCallFrame": 4
+      },
+      "mutating": [],
+      "unexpected": []
+    },
+    "panelErrors": {
+      "exceptions": [],
+      "consoleErrors": 0
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "tabId": 528013369,
+  "items": [
+    {
+      "n": 1,
+      "title": "panel loads in real DevTools, manual section present, default manual mode, no uncaught exception",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "OB-Recover panel registered in real DevTools",
+          "ok": true,
+          "expected": "tab id containing OB-Recover",
+          "actual": [
+            "elements",
+            "console",
+            "sources",
+            "network",
+            "timeline",
+            "heap-profiler",
+            "resources",
+            "security",
+            "lighthouse",
+            "chrome-recorder",
+            "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover"
+          ]
+        },
+        {
+          "name": "manual section present with default mode manual and eval disabled before any pause",
+          "ok": true,
+          "expected": "section + manual + disabled + running",
+          "actual": {
+            "section": true,
+            "tag": "DETAILS",
+            "mode": "manual",
+            "state": "运行中",
+            "evalDisabled": true
+          }
+        },
+        {
+          "name": "panel connect button attaches chrome.debugger",
+          "ok": true,
+          "expected": "connected",
+          "actual": "已连接"
+        },
+        {
+          "name": "no uncaught exception in the panel context during the whole run",
+          "ok": true,
+          "expected": 0,
+          "actual": []
+        }
+      ],
+      "notes": [
+        "panel console.error count: 0; Runtime.enable replays stored messages, so load-time errors are included"
+      ],
+      "complete": true
+    },
+    {
+      "n": 2,
+      "title": "panel receives the real user-breakpoint pause and lists frames without switching tabs or resuming",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "user breakpoint set through the DevTools frontend breakpoint manager",
+          "ok": true,
+          "expected": "no error",
+          "actual": {
+            "path": "BreakpointManager.setBreakpoint",
+            "returned": "object"
+          }
+        },
+        {
+          "name": "control: breakpoint hits with the extension loaded but not attached",
+          "ok": true,
+          "expected": "paused at line 14",
+          "actual": {
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19
+          }
+        },
+        {
+          "name": "real pause at the user breakpoint with the extension attached",
+          "ok": true,
+          "expected": "paused at line 14",
+          "actual": {
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19
+          }
+        },
+        {
+          "name": "page really stopped (Runtime.evaluate stalls while paused)",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "timeout": true
+          }
+        },
+        {
+          "name": "panel lists the 3 frames of the real pause",
+          "ok": true,
+          "expected": "innerSign, midLevel, topLevel with line 15",
+          "actual": [
+            "#0 innerSign @ phase4-manual-real.js:15:20",
+            "#1 midLevel @ phase4-manual-real.js:21:10",
+            "#2 topLevel @ phase4-manual-real.js:25:13"
+          ]
+        },
+        {
+          "name": "panel state shows paused",
+          "ok": true,
+          "expected": "paused badge",
+          "actual": "已暂停"
+        },
+        {
+          "name": "DevTools selected tab not switched by the extension (same as control run)",
+          "ok": true,
+          "expected": "sources",
+          "actual": [
+            "sources",
+            "sources",
+            "sources",
+            "sources",
+            "sources",
+            "sources"
+          ]
+        },
+        {
+          "name": "page still paused after sampling (extension did not resume)",
+          "ok": true,
+          "expected": true,
+          "actual": true
+        }
+      ],
+      "notes": [],
+      "complete": true
+    },
+    {
+      "n": 3,
+      "title": "panel reads Local and Closure scope of the selected frame",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "frame 0 Local scope shown: localLabel, localToken, payload",
+          "ok": true,
+          "expected": "values from node:vm recomputation",
+          "actual": "帧 #0 innerSign 的作用域（只读；页面传来的值按文本显示）\n[local innerSign]\n  payload = \"p1\"\n  localLabel = \"sign\"\n  localToken = \"token\"\n  combined = undefined\n[closure makeSigner]\n  closureSalt = \"salt-21\"\n  closureCount = 42\n[global]  global 作用域不展开"
+        },
+        {
+          "name": "frame 0 Closure scope shown: closureSalt, closureCount",
+          "ok": true,
+          "expected": "salt-21 and 42",
+          "actual": "帧 #0 innerSign 的作用域（只读；页面传来的值按文本显示）\n[local innerSign]\n  payload = \"p1\"\n  localLabel = \"sign\"\n  localToken = \"token\"\n  combined = undefined\n[closure makeSigner]\n  closureSalt = \"salt-21\"\n  closureCount = 42\n[global]  global 作用域不展开"
+        },
+        {
+          "name": "frame 1 Local scope shown: midMarker, payload",
+          "ok": true,
+          "expected": "mid-p1 and p1",
+          "actual": "帧 #1 midLevel 的作用域（只读；页面传来的值按文本显示）\n[local midLevel]\n  signer = function innerSign(payload) {\n    var localLabel = _0xdec(0x0);\n    var localToken = _0xdec(0x1);\n    var combined = loc…\n  payload = \"p1\"\n  midMarker = \"mid-p1\"\n[global]  global 作用域不展开"
+        },
+        {
+          "name": "frame isolation: frame 1 output does not contain frame 0 variables",
+          "ok": false,
+          "expected": "absent",
+          "actual": "帧 #1 midLevel 的作用域（只读；页面传来的值按文本显示）\n[local midLevel]\n  signer = function innerSign(payload) {\n    var localLabel = _0xdec(0x0);\n    var localToken = _0xdec(0x1);\n    var combined = loc…\n  payload = \"p1\"\n  midMarker = \"mid-p1\"\n[global]  global 作用域不展开"
+        }
+      ],
+      "notes": [],
+      "complete": true
+    },
+    {
+      "n": 4,
+      "title": "panel lists call sites from static discovery",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "call-site list has both literal direct calls of _0xdec",
+          "ok": true,
+          "expected": "_0xdec(0x0) and _0xdec(0x1)",
+          "actual": [
+            "L14:22  _0xdec(0x1)",
+            "L13:22  _0xdec(0x0)"
+          ]
+        },
+        {
+          "name": "info line states how many call sites were found",
+          "ok": true,
+          "expected": "contains 共 2 个",
+          "actual": "共 2 个字面量参数的直接调用点。"
+        }
+      ],
+      "notes": [],
+      "complete": true
+    },
+    {
+      "n": 5,
+      "title": "panel evaluates the call site in the selected frame and adds it to validation",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "panel discovered and statically analysed the page script after reload",
+          "ok": true,
+          "expected": true,
+          "actual": true
+        },
+        {
+          "name": "panel result says added to validation with the decoded value",
+          "ok": true,
+          "expected": "added + sign + probe confirmed",
+          "actual": {
+            "idle": true,
+            "result": "✅ 已加入验证（手动求值，只算 1 次观测）\n_0xdec(0x0) → \"sign\"\n调用点 L13:22，在帧 #0 innerSign 中求值；绑定探针已确认该帧里的 _0xdec 与静态分析的是同一个函数。\n这是在暂停时重新执行一次调用，不是读取原调用当时的返回值；能否替换由 Phase 3.2 验证和 dry-run 决定，未通过验证的不会被替换。"
+          }
+        },
+        {
+          "name": "extension issued the binding probe first, then the call expression, in the paused frame",
+          "ok": true,
+          "expected": "probe then _0xdec(0x0)",
+          "actual": [
+            "(function(f){var s=Function.prototype.toString.call(f);retur",
+            "_0xdec(0x0)"
+          ]
+        },
+        {
+          "name": "validation counts the manual evaluation as verified",
+          "ok": true,
+          "expected": "verified 1, groups 1",
+          "actual": {
+            "verified": true,
+            "total": "1"
+          }
+        },
+        {
+          "name": "same call site evaluated again in frame 1 does not add observations or groups",
+          "ok": true,
+          "expected": "verified 1, groups unchanged",
+          "actual": {
+            "verified": "1",
+            "total": "1"
+          }
+        }
+      ],
+      "notes": [],
+      "complete": true
+    },
+    {
+      "n": 6,
+      "title": "apply verified replacement replaces only the evaluated position",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "apply report: 1 of 1 candidate replaced",
+          "ok": false,
+          "expected": "contains 替换数量: 1 / 1",
+          "actual": "当前脚本没有可替换的候选（0 个被拒绝）"
+        },
+        {
+          "name": "evaluated position replaced: localLabel line holds the literal, call gone",
+          "ok": false,
+          "expected": "var localLabel = sign literal",
+          "actual": null
+        },
+        {
+          "name": "not evaluated position unchanged: localToken line still holds _0xdec(0x1)",
+          "ok": false,
+          "expected": "still _0xdec(0x1)",
+          "actual": null
+        },
+        {
+          "name": "original code pane untouched",
+          "ok": true,
+          "expected": "still _0xdec(0x0)",
+          "actual": "    var localLabel = _0xdec(0x0);"
+        }
+      ],
+      "notes": [],
+      "complete": true
+    },
+    {
+      "n": 7,
+      "title": "backend negative paths on a real pause",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "evaluate frameIndex 99 is rejected as out of range",
+          "ok": true,
+          "expected": "error contains 越界",
+          "actual": {
+            "success": false,
+            "error": "frameIndex 越界：99（当前共 3 帧）"
+          }
+        },
+        {
+          "name": "evaluate with callFrameId and frameIndex pointing at different frames is rejected",
+          "ok": true,
+          "expected": "error contains 不一致",
+          "actual": {
+            "success": false,
+            "error": "callFrameId 与 frameIndex 指向的帧不一致"
+          }
+        },
+        {
+          "name": "evaluate with a blank expression is rejected",
+          "ok": true,
+          "expected": "error contains 表达式不能为空",
+          "actual": {
+            "success": false,
+            "error": "表达式不能为空"
+          }
+        },
+        {
+          "name": "evaluate without callFrameId and frameIndex is rejected",
+          "ok": true,
+          "expected": "error contains 必须提供",
+          "actual": {
+            "success": false,
+            "error": "必须提供 callFrameId 或 frameIndex"
+          }
+        },
+        {
+          "name": "get-scopes frameIndex -1 is rejected as out of range",
+          "ok": true,
+          "expected": "error contains 越界",
+          "actual": {
+            "success": false,
+            "error": "frameIndex 越界：-1（当前共 3 帧）"
+          }
+        },
+        {
+          "name": "get-scopes frameIndex 1.5 is rejected as not an integer",
+          "ok": true,
+          "expected": "error contains 必须是整数",
+          "actual": {
+            "success": false,
+            "error": "frameIndex 必须是整数"
+          }
+        },
+        {
+          "name": "rejected requests never reached CDP",
+          "ok": true,
+          "expected": "evaluateOnCallFrame count unchanged",
+          "actual": {
+            "evBefore": 4,
+            "evAfter": 4
+          }
+        }
+      ],
+      "notes": [],
+      "complete": true
+    },
+    {
+      "n": 8,
+      "title": "resume invalidates saved frames in panel and backend",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "DevTools continue finishes the page run",
+          "ok": true,
+          "expected": "window.__obResult is a string",
+          "actual": true
+        },
+        {
+          "name": "panel shows running, no frames, eval disabled, scopes hidden",
+          "ok": true,
+          "expected": "running + 0 frames + disabled + hidden",
+          "actual": {
+            "running": "运行中",
+            "frames": [],
+            "evalDisabled": true,
+            "scopesHidden": true
+          }
+        },
+        {
+          "name": "backend get-frames refuses after resume",
+          "ok": true,
+          "expected": "error mentions 暂停状态",
+          "actual": {
+            "success": false,
+            "error": "当前没有处于暂停状态的调用栈（未收到用户断点暂停，或执行已恢复）"
+          }
+        },
+        {
+          "name": "backend evaluate refuses after resume",
+          "ok": true,
+          "expected": "error mentions 暂停状态",
+          "actual": {
+            "success": false,
+            "error": "当前没有处于暂停状态的调用栈（未收到用户断点暂停，或执行已恢复）"
+          }
+        },
+        {
+          "name": "backend get-scopes refuses after resume",
+          "ok": true,
+          "expected": "error mentions 暂停状态",
+          "actual": {
+            "success": false,
+            "error": "当前没有处于暂停状态的调用栈（未收到用户断点暂停，或执行已恢复）"
+          }
+        }
+      ],
+      "notes": [],
+      "complete": true
+    },
+    {
+      "n": 9,
+      "title": "mode round trip keeps user breakpoints working",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "background confirmed the switch to auto and back to manual (log lines)",
+          "ok": true,
+          "expected": "both log lines + manual",
+          "actual": {
+            "gotAuto": true,
+            "gotManual": true,
+            "modeNow": "manual"
+          }
+        },
+        {
+          "name": "user breakpoint still hits after the mode round trip",
+          "ok": true,
+          "expected": "paused at line 14",
+          "actual": {
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19
+          }
+        },
+        {
+          "name": "panel lists 3 frames again and shows paused",
+          "ok": true,
+          "expected": "3 frames + paused",
+          "actual": {
+            "listed2": [
+              "#0 innerSign @ phase4-manual-real.js:15:20",
+              "#1 midLevel @ phase4-manual-real.js:21:10",
+              "#2 topLevel @ phase4-manual-real.js:25:13"
+            ],
+            "state2": "已暂停"
+          }
+        },
+        {
+          "name": "DevTools continue finishes the second page run",
+          "ok": true,
+          "expected": "window.__obResult is a string",
+          "actual": true
+        }
+      ],
+      "notes": [],
+      "complete": true
+    },
+    {
+      "n": 10,
+      "title": "extension issued no breakpoint/resume/step commands in the whole run",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "extension CDP command logger installed",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "installed": true,
+            "hook": "object"
+          }
+        },
+        {
+          "name": "observer survived the whole run with a non-empty command log",
+          "ok": true,
+          "expected": "ok and >0 commands",
+          "actual": {
+            "ok": true,
+            "n": 37
+          }
+        },
+        {
+          "name": "no breakpoint, instrumentation, resume, step or pause command was issued by the extension",
+          "ok": true,
+          "expected": 0,
+          "actual": []
+        },
+        {
+          "name": "only read-only CDP commands were used",
+          "ok": true,
+          "expected": [
+            "Debugger.enable",
+            "Runtime.enable",
+            "Debugger.getScriptSource",
+            "Runtime.getProperties",
+            "Debugger.evaluateOnCallFrame"
+          ],
+          "actual": []
+        }
+      ],
+      "notes": [],
+      "complete": true
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "schema": "ob-recover.l3-coverage-control-raw/1",
+  "note": "Control run: same page and same Profiler calls as the replay run, NO extension and NO debugger. Raw evidence only, judged offline.",
+  "isRealSiteSample": false,
+  "startedAt": "2026-11-10T06:19:41.584Z",
+  "pageUrl": "http://127.0.0.1:8784/real-site-l3-same-text.html",
+  "pageFilesOnDisk": {
+    "html": {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    "js": {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    }
+  },
+  "steps": {
+    "firstLoad": {
+      "ready": {
+        "ready": true,
+        "ms": 1
+      }
+    },
+    "coverageStart": {
+      "started": true
+    },
+    "reload": {
+      "oldOrigin": 1794291583436.9,
+      "newOrigin": 1794291584974.8,
+      "ready": {
+        "ready": true,
+        "ms": 2
+      },
+      "l3Result": "{\"A\":\"Signature\",\"C\":\"Signature\"}",
+      "typeofDecoder": "function"
+    },
+    "coverageAfterLoad": {
+      "label": "after load: only the load-time calls A and C ran",
+      "scriptsInCoverage": 5,
+      "matched": 1,
+      "functions": [
+        {
+          "functionName": "",
+          "count": 1,
+          "rangeCount": 1
+        },
+        {
+          "functionName": "",
+          "count": 1,
+          "rangeCount": 1
+        },
+        {
+          "functionName": "rot",
+          "count": 1,
+          "rangeCount": 1
+        },
+        {
+          "functionName": "_0x13d0",
+          "count": 2,
+          "rangeCount": 1
+        },
+        {
+          "functionName": "laterB",
+          "count": 0,
+          "rangeCount": 1
+        },
+        {
+          "functionName": "shadowD",
+          "count": 0,
+          "rangeCount": 1
+        },
+        {
+          "functionName": "window.__l3Truth",
+          "count": 0,
+          "rangeCount": 1
+        }
+      ]
+    },
+    "callLaterB": {
+      "value": "Signature",
+      "coverage": {
+        "label": "after window.laterB()",
+        "scriptsInCoverage": 2,
+        "matched": 1,
+        "functions": [
+          {
+            "functionName": "_0x13d0",
+            "count": 1,
+            "rangeCount": 1
+          },
+          {
+            "functionName": "laterB",
+            "count": 1,
+            "rangeCount": 1
+          }
+        ]
+      }
+    },
+    "callShadowD": {
+      "value": "SHADOW-1",
+      "coverage": {
+        "label": "after window.shadowD()",
+        "scriptsInCoverage": 2,
+        "matched": 1,
+        "functions": [
+          {
+            "functionName": "shadowD",
+            "count": 1,
+            "rangeCount": 1
+          },
+          {
+            "functionName": "_0x13d0",
+            "count": 1,
+            "rangeCount": 1
+          }
+        ]
+      }
+    },
+    "callDecoderTwice": {
+      "values": [
+        "Signature",
+        "Signature"
+      ],
+      "coverage": {
+        "label": "after two direct calls of window._0x13d0(1)",
+        "scriptsInCoverage": 2,
+        "matched": 1,
+        "functions": [
+          {
+            "functionName": "_0x13d0",
+            "count": 2,
+            "rangeCount": 1
+          }
+        ]
+      }
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "stepTimes": {
+    "firstLoad": {
+      "atIso": "2026-11-10T06:19:44.960Z",
+      "elapsedMs": 1
+    },
+    "coverageStart": {
+      "atIso": "2026-11-10T06:19:44.963Z",
+      "elapsedMs": 2
+    },
+    "reload": {
+      "atIso": "2026-11-10T06:19:46.996Z",
+      "elapsedMs": 2027
+    },
+    "coverageAfterLoad": {
+      "atIso": "2026-11-10T06:19:47.000Z",
+      "elapsedMs": 3
+    },
+    "callLaterB": {
+      "atIso": "2026-11-10T06:19:47.013Z",
+      "elapsedMs": 2
+    },
+    "callShadowD": {
+      "atIso": "2026-11-10T06:19:47.032Z",
+      "elapsedMs": 2
+    },
+    "callDecoderTwice": {
+      "atIso": "2026-11-10T06:19:47.042Z",
+      "elapsedMs": 2
+    }
+  },
+  "diagnostics": {
+    "wsClose": null,
+    "chromeExitBeforeKill": null
+  },
+  "served": [
+    {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    },
+    {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    }
+  ],
+  "finishedAt": "2026-11-10T06:19:47.325Z"
+}

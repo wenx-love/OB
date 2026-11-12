@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>OB-Recover Panel</title>
+  <link rel='stylesheet' href='panel.css' />
+  <link rel='stylesheet' href='panel-layout.css' />
+</head>
+<body>
+  <div id='app' data-size='lg' data-sidebar='open'>
+    <!-- 左侧：脚本列表（可折叠） -->
+    <aside id='sidebar'>
+      <div class='sidebar-header'>
+        <h3>文件</h3>
+        <span id='script-count'>0</span>
+        <button id='btn-collapse-sidebar' class='icon-btn' title='折叠文件列表'>«</button>
+      </div>
+      <ul id='script-list'></ul>
+    </aside>
+
+    <!-- 侧栏拖拽手柄（可选功能） -->
+    <div class='resize-handle' id='resize-sidebar' title='拖动调整文件列表宽度（可选）'></div>
+
+    <main id='main'>
+      <!-- 顶部工具栏 -->
+      <header class='toolbar' id='toolbar'>
+        <button id='btn-toggle-sidebar' class='icon-btn' title='折叠文件列表' aria-pressed='true'>☰</button>
+        <button id='btn-recover' class='btn btn-primary' disabled>还原</button>
+        <button id='btn-copy-original' class='btn btn-ghost' title='复制原始代码' disabled><span class='ic'>⎘</span><span class='lbl-long'>复制</span>原始</button>
+        <button id='btn-copy-recovered' class='btn btn-ghost' title='复制还原代码' disabled><span class='ic'>⎘</span><span class='lbl-long'>复制</span>还原</button>
+        <span class='tb-sep'></span>
+        <span id='tb-file' class='tb-file'></span>
+        <span id='status'>等待脚本...</span>
+        <span id='tb-count' class='tb-count' title='已转换数量' hidden>0 处转换</span>
+        <div class='tb-tools'>
+          <button id='btn-layout-mode' class='icon-btn' title='编辑器布局'>自动</button>
+          <button id='btn-sync-scroll' class='icon-btn active' title='同步滚动' aria-pressed='true'>同步</button>
+          <button id='btn-reset-layout' class='icon-btn' title='恢复默认布局'>重置</button>
+        </div>
+      </header>
+
+      <!-- Runtime Analysis 紧凑状态栏（详情在底部抽屉 Runtime 标签） -->
+      <div class='rt-strip' id='rt-strip'>
+        <span class='rt-title'>🔌 Runtime</span>
+        <div class='rt-stat'>
+          <span class='rt-label'>调试器</span>
+          <span class='rt-value rt-badge' id='rt-debugger-status'>未连接</span>
+        </div>
+        <div class='rt-stat rt-opt'>
+          <span class='rt-label'>Runtime</span>
+          <span class='rt-value rt-badge' id='rt-runtime-status'>—</span>
+        </div>
+        <div class='rt-stat'>
+          <span class='rt-label'>暂停</span>
+          <span class='rt-value rt-badge' id='rt-pause-status'>运行中</span>
+        </div>
+        <div class='rt-actions'>
+          <button id='btn-rt-connect' class='btn btn-success'>连接</button>
+          <button id='btn-rt-disconnect' class='btn' disabled>断开</button>
+          <button id='btn-rt-resume' class='btn' disabled>▶ 恢复</button>
+          <button id='btn-rt-details' class='icon-btn' title='展开详情：Script ID / 函数 / 位置 / 日志'>详情</button>
+        </div>
+      </div>
+
+      <!-- 代码编辑区（核心区域） -->
+      <div class='editors' id='editors'>
+        <div class='editor-tabs' id='editor-tabs' hidden>
+          <button class='ed-tab active' data-target='original'>原始混淆代码</button>
+          <button class='ed-tab' data-target='recovered'>还原后代码</button>
+        </div>
+
+        <div class='code-panels' id='code-panels' data-layout='row' data-active='original'>
+          <!-- 原始代码 -->
+          <div class='code-panel' id='panel-original'>
+            <div class='code-header'>
+              <h4>原始混淆代码</h4>
+              <div class='search-box'>
+                <input id='search-original' type='text' placeholder='搜索... ( / )' spellcheck='false' />
+                <span id='search-count-original' class='search-count'></span>
+                <button class='search-nav' data-dir='prev' data-target='original'>▲</button>
+                <button class='search-nav' data-dir='next' data-target='original'>▼</button>
+              </div>
+              <span class='code-stats' id='stats-original'></span>
+            </div>
+            <pre id='code-original' class='code-content'></pre>
+          </div>
+
+          <!-- 面板间拖拽手柄（可选功能，仅左右布局显示） -->
+          <div class='resize-handle vertical' id='resize-panels'></div>
+
+          <!-- 还原代码 -->
+          <div class='code-panel' id='panel-recovered'>
+            <div class='code-header'>
+              <h4>还原后代码</h4>
+              <div class='search-box'>
+                <input id='search-recovered' type='text' placeholder='搜索...' spellcheck='false' />
+                <span id='search-count-recovered' class='search-count'></span>
+                <button class='search-nav' data-dir='prev' data-target='recovered'>▲</button>
+                <button class='search-nav' data-dir='next' data-target='recovered'>▼</button>
+              </div>
+              <span class='code-stats' id='stats-recovered'></span>
+            </div>
+            <pre id='code-recovered' class='code-content'></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- 底部抽屉：Runtime / Decoder / Capture / 转换报告，默认折叠 -->
+      <section id='dock' data-open='false' data-pane='runtime'>
+        <div class='dock-resize' id='resize-dock' title='拖动调整面板高度（可选）'></div>
+        <div class='dock-tabs' role='tablist'>
+          <button class='dock-tab' data-pane='runtime' role='tab'>Runtime</button>
+          <button class='dock-tab' data-pane='decoder' role='tab'>Decoder<span class='dock-badge' id='dock-dec-badge'></span></button>
+          <button class='dock-tab' data-pane='capture' role='tab'>Capture<span class='dock-badge' id='dock-cap-badge'></span></button>
+          <button class='dock-tab' data-pane='manual' role='tab' title='手动断点模式：读取你在 Sources 里触发的暂停'>手动断点</button>
+          <button class='dock-tab' data-pane='report' role='tab'>转换报告<span class='dock-badge' id='dock-rep-badge'></span></button>
+          <span class='dock-spacer'></span>
+          <button id='btn-dock-toggle' class='icon-btn' title='展开面板'>▴</button>
+        </div>
+
+        <div class='dock-body'>
+          <!-- Runtime 详情 -->
+          <section class='dock-pane' data-pane='runtime'>
+            <div class='runtime-status-bar'>
+              <div class='rt-stat'><span class='rt-label'>TabID</span><span class='rt-value' id='rt-tab-id'>—</span></div>
+              <div class='rt-stat'><span class='rt-label'>Script ID</span><span class='rt-value' id='rt-script-id'>—</span></div>
+              <div class='rt-stat'><span class='rt-label'>函数</span><span class='rt-value' id='rt-function-name'>—</span></div>
+              <div class='rt-stat'><span class='rt-label'>位置</span><span class='rt-value' id='rt-location'>—</span></div>
+            </div>
+            <div class='pane-bar'>
+              <span class='pane-title'>运行日志</span>
+              <button id='btn-rt-clear' class='btn btn-sm'>清空日志</button>
+            </div>
+            <div id='runtime-log' class='runtime-log'></div>
+          </section>
+
+          <!-- Decoder Discovery -->
+          <section class='dock-pane' data-pane='decoder' hidden>
+            <div class='pane-bar'>
+              <span class='pane-title'>🔍 Decoder Discovery</span>
+              <button id='btn-refresh-discovery' class='btn btn-sm'>刷新</button>
+            </div>
+            <div class='decoder-stats'>
+              <div class='dec-stat'><span class='label'>脚本总数:</span> <span id='dec-total'>0</span></div>
+              <div class='dec-stat'><span class='label'>已分析:</span> <span id='dec-analyzed'>0</span></div>
+              <div class='dec-stat'><span class='label'>候选解码器:</span> <span id='dec-candidates'>0</span></div>
+              <div class='dec-stat'><span class='label'>高可信度:</span> <span id='dec-high'>0</span></div>
+              <div class='dec-stat'><span class='label'>调用位置:</span> <span id='dec-calls'>0</span></div>
+            </div>
+            <div id='decoder-list' class='decoder-list'>
+              <div class='empty-state'>连接后自动发现解码函数...</div>
+            </div>
+          </section>
+
+          <!-- Runtime Capture -->
+          <section class='dock-pane' data-pane='capture' hidden>
+            <div class='pane-bar'>
+              <span class='pane-title'>⏺ Runtime Capture</span>
+              <div class='pane-actions'>
+                <button id='btn-cap-start' class='btn btn-success btn-sm'>开始捕获</button>
+                <button id='btn-cap-stop' class='btn btn-sm' disabled>停止捕获</button>
+                <button id='btn-cap-clear' class='btn btn-sm'>清空记录</button>
+                <button id='btn-cap-dryrun' class='btn btn-sm' title='只检查哪些映射可以安全替换，不修改任何代码'>替换前检查</button>
+                <button id='btn-cap-apply' class='btn btn-primary btn-sm' title='Phase 4: 应用已验证的替换（位置级 AST 替换）'>应用已验证替换</button>
+              </div>
+            </div>
+            <div class='decoder-stats'>
+              <div class='dec-stat'><span class='label'>状态:</span> <span id='cap-status' class='rt-value rt-badge running'>已停止</span></div>
+              <div class='dec-stat'><span class='label'>断点:</span> <span id='cap-bps'>0</span></div>
+              <div class='dec-stat'><span class='label'>触发:</span> <span id='cap-hits'>0</span></div>
+              <div class='dec-stat'><span class='label'>成功:</span> <span id='cap-success'>0</span></div>
+              <div class='dec-stat'><span class='label'>失败:</span> <span id='cap-failed'>0</span></div>
+              <div class='dec-stat'><span class='label' title='Phase 3.1 引擎的原始统计：同参数出现多个返回值的参数组数。不是 Phase 3.2 验证状态'>引擎·同参多值:</span> <span id='cap-unstable'>0</span></div>
+              <div class='dec-stat'><span class='label'>已验证:</span> <span id='cap-verified'>0</span></div>
+              <div class='dec-stat'><span class='label' title='Phase 3.2 验证状态：同参数观测不一致，或静态检查发现状态、时间、随机依赖'>不稳定:</span> <span id='cap-v-unstable'>0</span></div>
+              <div class='dec-stat'><span class='label' title='Phase 3.2 验证状态：数据不完整、脚本已过期或函数身份对不上'>验证失败:</span> <span id='cap-v-failed'>0</span></div>
+              <div class='dec-stat'><span class='label' title='Phase 3.2 验证状态：观测不足以判断，或单次观测未通过严格静态检查'>证据不足:</span> <span id='cap-v-insufficient'>0</span></div>
+              <div class='dec-stat'><span class='label' title='Phase 3.2 验证状态：捕获仍在进行，证据暂时不够'>等待验证:</span> <span id='cap-v-pending'>0</span></div>
+              <div class='dec-stat'><span class='label' title='验证组 = 脚本 + 函数 + 参数；上面各验证状态之和等于它'>验证组合计:</span> <span id='cap-v-total'>0</span></div>
+              <div class='dec-stat'><span class='label'>门槛:</span>
+                <select id='cap-min-confidence' class='cap-select'>
+                  <option value='high'>high</option>
+                  <option value='medium'>medium</option>
+                </select>
+              </div>
+            </div>
+            <div id='cap-hint' class='cap-hint'>捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。</div>
+            <div id='cap-notice' class='cap-notice' hidden></div>
+            <div id='cap-dryrun' class='cap-notice' hidden></div>
+            <div id='cap-apply-result' class='cap-notice' hidden></div>
+            <div id='cap-list' class='decoder-list'><div class='empty-state'>暂无捕获记录</div></div>
+          </section>
+
+          <!-- 手动断点模式 -->
+          <section id='man-section' class='dock-pane man-section' data-pane='manual' hidden>
+            <div class='pane-bar'>
+              <span class='pane-title'>手动断点模式</span>
+              <span id='man-state' class='rt-value rt-badge running'>运行中</span>
+            </div>
+            <div class='man-body'>
+              <div class='man-row'>
+                <span class='label'>模式:</span>
+                <select id='man-mode' class='cap-select' title='手动断点模式不设置任何断点；点击开始捕获会自动切到自动捕获'>
+                  <option value='manual'>手动断点（默认，不设置任何断点）</option>
+                  <option value='auto'>自动捕获（开始捕获时自动切换）</option>
+                </select>
+                <button id='btn-man-refresh' class='btn btn-sm' title='读取你在 Sources 里触发的暂停调用栈（只读）'>读取暂停调用栈</button>
+                <button id='btn-man-clear' class='btn btn-sm'>清空手动记录</button>
+              </div>
+              <div class='man-row'>
+                <span class='label'>调用栈帧:</span>
+                <select id='man-frame' class='cap-select' disabled></select>
+                <button id='btn-man-scopes' class='btn btn-sm' disabled title='读取所选帧的 Local / Closure 作用域'>读取作用域</button>
+              </div>
+              <div class='man-row'>
+                <span class='label'>调用点:</span>
+                <select id='man-callsite' class='cap-select' disabled></select>
+                <button id='btn-man-eval' class='btn btn-primary btn-sm' disabled title='在所选帧里对该调用点求值，结果作为一次观测进入验证'>在该帧求值并加入验证</button>
+              </div>
+              <div class='cap-hint'>在 DevTools Sources 里自己设置断点并触发暂停；这里只读取暂停状态，不会设置断点、不会继续执行、不会切换面板。求值结果只算一次观测进入验证；要替换请切到 Capture 标签点“应用已验证替换”，只有通过验证的调用点才会被替换。</div>
+              <div id='man-info' class='cap-hint'></div>
+              <pre id='man-scopes' class='man-pre' hidden></pre>
+              <div id='man-result' class='cap-notice' hidden></div>
+              <div id='man-records'></div>
+            </div>
+          </section>
+
+          <!-- 转换报告 -->
+          <section id='transform-report' class='dock-pane' data-pane='report' hidden>
+            <div class='pane-bar'>
+              <span class='pane-title'>转换报告 (<span id='transform-count'>0</span> 项) <span id='report-shown' class='muted'></span></span>
+              <div class='report-filter'>
+                <select id='report-scope' class='cap-select' title='筛选范围'>
+                  <option value='all'>全部</option>
+                  <option value='orig'>原始标识符</option>
+                  <option value='new'>替换结果</option>
+                  <option value='loc'>位置</option>
+                </select>
+                <input id='report-filter' type='text' placeholder='搜索转换明细...' spellcheck='false' />
+              </div>
+            </div>
+            <div id='transform-list' class='report-body'></div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id='eval-tooltip'></div>
+  <div id='context-menu' class='context-menu'>
+    <div class='context-item' id='ctx-eval'>🔍 求值选中表达式</div>
+    <div class='context-item' id='ctx-add-mapping'>📌 加入映射</div>
+  </div>
+
+  <script type='module' src='panel.js'></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+  "sample": "sample-05-cx",
+  "bytes": 42202,
+  "analyzed": true,
+  "discoveryMs": 37,
+  "functions": 30,
+  "candidates": 5,
+  "high": 1,
+  "cands": [
+    {
+      "name": "_0x3028",
+      "kind": "FunctionExpression",
+      "conf": "high",
+      "params": 2,
+      "calls": 154,
+      "arr": "_0x34ba",
+      "offset": true,
+      "b64": true,
+      "rc4": false
+    },
+    {
+      "name": "_0x33c7a6",
+      "kind": "FunctionExpression",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": true,
+      "rc4": false
+    },
+    {
+      "name": "_0x352066",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 1,
+      "calls": 4,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x142a1e",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 1,
+      "calls": 6,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x503b90",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 1,
+      "calls": 3,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    }
+  ],
+  "plans": [
+    {
+      "name": "_0x3028",
+      "supported": true,
+      "returns": 1
+    }
+  ],
+  "scan": {
+    "eval(": 0,
+    "Function(": 3,
+    "XMLHttpRequest": 0,
+    "fetch(": 0,
+    "WebSocket": 0,
+    "document.cookie": 0,
+    "localStorage": 0,
+    "importScripts": 0,
+    "location.href": 0,
+    "debugger": 3
+  }
+}

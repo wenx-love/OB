@@ -1,0 +1,861 @@
+{
+  "schema": "ob-recover.real-site-summary/2",
+  "layer": "L2",
+  "sample": "l2-real-ob-seed",
+  "isRealSiteSample": false,
+  "formalPerConfiguration": [
+    {
+      "configuration": "high",
+      "runId": "run-high",
+      "compareFile": "test/fixtures/real-ob-sites/l2-real-ob-seed/run-high/compare.json",
+      "provenance": {
+        "reference": {
+          "capturedBy": "test-oracle",
+          "method": "node:vm execution of the unmodified script + @babel/parser AST (test/helpers/real-site-compare.ts buildOracleReference)",
+          "note": "independent of OB-Recover: no src analysis code is used; expected.js of other tools is not used"
+        },
+        "observed": {
+          "capturedBy": "ob-recover",
+          "method": "historical-real-chrome-capture-engine-records (test/acceptance/devtools-real-ob-e2e.json steps.round1EngineRaw) re-validated offline: validateCaptures -> dryRunReplacements -> applyVerifiedReplacements",
+          "note": "not a new CDP pause capture and not constructed by this test; engine raw records filtered by scriptUrl suffix /obfuscated.js"
+        }
+      },
+      "identity": {
+        "referenceSha256": "f0e5b6c7198cfb69f51ac427eba095219c5db86c74cb2970e8fba3be99fa6315",
+        "observedSha256": "f0e5b6c7198cfb69f51ac427eba095219c5db86c74cb2970e8fba3be99fa6315",
+        "afterApplySha256": "f0e5b6c7198cfb69f51ac427eba095219c5db86c74cb2970e8fba3be99fa6315",
+        "basis": "ValidationScript.source is read from the fixture file: the historical records carry no CDP script source, so byte identity with the originally captured script is not proven; call positions are checked by the AST locator instead",
+        "referenceEqualsObserved": true,
+        "unchangedAfterApply": true
+      },
+      "counts": {
+        "correct-replacement": 0,
+        "safe-rejection": 9,
+        "insufficient-evidence": 19,
+        "version-mismatch": 0,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 0,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 19,
+        "sr": 9
+      },
+      "metrics": {
+        "precision": "n/a",
+        "recall": 0,
+        "falseReplacement": 0,
+        "unresolved": {
+          "count": 19,
+          "ratio": 1
+        },
+        "versionMismatch": {
+          "runs": 0,
+          "totalRuns": 1,
+          "ratio": 0
+        },
+        "safeRejectionRate": 1,
+        "sourceIntegrity": true,
+        "businessParity": "not-evaluated",
+        "rPos": 19,
+        "rNeg": 9
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": true,
+        "sourceIntegrity": true,
+        "safeRejectionRateIs100": true,
+        "precisionIs100": "n/a"
+      },
+      "verdict": "inconclusive",
+      "exhaustive": true
+    },
+    {
+      "configuration": "medium",
+      "runId": "run-medium",
+      "compareFile": "test/fixtures/real-ob-sites/l2-real-ob-seed/run-medium/compare.json",
+      "provenance": {
+        "reference": {
+          "capturedBy": "test-oracle",
+          "method": "node:vm execution of the unmodified script + @babel/parser AST (test/helpers/real-site-compare.ts buildOracleReference)",
+          "note": "independent of OB-Recover: no src analysis code is used; expected.js of other tools is not used"
+        },
+        "observed": {
+          "capturedBy": "ob-recover",
+          "method": "historical-real-chrome-capture-engine-records (test/acceptance/devtools-real-ob-e2e-medium.json steps.round1EngineRaw) re-validated offline: validateCaptures -> dryRunReplacements -> applyVerifiedReplacements",
+          "note": "not a new CDP pause capture and not constructed by this test; engine raw records filtered by scriptUrl suffix /obfuscated.js"
+        }
+      },
+      "identity": {
+        "referenceSha256": "f0e5b6c7198cfb69f51ac427eba095219c5db86c74cb2970e8fba3be99fa6315",
+        "observedSha256": "f0e5b6c7198cfb69f51ac427eba095219c5db86c74cb2970e8fba3be99fa6315",
+        "afterApplySha256": "f0e5b6c7198cfb69f51ac427eba095219c5db86c74cb2970e8fba3be99fa6315",
+        "basis": "ValidationScript.source is read from the fixture file: the historical records carry no CDP script source, so byte identity with the originally captured script is not proven; call positions are checked by the AST locator instead",
+        "referenceEqualsObserved": true,
+        "unchangedAfterApply": true
+      },
+      "counts": {
+        "correct-replacement": 12,
+        "safe-rejection": 9,
+        "insufficient-evidence": 7,
+        "version-mismatch": 0,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 12,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 7,
+        "sr": 9
+      },
+      "metrics": {
+        "precision": 1,
+        "recall": 0.631579,
+        "falseReplacement": 0,
+        "unresolved": {
+          "count": 7,
+          "ratio": 0.368421
+        },
+        "versionMismatch": {
+          "runs": 0,
+          "totalRuns": 1,
+          "ratio": 0
+        },
+        "safeRejectionRate": 1,
+        "sourceIntegrity": true,
+        "businessParity": "pass",
+        "rPos": 19,
+        "rNeg": 9
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": true,
+        "sourceIntegrity": true,
+        "safeRejectionRateIs100": true,
+        "precisionIs100": true
+      },
+      "verdict": "pass",
+      "exhaustive": true
+    }
+  ],
+  "supplementaryCoverage": {
+    "schema": "ob-recover.real-site-coverage/1",
+    "kind": "supplementary-cross-configuration-coverage",
+    "isRunResult": false,
+    "disclaimer": "Supplementary coverage only. This is not the result of any capture threshold: the formal metrics, hard conditions and verdict of each configuration are in its own compare.json and in perRun of the summary.",
+    "runIds": [
+      "run-high",
+      "run-medium"
+    ],
+    "excludedVersionMismatchRuns": [],
+    "referencePositions": 28,
+    "determinatePositions": 19,
+    "indeterminatePositions": 9,
+    "restoredByAtLeastOneRun": 12,
+    "restoredByAllRuns": 0,
+    "restoredByNoRun": 7,
+    "determinateCoverage": 0.631579,
+    "replacedIndeterminatePositionsInAnyRun": 0,
+    "falseReplacementCountPerRun": {
+      "run-high": 0,
+      "run-medium": 0
+    },
+    "sites": [
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 305
+        },
+        "callText": "_0xd31d2d(-0x18f,-0x197,-0x18d,-0x19a)",
+        "referenceDeterminate": false,
+        "referenceReason": "inside-rotation-iife",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          },
+          {
+            "runId": "run-medium",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 358
+        },
+        "callText": "_0x58ad32(0x166,0x14e,0x159,0x154)",
+        "referenceDeterminate": false,
+        "referenceReason": "inside-rotation-iife",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          },
+          {
+            "runId": "run-medium",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 408
+        },
+        "callText": "_0xd31d2d(-0x186,-0x187,-0x191,-0x184)",
+        "referenceDeterminate": false,
+        "referenceReason": "inside-rotation-iife",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          },
+          {
+            "runId": "run-medium",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 462
+        },
+        "callText": "_0xd31d2d(-0x18e,-0x183,-0x18e,-0x187)",
+        "referenceDeterminate": false,
+        "referenceReason": "inside-rotation-iife",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          },
+          {
+            "runId": "run-medium",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 517
+        },
+        "callText": "_0x58ad32(0x159,0x166,0x160,0x155)",
+        "referenceDeterminate": false,
+        "referenceReason": "inside-rotation-iife",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          },
+          {
+            "runId": "run-medium",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 567
+        },
+        "callText": "_0xd31d2d(-0x184,-0x181,-0x190,-0x185)",
+        "referenceDeterminate": false,
+        "referenceReason": "inside-rotation-iife",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          },
+          {
+            "runId": "run-medium",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 622
+        },
+        "callText": "_0xd31d2d(-0x17d,-0x197,-0x18c,-0x17d)",
+        "referenceDeterminate": false,
+        "referenceReason": "inside-rotation-iife",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          },
+          {
+            "runId": "run-medium",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 677
+        },
+        "callText": "_0x58ad32(0x14c,0x153,0x14a,0x13c)",
+        "referenceDeterminate": false,
+        "referenceReason": "inside-rotation-iife",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          },
+          {
+            "runId": "run-medium",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 726
+        },
+        "callText": "_0xd31d2d(-0x189,-0x17c,-0x183,-0x17a)",
+        "referenceDeterminate": false,
+        "referenceReason": "inside-rotation-iife",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          },
+          {
+            "runId": "run-medium",
+            "category": "safe-rejection",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 3565
+        },
+        "callText": "_0x124122(0x4c1,0x4a2,0x4b0,0x4b1)",
+        "referenceDeterminate": true,
+        "referenceValue": "windbreaker",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 3633
+        },
+        "callText": "_0x124122(0x4bc,0x4b6,0x4b4,0x4ad)",
+        "referenceDeterminate": true,
+        "referenceValue": "down-jacket",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 3702
+        },
+        "callText": "_0x1d59cb(0xb9,0xb4,0xbc,0xb1)",
+        "referenceDeterminate": true,
+        "referenceValue": "fleece",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 3757
+        },
+        "callText": "_0x124122(0x4be,0x4c0,0x4a8,0x4b4)",
+        "referenceDeterminate": true,
+        "referenceValue": "cny-199",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 3801
+        },
+        "callText": "_0x124122(0x4a4,0x498,0x4a4,0x49e)",
+        "referenceDeterminate": true,
+        "referenceValue": "cny-89",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 3956
+        },
+        "callText": "_0x1d59cb(0xc3,0xd1,0xd6,0xca)",
+        "referenceDeterminate": true,
+        "referenceValue": "push",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 3994
+        },
+        "callText": "_0x124122(0x4a9,0x4b3,0x4b4,0x4b0)",
+        "referenceDeterminate": true,
+        "referenceValue": "ob-recover",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4138
+        },
+        "callText": "_0x124122(0x4ae,0x4c3,0x4c1,0x4b6)",
+        "referenceDeterminate": true,
+        "referenceValue": "push",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4198
+        },
+        "callText": "_0x1d59cb(0xc7,0xd1,0xc8,0xde)",
+        "referenceDeterminate": true,
+        "referenceValue": "push",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4242
+        },
+        "callText": "_0x1d59cb(0xc5,0xcc,0xc2,0xce)",
+        "referenceDeterminate": true,
+        "referenceValue": "windbreaker",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4279
+        },
+        "callText": "_0x1d59cb(0xc6,0xd1,0xca,0xc3)",
+        "referenceDeterminate": true,
+        "referenceValue": "push",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4323
+        },
+        "callText": "_0x1d59cb(0xc1,0xb7,0xbf,0xad)",
+        "referenceDeterminate": true,
+        "referenceValue": "parka",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4360
+        },
+        "callText": "_0x124122(0x4b5,0x4ac,0x4bb,0x4b6)",
+        "referenceDeterminate": true,
+        "referenceValue": "push",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4412
+        },
+        "callText": "_0x124122(0x4b0,0x4af,0x4b5,0x4b7)",
+        "referenceDeterminate": true,
+        "referenceValue": "object",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4447
+        },
+        "callText": "_0x124122(0x4a8,0x499,0x4a8,0x49b)",
+        "referenceDeterminate": true,
+        "referenceValue": "browser",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4482
+        },
+        "callText": "_0x124122(0x498,0x493,0x499,0x4a2)",
+        "referenceDeterminate": true,
+        "referenceValue": "other",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          }
+        ],
+        "restoredBy": []
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4525
+        },
+        "callText": "_0x124122(0x4a3,0x498,0x4b0,0x4a1)",
+        "referenceDeterminate": true,
+        "referenceValue": "__obResult",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4574
+        },
+        "callText": "_0x124122(0x4a4,0x496,0x48d,0x49d)",
+        "referenceDeterminate": true,
+        "referenceValue": "title",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      },
+      {
+        "position": {
+          "lineNumber": 0,
+          "columnNumber": 4610
+        },
+        "callText": "_0x124122(0x4b3,0x4af,0x4b4,0x4ab)",
+        "referenceDeterminate": true,
+        "referenceValue": "done",
+        "referenceReason": "oracle-after-finish",
+        "perRun": [
+          {
+            "runId": "run-high",
+            "category": "insufficient-evidence",
+            "rejectionCodes": [],
+            "note": "no capture or rejection record covers this position"
+          },
+          {
+            "runId": "run-medium",
+            "category": "correct-replacement",
+            "rejectionCodes": []
+          }
+        ],
+        "restoredBy": [
+          "run-medium"
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "formalPerConfiguration is the only place that reports the performance of a capture threshold: each entry is the unmodified compare result of that configuration",
+    "supplementaryCoverage is a cross-configuration view over the SAME reference positions; it is not the result of any configuration and carries no verdict, no hard conditions and no Precision, Recall or Safe Rejection Rate",
+    "L2 only proves the comparison system and the pipeline on one fixed local-generated sample; it is not L1 evidence and does not make Phase 4.7 pass",
+    "the seed is generated by javascript-obfuscator outside the project and is never labelled a real-site sample",
+    "Recall is reported as observed; the targets of plan 8.4 are observation targets, never a reason to relax a safety rule"
+  ]
+}

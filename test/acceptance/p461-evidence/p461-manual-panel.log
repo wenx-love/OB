@@ -1,0 +1,11 @@
+[PASS] 1 panel loads in real DevTools, manual section present, default manual mode, no uncaught exception
+[PASS] 2 panel receives the real user-breakpoint pause and lists frames without switching tabs or resuming
+[PASS] 3 panel reads Local and Closure scope of the selected frame
+[PASS] 4 panel lists call sites from static discovery
+[FAIL] 5 panel evaluates the call site in the selected frame and adds it to validation :: failed: panel result says added to validation with the decoded value | validation counts the manual evaluation as verified | same call site evaluated again in frame 1 does not add observations or groups
+[FAIL] 6 apply verified replacement replaces only the evaluated position :: failed: apply report: 1 of 1 candidate replaced | evaluated position replaced: localLabel line holds the literal, call gone | not evaluated position unchanged: localToken line still holds _0xdec(0x1)
+[PASS] 7 backend negative paths on a real pause
+[PASS] 8 resume invalidates saved frames in panel and backend
+[PASS] 9 mode round trip keeps user breakpoints working
+[PASS] 10 extension issued no breakpoint/resume/step commands in the whole run
+saved D:/Projects/ob-recover/test/acceptance/phase4-manual-panel.json

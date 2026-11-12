@@ -1,0 +1,161 @@
+{
+  "schema": "ob-recover.l1-observed-raw/3",
+  "kind": "next-page-trigger-run",
+  "capturedBy": "ob-recover",
+  "note": "real extension, headful dedicated Chrome; programmatic panel operation (element.click) plus ONE real mouse click via Input.dispatchMouseEvent. No judgement here.",
+  "target": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3",
+  "targetScriptUrl": "https://j.17qcc.com/combo?ajax-20&imglazy&pager-5&template-6&rollload&ajaxmethord-5&pluploadfull&qccer-1&hpaitop-5&hpailist-2",
+  "referenceSha256": "cc7a8127fa8a5d17289a953e11d82ff528fe9ea42276810c5f03371abf760daf",
+  "nextButton": {
+    "classFromArchivedScript": "next",
+    "allNextClsValuesFound": [
+      "next"
+    ]
+  },
+  "limits": {
+    "pageLoads": 1,
+    "clicks": 1,
+    "tailMs": 10000,
+    "hardCapMs": 60000,
+    "globalCapMs": 720000
+  },
+  "priorEvidence": {
+    "before": [
+      {
+        "file": "raw-run.attempt1-early-snapshot.json",
+        "sha256": "d7b35779c91d4acd1907a818fbb93381fb9c1bbb91f3f5fe8e8f1e30230aaf20"
+      },
+      {
+        "file": "raw-run.attempt2-reload-error.json",
+        "sha256": "eca56919b1be2242ca1bad2cf4d4c7aae1384eda94fff293ad68c48ec624ce30"
+      },
+      {
+        "file": "raw-run.attempt3-blank-tab-no-candidates.json",
+        "sha256": "5c6effdaddbde6f9aab910e99068363d6fdd9971ec5507c91b2f7593e31949a2"
+      },
+      {
+        "file": "raw-run.clean1.json",
+        "sha256": "f6c0ae9973ee3a97ed6995d1ef35c24de15b196bd9237f233d7e445920d7398b"
+      },
+      {
+        "file": "raw-run.json",
+        "sha256": "a71e7a59a80b5e4fe75d392fff823ce07c1c3bd9500abe71a04cfcb888426599"
+      }
+    ],
+    "after": [
+      {
+        "file": "raw-run.attempt1-early-snapshot.json",
+        "sha256": "d7b35779c91d4acd1907a818fbb93381fb9c1bbb91f3f5fe8e8f1e30230aaf20"
+      },
+      {
+        "file": "raw-run.attempt2-reload-error.json",
+        "sha256": "eca56919b1be2242ca1bad2cf4d4c7aae1384eda94fff293ad68c48ec624ce30"
+      },
+      {
+        "file": "raw-run.attempt3-blank-tab-no-candidates.json",
+        "sha256": "5c6effdaddbde6f9aab910e99068363d6fdd9971ec5507c91b2f7593e31949a2"
+      },
+      {
+        "file": "raw-run.clean1.json",
+        "sha256": "f6c0ae9973ee3a97ed6995d1ef35c24de15b196bd9237f233d7e445920d7398b"
+      },
+      {
+        "file": "raw-run.json",
+        "sha256": "a71e7a59a80b5e4fe75d392fff823ce07c1c3bd9500abe71a04cfcb888426599"
+      }
+    ],
+    "unchanged": true
+  },
+  "dist": {
+    "background.js": "fa3ba6a45d02f8440d5d9f54708341e36429b13b695afb473433da39c1836509",
+    "devtools.js": "870b0b747d5bfbe54af0fe8d81581f27bac8eb2a4ecea433f78f295c18edae65",
+    "panel.js": "9cbc65a3bf78195d36bea0ea029df92c74c77ecd2a78ce4a8cc12fb68282fb73",
+    "sandbox.js": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4"
+  },
+  "budget": {
+    "unit": "page navigation (original counting rule, unchanged)",
+    "ledgerRemainingBefore": 85,
+    "plannedUnits": 2,
+    "pageLoads": 1,
+    "clicks": 0,
+    "providerInitiatedBusinessReplays": 0,
+    "unitsConsumed": 1,
+    "ledgerRemainingAfter": 84
+  },
+  "steps": {
+    "show": {
+      "value": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover",
+      "ms": 11
+    },
+    "waitForDocument": {
+      "ok": true,
+      "bad": false,
+      "href": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3",
+      "title": "杭州服装_服装批发",
+      "ready": "complete",
+      "timeOrigin": 1794311193897.1,
+      "loaderId": "9A3F363C4C2F6E1090F47048BEB27CF5",
+      "frameId": "1336EE6FD37B90AA445E5E7541595FEF",
+      "ms": 2
+    },
+    "pageInfo": {
+      "value": "{\"title\":\"杭州服装_服装批发\",\"href\":\"https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3\",\"ready\":\"complete\",\"scripts\":[\"https://j.17qcc.com/combo?font&config&encrypt&jq&cookie&global&merge&tj&recommend&t=20261110\",\"https://j.17qcc.com/combo?ajax-20&imglazy&pager-5&template-6&rollload&ajaxmethord-5&pluploadfull&qccer-1&hpaitop-5&hpailist-2\",\"https://j.17qcc.com/combo?toolbar-93&shopcart-7&yiqia-6&qtcharts&detect&qa-3\"]}",
+      "ms": 4
+    },
+    "connect": {
+      "error": "debugger never reported connected within 30 s, last status: error:CDP timeout after 25000ms: Runtime.evaluate",
+      "gate": "connect-timeout",
+      "ms": 53047
+    }
+  },
+  "stop": {
+    "gate": "connect-timeout",
+    "reason": "debugger never reported connected within 30 s, last status: error:CDP timeout after 25000ms: Runtime.evaluate",
+    "at": 1794311260536,
+    "clicked": false,
+    "captureStarted": false,
+    "anomalies": []
+  },
+  "navigationLedger": [
+    {
+      "kind": "loadEventFired",
+      "phase": "pre",
+      "at": 1794311199477
+    }
+  ],
+  "network": {
+    "enabled": true,
+    "enableNote": null,
+    "enableError": null,
+    "totalRequestsSeenAfterEnable": 33,
+    "byPhase": {
+      "pre": {
+        "total": 33,
+        "byMethod": {
+          "GET": 27,
+          "POST": 4,
+          "OPTIONS": 2
+        },
+        "getPageList": 0,
+        "failed": 0
+      }
+    },
+    "postClickRequests": [],
+    "note": "passive Network events only, listening from shortly after the page load started, so the load phase is a lower bound (see resourceTiming for the in-page count); method, host and path only, no headers, bodies or cookies"
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "initialDocument": {
+    "frameId": "1336EE6FD37B90AA445E5E7541595FEF",
+    "loaderId": "9A3F363C4C2F6E1090F47048BEB27CF5",
+    "url": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3",
+    "note": "loaded by Target.createTarget before the ledger was listening; identity read through Page.getFrameTree after attach"
+  },
+  "captureWindow": {
+    "startedAt": null,
+    "stoppedAt": null,
+    "docBefore": null,
+    "docAfter": null,
+    "navigationsDuringCapture": []
+  }
+}

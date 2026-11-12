@@ -1,0 +1,26 @@
+{
+  "chrome": "Chrome/155.0.8059.40",
+  "loadUnpacked": {
+    "id": "ijdobedejfjfindckpgabkamoeenejob"
+  },
+  "loadUnpackedError": null,
+  "extensionTargets": [
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js"
+    },
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js"
+    }
+  ],
+  "obTargets": [
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js",
+      "title": "Service Worker chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js"
+    }
+  ],
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "swTargetFound": true
+}

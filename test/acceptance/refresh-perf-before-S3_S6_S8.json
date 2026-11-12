@@ -1,0 +1,890 @@
+{
+  "tag": "before",
+  "only": [
+    "S3",
+    "S6",
+    "S8"
+  ],
+  "params": {
+    "FILLERS": 3,
+    "KB": 100,
+    "CALLS": 200
+  },
+  "scenarios": {
+    "S3": {
+      "timeline": [
+        "+0ms EV Debugger.scriptParsed sid=3 ep=0",
+        "+0ms CMD Debugger.getScriptSource 0.3ms sid=3 scriptEp=0 epDone=0",
+        "+0ms EV Debugger.paused instrumentation sid=3 ep=0",
+        "+0ms CMD Debugger.getScriptSource 0.4ms sid=3 scriptEp=0 epDone=0",
+        "+11ms CMD Debugger.resume(instr) 1.7ms epDone=0",
+        "+25ms EV Runtime.executionContextsCleared ep=1",
+        "+33ms EV Runtime.executionContextsCleared ep=2",
+        "+33ms EV Runtime.executionContextCreated ep=2",
+        "+41ms CMD Debugger.getScriptSource 2.6ms sid=4 scriptEp=2 epDone=2",
+        "+41ms EV Debugger.scriptParsed sid=4 filler.js?kb=100&n=0 ep=2",
+        "+41ms CMD Debugger.getScriptSource 3.1ms sid=4 scriptEp=2 epDone=2",
+        "+41ms EV Debugger.paused instrumentation sid=4 ep=2",
+        "+421ms CMD Debugger.resume(instr) 2.1ms epDone=4",
+        "+423ms EV Runtime.executionContextsCleared ep=3",
+        "+423ms EV Runtime.executionContextsCleared ep=4",
+        "+423ms EV Runtime.executionContextCreated ep=4",
+        "+423ms CMD Debugger.getScriptSource 4.6ms sid=11 scriptEp=4 epDone=4",
+        "+423ms EV Debugger.scriptParsed sid=11 ep=4",
+        "+423ms CMD Debugger.getScriptSource 4.4ms sid=11 scriptEp=4 epDone=4",
+        "+423ms EV Debugger.paused instrumentation sid=11 ep=4",
+        "+427ms CMD Debugger.getScriptSource 4.5ms sid=12 scriptEp=4 epDone=4",
+        "+427ms EV Debugger.scriptParsed sid=12 filler.js?kb=100&n=0 ep=4",
+        "+427ms EV Debugger.paused instrumentation sid=12 ep=4",
+        "+427ms CMD Debugger.getScriptSource 4.3ms sid=12 scriptEp=4 epDone=4",
+        "+431ms CMD Debugger.resume(instr) 405.5ms epDone=4",
+        "+837ms CMD Debugger.getScriptSource 2.0ms sid=8 scriptEp=4 epDone=4",
+        "+837ms EV Debugger.scriptParsed sid=8 filler.js?kb=100&n=1 ep=4",
+        "+837ms EV Debugger.paused instrumentation sid=8 ep=4",
+        "+837ms CMD Debugger.getScriptSource 2.4ms sid=8 scriptEp=4 epDone=4",
+        "+838ms CMD Debugger.getScriptSource 397.6ms sid=13 scriptEp=4 epDone=4",
+        "+838ms EV Debugger.scriptParsed sid=13 ep=4",
+        "+1235ms CMD Debugger.resume(instr) 0.9ms epDone=4",
+        "+1236ms CMD Debugger.getScriptSource 2.0ms sid=13 scriptEp=4 epDone=4",
+        "+1236ms EV Debugger.paused instrumentation sid=13 ep=4",
+        "+1237ms CMD Debugger.getScriptSource 4.8ms sid=9 scriptEp=4 epDone=4",
+        "+1238ms EV Debugger.scriptParsed sid=9 filler.js?kb=100&n=2 ep=4",
+        "+1242ms CMD Debugger.resume(instr) 0.7ms epDone=4",
+        "+1242ms CMD Debugger.getScriptSource 1.6ms sid=9 scriptEp=4 epDone=4",
+        "+1242ms EV Debugger.paused instrumentation sid=9 ep=4",
+        "+1243ms EV Debugger.scriptParsed sid=10 refresh-decoder.js?calls=200 ep=4",
+        "+1243ms CMD Debugger.getScriptSource 374.9ms sid=10 scriptEp=4 epDone=4",
+        "+1617ms CMD Debugger.resume(instr) 0.8ms epDone=4",
+        "+1618ms CMD Debugger.getScriptSource 1.8ms sid=10 scriptEp=4 epDone=4",
+        "+1618ms EV Debugger.paused instrumentation sid=10 ep=4",
+        "+1619ms CMD Debugger.getScriptSource 31.7ms sid=14 scriptEp=4 epDone=4",
+        "+1619ms EV Debugger.scriptParsed sid=14 ep=4",
+        "+1619ms EV Debugger.paused instrumentation sid=14 ep=4",
+        "+1619ms CMD Debugger.getScriptSource 31.5ms sid=14 scriptEp=4 epDone=4",
+        "+1650ms CMD Debugger.setBreakpoint 2.6ms sid=10 scriptEp=4 epDone=4",
+        "+1653ms CMD Debugger.resume(instr) 0.6ms epDone=4",
+        "+1653ms CMD Debugger.setBreakpoint 0.5ms sid=10 scriptEp=4 epDone=4",
+        "+1654ms CMD Debugger.setBreakpoint 1.4ms sid=10 scriptEp=4 epDone=4",
+        "+1655ms CMD Debugger.resume 0.3ms epDone=4 ERR={\"code\":-32000,\"message\":\"Can only perform operation while paused.\"}"
+      ],
+      "status": "connected",
+      "result": {
+        "r": {
+          "label": "start-then-reload-after-150ms",
+          "done": true,
+          "ms": 1640,
+          "probes": 3,
+          "maxProbeLatencyMs": 764,
+          "slowProbeCount": 1,
+          "slowProbes": [
+            764
+          ]
+        },
+        "engine": {
+          "active": true,
+          "bps": 3,
+          "stats": {
+            "breakpointsSet": 3,
+            "hits": 0,
+            "pauses": 0,
+            "success": 0,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 0,
+          "unstable": 0
+        }
+      },
+      "wallMs": 3471,
+      "observer": {
+        "paused": 9,
+        "resumed": 8,
+        "scriptParsed": 9,
+        "byReason": {
+          "other": 9
+        }
+      },
+      "sw": {
+        "events": 32,
+        "byMethod": {
+          "Debugger.scriptParsed": 9,
+          "Debugger.paused": 9,
+          "Debugger.resumed": 8,
+          "Runtime.executionContextsCleared": 4,
+          "Runtime.executionContextCreated": 2
+        },
+        "pausedBy": {
+          "instrumentation": 9
+        },
+        "pauseMs": {
+          "instrumentation": {
+            "n": 8,
+            "mean": 57.17,
+            "p50": 0.5,
+            "p95": 409.4,
+            "max": 409.4,
+            "sum": 457.4
+          },
+          "breakpoint": {
+            "n": 0
+          },
+          "other": {
+            "n": 0
+          }
+        },
+        "openPause": false,
+        "cmd": {
+          "Debugger.getScriptSource": {
+            "n": 18,
+            "sum": 874.5,
+            "max": 397.6,
+            "err": 0,
+            "stale": 0,
+            "unknown": 9,
+            "mean": 48.58
+          },
+          "Debugger.resume": {
+            "n": 9,
+            "sum": 413.7,
+            "max": 405.5,
+            "err": 1,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 45.97
+          },
+          "Debugger.setBreakpoint": {
+            "n": 3,
+            "sum": 4.5,
+            "max": 2.6,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 1.5
+          }
+        },
+        "cmdErrors": {
+          "Debugger.resume: {\"code\":-32000,\"message\":\"Can only perform operation while paused.\"}": 1
+        },
+        "staleCmds": 0,
+        "unknownCmds": 9,
+        "swLag": {
+          "n": 4,
+          "max": 355.3,
+          "sum": 1375.7
+        },
+        "inflight": 0,
+        "msgs": {
+          "capture-state": 7,
+          "capture-event": 2,
+          "script-parsed": 9,
+          "script-discovered": 9,
+          "resumed": 8,
+          "context-created": 2,
+          "log": 1
+        },
+        "bytes": {
+          "capture-state": 1941,
+          "script-discovered": 417091
+        }
+      },
+      "engine": {
+        "active": true,
+        "bps": 3,
+        "stats": {
+          "breakpointsSet": 3,
+          "hits": 0,
+          "pauses": 0,
+          "success": 0,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": 0,
+        "unstable": 0
+      }
+    },
+    "S6": {
+      "timeline": [
+        "+0ms CMD Debugger.removeBreakpoint 0.6ms epDone=4",
+        "+1ms CMD Debugger.removeBreakpoint 0.2ms epDone=4",
+        "+1ms CMD Debugger.removeBreakpoint 0.4ms epDone=4",
+        "+312ms EV Debugger.scriptParsed sid=15 ep=4",
+        "+312ms CMD Debugger.getScriptSource 0.5ms sid=15 scriptEp=4 epDone=4",
+        "+312ms CMD Debugger.getScriptSource 0.4ms sid=15 scriptEp=4 epDone=4",
+        "+312ms EV Debugger.paused instrumentation sid=15 ep=4",
+        "+313ms CMD Debugger.resume(instr) 0.3ms epDone=4",
+        "+320ms EV Runtime.executionContextsCleared ep=5",
+        "+326ms EV Runtime.executionContextsCleared ep=6",
+        "+326ms EV Runtime.executionContextCreated ep=6",
+        "+327ms CMD Debugger.getScriptSource 0.5ms sid=20 scriptEp=6 epDone=6",
+        "+327ms EV Debugger.scriptParsed sid=20 ep=6",
+        "+327ms CMD Debugger.getScriptSource 0.3ms sid=20 scriptEp=6 epDone=6",
+        "+327ms EV Debugger.paused instrumentation sid=20 ep=6",
+        "+328ms CMD Debugger.resume(instr) 0.3ms epDone=6",
+        "+333ms CMD Debugger.getScriptSource 3.4ms sid=16 scriptEp=6 epDone=6",
+        "+333ms EV Debugger.scriptParsed sid=16 filler.js?kb=100&n=0 ep=6",
+        "+333ms CMD Debugger.getScriptSource 3.8ms sid=16 scriptEp=6 epDone=6",
+        "+333ms EV Debugger.paused instrumentation sid=16 ep=6",
+        "+738ms CMD Debugger.resume(instr) 0.9ms epDone=6",
+        "+740ms EV Debugger.scriptParsed sid=21 ep=6",
+        "+740ms CMD Debugger.getScriptSource 0.4ms sid=21 scriptEp=6 epDone=6",
+        "+740ms CMD Debugger.getScriptSource 0.4ms sid=21 scriptEp=6 epDone=6",
+        "+740ms EV Debugger.paused instrumentation sid=21 ep=6",
+        "+742ms CMD Debugger.resume(instr) 0.4ms epDone=6",
+        "+748ms CMD Debugger.getScriptSource 1.7ms sid=17 scriptEp=6 epDone=6",
+        "+748ms EV Debugger.scriptParsed sid=17 filler.js?kb=100&n=1 ep=6",
+        "+748ms EV Debugger.paused instrumentation sid=17 ep=6",
+        "+748ms CMD Debugger.getScriptSource 2.1ms sid=17 scriptEp=6 epDone=6",
+        "+1109ms CMD Debugger.resume(instr) 1.1ms epDone=6",
+        "+1111ms CMD Debugger.getScriptSource 0.4ms sid=22 scriptEp=6 epDone=6",
+        "+1111ms EV Debugger.scriptParsed sid=22 ep=6",
+        "+1111ms CMD Debugger.getScriptSource 0.2ms sid=22 scriptEp=6 epDone=6",
+        "+1111ms EV Debugger.paused instrumentation sid=22 ep=6",
+        "+1123ms CMD Debugger.resume(instr) 0.7ms epDone=6",
+        "+1129ms EV Debugger.scriptParsed sid=18 filler.js?kb=100&n=2 ep=6",
+        "+1129ms CMD Debugger.getScriptSource 1.8ms sid=18 scriptEp=6 epDone=6",
+        "+1129ms CMD Debugger.getScriptSource 2.2ms sid=18 scriptEp=6 epDone=6",
+        "+1129ms EV Debugger.paused instrumentation sid=18 ep=6",
+        "+1507ms CMD Debugger.resume(instr) 9.2ms epDone=6",
+        "+1516ms EV Debugger.scriptParsed sid=23 ep=6",
+        "+1516ms CMD Debugger.getScriptSource 0.6ms sid=23 scriptEp=6 epDone=6",
+        "+1517ms CMD Debugger.getScriptSource 0.6ms sid=23 scriptEp=6 epDone=6",
+        "+1517ms EV Debugger.paused instrumentation sid=23 ep=6",
+        "+1520ms CMD Debugger.resume(instr) 1.7ms epDone=6",
+        "+1522ms CMD Debugger.getScriptSource 0.6ms sid=19 scriptEp=6 epDone=6",
+        "+1522ms EV Debugger.scriptParsed sid=19 refresh-decoder.js?calls=200 ep=6",
+        "+1522ms CMD Debugger.getScriptSource 0.4ms sid=19 scriptEp=6 epDone=6",
+        "+1522ms EV Debugger.paused instrumentation sid=19 ep=6",
+        "+1532ms CMD Debugger.setBreakpoint 0.6ms sid=19 scriptEp=6 epDone=6",
+        "+1532ms CMD Debugger.setBreakpoint 0.4ms sid=19 scriptEp=6 epDone=6",
+        "+1533ms CMD Debugger.setBreakpoint 0.3ms sid=19 scriptEp=6 epDone=6",
+        "+1533ms CMD Debugger.resume(instr) 0.3ms epDone=6",
+        "+1563ms EV Debugger.scriptParsed sid=24 ep=6",
+        "+1563ms CMD Debugger.getScriptSource 0.2ms sid=24 scriptEp=6 epDone=6",
+        "+1603ms EV Debugger.scriptParsed sid=25 ep=6",
+        "+1603ms CMD Debugger.getScriptSource 0.4ms sid=25 scriptEp=6 epDone=6",
+        "+1644ms EV Debugger.scriptParsed sid=26 ep=6",
+        "+1644ms CMD Debugger.getScriptSource 0.3ms sid=26 scriptEp=6 epDone=6",
+        "+1684ms EV Debugger.scriptParsed sid=27 ep=6",
+        "+1684ms CMD Debugger.getScriptSource 0.5ms sid=27 scriptEp=6 epDone=6",
+        "+1724ms EV Debugger.scriptParsed sid=28 ep=6",
+        "+1724ms CMD Debugger.getScriptSource 0.5ms sid=28 scriptEp=6 epDone=6",
+        "+1765ms CMD Debugger.getScriptSource 0.6ms sid=29 scriptEp=6 epDone=6",
+        "+1765ms EV Debugger.scriptParsed sid=29 ep=6",
+        "+1805ms EV Debugger.scriptParsed sid=30 ep=6",
+        "+1805ms CMD Debugger.getScriptSource 0.3ms sid=30 scriptEp=6 epDone=6",
+        "+1845ms EV Debugger.scriptParsed sid=31 ep=6",
+        "+1845ms CMD Debugger.getScriptSource 0.5ms sid=31 scriptEp=6 epDone=6",
+        "+1885ms CMD Debugger.getScriptSource 0.9ms sid=32 scriptEp=6 epDone=6",
+        "+1885ms EV Debugger.scriptParsed sid=32 ep=6",
+        "+1926ms EV Debugger.scriptParsed sid=33 ep=6",
+        "+1926ms CMD Debugger.getScriptSource 0.3ms sid=33 scriptEp=6 epDone=6",
+        "+1966ms CMD Debugger.getScriptSource 0.4ms sid=34 scriptEp=6 epDone=6",
+        "+1966ms EV Debugger.scriptParsed sid=34 ep=6",
+        "+2007ms EV Debugger.scriptParsed sid=35 ep=6",
+        "+2007ms CMD Debugger.getScriptSource 0.1ms sid=35 scriptEp=6 epDone=6",
+        "+2056ms CMD Debugger.getScriptSource 3.1ms sid=36 scriptEp=6 epDone=6",
+        "+2056ms EV Debugger.scriptParsed sid=36 ep=6",
+        "+2056ms CMD Debugger.getScriptSource 2.9ms sid=36 scriptEp=6 epDone=6",
+        "+2056ms EV Debugger.paused instrumentation sid=36 ep=6",
+        "+2061ms CMD Debugger.resume(instr) 0.5ms epDone=6",
+        "+2063ms CMD Debugger.getScriptSource 0.4ms sid=37 scriptEp=6 epDone=6",
+        "+2063ms EV Debugger.scriptParsed sid=37 ep=6",
+        "+2063ms CMD Debugger.getScriptSource 0.3ms sid=37 scriptEp=6 epDone=6",
+        "+2063ms EV Debugger.paused instrumentation sid=37 ep=6",
+        "+2063ms CMD Debugger.resume(instr) 0.3ms epDone=6",
+        "+2072ms EV Runtime.executionContextsCleared ep=7",
+        "+2079ms EV Runtime.executionContextsCleared ep=8",
+        "+2079ms EV Runtime.executionContextCreated ep=8",
+        "+2083ms CMD Debugger.getScriptSource 7.6ms sid=38 scriptEp=8 epDone=8",
+        "+2083ms EV Debugger.scriptParsed sid=38 filler.js?kb=100&n=0 ep=8",
+        "+2083ms EV Debugger.paused instrumentation sid=38 ep=8",
+        "+2083ms CMD Debugger.getScriptSource 7.9ms sid=38 scriptEp=8 epDone=8",
+        "+2487ms CMD Debugger.resume(instr) 3.1ms epDone=10",
+        "+2488ms EV Runtime.executionContextsCleared ep=9",
+        "+2488ms EV Runtime.executionContextsCleared ep=10",
+        "+2489ms EV Runtime.executionContextCreated ep=10",
+        "+2489ms CMD Debugger.getScriptSource 12.6ms sid=45 scriptEp=10 epDone=10",
+        "+2489ms EV Debugger.scriptParsed sid=45 ep=10",
+        "+2489ms CMD Debugger.getScriptSource 12.0ms sid=45 scriptEp=10 epDone=10",
+        "+2490ms EV Debugger.paused instrumentation sid=45 ep=10",
+        "+2501ms CMD Debugger.getScriptSource 3.4ms sid=46 scriptEp=10 epDone=10",
+        "+2501ms EV Debugger.scriptParsed sid=46 filler.js?kb=100&n=0 ep=10",
+        "+2501ms CMD Debugger.getScriptSource 4.1ms sid=46 scriptEp=10 epDone=10",
+        "+2501ms EV Debugger.paused instrumentation sid=46 ep=10",
+        "+2503ms CMD Debugger.resume(instr) 377.4ms epDone=10",
+        "+2880ms CMD Debugger.getScriptSource 1.8ms sid=42 scriptEp=10 epDone=10",
+        "+2880ms EV Debugger.scriptParsed sid=42 filler.js?kb=100&n=1 ep=10",
+        "+2881ms CMD Debugger.getScriptSource 1.9ms sid=42 scriptEp=10 epDone=10",
+        "+2881ms EV Debugger.paused instrumentation sid=42 ep=10",
+        "+2882ms EV Debugger.scriptParsed sid=47 ep=10",
+        "+2882ms CMD Debugger.getScriptSource 426.4ms sid=47 scriptEp=10 epDone=10",
+        "+3308ms CMD Debugger.resume(instr) 1.1ms epDone=10",
+        "+3308ms CMD Debugger.getScriptSource 0.9ms sid=47 scriptEp=10 epDone=10",
+        "+3308ms EV Debugger.paused instrumentation sid=47 ep=10",
+        "+3310ms CMD Debugger.resume(instr) 3.3ms epDone=10",
+        "+3313ms EV Debugger.scriptParsed sid=43 filler.js?kb=100&n=2 ep=10",
+        "+3313ms CMD Debugger.getScriptSource 1.5ms sid=43 scriptEp=10 epDone=10",
+        "+3313ms EV Debugger.paused instrumentation sid=43 ep=10",
+        "+3313ms CMD Debugger.getScriptSource 1.9ms sid=43 scriptEp=10 epDone=10",
+        "+3314ms EV Debugger.scriptParsed sid=44 refresh-decoder.js?calls=200 ep=10",
+        "+3314ms EV Debugger.paused instrumentation sid=44 ep=10",
+        "+3314ms CMD Debugger.getScriptSource 341.6ms sid=44 scriptEp=10 epDone=10",
+        "+3314ms CMD Debugger.getScriptSource 342.8ms sid=44 scriptEp=10 epDone=10",
+        "+3655ms CMD Debugger.resume(instr) 20.0ms epDone=10",
+        "+3675ms CMD Debugger.setBreakpoint 1.3ms sid=44 scriptEp=10 epDone=10",
+        "+3675ms CMD Debugger.getScriptSource 1.0ms sid=48 scriptEp=10 epDone=10",
+        "+3675ms EV Debugger.scriptParsed sid=48 ep=10",
+        "+3675ms EV Debugger.paused instrumentation sid=48 ep=10",
+        "+3675ms CMD Debugger.getScriptSource 0.8ms sid=48 scriptEp=10 epDone=10",
+        "+3676ms CMD Debugger.setBreakpoint 1.1ms sid=44 scriptEp=10 epDone=10",
+        "+3677ms CMD Debugger.resume(instr) 0.4ms epDone=10",
+        "+3677ms CMD Debugger.setBreakpoint 0.7ms sid=44 scriptEp=10 epDone=10",
+        "+3678ms CMD Debugger.resume 1.1ms epDone=10 ERR={\"code\":-32000,\"message\":\"Can only perform operation while paused.\"}"
+      ],
+      "status": "connected",
+      "result": {
+        "r0": {
+          "label": "load",
+          "done": true,
+          "ms": 1749,
+          "probes": 17,
+          "maxProbeLatencyMs": 374,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "r": {
+          "label": "double-reload-300ms-apart",
+          "done": true,
+          "ms": 1614,
+          "probes": 3,
+          "maxProbeLatencyMs": 775,
+          "slowProbeCount": 1,
+          "slowProbes": [
+            775
+          ]
+        },
+        "engine": {
+          "active": true,
+          "bps": 3,
+          "stats": {
+            "breakpointsSet": 9,
+            "hits": 200,
+            "pauses": 600,
+            "success": 200,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 10,
+          "unstable": 0
+        }
+      },
+      "wallMs": 5196,
+      "observer": {
+        "paused": 619,
+        "resumed": 618,
+        "scriptParsed": 31,
+        "byReason": {
+          "other": 419,
+          "step": 200
+        }
+      },
+      "sw": {
+        "events": 1277,
+        "byMethod": {
+          "Debugger.scriptParsed": 31,
+          "Debugger.paused": 619,
+          "Debugger.resumed": 618,
+          "Runtime.executionContextsCleared": 6,
+          "Runtime.executionContextCreated": 3
+        },
+        "pausedBy": {
+          "instrumentation": 19,
+          "other/bp": 400,
+          "ambiguous/bp": 200
+        },
+        "pauseMs": {
+          "instrumentation": {
+            "n": 18,
+            "mean": 107.75,
+            "p50": 4.7,
+            "p95": 405.8,
+            "max": 405.8,
+            "sum": 1939.5
+          },
+          "breakpoint": {
+            "n": 600,
+            "mean": 0.6,
+            "p50": 0.5,
+            "p95": 1.4,
+            "max": 2.4,
+            "sum": 360.1
+          },
+          "other": {
+            "n": 0
+          }
+        },
+        "openPause": false,
+        "cmd": {
+          "Debugger.removeBreakpoint": {
+            "n": 3,
+            "sum": 1.2,
+            "max": 0.6,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.4
+          },
+          "Debugger.getScriptSource": {
+            "n": 50,
+            "sum": 1200.2,
+            "max": 426.4,
+            "err": 0,
+            "stale": 0,
+            "unknown": 31,
+            "mean": 24
+          },
+          "Debugger.resume": {
+            "n": 419,
+            "sum": 554.9,
+            "max": 377.4,
+            "err": 1,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 1.32
+          },
+          "Debugger.setBreakpoint": {
+            "n": 6,
+            "sum": 4.4,
+            "max": 1.3,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.73
+          },
+          "Runtime.getProperties": {
+            "n": 200,
+            "sum": 72.3,
+            "max": 1.5,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.36
+          },
+          "Debugger.stepOver": {
+            "n": 200,
+            "sum": 73.7,
+            "max": 2.2,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.37
+          }
+        },
+        "cmdErrors": {
+          "Debugger.resume: {\"code\":-32000,\"message\":\"Can only perform operation while paused.\"}": 1
+        },
+        "staleCmds": 0,
+        "unknownCmds": 31,
+        "swLag": {
+          "n": 7,
+          "max": 378.4,
+          "sum": 2454.2
+        },
+        "inflight": 0,
+        "msgs": {
+          "capture-state": 10,
+          "capture-event": 203,
+          "script-parsed": 31,
+          "script-discovered": 31,
+          "resumed": 618,
+          "context-created": 3,
+          "log": 2
+        },
+        "bytes": {
+          "capture-state": 43754,
+          "script-discovered": 734666
+        }
+      },
+      "engine": {
+        "active": true,
+        "bps": 3,
+        "stats": {
+          "breakpointsSet": 9,
+          "hits": 200,
+          "pauses": 600,
+          "success": 200,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": 10,
+        "unstable": 0
+      }
+    },
+    "S8": {
+      "timeline": [
+        "+0ms CMD Debugger.removeBreakpoint 0.6ms epDone=10",
+        "+1ms CMD Debugger.removeBreakpoint 0.4ms epDone=10",
+        "+1ms CMD Debugger.removeBreakpoint 0.3ms epDone=10",
+        "+310ms CMD Debugger.getScriptSource 0.4ms sid=49 scriptEp=10 epDone=10",
+        "+310ms EV Debugger.scriptParsed sid=49 ep=10",
+        "+310ms EV Debugger.paused instrumentation sid=49 ep=10",
+        "+310ms CMD Debugger.getScriptSource 0.3ms sid=49 scriptEp=10 epDone=10",
+        "+310ms CMD Debugger.resume(instr) 0.5ms epDone=10",
+        "+321ms EV Runtime.executionContextsCleared ep=11",
+        "+329ms EV Runtime.executionContextsCleared ep=12",
+        "+329ms EV Runtime.executionContextCreated ep=12",
+        "+333ms EV Debugger.scriptParsed sid=50 filler.js?kb=100&n=0 ep=12",
+        "+333ms CMD Debugger.getScriptSource 3.2ms sid=50 scriptEp=12 epDone=12",
+        "+333ms CMD Debugger.getScriptSource 3.7ms sid=50 scriptEp=12 epDone=12",
+        "+333ms EV Debugger.paused instrumentation sid=50 ep=12",
+        "+729ms CMD Debugger.resume(instr) 0.8ms epDone=12",
+        "+731ms CMD Debugger.getScriptSource 0.8ms sid=54 scriptEp=12 epDone=12",
+        "+731ms EV Debugger.scriptParsed sid=54 ep=12",
+        "+731ms EV Debugger.paused instrumentation sid=54 ep=12",
+        "+731ms CMD Debugger.getScriptSource 0.6ms sid=54 scriptEp=12 epDone=12",
+        "+733ms CMD Debugger.resume(instr) 0.9ms epDone=12",
+        "+738ms EV Debugger.scriptParsed sid=51 filler.js?kb=100&n=1 ep=12",
+        "+738ms CMD Debugger.getScriptSource 1.7ms sid=51 scriptEp=12 epDone=12",
+        "+739ms CMD Debugger.getScriptSource 2.4ms sid=51 scriptEp=12 epDone=12",
+        "+739ms EV Debugger.paused instrumentation sid=51 ep=12",
+        "+1117ms CMD Debugger.resume(instr) 0.5ms epDone=12",
+        "+1118ms CMD Debugger.getScriptSource 1.3ms sid=55 scriptEp=12 epDone=12",
+        "+1118ms EV Debugger.scriptParsed sid=55 ep=12",
+        "+1119ms CMD Debugger.getScriptSource 1.1ms sid=55 scriptEp=12 epDone=12",
+        "+1119ms EV Debugger.paused instrumentation sid=55 ep=12",
+        "+1131ms CMD Debugger.resume(instr) 0.7ms epDone=12",
+        "+1136ms CMD Debugger.getScriptSource 2.1ms sid=52 scriptEp=12 epDone=12",
+        "+1137ms EV Debugger.scriptParsed sid=52 filler.js?kb=100&n=2 ep=12",
+        "+1137ms CMD Debugger.getScriptSource 2.4ms sid=52 scriptEp=12 epDone=12",
+        "+1137ms EV Debugger.paused instrumentation sid=52 ep=12",
+        "+1458ms CMD Debugger.resume(instr) 0.5ms epDone=12",
+        "+1461ms CMD Debugger.getScriptSource 1.3ms sid=56 scriptEp=12 epDone=12",
+        "+1461ms EV Debugger.scriptParsed sid=56 ep=12",
+        "+1461ms EV Debugger.paused instrumentation sid=56 ep=12",
+        "+1461ms CMD Debugger.getScriptSource 1.1ms sid=56 scriptEp=12 epDone=12",
+        "+1464ms CMD Debugger.resume(instr) 0.4ms epDone=12",
+        "+1465ms CMD Debugger.getScriptSource 0.4ms sid=53 scriptEp=12 epDone=12",
+        "+1465ms EV Debugger.scriptParsed sid=53 refresh-decoder.js?calls=200 ep=12",
+        "+1465ms EV Debugger.paused instrumentation sid=53 ep=12",
+        "+1465ms EV HARNESS capture-stop-called ep=12",
+        "+1465ms CMD Debugger.getScriptSource 0.2ms sid=53 scriptEp=12 epDone=12",
+        "+1465ms EV HARNESS capture-stop-resolved ep=12",
+        "+1468ms CMD Debugger.setBreakpoint 1.0ms sid=53 scriptEp=12 epDone=12",
+        "+1469ms CMD Debugger.setBreakpoint 0.4ms sid=53 scriptEp=12 epDone=12",
+        "+1470ms CMD Debugger.setBreakpoint 0.3ms sid=53 scriptEp=12 epDone=12",
+        "+1470ms CMD Debugger.resume(instr) 0.3ms epDone=12",
+        "+1505ms EV Debugger.scriptParsed sid=57 ep=12",
+        "+1505ms CMD Debugger.getScriptSource 0.3ms sid=57 scriptEp=12 epDone=12",
+        "+1546ms CMD Debugger.getScriptSource 0.5ms sid=58 scriptEp=12 epDone=12",
+        "+1546ms EV Debugger.scriptParsed sid=58 ep=12",
+        "+1585ms CMD Debugger.getScriptSource 0.5ms sid=59 scriptEp=12 epDone=12",
+        "+1585ms EV Debugger.scriptParsed sid=59 ep=12",
+        "+1625ms EV Debugger.scriptParsed sid=60 ep=12",
+        "+1625ms CMD Debugger.getScriptSource 0.3ms sid=60 scriptEp=12 epDone=12",
+        "+1666ms CMD Debugger.getScriptSource 0.5ms sid=61 scriptEp=12 epDone=12",
+        "+1666ms EV Debugger.scriptParsed sid=61 ep=12",
+        "+1708ms EV Debugger.scriptParsed sid=62 ep=12",
+        "+1708ms CMD Debugger.getScriptSource 0.6ms sid=62 scriptEp=12 epDone=12",
+        "+1747ms CMD Debugger.getScriptSource 1.4ms sid=63 scriptEp=12 epDone=12",
+        "+1748ms EV Debugger.scriptParsed sid=63 ep=12",
+        "+1788ms CMD Debugger.getScriptSource 0.4ms sid=64 scriptEp=12 epDone=12",
+        "+1788ms EV Debugger.scriptParsed sid=64 ep=12",
+        "+1841ms EV Debugger.scriptParsed sid=65 ep=12",
+        "+1841ms CMD Debugger.getScriptSource 1.9ms sid=65 scriptEp=12 epDone=12",
+        "+1868ms EV Debugger.scriptParsed sid=66 ep=12",
+        "+1868ms CMD Debugger.getScriptSource 0.3ms sid=66 scriptEp=12 epDone=12",
+        "+1908ms EV Debugger.scriptParsed sid=67 ep=12",
+        "+1908ms CMD Debugger.getScriptSource 0.3ms sid=67 scriptEp=12 epDone=12",
+        "+1949ms EV Debugger.scriptParsed sid=68 ep=12",
+        "+1949ms CMD Debugger.getScriptSource 0.4ms sid=68 scriptEp=12 epDone=12",
+        "+1995ms CMD Debugger.getScriptSource 0.7ms sid=69 scriptEp=12 epDone=12",
+        "+1995ms EV Debugger.scriptParsed sid=69 ep=12",
+        "+1995ms CMD Debugger.getScriptSource 0.4ms sid=69 scriptEp=12 epDone=12",
+        "+1995ms EV Debugger.paused instrumentation sid=69 ep=12",
+        "+2002ms CMD Debugger.resume(instr) 0.6ms epDone=12",
+        "+3007ms CMD Debugger.getScriptSource 0.5ms sid=70 scriptEp=12 epDone=12",
+        "+3007ms EV Debugger.scriptParsed sid=70 ep=12",
+        "+3007ms EV Debugger.paused instrumentation sid=70 ep=12",
+        "+3007ms CMD Debugger.getScriptSource 0.3ms sid=70 scriptEp=12 epDone=12",
+        "+3009ms CMD Debugger.resume(instr) 0.2ms epDone=12",
+        "+3017ms EV Runtime.executionContextsCleared ep=13",
+        "+3025ms EV Runtime.executionContextsCleared ep=14",
+        "+3026ms EV Runtime.executionContextCreated ep=14",
+        "+3028ms CMD Debugger.getScriptSource 1.7ms sid=71 scriptEp=14 epDone=14",
+        "+3028ms EV Debugger.scriptParsed sid=71 filler.js?kb=100&n=0 ep=14",
+        "+3028ms EV Debugger.paused instrumentation sid=71 ep=14",
+        "+3028ms CMD Debugger.resume(instr) 1.9ms epDone=14",
+        "+3030ms CMD Debugger.getScriptSource 0.4ms sid=75 scriptEp=14 epDone=14",
+        "+3030ms EV Debugger.scriptParsed sid=75 ep=14",
+        "+3030ms EV Debugger.paused instrumentation sid=75 ep=14",
+        "+3030ms CMD Debugger.resume(instr) 0.4ms epDone=14",
+        "+3036ms CMD Debugger.getScriptSource 2.1ms sid=72 scriptEp=14 epDone=14",
+        "+3036ms EV Debugger.scriptParsed sid=72 filler.js?kb=100&n=1 ep=14",
+        "+3036ms EV Debugger.paused instrumentation sid=72 ep=14",
+        "+3036ms CMD Debugger.resume(instr) 2.0ms epDone=14",
+        "+3043ms CMD Debugger.getScriptSource 1.7ms sid=73 scriptEp=14 epDone=14",
+        "+3044ms EV Debugger.scriptParsed sid=73 filler.js?kb=100&n=2 ep=14",
+        "+3044ms EV Debugger.paused instrumentation sid=73 ep=14",
+        "+3044ms CMD Debugger.resume(instr) 1.6ms epDone=14",
+        "+3045ms CMD Debugger.getScriptSource 4.8ms sid=74 scriptEp=14 epDone=14",
+        "+3046ms EV Debugger.scriptParsed sid=74 refresh-decoder.js?calls=200 ep=14",
+        "+3046ms EV Debugger.paused instrumentation sid=74 ep=14",
+        "+3046ms CMD Debugger.resume(instr) 4.8ms epDone=14",
+        "+3084ms CMD Debugger.getScriptSource 3.3ms sid=76 scriptEp=14 epDone=14",
+        "+3084ms EV Debugger.scriptParsed sid=76 ep=14",
+        "+3084ms EV Debugger.paused instrumentation sid=76 ep=14",
+        "+3084ms CMD Debugger.resume(instr) 3.2ms epDone=14"
+      ],
+      "status": "connected",
+      "result": {
+        "before": {
+          "active": true,
+          "bps": 0,
+          "stats": {
+            "breakpointsSet": 9,
+            "hits": 200,
+            "pauses": 600,
+            "success": 200,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 10,
+          "unstable": 0
+        },
+        "stoppedFired": 1,
+        "afterStopEngine": {
+          "active": true,
+          "bps": 3,
+          "stats": {
+            "breakpointsSet": 12,
+            "hits": 400,
+            "pauses": 1200,
+            "success": 400,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 20,
+          "unstable": 0
+        },
+        "r1": {
+          "label": "load-with-stop-fired-at-decoder-instrumentation",
+          "done": true,
+          "ms": 1691,
+          "probes": 16,
+          "maxProbeLatencyMs": 415,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "r2": {
+          "label": "reload-after-supposed-stop",
+          "done": true,
+          "ms": 78,
+          "probes": 2,
+          "maxProbeLatencyMs": 18,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "afterSupposedStop": {
+          "events": 24,
+          "pausedBy": {
+            "instrumentation": 7
+          },
+          "pauseMs": {
+            "instrumentation": {
+              "n": 7,
+              "mean": 2.34,
+              "p50": 2,
+              "p95": 4.9,
+              "max": 4.9,
+              "sum": 16.4
+            },
+            "breakpoint": {
+              "n": 0
+            },
+            "other": {
+              "n": 0
+            }
+          },
+          "cmd": {
+            "Debugger.getScriptSource": 8,
+            "Debugger.resume": 7
+          },
+          "cmdErrors": {},
+          "stale": 0,
+          "swLag": {
+            "n": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "openPause": false,
+          "inflight": 0
+        }
+      },
+      "wallMs": 5608,
+      "observer": {
+        "paused": 616,
+        "resumed": 616,
+        "scriptParsed": 28,
+        "byReason": {
+          "other": 416,
+          "step": 200
+        }
+      },
+      "sw": {
+        "events": 1268,
+        "byMethod": {
+          "Debugger.scriptParsed": 28,
+          "Debugger.paused": 616,
+          "Debugger.resumed": 616,
+          "Runtime.executionContextsCleared": 4,
+          "Runtime.executionContextCreated": 2,
+          "HARNESS capture-stop-called": 1,
+          "HARNESS capture-stop-resolved": 1
+        },
+        "pausedBy": {
+          "instrumentation": 16,
+          "other/bp": 400,
+          "ambiguous/bp": 200
+        },
+        "pauseMs": {
+          "instrumentation": {
+            "n": 16,
+            "mean": 71.75,
+            "p50": 3.5,
+            "p95": 396.7,
+            "max": 396.7,
+            "sum": 1148
+          },
+          "breakpoint": {
+            "n": 600,
+            "mean": 0.61,
+            "p50": 0.5,
+            "p95": 1.4,
+            "max": 15.7,
+            "sum": 368.5
+          },
+          "other": {
+            "n": 0
+          }
+        },
+        "openPause": false,
+        "cmd": {
+          "Debugger.removeBreakpoint": {
+            "n": 3,
+            "sum": 1.3,
+            "max": 0.6,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.43
+          },
+          "Debugger.getScriptSource": {
+            "n": 38,
+            "sum": 46.3,
+            "max": 4.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 28,
+            "mean": 1.22
+          },
+          "Debugger.resume": {
+            "n": 416,
+            "sum": 146.5,
+            "max": 4.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.35
+          },
+          "Debugger.setBreakpoint": {
+            "n": 3,
+            "sum": 1.7,
+            "max": 1,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.57
+          },
+          "Runtime.getProperties": {
+            "n": 200,
+            "sum": 69.8,
+            "max": 1.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.35
+          },
+          "Debugger.stepOver": {
+            "n": 200,
+            "sum": 88.4,
+            "max": 15.7,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.44
+          }
+        },
+        "cmdErrors": {},
+        "staleCmds": 0,
+        "unknownCmds": 28,
+        "swLag": {
+          "n": 3,
+          "max": 367.2,
+          "sum": 996.3
+        },
+        "inflight": 0,
+        "msgs": {
+          "script-parsed": 7,
+          "script-discovered": 7,
+          "resumed": 7,
+          "capture-state": 2,
+          "context-created": 1
+        },
+        "bytes": {
+          "script-discovered": 312981,
+          "capture-state": 33342
+        }
+      },
+      "engine": {
+        "active": false,
+        "bps": 0,
+        "stats": {
+          "breakpointsSet": 12,
+          "hits": 400,
+          "pauses": 1200,
+          "success": 400,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": 20,
+        "unstable": 0
+      }
+    }
+  },
+  "analysisNode": {
+    "fillerBytes": 102405,
+    "parseMs": 40,
+    "discoverMs": 135,
+    "fillerFunctions": 1113,
+    "fillerCandidates": 0,
+    "decoderBytes": 370,
+    "decoderDiscoverMs": 3,
+    "decoderCandidates": [
+      "decOne:high"
+    ]
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "tabId": 1709717836,
+  "install": {
+    "ok": true,
+    "wrapOk": true,
+    "wrapErr": null
+  }
+}

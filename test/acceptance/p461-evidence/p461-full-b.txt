@@ -1,0 +1,59 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ✓ test/capture-engine-step-expiry-reset.test.ts (3 tests) 18ms
+ ✓ test/cdp-client-timeout.test.ts (4 tests) 122ms
+ ✓ test/decoder-discovery.test.ts (40 tests) 185ms
+ ✓ test/manual-capture-convert.test.ts (14 tests) 84ms
+ ✓ test/deep-transforms.test.ts (10 tests) 41ms
+ ✓ test/manual-auto-merge.test.ts (9 tests) 135ms
+ ✓ test/validation-stats.test.ts (8 tests) 116ms
+ ✓ test/acceptance/deterministic-analyzer-acceptance.test.ts (9 tests) 107ms
+stdout | test/complex-ob.test.ts > complex OB recovery + semantic preservation > should fully recover complex-ob.js
+Transforms: 45, Passes: 3
+
+ ✓ test/single-observation.test.ts (20 tests) 179ms
+ ✓ test/safety.test.ts (7 tests) 106ms
+ ✓ test/acceptance/string-decoder-acceptance.test.ts (9 tests) 154ms
+ ✓ test/acceptance/call-transformer-acceptance.test.ts (8 tests) 121ms
+ ✓ test/pipeline.test.ts (3 tests) 117ms
+ ✓ test/acceptance/deterministic-safety.test.ts (16 tests) 140ms
+ ✓ test/acceptance/pipeline-stability-acceptance.test.ts (7 tests) 112ms
+ ✓ test/acceptance/semantic-preservation-acceptance.test.ts (7 tests) 146ms
+ ✓ test/complex-ob.test.ts (1 test) 128ms
+ ✓ test/replacement-dryrun.test.ts (24 tests) 263ms
+ ✓ test/manual-side-effect.test.ts (17 tests) 602ms
+ ✓ test/capture-plan.test.ts (5 tests) 43ms
+ ✓ test/cdp-client-detach-cleanup.test.ts (3 tests) 21ms
+ ✓ test/member-transformer.test.ts (9 tests) 70ms
+ ✓ test/proxy-inline.test.ts (6 tests) 44ms
+ ✓ test/acceptance/member-transformer-acceptance.test.ts (7 tests | 3 skipped) 45ms
+ ✓ test/decoder-misidentification.test.ts (3 tests) 49ms
+ ✓ test/manual-mapping.test.ts (5 tests) 98ms
+ ✓ test/manual-script-identity.test.ts (3 tests) 170ms
+ ✓ test/analyze-e2e-await.test.ts (2 tests) 16ms
+ ✓ test/capture-validation.test.ts (26 tests) 212ms
+ ✓ test/static-eval.test.ts (15 tests) 51ms
+ ✓ test/candidate-integrity.test.ts (5 tests) 213ms
+ ✓ test/atomic-rollback-real.test.ts (6 tests) 223ms
+ ✓ test/object-mapping.test.ts (6 tests) 35ms
+ ✓ test/this-binding.test.ts (6 tests) 36ms
+ ✓ test/deterministic.test.ts (33 tests) 31ms
+ ✓ test/capture-stability.test.ts (10 tests) 49ms
+ ✓ test/string-decoder.test.ts (2 tests) 35ms
+ ✓ test/replacement-parent-check.test.ts (4 tests) 106ms
+ ✓ test/statement-position-directive.test.ts (5 tests) 102ms
+ ✓ test/verified-replacer.test.ts (53 tests) 158ms
+ ✓ test/replacement-truncation.test.ts (4 tests) 94ms
+ ✓ test/capture-engine.test.ts (18 tests) 34ms
+ ✓ test/capture-call-locations.test.ts (6 tests) 15ms
+ ✓ test/capture-engine-step-expiry.test.ts (2 tests) 17ms
+ ✓ test/capture-engine-stall.test.ts (5 tests) 10ms
+
+ Test Files  45 passed (45)
+      Tests  462 passed | 3 skipped (465)
+   Start at  10:15:32
+   Duration  4.73s (transform 2.39s, setup 0ms, collect 31.61s, tests 4.85s, environment 18ms, prepare 15.13s)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

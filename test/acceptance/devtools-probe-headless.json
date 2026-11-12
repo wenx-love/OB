@@ -1,0 +1,53 @@
+{
+  "headed": false,
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "openDevTools": {
+    "targetId": "4229675D9562A5B79005AC3F387E57F4"
+  },
+  "targets": [
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js"
+    },
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js"
+    },
+    {
+      "type": "page",
+      "url": "about:blank"
+    },
+    {
+      "type": "page",
+      "url": "about:blank"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/"
+    },
+    {
+      "type": "background_page",
+      "url": "chrome-extension://nkeimhogjdpnpccoofpliimaahmaaome/background.html"
+    },
+    {
+      "type": "page",
+      "url": "devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@cfaadc5a132d78e1828635aa84"
+    },
+    {
+      "type": "iframe",
+      "url": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/devtools.html"
+    }
+  ],
+  "extPage": {
+    "href": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/panel.html",
+    "runtime": "function",
+    "storage": "object",
+    "devtools": "undefined",
+    "ls": "1"
+  }
+}

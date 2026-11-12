@@ -1,0 +1,1577 @@
+{
+  "sample": "sample-02-maoyan",
+  "note": "open-source sample (kuizuo/js-deobfuscator example), raw CDP + headless Chrome, isolated: CSP default-src none + Fetch blocks all non-file requests; NOT a third-party site script; NOT the chrome.debugger extension path",
+  "bytes": 306065,
+  "discoveryMs": 939,
+  "functions": 704,
+  "candidates": 23,
+  "highCandidates": [
+    {
+      "name": "_0x0a9e",
+      "kind": "FunctionExpression",
+      "params": 2,
+      "staticCalls": 3073,
+      "arr": null,
+      "b64": true,
+      "rc4": true
+    },
+    {
+      "name": "ox",
+      "kind": "FunctionExpression",
+      "params": 4,
+      "staticCalls": 1,
+      "arr": "n",
+      "b64": false,
+      "rc4": false
+    }
+  ],
+  "plans": [
+    {
+      "fn": "_0x0a9e",
+      "entry": {
+        "lineNumber": 8,
+        "columnNumber": 4
+      },
+      "returns": [
+        {
+          "lineNumber": 49,
+          "columnNumber": 4
+        }
+      ],
+      "closing": {
+        "lineNumber": 53,
+        "columnNumber": 0
+      },
+      "snippet": "    var a = _0xa9e0[x -= 0];"
+    },
+    {
+      "fn": "ox",
+      "entry": {
+        "lineNumber": 2068,
+        "columnNumber": 8
+      },
+      "returns": [
+        {
+          "lineNumber": 2073,
+          "columnNumber": 8
+        }
+      ],
+      "closing": {
+        "lineNumber": 2074,
+        "columnNumber": 4
+      },
+      "snippet": "        var n = rx"
+    }
+  ],
+  "startResult": {
+    "set": 6,
+    "skipped": [],
+    "errors": []
+  },
+  "pageResponsive": true,
+  "runMs": 15025,
+  "stats": {
+    "breakpointsSet": 6,
+    "hits": 260,
+    "pauses": 1225,
+    "success": 259,
+    "failed": 0,
+    "forcedResumes": 0,
+    "foreignPauses": 0
+  },
+  "breakpointsBeforeStop": 6,
+  "breakpointsAfterStop": 0,
+  "foreignPauses": 0,
+  "foreignSamples": [],
+  "antiDebugAborted": false,
+  "blockedRequests": 0,
+  "blockedSamples": [],
+  "pageExceptions": 0,
+  "exceptionDetails": [],
+  "bpLocs": [
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 8,
+        "columnNumber": 4
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 8,
+        "columnNumber": 12
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 49,
+        "columnNumber": 4
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 49,
+        "columnNumber": 4
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 53,
+        "columnNumber": 0
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 52,
+        "columnNumber": 5
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 2068,
+        "columnNumber": 8
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 2068,
+        "columnNumber": 16
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 2073,
+        "columnNumber": 8
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 2073,
+        "columnNumber": 8
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 2074,
+        "columnNumber": 4
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 2073,
+        "columnNumber": 29
+      }
+    }
+  ],
+  "pauseDiag": [
+    {
+      "reason": "other",
+      "hit": [
+        "4:8:4:3"
+      ],
+      "fn": "_0x0a9e",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 8,
+        "columnNumber": 12
+      },
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "depth": 3
+    },
+    {
+      "reason": "other",
+      "hit": [
+        "4:49:4:3"
+      ],
+      "fn": "_0x0a9e",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 49,
+        "columnNumber": 4
+      },
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "depth": 3
+    },
+    {
+      "reason": "step",
+      "hit": [],
+      "fn": "_0x0a9e",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 50,
+        "columnNumber": 6
+      },
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "depth": 3
+    },
+    {
+      "reason": "step",
+      "hit": [],
+      "fn": "_0x0a9e",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 51,
+        "columnNumber": 20
+      },
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "depth": 3
+    }
+  ],
+  "instrumentationPauses": 3,
+  "distinctCaptures": 94,
+  "successRatePerCall": 1,
+  "failureReasons": [
+    "capture stopped before the function returned"
+  ],
+  "byFunction": {
+    "_0x0a9e": {
+      "distinct": 94,
+      "calls": 260,
+      "failed": 1
+    }
+  },
+  "tuplesFirstDiffersFromLast": 0,
+  "maxSeq": 260,
+  "rotationEndEstimateSeq_heuristic": 0,
+  "newReturnValuesForKnownArgsAfterThreshold": 0,
+  "distinctArgTuples": 93,
+  "argsWithConflictingReturns": 0,
+  "conflictSamples": [],
+  "sample40": [
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x0",
+        "obJE"
+      ],
+      "ret": "object",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        1,
+        1
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1",
+        "wi$v"
+      ],
+      "ret": "must be non-object",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        2,
+        2
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x2",
+        "7LsH"
+      ],
+      "ret": "undefined",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        3,
+        3
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x3",
+        "DE4b"
+      ],
+      "ret": "3|0|5|6|1|4|2",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        4,
+        4
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x4",
+        "Bbb]"
+      ],
+      "ret": "4|8|2|3|0|7|6|1|5",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        5,
+        5
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x5",
+        "yq3v"
+      ],
+      "ret": "string",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        6,
+        6
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x6",
+        "obJE"
+      ],
+      "ret": "boolean",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        7,
+        7
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x7",
+        "t&Ru"
+      ],
+      "ret": "true",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        8,
+        8
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x8",
+        "[ch%"
+      ],
+      "ret": "false",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        9,
+        9
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x9",
+        "sBow"
+      ],
+      "ret": "hasAttribute",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        10,
+        10
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0xa",
+        "hR3e"
+      ],
+      "ret": "__driver_evaluate",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        11,
+        11
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0xb",
+        "16#d"
+      ],
+      "ret": "__webdriver_evaluate",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        12,
+        12
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0xc",
+        "oUeI"
+      ],
+      "ret": "__selenium_evaluate",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        13,
+        13
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0xd",
+        "0@b6"
+      ],
+      "ret": "_Selenium_IDE_Recorder",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        14,
+        14
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0xe",
+        "%kVT"
+      ],
+      "ret": "_selenium",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        15,
+        15
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0xf",
+        "[ch%"
+      ],
+      "ret": "domAutomation",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        16,
+        16
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x10",
+        "Cb1c"
+      ],
+      "ret": "__lastWatirAlert",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        17,
+        17
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x11",
+        "Z4gO"
+      ],
+      "ret": "$chrome_asyncScriptInfo",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        18,
+        18
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x12",
+        "hR3e"
+      ],
+      "ret": "frame",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        19,
+        19
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x13",
+        "REQn"
+      ],
+      "ret": "webdriver-evaluate",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        20,
+        20
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x14",
+        "vHBF"
+      ],
+      "ret": "selenium-evaluate",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        21,
+        21
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x15",
+        "pevU"
+      ],
+      "ret": "webdriverCommand",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        22,
+        22
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x16",
+        "%kVT"
+      ],
+      "ret": "webdriver-evaluate-response",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        23,
+        23
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x17",
+        "oUeI"
+      ],
+      "ret": "lwe",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        24,
+        24
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x18",
+        "hR3e"
+      ],
+      "ret": "[object Arguments]",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        25,
+        25
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x19",
+        "Cb1c"
+      ],
+      "ret": "[object Function]",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        26,
+        26
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1a",
+        "Iony"
+      ],
+      "ret": " - error:",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        27,
+        27
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1b",
+        "v7g!"
+      ],
+      "ret": "token",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        28,
+        28
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1c",
+        "6Hgd"
+      ],
+      "ret": "11pt no-real-font-123",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        29,
+        29
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1d",
+        "OEm8"
+      ],
+      "ret": "meituan",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        30,
+        30
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1e",
+        "WVq@"
+      ],
+      "ret": "multiply",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        31,
+        31
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1f",
+        "sPEN"
+      ],
+      "ret": "rgb(0,255,255)",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        32,
+        32
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x20",
+        "Ktj5"
+      ],
+      "ret": "rgb(255,255,0)",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        33,
+        33
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x21",
+        "%kVT"
+      ],
+      "ret": "evenodd",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        34,
+        34
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x22",
+        "CMQT"
+      ],
+      "ret": "2|1|4|0|3",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        35,
+        35
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x23",
+        "wi$v"
+      ],
+      "ret": "8|7|0|1|4|9|2|5|6|3",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        36,
+        36
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x24",
+        "%kVT"
+      ],
+      "ret": "click",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        37,
+        37
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x25",
+        "Rt85"
+      ],
+      "ret": "ontouchmove",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        38,
+        38
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x26",
+        "Pj%["
+      ],
+      "ret": "focus",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        39,
+        39
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x27",
+        "t]^8"
+      ],
+      "ret": "ontouchstart",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        40,
+        40
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x28",
+        "IdoT"
+      ],
+      "ret": "function",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        41,
+        41
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x29",
+        "89UJ"
+      ],
+      "ret": "json3",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        42,
+        42
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x2a",
+        "16#d"
+      ],
+      "ret": "1.1.1",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        43,
+        43
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x2b",
+        "DE4b"
+      ],
+      "ret": "0x00",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        44,
+        44
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x2c",
+        "vHBF"
+      ],
+      "ret": "stream error",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        45,
+        45
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x2d",
+        "v@qj"
+      ],
+      "ret": "buffer error",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        46,
+        46
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x2e",
+        "hR3e"
+      ],
+      "ret": "pako deflate (from Nodeca project)",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        47,
+        47
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x2f",
+        "2VkK"
+      ],
+      "ret": "toString",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        48,
+        48
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x30",
+        "Ktj5"
+      ],
+      "ret": "prototype",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        49,
+        49
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x31",
+        "r[lq"
+      ],
+      "ret": "isPrototypeOf",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        50,
+        50
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x32",
+        "Ktj5"
+      ],
+      "ret": "propertyIsEnumerable",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        51,
+        51
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x33",
+        "6yb&"
+      ],
+      "ret": "exports",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        52,
+        52
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x36",
+        "obJE"
+      ],
+      "ret": "lTrXW",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        53,
+        53
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x37",
+        "6cqW"
+      ],
+      "ret": "bOiAG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        54,
+        54
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x38",
+        "EcbB"
+      ],
+      "ret": "bOiAG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        55,
+        55
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x39",
+        "dO^m"
+      ],
+      "ret": "YqCul",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        56,
+        56
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x3a",
+        "1!MF"
+      ],
+      "ret": "bOiAG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        57,
+        57
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x3d",
+        "Qi&["
+      ],
+      "ret": "assign",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        58,
+        58
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x45",
+        "6yb&"
+      ],
+      "ret": "shrinkBuf",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        59,
+        59
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x56",
+        "v7g!"
+      ],
+      "ret": "setTyped",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        60,
+        60
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x5c",
+        "DE4b"
+      ],
+      "ret": "setTyped",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        61,
+        61
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x57",
+        "sOPW"
+      ],
+      "ret": "Buf32",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        62,
+        62
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x58",
+        "WVq@"
+      ],
+      "ret": "assign",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        63,
+        63
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x3e",
+        "wi$v"
+      ],
+      "ret": "prototype",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        64,
+        64
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x3f",
+        "WVq@"
+      ],
+      "ret": "slice",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        65,
+        65
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x3c",
+        "Z4gO"
+      ],
+      "ret": "call",
+      "status": "success",
+      "count": 3,
+      "seq": [
+        66,
+        74
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x40",
+        "EcbB"
+      ],
+      "ret": "length",
+      "status": "success",
+      "count": 2,
+      "seq": [
+        67,
+        75
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x41",
+        "pevU"
+      ],
+      "ret": "shift",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        68,
+        68
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x42",
+        "sOPW"
+      ],
+      "ret": "uXUJx",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        69,
+        69
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x43",
+        "%kVT"
+      ],
+      "ret": "UKfdY",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        70,
+        70
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x3b",
+        "Pj%["
+      ],
+      "ret": "prototype",
+      "status": "success",
+      "count": 2,
+      "seq": [
+        71,
+        73
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x34",
+        "REQn"
+      ],
+      "ret": "exports",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        76,
+        76
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x5d",
+        "2qiX"
+      ],
+      "ret": "assign",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        77,
+        77
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x5e",
+        "6Hgd"
+      ],
+      "ret": "shrinkBuf",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        78,
+        78
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x5f",
+        "WVq@"
+      ],
+      "ret": "setTyped",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        79,
+        79
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x60",
+        "%kVT"
+      ],
+      "ret": "Buf16",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        80,
+        80
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x61",
+        "Cb1c"
+      ],
+      "ret": "Buf32",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        81,
+        81
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x63",
+        "Qi&["
+      ],
+      "ret": "iPoNC",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        82,
+        82
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x64",
+        "0@b6"
+      ],
+      "ret": "iPoNC",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        83,
+        83
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x65",
+        "T#VO"
+      ],
+      "ret": "iPoNC",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        84,
+        84
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x66",
+        "2qiX"
+      ],
+      "ret": "EIySI",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        85,
+        85
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x62",
+        "T#VO"
+      ],
+      "ret": "length",
+      "status": "success",
+      "count": 6,
+      "seq": [
+        86,
+        96
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x67",
+        "OEm8"
+      ],
+      "ret": "EKFmD",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        87,
+        87
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x68",
+        "CMQT"
+      ],
+      "ret": "EIySI",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        88,
+        88
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x69",
+        "yq3v"
+      ],
+      "ret": "TSwYz",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        90,
+        90
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x6a",
+        "baox"
+      ],
+      "ret": "Ianvt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        92,
+        92
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x6b",
+        "t]^8"
+      ],
+      "ret": "VCgBh",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        94,
+        94
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1cf",
+        "Bbb]"
+      ],
+      "ret": "hsUgE",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        97,
+        97
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1ca",
+        "v7g!"
+      ],
+      "ret": "WFNlR",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        98,
+        254
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1cb",
+        "v7g!"
+      ],
+      "ret": "feQWI",
+      "status": "success",
+      "count": 56,
+      "seq": [
+        99,
+        258
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1cc",
+        "T#VO"
+      ],
+      "ret": "mXYQR",
+      "status": "success",
+      "count": 50,
+      "seq": [
+        100,
+        259
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1ce",
+        "baox"
+      ],
+      "ret": "YayFG",
+      "status": "success",
+      "count": 37,
+      "seq": [
+        101,
+        257
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1cd",
+        "wi$v"
+      ],
+      "ret": "IqQfF",
+      "status": "success",
+      "count": 12,
+      "seq": [
+        127,
+        249
+      ]
+    },
+    {
+      "fn": "_0x0a9e",
+      "args": [
+        "0x1cd",
+        "wi$v"
+      ],
+      "ret": null,
+      "status": "capture-failed",
+      "reason": "capture stopped before the function returned",
+      "count": 1,
+      "seq": [
+        260,
+        260
+      ]
+    }
+  ],
+  "engineLogs": [
+    {
+      "kind": "log",
+      "level": "info",
+      "message": "runtime capture started: 6 breakpoints, 0 skipped, 0 errors"
+    }
+  ]
+}

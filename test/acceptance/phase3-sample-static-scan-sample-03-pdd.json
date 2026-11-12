@@ -1,0 +1,200 @@
+{
+  "sample": "sample-03-pdd",
+  "bytes": 275484,
+  "analyzed": true,
+  "discoveryMs": 2695,
+  "functions": 1199,
+  "candidates": 25,
+  "high": 2,
+  "cands": [
+    {
+      "name": "t",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 1,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "r",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "e",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 0,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "u",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "c",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "i",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "o",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 1,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "s",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": null,
+      "offset": true,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "y",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 1,
+      "calls": 0,
+      "arr": "p",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "U",
+      "kind": "FunctionExpression",
+      "conf": "medium",
+      "params": 3,
+      "calls": 0,
+      "arr": "M",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "o",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "arraySet",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 5,
+      "calls": 0,
+      "arr": "n",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "arraySet",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 5,
+      "calls": 0,
+      "arr": "n",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "B",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 1,
+      "calls": 6,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "hn",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 1,
+      "calls": 0,
+      "arr": "rn",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    }
+  ],
+  "plans": [
+    {
+      "name": "qt",
+      "supported": true,
+      "returns": 1
+    },
+    {
+      "name": "qt",
+      "supported": true,
+      "returns": 1
+    }
+  ],
+  "scan": {
+    "eval(": 0,
+    "Function(": 0,
+    "XMLHttpRequest": 0,
+    "fetch(": 0,
+    "WebSocket": 0,
+    "document.cookie": 0,
+    "localStorage": 0,
+    "importScripts": 0,
+    "location.href": 0,
+    "debugger": 0
+  }
+}

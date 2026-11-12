@@ -1,0 +1,21 @@
+{
+  "name": "sample-05-cx",
+  "source": "https://github.com/kuizuo/js-deobfuscator/tree/main/example/cx",
+  "description": "CX site obfuscation - smaller focused sample (41KB)",
+  "obfuscationType": "Standard commercial obfuscation",
+  "features": [
+    "Focused codebase (41KB obfuscated)",
+    "Standard string array",
+    "Control flow flattening",
+    "Quick execution test"
+  ],
+  "inputSize": 42199,
+  "expectedSize": 5335,
+  "testGoal": "Verify efficient handling of standard obfuscation patterns",
+  "hasExpectedOutput": true,
+  "performance": {
+    "targetParseTime": "<200ms",
+    "targetRecoveryTime": "<2000ms"
+  },
+  "notes": "Smaller focused sample for快速验证 quick verification and CI/CD integration."
+}

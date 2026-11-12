@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手动断点模式验证 - OB-Recover</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    .section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    button:hover { background: #0056b3; }
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+    .step {
+      margin: 15px 0;
+      padding: 12px;
+      background: #f8f9fa;
+      border-left: 4px solid #007bff;
+    }
+    .result {
+      margin-top: 10px;
+      padding: 10px;
+      background: #e7f3ff;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>手动断点模式验证</h1>
+  
+  <div class="section">
+    <h2>验证目标</h2>
+    <p>确认 OB-Recover 的手动断点模式能够：</p>
+    <ol>
+      <li>不自动设置任何断点</li>
+      <li>接收用户在 Sources 面板手动设置的断点触发的暂停事件</li>
+      <li>读取暂停上下文（callFrames、局部变量）</li>
+      <li>不干扰用户的调试流程（不自动 resume）</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>验证步骤</h2>
+    
+    <div class="step">
+      <strong>1. 确认扩展已加载</strong>
+      <ul>
+        <li>打开 DevTools（F12）</li>
+        <li>切换到 <code>OB-Recover</code> 标签</li>
+        <li>点击「连接调试器」</li>
+        <li>确认模式显示为「手动断点模式」</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <strong>2. 在 Sources 面板设置断点</strong>
+      <ul>
+        <li>切换到 <code>Sources</code> 标签</li>
+        <li>找到本页面的 <code>manual-mode-test.html</code></li>
+        <li>在下面的 <code>testFunction1</code> 第一行设置断点</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <strong>3. 触发断点</strong>
+      <button onclick="testFunction1()">点击触发 testFunction1</button>
+      <p>点击按钮后，应该暂停在你设置的断点处</p>
+    </div>
+
+    <div class="step">
+      <strong>4. 检查 OB-Recover 面板</strong>
+      <ul>
+        <li>切换到 <code>OB-Recover</code> 标签</li>
+        <li>应该能看到「手动捕获记录」</li>
+        <li>包含当前暂停位置、函数名等信息</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <strong>5. 继续调试</strong>
+      <ul>
+        <li>返回 <code>Sources</code> 标签</li>
+        <li>按 F8 或点击「继续」按钮</li>
+        <li>应该能正常继续执行</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>测试函数</h2>
+    <p>在 <code>testFunction1</code> 和 <code>testFunction2</code> 的第一行设置断点：</p>
+    <button onclick="testFunction1()">测试函数 1</button>
+    <button onclick="testFunction2()">测试函数 2</button>
+    <button onclick="testDecoderCall()">测试解码调用</button>
+    <div id="output" class="result">等待测试...</div>
+  </div>
+
+  <script>
+    // 模拟 OB 混淆的解码函数
+    function _0x123456(index) {
+      const strings = ['Hello', 'World', 'Test', 'Manual', 'Breakpoint'];
+      return strings[index % strings.length];
+    }
+
+    function _0xabcdef(key) {
+      const map = { 0x10: 'Username', 0x20: 'Password', 0x30: 'Token' };
+      return map[key] || 'Unknown';
+    }
+
+    // 测试函数 1
+    function testFunction1() {
+      const message = _0x123456(0); // 在这里设置断点
+      const user = _0xabcdef(0x10);
+      const result = `${user} says: ${message}`;
+      document.getElementById('output').textContent = result;
+      console.log('testFunction1 executed:', result);
+    }
+
+    // 测试函数 2
+    function testFunction2() {
+      const greeting = _0x123456(1); // 在这里设置断点
+      const token = _0xabcdef(0x30);
+      const result = `${greeting} - Token: ${token}`;
+      document.getElementById('output').textContent = result;
+      console.log('testFunction2 executed:', result);
+    }
+
+    // 测试多层调用
+    function testDecoderCall() {
+      function innerFunction() {
+        const a = _0x123456(2); // 在这里设置断点
+        const b = _0x123456(3);
+        return a + ' ' + b;
+      }
+      const result = innerFunction();
+      document.getElementById('output').textContent = result;
+      console.log('testDecoderCall executed:', result);
+    }
+
+    // 页面加载完成提示
+    console.log('%c手动断点模式验证页面已加载', 'color: green; font-size: 14px; font-weight: bold');
+    console.log('请按照页面上的步骤进行验证');
+  </script>
+</body>
+</html>

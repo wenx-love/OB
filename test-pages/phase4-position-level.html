@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>phase4-position-level</title>
+</head>
+<body>
+  <h2>Phase 4 位置级替换验收页面</h2>
+  <p>验证系统能够根据 scriptId + scriptHash + start/end 定位具体 AST 节点，而非全局文本替换</p>
+  
+  <h3>测试场景</h3>
+  <ul>
+    <li><strong>场景 1：相同文本不同位置</strong>
+      <ul>
+        <li>位置 A：<code>_0x123456(0x10)</code> — 被捕获并验证 → 应替换为 <code>"Signature"</code></li>
+        <li>位置 B：<code>_0x123456(0x10)</code> — 未被捕获 → 必须保留原样</li>
+        <li>位置 C：<code>_0x123456(0x10)</code> — 被捕获并验证 → 应替换为 <code>"Signature"</code></li>
+      </ul>
+    </li>
+    <li><strong>场景 2：冲突证据拒绝</strong>
+      <ul>
+        <li>位置 D：<code>_0xabcdef(0x20)</code> — 有冲突证据（两个不同的返回值）→ 必须拒绝替换</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>预期结果</h3>
+  <pre id="expected">
+位置 A：替换为 "Signature"
+位置 B：保留 _0x123456(0x10)
+位置 C：替换为 "Signature"
+位置 D：拒绝替换，保留 _0xabcdef(0x20)
+  </pre>
+
+  <h3>实际结果</h3>
+  <pre id="actual"></pre>
+
+  <script src="phase4-position-level.js"></script>
+</body>
+</html>

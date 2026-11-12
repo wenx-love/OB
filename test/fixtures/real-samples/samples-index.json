@@ -1,0 +1,117 @@
+{
+  "version": "1.0",
+  "lastUpdate": "2026-11-08",
+  "totalSamples": 5,
+  "totalSize": 1328110,
+  "source": {
+    "repository": "https://github.com/kuizuo/js-deobfuscator",
+    "license": "MIT",
+    "verified": true
+  },
+  "samples": [
+    {
+      "id": "sample-01",
+      "name": "sample-01-obfuscator",
+      "type": "javascript-obfuscator",
+      "size": {
+        "input": 15449,
+        "expected": 1689
+      },
+      "features": ["base64", "array-rotation", "control-flow", "anti-debug"],
+      "complexity": "low",
+      "testPriority": "high",
+      "cicd": true
+    },
+    {
+      "id": "sample-02",
+      "name": "sample-02-maoyan",
+      "type": "commercial",
+      "size": {
+        "input": 306083,
+        "expected": 81836
+      },
+      "features": ["large-array", "complex-control-flow", "real-world"],
+      "complexity": "medium",
+      "testPriority": "high",
+      "cicd": false
+    },
+    {
+      "id": "sample-03",
+      "name": "sample-03-pdd",
+      "type": "enterprise",
+      "size": {
+        "input": 275486,
+        "expected": 105922
+      },
+      "features": ["anti-tampering", "multi-decoder", "enterprise"],
+      "complexity": "high",
+      "testPriority": "medium",
+      "cicd": false
+    },
+    {
+      "id": "sample-04",
+      "name": "sample-04-gk",
+      "type": "heavy-hex",
+      "size": {
+        "input": 657339,
+        "expected": 187597
+      },
+      "features": ["hex-encoding", "very-large", "stress-test"],
+      "complexity": "very-high",
+      "testPriority": "low",
+      "cicd": false
+    },
+    {
+      "id": "sample-05",
+      "name": "sample-05-cx",
+      "type": "standard",
+      "size": {
+        "input": 42199,
+        "expected": 5335
+      },
+      "features": ["standard-obf", "quick-test"],
+      "complexity": "low",
+      "testPriority": "high",
+      "cicd": true
+    }
+  ],
+  "testSuites": {
+    "quick": ["sample-01", "sample-05"],
+    "standard": ["sample-01", "sample-02", "sample-05"],
+    "comprehensive": ["sample-01", "sample-02", "sample-03", "sample-04", "sample-05"],
+    "performance": ["sample-02", "sample-03", "sample-04"]
+  },
+  "performanceTargets": {
+    "sample-01": {
+      "parse": 100,
+      "recover": 1000,
+      "total": 1500
+    },
+    "sample-02": {
+      "parse": 500,
+      "recover": 5000,
+      "total": 6000
+    },
+    "sample-03": {
+      "parse": 500,
+      "recover": 5000,
+      "total": 6000
+    },
+    "sample-04": {
+      "parse": 1000,
+      "recover": 10000,
+      "total": 12000
+    },
+    "sample-05": {
+      "parse": 200,
+      "recover": 2000,
+      "total": 3000
+    }
+  },
+  "safety": {
+    "directExecution": false,
+    "sandboxRequired": true,
+    "timeoutMs": 5000,
+    "memoryLimitMB": 500
+  }
+}

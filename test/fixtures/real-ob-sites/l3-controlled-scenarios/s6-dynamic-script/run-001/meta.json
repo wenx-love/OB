@@ -1,0 +1,15 @@
+{
+  "siteId": "s6-dynamic-script",
+  "runId": "run-001",
+  "layer": "L3",
+  "kind": "controlled-replay",
+  "isRealSiteSample": false,
+  "url": null,
+  "sha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+  "observedSha256": "3950b8c0efa52a5e35813bf9c2e64b73e0056fe70cd0a4db2ee58d3dbfa5aacc",
+  "bytes": 155,
+  "fetchedAt": null,
+  "fetchedAtNote": "synthetic scripts authored in test/real-site-l3.test.ts",
+  "capturedBy": "n/a-synthetic",
+  "tooling": "test/real-site-l3.test.ts"
+}

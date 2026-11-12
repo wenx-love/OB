@@ -1,0 +1,214 @@
+{
+  "note": "pixel sampling of the 800x600 editor bottom-right scrollbar corner. Environment: real built panel.html in a plain headless Chrome page with stubbed chrome.* (NOT the real DevTools panel). Control variant serves panel-layout.css with the scrollbar-corner rule removed, to prove the method can detect a white corner.",
+  "variants": {
+    "fixed": {
+      "ready": true,
+      "recovered": true,
+      "measure": {
+        "o": {
+          "l": 0,
+          "t": 95,
+          "r": 397.5,
+          "b": 571,
+          "vbar": 12,
+          "hbar": 12,
+          "sw": 3237,
+          "cw": 386,
+          "sh": 3265,
+          "ch": 464
+        },
+        "c": {
+          "l": 402.5,
+          "t": 95,
+          "r": 800,
+          "b": 571,
+          "vbar": 12,
+          "hbar": 12,
+          "sw": 3237,
+          "cw": 386,
+          "sh": 3265,
+          "ch": 464
+        },
+        "vw": 800,
+        "vh": 600,
+        "dpr": 1
+      },
+      "skipped": [],
+      "sample": {
+        "imgW": 800,
+        "imgH": 600,
+        "blocks": [
+          {
+            "name": "o-corner",
+            "x": 386,
+            "y": 560,
+            "w": 10,
+            "h": 10,
+            "pixels": 100,
+            "nearWhite": 0,
+            "avgRGB": [
+              30,
+              30,
+              30
+            ],
+            "minChannel": 30,
+            "maxChannel": 30
+          },
+          {
+            "name": "o-vtrack-above",
+            "x": 386,
+            "y": 519,
+            "w": 10,
+            "h": 20,
+            "pixels": 200,
+            "nearWhite": 0,
+            "avgRGB": [
+              30,
+              30,
+              30
+            ],
+            "minChannel": 30,
+            "maxChannel": 30
+          },
+          {
+            "name": "c-corner",
+            "x": 789,
+            "y": 560,
+            "w": 10,
+            "h": 10,
+            "pixels": 100,
+            "nearWhite": 0,
+            "avgRGB": [
+              30,
+              30,
+              30
+            ],
+            "minChannel": 30,
+            "maxChannel": 30
+          },
+          {
+            "name": "c-vtrack-above",
+            "x": 789,
+            "y": 519,
+            "w": 10,
+            "h": 20,
+            "pixels": 200,
+            "nearWhite": 0,
+            "avgRGB": [
+              30,
+              30,
+              30
+            ],
+            "minChannel": 30,
+            "maxChannel": 30
+          }
+        ]
+      }
+    },
+    "control-corner-rule-removed": {
+      "ready": true,
+      "recovered": true,
+      "measure": {
+        "o": {
+          "l": 0,
+          "t": 95,
+          "r": 397.5,
+          "b": 571,
+          "vbar": 12,
+          "hbar": 12,
+          "sw": 3237,
+          "cw": 386,
+          "sh": 3265,
+          "ch": 464
+        },
+        "c": {
+          "l": 402.5,
+          "t": 95,
+          "r": 800,
+          "b": 571,
+          "vbar": 12,
+          "hbar": 12,
+          "sw": 3237,
+          "cw": 386,
+          "sh": 3265,
+          "ch": 464
+        },
+        "vw": 800,
+        "vh": 600,
+        "dpr": 1
+      },
+      "skipped": [],
+      "sample": {
+        "imgW": 800,
+        "imgH": 600,
+        "blocks": [
+          {
+            "name": "o-corner",
+            "x": 386,
+            "y": 560,
+            "w": 10,
+            "h": 10,
+            "pixels": 100,
+            "nearWhite": 100,
+            "avgRGB": [
+              255,
+              255,
+              255
+            ],
+            "minChannel": 255,
+            "maxChannel": 255
+          },
+          {
+            "name": "o-vtrack-above",
+            "x": 386,
+            "y": 519,
+            "w": 10,
+            "h": 20,
+            "pixels": 200,
+            "nearWhite": 0,
+            "avgRGB": [
+              30,
+              30,
+              30
+            ],
+            "minChannel": 30,
+            "maxChannel": 30
+          },
+          {
+            "name": "c-corner",
+            "x": 789,
+            "y": 560,
+            "w": 10,
+            "h": 10,
+            "pixels": 100,
+            "nearWhite": 100,
+            "avgRGB": [
+              255,
+              255,
+              255
+            ],
+            "minChannel": 255,
+            "maxChannel": 255
+          },
+          {
+            "name": "c-vtrack-above",
+            "x": 789,
+            "y": 519,
+            "w": 10,
+            "h": 20,
+            "pixels": 200,
+            "nearWhite": 0,
+            "avgRGB": [
+              30,
+              30,
+              30
+            ],
+            "minChannel": 30,
+            "maxChannel": 30
+          }
+        ]
+      }
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40"
+}

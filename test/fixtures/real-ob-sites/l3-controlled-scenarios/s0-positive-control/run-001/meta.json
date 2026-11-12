@@ -1,0 +1,15 @@
+{
+  "siteId": "s0-positive-control",
+  "runId": "run-001",
+  "layer": "L3",
+  "kind": "controlled-replay",
+  "isRealSiteSample": false,
+  "url": null,
+  "sha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+  "bytes": 155,
+  "fetchedAt": null,
+  "fetchedAtNote": "synthetic script authored in test/real-site-l3.test.ts",
+  "capturedBy": "n/a-synthetic",
+  "tooling": "test/real-site-l3.test.ts",
+  "title": "稳定的纯解码函数，4 个调用点都被观测（正向对照）"
+}

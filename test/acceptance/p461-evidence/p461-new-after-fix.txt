@@ -1,0 +1,14 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ✓ test/cdp-client-timeout.test.ts (4 tests) 134ms
+ ✓ test/capture-engine-stall.test.ts (5 tests) 18ms
+ ✓ test/manual-side-effect.test.ts (17 tests) 424ms
+
+ Test Files  3 passed (3)
+      Tests  26 passed (26)
+   Start at  08:57:34
+   Duration  2.38s (transform 510ms, setup 0ms, collect 1.79s, tests 576ms, environment 1ms, prepare 917ms)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

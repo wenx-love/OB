@@ -1,0 +1,80 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ❯ test/candidate-integrity.test.ts (5 tests | 2 failed) 45ms
+   ✓ dry-run 候选的内部一致性 > 前提：真实流程给出 dec(1) 的候选，value 与 replacement 一致，源码未改 18ms
+   × dry-run 候选的内部一致性 > A value 被改、replacement 没改：拒绝（候选自相矛盾），源码不变 10ms
+     → expected 'var _arr = [\'alpha\', \'beta\', \'ga…' to be 'var _arr = [\'alpha\', \'beta\', \'ga…' // Object.is equality
+   × dry-run 候选的内部一致性 > B replacement 被改、value 没改：同样拒绝，源码不变 3ms
+     → expected 'var _arr = [\'alpha\', \'beta\', \'ga…' to be 'var _arr = [\'alpha\', \'beta\', \'ga…' // Object.is equality
+   ✓ dry-run 候选的内部一致性 > C 对照：未被改动的真实候选照常应用 3ms
+   ✓ dry-run 候选的内部一致性 > D 对照：非 ASCII、引号、换行的字符串，以及数字、布尔、null 的真实候选都不会被一致性检查误拒 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/candidate-integrity.test.ts > dry-run 候选的内部一致性 > A value 被改、replacement 没改：拒绝（候选自相矛盾），源码不变
+AssertionError: expected 'var _arr = [\'alpha\', \'beta\', \'ga…' to be 'var _arr = [\'alpha\', \'beta\', \'ga…' // Object.is equality
+
+- Expected
++ Received
+
+  var _arr = ['alpha', 'beta', 'gamma'];
+  function dec(i) {
+    return _arr[i];
+  }
+  function f() {
+-   return dec(1);
++   return "evil";
+  }
+  function run() {
+    f();
+    f();
+  }
+
+ ❯ test/candidate-integrity.test.ts:57:25
+     55|     const forged: ReplacementCandidate = { ...pick(dry, 'dec(1)'), val…
+     56|     const result = await applyVerifiedReplacements({ ...dry, candidate…
+     57|     expect(result.code).toBe(SRC);
+       |                         ^
+     58|     expect(result.applied).toEqual([]);
+     59|     expect(result.rejected).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  test/candidate-integrity.test.ts > dry-run 候选的内部一致性 > B replacement 被改、value 没改：同样拒绝，源码不变
+AssertionError: expected 'var _arr = [\'alpha\', \'beta\', \'ga…' to be 'var _arr = [\'alpha\', \'beta\', \'ga…' // Object.is equality
+
+- Expected
++ Received
+
+  var _arr = ['alpha', 'beta', 'gamma'];
+  function dec(i) {
+    return _arr[i];
+  }
+  function f() {
+-   return dec(1);
++   return "beta";
+  }
+  function run() {
+    f();
+    f();
+  }
+
+ ❯ test/candidate-integrity.test.ts:68:25
+     66|     const forged: ReplacementCandidate = { ...pick(dry, 'dec(1)'), rep…
+     67|     const result = await applyVerifiedReplacements({ ...dry, candidate…
+     68|     expect(result.code).toBe(SRC);
+       |                         ^
+     69|     expect(result.applied).toEqual([]);
+     70|     expect(result.rejected).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  10:05:54
+   Duration  1.17s (transform 168ms, setup 0ms, collect 725ms, tests 45ms, environment 0ms, prepare 156ms)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

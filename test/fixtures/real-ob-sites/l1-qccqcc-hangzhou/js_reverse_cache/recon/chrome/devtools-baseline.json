@@ -1,0 +1,41 @@
+{
+  "schema": "web-protocol-recovery/l1-devtools-baseline/1",
+  "capturedBy": "skill",
+  "half": "chrome-devtools, paired pass half 1",
+  "tooling": "chrome-devtools-mcp attached to a dedicated Chrome 155.0.8059.40 (port 9222, dedicated profile); the configured MCP only attaches to an external browser and cannot launch one",
+  "authorization": "user confirmed the right to test; anonymous access; no login; no account state",
+  "actionClass": "read-only",
+  "observedAt": "2026-11-10T06:58Z (Date header of the GetPageList response)",
+  "navigation": {"url": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3", "title": "杭州服装_服装批发", "status": 200, "navigationUnitsConsumed": 1, "budgetRemaining": 99, "providerInitiatedReplays": 0},
+  "networkRequestsListed": 56,
+  "automaticHosts": ["hangzhou.qccqcc.com", "j.17qcc.com", "g1.17qcc.com", "pics.17qcc.com", "newopenapiweb.17qcc.com", "www.17qcc.com", "analytics.qccqcc.com", "s95.cnzz.com", "s4.cnzz.com", "z3.cnzz.com", "z4.cnzz.com", "c.cnzz.com", "icon.cnzz.com", "hm.baidu.com"],
+  "notableStates": {"blockedByOrb": [39], "pendingAtCapture": [53, 54, 55, 56]},
+  "targetScript": {
+    "reqid": 13,
+    "url": "https://j.17qcc.com/combo?ajax-20&imglazy&pager-5&template-6&rollload&ajaxmethord-5&pluploadfull&qccer-1&hpaitop-5&hpailist-2",
+    "nameGivenByUser": "truncated after hpai; the full name ends with hpailist-2",
+    "status": 200,
+    "responseHeaders": {"content-type": "text/javascript", "content-encoding": "br", "content-length": "91089", "cache-control": "public,max-age=31104000", "age": "78840", "vary": "Accept-Encoding, User-Agent", "x-cache": "HIT"},
+    "businessAnchors": ["QccJsWebVer value 2026.10.21.1", "QccJsWebPostBaseUrl value https://newopenapiweb.17qcc.com", "QccJsWebMergeJsUrl value //j.17qcc.com/combo?"],
+    "obfuscationHints": "marker variable _0xodf with value jsjiami.com.v7; string array decoder function _0x374d fed by an array provider _0x3a3a at the top of the file; anti-debug content NOT checked",
+    "limit": "the body shown by the MCP is a truncated preview, so the byte exact source and its SHA-256 are NOT taken here; they come from the js-reverse half (save_script_source or the CDP source)"
+  },
+  "otherScriptsOfInterest": [
+    {"reqid": 3, "url": "https://j.17qcc.com/combo?font&config&encrypt&jq&cookie&global&merge&tj&recommend&t=20261026", "note": "contains a module named encrypt; hypothesis only, not verified: the request signing may live here rather than in reqid 13"},
+    {"reqid": 28, "url": "https://j.17qcc.com/combo?toolbar-93&shopcart-7&yiqia-6&qtcharts&detect&qa-3", "note": "listed only"}
+  ],
+  "apiSequence": [
+    {"reqid": 29, "method": "GET", "url": "https://hangzhou.qccqcc.com/GetEncryptedAccessToken", "status": 200, "note": "sent before GetPageList; body not read"},
+    {"reqid": 30, "method": "OPTIONS", "status": 204},
+    {"reqid": 31, "method": "POST", "url": "https://newopenapiweb.17qcc.com/api/services/app/SearchFactory/GetPageList", "status": 200}
+  ],
+  "getPageList": {
+    "requestHeadersKept": {"data-version": "1", "data-label": "2026062401", "app-version": "0", "content-type": "application/json", "qcc-pc-referer": "https://hangzhou.qccqcc.com/list.html"},
+    "requestHeadersRedacted": ["app-guestid"],
+    "requestBodyFields": {"KM": "32 chars, redacted", "Ver": "1", "Content": "lower case hex, redacted", "Sign": "string, redacted", "RsaPubAes": "base64, redacted", "IV": "16 chars, redacted", "TimesTamp": "32 chars, redacted"},
+    "contentLengthHeader": 734,
+    "response": {"status": 200, "contentType": "application/json; charset=utf-8", "contentEncoding": "br", "shape": "one field Result holding an upper case hex string (value not stored)", "appIsLogin": "0", "setCookie": "GuestId (value redacted); the app-guestid request header carries the same value"}
+  },
+  "notStored": "cookie values, GuestId, request body ciphertext and the response Result are intentionally not persisted",
+  "limitations": ["the MCP body previews are truncated", "one sample from one page load; dynamic fields differ per request", "no initiator information in this half"]
+}

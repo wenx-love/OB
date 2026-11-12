@@ -1,0 +1,16 @@
+{
+  "capturedBy": "test-oracle",
+  "method": "node:vm execution of the unmodified script + @babel/parser AST (test/helpers/real-site-compare.ts buildOracleReference)",
+  "topLevelHexFunctions": [
+    "_0x194f",
+    "_0x1d59cb",
+    "_0x124122",
+    "_0xb31e"
+  ],
+  "callableHexFunctions": [
+    "_0x194f",
+    "_0x1d59cb",
+    "_0x124122",
+    "_0xb31e"
+  ]
+}

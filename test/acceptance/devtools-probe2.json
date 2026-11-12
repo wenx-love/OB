@@ -1,0 +1,148 @@
+{
+  "note": "real Chrome DevTools frontend opened via Target.openDevTools; panel located and clicked by CDP mouse events on the DevTools frontend page",
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "openDevTools": {
+    "targetId": "D63D49B961640AC7D3622BBDAA5399D1"
+  },
+  "devtoolsFound": true,
+  "devtoolsViewport": {
+    "w": 1898,
+    "h": 982
+  },
+  "scan1": {
+    "title": "DevTools",
+    "bodyKids": 7,
+    "tabs": [
+      {
+        "id": "tab-elements",
+        "label": "Elements",
+        "x": 1446,
+        "y": 112,
+        "w": 73,
+        "h": 28
+      },
+      {
+        "id": "tab-console",
+        "label": "Console",
+        "x": 1516,
+        "y": 112,
+        "w": 67,
+        "h": 28
+      },
+      {
+        "id": "tab-sources",
+        "label": "Sources",
+        "x": 1582,
+        "y": 112,
+        "w": 65,
+        "h": 28
+      },
+      {
+        "id": "tab-network",
+        "label": "Network",
+        "x": 1649,
+        "y": 112,
+        "w": 70,
+        "h": 28
+      },
+      {
+        "id": "tab-timeline",
+        "label": "Performance",
+        "x": 1731,
+        "y": 112,
+        "w": 93,
+        "h": 28
+      },
+      {
+        "id": "tab-styles",
+        "label": "Styles",
+        "x": 1371,
+        "y": 659,
+        "w": 53,
+        "h": 28
+      },
+      {
+        "id": "tab-computed",
+        "label": "Computed",
+        "x": 1438,
+        "y": 659,
+        "w": 81,
+        "h": 28
+      },
+      {
+        "id": "tab-elements.layout",
+        "label": "Layout",
+        "x": 1508,
+        "y": 659,
+        "w": 59,
+        "h": 28
+      },
+      {
+        "id": "tab-elements.event-listeners",
+        "label": "Event Listeners",
+        "x": 1590,
+        "y": 659,
+        "w": 106,
+        "h": 28
+      },
+      {
+        "id": "tab-elements.dom-breakpoints",
+        "label": "DOM breakpoints",
+        "x": 1705,
+        "y": 659,
+        "w": 123,
+        "h": 28
+      },
+      {
+        "id": "tab-elements.dom-properties",
+        "label": "Properties",
+        "x": 1806,
+        "y": 659,
+        "w": 79,
+        "h": 28
+      }
+    ],
+    "more": []
+  },
+  "tabFound": null,
+  "targetsAfter": [
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js"
+    },
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js"
+    },
+    {
+      "type": "page",
+      "url": "about:blank"
+    },
+    {
+      "type": "page",
+      "url": "about:blank"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/"
+    },
+    {
+      "type": "background_page",
+      "url": "chrome-extension://nkeimhogjdpnpccoofpliimaahmaaome/background.html"
+    },
+    {
+      "type": "page",
+      "url": "devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@cfaadc"
+    },
+    {
+      "type": "iframe",
+      "url": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/devtools.html"
+    }
+  ],
+  "panelTargetFound": false
+}

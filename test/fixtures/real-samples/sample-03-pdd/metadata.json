@@ -1,0 +1,22 @@
+{
+  "name": "sample-03-pdd",
+  "source": "https://github.com/kuizuo/js-deobfuscator/tree/main/example/pdd",
+  "description": "Pinduoduo (拼多多) e-commerce platform obfuscation - major Chinese shopping app",
+  "obfuscationType": "Enterprise-level commercial obfuscation",
+  "features": [
+    "Large codebase (269KB obfuscated)",
+    "Advanced control flow obfuscation",
+    "Multiple decoder layers",
+    "Anti-tampering protection",
+    "Real-world e-commerce logic"
+  ],
+  "inputSize": 275486,
+  "expectedSize": 105922,
+  "testGoal": "Verify enterprise-level obfuscation recovery and anti-tampering bypass",
+  "hasExpectedOutput": true,
+  "performance": {
+    "targetParseTime": "<500ms",
+    "targetRecoveryTime": "<5000ms"
+  },
+  "notes": "Production code from Pinduoduo (拼多多), one of China's largest e-commerce platforms. Tests complex enterprise obfuscation."
+}

@@ -1,0 +1,88 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ❯ test/statement-position-directive.test.ts (5 tests | 3 failed) 41ms
+   ✓ 语句位置的替换：字符串字面量会变成指令序言，不得替换 > 前提：原脚本里 f() 在非严格模式下运行；g() 里的 dec(1) 有真实的候选 18ms
+   × 语句位置的替换：字符串字面量会变成指令序言，不得替换 > A dry-run 不为表达式语句位置的调用生成候选，并给出拒绝原因 8ms
+     → expected true to be false // Object.is equality
+   × 语句位置的替换：字符串字面量会变成指令序言，不得替换 > B 替换引擎本身也拒绝该位置的候选（手工构造，不依赖 dry-run 是否已经过滤） 6ms
+     → expected 'var _arr = [\'use strict\', \'beta\',…' to be 'var _arr = [\'use strict\', \'beta\',…' // Object.is equality
+   × 语句位置的替换：字符串字面量会变成指令序言，不得替换 > C 完整流程之后 f() 的行为与原脚本一致，函数不会变成严格模式 5ms
+     → expected 'undefined' to be 'object' // Object.is equality
+   ✓ 语句位置的替换：字符串字面量会变成指令序言，不得替换 > D 对照：其他位置照常替换（g 里的 return dec(1) 变成字符串），脚本对象没有被修改 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/statement-position-directive.test.ts > 语句位置的替换：字符串字面量会变成指令序言，不得替换 > A dry-run 不为表达式语句位置的调用生成候选，并给出拒绝原因
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ test/statement-position-directive.test.ts:68:61
+     66|     const { dry } = await prepare();
+     67|     const pos = positionOf(SRC, CALL);
+     68|     expect(dry.candidates.some((c) => c.callText === CALL)).toBe(false…
+       |                                                             ^
+     69|     const rejection = dry.rejections.find((r) => r.position !== null &…
+     70|     expect(rejection).toBeDefined();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  test/statement-position-directive.test.ts > 语句位置的替换：字符串字面量会变成指令序言，不得替换 > B 替换引擎本身也拒绝该位置的候选（手工构造，不依赖 dry-run 是否已经过滤）
+AssertionError: expected 'var _arr = [\'use strict\', \'beta\',…' to be 'var _arr = [\'use strict\', \'beta\',…' // Object.is equality
+
+- Expected
++ Received
+
+@@ -1,11 +1,11 @@
+  var _arr = ['use strict', 'beta', 'gamma'];
+  function dec(i) {
+    return _arr[i];
+  }
+  function f() {
+-   dec(0);
++   "use strict";
+    return typeof this;
+  }
+  function g() {
+    return dec(1);
+  }
+
+ ❯ test/statement-position-directive.test.ts:90:25
+     88|     };
+     89|     const result = await applyVerifiedReplacements({ ...dry, candidate…
+     90|     expect(result.code).toBe(SRC);
+       |                         ^
+     91|     expect(result.applied).toEqual([]);
+     92|     expect(result.rejected).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  test/statement-position-directive.test.ts > 语句位置的替换：字符串字面量会变成指令序言，不得替换 > C 完整流程之后 f() 的行为与原脚本一致，函数不会变成严格模式
+AssertionError: expected 'undefined' to be 'object' // Object.is equality
+
+Expected: "object"
+Received: "undefined"
+
+ ❯ test/statement-position-directive.test.ts:100:46
+     98|     const result = await applyVerifiedReplacements(dry, script);
+     99|     expect(await evalIn(SRC, 'f()')).toBe('object');
+    100|     expect(await evalIn(result.code, 'f()')).toBe('object');
+       |                                              ^
+    101|   });
+    102| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 2 passed (5)
+   Start at  09:55:02
+   Duration  6.81s (transform 310ms, setup 0ms, collect 5.24s, tests 41ms, environment 0ms, prepare 945ms)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

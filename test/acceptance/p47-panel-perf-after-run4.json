@@ -1,0 +1,414 @@
+{
+  "schema": "ob-recover.panel-perf/1",
+  "runNo": "4",
+  "buildLabel": "after",
+  "buildPath": "D:/Projects/ob-recover/dist",
+  "startedAt": "2026-11-10T15:39:54.774Z",
+  "note": "local page only; every non-local host is unresolvable; observation only; no capture started, no real site touched",
+  "conditions": {
+    "headless": false,
+    "resolverRules": "MAP * ~NOTFOUND , EXCLUDE 127.0.0.1",
+    "ports": {
+      "cdp": 9480,
+      "http": 8790
+    },
+    "probeTimeoutMs": 3000,
+    "analyzeWindowMs": 300000
+  },
+  "fixture": {
+    "path": "test/fixtures/p47-512kb-synthetic.js",
+    "bytes": 512064,
+    "sha256": "6a419264c85865c134c88ed52239eefd527fb2cbcb74ceb9af501d8e106ce207"
+  },
+  "dist": {
+    "background.js": "68d8055b0eee56277979858ef43a4a85eb66960dd44d72eb990be73ea7e3eea0",
+    "devtools.js": "870b0b747d5bfbe54af0fe8d81581f27bac8eb2a4ecea433f78f295c18edae65",
+    "panel.js": "accfac096ae00cb33158f550cdc2e10beeebea69bcf213dc27c0ce653291e807",
+    "sandbox.js": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4"
+  },
+  "steps": {
+    "clickConnect": {
+      "at": 12941,
+      "ms": 1,
+      "ok": true,
+      "value": {
+        "clicked": true,
+        "result": 1
+      }
+    },
+    "waitConnected": {
+      "at": 12943,
+      "ms": 1009,
+      "ok": true,
+      "value": {
+        "status": "已连接",
+        "ms": 1009
+      }
+    },
+    "navigateToHeavyPage": {
+      "at": 13954,
+      "ms": 9,
+      "ok": true,
+      "value": {
+        "navigatedAt": 13963
+      }
+    },
+    "finalLag": {
+      "at": 24168,
+      "ms": 0,
+      "ok": true,
+      "value": {
+        "installed": true,
+        "now": 10215,
+        "ticks": 62,
+        "maxGapMs": 3838,
+        "gapCount": 1,
+        "gaps": [
+          {
+            "at": 4548,
+            "gap": 3838
+          }
+        ]
+      }
+    },
+    "finalLongTasks": {
+      "at": 24176,
+      "ms": 1,
+      "ok": true,
+      "value": {
+        "installed": true,
+        "supported": true,
+        "error": null,
+        "count": 1,
+        "maxMs": 250,
+        "entries": [
+          {
+            "start": 4172,
+            "dur": 250,
+            "name": "self"
+          }
+        ]
+      }
+    },
+    "finalDec": {
+      "at": 24187,
+      "ms": 1,
+      "ok": true,
+      "value": {
+        "total": "9",
+        "analyzed": "3",
+        "candidates": "17",
+        "high": "0",
+        "calls": "83",
+        "cards": 17
+      }
+    },
+    "swDirect": {
+      "at": 24199,
+      "ms": 2,
+      "ok": true,
+      "value": {
+        "tabId": 685558968,
+        "status": "connected"
+      }
+    }
+  },
+  "probes": [
+    {
+      "t": 13964,
+      "panel": {
+        "ok": true,
+        "ms": 14,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 15,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 0,
+        "ticks": 0,
+        "gapCount": 0
+      },
+      "dec": {
+        "total": "0",
+        "analyzed": "0",
+        "candidates": "0",
+        "high": "0",
+        "calls": "0",
+        "cards": 0
+      }
+    },
+    {
+      "t": 14491,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209,
+        "ticks": 3,
+        "gapCount": 0
+      },
+      "dec": {
+        "total": "9",
+        "analyzed": "3",
+        "candidates": "17",
+        "high": "0",
+        "calls": "83",
+        "cards": 17
+      }
+    },
+    {
+      "t": 15001,
+      "panel": {
+        "ok": false,
+        "ms": 3008,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": {
+        "total": "9",
+        "analyzed": "3",
+        "candidates": "17",
+        "high": "0",
+        "calls": "83",
+        "cards": 17
+      }
+    },
+    {
+      "t": 19033,
+      "panel": {
+        "ok": false,
+        "ms": 3002,
+        "timeout": true
+      },
+      "sw": {
+        "ok": false,
+        "ms": 3002,
+        "timeout": true
+      },
+      "page": {
+        "ok": false,
+        "ms": 3002,
+        "timeout": true
+      },
+      "lag": null,
+      "dec": {
+        "total": "9",
+        "analyzed": "3",
+        "candidates": "17",
+        "high": "0",
+        "calls": "83",
+        "cards": 17
+      }
+    },
+    {
+      "t": 22627,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 3838,
+        "ticks": 46,
+        "gapCount": 1
+      },
+      "dec": {
+        "total": "9",
+        "analyzed": "3",
+        "candidates": "17",
+        "high": "0",
+        "calls": "83",
+        "cards": 17
+      }
+    },
+    {
+      "t": 23144,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 3838,
+        "ticks": 51,
+        "gapCount": 1
+      },
+      "dec": {
+        "total": "9",
+        "analyzed": "3",
+        "candidates": "17",
+        "high": "0",
+        "calls": "83",
+        "cards": 17
+      }
+    },
+    {
+      "t": 23653,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 3838,
+        "ticks": 56,
+        "gapCount": 1
+      },
+      "dec": {
+        "total": "9",
+        "analyzed": "3",
+        "candidates": "17",
+        "high": "0",
+        "calls": "83",
+        "cards": 17
+      }
+    },
+    {
+      "t": 24163,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 3838,
+        "ticks": 62,
+        "gapCount": 1
+      },
+      "dec": {
+        "total": "9",
+        "analyzed": "3",
+        "candidates": "17",
+        "high": "0",
+        "calls": "83",
+        "cards": 17
+      }
+    }
+  ],
+  "panelLog": [],
+  "exceptions": [],
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "lastDecKey": "3|17|9",
+  "analysis": {
+    "done": true,
+    "windowMs": 10203,
+    "finalDecoderStats": {
+      "total": "9",
+      "analyzed": "3",
+      "candidates": "17",
+      "high": "0",
+      "calls": "83",
+      "cards": 17
+    },
+    "probeCount": 8,
+    "panelTimeouts": 2,
+    "panelMaxMs": 3008,
+    "swTimeouts": 1,
+    "pageTimeouts": 1,
+    "pageMaxMs": 3002
+  },
+  "verdict": {
+    "panelStayedResponsive": false,
+    "candidatesFound": 17,
+    "analysisCompleted": true,
+    "note": "counts and timings only; no judgement about capture, validation or replacement"
+  },
+  "served": [
+    {
+      "at": 13960,
+      "path": "/index.html",
+      "status": 200,
+      "bytes": 156
+    },
+    {
+      "at": 13972,
+      "path": "/app.js",
+      "status": 200,
+      "bytes": 512064
+    },
+    {
+      "at": 13981,
+      "path": "/.well-known/appspecific/com.chrome.devtools.json",
+      "status": 404,
+      "bytes": 0
+    },
+    {
+      "at": 14039,
+      "path": "/favicon.ico",
+      "status": 404,
+      "bytes": 0
+    }
+  ],
+  "finishedAt": "2026-11-10T15:40:19.293Z"
+}

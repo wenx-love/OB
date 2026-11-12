@@ -1,0 +1,46 @@
+{
+  "capturedBy": "test-oracle",
+  "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+  "note": "independent of OB-Recover output",
+  "oracleChecks": [
+    {
+      "label": "dec(0) before offset change",
+      "js": "dec(0)",
+      "expect": "a"
+    },
+    {
+      "label": "dec(0) after offset change",
+      "js": "setOffset(1); dec(0)",
+      "expect": "b"
+    }
+  ],
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 9,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": false,
+      "reason": "reads outer mutable offset"
+    },
+    {
+      "position": {
+        "lineNumber": 10,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": false,
+      "reason": "reads outer mutable offset"
+    },
+    {
+      "position": {
+        "lineNumber": 12,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": false,
+      "reason": "reads outer mutable offset, value changed"
+    }
+  ]
+}

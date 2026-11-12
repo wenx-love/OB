@@ -1,0 +1,160 @@
+{
+  "note": "static probe: compares e2e callLocation (from capture-engine) with Babel CallExpression positions in capture-proto.js; no browser",
+  "rows": [
+    {
+      "key": "decOne|[256]",
+      "count": 1,
+      "callLocation": "55:11",
+      "sourceLine": "  out.push(decOne(0x100));",
+      "exact": [
+        {
+          "kinds": [
+            "callExpr.start"
+          ],
+          "callee": "decOne",
+          "callText": "decOne(0x100)"
+        }
+      ],
+      "enclosingInnermost": {
+        "len": 13,
+        "callee": "decOne",
+        "callText": "decOne(0x100)"
+      },
+      "sameNameCallSites": 4,
+      "sameName": [
+        "40:14 decOne(i)",
+        "55:11 decOne(0x100)",
+        "56:11 decOne(0x101)",
+        "57:11 decOne(0x101)"
+      ]
+    },
+    {
+      "key": "decOne|[257]",
+      "count": 2,
+      "callLocation": "56:11",
+      "sourceLine": "  out.push(decOne(0x101));",
+      "exact": [
+        {
+          "kinds": [
+            "callExpr.start"
+          ],
+          "callee": "decOne",
+          "callText": "decOne(0x101)"
+        }
+      ],
+      "enclosingInnermost": {
+        "len": 13,
+        "callee": "decOne",
+        "callText": "decOne(0x101)"
+      },
+      "sameNameCallSites": 4,
+      "sameName": [
+        "40:14 decOne(i)",
+        "55:11 decOne(0x100)",
+        "56:11 decOne(0x101)",
+        "57:11 decOne(0x101)"
+      ]
+    },
+    {
+      "key": "decTwo|[259,\"yBNh\"]",
+      "count": 1,
+      "callLocation": "58:11",
+      "sourceLine": "  out.push(decTwo(0x103, 'yBNh'));",
+      "exact": [
+        {
+          "kinds": [
+            "callExpr.start"
+          ],
+          "callee": "decTwo",
+          "callText": "decTwo(0x103, 'yBNh')"
+        }
+      ],
+      "enclosingInnermost": {
+        "len": 21,
+        "callee": "decTwo",
+        "callText": "decTwo(0x103, 'yBNh')"
+      },
+      "sameNameCallSites": 2,
+      "sameName": [
+        "41:9 decTwo(i, key)",
+        "58:11 decTwo(0x103, 'yBNh')"
+      ]
+    },
+    {
+      "key": "decThree|[260,\"k\",\"s\"]",
+      "count": 1,
+      "callLocation": "59:11",
+      "sourceLine": "  out.push(decThree(0x104, 'k', 's'));",
+      "exact": [
+        {
+          "kinds": [
+            "callExpr.start"
+          ],
+          "callee": "decThree",
+          "callText": "decThree(0x104, 'k', 's')"
+        }
+      ],
+      "enclosingInnermost": {
+        "len": 25,
+        "callee": "decThree",
+        "callText": "decThree(0x104, 'k', 's')"
+      },
+      "sameNameCallSites": 1,
+      "sameName": [
+        "59:11 decThree(0x104, 'k', 's')"
+      ]
+    },
+    {
+      "key": "decOne|[264]",
+      "count": 1,
+      "callLocation": "40:14",
+      "sourceLine": "  var inner = decOne(i);",
+      "exact": [
+        {
+          "kinds": [
+            "callExpr.start"
+          ],
+          "callee": "decOne",
+          "callText": "decOne(i)"
+        }
+      ],
+      "enclosingInnermost": {
+        "len": 9,
+        "callee": "decOne",
+        "callText": "decOne(i)"
+      },
+      "sameNameCallSites": 4,
+      "sameName": [
+        "40:14 decOne(i)",
+        "55:11 decOne(0x100)",
+        "56:11 decOne(0x101)",
+        "57:11 decOne(0x101)"
+      ]
+    },
+    {
+      "key": "decTwo|[264,\"nk\"]",
+      "count": 1,
+      "callLocation": "41:9",
+      "sourceLine": "  return decTwo(i, key) + '+' + inner;",
+      "exact": [
+        {
+          "kinds": [
+            "callExpr.start"
+          ],
+          "callee": "decTwo",
+          "callText": "decTwo(i, key)"
+        }
+      ],
+      "enclosingInnermost": {
+        "len": 14,
+        "callee": "decTwo",
+        "callText": "decTwo(i, key)"
+      },
+      "sameNameCallSites": 2,
+      "sameName": [
+        "41:9 decTwo(i, key)",
+        "58:11 decTwo(0x103, 'yBNh')"
+      ]
+    }
+  ]
+}

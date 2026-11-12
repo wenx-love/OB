@@ -1,0 +1,46 @@
+{
+  "capturedBy": "ob-recover",
+  "method": "historical-real-chrome-capture-engine-records (test/acceptance/devtools-real-ob-e2e.json steps.round1EngineRaw) re-validated offline: validateCaptures -> dryRunReplacements -> applyVerifiedReplacements",
+  "note": "not a new CDP pause capture and not constructed by this test; engine raw records filtered by scriptUrl suffix /obfuscated.js",
+  "captureSource": {
+    "file": "test/acceptance/devtools-real-ob-e2e.json",
+    "fileSha256": "640666dc7c462c16f8d9c976bb7d2a9030a44cee8a697b1ab894b266d4d6b78b",
+    "totalRecords": 73,
+    "recordsUsed": 73,
+    "foreignRecordsExcluded": 0
+  },
+  "scriptIds": [
+    "18"
+  ],
+  "validation": {
+    "groups": 37,
+    "byStatus": {
+      "pending": 0,
+      "verified": 28,
+      "unstable": 9,
+      "failed": 0,
+      "insufficient": 0
+    },
+    "suspectFunctions": 1
+  },
+  "dryRun": {
+    "candidates": 0,
+    "rejections": 37,
+    "byReason": {
+      "status-unstable": 9,
+      "function-suspect": 28
+    }
+  },
+  "applyStats": [
+    {
+      "scriptId": "18",
+      "stats": {
+        "total": 0,
+        "applied": 0,
+        "rejected": 0,
+        "byReason": {}
+      }
+    }
+  ],
+  "applied": []
+}

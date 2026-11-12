@@ -1,0 +1,145 @@
+{
+  "targetLength": 255977,
+  "parseErrors": 0,
+  "topLevelStatements": 22,
+  "functionDeclarations": 239,
+  "hexNamedFunctions": [
+    {
+      "name": "_0x374d",
+      "params": 2,
+      "topLevel": true,
+      "calls": 1,
+      "bytes": 2057
+    },
+    {
+      "name": "_0x3a3a",
+      "params": 0,
+      "topLevel": true,
+      "calls": 2,
+      "bytes": 16834
+    }
+  ],
+  "stringArrayDecl": {
+    "name": "_0x24d07f",
+    "elements": 246,
+    "start": 33975,
+    "end": 40070
+  },
+  "rotationIIFE": {
+    "start": 114425,
+    "end": 223530
+  },
+  "topCalls": [
+    {
+      "name": "_0x28f994",
+      "count": 379
+    },
+    {
+      "name": ".call",
+      "count": 146
+    },
+    {
+      "name": "$",
+      "count": 112
+    },
+    {
+      "name": ".trigger",
+      "count": 108
+    },
+    {
+      "name": ".extend",
+      "count": 89
+    },
+    {
+      "name": "_0x28b023",
+      "count": 80
+    },
+    {
+      "name": "n",
+      "count": 78
+    },
+    {
+      "name": ".find",
+      "count": 71
+    },
+    {
+      "name": "_0x2e3772",
+      "count": 64
+    },
+    {
+      "name": ".each",
+      "count": 63
+    },
+    {
+      "name": "i",
+      "count": 61
+    },
+    {
+      "name": "_0x2567f8",
+      "count": 58
+    },
+    {
+      "name": ".can",
+      "count": 56
+    },
+    {
+      "name": ".apply",
+      "count": 54
+    },
+    {
+      "name": ".push",
+      "count": 54
+    },
+    {
+      "name": ".bind",
+      "count": 52
+    },
+    {
+      "name": ".getRuntime",
+      "count": 52
+    },
+    {
+      "name": ".replace",
+      "count": 50
+    },
+    {
+      "name": "parseInt",
+      "count": 49
+    },
+    {
+      "name": ".get",
+      "count": 47
+    },
+    {
+      "name": ".typeOf",
+      "count": 41
+    },
+    {
+      "name": "t",
+      "count": 39
+    },
+    {
+      "name": "_0x509bae",
+      "count": 37
+    },
+    {
+      "name": ".attr",
+      "count": 36
+    },
+    {
+      "name": ".slice",
+      "count": 32
+    }
+  ],
+  "samples": {
+    "_0x374d": [
+      {
+        "line": 0,
+        "col": 2288,
+        "args": 2,
+        "allLiteral": false,
+        "text": "_0x374d(_0x5dacbd,_0x400e51)"
+      }
+    ]
+  }
+}

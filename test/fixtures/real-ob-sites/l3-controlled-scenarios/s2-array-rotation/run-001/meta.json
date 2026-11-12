@@ -1,0 +1,15 @@
+{
+  "siteId": "s2-array-rotation",
+  "runId": "run-001",
+  "layer": "L3",
+  "kind": "controlled-replay",
+  "isRealSiteSample": false,
+  "url": null,
+  "sha256": "bd11e190f73922e7a4e82f6117e0a39d87bb7ed3e339c9169a165f55c172b504",
+  "bytes": 208,
+  "fetchedAt": null,
+  "fetchedAtNote": "synthetic script authored in test/real-site-l3.test.ts",
+  "capturedBy": "n/a-synthetic",
+  "tooling": "test/real-site-l3.test.ts",
+  "title": "数组旋转：同参数在旋转前后返回不同值，整个函数的所有位置都不可确定"
+}

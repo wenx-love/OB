@@ -1,0 +1,1235 @@
+{
+  "chrome": "Chrome/155.0.8059.40",
+  "stages": [
+    {
+      "name": "A: entry bp + stepOut (all decoders, nested/throw included)",
+      "cfg": {
+        "bpFns": [
+          "decOne",
+          "decTwo",
+          "decThree",
+          "decNum",
+          "decUndef",
+          "decNull",
+          "decThrow",
+          "decNested"
+        ],
+        "bpAt": "firstStmt",
+        "strategy": "stepOut"
+      },
+      "breakpoints": [],
+      "raw": [],
+      "captures": [],
+      "pauses": 0,
+      "skipped": true,
+      "groundTruth": "skipped",
+      "durationMs": 0,
+      "errors": [],
+      "removed": 0
+    },
+    {
+      "name": "B: entry bp + stepOver probe (non-nesting decoders)",
+      "cfg": {
+        "bpFns": [
+          "decOne",
+          "decNum",
+          "decUndef",
+          "decNull",
+          "decThrow"
+        ],
+        "bpAt": "firstStmt",
+        "strategy": "stepOver"
+      },
+      "breakpoints": [],
+      "raw": [],
+      "captures": [],
+      "pauses": 0,
+      "skipped": true,
+      "groundTruth": "skipped",
+      "durationMs": 0,
+      "errors": [],
+      "removed": 0
+    },
+    {
+      "name": "C: bp at function keyword position (decOne) + stepOut",
+      "cfg": {
+        "bpFns": [
+          "decOne"
+        ],
+        "bpAt": "funcStart",
+        "strategy": "stepOut"
+      },
+      "breakpoints": [],
+      "raw": [],
+      "captures": [],
+      "pauses": 0,
+      "skipped": true,
+      "groundTruth": "skipped",
+      "durationMs": 0,
+      "errors": [],
+      "removed": 0
+    },
+    {
+      "name": "D: function-start bp + stepOver (ALL decoders, nested bps included)",
+      "cfg": {
+        "bpFns": [
+          "decOne",
+          "decTwo",
+          "decThree",
+          "decNum",
+          "decUndef",
+          "decNull",
+          "decThrow",
+          "decNested"
+        ],
+        "bpAt": "funcStart",
+        "strategy": "stepOver"
+      },
+      "breakpoints": [],
+      "raw": [],
+      "captures": [],
+      "pauses": 0,
+      "skipped": true,
+      "groundTruth": "skipped",
+      "durationMs": 0,
+      "errors": [],
+      "removed": 0
+    },
+    {
+      "name": "E: entry bp + return-statement bps + one stepOver (loop decoder, single-statement return, nested)",
+      "cfg": {
+        "bpFns": [
+          "decOne",
+          "decTwo",
+          "decThree",
+          "decNum",
+          "decLoop",
+          "decNested"
+        ],
+        "bpAt": "funcStart",
+        "strategy": "retBp"
+      },
+      "breakpoints": [],
+      "raw": [],
+      "captures": [],
+      "pauses": 0,
+      "skipped": true,
+      "groundTruth": "skipped",
+      "durationMs": 0,
+      "errors": [],
+      "removed": 0
+    },
+    {
+      "name": "F: stepOver strategy on loop decoder (expected to hit the step limit)",
+      "cfg": {
+        "bpFns": [
+          "decLoop"
+        ],
+        "bpAt": "funcStart",
+        "strategy": "stepOver"
+      },
+      "breakpoints": [],
+      "raw": [],
+      "captures": [],
+      "pauses": 0,
+      "skipped": true,
+      "groundTruth": "skipped",
+      "durationMs": 0,
+      "errors": [],
+      "removed": 0
+    },
+    {
+      "name": "G: entry bp + return bps + closing-brace bp, ALL decoders (undefined/null/throw/implicit return)",
+      "cfg": {
+        "bpFns": [
+          "decOne",
+          "decTwo",
+          "decThree",
+          "decNum",
+          "decUndef",
+          "decNull",
+          "decThrow",
+          "decNested",
+          "decLoop"
+        ],
+        "bpAt": "funcStart",
+        "strategy": "retBp"
+      },
+      "breakpoints": [
+        {
+          "fn": "decOne",
+          "requested": {
+            "lineNumber": 2,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 3,
+            "columnNumber": 2
+          },
+          "id": "4:2:0:3"
+        },
+        {
+          "fn": "decOne(ret)",
+          "requested": {
+            "lineNumber": 4,
+            "columnNumber": 2
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 4,
+            "columnNumber": 2
+          },
+          "id": "4:4:2:3"
+        },
+        {
+          "fn": "decOne(ret)",
+          "requested": {
+            "lineNumber": 5,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 4,
+            "columnNumber": 19
+          },
+          "id": "4:5:0:3"
+        },
+        {
+          "fn": "decTwo",
+          "requested": {
+            "lineNumber": 7,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 8,
+            "columnNumber": 2
+          },
+          "id": "4:7:0:3"
+        },
+        {
+          "fn": "decTwo(ret)",
+          "requested": {
+            "lineNumber": 10,
+            "columnNumber": 2
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 10,
+            "columnNumber": 2
+          },
+          "id": "4:10:2:3"
+        },
+        {
+          "fn": "decTwo(ret)",
+          "requested": {
+            "lineNumber": 11,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 10,
+            "columnNumber": 23
+          },
+          "id": "4:11:0:3"
+        },
+        {
+          "fn": "decThree",
+          "requested": {
+            "lineNumber": 13,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 14,
+            "columnNumber": 2
+          },
+          "id": "4:13:0:3"
+        },
+        {
+          "fn": "decThree(ret)",
+          "requested": {
+            "lineNumber": 16,
+            "columnNumber": 2
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 16,
+            "columnNumber": 2
+          },
+          "id": "4:16:2:3"
+        },
+        {
+          "fn": "decThree(ret)",
+          "requested": {
+            "lineNumber": 17,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 16,
+            "columnNumber": 36
+          },
+          "id": "4:17:0:3"
+        },
+        {
+          "fn": "decNum",
+          "requested": {
+            "lineNumber": 19,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 20,
+            "columnNumber": 2
+          },
+          "id": "4:19:0:3"
+        },
+        {
+          "fn": "decNum(ret)",
+          "requested": {
+            "lineNumber": 20,
+            "columnNumber": 2
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 20,
+            "columnNumber": 2
+          },
+          "id": "4:20:2:3"
+        },
+        {
+          "fn": "decNum(ret)",
+          "requested": {
+            "lineNumber": 21,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 20,
+            "columnNumber": 25
+          },
+          "id": "4:21:0:3"
+        },
+        {
+          "fn": "decUndef",
+          "requested": {
+            "lineNumber": 23,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 24,
+            "columnNumber": 10
+          },
+          "id": "4:23:0:3"
+        },
+        {
+          "fn": "decUndef(ret)",
+          "requested": {
+            "lineNumber": 25,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 25,
+            "columnNumber": 0
+          },
+          "id": "4:25:0:3"
+        },
+        {
+          "fn": "decNull",
+          "requested": {
+            "lineNumber": 27,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 28,
+            "columnNumber": 2
+          },
+          "id": "4:27:0:3"
+        },
+        {
+          "fn": "decNull(ret)",
+          "requested": {
+            "lineNumber": 28,
+            "columnNumber": 2
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 28,
+            "columnNumber": 2
+          },
+          "id": "4:28:2:3"
+        },
+        {
+          "fn": "decNull(ret)",
+          "requested": {
+            "lineNumber": 29,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 28,
+            "columnNumber": 14
+          },
+          "id": "4:29:0:3"
+        },
+        {
+          "fn": "decThrow",
+          "requested": {
+            "lineNumber": 31,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 32,
+            "columnNumber": 2
+          },
+          "id": "4:31:0:3"
+        },
+        {
+          "fn": "decThrow(ret)",
+          "requested": {
+            "lineNumber": 35,
+            "columnNumber": 2
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 35,
+            "columnNumber": 2
+          },
+          "id": "4:35:2:3"
+        },
+        {
+          "fn": "decThrow(ret)",
+          "requested": {
+            "lineNumber": 36,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 35,
+            "columnNumber": 23
+          },
+          "id": "4:36:0:3"
+        },
+        {
+          "fn": "decNested",
+          "requested": {
+            "lineNumber": 38,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 39,
+            "columnNumber": 14
+          },
+          "id": "4:38:0:3"
+        },
+        {
+          "fn": "decNested(ret)",
+          "requested": {
+            "lineNumber": 40,
+            "columnNumber": 2
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 40,
+            "columnNumber": 2
+          },
+          "id": "4:40:2:3"
+        },
+        {
+          "fn": "decNested(ret)",
+          "requested": {
+            "lineNumber": 41,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 40,
+            "columnNumber": 38
+          },
+          "id": "4:41:0:3"
+        },
+        {
+          "fn": "decLoop",
+          "requested": {
+            "lineNumber": 43,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 44,
+            "columnNumber": 10
+          },
+          "id": "4:43:0:3"
+        },
+        {
+          "fn": "decLoop(ret)",
+          "requested": {
+            "lineNumber": 49,
+            "columnNumber": 2
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 49,
+            "columnNumber": 2
+          },
+          "id": "4:49:2:3"
+        },
+        {
+          "fn": "decLoop(ret)",
+          "requested": {
+            "lineNumber": 50,
+            "columnNumber": 0
+          },
+          "actual": {
+            "scriptId": "3",
+            "lineNumber": 49,
+            "columnNumber": 23
+          },
+          "id": "4:50:0:3"
+        }
+      ],
+      "raw": [
+        {
+          "reason": "other",
+          "fn": "decOne",
+          "line": 3,
+          "col": 2,
+          "depth": 2,
+          "hitBp": "decOne",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decOne",
+          "line": 4,
+          "col": 2,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decOne",
+          "line": 4,
+          "col": 19,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "string",
+            "value": "Signature"
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decOne",
+          "line": 3,
+          "col": 2,
+          "depth": 2,
+          "hitBp": "decOne",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decOne",
+          "line": 4,
+          "col": 2,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decOne",
+          "line": 4,
+          "col": 19,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "string",
+            "value": "hello"
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decOne",
+          "line": 3,
+          "col": 2,
+          "depth": 2,
+          "hitBp": "decOne",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decOne",
+          "line": 4,
+          "col": 2,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decOne",
+          "line": 4,
+          "col": 19,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "string",
+            "value": "hello"
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decTwo",
+          "line": 8,
+          "col": 2,
+          "depth": 2,
+          "hitBp": "decTwo",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decTwo",
+          "line": 10,
+          "col": 2,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decTwo",
+          "line": 10,
+          "col": 23,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "string",
+            "value": "foo:yBNh"
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decThree",
+          "line": 14,
+          "col": 2,
+          "depth": 2,
+          "hitBp": "decThree",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decThree",
+          "line": 16,
+          "col": 2,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decThree",
+          "line": 16,
+          "col": 36,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "string",
+            "value": "bar|k|s"
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decNum",
+          "line": 20,
+          "col": 2,
+          "depth": 2,
+          "hitBp": "decNum",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decNum",
+          "line": 20,
+          "col": 25,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "number",
+            "value": 10
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decUndef",
+          "line": 24,
+          "col": 10,
+          "depth": 2,
+          "hitBp": "decUndef",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decUndef",
+          "line": 25,
+          "col": 0,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "undefined"
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decNull",
+          "line": 28,
+          "col": 2,
+          "depth": 2,
+          "hitBp": "decNull",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decNull",
+          "line": 28,
+          "col": 14,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "null",
+            "value": null
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decThrow",
+          "line": 32,
+          "col": 2,
+          "depth": 2,
+          "hitBp": "decThrow",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decNested",
+          "line": 39,
+          "col": 14,
+          "depth": 2,
+          "hitBp": "decNested",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decOne",
+          "line": 3,
+          "col": 2,
+          "depth": 3,
+          "hitBp": "decOne",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decOne",
+          "line": 4,
+          "col": 2,
+          "depth": 3,
+          "hitBp": null,
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decOne",
+          "line": 4,
+          "col": 19,
+          "depth": 3,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "string",
+            "value": "beta"
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decNested",
+          "line": 40,
+          "col": 2,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decTwo",
+          "line": 8,
+          "col": 2,
+          "depth": 3,
+          "hitBp": "decTwo",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decTwo",
+          "line": 10,
+          "col": 2,
+          "depth": 3,
+          "hitBp": null,
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decTwo",
+          "line": 10,
+          "col": 23,
+          "depth": 3,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "string",
+            "value": "beta:nk"
+          }
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decNested",
+          "line": 40,
+          "col": 38,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "string",
+            "value": "beta:nk+beta"
+          }
+        },
+        {
+          "reason": "other",
+          "fn": "decLoop",
+          "line": 44,
+          "col": 10,
+          "depth": 2,
+          "hitBp": "decLoop",
+          "hasReturnValue": false
+        },
+        {
+          "reason": "other",
+          "fn": "decLoop",
+          "line": 49,
+          "col": 2,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": false
+        },
+        {
+          "reason": "ambiguous",
+          "fn": "decLoop",
+          "line": 49,
+          "col": 23,
+          "depth": 2,
+          "hitBp": null,
+          "hasReturnValue": true,
+          "returnValue": {
+            "type": "string",
+            "value": "gamma#90"
+          }
+        }
+      ],
+      "captures": [
+        {
+          "fn": "decOne",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 3,
+            "col": 2
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 54,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 256
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "string",
+            "value": "Signature"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decOne",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 3,
+            "col": 2
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 55,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 257
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "string",
+            "value": "hello"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decOne",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 3,
+            "col": 2
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 56,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 257
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "string",
+            "value": "hello"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decTwo",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 8,
+            "col": 2
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 57,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 259
+            },
+            {
+              "type": "string",
+              "value": "yBNh"
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "string",
+            "value": "foo:yBNh"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decThree",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 14,
+            "col": 2
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 58,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 260
+            },
+            {
+              "type": "string",
+              "value": "k"
+            },
+            {
+              "type": "string",
+              "value": "s"
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "string",
+            "value": "bar|k|s"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decNum",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 20,
+            "col": 2
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 59,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 261
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "number",
+            "value": 10
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decUndef",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 24,
+            "col": 10
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 60,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 262
+            }
+          ],
+          "awaitRet": false,
+          "returnValue": {
+            "type": "undefined"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decNull",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 28,
+            "col": 2
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 61,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 263
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "null",
+            "value": null
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decThrow",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 32,
+            "col": 2
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 62,
+            "col": 8
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "awaitRet": false,
+          "captureStatus": "capture-failed",
+          "reason": "function exited without a step pause (exception or abnormal exit)"
+        },
+        {
+          "fn": "decOne",
+          "depth": 3,
+          "steps": 0,
+          "entry": {
+            "line": 3,
+            "col": 2
+          },
+          "caller": {
+            "fn": "decNested",
+            "line": 39,
+            "col": 14
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 264
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "string",
+            "value": "beta"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decTwo",
+          "depth": 3,
+          "steps": 0,
+          "entry": {
+            "line": 8,
+            "col": 2
+          },
+          "caller": {
+            "fn": "decNested",
+            "line": 40,
+            "col": 9
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 264
+            },
+            {
+              "type": "string",
+              "value": "nk"
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "string",
+            "value": "beta:nk"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decNested",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 39,
+            "col": 14
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 63,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 264
+            },
+            {
+              "type": "string",
+              "value": "nk"
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "string",
+            "value": "beta:nk+beta"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        },
+        {
+          "fn": "decLoop",
+          "depth": 2,
+          "steps": 0,
+          "entry": {
+            "line": 44,
+            "col": 10
+          },
+          "caller": {
+            "fn": "runAll",
+            "line": 64,
+            "col": 11
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 265
+            },
+            {
+              "type": "string",
+              "value": "abc"
+            }
+          ],
+          "awaitRet": true,
+          "returnValue": {
+            "type": "string",
+            "value": "gamma#90"
+          },
+          "captureStatus": "success",
+          "capturedAt": "return-bp-direct"
+        }
+      ],
+      "pauses": 34,
+      "forcedResumes": 0,
+      "errors": [],
+      "removed": 26,
+      "done": true,
+      "durationMs": 3355,
+      "groundTruth": "[\"Signature\",\"hello\",\"hello\",\"foo:yBNh\",\"bar|k|s\",10,null,null,\"caught:decoder failed: 1\",\"beta:nk+beta\",\"gamma#90\"]",
+      "leftoverPending": 0
+    }
+  ]
+}

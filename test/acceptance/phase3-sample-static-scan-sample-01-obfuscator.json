@@ -1,0 +1,107 @@
+{
+  "sample": "sample-01-obfuscator",
+  "bytes": 15454,
+  "analyzed": true,
+  "discoveryMs": 71,
+  "functions": 35,
+  "candidates": 7,
+  "high": 1,
+  "cands": [
+    {
+      "name": "_0x4b57",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 8,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x4b57",
+      "kind": "AssignedExpression",
+      "conf": "high",
+      "params": 2,
+      "calls": 8,
+      "arr": "_0x1be6d5",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x588477",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 4,
+      "calls": 10,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x557424",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 4,
+      "calls": 15,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x1d94f8",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 4,
+      "calls": 14,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x5c7c8e",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 4,
+      "calls": 14,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x38b7d1",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 4,
+      "calls": 13,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    }
+  ],
+  "plans": [
+    {
+      "name": "_0x4b57",
+      "supported": true,
+      "returns": 1
+    }
+  ],
+  "scan": {
+    "eval(": 0,
+    "Function(": 0,
+    "XMLHttpRequest": 0,
+    "fetch(": 0,
+    "WebSocket": 0,
+    "document.cookie": 0,
+    "localStorage": 0,
+    "importScripts": 0,
+    "location.href": 0,
+    "debugger": 0
+  }
+}

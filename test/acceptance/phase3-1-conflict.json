@@ -1,0 +1,38 @@
+{
+  "note": "conflict reproduction: a browser-level CDP session with the Debugger domain enabled stands in for DevTools occupying the tab; then chrome.debugger.attach is attempted from the extension service worker",
+  "chrome": "Chrome/155.0.8059.40",
+  "tabId": 1181479584,
+  "attachClean": {
+    "ok": true
+  },
+  "detach1": {
+    "ok": true
+  },
+  "devtoolsLikeSession": "browser-level CDP attached with Debugger domain enabled",
+  "attachUnderConflict": {
+    "ok": true
+  },
+  "detachAfterConflictAttempt": {
+    "ok": true
+  },
+  "heldByRawAttach": {
+    "ok": true
+  },
+  "connectUnderRealConflict": {
+    "status": "error",
+    "captureActive": null,
+    "msgs": [
+      "status-changed:connecting:",
+      "status-changed:error:Another debugger is already attached to the tab with id: 1181479584.",
+      "log:error:Another debugger is already attached to the tab with id: 1181479584.",
+      "log:error:Another debugger is already attached to the tab with id: 1181479584.",
+      "log:error:调试器未连接，无法开始运行时捕获（若 DevTools 自带调试器占用了连接，请先断开后重试）"
+    ]
+  },
+  "detachHeld": {
+    "ok": true
+  },
+  "attachAfterRelease": {
+    "ok": true
+  }
+}

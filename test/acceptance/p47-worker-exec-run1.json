@@ -1,0 +1,70 @@
+{
+  "schema": "ob-recover.worker-exec/1",
+  "runNo": "1",
+  "startedAt": "2026-11-10T15:03:09.800Z",
+  "note": "local pages only, no external host reachable, observation only",
+  "conditions": {
+    "headless": false,
+    "resolverRules": "MAP * ~NOTFOUND , EXCLUDE 127.0.0.1",
+    "ports": {
+      "cdp": 9481,
+      "http": 8791
+    },
+    "workerTimeoutMs": 900000
+  },
+  "inputs": {
+    "small": {
+      "path": "test/fixtures/real-ob-sites/l1-qccqcc-hangzhou/run-20261110T1458Z/script.js",
+      "bytes": 256820,
+      "sha256": "cc7a8127fa8a5d17289a953e11d82ff528fe9ea42276810c5f03371abf760daf"
+    },
+    "big": {
+      "path": "test/fixtures/p47-512kb-synthetic.js",
+      "bytes": 512064,
+      "sha256": "6a419264c85865c134c88ed52239eefd527fb2cbcb74ceb9af501d8e106ce207"
+    }
+  },
+  "dist": {
+    "background.js": "68d8055b0eee56277979858ef43a4a85eb66960dd44d72eb990be73ea7e3eea0",
+    "devtools.js": "870b0b747d5bfbe54af0fe8d81581f27bac8eb2a4ecea433f78f295c18edae65",
+    "panel.js": "accfac096ae00cb33158f550cdc2e10beeebea69bcf213dc27c0ce653291e807",
+    "sandbox.js": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4"
+  },
+  "workerAsset": "/assets/decoder-analysis.worker-CMwEr3ip.js",
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "fatal": "CDP timeout: Runtime.evaluate",
+  "served": [
+    {
+      "at": 3537,
+      "path": "/index.html",
+      "status": 200,
+      "bytes": 120
+    },
+    {
+      "at": 3570,
+      "path": "/favicon.ico",
+      "status": 404,
+      "bytes": 0
+    },
+    {
+      "at": 5374,
+      "path": "/.well-known/appspecific/com.chrome.devtools.json",
+      "status": 404,
+      "bytes": 0
+    },
+    {
+      "at": 13586,
+      "path": "/small.js",
+      "status": 200,
+      "bytes": 256820
+    },
+    {
+      "at": 13589,
+      "path": "/big.js",
+      "status": 200,
+      "bytes": 512064
+    }
+  ],
+  "finishedAt": "2026-11-10T15:03:53.725Z"
+}

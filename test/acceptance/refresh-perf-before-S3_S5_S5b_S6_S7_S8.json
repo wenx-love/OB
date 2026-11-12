@@ -1,0 +1,1183 @@
+{
+  "tag": "before",
+  "only": [
+    "S3",
+    "S5",
+    "S5b",
+    "S6",
+    "S7",
+    "S8"
+  ],
+  "params": {
+    "FILLERS": 3,
+    "KB": 100,
+    "CALLS": 200
+  },
+  "scenarios": {
+    "S3": {
+      "status": "connected",
+      "result": {
+        "r": {
+          "label": "start-then-reload-after-150ms",
+          "done": true,
+          "ms": 1671,
+          "probes": 3,
+          "maxProbeLatencyMs": 796,
+          "slowProbeCount": 1,
+          "slowProbes": [
+            796
+          ]
+        },
+        "engine": {
+          "active": true,
+          "bps": 3,
+          "stats": {
+            "breakpointsSet": 3,
+            "hits": 0,
+            "pauses": 0,
+            "success": 0,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 0,
+          "unstable": 0
+        }
+      },
+      "wallMs": 3499,
+      "observer": {
+        "paused": 9,
+        "resumed": 8,
+        "scriptParsed": 9,
+        "byReason": {
+          "other": 9
+        }
+      },
+      "sw": {
+        "events": 32,
+        "byMethod": {
+          "Debugger.scriptParsed": 9,
+          "Debugger.paused": 9,
+          "Debugger.resumed": 8,
+          "Runtime.executionContextsCleared": 4,
+          "Runtime.executionContextCreated": 2
+        },
+        "pausedBy": {
+          "instrumentation": 9
+        },
+        "pauseMs": {
+          "instrumentation": {
+            "n": 8,
+            "mean": 2.06,
+            "p50": 0.8,
+            "p95": 9.5,
+            "max": 9.5,
+            "sum": 16.5
+          },
+          "breakpoint": {
+            "n": 0
+          },
+          "other": {
+            "n": 0
+          }
+        },
+        "openPause": false,
+        "cmd": {
+          "Debugger.getScriptSource": {
+            "n": 18,
+            "sum": 444.6,
+            "max": 411.9,
+            "err": 0,
+            "stale": 0,
+            "unknown": 9,
+            "mean": 24.7
+          },
+          "Debugger.resume": {
+            "n": 9,
+            "sum": 11.8,
+            "max": 2.7,
+            "err": 1,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 1.31
+          },
+          "Debugger.setBreakpoint": {
+            "n": 3,
+            "sum": 3.5,
+            "max": 2.2,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 1.17
+          }
+        },
+        "cmdErrors": {
+          "Debugger.resume: {\"code\":-32000,\"message\":\"Can only perform operation while paused.\"}": 1
+        },
+        "staleCmds": 0,
+        "unknownCmds": 9,
+        "swLag": {
+          "n": 4,
+          "max": 383.5,
+          "sum": 1418.3
+        },
+        "inflight": 0,
+        "msgs": {
+          "capture-state": 7,
+          "capture-event": 2,
+          "script-parsed": 9,
+          "script-discovered": 9,
+          "resumed": 8,
+          "context-created": 2,
+          "log": 1
+        },
+        "bytes": {
+          "capture-state": 1941,
+          "script-discovered": 417091
+        }
+      },
+      "engine": {
+        "active": true,
+        "bps": 3,
+        "stats": {
+          "breakpointsSet": 3,
+          "hits": 0,
+          "pauses": 0,
+          "success": 0,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": 0,
+        "unstable": 0
+      }
+    },
+    "S5": {
+      "status": "connected",
+      "result": {
+        "r1": {
+          "label": "capture-active-load",
+          "done": true,
+          "ms": 1781,
+          "probes": 16,
+          "maxProbeLatencyMs": 418,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "stopMs": 2,
+        "stAfterStop": {
+          "active": false,
+          "bps": 0,
+          "stats": {
+            "breakpointsSet": 6,
+            "hits": 200,
+            "pauses": 600,
+            "success": 200,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 10,
+          "unstable": 0
+        },
+        "r2": {
+          "label": "reload-after-stop",
+          "done": true,
+          "ms": 68,
+          "probes": 2,
+          "maxProbeLatencyMs": 18,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "afterStopReload": {
+          "events": 24,
+          "pausedBy": {
+            "instrumentation": 7
+          },
+          "pauseMs": {
+            "instrumentation": {
+              "n": 7,
+              "mean": 2.1,
+              "p50": 1.8,
+              "p95": 4.7,
+              "max": 4.7,
+              "sum": 14.7
+            },
+            "breakpoint": {
+              "n": 0
+            },
+            "other": {
+              "n": 0
+            }
+          },
+          "cmd": {
+            "Debugger.getScriptSource": 7,
+            "Debugger.resume": 7
+          },
+          "cmdErrors": {},
+          "stale": 0,
+          "swLag": {
+            "n": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "openPause": false,
+          "inflight": 0
+        }
+      },
+      "wallMs": 5492,
+      "observer": {
+        "paused": 616,
+        "resumed": 616,
+        "scriptParsed": 28,
+        "byReason": {
+          "other": 416,
+          "step": 200
+        }
+      },
+      "sw": {
+        "events": 1266,
+        "byMethod": {
+          "Debugger.scriptParsed": 28,
+          "Debugger.paused": 616,
+          "Debugger.resumed": 616,
+          "Runtime.executionContextsCleared": 4,
+          "Runtime.executionContextCreated": 2
+        },
+        "pausedBy": {
+          "instrumentation": 16,
+          "other/bp": 400,
+          "ambiguous/bp": 200
+        },
+        "pauseMs": {
+          "instrumentation": {
+            "n": 16,
+            "mean": 77.38,
+            "p50": 2.9,
+            "p95": 415.4,
+            "max": 415.4,
+            "sum": 1238
+          },
+          "breakpoint": {
+            "n": 600,
+            "mean": 0.59,
+            "p50": 0.5,
+            "p95": 1.3,
+            "max": 4.2,
+            "sum": 356.1
+          },
+          "other": {
+            "n": 0
+          }
+        },
+        "openPause": false,
+        "cmd": {
+          "Debugger.removeBreakpoint": {
+            "n": 6,
+            "sum": 2.4,
+            "max": 0.7,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.4
+          },
+          "Debugger.getScriptSource": {
+            "n": 37,
+            "sum": 38.4,
+            "max": 4.7,
+            "err": 0,
+            "stale": 0,
+            "unknown": 28,
+            "mean": 1.04
+          },
+          "Debugger.resume": {
+            "n": 416,
+            "sum": 164.8,
+            "max": 9.9,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.4
+          },
+          "Debugger.setBreakpoint": {
+            "n": 3,
+            "sum": 3.1,
+            "max": 2.4,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 1.03
+          },
+          "Runtime.getProperties": {
+            "n": 200,
+            "sum": 71,
+            "max": 2.3,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.35
+          },
+          "Debugger.stepOver": {
+            "n": 200,
+            "sum": 68.9,
+            "max": 1.7,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.34
+          }
+        },
+        "cmdErrors": {},
+        "staleCmds": 0,
+        "unknownCmds": 28,
+        "swLag": {
+          "n": 3,
+          "max": 363.5,
+          "sum": 1038.9
+        },
+        "inflight": 0,
+        "msgs": {
+          "script-parsed": 7,
+          "script-discovered": 7,
+          "resumed": 7,
+          "capture-state": 2,
+          "context-created": 1
+        },
+        "bytes": {
+          "script-discovered": 312981,
+          "capture-state": 16938
+        }
+      },
+      "engine": {
+        "active": false,
+        "bps": 0,
+        "stats": {
+          "breakpointsSet": 6,
+          "hits": 200,
+          "pauses": 600,
+          "success": 200,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": 10,
+        "unstable": 0
+      }
+    },
+    "S5b": {
+      "status": "connected",
+      "result": {
+        "r1": {
+          "label": "capture-active-load",
+          "done": true,
+          "ms": 1660,
+          "probes": 15,
+          "maxProbeLatencyMs": 416,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "stopMs": 7,
+        "r2": {
+          "label": "reload-during-stop",
+          "done": true,
+          "ms": 77,
+          "probes": 2,
+          "maxProbeLatencyMs": 14,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "engine": {
+          "active": false,
+          "bps": 0,
+          "stats": {
+            "breakpointsSet": 9,
+            "hits": 400,
+            "pauses": 1200,
+            "success": 400,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 20,
+          "unstable": 0
+        }
+      },
+      "wallMs": 4069,
+      "observer": {
+        "paused": 616,
+        "resumed": 616,
+        "scriptParsed": 27,
+        "byReason": {
+          "other": 416,
+          "step": 200
+        }
+      },
+      "sw": {
+        "events": 1265,
+        "byMethod": {
+          "Debugger.scriptParsed": 27,
+          "Debugger.paused": 616,
+          "Debugger.resumed": 616,
+          "Runtime.executionContextsCleared": 4,
+          "Runtime.executionContextCreated": 2
+        },
+        "pausedBy": {
+          "instrumentation": 16,
+          "other/bp": 400,
+          "ambiguous/bp": 200
+        },
+        "pauseMs": {
+          "instrumentation": {
+            "n": 16,
+            "mean": 71.92,
+            "p50": 3.7,
+            "p95": 400.5,
+            "max": 400.5,
+            "sum": 1150.7
+          },
+          "breakpoint": {
+            "n": 600,
+            "mean": 0.61,
+            "p50": 0.5,
+            "p95": 1.5,
+            "max": 16.3,
+            "sum": 367.6
+          },
+          "other": {
+            "n": 0
+          }
+        },
+        "openPause": false,
+        "cmd": {
+          "Debugger.getScriptSource": {
+            "n": 36,
+            "sum": 39,
+            "max": 3.7,
+            "err": 0,
+            "stale": 0,
+            "unknown": 27,
+            "mean": 1.08
+          },
+          "Debugger.resume": {
+            "n": 416,
+            "sum": 163.3,
+            "max": 16.1,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.39
+          },
+          "Debugger.setBreakpoint": {
+            "n": 3,
+            "sum": 1.1,
+            "max": 0.4,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.37
+          },
+          "Runtime.getProperties": {
+            "n": 200,
+            "sum": 76.6,
+            "max": 2.2,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.38
+          },
+          "Debugger.stepOver": {
+            "n": 200,
+            "sum": 66.4,
+            "max": 2.4,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.33
+          },
+          "Debugger.removeBreakpoint": {
+            "n": 3,
+            "sum": 1.9,
+            "max": 1.4,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.63
+          }
+        },
+        "cmdErrors": {},
+        "staleCmds": 0,
+        "unknownCmds": 27,
+        "swLag": {
+          "n": 3,
+          "max": 389.9,
+          "sum": 999.4
+        },
+        "inflight": 0,
+        "msgs": {
+          "capture-state": 8,
+          "capture-event": 202,
+          "script-parsed": 27,
+          "script-discovered": 27,
+          "resumed": 616,
+          "context-created": 2,
+          "log": 1
+        },
+        "bytes": {
+          "capture-state": 92229,
+          "script-discovered": 629940
+        }
+      },
+      "engine": {
+        "active": false,
+        "bps": 0,
+        "stats": {
+          "breakpointsSet": 9,
+          "hits": 400,
+          "pauses": 1200,
+          "success": 400,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": 20,
+        "unstable": 0
+      }
+    },
+    "S6": {
+      "status": "connected",
+      "result": {
+        "r0": {
+          "label": "load",
+          "done": true,
+          "ms": 1704,
+          "probes": 15,
+          "maxProbeLatencyMs": 381,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "r": {
+          "label": "double-reload-300ms-apart",
+          "done": true,
+          "ms": 1632,
+          "probes": 3,
+          "maxProbeLatencyMs": 756,
+          "slowProbeCount": 1,
+          "slowProbes": [
+            756
+          ]
+        },
+        "engine": {
+          "active": true,
+          "bps": 3,
+          "stats": {
+            "breakpointsSet": 15,
+            "hits": 600,
+            "pauses": 1800,
+            "success": 600,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 30,
+          "unstable": 0
+        }
+      },
+      "wallMs": 5160,
+      "observer": {
+        "paused": 618,
+        "resumed": 617,
+        "scriptParsed": 29,
+        "byReason": {
+          "other": 418,
+          "step": 200
+        }
+      },
+      "sw": {
+        "events": 1273,
+        "byMethod": {
+          "Debugger.scriptParsed": 29,
+          "Debugger.paused": 618,
+          "Debugger.resumed": 617,
+          "Runtime.executionContextsCleared": 6,
+          "Runtime.executionContextCreated": 3
+        },
+        "pausedBy": {
+          "instrumentation": 18,
+          "other/bp": 400,
+          "ambiguous/bp": 200
+        },
+        "pauseMs": {
+          "instrumentation": {
+            "n": 17,
+            "mean": 117.14,
+            "p50": 2.9,
+            "p95": 791.4,
+            "max": 791.4,
+            "sum": 1991.4
+          },
+          "breakpoint": {
+            "n": 600,
+            "mean": 0.56,
+            "p50": 0.4,
+            "p95": 1.3,
+            "max": 2.6,
+            "sum": 333.8
+          },
+          "other": {
+            "n": 0
+          }
+        },
+        "openPause": false,
+        "cmd": {
+          "Debugger.getScriptSource": {
+            "n": 47,
+            "sum": 1128.8,
+            "max": 350.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 29,
+            "mean": 24.02
+          },
+          "Debugger.resume": {
+            "n": 418,
+            "sum": 596.7,
+            "max": 442.2,
+            "err": 1,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 1.43
+          },
+          "Debugger.setBreakpoint": {
+            "n": 6,
+            "sum": 6.8,
+            "max": 2.5,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 1.13
+          },
+          "Runtime.getProperties": {
+            "n": 200,
+            "sum": 72.9,
+            "max": 1.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.36
+          },
+          "Debugger.stepOver": {
+            "n": 200,
+            "sum": 66.9,
+            "max": 1.5,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.33
+          }
+        },
+        "cmdErrors": {
+          "Debugger.resume: {\"code\":-32000,\"message\":\"Can only perform operation while paused.\"}": 1
+        },
+        "staleCmds": 0,
+        "unknownCmds": 29,
+        "swLag": {
+          "n": 7,
+          "max": 400.5,
+          "sum": 2431.2
+        },
+        "inflight": 0,
+        "msgs": {
+          "capture-state": 10,
+          "capture-event": 203,
+          "script-parsed": 29,
+          "script-discovered": 29,
+          "resumed": 617,
+          "context-created": 3,
+          "log": 2
+        },
+        "bytes": {
+          "capture-state": 207600,
+          "script-discovered": 734056
+        }
+      },
+      "engine": {
+        "active": true,
+        "bps": 3,
+        "stats": {
+          "breakpointsSet": 15,
+          "hits": 600,
+          "pauses": 1800,
+          "success": 600,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": 30,
+        "unstable": 0
+      }
+    },
+    "S7": {
+      "status": "connected",
+      "result": {
+        "r1": {
+          "label": "load-1-capturing",
+          "done": true,
+          "ms": 1686,
+          "probes": 16,
+          "maxProbeLatencyMs": 365,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "sA": {
+          "active": true,
+          "bps": 3,
+          "stats": {
+            "breakpointsSet": 18,
+            "hits": 800,
+            "pauses": 2400,
+            "success": 800,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 40,
+          "unstable": 0
+        },
+        "r2": {
+          "label": "load-2-stopped",
+          "done": true,
+          "ms": 76,
+          "probes": 2,
+          "maxProbeLatencyMs": 22,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "sB": {
+          "active": false,
+          "bps": 0,
+          "stats": {
+            "breakpointsSet": 18,
+            "hits": 800,
+            "pauses": 2400,
+            "success": 800,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 40,
+          "unstable": 0
+        },
+        "r3": {
+          "label": "load-3-restarted",
+          "done": true,
+          "ms": 1701,
+          "probes": 15,
+          "maxProbeLatencyMs": 444,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "sC": {
+          "active": true,
+          "bps": 3,
+          "stats": {
+            "breakpointsSet": 21,
+            "hits": 1000,
+            "pauses": 3000,
+            "success": 1000,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 50,
+          "unstable": 0
+        }
+      },
+      "wallMs": 5296,
+      "observer": {
+        "paused": 1225,
+        "resumed": 1225,
+        "scriptParsed": 48,
+        "byReason": {
+          "other": 825,
+          "step": 400
+        }
+      },
+      "sw": {
+        "events": 2507,
+        "byMethod": {
+          "Debugger.scriptParsed": 48,
+          "Debugger.paused": 1225,
+          "Debugger.resumed": 1225,
+          "Runtime.executionContextsCleared": 6,
+          "Runtime.executionContextCreated": 3
+        },
+        "pausedBy": {
+          "instrumentation": 25,
+          "other/bp": 800,
+          "ambiguous/bp": 400
+        },
+        "pauseMs": {
+          "instrumentation": {
+            "n": 25,
+            "mean": 92.47,
+            "p50": 3.3,
+            "p95": 404.1,
+            "max": 412.9,
+            "sum": 2311.8
+          },
+          "breakpoint": {
+            "n": 1200,
+            "mean": 0.57,
+            "p50": 0.5,
+            "p95": 1.2,
+            "max": 4.2,
+            "sum": 688.7
+          },
+          "other": {
+            "n": 0
+          }
+        },
+        "openPause": false,
+        "cmd": {
+          "Debugger.removeBreakpoint": {
+            "n": 6,
+            "sum": 2.2,
+            "max": 0.6,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.37
+          },
+          "Debugger.getScriptSource": {
+            "n": 66,
+            "sum": 66.7,
+            "max": 6.5,
+            "err": 0,
+            "stale": 0,
+            "unknown": 48,
+            "mean": 1.01
+          },
+          "Debugger.resume": {
+            "n": 825,
+            "sum": 270.4,
+            "max": 6.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.33
+          },
+          "Debugger.setBreakpoint": {
+            "n": 6,
+            "sum": 2.9,
+            "max": 0.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.48
+          },
+          "Runtime.getProperties": {
+            "n": 400,
+            "sum": 142.3,
+            "max": 1.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.36
+          },
+          "Debugger.stepOver": {
+            "n": 400,
+            "sum": 141.4,
+            "max": 2.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.35
+          }
+        },
+        "cmdErrors": {},
+        "staleCmds": 0,
+        "unknownCmds": 48,
+        "swLag": {
+          "n": 6,
+          "max": 362.9,
+          "sum": 1998.4
+        },
+        "inflight": 0,
+        "msgs": {
+          "capture-state": 12,
+          "capture-event": 404,
+          "script-parsed": 48,
+          "script-discovered": 48,
+          "resumed": 1225,
+          "context-created": 3,
+          "log": 2
+        },
+        "bytes": {
+          "capture-state": 355896,
+          "script-discovered": 947253
+        }
+      },
+      "engine": {
+        "active": true,
+        "bps": 3,
+        "stats": {
+          "breakpointsSet": 21,
+          "hits": 1000,
+          "pauses": 3000,
+          "success": 1000,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": 50,
+        "unstable": 0
+      }
+    },
+    "S8": {
+      "status": "connected",
+      "result": {
+        "before": {
+          "active": true,
+          "bps": 0,
+          "stats": {
+            "breakpointsSet": 21,
+            "hits": 1000,
+            "pauses": 3000,
+            "success": 1000,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 50,
+          "unstable": 0
+        },
+        "stoppedFired": 1,
+        "afterStopEngine": {
+          "active": true,
+          "bps": 3,
+          "stats": {
+            "breakpointsSet": 24,
+            "hits": 1200,
+            "pauses": 3600,
+            "success": 1200,
+            "failed": 0,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "captures": 60,
+          "unstable": 0
+        },
+        "r1": {
+          "label": "load-with-stop-fired-at-decoder-instrumentation",
+          "done": true,
+          "ms": 1699,
+          "probes": 15,
+          "maxProbeLatencyMs": 438,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "r2": {
+          "label": "reload-after-supposed-stop",
+          "done": true,
+          "ms": 87,
+          "probes": 2,
+          "maxProbeLatencyMs": 21,
+          "slowProbeCount": 0,
+          "slowProbes": []
+        },
+        "afterSupposedStop": {
+          "events": 24,
+          "pausedBy": {
+            "instrumentation": 7
+          },
+          "pauseMs": {
+            "instrumentation": {
+              "n": 7,
+              "mean": 1.46,
+              "p50": 1.4,
+              "p95": 3.5,
+              "max": 3.5,
+              "sum": 10.2
+            },
+            "breakpoint": {
+              "n": 0
+            },
+            "other": {
+              "n": 0
+            }
+          },
+          "cmd": {
+            "Debugger.getScriptSource": 8,
+            "Debugger.resume": 7
+          },
+          "cmdErrors": {},
+          "stale": 0,
+          "swLag": {
+            "n": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "openPause": false,
+          "inflight": 0
+        }
+      },
+      "wallMs": 5641,
+      "observer": {
+        "paused": 616,
+        "resumed": 616,
+        "scriptParsed": 27,
+        "byReason": {
+          "other": 416,
+          "step": 200
+        }
+      },
+      "sw": {
+        "events": 1265,
+        "byMethod": {
+          "Debugger.scriptParsed": 27,
+          "Debugger.paused": 616,
+          "Debugger.resumed": 616,
+          "Runtime.executionContextsCleared": 4,
+          "Runtime.executionContextCreated": 2
+        },
+        "pausedBy": {
+          "instrumentation": 16,
+          "other/bp": 400,
+          "ambiguous/bp": 200
+        },
+        "pauseMs": {
+          "instrumentation": {
+            "n": 16,
+            "mean": 74.21,
+            "p50": 3.5,
+            "p95": 418.6,
+            "max": 418.6,
+            "sum": 1187.4
+          },
+          "breakpoint": {
+            "n": 600,
+            "mean": 0.56,
+            "p50": 0.4,
+            "p95": 1.1,
+            "max": 2.9,
+            "sum": 335.7
+          },
+          "other": {
+            "n": 0
+          }
+        },
+        "openPause": false,
+        "cmd": {
+          "Debugger.removeBreakpoint": {
+            "n": 3,
+            "sum": 1,
+            "max": 0.4,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.33
+          },
+          "Debugger.getScriptSource": {
+            "n": 37,
+            "sum": 36.3,
+            "max": 2.4,
+            "err": 0,
+            "stale": 0,
+            "unknown": 27,
+            "mean": 0.98
+          },
+          "Debugger.resume": {
+            "n": 416,
+            "sum": 139.4,
+            "max": 3.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.34
+          },
+          "Debugger.setBreakpoint": {
+            "n": 3,
+            "sum": 1.3,
+            "max": 0.5,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.43
+          },
+          "Runtime.getProperties": {
+            "n": 200,
+            "sum": 74.2,
+            "max": 1.8,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.37
+          },
+          "Debugger.stepOver": {
+            "n": 200,
+            "sum": 67.1,
+            "max": 1.7,
+            "err": 0,
+            "stale": 0,
+            "unknown": 0,
+            "mean": 0.34
+          }
+        },
+        "cmdErrors": {},
+        "staleCmds": 0,
+        "unknownCmds": 27,
+        "swLag": {
+          "n": 3,
+          "max": 393.7,
+          "sum": 1032
+        },
+        "inflight": 0,
+        "msgs": {
+          "script-parsed": 7,
+          "script-discovered": 7,
+          "resumed": 7,
+          "capture-state": 2,
+          "context-created": 1
+        },
+        "bytes": {
+          "script-discovered": 312988,
+          "capture-state": 99210
+        }
+      },
+      "engine": {
+        "active": false,
+        "bps": 0,
+        "stats": {
+          "breakpointsSet": 24,
+          "hits": 1200,
+          "pauses": 3600,
+          "success": 1200,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": 60,
+        "unstable": 0
+      }
+    }
+  },
+  "analysisNode": {
+    "fillerBytes": 102405,
+    "parseMs": 43,
+    "discoverMs": 135,
+    "fillerFunctions": 1113,
+    "fillerCandidates": 0,
+    "decoderBytes": 370,
+    "decoderDiscoverMs": 3,
+    "decoderCandidates": [
+      "decOne:high"
+    ]
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "tabId": 638597763,
+  "install": {
+    "ok": true,
+    "wrapOk": true,
+    "wrapErr": null
+  }
+}

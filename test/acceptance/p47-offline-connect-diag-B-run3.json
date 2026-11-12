@@ -1,0 +1,3562 @@
+{
+  "schema": "ob-recover.offline-connect-diag/1",
+  "scenario": "B",
+  "runNo": "3",
+  "startedAt": "2026-11-10T12:57:53.384Z",
+  "note": "local pages only, no external host is reachable, observation only, nothing is judged here",
+  "conditions": {
+    "headless": false,
+    "resolverRules": "MAP * ~NOTFOUND , EXCLUDE 127.0.0.1",
+    "ports": {
+      "cdp": 9473,
+      "http": 8783
+    },
+    "cmdTimeoutMs": 8000,
+    "probeTimeoutMs": 3000,
+    "connectWindowMs": 45000,
+    "globalCapMs": 300000,
+    "differencesFromL1Runs": [
+      "local page instead of the L1 target",
+      "host resolver rules block every non-local host",
+      "Runtime domain enabled on the panel and service worker sessions to capture exceptions and console output",
+      "a 100 ms timer lag monitor injected into the panel page",
+      "CPU profile with 5 ms sampling running on the panel session"
+    ],
+    "chromeArgs": [
+      "--remote-debugging-port=9473",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "--disable-gpu",
+      "--window-size=1600,1000",
+      "--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1",
+      "about:blank"
+    ]
+  },
+  "dist": {
+    "background.js": "fa3ba6a45d02f8440d5d9f54708341e36429b13b695afb473433da39c1836509",
+    "devtools.js": "870b0b747d5bfbe54af0fe8d81581f27bac8eb2a4ecea433f78f295c18edae65",
+    "panel.js": "9cbc65a3bf78195d36bea0ea029df92c74c77ecd2a78ce4a8cc12fb68282fb73",
+    "sandbox.js": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4"
+  },
+  "steps": [
+    {
+      "name": "loadExtension",
+      "startMs": 1772,
+      "endMs": 1777,
+      "ok": true,
+      "result": "ijdobedejfjfindckpgabkamoeenejob"
+    },
+    {
+      "name": "createTarget",
+      "startMs": 3281,
+      "endMs": 3306,
+      "ok": true,
+      "result": {
+        "targetId": "369660241D63F05129925B10EB45FE24"
+      }
+    },
+    {
+      "name": "attachPage",
+      "startMs": 4811,
+      "endMs": 4814,
+      "ok": true,
+      "result": "F1ADDD954BF369017B19921A1BF04476"
+    },
+    {
+      "name": "pageEnable",
+      "startMs": 4814,
+      "endMs": 4815,
+      "ok": true,
+      "result": {}
+    },
+    {
+      "name": "pageReady",
+      "startMs": 4823,
+      "endMs": 4825,
+      "ok": true,
+      "result": {
+        "afterMs": 2
+      }
+    },
+    {
+      "name": "openDevTools",
+      "startMs": 4840,
+      "endMs": 10849,
+      "ok": true,
+      "result": {
+        "sleptMs": 6000
+      }
+    },
+    {
+      "name": "findDevtools",
+      "startMs": 10850,
+      "endMs": 10852,
+      "ok": true,
+      "result": {
+        "targetId": "808AA75D8E137048B7D746853DAC5B87"
+      }
+    },
+    {
+      "name": "attachDevtools",
+      "startMs": 10868,
+      "endMs": 10870,
+      "ok": true,
+      "result": "18CC6A3A206C835B0214CE3BD490F7D0"
+    },
+    {
+      "name": "showPanel",
+      "startMs": 10885,
+      "endMs": 13395,
+      "ok": true,
+      "result": {
+        "name": "show",
+        "ok": true,
+        "ms": 8,
+        "value": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover"
+      }
+    },
+    {
+      "name": "findPanel",
+      "startMs": 13396,
+      "endMs": 13397,
+      "ok": true,
+      "result": {
+        "targetId": "55659533E2C2201C9B9A335A13A63ED0"
+      }
+    },
+    {
+      "name": "attachPanel",
+      "startMs": 13411,
+      "endMs": 13412,
+      "ok": true,
+      "result": "CADCDA4A6DA1142D8AA0D0DA5845EF7F"
+    },
+    {
+      "name": "findServiceWorker",
+      "startMs": 13427,
+      "endMs": 13428,
+      "ok": true,
+      "result": {
+        "targetId": "EA76339E90BB50AEA62E7CEF15972648"
+      }
+    },
+    {
+      "name": "attachServiceWorker",
+      "startMs": 13441,
+      "endMs": 13442,
+      "ok": true,
+      "result": "93E5CFCA91F319A06B05FBF89690F0F8"
+    },
+    {
+      "name": "runtimeEnable",
+      "startMs": 13448,
+      "endMs": 13452,
+      "ok": true,
+      "result": {
+        "panel": {
+          "name": "enablePanel",
+          "ok": true,
+          "ms": 1,
+          "value": {}
+        },
+        "sw": {
+          "name": "enableSw",
+          "ok": true,
+          "ms": 2,
+          "value": {}
+        }
+      }
+    },
+    {
+      "name": "tabId",
+      "startMs": 13465,
+      "endMs": 13467,
+      "ok": true,
+      "result": 1404745579
+    },
+    {
+      "name": "lagInstall",
+      "startMs": 13479,
+      "endMs": 13482,
+      "ok": true,
+      "result": {
+        "name": "lagInstall",
+        "ok": true,
+        "ms": 3,
+        "value": "installed"
+      }
+    },
+    {
+      "name": "preClick",
+      "startMs": 13494,
+      "endMs": 13497,
+      "ok": true,
+      "result": {
+        "panelState": {
+          "name": "panelState",
+          "ok": true,
+          "ms": 2,
+          "value": {
+            "statusText": "未连接",
+            "connectDisabled": false,
+            "logCount": 2,
+            "logTail": [
+              {
+                "level": "info",
+                "time": "20:58:04",
+                "msg": "状态: disconnected"
+              },
+              {
+                "level": "info",
+                "time": "20:58:04",
+                "msg": "状态: disconnected"
+              }
+            ]
+          }
+        },
+        "swStatus": {
+          "name": "swStatus",
+          "ok": true,
+          "ms": 1,
+          "value": "disconnected"
+        },
+        "swDebuggerTargets": {
+          "name": "swDebuggerTargets",
+          "ok": true,
+          "ms": 1,
+          "value": {
+            "count": 12,
+            "attached": [
+              {
+                "type": "worker",
+                "tabId": null,
+                "extensionId": null
+              },
+              {
+                "type": "page",
+                "tabId": null,
+                "extensionId": "devtools"
+              },
+              {
+                "type": "other",
+                "tabId": null,
+                "extensionId": null
+              },
+              {
+                "type": "page",
+                "tabId": 1404745579,
+                "extensionId": null
+              }
+            ]
+          }
+        },
+        "ping": {
+          "name": "ping",
+          "ok": true,
+          "ms": 2,
+          "value": {
+            "ok": true,
+            "ms": 1,
+            "lastError": null
+          }
+        },
+        "panelLogHasEntriesBeforeClick": true
+      }
+    },
+    {
+      "name": "panelProfilerStart",
+      "startMs": 16013,
+      "endMs": 16060,
+      "ok": true,
+      "result": {
+        "enable": {
+          "name": "profilerEnable",
+          "ok": true,
+          "ms": 1,
+          "value": {}
+        },
+        "interval": {
+          "name": "profilerInterval",
+          "ok": true,
+          "ms": 1,
+          "value": {}
+        },
+        "start": {
+          "name": "profilerStart",
+          "ok": true,
+          "ms": 45,
+          "value": {}
+        },
+        "startedAtMs": 16060
+      }
+    },
+    {
+      "name": "clickConnect",
+      "startMs": 16060,
+      "endMs": 16061,
+      "ok": true,
+      "result": {
+        "clickedAtMs": 16060,
+        "result": {
+          "name": "click",
+          "ok": true,
+          "ms": 1,
+          "value": 1
+        },
+        "note": "single click, never repeated"
+      }
+    },
+    {
+      "name": "waitConnect",
+      "startMs": 16068,
+      "endMs": 21646,
+      "ok": true,
+      "result": {
+        "reached": "connected",
+        "afterMs": 5578
+      }
+    },
+    {
+      "name": "scriptListAppears",
+      "startMs": 21647,
+      "endMs": 84767,
+      "ok": true,
+      "result": {
+        "found": false,
+        "afterMs": 63120,
+        "polls": [
+          {
+            "at": 6001,
+            "ok": false,
+            "ms": 6001,
+            "timeout": true,
+            "n": null,
+            "found": false
+          },
+          {
+            "at": 13016,
+            "ok": false,
+            "ms": 6008,
+            "timeout": true,
+            "n": null,
+            "found": false
+          },
+          {
+            "at": 20030,
+            "ok": false,
+            "ms": 6007,
+            "timeout": true,
+            "n": null,
+            "found": false
+          },
+          {
+            "at": 27041,
+            "ok": false,
+            "ms": 6005,
+            "timeout": true,
+            "n": null,
+            "found": false
+          },
+          {
+            "at": 34059,
+            "ok": false,
+            "ms": 6012,
+            "timeout": true,
+            "n": null,
+            "found": false
+          },
+          {
+            "at": 41070,
+            "ok": false,
+            "ms": 6006,
+            "timeout": true,
+            "n": null,
+            "found": false
+          },
+          {
+            "at": 48087,
+            "ok": false,
+            "ms": 6011,
+            "timeout": true,
+            "n": null,
+            "found": false
+          },
+          {
+            "at": 55105,
+            "ok": false,
+            "ms": 6014,
+            "timeout": true,
+            "n": null,
+            "found": false
+          },
+          {
+            "at": 62110,
+            "ok": false,
+            "ms": 6002,
+            "timeout": true,
+            "n": null,
+            "found": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "analysisSettle",
+      "startMs": 84769,
+      "endMs": 176161,
+      "ok": true,
+      "result": {
+        "settled": false,
+        "afterMs": 91392,
+        "polls": [
+          {
+            "at": 8011,
+            "ok": false,
+            "ms": 8011,
+            "timeout": false,
+            "v": null
+          },
+          {
+            "at": 18026,
+            "ok": false,
+            "ms": 8003,
+            "timeout": false,
+            "v": null
+          },
+          {
+            "at": 28033,
+            "ok": false,
+            "ms": 8005,
+            "timeout": false,
+            "v": null
+          },
+          {
+            "at": 38048,
+            "ok": false,
+            "ms": 8009,
+            "timeout": false,
+            "v": null
+          },
+          {
+            "at": 48058,
+            "ok": false,
+            "ms": 8005,
+            "timeout": false,
+            "v": null
+          },
+          {
+            "at": 58082,
+            "ok": false,
+            "ms": 8014,
+            "timeout": false,
+            "v": null
+          },
+          {
+            "at": 68093,
+            "ok": false,
+            "ms": 8003,
+            "timeout": false,
+            "v": null
+          },
+          {
+            "at": 78101,
+            "ok": false,
+            "ms": 8004,
+            "timeout": false,
+            "v": null
+          },
+          {
+            "at": 81344,
+            "ok": true,
+            "ms": 1242,
+            "timeout": false,
+            "v": {
+              "total": "37",
+              "analyzed": "37",
+              "candidates": "1000",
+              "high": "1",
+              "calls": "2047"
+            }
+          },
+          {
+            "at": 83346,
+            "ok": true,
+            "ms": 1,
+            "timeout": false,
+            "v": {
+              "total": "40",
+              "analyzed": "40",
+              "candidates": "1000",
+              "high": "1",
+              "calls": "2047"
+            }
+          },
+          {
+            "at": 85361,
+            "ok": true,
+            "ms": 2,
+            "timeout": false,
+            "v": {
+              "total": "43",
+              "analyzed": "43",
+              "candidates": "1000",
+              "high": "1",
+              "calls": "2047"
+            }
+          },
+          {
+            "at": 87376,
+            "ok": true,
+            "ms": 4,
+            "timeout": false,
+            "v": {
+              "total": "46",
+              "analyzed": "46",
+              "candidates": "1000",
+              "high": "1",
+              "calls": "2047"
+            }
+          },
+          {
+            "at": 89384,
+            "ok": true,
+            "ms": 1,
+            "timeout": false,
+            "v": {
+              "total": "49",
+              "analyzed": "49",
+              "candidates": "1000",
+              "high": "1",
+              "calls": "2047"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "swListScripts",
+      "startMs": 176163,
+      "endMs": 176165,
+      "ok": true,
+      "result": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false,
+        "error": null,
+        "count": 52,
+        "matches": 1,
+        "scriptId": "3",
+        "sourceCharsInCollector": 512064
+      }
+    },
+    {
+      "name": "sourceFetch",
+      "startMs": 176177,
+      "endMs": 176199,
+      "ok": true,
+      "result": {
+        "ok": true,
+        "ms": 21,
+        "timeout": false,
+        "error": null,
+        "chars": 512064,
+        "sha256": "6a419264c85865c134c88ed52239eefd527fb2cbcb74ceb9af501d8e106ce207",
+        "equalsServed": true
+      }
+    },
+    {
+      "name": "panelProfilerStop",
+      "startMs": 176817,
+      "endMs": 178482,
+      "ok": true,
+      "result": {
+        "ok": true,
+        "alive": true,
+        "waitedMs": 3,
+        "summary": {
+          "samples": 30165,
+          "totalMs": 160809,
+          "topSelf": [
+            {
+              "fn": "get @ parser-BGlb7RAx.js:42557:14",
+              "ms": 25537
+            },
+            {
+              "fn": "shouldVisit @ parser-BGlb7RAx.js:42822:15",
+              "ms": 17959
+            },
+            {
+              "fn": "visitQueue @ parser-BGlb7RAx.js:42876:14",
+              "ms": 13988
+            },
+            {
+              "fn": "visit @ parser-BGlb7RAx.js:42912:9",
+              "ms": 13750
+            },
+            {
+              "fn": "visitMultiple @ parser-BGlb7RAx.js:42858:17",
+              "ms": 10708
+            },
+            {
+              "fn": "(idle) @ :-1:-1",
+              "ms": 10121
+            },
+            {
+              "fn": "pushContext @ parser-BGlb7RAx.js:43165:22",
+              "ms": 7448
+            },
+            {
+              "fn": "call @ parser-BGlb7RAx.js:42991:15",
+              "ms": 6746
+            },
+            {
+              "fn": "setContext @ parser-BGlb7RAx.js:43100:21",
+              "ms": 6559
+            },
+            {
+              "fn": "getOrCreateCachedPaths @ parser-BGlb7RAx.js:15336:33",
+              "ms": 6293
+            },
+            {
+              "fn": "popContext @ parser-BGlb7RAx.js:43157:21",
+              "ms": 6094
+            },
+            {
+              "fn": "visit @ parser-BGlb7RAx.js:43034:16",
+              "ms": 5713
+            },
+            {
+              "fn": "(garbage collector) @ :-1:-1",
+              "ms": 4373
+            },
+            {
+              "fn": "setScope @ parser-BGlb7RAx.js:43083:19",
+              "ms": 3965
+            },
+            {
+              "fn": "Scope @ parser-BGlb7RAx.js:15717:15",
+              "ms": 2724
+            },
+            {
+              "fn": "traverseNode$1 @ parser-BGlb7RAx.js:42940:25",
+              "ms": 2429
+            },
+            {
+              "fn": "isBlockStatement @ parser-BGlb7RAx.js:929:27",
+              "ms": 2379
+            },
+            {
+              "fn": "visitSingle @ parser-BGlb7RAx.js:42869:15",
+              "ms": 1612
+            },
+            {
+              "fn": "renderDecoderList @ panel.js:2119:26",
+              "ms": 1327
+            },
+            {
+              "fn": "isScopable @ parser-BGlb7RAx.js:2355:21",
+              "ms": 1319
+            },
+            {
+              "fn": "isDenylisted @ parser-BGlb7RAx.js:43021:23",
+              "ms": 1098
+            },
+            {
+              "fn": "_call @ parser-BGlb7RAx.js:43003:16",
+              "ms": 818
+            },
+            {
+              "fn": "setKey @ parser-BGlb7RAx.js:43175:17",
+              "ms": 795
+            },
+            {
+              "fn": "_resyncKey @ parser-BGlb7RAx.js:43124:21",
+              "ms": 708
+            },
+            {
+              "fn": "isPattern @ parser-BGlb7RAx.js:2880:20",
+              "ms": 631
+            }
+          ],
+          "topInclusive": [
+            {
+              "fn": "(root) @ :-1:-1",
+              "ms": 160809
+            },
+            {
+              "fn": "handleDebuggerEvent @ panel.js:1928:28",
+              "ms": 145953
+            },
+            {
+              "fn": "(anonymous) @ panel.js:1913:31",
+              "ms": 145953
+            },
+            {
+              "fn": "handleScriptDiscovered @ panel.js:2076:31",
+              "ms": 145947
+            },
+            {
+              "fn": "discoverDecoders @ capture-plan-DDt5MvKB.js:2:25",
+              "ms": 144277
+            },
+            {
+              "fn": "traverse2 @ parser-BGlb7RAx.js:43255:22",
+              "ms": 144046
+            },
+            {
+              "fn": "traverseNode$1 @ parser-BGlb7RAx.js:42940:25",
+              "ms": 144014
+            },
+            {
+              "fn": "visit @ parser-BGlb7RAx.js:42912:9",
+              "ms": 144013
+            },
+            {
+              "fn": "visitSingle @ parser-BGlb7RAx.js:42869:15",
+              "ms": 144013
+            },
+            {
+              "fn": "visitQueue @ parser-BGlb7RAx.js:42876:14",
+              "ms": 143994
+            },
+            {
+              "fn": "visitMultiple @ parser-BGlb7RAx.js:42858:17",
+              "ms": 143807
+            },
+            {
+              "fn": "visit @ parser-BGlb7RAx.js:43034:16",
+              "ms": 143792
+            },
+            {
+              "fn": "analyzeFunction @ capture-plan-DDt5MvKB.js:134:24",
+              "ms": 73093
+            },
+            {
+              "fn": "detectClosureVariables @ capture-plan-DDt5MvKB.js:367:31",
+              "ms": 72995
+            },
+            {
+              "fn": "collectCallSites @ capture-plan-DDt5MvKB.js:216:25",
+              "ms": 70598
+            },
+            {
+              "fn": "create @ parser-BGlb7RAx.js:42835:10",
+              "ms": 33468
+            },
+            {
+              "fn": "get @ parser-BGlb7RAx.js:42557:14",
+              "ms": 33059
+            },
+            {
+              "fn": "pushContext @ parser-BGlb7RAx.js:43165:22",
+              "ms": 18640
+            },
+            {
+              "fn": "setContext @ parser-BGlb7RAx.js:43100:21",
+              "ms": 18396
+            },
+            {
+              "fn": "shouldVisit @ parser-BGlb7RAx.js:42822:15",
+              "ms": 17959
+            },
+            {
+              "fn": "popContext @ parser-BGlb7RAx.js:43157:21",
+              "ms": 13303
+            },
+            {
+              "fn": "setScope @ parser-BGlb7RAx.js:43083:19",
+              "ms": 11970
+            },
+            {
+              "fn": "(idle) @ :-1:-1",
+              "ms": 10121
+            },
+            {
+              "fn": "call @ parser-BGlb7RAx.js:42991:15",
+              "ms": 8623
+            },
+            {
+              "fn": "getScope @ parser-BGlb7RAx.js:42581:12",
+              "ms": 7578
+            }
+          ],
+          "note": "approximate: the delta before each sample is attributed to that sample, sampling interval 5 ms; self time is time inside the function itself, inclusive counts each function once per sample"
+        }
+      }
+    },
+    {
+      "name": "finalState",
+      "startMs": 178484,
+      "endMs": 178489,
+      "ok": true,
+      "result": {
+        "panelMainThreadLag": {
+          "installed": true,
+          "now": 165004,
+          "ticks": 149,
+          "maxGapMs": 150027,
+          "gaps": [
+            {
+              "at": 152630,
+              "gap": 150027
+            }
+          ]
+        },
+        "swStatus": {
+          "name": "swStatus",
+          "ok": true,
+          "ms": 2,
+          "value": "connected"
+        },
+        "swDebuggerTargets": {
+          "name": "swDebuggerTargets",
+          "ok": true,
+          "ms": 4,
+          "value": {
+            "count": 9,
+            "attached": [
+              {
+                "type": "worker",
+                "tabId": null,
+                "extensionId": null
+              },
+              {
+                "type": "page",
+                "tabId": null,
+                "extensionId": "devtools"
+              },
+              {
+                "type": "other",
+                "tabId": null,
+                "extensionId": null
+              },
+              {
+                "type": "page",
+                "tabId": 1404745579,
+                "extensionId": null
+              }
+            ]
+          }
+        },
+        "panelStatusText": "已连接",
+        "ping": {
+          "name": "ping",
+          "ok": true,
+          "ms": 3,
+          "value": {
+            "ok": true,
+            "ms": 1,
+            "lastError": null
+          }
+        }
+      }
+    }
+  ],
+  "script": {
+    "bytes": 512064,
+    "chars": 512064,
+    "sha256": "6a419264c85865c134c88ed52239eefd527fb2cbcb74ceb9af501d8e106ce207",
+    "lines": 1,
+    "functionKeywords": 6875
+  },
+  "timeline": [
+    {
+      "t": 1771,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/",
+      "targetId": "29D36A068F9E",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 1771,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "page",
+      "url": "about:blank",
+      "targetId": "46CDDA434808",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 1772,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "service_worker",
+      "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js",
+      "targetId": "78A25FFCBD51",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 1772,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html",
+      "targetId": "A3CEE41561C5",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 1772,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "background_page",
+      "url": "chrome-extension://nkeimhogjdpnpccoofpliimaahmaaome/background.html",
+      "targetId": "F0D8B69EAA18",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 1777,
+      "kind": "step",
+      "name": "loadExtension",
+      "ok": true,
+      "ms": 5
+    },
+    {
+      "t": 1799,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "service_worker",
+      "url": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js",
+      "targetId": "EA76339E90BB",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 3296,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "page",
+      "url": "http://127.0.0.1:8783/index.html",
+      "targetId": "369660241D63",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 3306,
+      "kind": "step",
+      "name": "createTarget",
+      "ok": true,
+      "ms": 25
+    },
+    {
+      "t": 4814,
+      "kind": "session",
+      "method": "Target.attachedToTarget",
+      "label": null
+    },
+    {
+      "t": 4814,
+      "kind": "step",
+      "name": "attachPage",
+      "ok": true,
+      "ms": 3
+    },
+    {
+      "t": 4815,
+      "kind": "step",
+      "name": "pageEnable",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "t": 4825,
+      "kind": "step",
+      "name": "pageReady",
+      "ok": true,
+      "ms": 2
+    },
+    {
+      "t": 4846,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "other",
+      "url": "devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.co",
+      "targetId": "808AA75D8E13",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 5249,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "iframe",
+      "url": "",
+      "targetId": "34943EDA381C",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 6491,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "other",
+      "url": "",
+      "targetId": "DDEBD6A08912",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 10849,
+      "kind": "step",
+      "name": "openDevTools",
+      "ok": true,
+      "ms": 6009
+    },
+    {
+      "t": 10852,
+      "kind": "step",
+      "name": "findDevtools",
+      "ok": true,
+      "ms": 2
+    },
+    {
+      "t": 10870,
+      "kind": "session",
+      "method": "Target.attachedToTarget",
+      "label": null
+    },
+    {
+      "t": 10870,
+      "kind": "step",
+      "name": "attachDevtools",
+      "ok": true,
+      "ms": 2
+    },
+    {
+      "t": 10895,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "iframe",
+      "url": "",
+      "targetId": "55659533E2C2",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 11023,
+      "kind": "target",
+      "method": "Target.targetCreated",
+      "type": "iframe",
+      "url": "",
+      "targetId": "B473FB9A1612",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 13395,
+      "kind": "step",
+      "name": "showPanel",
+      "ok": true,
+      "ms": 2510
+    },
+    {
+      "t": 13397,
+      "kind": "step",
+      "name": "findPanel",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "t": 13412,
+      "kind": "session",
+      "method": "Target.attachedToTarget",
+      "label": null
+    },
+    {
+      "t": 13412,
+      "kind": "step",
+      "name": "attachPanel",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "t": 13428,
+      "kind": "step",
+      "name": "findServiceWorker",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "t": 13442,
+      "kind": "target",
+      "method": "Target.targetInfoChanged",
+      "type": "service_worker",
+      "url": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js",
+      "targetId": "EA76339E90BB",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 13442,
+      "kind": "session",
+      "method": "Target.attachedToTarget",
+      "label": null
+    },
+    {
+      "t": 13442,
+      "kind": "step",
+      "name": "attachServiceWorker",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "t": 13452,
+      "kind": "step",
+      "name": "runtimeEnable",
+      "ok": true,
+      "ms": 4
+    },
+    {
+      "t": 13467,
+      "kind": "step",
+      "name": "tabId",
+      "ok": true,
+      "ms": 2
+    },
+    {
+      "t": 13482,
+      "kind": "step",
+      "name": "lagInstall",
+      "ok": true,
+      "ms": 3
+    },
+    {
+      "t": 13497,
+      "kind": "step",
+      "name": "preClick",
+      "ok": true,
+      "ms": 3
+    },
+    {
+      "t": 16060,
+      "kind": "step",
+      "name": "panelProfilerStart",
+      "ok": true,
+      "ms": 47
+    },
+    {
+      "t": 16061,
+      "kind": "step",
+      "name": "clickConnect",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "t": 16069,
+      "kind": "target",
+      "method": "Target.targetDestroyed",
+      "type": null,
+      "url": "",
+      "targetId": "F0D8B69EAA18",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 21597,
+      "kind": "target",
+      "method": "Target.targetDestroyed",
+      "type": null,
+      "url": "",
+      "targetId": "DDEBD6A08912",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 21646,
+      "kind": "step",
+      "name": "waitConnect",
+      "ok": true,
+      "ms": 5578
+    },
+    {
+      "t": 31140,
+      "kind": "target",
+      "method": "Target.targetDestroyed",
+      "type": null,
+      "url": "",
+      "targetId": "78A25FFCBD51",
+      "status": null,
+      "errorCode": null
+    },
+    {
+      "t": 84767,
+      "kind": "step",
+      "name": "scriptListAppears",
+      "ok": true,
+      "ms": 63120
+    },
+    {
+      "t": 176161,
+      "kind": "step",
+      "name": "analysisSettle",
+      "ok": true,
+      "ms": 91392
+    },
+    {
+      "t": 176165,
+      "kind": "step",
+      "name": "swListScripts",
+      "ok": true,
+      "ms": 2
+    },
+    {
+      "t": 176199,
+      "kind": "step",
+      "name": "sourceFetch",
+      "ok": true,
+      "ms": 22
+    },
+    {
+      "t": 178482,
+      "kind": "step",
+      "name": "panelProfilerStop",
+      "ok": true,
+      "ms": 1665
+    },
+    {
+      "t": 178489,
+      "kind": "step",
+      "name": "finalState",
+      "ok": true,
+      "ms": 5
+    }
+  ],
+  "exceptions": [],
+  "console": [],
+  "probes": [
+    {
+      "t": 13508,
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 2619
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315486894
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "disconnected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 3,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 3,
+        "statusText": "未连接",
+        "connectDisabled": false,
+        "logCount": 2
+      }
+    },
+    {
+      "t": 14222,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 3333
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315487608
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "disconnected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 3,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 2,
+        "statusText": "未连接",
+        "connectDisabled": false,
+        "logCount": 2
+      }
+    },
+    {
+      "t": 14928,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 4038
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315488313
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "disconnected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 2,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 1,
+        "statusText": "未连接",
+        "connectDisabled": false,
+        "logCount": 2
+      }
+    },
+    {
+      "t": 15632,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "v": 4743
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "v": 1794315489018
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "disconnected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 2,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 2,
+        "statusText": "未连接",
+        "connectDisabled": false,
+        "logCount": 2
+      }
+    },
+    {
+      "t": 16346,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3003
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315489732
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5010
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3003
+      }
+    },
+    {
+      "t": 22067,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3004
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315495453
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5010
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3004
+      }
+    },
+    {
+      "t": 27791,
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3002
+      },
+      "sw": {
+        "ok": true,
+        "ms": 4,
+        "v": 1794315501178
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 5,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5002
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3002
+      }
+    },
+    {
+      "t": 33500,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3001
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315506886
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5001
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3001
+      }
+    },
+    {
+      "t": 39208,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3011
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "v": 1794315512593
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5006
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3010
+      }
+    },
+    {
+      "t": 44915,
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3003
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315518302
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5002
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3003
+      }
+    },
+    {
+      "t": 50624,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3000
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315524010
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5002
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3000
+      }
+    },
+    {
+      "t": 56339,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3003
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "v": 1794315529725
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5012
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3002
+      }
+    },
+    {
+      "t": 62056,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3010
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315535442
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 1,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5002
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3010
+      }
+    },
+    {
+      "t": 67765,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3015
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315541150
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 1,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5010
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3014
+      }
+    },
+    {
+      "t": 73485,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3005
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315546871
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5005
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3005
+      }
+    },
+    {
+      "t": 79199,
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3007
+      },
+      "sw": {
+        "ok": true,
+        "ms": 4,
+        "v": 1794315552585
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 4,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5005
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3006
+      }
+    },
+    {
+      "t": 84908,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3005
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315558294
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5014
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3005
+      }
+    },
+    {
+      "t": 90626,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3012
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315564012
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5011
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3011
+      }
+    },
+    {
+      "t": 96343,
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3005
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315569728
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5005
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3005
+      }
+    },
+    {
+      "t": 102052,
+      "page": {
+        "ok": true,
+        "ms": 6,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3005
+      },
+      "sw": {
+        "ok": true,
+        "ms": 5,
+        "v": 1794315575438
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 8,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5003
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3004
+      }
+    },
+    {
+      "t": 107771,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3006
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315581157
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5006
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3006
+      }
+    },
+    {
+      "t": 113484,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3001
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315586869
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5013
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3001
+      }
+    },
+    {
+      "t": 119201,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3011
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315592587
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5003
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3011
+      }
+    },
+    {
+      "t": 124916,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3007
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315598302
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5006
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3007
+      }
+    },
+    {
+      "t": 130631,
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3006
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315604016
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5004
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3005
+      }
+    },
+    {
+      "t": 136339,
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3016
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "v": 1794315609725
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 4,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5012
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3016
+      }
+    },
+    {
+      "t": 142057,
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3001
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "v": 1794315615444
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5001
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3001
+      }
+    },
+    {
+      "t": 147771,
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3002
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "v": 1794315621158
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5002
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3002
+      }
+    },
+    {
+      "t": 153474,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3004
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315626859
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 1,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5001
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3004
+      }
+    },
+    {
+      "t": 159188,
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3011
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "v": 1794315632574
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": false,
+        "timeout": true,
+        "ms": 5001
+      },
+      "panelState": {
+        "ok": false,
+        "timeout": true,
+        "ms": 3010
+      }
+    },
+    {
+      "t": 164902,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 1216,
+        "v": 155226
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315638287
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 1250,
+        "v": {
+          "ok": true,
+          "ms": 32,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 1216,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 119
+      }
+    },
+    {
+      "t": 166864,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 155975
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315640250
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 3,
+        "v": {
+          "ok": true,
+          "ms": 2,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 2,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 122
+      }
+    },
+    {
+      "t": 167577,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 156688
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315640963
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 3,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 3,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 125
+      }
+    },
+    {
+      "t": 168281,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 157391
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315641666
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 1,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 2,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 2,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 129
+      }
+    },
+    {
+      "t": 169000,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 158110
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315642385
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 3,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 3,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 131
+      }
+    },
+    {
+      "t": 169716,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "v": 158827
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315643102
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 3,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 3,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 134
+      }
+    },
+    {
+      "t": 170422,
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 159533
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315643808
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 3,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 3,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 137
+      }
+    },
+    {
+      "t": 171129,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "v": 160239
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315644515
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 2,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 2,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 140
+      }
+    },
+    {
+      "t": 171837,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "v": 160948
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315645223
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 4,
+        "v": {
+          "ok": true,
+          "ms": 2,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 4,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 143
+      }
+    },
+    {
+      "t": 172542,
+      "page": {
+        "ok": true,
+        "ms": 5,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "v": 161654
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "v": 1794315645929
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 4,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 4,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 4,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 146
+      }
+    },
+    {
+      "t": 173255,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "v": 162366
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "v": 1794315646641
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 4,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 4,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 4,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 149
+      }
+    },
+    {
+      "t": 173965,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "v": 163075
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315647350
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 1,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 2,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 2,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 152
+      }
+    },
+    {
+      "t": 174676,
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "v": 163786
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "v": 1794315648061
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 3,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 3,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 3,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 155
+      }
+    },
+    {
+      "t": 175383,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 1,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 164494
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315648769
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 2,
+        "v": {
+          "ok": true,
+          "ms": 1,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 2,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 158
+      }
+    },
+    {
+      "t": 176099,
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "v": 2
+      },
+      "devtools": {
+        "ok": true,
+        "ms": 2,
+        "v": 2
+      },
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "v": 165209
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "v": 1794315649484
+      },
+      "swStatus": {
+        "ok": true,
+        "ms": 2,
+        "v": "connected"
+      },
+      "ping": {
+        "ok": true,
+        "ms": 3,
+        "v": {
+          "ok": true,
+          "ms": 2,
+          "lastError": null
+        }
+      },
+      "panelState": {
+        "ok": true,
+        "ms": 2,
+        "statusText": "已连接",
+        "connectDisabled": true,
+        "logCount": 161
+      }
+    }
+  ],
+  "panelLogEvents": [
+    {
+      "firstSeenAtMs": 13508,
+      "panelClock": "20:58:04",
+      "level": "info",
+      "msg": "状态: disconnected"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "event",
+      "msg": "脚本已解析: [35] (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "发现脚本 [35]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "event",
+      "msg": "脚本已解析: [36] (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "发现脚本 [36]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "event",
+      "msg": "脚本已解析: [37] (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "发现脚本 [37]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "event",
+      "msg": "脚本已解析: [38] (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "发现脚本 [38]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "event",
+      "msg": "脚本已解析: [39] (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "发现脚本 [39]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "event",
+      "msg": "脚本已解析: [40] (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "发现脚本 [40]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "event",
+      "msg": "脚本已解析: [41] (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "发现脚本 [41]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "event",
+      "msg": "脚本已解析: [42] (inline)"
+    },
+    {
+      "firstSeenAtMs": 164902,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "发现脚本 [42]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 166864,
+      "panelClock": "21:00:39",
+      "level": "event",
+      "msg": "脚本已解析: [43] (inline)"
+    },
+    {
+      "firstSeenAtMs": 166864,
+      "panelClock": "21:00:39",
+      "level": "info",
+      "msg": "发现脚本 [43]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 167577,
+      "panelClock": "21:00:40",
+      "level": "event",
+      "msg": "脚本已解析: [44] (inline)"
+    },
+    {
+      "firstSeenAtMs": 167577,
+      "panelClock": "21:00:40",
+      "level": "info",
+      "msg": "发现脚本 [44]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 167577,
+      "panelClock": "21:00:40",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 168281,
+      "panelClock": "21:00:40",
+      "level": "event",
+      "msg": "脚本已解析: [45] (inline)"
+    },
+    {
+      "firstSeenAtMs": 168281,
+      "panelClock": "21:00:40",
+      "level": "info",
+      "msg": "发现脚本 [45]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 168281,
+      "panelClock": "21:00:41",
+      "level": "event",
+      "msg": "脚本已解析: [46] (inline)"
+    },
+    {
+      "firstSeenAtMs": 169000,
+      "panelClock": "21:00:41",
+      "level": "info",
+      "msg": "发现脚本 [46]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 169000,
+      "panelClock": "21:00:41",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 169716,
+      "panelClock": "21:00:42",
+      "level": "event",
+      "msg": "脚本已解析: [47] (inline)"
+    },
+    {
+      "firstSeenAtMs": 169716,
+      "panelClock": "21:00:42",
+      "level": "info",
+      "msg": "发现脚本 [47]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 169716,
+      "panelClock": "21:00:42",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 170422,
+      "panelClock": "21:00:43",
+      "level": "event",
+      "msg": "脚本已解析: [48] (inline)"
+    },
+    {
+      "firstSeenAtMs": 170422,
+      "panelClock": "21:00:43",
+      "level": "info",
+      "msg": "发现脚本 [48]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 170422,
+      "panelClock": "21:00:43",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 171129,
+      "panelClock": "21:00:43",
+      "level": "event",
+      "msg": "脚本已解析: [49] (inline)"
+    },
+    {
+      "firstSeenAtMs": 171129,
+      "panelClock": "21:00:43",
+      "level": "info",
+      "msg": "发现脚本 [49]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 171837,
+      "panelClock": "21:00:44",
+      "level": "event",
+      "msg": "脚本已解析: [50] (inline)"
+    },
+    {
+      "firstSeenAtMs": 171837,
+      "panelClock": "21:00:44",
+      "level": "info",
+      "msg": "发现脚本 [50]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 171837,
+      "panelClock": "21:00:44",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 172542,
+      "panelClock": "21:00:45",
+      "level": "event",
+      "msg": "脚本已解析: [51] (inline)"
+    },
+    {
+      "firstSeenAtMs": 172542,
+      "panelClock": "21:00:45",
+      "level": "info",
+      "msg": "发现脚本 [51]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 172542,
+      "panelClock": "21:00:45",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 173255,
+      "panelClock": "21:00:45",
+      "level": "event",
+      "msg": "脚本已解析: [52] (inline)"
+    },
+    {
+      "firstSeenAtMs": 173255,
+      "panelClock": "21:00:45",
+      "level": "info",
+      "msg": "发现脚本 [52]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 173965,
+      "panelClock": "21:00:46",
+      "level": "event",
+      "msg": "脚本已解析: [53] (inline)"
+    },
+    {
+      "firstSeenAtMs": 173965,
+      "panelClock": "21:00:46",
+      "level": "info",
+      "msg": "发现脚本 [53]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 173965,
+      "panelClock": "21:00:46",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 174676,
+      "panelClock": "21:00:47",
+      "level": "event",
+      "msg": "脚本已解析: [54] (inline)"
+    },
+    {
+      "firstSeenAtMs": 174676,
+      "panelClock": "21:00:47",
+      "level": "info",
+      "msg": "发现脚本 [54]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 174676,
+      "panelClock": "21:00:47",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 175383,
+      "panelClock": "21:00:48",
+      "level": "event",
+      "msg": "脚本已解析: [55] (inline)"
+    },
+    {
+      "firstSeenAtMs": 175383,
+      "panelClock": "21:00:48",
+      "level": "info",
+      "msg": "发现脚本 [55]: (inline)"
+    },
+    {
+      "firstSeenAtMs": 175383,
+      "panelClock": "21:00:48",
+      "level": "info",
+      "msg": "分析完成: 0 个候选解码器"
+    },
+    {
+      "firstSeenAtMs": 176099,
+      "panelClock": "21:00:48",
+      "level": "event",
+      "msg": "脚本已解析: [56] (inline)"
+    },
+    {
+      "firstSeenAtMs": 176099,
+      "panelClock": "21:00:48",
+      "level": "info",
+      "msg": "发现脚本 [56]: (inline)"
+    }
+  ],
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "served": [
+    {
+      "at": 3293,
+      "path": "/index.html",
+      "status": 200,
+      "bytes": 163
+    },
+    {
+      "at": 3331,
+      "path": "/app.js",
+      "status": 200,
+      "bytes": 512064
+    },
+    {
+      "at": 3358,
+      "path": "/favicon.ico",
+      "status": 404,
+      "bytes": 0
+    },
+    {
+      "at": 5139,
+      "path": "/.well-known/appspecific/com.chrome.devtools.json",
+      "status": 404,
+      "bytes": 0
+    }
+  ],
+  "baselineBeforeClick": {
+    "samples": 4,
+    "per": {
+      "page": {
+        "samples": 4,
+        "ok": 4,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 4
+      },
+      "devtools": {
+        "samples": 4,
+        "ok": 4,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 3
+      },
+      "panel": {
+        "samples": 4,
+        "ok": 4,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 3
+      },
+      "sw": {
+        "samples": 4,
+        "ok": 4,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 3
+      },
+      "swStatus": {
+        "samples": 4,
+        "ok": 4,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 3
+      },
+      "ping": {
+        "samples": 4,
+        "ok": 4,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 3
+      },
+      "panelState": {
+        "samples": 4,
+        "ok": 4,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 3
+      }
+    },
+    "firstProbeWithAnyFailure": null,
+    "swStatusSeries": [
+      "disconnected x4"
+    ],
+    "everConnected": false,
+    "swStatusTimeouts": 0,
+    "interpretation": "counts only, no cause is stated here"
+  },
+  "afterClick": {
+    "samples": 41,
+    "per": {
+      "page": {
+        "samples": 41,
+        "ok": 41,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 6
+      },
+      "devtools": {
+        "samples": 41,
+        "ok": 41,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 4
+      },
+      "panel": {
+        "samples": 41,
+        "ok": 15,
+        "timeouts": 26,
+        "errors": 0,
+        "maxMs": 3016
+      },
+      "sw": {
+        "samples": 41,
+        "ok": 41,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 5
+      },
+      "swStatus": {
+        "samples": 41,
+        "ok": 41,
+        "timeouts": 0,
+        "errors": 0,
+        "maxMs": 8
+      },
+      "ping": {
+        "samples": 41,
+        "ok": 15,
+        "timeouts": 26,
+        "errors": 0,
+        "maxMs": 5014
+      },
+      "panelState": {
+        "samples": 41,
+        "ok": 15,
+        "timeouts": 26,
+        "errors": 0,
+        "maxMs": 3016
+      }
+    },
+    "firstProbeWithAnyFailure": {
+      "t": 16346,
+      "failing": [
+        "panel",
+        "ping",
+        "panelState"
+      ]
+    },
+    "swStatusSeries": [
+      "connected x41"
+    ],
+    "everConnected": true,
+    "swStatusTimeouts": 0,
+    "interpretation": "counts only, no cause is stated here"
+  },
+  "reproduction": {
+    "reproducedNextpage2Signature": false,
+    "definition": "never connected after the single click AND at least 5 service worker status reads timed out",
+    "everConnected": true,
+    "firstProbeWithAnyFailureAfterClick": {
+      "t": 16346,
+      "failing": [
+        "panel",
+        "ping",
+        "panelState"
+      ]
+    },
+    "rootCause": "not determined by this script"
+  },
+  "finishedAt": "2026-11-10T13:00:52.181Z"
+}

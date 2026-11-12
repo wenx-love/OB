@@ -1,0 +1,111 @@
+{
+  "note": "p46 probe: observation only, no verdicts",
+  "nestedContainment": {
+    "code": "var x = f(dec(0), \"C\");",
+    "sameAsSource": false,
+    "parses": true,
+    "applied": [
+      "dec(1) => \"C\""
+    ],
+    "rejected": [
+      "A:interval-overlapping",
+      "B:interval-overlapping"
+    ],
+    "stats": {
+      "total": 3,
+      "applied": 1,
+      "rejected": 2,
+      "byReason": {
+        "interval-overlapping": 2
+      }
+    }
+  },
+  "shortEnd": {
+    "code": "var a = \"x\"(0) + 1;",
+    "sameAsSource": false,
+    "parses": true,
+    "applied": [
+      "dec => \"x\""
+    ],
+    "rejected": [],
+    "stats": {
+      "total": 1,
+      "applied": 1,
+      "rejected": 0,
+      "byReason": {}
+    }
+  },
+  "numberBeforeDot": {
+    "code": "var s = dec(0).toString();",
+    "sameAsSource": true,
+    "parses": true,
+    "applied": [],
+    "rejected": [
+      "g:ast-position-ambiguous"
+    ],
+    "stats": {
+      "total": 1,
+      "applied": 0,
+      "rejected": 1,
+      "byReason": {
+        "ast-position-ambiguous": 1
+      }
+    }
+  },
+  "lineSeparator": {
+    "code": "var a = \"a\\u2028b\";",
+    "sameAsSource": false,
+    "parses": true,
+    "applied": [
+      "dec(0) => \"a\\u2028b\""
+    ],
+    "rejected": [],
+    "stats": {
+      "total": 1,
+      "applied": 1,
+      "rejected": 0,
+      "byReason": {}
+    }
+  },
+  "truncation": {
+    "whenFalse": [],
+    "whenTrue": [
+      "g:call-locations-truncated"
+    ],
+    "whenMissing": [
+      "g:call-locations-truncated"
+    ]
+  },
+  "manualTwoSites": {
+    "log": [
+      {
+        "n": 0,
+        "value": "b"
+      },
+      {
+        "n": 1,
+        "value": "b"
+      }
+    ],
+    "oneSite": {
+      "status": [
+        "insufficient/none/obs1/too-few-observations,single-observation-rejected,single-obs:outer-mutable-state"
+      ],
+      "candidates": 0,
+      "byReason": {
+        "status-insufficient": 1
+      }
+    },
+    "twoSites": {
+      "status": [
+        "verified/multiple-observations/obs2/consistent-observations"
+      ],
+      "candidates": 2,
+      "byReason": {},
+      "applied": [
+        "dec(0) => \"b\"",
+        "dec(0) => \"b\""
+      ]
+    }
+  }
+}

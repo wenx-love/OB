@@ -1,0 +1,120 @@
+{
+  "schema": "ob-recover.real-site-compare/1",
+  "runId": "run-001",
+  "sample": {
+    "id": "s6-dynamic-script",
+    "layer": "L3",
+    "kind": "controlled-replay",
+    "isRealSiteSample": false,
+    "title": "reference archived from V1, observed run on V2"
+  },
+  "provenance": {
+    "reference": {
+      "capturedBy": "test-oracle",
+      "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+      "note": "independent of OB-Recover output"
+    },
+    "observed": {
+      "capturedBy": "ob-recover",
+      "method": "real CaptureEngine + real node:vm execution + stub CDP transport (synthetic Debugger.paused events, test/helpers/capture-driver.ts)",
+      "note": "not real Chrome and not a CDP pause capture"
+    }
+  },
+  "identity": {
+    "referenceSha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+    "observedSha256": "3950b8c0efa52a5e35813bf9c2e64b73e0056fe70cd0a4db2ee58d3dbfa5aacc",
+    "afterApplySha256": "3950b8c0efa52a5e35813bf9c2e64b73e0056fe70cd0a4db2ee58d3dbfa5aacc",
+    "basis": "V1 archived as the reference script, V2 executed and recovered",
+    "referenceEqualsObserved": false,
+    "unchangedAfterApply": "n/a"
+  },
+  "counts": {
+    "correct-replacement": 0,
+    "safe-rejection": 0,
+    "insufficient-evidence": 0,
+    "version-mismatch": 4,
+    "false-replacement": 0
+  },
+  "detail": {
+    "tp": 0,
+    "frWrongValue": 0,
+    "frOnIndeterminate": 0,
+    "frNotInReference": 0,
+    "frSourceMutation": 0,
+    "un": 0,
+    "sr": 0
+  },
+  "metrics": {
+    "precision": "n/a",
+    "recall": "n/a",
+    "falseReplacement": "n/a",
+    "unresolved": {
+      "count": "n/a",
+      "ratio": "n/a"
+    },
+    "versionMismatch": {
+      "runs": 1,
+      "totalRuns": 1,
+      "ratio": 1
+    },
+    "safeRejectionRate": "n/a",
+    "sourceIntegrity": "n/a",
+    "businessParity": "not-evaluated",
+    "rPos": "n/a",
+    "rNeg": "n/a"
+  },
+  "hardConditions": {
+    "falseReplacementIsZero": "n/a",
+    "sourceIntegrity": "n/a",
+    "safeRejectionRateIs100": "n/a",
+    "precisionIs100": "n/a"
+  },
+  "verdict": "version-mismatch",
+  "exhaustive": true,
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 5,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "referenceDeterminate": null,
+      "category": "version-mismatch",
+      "rejectionCodes": [],
+      "note": "script sha256 differs or is malformed: no position-level comparison is made"
+    },
+    {
+      "position": {
+        "lineNumber": 6,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "referenceDeterminate": null,
+      "category": "version-mismatch",
+      "rejectionCodes": [],
+      "note": "script sha256 differs or is malformed: no position-level comparison is made"
+    },
+    {
+      "position": {
+        "lineNumber": 7,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "referenceDeterminate": null,
+      "category": "version-mismatch",
+      "rejectionCodes": [],
+      "note": "script sha256 differs or is malformed: no position-level comparison is made"
+    },
+    {
+      "position": {
+        "lineNumber": 8,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "referenceDeterminate": null,
+      "category": "version-mismatch",
+      "rejectionCodes": [],
+      "note": "script sha256 differs or is malformed: no position-level comparison is made"
+    }
+  ]
+}

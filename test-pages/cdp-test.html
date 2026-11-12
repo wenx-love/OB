@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>CDP Runtime Test Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-size: 13px;
+    }
+    /* Fixed header */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #252526;
+      border-bottom: 2px solid #0e639c;
+      padding: 10px 20px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .header h1 { color: #4ec9b0; font-size: 16px; }
+    .header .controls { display: flex; gap: 8px; align-items: center; }
+    .header .status-info { font-size: 12px; color: #858585; }
+    .header .status-info span { color: #4ec9b0; font-weight: 600; }
+    /* Scrollable body */
+    .body {
+      margin-top: 60px;
+      padding: 16px 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .warning {
+      background: #3a2a00;
+      border: 1px solid #7a5a00;
+      border-radius: 6px;
+      padding: 10px 14px;
+      color: #ffd700;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    code {
+      background: #2d2d30;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      color: #ce9178;
+    }
+    /* Accordion */
+    .test-card {
+      background: #252526;
+      border: 1px solid #3e3e42;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    .test-card-header {
+      padding: 10px 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      user-select: none;
+      transition: background 0.1s;
+    }
+    .test-card-header:hover { background: #2d2d30; }
+    .test-card-header h3 {
+      color: #ce9178;
+      font-size: 13px;
+      font-weight: 600;
+      flex: 1;
+    }
+    .test-card-header .toggle {
+      color: #858585;
+      font-size: 12px;
+      transition: transform 0.2s;
+    }
+    .test-card.open .test-card-header .toggle { transform: rotate(90deg); }
+    .test-card-body {
+      display: none;
+      padding: 12px 14px;
+      border-top: 1px solid #3e3e42;
+    }
+    .test-card.open .test-card-body { display: block; }
+    .test-card .desc { color: #858585; font-size: 12px; margin-bottom: 10px; }
+    button {
+      background: #0e639c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 14px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    button:hover { background: #1177bb; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .output {
+      margin-top: 8px;
+      background: #1a1a1a;
+      border: 1px solid #3e3e42;
+      border-radius: 3px;
+      padding: 6px 10px;
+      font-family: Consolas, monospace;
+      font-size: 11px;
+      color: #89d185;
+      min-height: 30px;
+      max-height: 120px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+    #global-status { color: #4ec9b0; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🔌 CDP Test</h1>
+    <div class="status-info">
+      状态: <span id="global-status">就绪</span> |
+      运行: <span id="run-count">0</span> 次
+    </div>
+    <div class="controls">
+      <button onclick="resetAll()">重置</button>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="warning">
+      ⚠️ 打开 DevTools → OB-Recover 面板 → 点击"连接" → 展开下面的测试 → 点击运行按钮。<br/>
+      每次暂停后在插件中点击 <strong>▶ 恢复</strong>。
+    </div>
+
+    <div class="test-card" id="card-1">
+      <div class="test-card-header" onclick="toggleCard(1)">
+        <h3>测试 1：普通断点</h3>
+        <span class="toggle">▶</span>
+      </div>
+      <div class="test-card-body">
+        <p class="desc">验证插件能否检测暂停并读取调用栈。</p>
+        <button onclick="runTest1()">运行</button>
+        <div class="output" id="out-test1">等待执行...</div>
+      </div>
+    </div>
+
+    <div class="test-card" id="card-2">
+      <div class="test-card-header" onclick="toggleCard(2)">
+        <h3>测试 2：函数调用断点</h3>
+        <span class="toggle">▶</span>
+      </div>
+      <div class="test-card-body">
+        <p class="desc">验证能否获取函数名 <code>testFunction</code> 和参数。</p>
+        <button onclick="runTest2()">运行</button>
+        <div class="output" id="out-test2">等待执行...</div>
+      </div>
+    </div>
+
+    <div class="test-card" id="card-3">
+      <div class="test-card-header" onclick="toggleCard(3)">
+        <h3>测试 3：动态脚本 (eval)</h3>
+        <span class="toggle">▶</span>
+      </div>
+      <div class="test-card-body">
+        <p class="desc">验证能否发现 <code>eval</code> 创建的脚本。</p>
+        <button onclick="runTest3()">运行</button>
+        <div class="output" id="out-test3">等待执行...</div>
+      </div>
+    </div>
+
+    <div class="test-card" id="card-4">
+      <div class="test-card-header" onclick="toggleCard(4)">
+        <h3>测试 4：连续暂停与恢复</h3>
+        <span class="toggle">▶</span>
+      </div>
+      <div class="test-card-body">
+        <p class="desc">连续 3 次暂停，每次在插件中点击 ▶ 恢复。</p>
+        <button onclick="runTest4()">运行</button>
+        <div class="output" id="out-test4">等待执行...</div>
+      </div>
+    </div>
+
+    <div class="test-card" id="card-5">
+      <div class="test-card-header" onclick="toggleCard(5)">
+        <h3>测试 5：DevTools 兼容性</h3>
+        <span class="toggle">▶</span>
+      </div>
+      <div class="test-card-body">
+        <p class="desc">检测 DevTools 已打开时的连接情况。</p>
+        <button onclick="runTest5()">运行</button>
+        <div class="output" id="out-test5">等待执行...</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let runCount = 0;
+
+    function toggleCard(n) {
+      document.getElementById('card-' + n).classList.toggle('open');
+    }
+
+    function setOut(id, msg) {
+      document.getElementById(id).textContent = msg;
+    }
+
+    function setStatus(msg) {
+      document.getElementById('global-status').textContent = msg;
+    }
+
+    function incRun() {
+      runCount++;
+      document.getElementById('run-count').textContent = runCount;
+    }
+
+    function resetAll() {
+      for (let i = 1; i <= 5; i++) {
+        setOut('out-test' + i, '等待执行...');
+        document.getElementById('card-' + i).classList.remove('open');
+      }
+      runCount = 0;
+      document.getElementById('run-count').textContent = '0';
+      setStatus('已重置');
+    }
+
+    function runTest1() {
+      setOut('out-test1', '▶ 执行中...'); setStatus('测试 1 运行中'); incRun();
+      function testDebugger() { debugger; return "hello"; }
+      setOut('out-test1', '✅ 结果: ' + testDebugger() + '\n(插件应显示函数名 testDebugger)');
+      setStatus('测试 1 完成');
+    }
+
+    function runTest2() {
+      setOut('out-test2', '▶ 执行中...'); setStatus('测试 2 运行中'); incRun();
+      function testFunction(value) { debugger; return value + 1; }
+      setOut('out-test2', '✅ 结果: ' + testFunction(100) + '\n(插件应显示函数名 testFunction)');
+      setStatus('测试 2 完成');
+    }
+
+    function runTest3() {
+      setOut('out-test3', '▶ eval 中...'); setStatus('测试 3 运行中'); incRun();
+      const code = 'function dynamicTest() { debugger; return "dynamic"; } dynamicTest();';
+      try { eval(code); setOut('out-test3', '✅ 完成\n(日志应显示 scriptParsed 事件, 函数名=dynamicTest)'); }
+      catch (e) { setOut('out-test3', '❌ eval 失败: ' + e.message); }
+      setStatus('测试 3 完成');
+    }
+
+    let test4Count = 0;
+    function runTest4() {
+      test4Count = 0; setOut('out-test4', '▶ 3 次暂停, 每次点击 ▶ 恢复...'); setStatus('测试 4 运行中'); incRun();
+      doTest4Step();
+    }
+    function doTest4Step() {
+      test4Count++;
+      if (test4Count > 3) { setOut('out-test4', '✅ 3 次暂停全部恢复, 无死循环'); setStatus('测试 4 完成'); return; }
+      setOut('out-test4', `▶ 第 ${test4Count}/3 次暂停`);
+      function multiStep(n) { debugger; return n * 2; }
+      multiStep(test4Count);
+      setTimeout(doTest4Step, 200);
+    }
+
+    function runTest5() {
+      setOut('out-test5', '▶ 检测中...'); setStatus('测试 5 运行中'); incRun();
+      setOut('out-test5', '✅ 信息已收集\n--- 观察 OB-Recover 面板日志 ---\n若调试器冲突, 插件应显示具体错误');
+      setStatus('测试 5 完成');
+    }
+  </script>
+</body>
+</html>

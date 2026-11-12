@@ -1,0 +1,66 @@
+{
+  "note": "node:inspector probe, Debugger.evaluateOnCallFrame with throwOnSideEffect on a real paused frame",
+  "node": "v22.23.2",
+  "before": "{\"counter\":0,\"cacheKeys\":[],\"arrLen\":3,\"memo\":\"undefined\"}",
+  "frame": [
+    {
+      "label": "read a local",
+      "expression": "local",
+      "ok": true,
+      "type": "number",
+      "value": 7
+    },
+    {
+      "label": "arithmetic on locals",
+      "expression": "local + 1",
+      "ok": true,
+      "type": "number",
+      "value": 8
+    },
+    {
+      "label": "call the pure decoder with a local",
+      "expression": "pureDec(local % 3)",
+      "ok": true,
+      "type": "string",
+      "value": "b"
+    },
+    {
+      "label": "assign a local variable of the frame",
+      "expression": "local = 9",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "write a property on an object created by the frame",
+      "expression": "cache.x = 1",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "decoder with a cache write",
+      "expression": "cacheDec(1)",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "decoder that increments a global",
+      "expression": "counterDec(1)",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    }
+  ],
+  "hostReturned": 7,
+  "pauseEvents": [
+    {
+      "reason": "other",
+      "frames": 7,
+      "top": "host"
+    }
+  ],
+  "after": "{\"counter\":0,\"cacheKeys\":[],\"arrLen\":3,\"memo\":\"undefined\"}",
+  "stateUnchanged": true
+}

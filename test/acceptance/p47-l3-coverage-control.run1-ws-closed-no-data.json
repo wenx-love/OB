@@ -1,0 +1,69 @@
+{
+  "schema": "ob-recover.l3-coverage-control-raw/1",
+  "note": "Control run: same page and same Profiler calls as the replay run, NO extension and NO debugger. Raw evidence only, judged offline.",
+  "isRealSiteSample": false,
+  "startedAt": "2026-11-10T06:15:00.595Z",
+  "pageUrl": "http://127.0.0.1:8784/real-site-l3-same-text.html",
+  "pageFilesOnDisk": {
+    "html": {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    "js": {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    }
+  },
+  "steps": {
+    "firstLoad": {
+      "ready": {
+        "ready": true,
+        "ms": 8335
+      }
+    },
+    "coverageStart": {
+      "started": true
+    },
+    "reload": {
+      "error": "ws closed: Runtime.evaluate"
+    },
+    "coverageAfterLoad": {
+      "error": "CDP timeout after 20000ms: Profiler.takePreciseCoverage"
+    },
+    "callLaterB": {
+      "error": "CDP timeout after 20000ms: Runtime.evaluate"
+    },
+    "callShadowD": {
+      "error": "CDP timeout after 20000ms: Runtime.evaluate"
+    },
+    "callDecoderTwice": {
+      "error": "CDP timeout after 20000ms: Runtime.evaluate"
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "served": [
+    {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    },
+    {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    }
+  ],
+  "finishedAt": "2026-11-10T06:16:35.355Z"
+}

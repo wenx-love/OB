@@ -1,0 +1,16 @@
+{
+  "schema": "web-protocol-recovery/l1-js-reverse-user-decision/1",
+  "decidedBy": "user",
+  "decision": "record the js-reverse half as missing and continue with chrome-devtools only",
+  "reason": "headless acceptance failed: the js-reverse browser is a visible window and the tool surface has no headless switch",
+  "consequences": [
+    "no initiator evidence from js-reverse",
+    "the missing half is reported in the exit summary and never counted as a pass",
+    "the byte exact source and its SHA-256 must come from another recorded source; if none is usable then L1 position level comparison is not possible and is recorded as a limitation"
+  ],
+  "navigation": { "unitsConsumedByThisStep": 0, "budgetRemaining": 99 },
+  "residualResources": [
+    { "pid": 9168, "owner": "js-reverse MCP process 16220", "state": "live, idle on about:blank, not terminated" },
+    { "pid": 22580, "owner": "skill", "state": "parked on about:blank" }
+  ]
+}

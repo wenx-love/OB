@@ -1,0 +1,55 @@
+{
+  "capturedBy": "test-oracle",
+  "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+  "note": "independent of OB-Recover output",
+  "oracleChecks": [
+    {
+      "label": "no call, no side effect",
+      "js": "report()",
+      "expect": 0
+    },
+    {
+      "label": "one call changes observable state",
+      "js": "dec(0); report()",
+      "expect": 1
+    }
+  ],
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 10,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": false,
+      "reason": "observable side effect"
+    },
+    {
+      "position": {
+        "lineNumber": 11,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": false,
+      "reason": "observable side effect"
+    },
+    {
+      "position": {
+        "lineNumber": 12,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "determinate": false,
+      "reason": "observable side effect"
+    },
+    {
+      "position": {
+        "lineNumber": 13,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "determinate": false,
+      "reason": "observable side effect"
+    }
+  ]
+}

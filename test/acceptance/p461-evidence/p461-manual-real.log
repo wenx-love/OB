@@ -1,0 +1,11 @@
+[PASS] 1 load current dist extension in real Chrome
+[PASS] 2 open dedicated test page
+[PASS] 3 set breakpoint in DevTools Sources
+[PASS] 4 backend receives real Debugger.paused
+[PASS] 5 real callFrames obtained
+[PASS] 6 Local and Closure scope at frameIndex
+[FAIL] 7 OB decode expression evaluated in specified frame :: failed: callFrameId frame 0: _0xdec(0x0) | callFrameId frame 0: _0xdec(0x1) | callFrameId frame 0: _0xdec(0x2) | callFrameId frame 0: _0xdec(0x3) | callFrameId frame 0: _0xdec(0x4) | frameIndex frame 0: _0xdec(0x0) | frameIndex frame 0: _0xdec(0x1) | frameIndex frame 0: _0xdec(0x2) | frameIndex frame 0: _0xdec(0x3) | frameIndex frame 0: _0xdec(0x4)
+[FAIL] 8 returned values match real browser results :: failed: callFrameId: backend decode values equal browser _0xdec(0..4) | frameIndex: backend decode values equal browser _0xdec(0..4)
+[PASS] 9 no auto breakpoints / no panel switch / no resume
+[PASS] 10 user breakpoints, step and continue unaffected
+saved D:/Projects/ob-recover/test/acceptance/phase4-manual-real.json

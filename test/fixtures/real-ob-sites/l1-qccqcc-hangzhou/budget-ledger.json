@@ -1,0 +1,60 @@
+{
+  "schema": "ob-recover.l1-budget-ledger/2",
+  "siteId": "l1-qccqcc-hangzhou",
+  "unit": "page navigation (original counting rule, unchanged)",
+  "budget": 100,
+  "used": 17,
+  "remaining": 83,
+  "entries": [
+    {
+      "id": "l1-report-runs",
+      "units": 13,
+      "source": "docs/PHASE4.7-L1-QCCQCC-REPORT.md section 7",
+      "recordedBy": "report"
+    },
+    {
+      "id": "clean1",
+      "units": 2,
+      "source": "derived from scripts/p47-l1-ob-run.ts as run for clean1: Target.createTarget plus a redundant Page.navigate; not from a runtime counter",
+      "recordedBy": "assistant, back-filled on user approval",
+      "evidenceFile": "run-20261110T1458Z/observed/raw-run.clean1.json",
+      "evidenceSha256": "f6c0ae9973ee3a97ed6995d1ef35c24de15b196bd9237f233d7e445920d7398b"
+    },
+    {
+      "id": "nextpage1",
+      "units": 1,
+      "source": "budget block of the run output: pageLoads 1, clicks 0, unitsConsumed 1; the run stopped at the connect gate before any capture or click; not from a runtime counter",
+      "recordedBy": "assistant, back-filled after the run because that runner version did not write the ledger",
+      "evidenceFile": "run-20261110T1458Z/observed/raw-run.nextpage1.json",
+      "evidenceBytes": 5937,
+      "stop": "connect-timeout"
+    },
+    {
+      "id": "nextpage2",
+      "units": 1,
+      "source": "written by the runner at the end of the run from its own counters: pageLoads 1, clicks 0",
+      "recordedBy": "runner",
+      "stop": "connect-timeout",
+      "evidenceFile": "run-20261110T1458Z/observed/raw-run.nextpage2.json"
+    }
+  ],
+  "plannedNextRun": {
+    "id": "nextpage3",
+    "units": 2,
+    "detail": "one target page navigation (about:blank first, then one Page.navigate) plus at most one next-page click; the runner now checks the loaded document host and path, records the full redirect chain, and reads the debugger status without going through the panel",
+    "status": "planned, not executed",
+    "previousRun": {
+      "id": "nextpage2",
+      "status": "attempted-aborted",
+      "stop": "connect-timeout",
+      "detail": "the page that loaded was the site's login page (not the target page) and every status read timed out; the runner had no document identity gate and no panel-free status read at that time, so the cause could not be separated. Recorded as attempted and aborted, not as a completed run."
+    }
+  },
+  "passiveHttpCount": {
+    "note": "independent metric, counted by the runner from passive Network events; does not change the budget rule",
+    "clean1": "not measured",
+    "nextpage1": "33 requests seen after Network.enable, a lower bound; the run stopped before capture",
+    "nextpage2": "25 requests seen after Network.enable, a lower bound; 16 GET, 7 POST, 2 OPTIONS, 1 failed, GetPageList 0"
+  },
+  "providerInitiatedBusinessReplays": 0
+}

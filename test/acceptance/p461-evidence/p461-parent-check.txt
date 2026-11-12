@@ -1,0 +1,14 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ✓ test/replacement-parent-check.test.ts (4 tests) 43ms
+ ✓ test/statement-position-directive.test.ts (5 tests) 45ms
+ ✓ test/atomic-rollback-real.test.ts (6 tests) 52ms
+
+ Test Files  3 passed (3)
+      Tests  15 passed (15)
+   Start at  10:03:36
+   Duration  1.25s (transform 244ms, setup 0ms, collect 2.06s, tests 141ms, environment 1ms, prepare 630ms)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

@@ -1,0 +1,141 @@
+{
+  "tag": "before",
+  "runs": 5,
+  "note": "real built panel.js loaded in a plain page with stubbed chrome.* APIs; measures panel main-thread logic only; NOT the real DevTools panel and excludes DevTools own rendering",
+  "pageErrors": [],
+  "chrome": "Chrome/155.0.8059.40",
+  "ready": "function true true",
+  "result": {
+    "refreshes": [
+      {
+        "n": 1,
+        "handlerMs": [
+          206,
+          145,
+          153,
+          8
+        ],
+        "totalMs": 512,
+        "candidatesShown": "1",
+        "scriptsShown": "4"
+      },
+      {
+        "n": 2,
+        "handlerMs": [
+          161,
+          150,
+          145,
+          3
+        ],
+        "totalMs": 459,
+        "candidatesShown": "2",
+        "scriptsShown": "8"
+      },
+      {
+        "n": 3,
+        "handlerMs": [
+          147,
+          141,
+          137,
+          3
+        ],
+        "totalMs": 428,
+        "candidatesShown": "3",
+        "scriptsShown": "12"
+      },
+      {
+        "n": 4,
+        "handlerMs": [
+          135,
+          135,
+          135,
+          4
+        ],
+        "totalMs": 409,
+        "candidatesShown": "4",
+        "scriptsShown": "16"
+      },
+      {
+        "n": 5,
+        "handlerMs": [
+          141,
+          142,
+          141,
+          4
+        ],
+        "totalMs": 428,
+        "candidatesShown": "5",
+        "scriptsShown": "20"
+      }
+    ],
+    "captureState": {
+      "captures": 300,
+      "bytes": 196594,
+      "runs": [
+        {
+          "handlerMs": 1,
+          "withRenderMs": 53
+        },
+        {
+          "handlerMs": 0,
+          "withRenderMs": 48
+        },
+        {
+          "handlerMs": 0,
+          "withRenderMs": 81
+        },
+        {
+          "handlerMs": 0,
+          "withRenderMs": 62
+        },
+        {
+          "handlerMs": 0,
+          "withRenderMs": 62
+        },
+        {
+          "handlerMs": 0,
+          "withRenderMs": 64
+        },
+        {
+          "handlerMs": 0,
+          "withRenderMs": 74
+        },
+        {
+          "handlerMs": 0,
+          "withRenderMs": 69
+        },
+        {
+          "handlerMs": 0,
+          "withRenderMs": 67
+        },
+        {
+          "handlerMs": 0,
+          "withRenderMs": 72
+        }
+      ]
+    },
+    "cards": 300,
+    "longtasks": [
+      460,
+      428,
+      409,
+      428,
+      52,
+      64,
+      59,
+      54,
+      52,
+      59,
+      61,
+      63
+    ],
+    "sentToBackground": {
+      "debugger-get-status": 1,
+      "capture-get-state": 1
+    },
+    "storage": {
+      "sets": 0,
+      "bytes": 0
+    }
+  }
+}

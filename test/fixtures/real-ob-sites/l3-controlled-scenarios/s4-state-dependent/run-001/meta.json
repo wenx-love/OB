@@ -1,0 +1,15 @@
+{
+  "siteId": "s4-state-dependent",
+  "runId": "run-001",
+  "layer": "L3",
+  "kind": "controlled-replay",
+  "isRealSiteSample": false,
+  "url": null,
+  "sha256": "ab007e4f991b0bc673fe664bd5cf3433325b190551450dcebd697895c83c81a6",
+  "bytes": 195,
+  "fetchedAt": null,
+  "fetchedAtNote": "synthetic script authored in test/real-site-l3.test.ts",
+  "capturedBy": "n/a-synthetic",
+  "tooling": "test/real-site-l3.test.ts",
+  "title": "状态依赖（读取函数外部可变状态）：不可确定"
+}

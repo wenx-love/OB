@@ -1,0 +1,138 @@
+{
+  "note": "node:inspector probe, Runtime.evaluate with throwOnSideEffect; observation only",
+  "node": "v22.23.2",
+  "before": "{\"counter\":0,\"cacheKeys\":[],\"arrLen\":3,\"memo\":\"undefined\"}",
+  "blocked": [
+    {
+      "label": "pure decoder call",
+      "expression": "pureDec(1)",
+      "ok": true,
+      "type": "string",
+      "value": "b"
+    },
+    {
+      "label": "pure arithmetic on a global",
+      "expression": "_arr[1] + String(2)",
+      "ok": true,
+      "type": "string",
+      "value": "b2"
+    },
+    {
+      "label": "binding probe (as sent by planManualCapture)",
+      "expression": "(function(f){var s=Function.prototype.toString.call(f);return JSON.stringify([s.length,s.slice(0,120),s.slice(-120)])})(pureDec)",
+      "ok": true,
+      "type": "string",
+      "value": "[39,\"function pureDec(i) { return _arr[i]; }\",\"function pureDec(i) { return _arr[i]; }\"]"
+    },
+    {
+      "label": "assign a global variable",
+      "expression": "counter = 5",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "increment a global variable",
+      "expression": "counter++",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "mutate a global array",
+      "expression": "_arr.push('x')",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "write a property on a global object",
+      "expression": "_cache.k = 1",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "mutate a fresh temporary object",
+      "expression": "(function(){ var o = {}; o.a = 1; return o.a; })()",
+      "ok": true,
+      "type": "number",
+      "value": 1
+    },
+    {
+      "label": "decoder that increments a global",
+      "expression": "counterDec(1)",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "decoder with a cache write",
+      "expression": "cacheDec(1)",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "decoder that mutates its array",
+      "expression": "mutateArr(1)",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "decoder with self memoization",
+      "expression": "selfMemo(1)",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "decoder using Date.now",
+      "expression": "usesDate(1)",
+      "ok": true,
+      "type": "string",
+      "value": "b"
+    },
+    {
+      "label": "decoder using Math.random",
+      "expression": "usesRandom(1)",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "decoder using atob (Node implementation, not Blink)",
+      "expression": "viaB64(1)",
+      "ok": false,
+      "text": "Uncaught",
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    }
+  ],
+  "afterBlockedRun": "{\"counter\":0,\"cacheKeys\":[],\"arrLen\":3,\"memo\":\"undefined\"}",
+  "stateUnchanged": true,
+  "control": [
+    {
+      "label": "decoder that increments a global",
+      "expression": "counterDec(1)",
+      "ok": true,
+      "type": "string",
+      "value": "b"
+    },
+    {
+      "label": "decoder with a cache write",
+      "expression": "cacheDec(1)",
+      "ok": true,
+      "type": "string",
+      "value": "b"
+    },
+    {
+      "label": "mutate a global array",
+      "expression": "_arr.push('x')",
+      "ok": true,
+      "type": "number",
+      "value": 4
+    }
+  ],
+  "afterControl": "{\"counter\":1,\"cacheKeys\":[\"1\"],\"arrLen\":4,\"memo\":\"undefined\"}"
+}

@@ -1,0 +1,39 @@
+{
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "pageTargetId": "8F9A32C3842E81D06DB3A6E39BB5DD79",
+  "swFound": true,
+  "swReady": "function",
+  "tabs": [
+    {
+      "id": 910801223,
+      "active": false
+    },
+    {
+      "id": 910801224,
+      "active": true
+    }
+  ],
+  "blankTab": {
+    "id": 910801224,
+    "active": true
+  },
+  "attach": {
+    "ok": true
+  },
+  "debuggerEnable": {
+    "ok": true,
+    "result": {
+      "debuggerId": "3321659087355440150.429402364450348003"
+    }
+  },
+  "instrumentationBreakpoint": {
+    "ok": true,
+    "result": {
+      "breakpointId": "8:beforeScriptExecution"
+    }
+  },
+  "detach": {
+    "ok": true
+  }
+}

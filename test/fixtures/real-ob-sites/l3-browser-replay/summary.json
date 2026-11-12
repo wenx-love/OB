@@ -1,0 +1,97 @@
+{
+  "schema": "ob-recover.real-site-summary/2",
+  "layer": "L3-browser-replay",
+  "sample": "l3-browser-same-text",
+  "isRealSiteSample": false,
+  "formalPerConfiguration": [
+    {
+      "configuration": "high (default)",
+      "runId": "run-001",
+      "compareFile": "test/fixtures/real-ob-sites/l3-browser-replay/same-text/run-001/compare.json",
+      "provenance": {
+        "reference": {
+          "capturedBy": "test-oracle",
+          "method": "author-annotated truth cross-checked by window.__l3Truth() evaluated in Chrome after capture stopped and by an independent node:vm evaluation (test/real-site-l3-browser.test.ts)",
+          "note": "independent of OB-Recover output"
+        },
+        "observed": {
+          "capturedBy": "ob-recover",
+          "method": "real Chrome 155 headless=new + real DevTools frontend + real panel + real service worker + real chrome.debugger; programmatic operation (element.click, Runtime.evaluate), NOT manual mouse; applied replacements parsed from the panel own apply report",
+          "note": "raw evidence collected by scripts/p47-l3-browser-replay.ts and judged offline"
+        }
+      },
+      "identity": {
+        "referenceSha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+        "observedSha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+        "afterApplySha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+        "basis": "reference = sha256 of the page script on disk read by this test; observed = source OB-Recover read from Chrome through its own debugger-get-source (CDP) before apply; afterApply = the same read after both apply clicks. activeScript.source of the panel is module private and cannot be read from outside: that it was not mutated is evidenced indirectly by the second apply passing the URL + source equality gate",
+        "referenceEqualsObserved": true,
+        "unchangedAfterApply": true
+      },
+      "counts": {
+        "correct-replacement": 2,
+        "safe-rejection": 1,
+        "insufficient-evidence": 1,
+        "version-mismatch": 0,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 2,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 1,
+        "sr": 1
+      },
+      "metrics": {
+        "precision": 1,
+        "recall": 0.666667,
+        "falseReplacement": 0,
+        "unresolved": {
+          "count": 1,
+          "ratio": 0.333333
+        },
+        "versionMismatch": {
+          "runs": 0,
+          "totalRuns": 1,
+          "ratio": 0
+        },
+        "safeRejectionRate": 1,
+        "sourceIntegrity": true,
+        "businessParity": "pass",
+        "rPos": 3,
+        "rNeg": 1
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": true,
+        "sourceIntegrity": true,
+        "safeRejectionRateIs100": true,
+        "precisionIs100": true
+      },
+      "verdict": "pass",
+      "exhaustive": true
+    }
+  ],
+  "evidence": {
+    "rawFile": "test/acceptance/p47-l3-browser-replay.json",
+    "controlFile": "test/acceptance/p47-l3-coverage-control.json",
+    "screenshotFile": "test/acceptance/p47-l3-browser-replay-panel.png",
+    "decoderCountDiagFile": "test/acceptance/p47-l3-decoder-count-diag.json",
+    "failedControlRunArchive": "test/acceptance/p47-l3-coverage-control.run1-ws-closed-no-data.json"
+  },
+  "knownLimitations": [
+    "operation was programmatic (element.click, Runtime.evaluate) in a real Chrome, NOT manual mouse operation",
+    "Chrome ran headless=new with the real DevTools frontend, not as a headed window",
+    "the independent coverage probe reports _0x13d0 count 1 in the replay run but 2 in the control run without the extension; the cause was not found, so probe counts are used only as executed or not executed evidence for B and D, never as call counts",
+    "activeScript.source is private to the panel module: non-mutation is evidenced by the CDP source reads before and after apply, the page side resource hash, and the second apply passing the URL + source equality gate",
+    "the original pane shows a formatted copy, so it is only checked line by line for the call text and never compared byte for byte",
+    "one run on one fixed local page with the high confidence threshold; the first control run failed (websocket closed, cause unknown) and is archived, the second run is the one used",
+    "the Decoder tab shows 38 in the replay screenshot: a read only diagnostic in a separate real Chrome run (p47-l3-decoder-count-diag.json) shows that candidates accumulate across page reloads while capture is active (19 per page load = 2 from this page script + 17 from an inline script whose origin was not identified, 38 after connect plus one reload, 57 after two reloads, still 57 after stop and a manual refresh); 38 is consistent with the replay sequence but the replay raw evidence has no Decoder pane readings, so it is inferred, not observed",
+    "the accumulated Decoder candidate number is a display statistic and was not changed because src/ is frozen for this task: the apply step still resolved exactly one runtime script and replaced 2 of 2 while stale discovered scripts were retained"
+  ],
+  "notes": [
+    "it is not real-site evidence, it is not L1 evidence, and it does not make Phase 4.7 pass",
+    "the service worker recycle question stays still-undetermined and is not part of this run"
+  ]
+}

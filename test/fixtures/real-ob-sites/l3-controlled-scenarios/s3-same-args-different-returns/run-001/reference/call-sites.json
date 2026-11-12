@@ -1,0 +1,32 @@
+{
+  "capturedBy": "test-oracle",
+  "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+  "note": "independent of OB-Recover output",
+  "oracleChecks": [
+    {
+      "label": "two successive calls differ",
+      "js": "[dec(0), dec(0)].join()",
+      "expect": "0_1,0_2"
+    }
+  ],
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 6,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": false,
+      "reason": "hidden counter: first call 0_1"
+    },
+    {
+      "position": {
+        "lineNumber": 7,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": false,
+      "reason": "hidden counter: second call 0_2"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "note": "real Chrome headless=new, page-level CDP, observation only; throwOnSideEffect: true on every checked evaluation",
+  "cases": "see partA and partB",
+  "chrome": "Chrome/155.0.8059.40",
+  "stateBefore": "{\"counter\":0}",
+  "partA": [
+    {
+      "label": "pure decoder (array lookup only)",
+      "expression": "pureDec(0)",
+      "ok": true,
+      "type": "string",
+      "value": "Zm9v"
+    },
+    {
+      "label": "atob called directly",
+      "expression": "atob('Zm9v')",
+      "ok": false,
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "decoder that calls atob (shape of the Phase 4.5 test page)",
+      "expression": "atobDec(0)",
+      "ok": false,
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "btoa called directly",
+      "expression": "btoa('foo')",
+      "ok": false,
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "String.fromCharCode directly",
+      "expression": "String.fromCharCode(102)",
+      "ok": true,
+      "type": "string",
+      "value": "f"
+    },
+    {
+      "label": "decoder using String.fromCharCode",
+      "expression": "fromCharDec(0)",
+      "ok": true,
+      "type": "string",
+      "value": "f"
+    },
+    {
+      "label": "decodeURIComponent directly",
+      "expression": "decodeURIComponent('%66')",
+      "ok": true,
+      "type": "string",
+      "value": "f"
+    },
+    {
+      "label": "decoder using decodeURIComponent",
+      "expression": "uriDec(0)",
+      "ok": true,
+      "type": "string",
+      "value": "f0"
+    },
+    {
+      "label": "parseInt",
+      "expression": "parseInt('10', 16)",
+      "ok": true,
+      "type": "number",
+      "value": 16
+    },
+    {
+      "label": "Math.floor",
+      "expression": "Math.floor(1.5)",
+      "ok": true,
+      "type": "number",
+      "value": 1
+    },
+    {
+      "label": "string method charCodeAt",
+      "expression": "'abc'.charCodeAt(1)",
+      "ok": true,
+      "type": "number",
+      "value": 98
+    },
+    {
+      "label": "control: decoder that increments a global",
+      "expression": "counterDec(1)",
+      "ok": false,
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    },
+    {
+      "label": "control: assign a global",
+      "expression": "counter = 5",
+      "ok": false,
+      "description": "EvalError: Possible side-effect in debug-evaluate"
+    }
+  ],
+  "stateAfterChecked": "{\"counter\":0}",
+  "stateUnchanged": true,
+  "controlAtobWithoutCheck": {
+    "ok": true,
+    "type": "string",
+    "value": "foo"
+  },
+  "partB": {
+    "frame": [
+      {
+        "label": "read a frame local",
+        "expression": "local",
+        "ok": true,
+        "type": "number",
+        "value": 7
+      },
+      {
+        "label": "arithmetic on a frame local",
+        "expression": "local + 1",
+        "ok": true,
+        "type": "number",
+        "value": 8
+      },
+      {
+        "label": "pure decoder with a local",
+        "expression": "pureDec(local % 3)",
+        "ok": true,
+        "type": "string",
+        "value": "YmFy"
+      },
+      {
+        "label": "decoder that calls atob",
+        "expression": "atobDec(0)",
+        "ok": false,
+        "description": "EvalError: Possible side-effect in debug-evaluate"
+      },
+      {
+        "label": "atob called directly",
+        "expression": "atob('Zm9v')",
+        "ok": false,
+        "description": "EvalError: Possible side-effect in debug-evaluate"
+      },
+      {
+        "label": "decoder using String.fromCharCode",
+        "expression": "fromCharDec(0)",
+        "ok": true,
+        "type": "string",
+        "value": "f"
+      },
+      {
+        "label": "control: assign a frame local",
+        "expression": "local = 9",
+        "ok": false,
+        "description": "EvalError: Possible side-effect in debug-evaluate"
+      }
+    ],
+    "pausedReason": "other",
+    "hostReturned": {
+      "ok": true,
+      "type": "number",
+      "value": 7
+    },
+    "stateAfter": "{\"counter\":0}"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "capturedBy": "ob-recover",
+  "method": "real CaptureEngine + real node:vm execution + stub CDP transport (synthetic Debugger.paused events, test/helpers/capture-driver.ts)",
+  "note": "not real Chrome and not a CDP pause capture",
+  "validation": {
+    "groups": 2,
+    "byStatus": {
+      "pending": 0,
+      "verified": 2,
+      "unstable": 0,
+      "failed": 0,
+      "insufficient": 0
+    },
+    "suspectFunctions": 0
+  },
+  "dryRun": {
+    "candidates": 4,
+    "rejections": 0,
+    "byReason": {}
+  },
+  "applyStats": [
+    {
+      "scriptId": "s1",
+      "stats": {
+        "total": 4,
+        "applied": 4,
+        "rejected": 0,
+        "byReason": {}
+      }
+    }
+  ],
+  "applied": [
+    {
+      "position": {
+        "lineNumber": 5,
+        "columnNumber": 2
+      },
+      "original": "dec(0)",
+      "replaced": "\"alpha\""
+    },
+    {
+      "position": {
+        "lineNumber": 6,
+        "columnNumber": 2
+      },
+      "original": "dec(0)",
+      "replaced": "\"alpha\""
+    },
+    {
+      "position": {
+        "lineNumber": 7,
+        "columnNumber": 2
+      },
+      "original": "dec(1)",
+      "replaced": "\"beta\""
+    },
+    {
+      "position": {
+        "lineNumber": 8,
+        "columnNumber": 2
+      },
+      "original": "dec(1)",
+      "replaced": "\"beta\""
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "ob-recover.sw-recycle-summary/1",
+  "phase": "4.7 step 4",
+  "conclusion": "still-undetermined",
+  "oneLineConclusion": "在真实 Chrome + 真实扩展下，用三种手段都无法在本轮把 Service Worker 回收事件真正做出来：无论捕获是否激活，工作进程要么因调试器会话附着而不被回收，要么被强制关闭后不再自行重启。因此本轮既不能确认、也不能否认“SW 回收后自身断点暂停被丢弃导致页面卡死”这一假设。",
+  "hypothesisUnderTest": "扩展 service worker 被回收而 chrome.debugger 会话仍在时，引擎自己的断点暂停事件可能因为 cdp-client.ts 只检查内存集合 attachedTabs 而被直接丢弃，页面停在断点上没人恢复。",
+  "whyUndetermined": [
+    "方法 A（先停捕获，再 Target.closeTarget 关掉 SW target）：关闭成功，但 SW target 在 20 秒等待上限内没有重新出现，无法读取重启后的内存状态，因此没有制造出“新 SW + 旧调试器会话”的组合。",
+    "方法 B（捕获保持激活，让 SW 自然空闲回收）：等待 120 秒，SW target 始终存在，未发生任何回收。调试器会话附着本身就会让 service worker 保持存活。",
+    "方法 C（先 Target.detachFromTarget 断开本探针自己的页面会话，再让 SW 空闲回收）：SW 仍未回收，而且断开页面会话后探针再也无法观察页面，后续读到的是 no-page 而不是页面状态。该方法确诊无效，已从脚本中移除。"
+  ],
+  "codeReadingFindings": [
+    "cdp-client.ts:58 —— chrome.debugger.onEvent 里 `!attachedTabs.has(tabId)` 直接 return，attachedTabs 是模块级内存 Set（cdp-client.ts:14）。这是假设成立所需的机制，本轮未改动、也未观察到它被触发。",
+    "cdp-client.ts:82-97 —— chrome.debugger.onDetach 注册了监听：SW 被浏览器销毁时，Chrome 会触发该事件（reason 为 target_closed 一类），代码会调用 hooks.onReset、attachedTabs.delete、rejectPending 并置为 disconnected。这说明 SW 销毁并不是静默的，回收时事件监听仍在的话会走重置路径。",
+    "background.ts:191-203 —— onReset 在捕获策略仍存在时对引擎调用 softReset，仅在否则时 reset，正是为了保住刷新/断开后新文档的插桩能力。",
+    "本轮未观察到任何一次页面因回收而卡死的现场，因此上述代码路径“能否兜住回收”没有被证实，也没有被证伪。"
+  ],
+  "environment": {
+    "chrome": "155.0.8059.40",
+    "headless": "headless=new",
+    "extensionLoading": "Extensions.loadUnpacked（与 scripts/extension-integration.ts、devtools-real-ob-e2e.ts 相同路径）",
+    "profile": "C:/Users/Administrator/TEMP/opencode/p47-sw-profile（每次运行前清空）"
+  },
+  "artifacts": {
+    "script": "scripts/p47-sw-recycle.ts（METHOD=A 默认；METHOD=B 走空闲回收分支；IDLE_WAIT_MS 可调）",
+    "page": "test-pages/sw-recycle.html + test-pages/sw-recycle.js（新增，含可观测的 window.__extResult 与调用计数）",
+    "evidence": [
+      "test/acceptance/p47-sw-recycle.json（方法 A 最终一次）",
+      "test/acceptance/p47-sw-recycle.v1-forced-close.json",
+      "test/acceptance/p47-sw-recycle.v2-forced-close-unreconnected.json",
+      "test/acceptance/p47-sw-recycle.v3-forced-close-no-restart-wait.json",
+      "test/acceptance/p47-sw-recycle-methodB.json",
+      "test/acceptance/p47-sw-recycle.methodC-invalid-detached-observer.json（无效方法，仅留档）"
+    ]
+  },
+  "firstRunCaptureWorked": {
+    "note": "方法 A 的第一次捕获是成功的，说明探针本身能驱动真实扩展与真实调试器。",
+    "pageResult": "{\"a\":\"Document\",\"b\":\"Document\",\"c\":\"License\",\"sum\":2}",
+    "engineStats": { "breakpointsSet": 2, "hits": 3, "pauses": 6, "success": 3, "failed": 0, "forcedResumes": 0, "forcedResumesNote": "0 次强制恢复，说明正常情况下引擎自己会正确恢复每一次暂停" }
+  },
+  "notClaimed": [
+    "不声称已确认风险存在。",
+    "不声称已排除风险。",
+    "不声称根因已定位或已修复。",
+    "不把本轮的 still-undetermined 当作通过，也不当作失败。"
+  ],
+  "nextStepsIfNeeded": [
+    "用扩大空闲窗口、显式反复唤醒来制造自然回收，或改用 --enable-features=ServiceWorkerOnBrowserProcessRestart 之类手段切换回收时机。",
+    "或直接读 chrome://serviceworker-internals 与真实 Chrome 的 SW 生命周期日志，绕开探针无法制造回收的问题。"
+  ],
+  "unchanged": {
+    "srcUntouched": true,
+    "srcUntouchedProof": "改动后 npx vite build 重跑，dist 四个入口哈希与第 1 步基线逐字节一致：background.js 8DB17026…、devtools.js 870B0B74…、panel.js 9CBC65A3…、sandbox.js 2DF0C212…"
+  }
+}

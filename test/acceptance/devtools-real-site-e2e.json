@@ -1,0 +1,283 @@
+{
+  "note": "real DevTools frontend (headless Chrome 155) + real panel + real SW + real chrome.debugger; programmatic operation, NOT manual mouse. Engine records saved unmodified.",
+  "target": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3",
+  "minConfidence": "high (default)",
+  "fixture": null,
+  "steps": {
+    "show": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover",
+    "loadPage": {
+      "scripts": []
+    },
+    "pageInfo": {
+      "title": "",
+      "href": "chrome-error://chromewebdata/",
+      "ready": "loading",
+      "scriptTags": [],
+      "scriptResources": []
+    },
+    "connect": "已连接",
+    "discovery": {
+      "total": "6",
+      "analyzed": "6",
+      "candidates": "24",
+      "high": "1",
+      "calls": "246",
+      "cards": [
+        "V [high/1 calls] 类型: ArrowFunctionExpression ; 参数: 2 (t, i) ; 位置: 27:909",
+        "I [medium/13 calls] 类型: ArrowFunctionExpression ; 参数: 4 (e, t, n, i) ; 位置: 2:272",
+        "w [medium/5 calls] 类型: ArrowFunctionExpression ; 参数: 1 (?) ; 位置: 2:948",
+        "E [medium/12 calls] 类型: ArrowFunctionExpression ; 参数: 7 (e, ?, n, ?, o, r, s) ; 位置: 2:1409",
+        "b [medium/8 calls] 类型: FunctionDeclaration ; 参数: 2 (e, t) ; 位置: 2:1829",
+        "S [medium/9 calls] 类型: ArrowFunctionExpression ; 参数: 3 (e, t, ?) ; 位置: 2:2364",
+        "s [medium/4 calls] 类型: ArrowFunctionExpression ; 参数: 5 (l, d, m, y, x) ; 位置: 2:4121",
+        "s [medium/4 calls] 类型: ArrowFunctionExpression ; 参数: 0 () ; 位置: 2:6651",
+        "It [medium/1 calls] 类型: ArrowFunctionExpression ; 参数: 2 (e, ?) ; 位置: 2:6835",
+        "s [medium/4 calls] 类型: ArrowFunctionExpression ; 参数: 5 (l, d, m, y, x) ; 位置: 2:6996",
+        "B [medium/5 calls] 类型: ArrowFunctionExpression ; 参数: 1 (e) ; 位置: 2:10302",
+        "Q [medium/3 calls] 类型: ArrowFunctionExpression ; 参数: 1 (e) ; 位置: 2:10692",
+        "o [medium/2 calls] 类型: ArrowFunctionExpression ; 参数: 1 (r) ; 位置: 2:11216",
+        "Ht [medium/0 calls] 类型: ArrowFunctionExpression ; 参数: 2 (e, ?) ; 位置: 2:12198",
+        "y [medium/2 calls] 类型: ArrowFunctionExpression ; 参数: 2 (a, g) ; 位置: 2:13706",
+        "o [medium/2 calls] 类型: ArrowFunctionExpression ; 参数: 1 (r) ; 位置: 2:16068",
+        "addEventListener [medium/7 calls] 类型: AssignedExpression ; 参数: 3 (n, i, o) ; 位置: 2:19171",
+        "Nt [medium/2 calls] 类型: FunctionDeclaration ; 参数: 1 (e) ; 位置: 2:19569",
+        "assert [medium/131 calls] 类型: FunctionDeclaration ; 参数: 2 (value, message) ; 位置: 4:0",
+        "getRequiredElement [medium/5 calls] 类型: FunctionDeclaration ; 参数: 1 (id) ; 位置: 12:0",
+        "B [medium/3 calls] 类型: ArrowFunctionExpression ; 参数: 3 (t, i, s) ; 位置: 27:6983",
+        "getRandomNum [medium/11 calls] 类型: FunctionDeclaration ; 参数: 2 (min, max) ; 位置: 44:0",
+        "getA11yString [medium/11 calls] 类型: FunctionDeclaration ; 参数: 1 (stringName) ; 位置: 92:31202",
+        "decodeBase64ToArrayBuffer [medium/1 calls] 类型: FunctionDeclaration ; 参数: 1 (base64String) ; 位置: 92:31646"
+      ]
+    },
+    "discoveredScriptLog": [
+      "发现脚本 [3]: (inline)",
+      "分析完成: 17 个候选解码器",
+      "发现脚本 [4]: (inline)",
+      "分析完成: 0 个候选解码器",
+      "发现脚本 [5]: chrome-error://chromewebdata/",
+      "分析完成: 7 个候选解码器",
+      "发现脚本 [6]: chrome-error://chromewebdata/",
+      "分析完成: 0 个候选解码器",
+      "发现脚本 [7]: (inline)",
+      "分析完成: 0 个候选解码器",
+      "发现脚本 [8]: (inline)",
+      "分析完成: 0 个候选解码器"
+    ],
+    "startCapture": {
+      "cards": 0,
+      "status": "已停止",
+      "hits": "0",
+      "success": "0",
+      "failed": "0",
+      "engineUnstable": "0",
+      "verified": "0",
+      "vUnstable": "0",
+      "vFailed": "0",
+      "vInsufficient": "0",
+      "vPending": "0",
+      "vTotal": "0",
+      "vTotalTitle": "验证组 0，对应捕获记录 0 条；单次观测通过 0 组，多次一致观测通过 0 组，脚本已过期 0 组",
+      "hint": "捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。",
+      "notice": "",
+      "items": []
+    },
+    "round1Reload": {
+      "wait": {
+        "stable": true,
+        "hits": 0,
+        "ms": 5202
+      },
+      "selectedTab": "sources"
+    },
+    "round1GroundTruth": {
+      "skipped": "no ground truth for an external site"
+    },
+    "round1EngineRaw": {
+      "hook": true,
+      "active": true,
+      "breakpoints": 0,
+      "stats": {
+        "breakpointsSet": 0,
+        "hits": 0,
+        "pauses": 0,
+        "success": 0,
+        "failed": 0,
+        "forcedResumes": 0,
+        "foreignPauses": 0
+      },
+      "count": 0,
+      "captures": [],
+      "stability": []
+    },
+    "round1PanelHidden": {
+      "selectedTab": "sources",
+      "panel": {
+        "cards": 0,
+        "status": "正在捕获",
+        "hits": "0",
+        "success": "0",
+        "failed": "0",
+        "engineUnstable": "0",
+        "verified": "0",
+        "vUnstable": "0",
+        "vFailed": "0",
+        "vInsufficient": "0",
+        "vPending": "0",
+        "vTotal": "0",
+        "vTotalTitle": "验证组 0，对应捕获记录 0 条；单次观测通过 0 组，多次一致观测通过 0 组，脚本已过期 0 组",
+        "hint": "捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。",
+        "notice": "断点设置失败: V entry 26:919 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1559 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1625 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n没有成功设置任何断点，捕获不会产生数据。",
+        "items": []
+      }
+    },
+    "round1PanelReshown": {
+      "cards": 0,
+      "status": "正在捕获",
+      "hits": "0",
+      "success": "0",
+      "failed": "0",
+      "engineUnstable": "0",
+      "verified": "0",
+      "vUnstable": "0",
+      "vFailed": "0",
+      "vInsufficient": "0",
+      "vPending": "0",
+      "vTotal": "0",
+      "vTotalTitle": "验证组 0，对应捕获记录 0 条；单次观测通过 0 组，多次一致观测通过 0 组，脚本已过期 0 组",
+      "hint": "捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。",
+      "notice": "断点设置失败: V entry 26:919 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1559 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1625 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n没有成功设置任何断点，捕获不会产生数据。",
+      "items": []
+    },
+    "round1DryRun": {
+      "hidden": false,
+      "text": "替换前检查（dry-run，只检查，不修改任何代码）：可替换候选 0 个调用点，拒绝 0 项"
+    },
+    "round2Reload": {
+      "wait": {
+        "stable": true,
+        "hits": 0,
+        "ms": 5165
+      },
+      "selectedTab": "sources"
+    },
+    "round2GroundTruth": {
+      "skipped": "no ground truth for an external site"
+    },
+    "round2EngineRaw": {
+      "hook": true,
+      "active": true,
+      "breakpoints": 0,
+      "stats": {
+        "breakpointsSet": 0,
+        "hits": 0,
+        "pauses": 0,
+        "success": 0,
+        "failed": 0,
+        "forcedResumes": 0,
+        "foreignPauses": 0
+      },
+      "count": 0,
+      "captures": [],
+      "stability": []
+    },
+    "round2PanelHidden": {
+      "selectedTab": "sources",
+      "panel": {
+        "cards": 0,
+        "status": "正在捕获",
+        "hits": "0",
+        "success": "0",
+        "failed": "0",
+        "engineUnstable": "0",
+        "verified": "0",
+        "vUnstable": "0",
+        "vFailed": "0",
+        "vInsufficient": "0",
+        "vPending": "0",
+        "vTotal": "0",
+        "vTotalTitle": "验证组 0，对应捕获记录 0 条；单次观测通过 0 组，多次一致观测通过 0 组，脚本已过期 0 组",
+        "hint": "捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。",
+        "notice": "断点设置失败: V entry 26:919 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1559 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1625 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n没有成功设置任何断点，捕获不会产生数据。",
+        "items": []
+      }
+    },
+    "round2PanelReshown": {
+      "cards": 0,
+      "status": "正在捕获",
+      "hits": "0",
+      "success": "0",
+      "failed": "0",
+      "engineUnstable": "0",
+      "verified": "0",
+      "vUnstable": "0",
+      "vFailed": "0",
+      "vInsufficient": "0",
+      "vPending": "0",
+      "vTotal": "0",
+      "vTotalTitle": "验证组 0，对应捕获记录 0 条；单次观测通过 0 组，多次一致观测通过 0 组，脚本已过期 0 组",
+      "hint": "捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。",
+      "notice": "断点设置失败: V entry 26:919 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1559 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1625 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n没有成功设置任何断点，捕获不会产生数据。",
+      "items": []
+    },
+    "round2DryRun": {
+      "hidden": false,
+      "text": "替换前检查（dry-run，只检查，不修改任何代码）：可替换候选 0 个调用点，拒绝 0 项"
+    },
+    "clearRecords": {
+      "panel": {
+        "cards": 0,
+        "status": "正在捕获",
+        "hits": "0",
+        "success": "0",
+        "failed": "0",
+        "engineUnstable": "0",
+        "verified": "0",
+        "vUnstable": "0",
+        "vFailed": "0",
+        "vInsufficient": "0",
+        "vPending": "0",
+        "vTotal": "0",
+        "vTotalTitle": "验证组 0，对应捕获记录 0 条；单次观测通过 0 组，多次一致观测通过 0 组，脚本已过期 0 组",
+        "hint": "捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。",
+        "notice": "断点设置失败: V entry 26:919 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1559 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1625 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n没有成功设置任何断点，捕获不会产生数据。",
+        "items": []
+      },
+      "engine": {
+        "hook": true,
+        "active": true,
+        "breakpoints": 0,
+        "stats": {
+          "breakpointsSet": 0,
+          "hits": 0,
+          "pauses": 0,
+          "success": 0,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "count": 0
+      }
+    },
+    "stopCapture": {
+      "cards": 0,
+      "status": "已停止",
+      "hits": "0",
+      "success": "0",
+      "failed": "0",
+      "engineUnstable": "0",
+      "verified": "0",
+      "vUnstable": "0",
+      "vFailed": "0",
+      "vInsufficient": "0",
+      "vPending": "0",
+      "vTotal": "0",
+      "vTotalTitle": "验证组 0，对应捕获记录 0 条；单次观测通过 0 组，多次一致观测通过 0 组，脚本已过期 0 组",
+      "hint": "捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。",
+      "notice": "断点设置失败: V entry 26:919 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1559 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1625 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n没有成功设置任何断点，捕获不会产生数据。",
+      "items": []
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "servedObfuscatedJs": 0
+}

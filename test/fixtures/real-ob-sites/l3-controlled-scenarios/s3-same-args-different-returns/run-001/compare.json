@@ -1,0 +1,106 @@
+{
+  "schema": "ob-recover.real-site-compare/1",
+  "runId": "run-001",
+  "sample": {
+    "id": "s3-same-args-different-returns",
+    "layer": "L3",
+    "kind": "controlled-replay",
+    "isRealSiteSample": false,
+    "title": "同参数不同返回值（隐藏计数器）：不能被合并，不能替换"
+  },
+  "provenance": {
+    "reference": {
+      "capturedBy": "test-oracle",
+      "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+      "note": "independent of OB-Recover output"
+    },
+    "observed": {
+      "capturedBy": "ob-recover",
+      "method": "real CaptureEngine + real node:vm execution + stub CDP transport (synthetic Debugger.paused events, test/helpers/capture-driver.ts)",
+      "note": "not real Chrome and not a CDP pause capture"
+    }
+  },
+  "identity": {
+    "referenceSha256": "8bd7505a51bf33815c562e3cae4caf100276922665bd238f958d899c262ff48c",
+    "observedSha256": "8bd7505a51bf33815c562e3cae4caf100276922665bd238f958d899c262ff48c",
+    "afterApplySha256": "8bd7505a51bf33815c562e3cae4caf100276922665bd238f958d899c262ff48c",
+    "basis": "the same source string is archived as script.js, executed by drive() and passed to the pipeline",
+    "referenceEqualsObserved": true,
+    "unchangedAfterApply": true
+  },
+  "counts": {
+    "correct-replacement": 0,
+    "safe-rejection": 2,
+    "insufficient-evidence": 0,
+    "version-mismatch": 0,
+    "false-replacement": 0
+  },
+  "detail": {
+    "tp": 0,
+    "frWrongValue": 0,
+    "frOnIndeterminate": 0,
+    "frNotInReference": 0,
+    "frSourceMutation": 0,
+    "un": 0,
+    "sr": 2
+  },
+  "metrics": {
+    "precision": "n/a",
+    "recall": "n/a",
+    "falseReplacement": 0,
+    "unresolved": {
+      "count": 0,
+      "ratio": "n/a"
+    },
+    "versionMismatch": {
+      "runs": 0,
+      "totalRuns": 1,
+      "ratio": 0
+    },
+    "safeRejectionRate": 1,
+    "sourceIntegrity": true,
+    "businessParity": "not-evaluated",
+    "rPos": 0,
+    "rNeg": 2
+  },
+  "hardConditions": {
+    "falseReplacementIsZero": true,
+    "sourceIntegrity": true,
+    "safeRejectionRateIs100": true,
+    "precisionIs100": "n/a"
+  },
+  "verdict": "inconclusive",
+  "exhaustive": true,
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 6,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "referenceDeterminate": false,
+      "referenceReason": "hidden counter: first call 0_1",
+      "rejectionCodes": [
+        "dry-run:status-unstable",
+        "dry-run:same-args-different-returns",
+        "dry-run:hint:outer-state-write"
+      ],
+      "category": "safe-rejection"
+    },
+    {
+      "position": {
+        "lineNumber": 7,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "referenceDeterminate": false,
+      "referenceReason": "hidden counter: second call 0_2",
+      "rejectionCodes": [
+        "dry-run:status-unstable",
+        "dry-run:same-args-different-returns",
+        "dry-run:hint:outer-state-write"
+      ],
+      "category": "safe-rejection"
+    }
+  ]
+}

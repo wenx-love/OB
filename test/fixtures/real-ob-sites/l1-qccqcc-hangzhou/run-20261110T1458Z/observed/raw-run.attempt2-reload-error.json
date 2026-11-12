@@ -1,0 +1,244 @@
+{
+  "schema": "ob-recover.l1-observed-raw/1",
+  "capturedBy": "ob-recover",
+  "note": "real extension, headful dedicated Chrome; programmatic panel operation (element.click), NOT manual mouse. No judgement here.",
+  "target": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3",
+  "referenceSha256": "cc7a8127fa8a5d17289a953e11d82ff528fe9ea42276810c5f03371abf760daf",
+  "dist": {
+    "background.js": "8db17026db8f0493ac1bb7711bed47049874be29431f8e27d0b4ba3254c4a45e",
+    "devtools.js": "870b0b747d5bfbe54af0fe8d81581f27bac8eb2a4ecea433f78f295c18edae65",
+    "panel.js": "9cbc65a3bf78195d36bea0ea029df92c74c77ecd2a78ce4a8cc12fb68282fb73",
+    "sandbox.js": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4"
+  },
+  "steps": {
+    "show": {
+      "value": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover",
+      "ms": 7
+    },
+    "pageInfo": {
+      "value": "{\"title\":\"杭州服装_服装批发\",\"href\":\"https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3\",\"ready\":\"complete\",\"scripts\":[\"https://j.17qcc.com/combo?font&config&encrypt&jq&cookie&global&merge&tj&recommend&t=20261026\",\"https://j.17qcc.com/combo?ajax-20&imglazy&pager-5&template-6&rollload&ajaxmethord-5&pluploadfull&qccer-1&hpaitop-5&hpailist-2\",\"https://j.17qcc.com/combo?toolbar-93&shopcart-7&yiqia-6&qtcharts&detect&qa-3\"]}",
+      "ms": 1
+    },
+    "connect": {
+      "error": "CDP timeout after 25000ms: Runtime.evaluate",
+      "ms": 27516
+    },
+    "discovery": {
+      "timeout": true,
+      "ms": 12001
+    },
+    "startCapture": {
+      "panel": {
+        "status": "正在捕获",
+        "hits": "0",
+        "success": "0",
+        "failed": "0",
+        "bps": "247",
+        "verified": "0",
+        "vTotal": "0",
+        "vInsufficient": "0",
+        "vUnstable": "0",
+        "vFailed": "0",
+        "vPending": "0",
+        "cards": 0,
+        "notice": "跳过 find: non-identifier parameter (destructuring/default/rest) is not supported\n断点设置失败: o entry 0:2431 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: o exit 0:2978 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: o exit 0:3003 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: o exit 0:3074 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}",
+        "hint": "捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。"
+      },
+      "engine": {
+        "hook": true,
+        "active": true,
+        "breakpoints": 247,
+        "stats": {
+          "breakpointsSet": 247,
+          "hits": 0,
+          "pauses": 0,
+          "success": 0,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "count": 0
+      },
+      "ms": 14574
+    },
+    "reload": {
+      "stable": {
+        "stable": false,
+        "hits": 2,
+        "ms": 180743,
+        "last": {
+          "hook": true,
+          "active": true,
+          "breakpoints": 0,
+          "stats": {
+            "breakpointsSet": 247,
+            "hits": 2,
+            "pauses": 3,
+            "success": 0,
+            "failed": 2,
+            "forcedResumes": 0,
+            "foreignPauses": 0
+          },
+          "count": 2
+        }
+      },
+      "info": "{\"title\":\"hangzhou.qccqcc.com\",\"href\":\"chrome-error://chromewebdata/\",\"ready\":\"complete\"}",
+      "selectedTab": "sources",
+      "ms": 185844
+    },
+    "scripts": {
+      "list": [],
+      "ms": 1216
+    },
+    "engineRaw": {
+      "hook": true,
+      "active": true,
+      "breakpoints": 0,
+      "stats": {
+        "breakpointsSet": 247,
+        "hits": 2,
+        "pauses": 3,
+        "success": 0,
+        "failed": 2,
+        "forcedResumes": 0,
+        "foreignPauses": 0
+      },
+      "count": 2,
+      "captures": [
+        {
+          "key": "6|43|94010|[]|capture-failed|could not read arguments: CDP command timed out: Runtime.getProperties (5000ms)",
+          "scriptId": "6",
+          "scriptUrl": "https://j.17qcc.com/combo?font&config&encrypt&jq&cookie&global&merge&tj&recommend&t=20261026",
+          "functionName": "a",
+          "functionLocation": {
+            "lineNumber": 43,
+            "columnNumber": 94010
+          },
+          "callLocation": {
+            "lineNumber": 51,
+            "columnNumber": 2198
+          },
+          "callLocations": [
+            {
+              "lineNumber": 51,
+              "columnNumber": 2198
+            }
+          ],
+          "arguments": [],
+          "captureStatus": "capture-failed",
+          "reason": "could not read arguments: CDP command timed out: Runtime.getProperties (5000ms)",
+          "count": 1,
+          "firstSeq": 1,
+          "lastSeq": 1,
+          "timestamp": 1794296321669
+        },
+        {
+          "key": "6|43|94010|[]|capture-failed|could not read arguments: {\"code\":-32000,\"message\":\"Cannot find context with specified id\"}",
+          "scriptId": "6",
+          "scriptUrl": "https://j.17qcc.com/combo?font&config&encrypt&jq&cookie&global&merge&tj&recommend&t=20261026",
+          "functionName": "a",
+          "functionLocation": {
+            "lineNumber": 43,
+            "columnNumber": 94010
+          },
+          "callLocation": {
+            "lineNumber": 51,
+            "columnNumber": 2219
+          },
+          "callLocations": [
+            {
+              "lineNumber": 51,
+              "columnNumber": 2219
+            }
+          ],
+          "arguments": [],
+          "captureStatus": "capture-failed",
+          "reason": "could not read arguments: {\"code\":-32000,\"message\":\"Cannot find context with specified id\"}",
+          "count": 1,
+          "firstSeq": 2,
+          "lastSeq": 2,
+          "timestamp": 1794296325203
+        }
+      ],
+      "stability": [],
+      "ms": 1
+    },
+    "sourceRead": {
+      "skipped": "no capture record belongs to the target script",
+      "ms": 0
+    },
+    "selectScript": {
+      "selection": null,
+      "panes": {
+        "orig": [],
+        "rec": []
+      },
+      "ms": 10579
+    },
+    "dryRun": {
+      "hidden": false,
+      "text": "替换前检查（dry-run，只检查，不修改任何代码）：可替换候选 0 个调用点，拒绝 1 项\n  拒绝 1 项：status-failed\n  a：没有任何一次成功捕获：could not read arguments: CDP command timed out: Runtime.getProperties (5000ms)；could not read arguments: {\"code\":-32000,\"message\":\"Cannot find context with specified id\"}",
+      "ms": 1215
+    },
+    "apply": {
+      "before": {
+        "disabled": false,
+        "hidden": true,
+        "text": ""
+      },
+      "after": {
+        "disabled": false,
+        "hidden": false,
+        "text": "请先选择一个脚本"
+      },
+      "panes": {
+        "orig": [],
+        "rec": []
+      },
+      "ms": 1717
+    },
+    "sourceReadAfterApply": {
+      "skipped": "no capture record belongs to the target script",
+      "ms": 0
+    },
+    "stopCapture": {
+      "panel": {
+        "status": "已停止",
+        "hits": "2",
+        "success": "0",
+        "failed": "2",
+        "bps": "0",
+        "verified": "0",
+        "vTotal": "1",
+        "vInsufficient": "0",
+        "vUnstable": "0",
+        "vFailed": "1",
+        "vPending": "0",
+        "cards": 2,
+        "notice": "断点设置失败: V entry 26:919 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1559 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n断点设置失败: V exit 26:1625 - {\"code\":-32000,\"message\":\"Could not resolve breakpoint\"}\n没有成功设置任何断点，捕获不会产生数据。",
+        "hint": "捕获期间 DevTools 可能自动切换到 Sources。捕获后请切回 OB-Recover 查看记录。"
+      },
+      "engine": {
+        "hook": true,
+        "active": false,
+        "breakpoints": 0,
+        "stats": {
+          "breakpointsSet": 247,
+          "hits": 2,
+          "pauses": 3,
+          "success": 0,
+          "failed": 2,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "count": 2
+      },
+      "pageResponsive": true,
+      "ms": 1518
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "captureScriptId": "",
+  "captureScriptUrl": null
+}

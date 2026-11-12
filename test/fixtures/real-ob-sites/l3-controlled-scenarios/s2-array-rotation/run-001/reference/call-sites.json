@@ -1,0 +1,55 @@
+{
+  "capturedBy": "test-oracle",
+  "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+  "note": "independent of OB-Recover output",
+  "oracleChecks": [
+    {
+      "label": "dec(0) before rotation",
+      "js": "dec(0)",
+      "expect": "hello"
+    },
+    {
+      "label": "dec(0) after rotation",
+      "js": "rotate(); dec(0)",
+      "expect": "world"
+    }
+  ],
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 8,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "determinate": false,
+      "reason": "rotating-array-function"
+    },
+    {
+      "position": {
+        "lineNumber": 9,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "determinate": false,
+      "reason": "rotating-array-function"
+    },
+    {
+      "position": {
+        "lineNumber": 10,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": false,
+      "reason": "same args, different value after rotate()"
+    },
+    {
+      "position": {
+        "lineNumber": 12,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": false,
+      "reason": "same args, different value after rotate()"
+    }
+  ]
+}

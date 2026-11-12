@@ -1,0 +1,47 @@
+{
+  "schema": "ob-recover.offline-connect-diag/1",
+  "scenario": "C",
+  "runNo": "1",
+  "startedAt": "2026-11-10T12:35:42.376Z",
+  "note": "local pages only, no external host is reachable, observation only, nothing is judged here",
+  "conditions": {
+    "headless": false,
+    "resolverRules": "MAP * ~NOTFOUND , EXCLUDE 127.0.0.1",
+    "ports": {
+      "cdp": 9473,
+      "http": 8783
+    },
+    "cmdTimeoutMs": 8000,
+    "probeTimeoutMs": 3000,
+    "connectWindowMs": 45000,
+    "globalCapMs": 300000,
+    "differencesFromL1Runs": [
+      "local page instead of the L1 target",
+      "host resolver rules block every non-local host",
+      "Runtime domain enabled on the panel and service worker sessions to capture exceptions and console output",
+      "a 100 ms timer lag monitor injected into the panel page"
+    ]
+  },
+  "dist": {
+    "background.js": "fa3ba6a45d02f8440d5d9f54708341e36429b13b695afb473433da39c1836509",
+    "devtools.js": "870b0b747d5bfbe54af0fe8d81581f27bac8eb2a4ecea433f78f295c18edae65",
+    "panel.js": "9cbc65a3bf78195d36bea0ea029df92c74c77ecd2a78ce4a8cc12fb68282fb73",
+    "sandbox.js": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4"
+  },
+  "steps": [],
+  "status": "unavailable",
+  "reason": "no legitimately archived combo?font script exists in the repository; the only candidate file is a 403 error page and the site must not be contacted again to download one",
+  "candidateFile": {
+    "path": "test/fixtures/qcc-combo.js",
+    "bytes": 159,
+    "sha256": "eaa8865a84b69344fe56ae080a45d4151270af01a30857dc1248197605d3da18",
+    "containsFunctionKeyword": false,
+    "looksLike403Page": true
+  },
+  "searchedUnder": [
+    "test/",
+    "test-pages/",
+    "scripts/ (js, mjs, txt files larger than 150000 bytes or named combo or font)"
+  ],
+  "finishedAt": "2026-11-10T12:35:42.379Z"
+}

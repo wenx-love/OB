@@ -1,0 +1,253 @@
+{
+  "note": "real extension loaded via Extensions.loadUnpacked; real chrome.debugger calls inside the extension service worker, driven through background handlePanelCommand; NOT manual mouse operation of the DevTools panel",
+  "page": "capture-ext-immediate.html",
+  "steps": [],
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "swFound": true,
+  "hook": "object",
+  "tabId": 1606863639,
+  "autoCaptureMinConfidence": "high",
+  "connectAndStart": {
+    "status": "connected",
+    "state": {
+      "active": true,
+      "breakpoints": 0,
+      "stats": {
+        "breakpointsSet": 0,
+        "hits": 0,
+        "pauses": 0,
+        "success": 0,
+        "failed": 0,
+        "forcedResumes": 0,
+        "foreignPauses": 0
+      },
+      "captures": [],
+      "stability": []
+    }
+  },
+  "afterLoad": {
+    "active": true,
+    "breakpoints": 6,
+    "stats": {
+      "breakpointsSet": 6,
+      "hits": 3,
+      "pauses": 9,
+      "success": 3,
+      "failed": 0,
+      "forcedResumes": 0,
+      "foreignPauses": 0
+    },
+    "captures": [
+      {
+        "key": "3|3|2|[{\"type\":\"number\",\"value\":256}]|success|{\"type\":\"string\",\"value\":\"Signature\"}",
+        "scriptId": "3",
+        "scriptUrl": "http://127.0.0.1:8765/capture-ext-immediate.js",
+        "functionName": "decOne",
+        "functionLocation": {
+          "lineNumber": 3,
+          "columnNumber": 2
+        },
+        "callLocation": {
+          "lineNumber": 19,
+          "columnNumber": 17
+        },
+        "callLocations": [
+          {
+            "lineNumber": 19,
+            "columnNumber": 17
+          }
+        ],
+        "arguments": [
+          {
+            "type": "number",
+            "value": 256
+          }
+        ],
+        "returnValue": {
+          "type": "string",
+          "value": "Signature"
+        },
+        "captureStatus": "success",
+        "count": 1,
+        "firstSeq": 1,
+        "lastSeq": 1,
+        "timestamp": 1794277044500
+      },
+      {
+        "key": "3|3|2|[{\"type\":\"number\",\"value\":257}]|success|{\"type\":\"string\",\"value\":\"hello\"}",
+        "scriptId": "3",
+        "scriptUrl": "http://127.0.0.1:8765/capture-ext-immediate.js",
+        "functionName": "decOne",
+        "functionLocation": {
+          "lineNumber": 3,
+          "columnNumber": 2
+        },
+        "callLocation": {
+          "lineNumber": 20,
+          "columnNumber": 17
+        },
+        "callLocations": [
+          {
+            "lineNumber": 20,
+            "columnNumber": 17
+          }
+        ],
+        "arguments": [
+          {
+            "type": "number",
+            "value": 257
+          }
+        ],
+        "returnValue": {
+          "type": "string",
+          "value": "hello"
+        },
+        "captureStatus": "success",
+        "count": 1,
+        "firstSeq": 2,
+        "lastSeq": 2,
+        "timestamp": 1794277044502
+      },
+      {
+        "key": "3|8|2|[{\"type\":\"number\",\"value\":259},{\"type\":\"string\",\"value\":\"yBNh\"}]|success|{\"type\":\"string\",\"value\":\"foo:yBNh\"}",
+        "scriptId": "3",
+        "scriptUrl": "http://127.0.0.1:8765/capture-ext-immediate.js",
+        "functionName": "decTwo",
+        "functionLocation": {
+          "lineNumber": 8,
+          "columnNumber": 2
+        },
+        "callLocation": {
+          "lineNumber": 21,
+          "columnNumber": 17
+        },
+        "callLocations": [
+          {
+            "lineNumber": 21,
+            "columnNumber": 17
+          }
+        ],
+        "arguments": [
+          {
+            "type": "number",
+            "value": 259
+          },
+          {
+            "type": "string",
+            "value": "yBNh"
+          }
+        ],
+        "returnValue": {
+          "type": "string",
+          "value": "foo:yBNh"
+        },
+        "captureStatus": "success",
+        "count": 1,
+        "firstSeq": 3,
+        "lastSeq": 3,
+        "timestamp": 1794277044504
+      }
+    ],
+    "stability": [
+      {
+        "scriptId": "3",
+        "scriptUrl": "http://127.0.0.1:8765/capture-ext-immediate.js",
+        "functionName": "decOne",
+        "functionLocation": {
+          "lineNumber": 3,
+          "columnNumber": 2
+        },
+        "arguments": [
+          {
+            "type": "number",
+            "value": 256
+          }
+        ],
+        "values": [
+          {
+            "type": "string",
+            "value": "Signature"
+          }
+        ],
+        "distinctReturnCount": 1,
+        "callCount": 1,
+        "stable": true,
+        "firstSeq": 1,
+        "lastSeq": 1
+      },
+      {
+        "scriptId": "3",
+        "scriptUrl": "http://127.0.0.1:8765/capture-ext-immediate.js",
+        "functionName": "decOne",
+        "functionLocation": {
+          "lineNumber": 3,
+          "columnNumber": 2
+        },
+        "arguments": [
+          {
+            "type": "number",
+            "value": 257
+          }
+        ],
+        "values": [
+          {
+            "type": "string",
+            "value": "hello"
+          }
+        ],
+        "distinctReturnCount": 1,
+        "callCount": 1,
+        "stable": true,
+        "firstSeq": 2,
+        "lastSeq": 2
+      },
+      {
+        "scriptId": "3",
+        "scriptUrl": "http://127.0.0.1:8765/capture-ext-immediate.js",
+        "functionName": "decTwo",
+        "functionLocation": {
+          "lineNumber": 8,
+          "columnNumber": 2
+        },
+        "arguments": [
+          {
+            "type": "number",
+            "value": 259
+          },
+          {
+            "type": "string",
+            "value": "yBNh"
+          }
+        ],
+        "values": [
+          {
+            "type": "string",
+            "value": "foo:yBNh"
+          }
+        ],
+        "distinctReturnCount": 1,
+        "callCount": 1,
+        "stable": true,
+        "firstSeq": 3,
+        "lastSeq": 3
+      }
+    ]
+  },
+  "pageResult": "[\"Signature\",\"hello\",\"foo:yBNh\",10]",
+  "pageTitle": "done",
+  "panelMessages": [
+    "info: 已连接",
+    "info: 已启用 beforeScriptExecution 插桩断点（自动捕获）",
+    "state active=true bps=0",
+    "state active=true bps=0 reset=page navigated or reloaded",
+    "state active=true bps=0 reset=page navigated or reloaded",
+    "info: 插桩：脚本 3 执行前布置了 6 个断点（2 个候选，0 个跳过，0 个错误）",
+    "state active=true bps=6"
+  ],
+  "afterStop": {
+    "active": false,
+    "breakpoints": 0
+  },
+  "pageResponsiveAfterStop": true
+}

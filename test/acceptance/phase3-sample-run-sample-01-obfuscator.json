@@ -1,0 +1,2558 @@
+{
+  "sample": "sample-01-obfuscator",
+  "note": "open-source sample (kuizuo/js-deobfuscator example), raw CDP + headless Chrome, isolated: CSP default-src none + Fetch blocks all non-file requests; NOT a third-party site script; NOT the chrome.debugger extension path",
+  "bytes": 15454,
+  "discoveryMs": 63,
+  "functions": 35,
+  "candidates": 7,
+  "highCandidates": [
+    {
+      "name": "_0x4b57",
+      "kind": "AssignedExpression",
+      "params": 2,
+      "staticCalls": 8,
+      "arr": "_0x1be6d5",
+      "b64": false,
+      "rc4": false
+    }
+  ],
+  "plans": [
+    {
+      "fn": "_0x4b57",
+      "entry": {
+        "lineNumber": 26,
+        "columnNumber": 6
+      },
+      "returns": [
+        {
+          "lineNumber": 53,
+          "columnNumber": 6
+        }
+      ],
+      "closing": {
+        "lineNumber": 54,
+        "columnNumber": 4
+      },
+      "snippet": "      _0x413cee = _0x413cee - (0x1 * -0x49d + 0x399 + 0x265 * 0x1);"
+    }
+  ],
+  "startResult": {
+    "set": 3,
+    "skipped": [],
+    "errors": []
+  },
+  "pageResponsive": true,
+  "runMs": 12018,
+  "stats": {
+    "breakpointsSet": 3,
+    "hits": 241,
+    "pauses": 1117,
+    "success": 241,
+    "failed": 0,
+    "forcedResumes": 0,
+    "foreignPauses": 0
+  },
+  "breakpointsBeforeStop": 3,
+  "breakpointsAfterStop": 0,
+  "foreignPauses": 0,
+  "foreignSamples": [],
+  "antiDebugAborted": false,
+  "blockedRequests": 0,
+  "blockedSamples": [],
+  "pageExceptions": 0,
+  "exceptionDetails": [],
+  "bpLocs": [
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 26,
+        "columnNumber": 6
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 26,
+        "columnNumber": 6
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 53,
+        "columnNumber": 6
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 53,
+        "columnNumber": 6
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 54,
+        "columnNumber": 4
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 53,
+        "columnNumber": 138
+      }
+    }
+  ],
+  "pauseDiag": [
+    {
+      "reason": "other",
+      "hit": [
+        "4:26:6:3"
+      ],
+      "fn": "_0x4b57",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 26,
+        "columnNumber": 6
+      },
+      "scopes": [
+        "local",
+        "closure",
+        "global"
+      ],
+      "depth": 5
+    },
+    {
+      "reason": "other",
+      "hit": [
+        "4:53:6:3"
+      ],
+      "fn": "_0x4b57",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 53,
+        "columnNumber": 6
+      },
+      "scopes": [
+        "local",
+        "closure",
+        "global"
+      ],
+      "depth": 5
+    },
+    {
+      "reason": "step",
+      "hit": [],
+      "fn": "_0x4b57",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 53,
+        "columnNumber": 90
+      },
+      "scopes": [
+        "local",
+        "closure",
+        "global"
+      ],
+      "depth": 5
+    },
+    {
+      "reason": "step",
+      "hit": [],
+      "fn": "_0x4b57",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 53,
+        "columnNumber": 128
+      },
+      "scopes": [
+        "local",
+        "closure",
+        "global"
+      ],
+      "depth": 5
+    }
+  ],
+  "instrumentationPauses": 4,
+  "distinctCaptures": 161,
+  "successRatePerCall": 1,
+  "failureReasons": [],
+  "byFunction": {
+    "_0x4b57": {
+      "distinct": 161,
+      "calls": 241,
+      "failed": 0
+    }
+  },
+  "tuplesFirstDiffersFromLast": 13,
+  "maxSeq": 241,
+  "rotationEndEstimateSeq_heuristic": 104,
+  "newReturnValuesForKnownArgsAfterThreshold": 0,
+  "distinctArgTuples": 70,
+  "argsWithConflictingReturns": 13,
+  "conflictSamples": [
+    {
+      "key": "_0x4b57|[410,952]",
+      "returns": [
+        "{\"type\":\"string\",\"value\":\"log\"}",
+        "{\"type\":\"string\",\"value\":\"toString\"}",
+        "{\"type\":\"string\",\"value\":\"802220rAzVqt\"}",
+        "{\"type\":\"string\",\"value\":\"return (fu\"}",
+        "{\"type\":\"string\",\"value\":\"2980952RrWkTS\"}",
+        "{\"type\":\"string\",\"value\":\"QnTUc\"}",
+        "{\"type\":\"string\",\"value\":\"trace\"}",
+        "{\"type\":\"string\",\"value\":\"242RbMNfZ\"}"
+      ]
+    },
+    {
+      "key": "_0x4b57|[387,178]",
+      "returns": [
+        "{\"type\":\"string\",\"value\":\"AjDZu\"}",
+        "{\"type\":\"string\",\"value\":\"error\"}",
+        "{\"type\":\"string\",\"value\":\"hnset\"}",
+        "{\"type\":\"string\",\"value\":\"WDUhE\"}",
+        "{\"type\":\"string\",\"value\":\"SGFdI\"}",
+        "{\"type\":\"string\",\"value\":\"iQbVV\"}",
+        "{\"type\":\"string\",\"value\":\"wLNUA\"}",
+        "{\"type\":\"string\",\"value\":\"1706sbFzvV\"}"
+      ]
+    },
+    {
+      "key": "_0x4b57|[378,173]",
+      "returns": [
+        "{\"type\":\"string\",\"value\":\"warn\"}",
+        "{\"type\":\"string\",\"value\":\"rn this\\\")(\"}",
+        "{\"type\":\"string\",\"value\":\"DCeHZ\"}",
+        "{\"type\":\"string\",\"value\":\"5900NXwsHK\"}",
+        "{\"type\":\"string\",\"value\":\"split\"}",
+        "{\"type\":\"string\",\"value\":\"exception\"}",
+        "{\"type\":\"string\",\"value\":\"wJsAS\"}",
+        "{\"type\":\"string\",\"value\":\"2778FSSLdG\"}"
+      ]
+    },
+    {
+      "key": "_0x4b57|[374,143]",
+      "returns": [
+        "{\"type\":\"string\",\"value\":\"length\"}",
+        "{\"type\":\"string\",\"value\":\"mYYHX\"}",
+        "{\"type\":\"string\",\"value\":\"dVhuc\"}",
+        "{\"type\":\"string\",\"value\":\"prototype\"}",
+        "{\"type\":\"string\",\"value\":\"warn\"}",
+        "{\"type\":\"string\",\"value\":\"rn this\\\")(\"}",
+        "{\"type\":\"string\",\"value\":\"DCeHZ\"}",
+        "{\"type\":\"string\",\"value\":\"5900NXwsHK\"}"
+      ]
+    },
+    {
+      "key": "_0x4b57|[396,180]",
+      "returns": [
+        "{\"type\":\"string\",\"value\":\"KWmqk\"}",
+        "{\"type\":\"string\",\"value\":\"Hello Worl\"}",
+        "{\"type\":\"string\",\"value\":\"lDerz\"}",
+        "{\"type\":\"string\",\"value\":\"MADPG\"}",
+        "{\"type\":\"string\",\"value\":\"table\"}",
+        "{\"type\":\"string\",\"value\":\"11989251VRraSU\"}",
+        "{\"type\":\"string\",\"value\":\"grqAG\"}",
+        "{\"type\":\"string\",\"value\":\"200735pabGBK\"}"
+      ]
+    },
+    {
+      "key": "_0x4b57|[402,900]",
+      "returns": [
+        "{\"type\":\"string\",\"value\":\"grqAG\"}",
+        "{\"type\":\"string\",\"value\":\"200735pabGBK\"}",
+        "{\"type\":\"string\",\"value\":\"HqdDG\"}",
+        "{\"type\":\"string\",\"value\":\"ChRvh\"}",
+        "{\"type\":\"string\",\"value\":\"IAAgF\"}",
+        "{\"type\":\"string\",\"value\":\"aolrl\"}",
+        "{\"type\":\"string\",\"value\":\"IWMXC\"}",
+        "{\"type\":\"string\",\"value\":\"48cGlMHZ\"}"
+      ]
+    },
+    {
+      "key": "_0x4b57|[354,151]",
+      "returns": [
+        "{\"type\":\"string\",\"value\":\"{}.constru\"}",
+        "{\"type\":\"string\",\"value\":\"console\"}",
+        "{\"type\":\"string\",\"value\":\"YbWiy\"}",
+        "{\"type\":\"string\",\"value\":\"0|3|4|1|2|\"}",
+        "{\"type\":\"string\",\"value\":\"ACUOx\"}",
+        "{\"type\":\"string\",\"value\":\"gUkyX\"}",
+        "{\"type\":\"string\",\"value\":\"FXmCF\"}",
+        "{\"type\":\"string\",\"value\":\"7TGiXWT\"}"
+      ]
+    },
+    {
+      "key": "_0x4b57|[362,882]",
+      "returns": [
+        "{\"type\":\"string\",\"value\":\"JnjDP\"}",
+        "{\"type\":\"string\",\"value\":\"FsgTV\"}",
+        "{\"type\":\"string\",\"value\":\"aZiqb\"}",
+        "{\"type\":\"string\",\"value\":\"77qGXZXC\"}",
+        "{\"type\":\"string\",\"value\":\"apply\"}",
+        "{\"type\":\"string\",\"value\":\"gELNQ\"}",
+        "{\"type\":\"string\",\"value\":\"zoWtj\"}",
+        "{\"type\":\"string\",\"value\":\"2418992uVBFrI\"}"
+      ]
+    }
+  ],
+  "sample40": [
+    {
+      "fn": "_0x4b57",
+      "args": [
+        410,
+        952
+      ],
+      "ret": "log",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        1,
+        1
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        387,
+        178
+      ],
+      "ret": "AjDZu",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        2,
+        2
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        378,
+        173
+      ],
+      "ret": "warn",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        3,
+        3
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        374,
+        143
+      ],
+      "ret": "length",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        4,
+        4
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        396,
+        180
+      ],
+      "ret": "KWmqk",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        5,
+        5
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        402,
+        900
+      ],
+      "ret": "grqAG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        6,
+        6
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        354,
+        151
+      ],
+      "ret": "{}.constru",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        7,
+        7
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        362,
+        882
+      ],
+      "ret": "JnjDP",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        8,
+        8
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        394,
+        930
+      ],
+      "ret": "1706sbFzvV",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        9,
+        9
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        405,
+        211
+      ],
+      "ret": "ChRvh",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        10,
+        10
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        358,
+        888
+      ],
+      "ret": "ACUOx",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        11,
+        11
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        411,
+        942
+      ],
+      "ret": "toString",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        12,
+        12
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        407,
+        931
+      ],
+      "ret": "aolrl",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        13,
+        13
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        410,
+        952
+      ],
+      "ret": "toString",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        14,
+        14
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        387,
+        178
+      ],
+      "ret": "error",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        15,
+        15
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        378,
+        173
+      ],
+      "ret": "rn this\")(",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        16,
+        16
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        374,
+        143
+      ],
+      "ret": "mYYHX",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        17,
+        17
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        396,
+        180
+      ],
+      "ret": "Hello Worl",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        18,
+        18
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        402,
+        900
+      ],
+      "ret": "200735pabGBK",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        19,
+        19
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        354,
+        151
+      ],
+      "ret": "console",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        20,
+        20
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        362,
+        882
+      ],
+      "ret": "FsgTV",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        21,
+        21
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        394,
+        930
+      ],
+      "ret": "bind",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        22,
+        22
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        405,
+        211
+      ],
+      "ret": "IAAgF",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        23,
+        23
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        358,
+        888
+      ],
+      "ret": "gUkyX",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        24,
+        24
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        411,
+        942
+      ],
+      "ret": "802220rAzVqt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        25,
+        25
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        407,
+        931
+      ],
+      "ret": "IWMXC",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        26,
+        26
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        410,
+        952
+      ],
+      "ret": "802220rAzVqt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        27,
+        27
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        387,
+        178
+      ],
+      "ret": "hnset",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        28,
+        28
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        378,
+        173
+      ],
+      "ret": "DCeHZ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        29,
+        29
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        374,
+        143
+      ],
+      "ret": "dVhuc",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        30,
+        30
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        396,
+        180
+      ],
+      "ret": "lDerz",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        31,
+        31
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        402,
+        900
+      ],
+      "ret": "HqdDG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        32,
+        32
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        354,
+        151
+      ],
+      "ret": "YbWiy",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        33,
+        33
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        362,
+        882
+      ],
+      "ret": "aZiqb",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        34,
+        34
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        394,
+        930
+      ],
+      "ret": "KWmqk",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        35,
+        35
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        405,
+        211
+      ],
+      "ret": "aolrl",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        36,
+        36
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        358,
+        888
+      ],
+      "ret": "FXmCF",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        37,
+        37
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        411,
+        942
+      ],
+      "ret": "return (fu",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        38,
+        38
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        407,
+        931
+      ],
+      "ret": "48cGlMHZ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        39,
+        39
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        410,
+        952
+      ],
+      "ret": "return (fu",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        40,
+        40
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        387,
+        178
+      ],
+      "ret": "WDUhE",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        41,
+        41
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        378,
+        173
+      ],
+      "ret": "5900NXwsHK",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        42,
+        42
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        374,
+        143
+      ],
+      "ret": "prototype",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        43,
+        43
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        396,
+        180
+      ],
+      "ret": "MADPG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        44,
+        44
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        402,
+        900
+      ],
+      "ret": "ChRvh",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        45,
+        45
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        354,
+        151
+      ],
+      "ret": "0|3|4|1|2|",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        46,
+        46
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        362,
+        882
+      ],
+      "ret": "77qGXZXC",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        47,
+        47
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        394,
+        930
+      ],
+      "ret": "Hello Worl",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        48,
+        48
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        405,
+        211
+      ],
+      "ret": "IWMXC",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        49,
+        49
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        358,
+        888
+      ],
+      "ret": "7TGiXWT",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        50,
+        50
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        411,
+        942
+      ],
+      "ret": "2980952RrWkTS",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        51,
+        51
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        407,
+        931
+      ],
+      "ret": "log",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        52,
+        52
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        410,
+        952
+      ],
+      "ret": "2980952RrWkTS",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        53,
+        53
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        387,
+        178
+      ],
+      "ret": "SGFdI",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        54,
+        54
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        378,
+        173
+      ],
+      "ret": "split",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        55,
+        55
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        374,
+        143
+      ],
+      "ret": "warn",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        56,
+        56
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        396,
+        180
+      ],
+      "ret": "table",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        57,
+        57
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        402,
+        900
+      ],
+      "ret": "IAAgF",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        58,
+        58
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        354,
+        151
+      ],
+      "ret": "ACUOx",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        59,
+        59
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        362,
+        882
+      ],
+      "ret": "apply",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        60,
+        60
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        394,
+        930
+      ],
+      "ret": "lDerz",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        61,
+        61
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        405,
+        211
+      ],
+      "ret": "48cGlMHZ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        62,
+        62
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        358,
+        888
+      ],
+      "ret": "JnjDP",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        63,
+        63
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        411,
+        942
+      ],
+      "ret": "QnTUc",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        64,
+        64
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        407,
+        931
+      ],
+      "ret": "toString",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        65,
+        65
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        410,
+        952
+      ],
+      "ret": "QnTUc",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        66,
+        66
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        387,
+        178
+      ],
+      "ret": "iQbVV",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        67,
+        67
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        378,
+        173
+      ],
+      "ret": "exception",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        68,
+        68
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        374,
+        143
+      ],
+      "ret": "rn this\")(",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        69,
+        69
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        396,
+        180
+      ],
+      "ret": "11989251VRraSU",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        70,
+        70
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        402,
+        900
+      ],
+      "ret": "aolrl",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        71,
+        71
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        354,
+        151
+      ],
+      "ret": "gUkyX",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        72,
+        72
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        362,
+        882
+      ],
+      "ret": "gELNQ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        73,
+        73
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        394,
+        930
+      ],
+      "ret": "MADPG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        74,
+        74
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        405,
+        211
+      ],
+      "ret": "log",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        75,
+        75
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        358,
+        888
+      ],
+      "ret": "FsgTV",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        76,
+        76
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        411,
+        942
+      ],
+      "ret": "trace",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        77,
+        77
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        407,
+        931
+      ],
+      "ret": "802220rAzVqt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        78,
+        78
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        410,
+        952
+      ],
+      "ret": "trace",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        79,
+        79
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        387,
+        178
+      ],
+      "ret": "wLNUA",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        80,
+        80
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        378,
+        173
+      ],
+      "ret": "wJsAS",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        81,
+        81
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        374,
+        143
+      ],
+      "ret": "DCeHZ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        82,
+        82
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        396,
+        180
+      ],
+      "ret": "grqAG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        83,
+        83
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        402,
+        900
+      ],
+      "ret": "IWMXC",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        84,
+        84
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        354,
+        151
+      ],
+      "ret": "FXmCF",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        85,
+        85
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        362,
+        882
+      ],
+      "ret": "zoWtj",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        86,
+        86
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        394,
+        930
+      ],
+      "ret": "table",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        87,
+        87
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        405,
+        211
+      ],
+      "ret": "toString",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        88,
+        88
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        358,
+        888
+      ],
+      "ret": "aZiqb",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        89,
+        89
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        411,
+        942
+      ],
+      "ret": "242RbMNfZ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        90,
+        90
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        407,
+        931
+      ],
+      "ret": "return (fu",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        91,
+        91
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        410,
+        952
+      ],
+      "ret": "242RbMNfZ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        92,
+        92
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        387,
+        178
+      ],
+      "ret": "1706sbFzvV",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        93,
+        93
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        378,
+        173
+      ],
+      "ret": "2778FSSLdG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        94,
+        94
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        374,
+        143
+      ],
+      "ret": "5900NXwsHK",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        95,
+        95
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        396,
+        180
+      ],
+      "ret": "200735pabGBK",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        96,
+        96
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        402,
+        900
+      ],
+      "ret": "48cGlMHZ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        97,
+        97
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        354,
+        151
+      ],
+      "ret": "7TGiXWT",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        98,
+        98
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        362,
+        882
+      ],
+      "ret": "2418992uVBFrI",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        99,
+        99
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        394,
+        930
+      ],
+      "ret": "11989251VRraSU",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        100,
+        100
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        405,
+        211
+      ],
+      "ret": "802220rAzVqt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        101,
+        101
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        358,
+        888
+      ],
+      "ret": "77qGXZXC",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        102,
+        102
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        411,
+        942
+      ],
+      "ret": "60VslUuS",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        103,
+        103
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        407,
+        931
+      ],
+      "ret": "2980952RrWkTS",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        104,
+        104
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        365,
+        617
+      ],
+      "ret": "VQpJl",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        105,
+        105
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        399,
+        1236
+      ],
+      "ret": "IAAgF",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        106,
+        106
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        406,
+        680
+      ],
+      "ret": "return (fu",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        107,
+        107
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        389,
+        613
+      ],
+      "ret": "KWmqk",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        108,
+        108
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        353,
+        1168
+      ],
+      "ret": "FXmCF",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        109,
+        109
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        414,
+        629
+      ],
+      "ret": "{}.constru",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        110,
+        110
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        412,
+        1266
+      ],
+      "ret": "ctor(\"retu",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        111,
+        111
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        372,
+        623
+      ],
+      "ret": "rn this\")(",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        112,
+        112
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        382,
+        1231
+      ],
+      "ret": "hnset",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        113,
+        113
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        368,
+        644
+      ],
+      "ret": "mYYHX",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        114,
+        114
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        403,
+        643
+      ],
+      "ret": "log",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        115,
+        115
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        371,
+        1243
+      ],
+      "ret": "warn",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        116,
+        116
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        381,
+        602
+      ],
+      "ret": "error",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        117,
+        117
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        393,
+        658
+      ],
+      "ret": "table",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        118,
+        118
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        409,
+        641
+      ],
+      "ret": "trace",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        119,
+        119
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        408,
+        1278
+      ],
+      "ret": "QnTUc",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        120,
+        120
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        417,
+        1267
+      ],
+      "ret": "0|3|4|1|2|",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        121,
+        121
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        390,
+        662
+      ],
+      "ret": "Hello Worl",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        122,
+        122
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        361,
+        1160
+      ],
+      "ret": "zoWtj",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        123,
+        123
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        380,
+        1218
+      ],
+      "ret": "AjDZu",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        124,
+        124
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        384,
+        -413
+      ],
+      "ret": "SGFdI",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        125,
+        125
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        416,
+        1257
+      ],
+      "ret": "YbWiy",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        126,
+        126
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        418,
+        671
+      ],
+      "ret": "ACUOx",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        127,
+        127
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        380,
+        92
+      ],
+      "ret": "AjDZu",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        128,
+        128
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        359,
+        34
+      ],
+      "ret": "apply",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        129,
+        129
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        398,
+        -414
+      ],
+      "ret": "ChRvh",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        130,
+        130
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        418,
+        999
+      ],
+      "ret": "ACUOx",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        131,
+        131
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        398,
+        620
+      ],
+      "ret": "ChRvh",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        132,
+        132
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        386,
+        1201
+      ],
+      "ret": "wLNUA",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        133,
+        133
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        392,
+        595
+      ],
+      "ret": "MADPG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        134,
+        134
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        392,
+        566
+      ],
+      "ret": "MADPG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        135,
+        135
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        373,
+        546
+      ],
+      "ret": "DCeHZ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        136,
+        136
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        383,
+        600
+      ],
+      "ret": "WDUhE",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        137,
+        137
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        360,
+        1177
+      ],
+      "ret": "gELNQ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        138,
+        138
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        366,
+        572
+      ],
+      "ret": "CVvKo",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        139,
+        139
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        398,
+        1194
+      ],
+      "ret": "ChRvh",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        140,
+        140
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        415,
+        -425
+      ],
+      "ret": "console",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        141,
+        141
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        369,
+        928
+      ],
+      "ret": "dVhuc",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        142,
+        142
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        413,
+        990
+      ],
+      "ret": "UyCQK",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        143,
+        143
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        401,
+        -414
+      ],
+      "ret": "IWMXC",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        144,
+        144
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        376,
+        942
+      ],
+      "ret": "exception",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        145,
+        145
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        400,
+        -412
+      ],
+      "ret": "aolrl",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        146,
+        146
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        419,
+        987
+      ],
+      "ret": "gUkyX",
+      "status": "success",
+      "count": 8,
+      "seq": [
+        147,
+        238
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        367,
+        -468
+      ],
+      "ret": "length",
+      "status": "success",
+      "count": 8,
+      "seq": [
+        148,
+        239
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        377,
+        -478
+      ],
+      "ret": "wJsAS",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        149,
+        227
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        357,
+        947
+      ],
+      "ret": "aZiqb",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        150,
+        228
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        363,
+        -457
+      ],
+      "ret": "jCkSm",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        151,
+        229
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        375,
+        986
+      ],
+      "ret": "split",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        152,
+        230
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        379,
+        -440
+      ],
+      "ret": "constructo",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        153,
+        231
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        370,
+        938
+      ],
+      "ret": "prototype",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        154,
+        232
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        388,
+        988
+      ],
+      "ret": "bind",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        155,
+        233
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        364,
+        -453
+      ],
+      "ret": "__proto__",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        156,
+        234
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        388,
+        -419
+      ],
+      "ret": "bind",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        157,
+        235
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        404,
+        -395
+      ],
+      "ret": "toString",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        158,
+        236
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        404,
+        1023
+      ],
+      "ret": "toString",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        159,
+        237
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        403,
+        1232
+      ],
+      "ret": "log",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        240,
+        240
+      ]
+    },
+    {
+      "fn": "_0x4b57",
+      "args": [
+        395,
+        618
+      ],
+      "ret": "grqAG",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        241,
+        241
+      ]
+    }
+  ],
+  "engineLogs": [
+    {
+      "kind": "log",
+      "level": "info",
+      "message": "runtime capture started: 3 breakpoints, 0 skipped, 0 errors"
+    }
+  ]
+}

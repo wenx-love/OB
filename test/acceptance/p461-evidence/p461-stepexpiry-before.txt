@@ -1,0 +1,37 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ❯ test/capture-engine-step-expiry.test.ts (2 tests | 1 failed) 10ms
+   × stepOver 超时之后的认领窗口 > 迟到的单步暂停在认领期限内到达（同步归属判断为我们），串行链忙到期限之后才处理它：仍按我们的暂停处理，不能当成外来暂停 8ms
+     → expected 1 to be +0 // Object.is equality
+   ✓ stepOver 超时之后的认领窗口 > 过期之后不再认领：认领期限内归我们，期限过后用户自己的暂停不会被当成我们的单步 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/capture-engine-step-expiry.test.ts > stepOver 超时之后的认领窗口 > 迟到的单步暂停在认领期限内到达（同步归属判断为我们），串行链忙到期限之后才处理它：仍按我们的暂停处理，不能当成外来暂停
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/capture-engine-step-expiry.test.ts:67:29
+     65|     await vi.advanceTimersByTimeAsync(20_000);
+     66|     const s = engine.getStats();
+     67|     expect(s.foreignPauses).toBe(0);
+       |                             ^
+     68|     expect(s.pauses).toBe(2);
+     69|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  10:09:23
+   Duration  819ms (transform 157ms, setup 0ms, collect 409ms, tests 10ms, environment 0ms, prepare 165ms)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

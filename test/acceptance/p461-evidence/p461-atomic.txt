@@ -1,0 +1,12 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ✓ test/atomic-rollback-real.test.ts (6 tests) 47ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  09:49:02
+   Duration  4.84s (transform 248ms, setup 0ms, collect 3.53s, tests 47ms, environment 0ms, prepare 748ms)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

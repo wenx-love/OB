@@ -1,0 +1,43 @@
+{
+  "schema": "web-protocol-recovery/l1-reference-business/1",
+  "capturedBy": "skill",
+  "page": {
+    "url": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3",
+    "title": "杭州服装_服装批发",
+    "status": 200
+  },
+  "api": {
+    "url": "https://newopenapiweb.17qcc.com/api/services/app/SearchFactory/GetPageList",
+    "method": "POST",
+    "requestFields": [
+      "KM",
+      "Ver",
+      "Content",
+      "Sign",
+      "RsaPubAes",
+      "IV",
+      "TimesTamp"
+    ],
+    "headersKept": [
+      "data-version",
+      "data-label",
+      "app-version",
+      "qcc-pc-referer",
+      "content-type"
+    ],
+    "headersRedacted": [
+      "app-guestid"
+    ],
+    "responseShape": "one Result field holding an upper case hex string",
+    "authState": "anonymous, app-is-login 0"
+  },
+  "scriptsContainingTheApi": [
+    "reqid 13 combo ajax-20..hpailist-2"
+  ],
+  "businessAnchors": [
+    "QccJsWebVer 2026.10.21.1",
+    "QccJsWebPostBaseUrl https://newopenapiweb.17qcc.com",
+    "SearchFactory/GetPageList"
+  ],
+  "notStored": "cookie values, GuestId, request ciphertext and the response Result body"
+}

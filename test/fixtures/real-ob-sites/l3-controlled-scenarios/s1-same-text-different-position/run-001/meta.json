@@ -1,0 +1,15 @@
+{
+  "siteId": "s1-same-text-different-position",
+  "runId": "run-001",
+  "layer": "L3",
+  "kind": "controlled-replay",
+  "isRealSiteSample": false,
+  "url": null,
+  "sha256": "8ea6de7faf97488df88845236fbbd0dd191b264d9d0090a85f82277acd661557",
+  "bytes": 238,
+  "fetchedAt": null,
+  "fetchedAtNote": "synthetic script authored in test/real-site-l3.test.ts",
+  "capturedBy": "n/a-synthetic",
+  "tooling": "test/real-site-l3.test.ts",
+  "title": "同文本不同位置：只替换已观测位置；未观测位置和被遮蔽的同名函数必须保持原样"
+}

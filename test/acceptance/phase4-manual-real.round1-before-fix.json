@@ -1,0 +1,1112 @@
+{
+  "note": "headed Chrome + dedicated profile + real extension + real chrome.debugger + real V8 pause. Breakpoint set via the real DevTools frontend breakpoint manager; panel and DevTools controls driven programmatically (NOT a human mouse). No Debugger.paused is synthesized. Backend commands go through background handlePanelCommand.",
+  "page": "http://127.0.0.1:8791/phase4-manual-real.html",
+  "bpLine": 14,
+  "expected": {
+    "decode": [
+      "sign",
+      "token",
+      "foo",
+      "bar",
+      "cookie"
+    ],
+    "result": "sign:p1:salt-21:42|token#mid-p1"
+  },
+  "dist": {
+    "background": "bae3ee984d85ebf54c62c37e1a86f50e21ed84705e86eff9f5c03b32c85c2b87",
+    "panel": "82bfbc540cf1140c7b428073f93cd6fdd359cac140bbfc504a2fd33bfe683480",
+    "sandbox": "524af5c5b5060551fcb38fa00141750fc455189dcae6366aadf082b72e4f34f4",
+    "manifest": "b3c737b4e6ea12a55d37ac75726fba8b2aad8778e26d092b0324997b18efcd55"
+  },
+  "phases": {
+    "observer": {
+      "installed": true,
+      "patched": true,
+      "hook": "object"
+    },
+    "setBreakpoint": {
+      "uiSourceCode": "http://127.0.0.1:8791/phase4-manual-real.js",
+      "path": "BreakpointManager.setBreakpoint",
+      "returned": "object"
+    },
+    "control": {
+      "pause": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 14,
+          "col": 19
+        }
+      },
+      "after": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 14,
+          "col": 19
+        }
+      }
+    },
+    "connectedPause": {
+      "fePause": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 14,
+          "col": 19
+        }
+      },
+      "first": {
+        "t": 1794238371176,
+        "m": "Debugger.paused",
+        "tabId": 671739926,
+        "reason": "other",
+        "hit": [],
+        "frames": [
+          {
+            "callFrameId": "1592159736944531525.4.0",
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19,
+            "scriptId": "23",
+            "url": "",
+            "scopes": [
+              "local",
+              "closure",
+              "global"
+            ]
+          },
+          {
+            "callFrameId": "1592159736944531525.4.1",
+            "fn": "midLevel",
+            "line": 20,
+            "col": 9,
+            "scriptId": "23",
+            "url": "",
+            "scopes": [
+              "local",
+              "global"
+            ]
+          },
+          {
+            "callFrameId": "1592159736944531525.4.2",
+            "fn": "topLevel",
+            "line": 24,
+            "col": 12,
+            "scriptId": "23",
+            "url": "",
+            "scopes": [
+              "local",
+              "global"
+            ]
+          }
+        ]
+      },
+      "stalled": {
+        "timeout": true
+      },
+      "selected": [
+        "sources",
+        "sources",
+        "sources",
+        "sources",
+        "sources",
+        "sources"
+      ],
+      "panel": {
+        "pause": "已暂停 (other)",
+        "log": ":50已启用 beforeScriptExecution 插桩断点23:32:50执行上下文已创建: http://127.0.0.1:879123:32:50执行上下文已创建: http://127.0.0.1:879123:32:50状态: connected23:32:50已连接23:32:50运行时捕获已重置: page navigated or reloaded23:32:50运行时捕获已重置: page navigated or reloaded23:32:50执行上下文已创建: http://127.0.0.1:879123:32:50执行上下文已创建: http://127.0.0.1:879123:32:50脚本已解析: [22] (inline)23:32:50发现脚本 [22]: (inline)23:32:50分析完成: 17 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [24] (inline)23:32:50发现脚本 [24]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [23] phase4-manual-real.js23:32:50发现脚本 [23]: http://127.0.0.1:8791/phase4-manual-real.js23:32:50分析完成: 1 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [30] (inline)23:32:50发现脚本 [30]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [33] (inline)23:32:50发现脚本 [33]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [36] (inline)23:32:50发现脚本 [36]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [38] (inline)23:32:50脚本已解析: [39] (inline)23:32:50发现脚本 [38]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50发现脚本 [39]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [41] (inline)23:32:50发现脚本 [41]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:51脚本已解析: [43] (inline)23:32:51▶ 执行已恢复23:32:51发现脚本 [43]: (inline)23:32:51分析完成: 0 个候选解码器23:32:51已暂停 (other)23:32:51⏸ 已暂停 (other)23:32:51  ▶ innerSign @ script:23 L15:C1923:32:51    midLevel @ script:23 L21:C923:32:51    topLevel @ script:23 L25:C1223:32:51脚本已解析: [48] (inline)23:32:51发现脚本 [48]: (inline)23:32:51分析完成: 0 个候选解码器"
+      }
+    },
+    "records1": [
+      {
+        "timestamp": 1794238371176,
+        "scriptId": "23",
+        "scriptUrl": "",
+        "location": {
+          "lineNumber": 14,
+          "columnNumber": 19
+        },
+        "functionName": "innerSign",
+        "expression": "",
+        "stackDepth": 3
+      }
+    ],
+    "frames": {
+      "response": null,
+      "raw": []
+    },
+    "scopes": {
+      "frame0": null,
+      "frame1": null
+    },
+    "evals": [
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x0)",
+        "expected": "sign",
+        "ok": true,
+        "value": "sign",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x1)",
+        "expected": "token",
+        "ok": true,
+        "value": "token",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x2)",
+        "expected": "foo",
+        "ok": true,
+        "value": "foo",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x3)",
+        "expected": "bar",
+        "ok": true,
+        "value": "bar",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x4)",
+        "expected": "cookie",
+        "ok": true,
+        "value": "cookie",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "localLabel + ':' + closureSalt + ':' + closureCount",
+        "expected": "sign:salt-21:42",
+        "ok": true,
+        "value": "sign:salt-21:42",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 1,
+        "expression": "midMarker + ':' + payload",
+        "expected": "mid-p1:p1",
+        "ok": true,
+        "value": "mid-p1:p1",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 1,
+        "expression": "typeof localLabel",
+        "expected": "undefined",
+        "ok": true,
+        "value": "undefined",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "typeof midMarker",
+        "expected": "undefined",
+        "ok": true,
+        "value": "undefined",
+        "error": null
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x0)",
+        "expected": "sign",
+        "ok": false,
+        "value": null,
+        "error": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x1)",
+        "expected": "token",
+        "ok": false,
+        "value": null,
+        "error": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x2)",
+        "expected": "foo",
+        "ok": false,
+        "value": null,
+        "error": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x3)",
+        "expected": "bar",
+        "ok": false,
+        "value": null,
+        "error": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x4)",
+        "expected": "cookie",
+        "ok": false,
+        "value": null,
+        "error": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "localLabel + ':' + closureSalt + ':' + closureCount",
+        "expected": "sign:salt-21:42",
+        "ok": false,
+        "value": null,
+        "error": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 99\",\"message\":\"Invalid parameters\"}"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 1,
+        "expression": "midMarker + ':' + payload",
+        "expected": "mid-p1:p1",
+        "ok": false,
+        "value": null,
+        "error": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 73\",\"message\":\"Invalid parameters\"}"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 1,
+        "expression": "typeof localLabel",
+        "expected": "undefined",
+        "ok": false,
+        "value": null,
+        "error": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 64\",\"message\":\"Invalid parameters\"}"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "typeof midMarker",
+        "expected": "undefined",
+        "ok": false,
+        "value": null,
+        "error": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 63\",\"message\":\"Invalid parameters\"}"
+      }
+    ],
+    "step": {
+      "stepped": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 15,
+          "col": 4
+        }
+      },
+      "newEvents": [
+        {
+          "m": "Debugger.resumed"
+        },
+        {
+          "m": "Debugger.paused",
+          "reason": "step",
+          "top": {
+            "callFrameId": "1592159736944531525.4.0",
+            "fn": "innerSign",
+            "line": 15,
+            "col": 4,
+            "scriptId": "23",
+            "url": "",
+            "scopes": [
+              "local",
+              "closure",
+              "global"
+            ]
+          }
+        }
+      ]
+    },
+    "truth": {
+      "decode": [
+        "sign",
+        "token",
+        "foo",
+        "bar",
+        "cookie"
+      ],
+      "result": "sign:p1:salt-21:42|token#mid-p1",
+      "sum": 2
+    },
+    "commands": {
+      "counts": {
+        "Debugger.enable": 1,
+        "Debugger.getScriptSource": 34,
+        "Debugger.setInstrumentationBreakpoint": 1,
+        "Runtime.enable": 1,
+        "Debugger.resume": 14,
+        "Debugger.evaluateOnCallFrame": 18
+      },
+      "mutating": [
+        {
+          "t": 1794238370007,
+          "m": "Debugger.setInstrumentationBreakpoint"
+        },
+        {
+          "t": 1794238370331,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238370350,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238370366,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238370461,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238370513,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238370624,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238370790,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238370793,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238371147,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238384997,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238385007,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238385049,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238385057,
+          "m": "Debugger.resume"
+        },
+        {
+          "t": 1794238386022,
+          "m": "Debugger.resume"
+        }
+      ],
+      "windows": [
+        [
+          1794238371176,
+          1794238384907
+        ],
+        [
+          1794238384907,
+          1794238384989
+        ],
+        [
+          1794238385065,
+          1794238386021
+        ]
+      ],
+      "userPauseCount": 3,
+      "instrumentationPauses": 14
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "tabId": 671739926,
+  "items": [
+    {
+      "n": 1,
+      "title": "load current dist extension in real Chrome",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "extension loaded via Extensions.loadUnpacked",
+          "ok": true,
+          "expected": "32-char extension id",
+          "actual": "ijdobedejfjfindckpgabkamoeenejob"
+        },
+        {
+          "name": "background service worker target present",
+          "ok": true,
+          "expected": "present",
+          "actual": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js"
+        },
+        {
+          "name": "OB-Recover panel registered in real DevTools",
+          "ok": false,
+          "expected": "tab id containing OB-Recover",
+          "actual": [
+            "elements",
+            "console",
+            "sources",
+            "network",
+            "timeline",
+            "heap-profiler",
+            "resources",
+            "security",
+            "lighthouse",
+            "chrome-recorder"
+          ]
+        },
+        {
+          "name": "panel connect button attaches chrome.debugger (status connected)",
+          "ok": true,
+          "expected": "connected",
+          "actual": {
+            "panelText": "已连接"
+          }
+        }
+      ],
+      "notes": [
+        "dist manifest OB-Recover 0.2.0; file hashes in out.dist"
+      ],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 2,
+      "title": "open dedicated test page",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "dedicated test page loaded from local server",
+          "ok": true,
+          "expected": "http://127.0.0.1:8791/phase4-manual-real.html",
+          "actual": {
+            "title": "phase4-manual-real",
+            "run": "function",
+            "btn": true,
+            "url": "http://127.0.0.1:8791/phase4-manual-real.html",
+            "state": "complete"
+          }
+        },
+        {
+          "name": "page exposes run button and runManualTest",
+          "ok": true,
+          "expected": "button + function",
+          "actual": {
+            "title": "phase4-manual-real",
+            "run": "function",
+            "btn": true,
+            "url": "http://127.0.0.1:8791/phase4-manual-real.html",
+            "state": "complete"
+          }
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 3,
+      "title": "set breakpoint in DevTools Sources",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "breakpoint set through DevTools frontend breakpoint manager",
+          "ok": true,
+          "expected": "no error",
+          "actual": {
+            "uiSourceCode": "http://127.0.0.1:8791/phase4-manual-real.js",
+            "path": "BreakpointManager.setBreakpoint",
+            "returned": "object"
+          }
+        },
+        {
+          "name": "breakpoint really hits in DevTools (control run, extension not attached)",
+          "ok": true,
+          "expected": "paused at line 14",
+          "actual": {
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19
+          }
+        }
+      ],
+      "notes": [
+        "method is DevTools frontend API, not a human mouse click on the gutter"
+      ],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 4,
+      "title": "backend receives real Debugger.paused",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "DevTools shows the pause at the user breakpoint while extension is attached",
+          "ok": true,
+          "expected": "paused at line 14",
+          "actual": {
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19
+          }
+        },
+        {
+          "name": "backend (extension session) received a real Debugger.paused for innerSign",
+          "ok": true,
+          "expected": "Debugger.paused, top frame innerSign",
+          "actual": {
+            "reason": "other",
+            "hit": [],
+            "depth": 3,
+            "top": {
+              "callFrameId": "1592159736944531525.4.0",
+              "fn": "innerSign",
+              "line": 14,
+              "col": 19,
+              "scriptId": "23",
+              "url": "",
+              "scopes": [
+                "local",
+                "closure",
+                "global"
+              ]
+            }
+          }
+        },
+        {
+          "name": "top frame is innerSign at the breakpoint line",
+          "ok": true,
+          "expected": "innerSign @ 14",
+          "actual": {
+            "callFrameId": "1592159736944531525.4.0",
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19,
+            "scriptId": "23",
+            "url": "",
+            "scopes": [
+              "local",
+              "closure",
+              "global"
+            ]
+          }
+        },
+        {
+          "name": "page really stopped (Runtime.evaluate stalls while paused)",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "timeout": true
+          }
+        },
+        {
+          "name": "panel shows paused state and innerSign from the real event",
+          "ok": true,
+          "expected": "paused badge + innerSign in log",
+          "actual": {
+            "pause": "已暂停 (other)",
+            "log": ":50已启用 beforeScriptExecution 插桩断点23:32:50执行上下文已创建: http://127.0.0.1:879123:32:50执行上下文已创建: http://127.0.0.1:879123:32:50状态: connected23:32:50已连接23:32:50运行时捕获已重置: page navigated or reloaded23:32:50运行时捕获已重置: page navigated or reloaded23:32:50执行上下文已创建: http://127.0.0.1:879123:32:50执行上下文已创建: http://127.0.0.1:879123:32:50脚本已解析: [22] (inline)23:32:50发现脚本 [22]: (inline)23:32:50分析完成: 17 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [24] (inline)23:32:50发现脚本 [24]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [23] phase4-manual-real.js23:32:50发现脚本 [23]: http://127.0.0.1:8791/phase4-manual-real.js23:32:50分析完成: 1 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [30] (inline)23:32:50发现脚本 [30]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [33] (inline)23:32:50发现脚本 [33]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [36] (inline)23:32:50发现脚本 [36]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [38] (inline)23:32:50脚本已解析: [39] (inline)23:32:50发现脚本 [38]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50发现脚本 [39]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:50脚本已解析: [41] (inline)23:32:50发现脚本 [41]: (inline)23:32:50分析完成: 0 个候选解码器23:32:50▶ 执行已恢复23:32:51脚本已解析: [43] (inline)23:32:51▶ 执行已恢复23:32:51发现脚本 [43]: (inline)23:32:51分析完成: 0 个候选解码器23:32:51已暂停 (other)23:32:51⏸ 已暂停 (other)23:32:51  ▶ innerSign @ script:23 L15:C1923:32:51    midLevel @ script:23 L21:C923:32:51    topLevel @ script:23 L25:C1223:32:51脚本已解析: [48] (inline)23:32:51发现脚本 [48]: (inline)23:32:51分析完成: 0 个候选解码器"
+          }
+        },
+        {
+          "name": "ManualCapture recorded the pause (top frame, line, scriptId)",
+          "ok": true,
+          "expected": "record for innerSign @ 14",
+          "actual": {
+            "timestamp": 1794238371176,
+            "scriptId": "23",
+            "scriptUrl": "",
+            "location": {
+              "lineNumber": 14,
+              "columnNumber": 19
+            },
+            "functionName": "innerSign",
+            "expression": "",
+            "stackDepth": 3
+          }
+        },
+        {
+          "name": "backend recorded every real (non-instrumentation) pause",
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 5,
+      "title": "real callFrames obtained",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "raw callFrames from the real event: innerSign, midLevel, topLevel at expected lines",
+          "ok": true,
+          "expected": [
+            14,
+            20,
+            24
+          ],
+          "actual": [
+            "innerSign@14",
+            "midLevel@20",
+            "topLevel@24"
+          ]
+        },
+        {
+          "name": "raw frames carry callFrameId and a scope chain with local and closure",
+          "ok": true,
+          "expected": "callFrameId + local + closure",
+          "actual": {
+            "id": "1592159736944531525.4.0",
+            "scopes": [
+              "local",
+              "closure",
+              "global"
+            ]
+          }
+        },
+        {
+          "name": "backend exposes the frames (manual-capture-get-frames responded)",
+          "ok": false,
+          "expected": ">=3 frames",
+          "actual": "no response (command not implemented?)"
+        },
+        {
+          "name": "backend frames match the raw event by index (name, line, callFrameId)",
+          "ok": false,
+          "expected": "equal to raw",
+          "actual": []
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 6,
+      "title": "Local and Closure scope at frameIndex",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "frame 0 Local scope: localLabel, localToken, payload",
+          "ok": false,
+          "expected": {
+            "localLabel": "sign",
+            "localToken": "token",
+            "payload": "p1"
+          },
+          "actual": "no response (command not implemented?)"
+        },
+        {
+          "name": "frame 0 Closure scope: closureSalt, closureCount",
+          "ok": false,
+          "expected": {
+            "closureSalt": "salt-21",
+            "closureCount": 42
+          },
+          "actual": "no response (command not implemented?)"
+        },
+        {
+          "name": "frame 1 Local scope: midMarker, payload",
+          "ok": false,
+          "expected": {
+            "midMarker": "mid-p1",
+            "payload": "p1"
+          },
+          "actual": "no response (command not implemented?)"
+        },
+        {
+          "name": "frame isolation: frame 1 Local does not contain frame 0 localLabel",
+          "ok": false,
+          "expected": "absent",
+          "actual": null
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 7,
+      "title": "OB decode expression evaluated in specified frame",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "callFrameId frame 0: _0xdec(0x0)",
+          "ok": true,
+          "expected": "sign",
+          "actual": "sign"
+        },
+        {
+          "name": "callFrameId frame 0: _0xdec(0x1)",
+          "ok": true,
+          "expected": "token",
+          "actual": "token"
+        },
+        {
+          "name": "callFrameId frame 0: _0xdec(0x2)",
+          "ok": true,
+          "expected": "foo",
+          "actual": "foo"
+        },
+        {
+          "name": "callFrameId frame 0: _0xdec(0x3)",
+          "ok": true,
+          "expected": "bar",
+          "actual": "bar"
+        },
+        {
+          "name": "callFrameId frame 0: _0xdec(0x4)",
+          "ok": true,
+          "expected": "cookie",
+          "actual": "cookie"
+        },
+        {
+          "name": "callFrameId frame 0: localLabel + ':' + closureSalt + ':' + closureCount",
+          "ok": true,
+          "expected": "sign:salt-21:42",
+          "actual": "sign:salt-21:42"
+        },
+        {
+          "name": "callFrameId frame 1: midMarker + ':' + payload",
+          "ok": true,
+          "expected": "mid-p1:p1",
+          "actual": "mid-p1:p1"
+        },
+        {
+          "name": "callFrameId frame 1: typeof localLabel",
+          "ok": true,
+          "expected": "undefined",
+          "actual": "undefined"
+        },
+        {
+          "name": "callFrameId frame 0: typeof midMarker",
+          "ok": true,
+          "expected": "undefined",
+          "actual": "undefined"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x0)",
+          "ok": false,
+          "expected": "sign",
+          "actual": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x1)",
+          "ok": false,
+          "expected": "token",
+          "actual": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x2)",
+          "ok": false,
+          "expected": "foo",
+          "actual": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x3)",
+          "ok": false,
+          "expected": "bar",
+          "actual": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x4)",
+          "ok": false,
+          "expected": "cookie",
+          "actual": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+        },
+        {
+          "name": "frameIndex frame 0: localLabel + ':' + closureSalt + ':' + closureCount",
+          "ok": false,
+          "expected": "sign:salt-21:42",
+          "actual": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 99\",\"message\":\"Invalid parameters\"}"
+        },
+        {
+          "name": "frameIndex frame 1: midMarker + ':' + payload",
+          "ok": false,
+          "expected": "mid-p1:p1",
+          "actual": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 73\",\"message\":\"Invalid parameters\"}"
+        },
+        {
+          "name": "frameIndex frame 1: typeof localLabel",
+          "ok": false,
+          "expected": "undefined",
+          "actual": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 64\",\"message\":\"Invalid parameters\"}"
+        },
+        {
+          "name": "frameIndex frame 0: typeof midMarker",
+          "ok": false,
+          "expected": "undefined",
+          "actual": "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 63\",\"message\":\"Invalid parameters\"}"
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 8,
+      "title": "returned values match real browser results",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "browser _0xdec(0..4) equals the independent node:vm recomputation",
+          "ok": true,
+          "expected": [
+            "sign",
+            "token",
+            "foo",
+            "bar",
+            "cookie"
+          ],
+          "actual": [
+            "sign",
+            "token",
+            "foo",
+            "bar",
+            "cookie"
+          ]
+        },
+        {
+          "name": "callFrameId: backend decode values equal browser _0xdec(0..4)",
+          "ok": true,
+          "expected": [
+            "sign",
+            "token",
+            "foo",
+            "bar",
+            "cookie"
+          ],
+          "actual": [
+            "sign",
+            "token",
+            "foo",
+            "bar",
+            "cookie"
+          ]
+        },
+        {
+          "name": "frameIndex: backend decode values equal browser _0xdec(0..4)",
+          "ok": false,
+          "expected": [
+            "sign",
+            "token",
+            "foo",
+            "bar",
+            "cookie"
+          ],
+          "actual": [
+            "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}",
+            "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}",
+            "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}",
+            "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}",
+            "{\"code\":-32602,\"data\":\"Failed to deserialize params.callFrameId - BINDINGS: mandatory field missing at position 58\",\"message\":\"Invalid parameters\"}"
+          ]
+        },
+        {
+          "name": "frame-0 expression value is consistent with the page final output",
+          "ok": true,
+          "expected": "page output starts with sign:p1:salt-21:42",
+          "actual": {
+            "frameValue": "sign:salt-21:42",
+            "pageResult": "sign:p1:salt-21:42|token#mid-p1"
+          }
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 9,
+      "title": "no auto breakpoints / no panel switch / no resume",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "extension CDP command logger installed (chrome.debugger.sendCommand wrapper)",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "installed": true,
+            "patched": true,
+            "hook": "object"
+          }
+        },
+        {
+          "name": "command log has entries and the observer survived the whole run",
+          "ok": true,
+          "expected": "ok and >0 commands",
+          "actual": {
+            "ok": true,
+            "n": 69
+          }
+        },
+        {
+          "name": "no breakpoint set by the extension (Debugger.setBreakpoint / setBreakpointByUrl)",
+          "ok": true,
+          "expected": 0,
+          "actual": {
+            "setBreakpoint": 0,
+            "setBreakpointByUrl": 0
+          }
+        },
+        {
+          "name": "no instrumentation breakpoint set in manual mode",
+          "ok": false,
+          "expected": 0,
+          "actual": 1
+        },
+        {
+          "name": "no extension-issued resume/step/pause/breakpoint command inside any user pause window",
+          "ok": true,
+          "expected": 0,
+          "actual": []
+        },
+        {
+          "name": "no extension-issued Debugger.resume or step at any time",
+          "ok": false,
+          "expected": 0,
+          "actual": {
+            "resume": 14,
+            "stepOver": 0,
+            "stepInto": 0,
+            "stepOut": 0
+          }
+        },
+        {
+          "name": "page stayed paused until DevTools resumed it (sampled 3s, evaluate stalled)",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "stillPaused": true,
+            "stalled": {
+              "timeout": true
+            }
+          }
+        },
+        {
+          "name": "selected DevTools tab after pause equals the control run without the extension attached",
+          "ok": true,
+          "expected": "sources",
+          "actual": [
+            "sources",
+            "sources",
+            "sources",
+            "sources",
+            "sources",
+            "sources"
+          ]
+        }
+      ],
+      "notes": [
+        "static: chrome.devtools.panels.openResource only appears inside a button click handler (panel.ts:1887); pause handler never calls it"
+      ],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 10,
+      "title": "user breakpoints, step and continue unaffected",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "control: DevTools continue finishes the page run",
+          "ok": true,
+          "expected": "window.__obResult is a string",
+          "actual": true
+        },
+        {
+          "name": "DevTools Step over works while attached (paused on next line)",
+          "ok": true,
+          "expected": "paused at line 15",
+          "actual": {
+            "fn": "innerSign",
+            "line": 15,
+            "col": 4
+          }
+        },
+        {
+          "name": "extension session observed resumed then paused for the step",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "sawResumed": true,
+            "sawPaused": true
+          }
+        },
+        {
+          "name": "DevTools continue finishes the page run while attached",
+          "ok": true,
+          "expected": "page completes and stays responsive",
+          "actual": {
+            "decode": [
+              "sign",
+              "token",
+              "foo",
+              "bar",
+              "cookie"
+            ],
+            "result": "sign:p1:salt-21:42|token#mid-p1",
+            "sum": 2
+          }
+        },
+        {
+          "name": "page output equals the independently computed expected string",
+          "ok": true,
+          "expected": "sign:p1:salt-21:42|token#mid-p1",
+          "actual": "sign:p1:salt-21:42|token#mid-p1"
+        },
+        {
+          "name": "user breakpoint still hits a second time",
+          "ok": true,
+          "expected": "paused at line 14",
+          "actual": {
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19
+          }
+        },
+        {
+          "name": "second continue finishes the page run",
+          "ok": true,
+          "expected": "window.__obResult is a string",
+          "actual": true
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    }
+  ]
+}

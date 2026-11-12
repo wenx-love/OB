@@ -1,0 +1,200 @@
+{
+  "sample": "sample-04-gk",
+  "bytes": 657339,
+  "analyzed": true,
+  "discoveryMs": 3306,
+  "functions": 2137,
+  "candidates": 20,
+  "high": 2,
+  "cands": [
+    {
+      "name": "_0x4698",
+      "kind": "FunctionExpression",
+      "conf": "high",
+      "params": 2,
+      "calls": 794,
+      "arr": "_0xe123",
+      "offset": true,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x5ca5",
+      "kind": "FunctionExpression",
+      "conf": "high",
+      "params": 2,
+      "calls": 793,
+      "arr": "_0xe123",
+      "offset": true,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_doProcessBlock",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": "_0x3993a1",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x52ac0e",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 7,
+      "calls": 13,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x199a71",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 7,
+      "calls": 14,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x574ce3",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 7,
+      "calls": 11,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x3318bb",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 4,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0xcd14ea",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 0,
+      "calls": 70,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_doProcessBlock",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": "_0x20b27b",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x255762",
+      "kind": "FunctionExpression",
+      "conf": "medium",
+      "params": 5,
+      "calls": 12,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x6a57b6",
+      "kind": "FunctionExpression",
+      "conf": "medium",
+      "params": 5,
+      "calls": 11,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "processBlock",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": "_0x3a026e",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "decryptBlock",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": "_0x22ba4c",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_doCryptBlock",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 8,
+      "calls": 0,
+      "arr": "_0x195c49",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_doCryptBlock",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 3,
+      "calls": 0,
+      "arr": "_0x157c7e",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    }
+  ],
+  "plans": [
+    {
+      "name": "_0x4698",
+      "supported": true,
+      "returns": 1
+    },
+    {
+      "name": "_0x5ca5",
+      "supported": true,
+      "returns": 1
+    }
+  ],
+  "scan": {
+    "eval(": 0,
+    "Function(": 2,
+    "XMLHttpRequest": 0,
+    "fetch(": 0,
+    "WebSocket": 1,
+    "document.cookie": 0,
+    "localStorage": 0,
+    "importScripts": 0,
+    "location.href": 0,
+    "debugger": 0
+  }
+}

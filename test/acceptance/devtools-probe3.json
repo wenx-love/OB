@@ -1,0 +1,83 @@
+{
+  "note": "read-only probe: does the real DevTools frontend list the OB-Recover panel tab; no clicks",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "frontend": {
+    "hits": [],
+    "tabCount": 11,
+    "tabs": [
+      {
+        "id": "tab-elements",
+        "label": "Elements",
+        "w": 73,
+        "h": 28
+      },
+      {
+        "id": "tab-console",
+        "label": "Console",
+        "w": 67,
+        "h": 28
+      },
+      {
+        "id": "tab-sources",
+        "label": "Sources",
+        "w": 65,
+        "h": 28
+      },
+      {
+        "id": "tab-network",
+        "label": "Network",
+        "w": 70,
+        "h": 28
+      },
+      {
+        "id": "tab-timeline",
+        "label": "Performance",
+        "w": 93,
+        "h": 28
+      },
+      {
+        "id": "tab-styles",
+        "label": "Styles",
+        "w": 53,
+        "h": 28
+      },
+      {
+        "id": "tab-computed",
+        "label": "Computed",
+        "w": 81,
+        "h": 28
+      },
+      {
+        "id": "tab-elements.layout",
+        "label": "Layout",
+        "w": 59,
+        "h": 28
+      },
+      {
+        "id": "tab-elements.event-listeners",
+        "label": "Event Listeners",
+        "w": 106,
+        "h": 28
+      },
+      {
+        "id": "tab-elements.dom-breakpoints",
+        "label": "DOM breakpoints",
+        "w": 123,
+        "h": 28
+      },
+      {
+        "id": "tab-elements.dom-properties",
+        "label": "Properties",
+        "w": 79,
+        "h": 28
+      }
+    ]
+  },
+  "devtoolsIframeFound": true,
+  "devtoolsPageEnv": {
+    "href": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/devtools.html",
+    "devtools": "object",
+    "panels": "object",
+    "tabId": 53188148
+  }
+}

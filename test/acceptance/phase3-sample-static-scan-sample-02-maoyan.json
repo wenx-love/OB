@@ -1,0 +1,195 @@
+{
+  "sample": "sample-02-maoyan",
+  "bytes": 306065,
+  "analyzed": true,
+  "discoveryMs": 876,
+  "functions": 704,
+  "candidates": 21,
+  "high": 1,
+  "cands": [
+    {
+      "name": "_0x0a9e",
+      "kind": "FunctionExpression",
+      "conf": "high",
+      "params": 2,
+      "calls": 3073,
+      "arr": null,
+      "offset": true,
+      "b64": true,
+      "rc4": true
+    },
+    {
+      "name": "atob",
+      "kind": "AssignedExpression",
+      "conf": "medium",
+      "params": 1,
+      "calls": 1,
+      "arr": null,
+      "offset": false,
+      "b64": true,
+      "rc4": false
+    },
+    {
+      "name": "rc4",
+      "kind": "AssignedExpression",
+      "conf": "medium",
+      "params": 2,
+      "calls": 1,
+      "arr": null,
+      "offset": false,
+      "b64": true,
+      "rc4": true
+    },
+    {
+      "name": "x",
+      "kind": "AssignedExpression",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "arraySet",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 5,
+      "calls": 1,
+      "arr": "x",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "arraySet",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 5,
+      "calls": 1,
+      "arr": "x",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "P",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 1,
+      "calls": 0,
+      "arr": "k",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "X",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 3,
+      "calls": 5,
+      "arr": "a",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "Y",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 4,
+      "calls": 0,
+      "arr": "w",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "Z",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 3,
+      "calls": 1,
+      "arr": "e",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_tr_init",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 1,
+      "calls": 0,
+      "arr": "h",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_tr_tally",
+      "kind": "ObjectMethod",
+      "conf": "medium",
+      "params": 3,
+      "calls": 2,
+      "arr": "Q",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "Ux",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 1,
+      "arr": "_x",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "Bx",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 11,
+      "arr": null,
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "Rx",
+      "kind": "FunctionDeclaration",
+      "conf": "medium",
+      "params": 2,
+      "calls": 0,
+      "arr": "O",
+      "offset": false,
+      "b64": false,
+      "rc4": false
+    }
+  ],
+  "plans": [
+    {
+      "name": "_0x0a9e",
+      "supported": true,
+      "returns": 1
+    }
+  ],
+  "scan": {
+    "eval(": 0,
+    "Function(": 1,
+    "XMLHttpRequest": 0,
+    "fetch(": 0,
+    "WebSocket": 0,
+    "document.cookie": 0,
+    "localStorage": 0,
+    "importScripts": 0,
+    "location.href": 0,
+    "debugger": 0
+  }
+}

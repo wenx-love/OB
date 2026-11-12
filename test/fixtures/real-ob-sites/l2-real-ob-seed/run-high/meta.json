@@ -1,0 +1,15 @@
+{
+  "siteId": "l2-real-ob-seed",
+  "runId": "run-high",
+  "layer": "L2",
+  "kind": "local-generated",
+  "isRealSiteSample": false,
+  "url": null,
+  "sha256": "f0e5b6c7198cfb69f51ac427eba095219c5db86c74cb2970e8fba3be99fa6315",
+  "bytes": 5179,
+  "fetchedAt": null,
+  "fetchedAtNote": "not fetched: local-generated fixture, generatedAt 2026-11-09T11:23:34.953Z",
+  "capturedBy": "n/a-fixture-file",
+  "tooling": "javascript-obfuscator@5.9.0 (generator, outside the project)",
+  "captureThreshold": "high"
+}

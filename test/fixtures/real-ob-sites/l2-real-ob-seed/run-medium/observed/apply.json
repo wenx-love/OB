@@ -1,0 +1,144 @@
+{
+  "capturedBy": "ob-recover",
+  "method": "historical-real-chrome-capture-engine-records (test/acceptance/devtools-real-ob-e2e-medium.json steps.round1EngineRaw) re-validated offline: validateCaptures -> dryRunReplacements -> applyVerifiedReplacements",
+  "note": "not a new CDP pause capture and not constructed by this test; engine raw records filtered by scriptUrl suffix /obfuscated.js",
+  "captureSource": {
+    "file": "test/acceptance/devtools-real-ob-e2e-medium.json",
+    "fileSha256": "e9c14a42854eb3d282c4200753d536e6e72d43eb28c8e88cc0b3a59e671b0b8a",
+    "totalRecords": 99,
+    "recordsUsed": 86,
+    "foreignRecordsExcluded": 13
+  },
+  "scriptIds": [
+    "19"
+  ],
+  "validation": {
+    "groups": 50,
+    "byStatus": {
+      "pending": 0,
+      "verified": 40,
+      "unstable": 9,
+      "failed": 1,
+      "insufficient": 0
+    },
+    "suspectFunctions": 1
+  },
+  "dryRun": {
+    "candidates": 12,
+    "rejections": 38,
+    "byReason": {
+      "status-unstable": 9,
+      "function-suspect": 28,
+      "status-failed": 1
+    }
+  },
+  "applyStats": [
+    {
+      "scriptId": "19",
+      "stats": {
+        "total": 12,
+        "applied": 12,
+        "rejected": 0,
+        "byReason": {}
+      }
+    }
+  ],
+  "applied": [
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3565
+      },
+      "original": "_0x124122(0x4c1,0x4a2,0x4b0,0x4b1)",
+      "replaced": "\"windbreaker\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3633
+      },
+      "original": "_0x124122(0x4bc,0x4b6,0x4b4,0x4ad)",
+      "replaced": "\"down-jacket\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3757
+      },
+      "original": "_0x124122(0x4be,0x4c0,0x4a8,0x4b4)",
+      "replaced": "\"cny-199\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3801
+      },
+      "original": "_0x124122(0x4a4,0x498,0x4a4,0x49e)",
+      "replaced": "\"cny-89\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3994
+      },
+      "original": "_0x124122(0x4a9,0x4b3,0x4b4,0x4b0)",
+      "replaced": "\"ob-recover\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4138
+      },
+      "original": "_0x124122(0x4ae,0x4c3,0x4c1,0x4b6)",
+      "replaced": "\"push\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4360
+      },
+      "original": "_0x124122(0x4b5,0x4ac,0x4bb,0x4b6)",
+      "replaced": "\"push\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4412
+      },
+      "original": "_0x124122(0x4b0,0x4af,0x4b5,0x4b7)",
+      "replaced": "\"object\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4447
+      },
+      "original": "_0x124122(0x4a8,0x499,0x4a8,0x49b)",
+      "replaced": "\"browser\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4525
+      },
+      "original": "_0x124122(0x4a3,0x498,0x4b0,0x4a1)",
+      "replaced": "\"__obResult\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4574
+      },
+      "original": "_0x124122(0x4a4,0x496,0x48d,0x49d)",
+      "replaced": "\"title\""
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4610
+      },
+      "original": "_0x124122(0x4b3,0x4af,0x4b4,0x4ab)",
+      "replaced": "\"done\""
+    }
+  ]
+}

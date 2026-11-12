@@ -1,0 +1,23 @@
+{
+  "name": "sample-04-gk",
+  "source": "https://github.com/kuizuo/js-deobfuscator/tree/main/example/gk",
+  "description": "GK site obfuscation - largest sample (642KB) with heavy hex encoding",
+  "obfuscationType": "Heavy commercial obfuscation with hex encoding",
+  "features": [
+    "Very large codebase (642KB obfuscated)",
+    "Hex-encoded identifiers",
+    "Complex string array manipulation",
+    "Multiple decoder wrappers",
+    "Performance-critical test case"
+  ],
+  "inputSize": 657339,
+  "expectedSize": 187597,
+  "testGoal": "Stress test: verify performance on large files and hex encoding handling",
+  "hasExpectedOutput": true,
+  "performance": {
+    "targetParseTime": "<1000ms",
+    "targetRecoveryTime": "<10000ms",
+    "memoryLimit": "<500MB"
+  },
+  "notes": "Largest sample for stress testing. Critical for performance benchmarking and memory management verification."
+}

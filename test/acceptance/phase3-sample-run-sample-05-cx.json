@@ -1,0 +1,72 @@
+{
+  "sample": "sample-05-cx",
+  "note": "open-source sample (kuizuo/js-deobfuscator example), raw CDP + headless Chrome, isolated: CSP default-src none + Fetch blocks all non-file requests; NOT a third-party site script; NOT the chrome.debugger extension path",
+  "bytes": 42202,
+  "discoveryMs": 80,
+  "functions": 30,
+  "candidates": 5,
+  "highCandidates": [
+    {
+      "name": "_0x3028",
+      "kind": "FunctionExpression",
+      "params": 2,
+      "staticCalls": 154,
+      "arr": "_0x34ba",
+      "b64": true,
+      "rc4": false
+    }
+  ],
+  "startResult": {
+    "set": 3,
+    "skipped": [],
+    "errors": []
+  },
+  "pageResponsive": true,
+  "runMs": 12035,
+  "stats": {
+    "breakpointsSet": 3,
+    "hits": 0,
+    "pauses": 0,
+    "success": 0,
+    "failed": 0,
+    "forcedResumes": 0,
+    "foreignPauses": 0
+  },
+  "breakpointsBeforeStop": 3,
+  "breakpointsAfterStop": 0,
+  "foreignPauses": 0,
+  "foreignSamples": [],
+  "antiDebugAborted": false,
+  "blockedRequests": 0,
+  "blockedSamples": [],
+  "pageExceptions": 1,
+  "exceptionDetails": [
+    {
+      "text": "Uncaught RangeError: Invalid string length",
+      "desc": null,
+      "line": 19,
+      "col": 41,
+      "url": "file:///C:/Users/Administrator/TEMP/opencode/sample-run/sample-05-cx/input.js"
+    }
+  ],
+  "instrumentationPauses": 2,
+  "distinctCaptures": 0,
+  "successRatePerCall": null,
+  "failureReasons": [],
+  "byFunction": {},
+  "tuplesFirstDiffersFromLast": 0,
+  "maxSeq": 0,
+  "rotationEndEstimateSeq_heuristic": 0,
+  "newReturnValuesForKnownArgsAfterThreshold": 0,
+  "distinctArgTuples": 0,
+  "argsWithConflictingReturns": 0,
+  "conflictSamples": [],
+  "sample40": [],
+  "engineLogs": [
+    {
+      "kind": "log",
+      "level": "info",
+      "message": "runtime capture started: 3 breakpoints, 0 skipped, 0 errors"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "selfConnect": {
+    "viaPort": false,
+    "disconnected": true,
+    "err": "Could not establish connection. Receiving end does not exist."
+  }
+}

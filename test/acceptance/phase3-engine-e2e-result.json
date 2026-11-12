@@ -1,0 +1,162 @@
+{
+  "chrome": "Chrome/155.0.8059.40",
+  "note": "raw CDP + headless Chrome driving the real discoverDecoders/computeCapturePlan/CaptureEngine modules; NOT the chrome.debugger extension path",
+  "pageFinished": true,
+  "durationMs": 2979,
+  "groundTruth": "[\"Signature\",\"hello\",\"hello\",\"foo:yBNh\",\"bar|k|s\",10,null,null,\"caught:decoder failed: 1\",\"beta:nk+beta\",\"gamma#90\"]",
+  "stats": {
+    "breakpointsSet": 9,
+    "hits": 7,
+    "pauses": 21,
+    "success": 7,
+    "failed": 0,
+    "forcedResumes": 0,
+    "foreignPauses": 0
+  },
+  "breakpointsBeforeStop": 9,
+  "breakpointsAfterStop": 0,
+  "pausedAfterStop": false,
+  "cdpMethodsUsedByEngine": {
+    "Debugger.setBreakpoint": 9,
+    "Runtime.getProperties": 7,
+    "Debugger.resume": 14,
+    "Debugger.stepOver": 7,
+    "Debugger.removeBreakpoint": 9
+  },
+  "discovery": [
+    {
+      "name": "decOne",
+      "confidence": "high",
+      "calls": 4
+    },
+    {
+      "name": "decTwo",
+      "confidence": "high",
+      "calls": 2
+    },
+    {
+      "name": "decThree",
+      "confidence": "high",
+      "calls": 1
+    },
+    {
+      "name": "decUndef",
+      "confidence": "medium",
+      "calls": 1
+    },
+    {
+      "name": "decLoop",
+      "confidence": "medium",
+      "calls": 1
+    }
+  ],
+  "startResult": {
+    "set": 9,
+    "skipped": [],
+    "errors": []
+  },
+  "rows": [
+    {
+      "v": "OK",
+      "key": "decOne|[256]",
+      "status": "success",
+      "ret": {
+        "type": "string",
+        "value": "Signature"
+      },
+      "count": 1,
+      "call": {
+        "lineNumber": 54,
+        "columnNumber": 11
+      }
+    },
+    {
+      "v": "OK",
+      "key": "decOne|[257]",
+      "status": "success",
+      "ret": {
+        "type": "string",
+        "value": "hello"
+      },
+      "count": 2,
+      "call": {
+        "lineNumber": 55,
+        "columnNumber": 11
+      }
+    },
+    {
+      "v": "OK",
+      "key": "decTwo|[259,\"yBNh\"]",
+      "status": "success",
+      "ret": {
+        "type": "string",
+        "value": "foo:yBNh"
+      },
+      "count": 1,
+      "call": {
+        "lineNumber": 57,
+        "columnNumber": 11
+      }
+    },
+    {
+      "v": "OK",
+      "key": "decThree|[260,\"k\",\"s\"]",
+      "status": "success",
+      "ret": {
+        "type": "string",
+        "value": "bar|k|s"
+      },
+      "count": 1,
+      "call": {
+        "lineNumber": 58,
+        "columnNumber": 11
+      }
+    },
+    {
+      "v": "OK",
+      "key": "decOne|[264]",
+      "status": "success",
+      "ret": {
+        "type": "string",
+        "value": "beta"
+      },
+      "count": 1,
+      "call": {
+        "lineNumber": 39,
+        "columnNumber": 14
+      }
+    },
+    {
+      "v": "OK",
+      "key": "decTwo|[264,\"nk\"]",
+      "status": "success",
+      "ret": {
+        "type": "string",
+        "value": "beta:nk"
+      },
+      "count": 1,
+      "call": {
+        "lineNumber": 40,
+        "columnNumber": 9
+      }
+    }
+  ],
+  "notCapturedAtAll": [
+    "decNum|[261]",
+    "decUndef|[262]",
+    "decNull|[263]",
+    "decNested|[264,\"nk\"]",
+    "decLoop|[265,\"abc\"]",
+    "decThrow|[1]"
+  ],
+  "tally": {
+    "OK": 6
+  },
+  "engineEvents": [
+    {
+      "kind": "log",
+      "level": "info",
+      "message": "runtime capture started: 9 breakpoints, 0 skipped, 0 errors"
+    }
+  ]
+}

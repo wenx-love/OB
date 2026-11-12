@@ -1,0 +1,147 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ✓ test/verified-replacer.test.ts (53 tests) 50ms
+ ✓ test/capture-validation.test.ts (26 tests) 75ms
+ ✓ test/statement-position-directive.test.ts (5 tests) 45ms
+ ✓ test/replacement-truncation.test.ts (4 tests) 40ms
+ ❯ test/atomic-rollback-real.test.ts (6 tests | 4 failed) 67ms
+   × 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 前提：真实流程产生 3 个候选，值各不相同，调用位置列表没有截断 32ms
+     → expected [ { …(18) }, { …(18) } ] to have a length of 3 but got 2
+   ✓ 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 触发条件是真实的 Babel 语法错误：带默认参数的函数开头出现 use strict 指令；简单参数和对照源码都能解析 3ms
+   × 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 其中一个候选让整体校验失败：整体回滚，源码一字不动，没有部分替换，统计与结果一致，候选没有被修改 11ms
+     → expected 'var _arr = [\'use strict\', \'beta\',…' to be 'var _arr = [\'use strict\', \'beta\',…' // Object.is equality
+   ✓ 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 对照：去掉会触发语法错误的那个候选，另外两个正常应用，结果等于预期源码 6ms
+   × 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 回滚之后同一个脚本对象仍然可以正常应用，没有留下被污染的状态 6ms
+     → expected 'var _arr = [\'use strict\', \'beta\',…' to be 'var _arr = [\'use strict\', \'beta\',…' // Object.is equality
+   × 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 先有候选被提前拒绝（哈希不匹配），剩下的候选再整体回滚：两类拒绝都被统计，总数不丢 7ms
+     → expected 'var _arr = [\'use strict\', \'beta\',…' to be 'var _arr = [\'use strict\', \'beta\',…' // Object.is equality
+ ✓ test/replacement-dryrun.test.ts (24 tests) 117ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/atomic-rollback-real.test.ts > 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 前提：真实流程产生 3 个候选，值各不相同，调用位置列表没有截断
+AssertionError: expected [ { …(18) }, { …(18) } ] to have a length of 3 but got 2
+
+- Expected
++ Received
+
+- 3
++ 2
+
+ ❯ test/atomic-rollback-real.test.ts:61:28
+     59|     const { script, dry } = await prepare();
+     60|     expect(script.source).toBe(SRC);
+     61|     expect(dry.candidates).toHaveLength(3);
+       |                            ^
+     62|     expect(dry.candidates.map((c) => c.value).sort()).toEqual(['beta',…
+     63|     expect(dry.candidates.every((c) => c.callLocationsTruncated === fa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  test/atomic-rollback-real.test.ts > 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 其中一个候选让整体校验失败：整体回滚，源码一字不动，没有部分替换，统计与结果一致，候选没有被修改
+AssertionError: expected 'var _arr = [\'use strict\', \'beta\',…' to be 'var _arr = [\'use strict\', \'beta\',…' // Object.is equality
+
+- Expected
++ Received
+
+@@ -2,14 +2,14 @@
+  function dec(i) {
+    return _arr[i];
+  }
+  function f(a = 1) {
+    dec(0);
+-   return dec(1);
++   return "beta";
+  }
+  function g() {
+-   return dec(2);
++   return "gamma";
+  }
+  function run() {
+    f();
+    f();
+    g();
+
+ ❯ test/atomic-rollback-real.test.ts:77:25
+     75|     const before = JSON.stringify(dry);
+     76|     const result = await applyVerifiedReplacements(dry, script);
+     77|     expect(result.code).toBe(SRC);
+       |                         ^
+     78|     expect(script.source).toBe(SRC);
+     79|     expect(result.code.includes(BETA)).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  test/atomic-rollback-real.test.ts > 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 回滚之后同一个脚本对象仍然可以正常应用，没有留下被污染的状态
+AssertionError: expected 'var _arr = [\'use strict\', \'beta\',…' to be 'var _arr = [\'use strict\', \'beta\',…' // Object.is equality
+
+- Expected
++ Received
+
+@@ -2,14 +2,14 @@
+  function dec(i) {
+    return _arr[i];
+  }
+  function f(a = 1) {
+    dec(0);
+-   return dec(1);
++   return "beta";
+  }
+  function g() {
+-   return dec(2);
++   return "gamma";
+  }
+  function run() {
+    f();
+    f();
+    g();
+
+ ❯ test/atomic-rollback-real.test.ts:104:29
+    102|     const { script, dry } = await prepare();
+    103|     const rolledBack = await applyVerifiedReplacements(dry, script);
+    104|     expect(rolledBack.code).toBe(SRC);
+       |                             ^
+    105|     const filtered: DryRunResult = { ...dry, candidates: dry.candidate…
+    106|     const ok = await applyVerifiedReplacements(filtered, script);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  test/atomic-rollback-real.test.ts > 真实原子回滚：替换后的整体解析真实失败（不使用 mock） > 先有候选被提前拒绝（哈希不匹配），剩下的候选再整体回滚：两类拒绝都被统计，总数不丢
+AssertionError: expected 'var _arr = [\'use strict\', \'beta\',…' to be 'var _arr = [\'use strict\', \'beta\',…' // Object.is equality
+
+- Expected
++ Received
+
+@@ -5,11 +5,11 @@
+  function f(a = 1) {
+    dec(0);
+    return dec(1);
+  }
+  function g() {
+-   return dec(2);
++   return "gamma";
+  }
+  function run() {
+    f();
+    f();
+    g();
+
+ ❯ test/atomic-rollback-real.test.ts:117:25
+    115|     const stale: DryRunResult = { ...dry, candidates: dry.candidates.m…
+    116|     const result = await applyVerifiedReplacements(stale, script);
+    117|     expect(result.code).toBe(SRC);
+       |                         ^
+    118|     expect(result.applied).toEqual([]);
+    119|     expect(result.rejected).toHaveLength(3);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed | 5 passed (6)
+      Tests  4 failed | 114 passed (118)
+   Start at  09:59:14
+   Duration  1.35s (transform 512ms, setup 0ms, collect 3.10s, tests 393ms, environment 2ms, prepare 1.65s)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

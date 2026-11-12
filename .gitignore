@@ -1,0 +1,14 @@
+# 依赖
+node_modules/
+
+# 测试与运行产物
+test-output/
+test-out.txt
+test-output.txt
+/*.log
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

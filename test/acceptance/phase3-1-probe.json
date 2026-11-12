@@ -1,0 +1,32 @@
+{
+  "chrome": "Chrome/155.0.8059.40",
+  "targets": [
+    {
+      "type": "background_page",
+      "url": "chrome-extension://nkeimhogjdpnpccoofpliimaahmaaome/background.html",
+      "ws": true
+    },
+    {
+      "type": "page",
+      "url": "about:blank",
+      "ws": true
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/",
+      "ws": true
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html",
+      "ws": true
+    },
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js",
+      "ws": true
+    }
+  ],
+  "serviceWorkerFound": false,
+  "extensionId": null
+}

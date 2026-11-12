@@ -1,0 +1,128 @@
+{
+  "schema": "ob-recover.real-site-compare/1",
+  "runId": "run-001",
+  "sample": {
+    "id": "s1-same-text-different-position",
+    "layer": "L3",
+    "kind": "controlled-replay",
+    "isRealSiteSample": false,
+    "title": "同文本不同位置：只替换已观测位置；未观测位置和被遮蔽的同名函数必须保持原样"
+  },
+  "provenance": {
+    "reference": {
+      "capturedBy": "test-oracle",
+      "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+      "note": "independent of OB-Recover output"
+    },
+    "observed": {
+      "capturedBy": "ob-recover",
+      "method": "real CaptureEngine + real node:vm execution + stub CDP transport (synthetic Debugger.paused events, test/helpers/capture-driver.ts)",
+      "note": "not real Chrome and not a CDP pause capture"
+    }
+  },
+  "identity": {
+    "referenceSha256": "8ea6de7faf97488df88845236fbbd0dd191b264d9d0090a85f82277acd661557",
+    "observedSha256": "8ea6de7faf97488df88845236fbbd0dd191b264d9d0090a85f82277acd661557",
+    "afterApplySha256": "8ea6de7faf97488df88845236fbbd0dd191b264d9d0090a85f82277acd661557",
+    "basis": "the same source string is archived as script.js, executed by drive() and passed to the pipeline",
+    "referenceEqualsObserved": true,
+    "unchangedAfterApply": true
+  },
+  "counts": {
+    "correct-replacement": 2,
+    "safe-rejection": 1,
+    "insufficient-evidence": 1,
+    "version-mismatch": 0,
+    "false-replacement": 0
+  },
+  "detail": {
+    "tp": 2,
+    "frWrongValue": 0,
+    "frOnIndeterminate": 0,
+    "frNotInReference": 0,
+    "frSourceMutation": 0,
+    "un": 1,
+    "sr": 1
+  },
+  "metrics": {
+    "precision": 1,
+    "recall": 0.666667,
+    "falseReplacement": 0,
+    "unresolved": {
+      "count": 1,
+      "ratio": 0.333333
+    },
+    "versionMismatch": {
+      "runs": 0,
+      "totalRuns": 1,
+      "ratio": 0
+    },
+    "safeRejectionRate": 1,
+    "sourceIntegrity": true,
+    "businessParity": "pass",
+    "rPos": 3,
+    "rNeg": 1
+  },
+  "hardConditions": {
+    "falseReplacementIsZero": true,
+    "sourceIntegrity": true,
+    "safeRejectionRateIs100": true,
+    "precisionIs100": true
+  },
+  "verdict": "pass",
+  "exhaustive": true,
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 5,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "referenceDeterminate": true,
+      "referenceValue": "beta",
+      "referenceReason": "observed by run()",
+      "rejectionCodes": [],
+      "category": "correct-replacement",
+      "observedText": "\"beta\"",
+      "observedValue": "beta"
+    },
+    {
+      "position": {
+        "lineNumber": 6,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "referenceDeterminate": true,
+      "referenceValue": "beta",
+      "referenceReason": "observed by run()",
+      "rejectionCodes": [],
+      "category": "correct-replacement",
+      "observedText": "\"beta\"",
+      "observedValue": "beta"
+    },
+    {
+      "position": {
+        "lineNumber": 9,
+        "columnNumber": 9
+      },
+      "callText": "dec(1)",
+      "referenceDeterminate": true,
+      "referenceValue": "beta",
+      "referenceReason": "same global decoder but never executed by the entry function: determinate by oracle, unobserved",
+      "rejectionCodes": [],
+      "category": "insufficient-evidence",
+      "note": "no capture or rejection record covers this position"
+    },
+    {
+      "position": {
+        "lineNumber": 15,
+        "columnNumber": 9
+      },
+      "callText": "dec(1)",
+      "referenceDeterminate": false,
+      "referenceReason": "different binding: the inner dec returns X1, a literal beta would be wrong",
+      "rejectionCodes": [],
+      "category": "safe-rejection"
+    }
+  ]
+}

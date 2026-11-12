@@ -1,0 +1,77 @@
+{
+  "schema": "ob-recover.l1-outcome/1",
+  "layer": "L1",
+  "sample": "l1-qccqcc-hangzhou",
+  "runId": "20261110T1458Z",
+  "status": "blocked",
+  "statusReason": "OB-Recover captured 1056 successful decoder returns but validation produced 0 replaceable candidates, so nothing was replaced and source identity could not be established",
+  "hardConditions": {
+    "falseReplacement": { "value": 0, "meaningful": false, "note": "no replacement happened at all, so a zero here is vacuous and is NOT evidence of correctness" },
+    "sourceIntegrity": { "value": "not-measured", "note": "the CDP source read was issued against scriptId 200 from the first navigation epoch after a retry reload; it returned an empty string, which is consistent with a stale id and is NOT evidence about how the extension reads a live script" },
+    "safeRejectionRate": { "value": "n/a", "note": "the reference marks all 823 positions determinate, so the negative denominator is 0" },
+    "precision": { "value": "n/a", "note": "no replacement happened, denominator 0" }
+  },
+  "metrics": {
+    "referencePositions": 823,
+    "determinatePositions": 823,
+    "indeterminatePositions": 0,
+    "correctReplacement": 0,
+    "falseReplacement": 0,
+    "insufficientEvidence": 823,
+    "safeRejection": 0,
+    "versionMismatch": 0,
+    "recall": 0,
+    "precision": "n/a",
+    "safeRejectionRate": "n/a",
+    "unresolved": { "count": 823, "ratio": 1 }
+  },
+  "verdict": "not-pass, blocked before any replacement could be evaluated",
+  "environment": {
+    "chrome": "155.0.8059.40",
+    "mode": "headful dedicated profile",
+    "whyHeadful": "a plain headless Chrome 155 receives HTTP 403 from this site (recon/headless-probe.json), so the headless entry point cannot load the page at all",
+    "extension": "real dist, loaded with Extensions.loadUnpacked"
+  },
+  "engineObservation": {
+    "breakpointsSet": 423,
+    "hits": 1339,
+    "pauses": 8003,
+    "success": 1333,
+    "failed": 6,
+    "forcedResumes": 0,
+    "foreignPauses": 2,
+    "captureRecords": 1059,
+    "byFunction": { "_0x374d": 1056, "Callbacks": 3 },
+    "byStatus": { "success": 1056, "capture-failed": 3 },
+    "note": "capture itself worked at scale on this site"
+  },
+  "dryRun": { "candidates": 0, "rejected": 30, "codes": { "status-failed": 17, "status-unstable": 13 } },
+  "apply": { "applied": 0, "candidates": 0, "panelText": "no replaceable candidate" },
+  "diagnosis": {
+    "immediate": "validation rejected every decoder group, so dry-run had nothing to offer and apply had nothing to do",
+    "rejectionMix": "13 groups unstable (same arguments returned different values) and 17 groups failed",
+    "notedEngineMessage": "entry breakpoint did not land inside the function body (top frame is not the target function)",
+    "hypothesisNotClaimed": "if the entry breakpoint lands outside the target function, the recorded return value can come from the wrong frame, which would make one argument set look unstable. This is a hypothesis only; no root cause was established and no product change was made.",
+    "notRootCaused": true
+  },
+  "harnessNotes": [
+    "attempt 1 took the engine snapshot too early (the page was briefly unresponsive while paused) and saw 0 hits; it is archived as raw-run.attempt1-early-snapshot.json",
+    "attempt 2 reloaded while the page was paused and landed on chrome-error; archived as raw-run.attempt2-reload-error.json",
+    "attempt 3 created the tab at about:blank, so discovery had no scripts and capture-start was refused; archived as raw-run.attempt3-blank-tab-no-candidates.json",
+    "attempt 4 (this record) loaded the target first, connected, started capture, reloaded with a bounded retry, and produced the numbers above",
+    "the empty source read came from a stale scriptId after that retry; a clean single navigation run is required to measure source integrity"
+  ],
+  "pageLiveness": {
+    "observed": "in attempt 1 the inspected page stopped answering while capture was active",
+    "interpretation": "observation only, cause not determined; it is the same symptom class as the Phase 3 hang, which remains not reproduced / root cause unknown and is NOT claimed as fixed",
+    "inThisAttempt": "the page answered at the end and stopCapture returned"
+  },
+  "notStored": "cookies, GuestId, request ciphertext, response Result",
+  "evidence": {
+    "rawRun": "observed/raw-run.json",
+    "archivedAttempts": ["observed/raw-run.attempt1-early-snapshot.json", "observed/raw-run.attempt2-reload-error.json", "observed/raw-run.attempt3-blank-tab-no-candidates.json"],
+    "reference": "reference/call-sites.json",
+    "archive": "script.js",
+    "headless403": "js_reverse_cache/recon/headless-probe.json"
+  }
+}

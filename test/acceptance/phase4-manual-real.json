@@ -1,0 +1,1297 @@
+{
+  "note": "headed Chrome + dedicated profile + real extension + real chrome.debugger + real V8 pause. Breakpoint set via the real DevTools frontend breakpoint manager; panel and DevTools controls driven programmatically (NOT a human mouse). No Debugger.paused is synthesized. Backend commands go through background handlePanelCommand.",
+  "page": "http://127.0.0.1:8791/phase4-manual-real.html",
+  "bpLine": 14,
+  "expected": {
+    "decode": [
+      "sign",
+      "token",
+      "foo",
+      "bar",
+      "cookie"
+    ],
+    "result": "sign:p1:salt-21:42|token#mid-p1"
+  },
+  "dist": {
+    "background": "8db17026db8f0493ac1bb7711bed47049874be29431f8e27d0b4ba3254c4a45e",
+    "panel": "9cbc65a3bf78195d36bea0ea029df92c74c77ecd2a78ce4a8cc12fb68282fb73",
+    "sandbox": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4",
+    "manifest": "b3c737b4e6ea12a55d37ac75726fba8b2aad8778e26d092b0324997b18efcd55"
+  },
+  "phases": {
+    "observer": {
+      "installed": true,
+      "patched": true,
+      "hook": "object"
+    },
+    "setBreakpoint": {
+      "uiSourceCode": "http://127.0.0.1:8791/phase4-manual-real.js",
+      "path": "BreakpointManager.setBreakpoint",
+      "returned": "object"
+    },
+    "control": {
+      "pause": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 14,
+          "col": 19
+        }
+      },
+      "after": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 14,
+          "col": 19
+        }
+      }
+    },
+    "connectedPause": {
+      "fePause": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 14,
+          "col": 19
+        }
+      },
+      "first": {
+        "t": 1794277135841,
+        "m": "Debugger.paused",
+        "tabId": 354344635,
+        "reason": "other",
+        "hit": [],
+        "frames": [
+          {
+            "callFrameId": "-3540802135898348750.4.0",
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19,
+            "scriptId": "22",
+            "url": "",
+            "scopes": [
+              "local",
+              "closure",
+              "global"
+            ]
+          },
+          {
+            "callFrameId": "-3540802135898348750.4.1",
+            "fn": "midLevel",
+            "line": 20,
+            "col": 9,
+            "scriptId": "22",
+            "url": "",
+            "scopes": [
+              "local",
+              "global"
+            ]
+          },
+          {
+            "callFrameId": "-3540802135898348750.4.2",
+            "fn": "topLevel",
+            "line": 24,
+            "col": 12,
+            "scriptId": "22",
+            "url": "",
+            "scopes": [
+              "local",
+              "global"
+            ]
+          }
+        ]
+      },
+      "stalled": {
+        "timeout": true
+      },
+      "selected": [
+        "sources",
+        "sources",
+        "sources",
+        "sources",
+        "sources",
+        "sources"
+      ],
+      "panel": {
+        "pause": "已暂停 (other)",
+        "log": "码器10:18:55发现脚本 [7]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55发现脚本 [8]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55发现脚本 [16]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55发现脚本 [17]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55执行上下文已创建: http://127.0.0.1:879110:18:55发现脚本 [18]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55执行上下文已创建: http://127.0.0.1:879110:18:55状态: connected10:18:55已连接10:18:55运行时捕获已重置: page navigated or reloaded10:18:55运行时捕获已重置: page navigated or reloaded10:18:55执行上下文已创建: http://127.0.0.1:879110:18:55执行上下文已创建: http://127.0.0.1:879110:18:55脚本已解析: [21] (inline)10:18:55脚本已解析: [22] phase4-manual-real.js10:18:55脚本已解析: [23] (inline)10:18:55发现脚本 [21]: (inline)10:18:55分析完成: 17 个候选解码器10:18:55发现脚本 [22]: http://127.0.0.1:8791/phase4-manual-real.js10:18:55分析完成: 1 个候选解码器10:18:55发现脚本 [23]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [24] (inline)10:18:55发现脚本 [24]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [25] (inline)10:18:55发现脚本 [25]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [33] (inline)10:18:55脚本已解析: [34] (inline)10:18:55发现脚本 [33]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55发现脚本 [34]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [35] (inline)10:18:55发现脚本 [35]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [38] (inline)10:18:55发现脚本 [38]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55已暂停 (other)10:18:55⏸ 已暂停 (other)10:18:55  ▶ innerSign @ script:22 L15:C1910:18:55    midLevel @ script:22 L21:C910:18:55    topLevel @ script:22 L25:C1210:18:56脚本已解析: [41] (inline)10:18:56发现脚本 [41]: (inline)10:18:56分析完成: 0 个候选解码器"
+      }
+    },
+    "records1": [
+      {
+        "timestamp": 1794277135841,
+        "scriptId": "22",
+        "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+        "location": {
+          "lineNumber": 14,
+          "columnNumber": 19
+        },
+        "functionName": "innerSign",
+        "expression": "",
+        "stackDepth": 3
+      }
+    ],
+    "frames": {
+      "response": {
+        "type": "manual-capture-frames-response",
+        "ok": true,
+        "data": {
+          "success": true,
+          "frames": [
+            {
+              "index": 0,
+              "callFrameId": "-3540802135898348750.4.0",
+              "functionName": "innerSign",
+              "scriptId": "22",
+              "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+              "location": {
+                "lineNumber": 14,
+                "columnNumber": 19
+              },
+              "scopeTypes": [
+                "local",
+                "closure",
+                "global"
+              ]
+            },
+            {
+              "index": 1,
+              "callFrameId": "-3540802135898348750.4.1",
+              "functionName": "midLevel",
+              "scriptId": "22",
+              "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+              "location": {
+                "lineNumber": 20,
+                "columnNumber": 9
+              },
+              "scopeTypes": [
+                "local",
+                "global"
+              ]
+            },
+            {
+              "index": 2,
+              "callFrameId": "-3540802135898348750.4.2",
+              "functionName": "topLevel",
+              "scriptId": "22",
+              "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+              "location": {
+                "lineNumber": 24,
+                "columnNumber": 12
+              },
+              "scopeTypes": [
+                "local",
+                "global"
+              ]
+            }
+          ]
+        }
+      },
+      "raw": [
+        {
+          "type": "manual-capture-frames-response",
+          "ok": true,
+          "data": {
+            "success": true,
+            "frames": [
+              {
+                "index": 0,
+                "callFrameId": "-3540802135898348750.4.0",
+                "functionName": "innerSign",
+                "scriptId": "22",
+                "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+                "location": {
+                  "lineNumber": 14,
+                  "columnNumber": 19
+                },
+                "scopeTypes": [
+                  "local",
+                  "closure",
+                  "global"
+                ]
+              },
+              {
+                "index": 1,
+                "callFrameId": "-3540802135898348750.4.1",
+                "functionName": "midLevel",
+                "scriptId": "22",
+                "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+                "location": {
+                  "lineNumber": 20,
+                  "columnNumber": 9
+                },
+                "scopeTypes": [
+                  "local",
+                  "global"
+                ]
+              },
+              {
+                "index": 2,
+                "callFrameId": "-3540802135898348750.4.2",
+                "functionName": "topLevel",
+                "scriptId": "22",
+                "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+                "location": {
+                  "lineNumber": 24,
+                  "columnNumber": 12
+                },
+                "scopeTypes": [
+                  "local",
+                  "global"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "scopes": {
+      "frame0": {
+        "success": true,
+        "frameIndex": 0,
+        "functionName": "innerSign",
+        "scopes": [
+          {
+            "type": "local",
+            "variables": {
+              "payload": {
+                "type": "string",
+                "value": "p1"
+              },
+              "localLabel": {
+                "type": "string",
+                "value": "sign"
+              },
+              "localToken": {
+                "type": "string",
+                "value": "token"
+              },
+              "combined": {
+                "type": "undefined"
+              }
+            },
+            "name": "innerSign"
+          },
+          {
+            "type": "closure",
+            "variables": {
+              "closureSalt": {
+                "type": "string",
+                "value": "salt-21"
+              },
+              "closureCount": {
+                "type": "number",
+                "value": 42
+              }
+            },
+            "name": "makeSigner"
+          },
+          {
+            "type": "global",
+            "variables": {},
+            "skipped": "global 作用域不展开"
+          }
+        ]
+      },
+      "frame1": {
+        "success": true,
+        "frameIndex": 1,
+        "functionName": "midLevel",
+        "scopes": [
+          {
+            "type": "local",
+            "variables": {
+              "signer": {
+                "type": "function",
+                "description": "function innerSign(payload) {\n    var localLabel = _0xdec(0x0);\n    var localToken = _0xdec(0x1);\n    var combined = localLabel + ':' + payload + ':' + closureSalt + ':' + closureCount;\n    return com"
+              },
+              "payload": {
+                "type": "string",
+                "value": "p1"
+              },
+              "midMarker": {
+                "type": "string",
+                "value": "mid-p1"
+              }
+            },
+            "name": "midLevel"
+          },
+          {
+            "type": "global",
+            "variables": {},
+            "skipped": "global 作用域不展开"
+          }
+        ]
+      }
+    },
+    "evals": [
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x0)",
+        "expected": "sign",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x1)",
+        "expected": "token",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x2)",
+        "expected": "foo",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x3)",
+        "expected": "bar",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "_0xdec(0x4)",
+        "expected": "cookie",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "localLabel + ':' + closureSalt + ':' + closureCount",
+        "expected": "sign:salt-21:42",
+        "ok": true,
+        "value": "sign:salt-21:42",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 1,
+        "expression": "midMarker + ':' + payload",
+        "expected": "mid-p1:p1",
+        "ok": true,
+        "value": "mid-p1:p1",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 1,
+        "expression": "typeof localLabel",
+        "expected": "undefined",
+        "ok": true,
+        "value": "undefined",
+        "error": null
+      },
+      {
+        "how": "callFrameId",
+        "fi": 0,
+        "expression": "typeof midMarker",
+        "expected": "undefined",
+        "ok": true,
+        "value": "undefined",
+        "error": null
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x0)",
+        "expected": "sign",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x1)",
+        "expected": "token",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x2)",
+        "expected": "foo",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x3)",
+        "expected": "bar",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "_0xdec(0x4)",
+        "expected": "cookie",
+        "ok": false,
+        "value": null,
+        "error": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "localLabel + ':' + closureSalt + ':' + closureCount",
+        "expected": "sign:salt-21:42",
+        "ok": true,
+        "value": "sign:salt-21:42",
+        "error": null
+      },
+      {
+        "how": "frameIndex",
+        "fi": 1,
+        "expression": "midMarker + ':' + payload",
+        "expected": "mid-p1:p1",
+        "ok": true,
+        "value": "mid-p1:p1",
+        "error": null
+      },
+      {
+        "how": "frameIndex",
+        "fi": 1,
+        "expression": "typeof localLabel",
+        "expected": "undefined",
+        "ok": true,
+        "value": "undefined",
+        "error": null
+      },
+      {
+        "how": "frameIndex",
+        "fi": 0,
+        "expression": "typeof midMarker",
+        "expected": "undefined",
+        "ok": true,
+        "value": "undefined",
+        "error": null
+      }
+    ],
+    "step": {
+      "stepped": {
+        "selected": "sources",
+        "paused": true,
+        "frames": 3,
+        "top": {
+          "fn": "innerSign",
+          "line": 15,
+          "col": 4
+        }
+      },
+      "newEvents": [
+        {
+          "m": "Debugger.resumed"
+        },
+        {
+          "m": "Debugger.paused",
+          "reason": "step",
+          "top": {
+            "callFrameId": "-3540802135898348750.4.0",
+            "fn": "innerSign",
+            "line": 15,
+            "col": 4,
+            "scriptId": "22",
+            "url": "",
+            "scopes": [
+              "local",
+              "closure",
+              "global"
+            ]
+          }
+        }
+      ]
+    },
+    "truth": {
+      "decode": [
+        "sign",
+        "token",
+        "foo",
+        "bar",
+        "cookie"
+      ],
+      "result": "sign:p1:salt-21:42|token#mid-p1",
+      "sum": 2
+    },
+    "commands": {
+      "counts": {
+        "Debugger.enable": 1,
+        "Debugger.getScriptSource": 42,
+        "Runtime.enable": 1,
+        "Runtime.getProperties": 3,
+        "Debugger.evaluateOnCallFrame": 18
+      },
+      "mutating": [],
+      "windows": [
+        [
+          1794277135841,
+          1794277149703
+        ],
+        [
+          1794277149703,
+          1794277149741
+        ],
+        [
+          1794277149771,
+          1794277150593
+        ]
+      ],
+      "userPauseCount": 3,
+      "instrumentationPauses": 0
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "tabId": 354344635,
+  "items": [
+    {
+      "n": 1,
+      "title": "load current dist extension in real Chrome",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "extension loaded via Extensions.loadUnpacked",
+          "ok": true,
+          "expected": "32-char extension id",
+          "actual": "ijdobedejfjfindckpgabkamoeenejob"
+        },
+        {
+          "name": "background service worker target present",
+          "ok": true,
+          "expected": "present",
+          "actual": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js"
+        },
+        {
+          "name": "OB-Recover panel registered in real DevTools",
+          "ok": true,
+          "expected": "tab id containing OB-Recover",
+          "actual": [
+            "elements",
+            "console",
+            "sources",
+            "network",
+            "timeline",
+            "heap-profiler",
+            "resources",
+            "security",
+            "lighthouse",
+            "chrome-recorder",
+            "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover"
+          ]
+        },
+        {
+          "name": "panel connect button attaches chrome.debugger (status connected)",
+          "ok": true,
+          "expected": "connected",
+          "actual": {
+            "panelText": "已连接"
+          }
+        }
+      ],
+      "notes": [
+        "dist manifest OB-Recover 0.2.0; file hashes in out.dist"
+      ],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 2,
+      "title": "open dedicated test page",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "dedicated test page loaded from local server",
+          "ok": true,
+          "expected": "http://127.0.0.1:8791/phase4-manual-real.html",
+          "actual": {
+            "title": "phase4-manual-real",
+            "run": "function",
+            "btn": true,
+            "url": "http://127.0.0.1:8791/phase4-manual-real.html",
+            "state": "complete"
+          }
+        },
+        {
+          "name": "page exposes run button and runManualTest",
+          "ok": true,
+          "expected": "button + function",
+          "actual": {
+            "title": "phase4-manual-real",
+            "run": "function",
+            "btn": true,
+            "url": "http://127.0.0.1:8791/phase4-manual-real.html",
+            "state": "complete"
+          }
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 3,
+      "title": "set breakpoint in DevTools Sources",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "breakpoint set through DevTools frontend breakpoint manager",
+          "ok": true,
+          "expected": "no error",
+          "actual": {
+            "uiSourceCode": "http://127.0.0.1:8791/phase4-manual-real.js",
+            "path": "BreakpointManager.setBreakpoint",
+            "returned": "object"
+          }
+        },
+        {
+          "name": "breakpoint really hits in DevTools (control run, extension not attached)",
+          "ok": true,
+          "expected": "paused at line 14",
+          "actual": {
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19
+          }
+        }
+      ],
+      "notes": [
+        "method is DevTools frontend API, not a human mouse click on the gutter"
+      ],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 4,
+      "title": "backend receives real Debugger.paused",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "DevTools shows the pause at the user breakpoint while extension is attached",
+          "ok": true,
+          "expected": "paused at line 14",
+          "actual": {
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19
+          }
+        },
+        {
+          "name": "backend (extension session) received a real Debugger.paused for innerSign",
+          "ok": true,
+          "expected": "Debugger.paused, top frame innerSign",
+          "actual": {
+            "reason": "other",
+            "hit": [],
+            "depth": 3,
+            "top": {
+              "callFrameId": "-3540802135898348750.4.0",
+              "fn": "innerSign",
+              "line": 14,
+              "col": 19,
+              "scriptId": "22",
+              "url": "",
+              "scopes": [
+                "local",
+                "closure",
+                "global"
+              ]
+            }
+          }
+        },
+        {
+          "name": "top frame is innerSign at the breakpoint line",
+          "ok": true,
+          "expected": "innerSign @ 14",
+          "actual": {
+            "callFrameId": "-3540802135898348750.4.0",
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19,
+            "scriptId": "22",
+            "url": "",
+            "scopes": [
+              "local",
+              "closure",
+              "global"
+            ]
+          }
+        },
+        {
+          "name": "page really stopped (Runtime.evaluate stalls while paused)",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "timeout": true
+          }
+        },
+        {
+          "name": "panel shows paused state and innerSign from the real event",
+          "ok": true,
+          "expected": "paused badge + innerSign in log",
+          "actual": {
+            "pause": "已暂停 (other)",
+            "log": "码器10:18:55发现脚本 [7]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55发现脚本 [8]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55发现脚本 [16]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55发现脚本 [17]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55执行上下文已创建: http://127.0.0.1:879110:18:55发现脚本 [18]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55执行上下文已创建: http://127.0.0.1:879110:18:55状态: connected10:18:55已连接10:18:55运行时捕获已重置: page navigated or reloaded10:18:55运行时捕获已重置: page navigated or reloaded10:18:55执行上下文已创建: http://127.0.0.1:879110:18:55执行上下文已创建: http://127.0.0.1:879110:18:55脚本已解析: [21] (inline)10:18:55脚本已解析: [22] phase4-manual-real.js10:18:55脚本已解析: [23] (inline)10:18:55发现脚本 [21]: (inline)10:18:55分析完成: 17 个候选解码器10:18:55发现脚本 [22]: http://127.0.0.1:8791/phase4-manual-real.js10:18:55分析完成: 1 个候选解码器10:18:55发现脚本 [23]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [24] (inline)10:18:55发现脚本 [24]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [25] (inline)10:18:55发现脚本 [25]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [33] (inline)10:18:55脚本已解析: [34] (inline)10:18:55发现脚本 [33]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55发现脚本 [34]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [35] (inline)10:18:55发现脚本 [35]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55脚本已解析: [38] (inline)10:18:55发现脚本 [38]: (inline)10:18:55分析完成: 0 个候选解码器10:18:55已暂停 (other)10:18:55⏸ 已暂停 (other)10:18:55  ▶ innerSign @ script:22 L15:C1910:18:55    midLevel @ script:22 L21:C910:18:55    topLevel @ script:22 L25:C1210:18:56脚本已解析: [41] (inline)10:18:56发现脚本 [41]: (inline)10:18:56分析完成: 0 个候选解码器"
+          }
+        },
+        {
+          "name": "ManualCapture recorded the pause (top frame, line, scriptId)",
+          "ok": true,
+          "expected": "record for innerSign @ 14",
+          "actual": {
+            "timestamp": 1794277135841,
+            "scriptId": "22",
+            "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+            "location": {
+              "lineNumber": 14,
+              "columnNumber": 19
+            },
+            "functionName": "innerSign",
+            "expression": "",
+            "stackDepth": 3
+          }
+        },
+        {
+          "name": "backend recorded every real (non-instrumentation) pause",
+          "ok": true,
+          "expected": 3,
+          "actual": 3
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 5,
+      "title": "real callFrames obtained",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "raw callFrames from the real event: innerSign, midLevel, topLevel at expected lines",
+          "ok": true,
+          "expected": [
+            14,
+            20,
+            24
+          ],
+          "actual": [
+            "innerSign@14",
+            "midLevel@20",
+            "topLevel@24"
+          ]
+        },
+        {
+          "name": "raw frames carry callFrameId and a scope chain with local and closure",
+          "ok": true,
+          "expected": "callFrameId + local + closure",
+          "actual": {
+            "id": "-3540802135898348750.4.0",
+            "scopes": [
+              "local",
+              "closure",
+              "global"
+            ]
+          }
+        },
+        {
+          "name": "backend exposes the frames (manual-capture-get-frames responded)",
+          "ok": true,
+          "expected": ">=3 frames",
+          "actual": 3
+        },
+        {
+          "name": "backend frames match the raw event by index (name, line, callFrameId)",
+          "ok": true,
+          "expected": "equal to raw",
+          "actual": [
+            {
+              "index": 0,
+              "callFrameId": "-3540802135898348750.4.0",
+              "functionName": "innerSign",
+              "scriptId": "22",
+              "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+              "location": {
+                "lineNumber": 14,
+                "columnNumber": 19
+              },
+              "scopeTypes": [
+                "local",
+                "closure",
+                "global"
+              ]
+            },
+            {
+              "index": 1,
+              "callFrameId": "-3540802135898348750.4.1",
+              "functionName": "midLevel",
+              "scriptId": "22",
+              "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+              "location": {
+                "lineNumber": 20,
+                "columnNumber": 9
+              },
+              "scopeTypes": [
+                "local",
+                "global"
+              ]
+            },
+            {
+              "index": 2,
+              "callFrameId": "-3540802135898348750.4.2",
+              "functionName": "topLevel",
+              "scriptId": "22",
+              "scriptUrl": "http://127.0.0.1:8791/phase4-manual-real.js",
+              "location": {
+                "lineNumber": 24,
+                "columnNumber": 12
+              },
+              "scopeTypes": [
+                "local",
+                "global"
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 6,
+      "title": "Local and Closure scope at frameIndex",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "frame 0 Local scope: localLabel, localToken, payload",
+          "ok": true,
+          "expected": {
+            "localLabel": "sign",
+            "localToken": "token",
+            "payload": "p1"
+          },
+          "actual": {
+            "localLabel": "sign",
+            "localToken": "token",
+            "payload": "p1"
+          }
+        },
+        {
+          "name": "frame 0 Closure scope: closureSalt, closureCount",
+          "ok": true,
+          "expected": {
+            "closureSalt": "salt-21",
+            "closureCount": 42
+          },
+          "actual": {
+            "closureSalt": "salt-21",
+            "closureCount": 42
+          }
+        },
+        {
+          "name": "frame 1 Local scope: midMarker, payload",
+          "ok": true,
+          "expected": {
+            "midMarker": "mid-p1",
+            "payload": "p1"
+          },
+          "actual": {
+            "midMarker": "mid-p1",
+            "payload": "p1"
+          }
+        },
+        {
+          "name": "frame isolation: frame 1 Local does not contain frame 0 localLabel",
+          "ok": true,
+          "expected": "absent",
+          "actual": [
+            "signer",
+            "payload",
+            "midMarker"
+          ]
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 7,
+      "title": "OB decode expression evaluated in specified frame",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "callFrameId frame 0: _0xdec(0x0)",
+          "ok": false,
+          "expected": "sign",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "callFrameId frame 0: _0xdec(0x1)",
+          "ok": false,
+          "expected": "token",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "callFrameId frame 0: _0xdec(0x2)",
+          "ok": false,
+          "expected": "foo",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "callFrameId frame 0: _0xdec(0x3)",
+          "ok": false,
+          "expected": "bar",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "callFrameId frame 0: _0xdec(0x4)",
+          "ok": false,
+          "expected": "cookie",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "callFrameId frame 0: localLabel + ':' + closureSalt + ':' + closureCount",
+          "ok": true,
+          "expected": "sign:salt-21:42",
+          "actual": "sign:salt-21:42"
+        },
+        {
+          "name": "callFrameId frame 1: midMarker + ':' + payload",
+          "ok": true,
+          "expected": "mid-p1:p1",
+          "actual": "mid-p1:p1"
+        },
+        {
+          "name": "callFrameId frame 1: typeof localLabel",
+          "ok": true,
+          "expected": "undefined",
+          "actual": "undefined"
+        },
+        {
+          "name": "callFrameId frame 0: typeof midMarker",
+          "ok": true,
+          "expected": "undefined",
+          "actual": "undefined"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x0)",
+          "ok": false,
+          "expected": "sign",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x1)",
+          "ok": false,
+          "expected": "token",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x2)",
+          "ok": false,
+          "expected": "foo",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x3)",
+          "ok": false,
+          "expected": "bar",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "frameIndex frame 0: _0xdec(0x4)",
+          "ok": false,
+          "expected": "cookie",
+          "actual": "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+        },
+        {
+          "name": "frameIndex frame 0: localLabel + ':' + closureSalt + ':' + closureCount",
+          "ok": true,
+          "expected": "sign:salt-21:42",
+          "actual": "sign:salt-21:42"
+        },
+        {
+          "name": "frameIndex frame 1: midMarker + ':' + payload",
+          "ok": true,
+          "expected": "mid-p1:p1",
+          "actual": "mid-p1:p1"
+        },
+        {
+          "name": "frameIndex frame 1: typeof localLabel",
+          "ok": true,
+          "expected": "undefined",
+          "actual": "undefined"
+        },
+        {
+          "name": "frameIndex frame 0: typeof midMarker",
+          "ok": true,
+          "expected": "undefined",
+          "actual": "undefined"
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 8,
+      "title": "returned values match real browser results",
+      "status": "fail",
+      "checks": [
+        {
+          "name": "browser _0xdec(0..4) equals the independent node:vm recomputation",
+          "ok": true,
+          "expected": [
+            "sign",
+            "token",
+            "foo",
+            "bar",
+            "cookie"
+          ],
+          "actual": [
+            "sign",
+            "token",
+            "foo",
+            "bar",
+            "cookie"
+          ]
+        },
+        {
+          "name": "callFrameId: backend decode values equal browser _0xdec(0..4)",
+          "ok": false,
+          "expected": [
+            "sign",
+            "token",
+            "foo",
+            "bar",
+            "cookie"
+          ],
+          "actual": [
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)",
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)",
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)",
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)",
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+          ]
+        },
+        {
+          "name": "frameIndex: backend decode values equal browser _0xdec(0..4)",
+          "ok": false,
+          "expected": [
+            "sign",
+            "token",
+            "foo",
+            "bar",
+            "cookie"
+          ],
+          "actual": [
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)",
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)",
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)",
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)",
+            "V8 的 throwOnSideEffect 拒绝了这次求值（可能有副作用）：EvalError: Possible side-effect in debug-evaluate\n    at innerSign (http://127.0.0.1:8791/phase4-manual-real.js:15:20)\n    at midLevel (http://127.0.0.1:8791/phase4-manual-real.js:21:10)\n    at HTMLButtonElement.topLevel (http://127.0.0.1:8791/phase4-manual-real.js:25:13)"
+          ]
+        },
+        {
+          "name": "frame-0 expression value is consistent with the page final output",
+          "ok": true,
+          "expected": "page output starts with sign:p1:salt-21:42",
+          "actual": {
+            "frameValue": "sign:salt-21:42",
+            "pageResult": "sign:p1:salt-21:42|token#mid-p1"
+          }
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 9,
+      "title": "no auto breakpoints / no panel switch / no resume",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "extension CDP command logger installed (chrome.debugger.sendCommand wrapper)",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "installed": true,
+            "patched": true,
+            "hook": "object"
+          }
+        },
+        {
+          "name": "command log has entries and the observer survived the whole run",
+          "ok": true,
+          "expected": "ok and >0 commands",
+          "actual": {
+            "ok": true,
+            "n": 65
+          }
+        },
+        {
+          "name": "no breakpoint set by the extension (Debugger.setBreakpoint / setBreakpointByUrl)",
+          "ok": true,
+          "expected": 0,
+          "actual": {
+            "setBreakpoint": 0,
+            "setBreakpointByUrl": 0
+          }
+        },
+        {
+          "name": "no instrumentation breakpoint set in manual mode",
+          "ok": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "no extension-issued resume/step/pause/breakpoint command inside any user pause window",
+          "ok": true,
+          "expected": 0,
+          "actual": []
+        },
+        {
+          "name": "no extension-issued Debugger.resume or step at any time",
+          "ok": true,
+          "expected": 0,
+          "actual": {
+            "resume": 0,
+            "stepOver": 0,
+            "stepInto": 0,
+            "stepOut": 0
+          }
+        },
+        {
+          "name": "page stayed paused until DevTools resumed it (sampled 3s, evaluate stalled)",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "stillPaused": true,
+            "stalled": {
+              "timeout": true
+            }
+          }
+        },
+        {
+          "name": "selected DevTools tab after pause equals the control run without the extension attached",
+          "ok": true,
+          "expected": "sources",
+          "actual": [
+            "sources",
+            "sources",
+            "sources",
+            "sources",
+            "sources",
+            "sources"
+          ]
+        }
+      ],
+      "notes": [
+        "static: chrome.devtools.panels.openResource only appears inside a button click handler (panel.ts:1887); pause handler never calls it"
+      ],
+      "skipped": "",
+      "complete": true
+    },
+    {
+      "n": 10,
+      "title": "user breakpoints, step and continue unaffected",
+      "status": "pass",
+      "checks": [
+        {
+          "name": "control: DevTools continue finishes the page run",
+          "ok": true,
+          "expected": "window.__obResult is a string",
+          "actual": true
+        },
+        {
+          "name": "DevTools Step over works while attached (paused on next line)",
+          "ok": true,
+          "expected": "paused at line 15",
+          "actual": {
+            "fn": "innerSign",
+            "line": 15,
+            "col": 4
+          }
+        },
+        {
+          "name": "extension session observed resumed then paused for the step",
+          "ok": true,
+          "expected": true,
+          "actual": {
+            "sawResumed": true,
+            "sawPaused": true
+          }
+        },
+        {
+          "name": "DevTools continue finishes the page run while attached",
+          "ok": true,
+          "expected": "page completes and stays responsive",
+          "actual": {
+            "decode": [
+              "sign",
+              "token",
+              "foo",
+              "bar",
+              "cookie"
+            ],
+            "result": "sign:p1:salt-21:42|token#mid-p1",
+            "sum": 2
+          }
+        },
+        {
+          "name": "page output equals the independently computed expected string",
+          "ok": true,
+          "expected": "sign:p1:salt-21:42|token#mid-p1",
+          "actual": "sign:p1:salt-21:42|token#mid-p1"
+        },
+        {
+          "name": "user breakpoint still hits a second time",
+          "ok": true,
+          "expected": "paused at line 14",
+          "actual": {
+            "fn": "innerSign",
+            "line": 14,
+            "col": 19
+          }
+        },
+        {
+          "name": "second continue finishes the page run",
+          "ok": true,
+          "expected": "window.__obResult is a string",
+          "actual": true
+        }
+      ],
+      "notes": [],
+      "skipped": "",
+      "complete": true
+    }
+  ]
+}

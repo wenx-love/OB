@@ -1,0 +1,166 @@
+
+ RUN  v3.2.7 D:/Projects/ob-recover
+
+ ❯ test/cdp-client-timeout.test.ts (4 tests | 2 failed) 74ms
+   × cdp-client.sendCommand 的等待边界 > 回复永不到来：按时限超时拒绝，迟到的回复被忽略，不留计时器 63ms
+     → expected false to be true // Object.is equality
+   × cdp-client.sendCommand 的等待边界 > 调试器断开：所有等待中的命令立即被拒绝，不必等超时 3ms
+     → expected false to be true // Object.is equality
+   ✓ cdp-client.sendCommand 的等待边界 > 正常回复：解析出结果，并且不留计时器 3ms
+   ✓ cdp-client.sendCommand 的等待边界 > chrome.runtime.lastError 照常转成拒绝 2ms
+ ❯ test/capture-engine-stall.test.ts (5 tests | 5 failed) 26ms
+   × Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > Runtime.getProperties 永不返回：页面不会被留在自己的断点上，下一次自己的断点暂停仍然会被驱动 15ms
+     → expected false to be true // Object.is equality
+   × Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > Debugger.stepOver 永不返回：随后的单步暂停仍然会被处理（恢复页面），不会永远排队 2ms
+     → expected false to be true // Object.is equality
+   × Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > Debugger.setBreakpoint 永不返回：start 会结算并报告超时错误，不会永远挂起 1ms
+     → expected false to be true // Object.is equality
+   × Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > Debugger.removeBreakpoint 永不返回：stop 会结算，本地断点状态被清空，并留下超时日志 1ms
+     → expected false to be true // Object.is equality
+   × Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > 超时之后迟到的回复被忽略：只留下一条读取参数失败的记录，不会重复处理 4ms
+     → expected [] to have a length of 1 but got +0
+ ✓ test/manual-side-effect.test.ts (17 tests) 377ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/capture-engine-stall.test.ts > Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > Runtime.getProperties 永不返回：页面不会被留在自己的断点上，下一次自己的断点暂停仍然会被驱动
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/capture-engine-stall.test.ts:110:20
+    108|     await vi.advanceTimersByTimeAsync(60_000);
+    109|     const driven = cdp.calls.slice(before).some((c) => c.method === 'D…
+    110|     expect(driven).toBe(true);
+       |                    ^
+    111|   });
+    112| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  test/capture-engine-stall.test.ts > Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > Debugger.stepOver 永不返回：随后的单步暂停仍然会被处理（恢复页面），不会永远排队
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/capture-engine-stall.test.ts:124:81
+    122|     void engine.onPaused(pausedEvent([], RET));
+    123|     await vi.advanceTimersByTimeAsync(60_000);
+    124|     expect(cdp.calls.slice(before).some((c) => c.method === 'Debugger.…
+       |                                                                                 ^
+    125|   });
+    126| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  test/capture-engine-stall.test.ts > Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > Debugger.setBreakpoint 永不返回：start 会结算并报告超时错误，不会永远挂起
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/capture-engine-stall.test.ts:133:23
+    131|     const s = track(startP);
+    132|     await vi.advanceTimersByTimeAsync(60_000);
+    133|     expect(s.settled).toBe(true);
+       |                       ^
+    134|     const result = await startP;
+    135|     expect(result.errors.length).toBeGreaterThan(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  test/capture-engine-stall.test.ts > Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > Debugger.removeBreakpoint 永不返回：stop 会结算，本地断点状态被清空，并留下超时日志
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/capture-engine-stall.test.ts:147:23
+    145|     const s = track(stopP);
+    146|     await vi.advanceTimersByTimeAsync(60_000);
+    147|     expect(s.settled).toBe(true);
+       |                       ^
+    148|     expect(engine.isActive()).toBe(false);
+    149|     expect(engine.getBreakpointCount()).toBe(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  test/capture-engine-stall.test.ts > Phase 3 捕获引擎：单个永不返回的 CDP 命令不能把引擎永久卡死 > 超时之后迟到的回复被忽略：只留下一条读取参数失败的记录，不会重复处理
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ test/capture-engine-stall.test.ts:162:18
+    160|     await vi.advanceTimersByTimeAsync(1_000);
+    161|     const caps = engine.getCaptures();
+    162|     expect(caps).toHaveLength(1);
+       |                  ^
+    163|     expect(caps[0].captureStatus).toBe('capture-failed');
+    164|     expect(String(caps[0].reason)).toContain('timed out');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  test/cdp-client-timeout.test.ts > cdp-client.sendCommand 的等待边界 > 回复永不到来：按时限超时拒绝，迟到的回复被忽略，不留计时器
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/cdp-client-timeout.test.ts:74:23
+     72|     const t = track(cdp.sendCommand(1, 'Debugger.getScriptSource', { s…
+     73|     await vi.advanceTimersByTimeAsync(31_000);
+     74|     expect(t.settled).toBe(true);
+       |                       ^
+     75|     expect(t.error).toContain('timed out');
+     76|     harness.sent[0].callback({ scriptSource: 'late' });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  test/cdp-client-timeout.test.ts > cdp-client.sendCommand 的等待边界 > 调试器断开：所有等待中的命令立即被拒绝，不必等超时
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/cdp-client-timeout.test.ts:90:23
+     88|     harness.detachListeners[0]({ tabId: 1 }, 'target_closed');
+     89|     await vi.advanceTimersByTimeAsync(0);
+     90|     expect(a.settled).toBe(true);
+       |                       ^
+     91|     expect(b.settled).toBe(true);
+     92|     expect(a.error).toContain('断开');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  7 failed | 19 passed (26)
+   Start at  08:51:01
+   Duration  2.19s (transform 434ms, setup 0ms, collect 1.72s, tests 476ms, environment 1ms, prepare 807ms)
+
+[OB-Recover] Static files copied to dist/
+[OB-Recover] Static files copied to dist/

@@ -1,0 +1,29 @@
+{
+  "schema": "web-protocol-recovery/l1-reference-decoders/1",
+  "capturedBy": "skill",
+  "rootDecoder": {
+    "name": "_0x374d",
+    "kind": "top level FunctionDeclaration, reassigns itself on first call",
+    "params": 2,
+    "semantics": "index minus 297 selects a slot in the string array; the second argument is the per string key used by the inline base64 decode",
+    "sourceBytes": 2057
+  },
+  "arrayProvider": {
+    "name": "_0x3a3a",
+    "elements": 246,
+    "sourceBytes": 16834
+  },
+  "aliases": {
+    "count": 37,
+    "note": "each is a local `var X = <alias|_0x374d>` chain that resolves to the same global function, so a call site of any alias has the same value as _0x374d with the same arguments"
+  },
+  "rotation": {
+    "detected": true,
+    "caution": "the detected span is large, so it is a coarse block match and NOT proof of a per call rotation; the value table was read after the page finished loading, so it reflects the final array state"
+  },
+  "literalsOnly": "every collected site passes exactly two literal arguments; sites with non literal arguments were not collected and are not part of the reference",
+  "limitations": [
+    "values were read after load, so a decoder that changed the array later would make earlier calls differ; no evidence of that was observed but it was not separately excluded",
+    "the reference covers 823 of the call sites of these aliases; it does not claim to cover every decoder call in the bundle"
+  ]
+}

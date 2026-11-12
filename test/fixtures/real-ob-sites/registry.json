@@ -1,0 +1,108 @@
+{
+  "version": "1.0",
+  "note": "Phase 4.7 real-site acceptance sample registry. reference/ and observed/ are physically separate and MUST NOT be merged or cross-written. See docs/PHASE4.7-REAL-SITE-PLAN.md sections 3 and 4.",
+  "updatedAt": "2026-11-10",
+  "hardRules": [
+    "每个样本的 reference/ 只允许由 Skill 或人工写入，禁止用 OB-Recover 的输出反推。",
+    "observed/ 只允许由 OB-Recover 的运行写入。",
+    "capturedBy 必须如实填写；reference/ 与 observed/ 的来源不可互换。",
+    "脚本一旦归档不得再改，哈希不符即视为新 run。",
+    "本地 javascript-obfuscator 生成的样本禁止标记为真实网站样本。",
+    "其他工具生成的 expected.js 禁止用作 oracle。"
+  ],
+  "layers": {
+    "L1": "真实网站下发脚本；哈希一致时允许位置级对照",
+    "L2": "已归档的固定源码；可重复，指标计算主基线",
+    "L3": "受控浏览器回放；我们自己的 OB 脚本 + 本地页面，不是真实站点证据"
+  },
+  "samples": [
+    {
+      "id": "l1-qccqcc-hangzhou",
+      "layer": "L1",
+      "kind": "real-site",
+      "isRealSiteSample": true,
+      "path": "test/fixtures/real-ob-sites/l1-qccqcc-hangzhou/run-20261110T1458Z/script.js",
+      "sha256": "cc7a8127fa8a5d17289a953e11d82ff528fe9ea42276810c5f03371abf760daf",
+      "bytes": 256820,
+      "lines": 1,
+      "pageUrl": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3",
+      "apiUrl": "https://newopenapiweb.17qcc.com/api/services/app/SearchFactory/GetPageList",
+      "scriptUrl": "https://j.17qcc.com/combo?ajax-20&imglazy&pager-5&template-6&rollload&ajaxmethord-5&pluploadfull&qccer-1&hpaitop-5&hpailist-2",
+      "obfuscator": "jsjiami.com.v7",
+      "referenceReady": true,
+      "referenceSites": 823,
+      "runId": "20261110T1458Z",
+      "status": "blocked",
+      "statusSummary": "capture succeeded at scale (1056 successful _0x374d returns) but validation rejected every group (13 status-unstable, 17 status-failed), so dry-run had 0 candidates and nothing was replaced; source integrity was not measured because the source read used a stale scriptId after a retry reload",
+      "report": "docs/PHASE4.7-L1-QCCQCC-REPORT.md",
+      "authorization": "user confirmed the right to test; anonymous access",
+      "limitations": [
+        "the js-reverse half is missing by user decision (headless acceptance failed), so there is no initiator and no paused-frame capture",
+        "the reference values were read from the page own global decoder after load, not from a paused frame",
+        "the reference covers literal two argument call sites of the _0x374d alias family only"
+      ]
+    },
+    {
+      "id": "l2-real-ob-seed",
+      "layer": "L2",
+      "kind": "local-generated",
+      "isRealSiteSample": false,
+      "path": "test/fixtures/real-ob/obfuscated.js",
+      "plaintextPath": "test/fixtures/real-ob/source.js",
+      "metadataPath": "test/fixtures/real-ob/metadata.json",
+      "sha256": "f0e5b6c7198cfb69f51ac427eba095219c5db86c74cb2970e8fba3be99fa6315",
+      "plaintextSha256": "f3ee75f49909ae2f93473ac5e741ed436e114616777998d064e446431ec8d06c",
+      "bytes": 5179,
+      "lines": 1,
+      "generator": "javascript-obfuscator@5.9.0",
+      "generatedAt": "2026-11-09T11:23:34.953Z",
+      "difficulty": "simple",
+      "features": [
+        "string-array",
+        "base64-encoding",
+        "stringArrayRotate",
+        "stringArrayShuffle",
+        "stringArrayWrappersCount=2",
+        "chained-wrapper-calls"
+      ],
+      "explicitNote": "本地生成样本，不是任何真实网站抓取的脚本。只能作为 L2 固定源码基线，禁止计入真实网站端到端验收证据。",
+      "referenceSource": "none-yet",
+      "oraclePolicy": "禁止使用 test/fixtures/real-samples/*/expected.js 作为 oracle；该目录的 expected.js 由其他工具生成。"
+    }
+  ],
+  "plannedSamples": [
+    {
+      "id": "l2-real-samples-01-05",
+      "layer": "L2",
+      "kind": "static-real-obfuscated",
+      "isRealSiteSample": false,
+      "path": "test/fixtures/real-samples/sample-0{1..5}/input.js",
+      "status": "not-registered-yet",
+      "reason": "只登记了索引，尚未登记为本方案的 L2 样本：缺 reference/（无调用位置、无运行时返回值、无脚本 URL），且 expected.js 不能当 oracle。需先补 reference/ 再使用。"
+    },
+    {
+      "id": "l3-controlled-pages",
+      "layer": "L3",
+      "kind": "controlled-replay",
+      "isRealSiteSample": false,
+      "path": "test-pages/",
+      "status": "not-registered-yet",
+      "requiredScenarios": [
+        "same-text-different-position",
+        "same-args-different-returns",
+        "array-rotation",
+        "state-dependent",
+        "side-effect-decoder",
+        "dynamically-injected-script"
+      ]
+    },
+    {
+      "id": "l1-target-site",
+      "layer": "L1",
+      "kind": "real-site",
+      "isRealSiteSample": true,
+      "status": "blocked-awaiting-user",
+      "reason": "第 11 节要求用户确认目标站点并确认有权测试。本轮不自行选择或猜测站点。"
+    }
+  ]
+}

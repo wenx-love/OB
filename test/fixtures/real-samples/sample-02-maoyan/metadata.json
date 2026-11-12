@@ -1,0 +1,21 @@
+{
+  "name": "sample-02-maoyan",
+  "source": "https://github.com/kuizuo/js-deobfuscator/tree/main/example/maoyan",
+  "description": "Maoyan (猫眼) movie ticketing website obfuscation - real-world Chinese e-commerce platform",
+  "obfuscationType": "Custom commercial obfuscation",
+  "features": [
+    "Large string array (298KB obfuscated)",
+    "Complex control flow",
+    "Multiple nested decoders",
+    "Real-world production code"
+  ],
+  "inputSize": 306083,
+  "expectedSize": 81836,
+  "testGoal": "Verify large-scale real-world obfuscation handling and performance",
+  "hasExpectedOutput": true,
+  "performance": {
+    "targetParseTime": "<500ms",
+    "targetRecoveryTime": "<5000ms"
+  },
+  "notes": "Real production code from Maoyan (猫眼电影). Tests real-world obfuscation patterns used by major Chinese platforms."
+}

@@ -1,0 +1,48 @@
+{
+  "capturedBy": "test-oracle",
+  "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+  "note": "independent of OB-Recover output",
+  "oracleChecks": [],
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 5,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": true,
+      "value": "alpha",
+      "reason": "pure decoder, observed"
+    },
+    {
+      "position": {
+        "lineNumber": 6,
+        "columnNumber": 2
+      },
+      "callText": "dec(0)",
+      "determinate": true,
+      "value": "alpha",
+      "reason": "pure decoder, observed"
+    },
+    {
+      "position": {
+        "lineNumber": 7,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "determinate": true,
+      "value": "beta",
+      "reason": "pure decoder, observed"
+    },
+    {
+      "position": {
+        "lineNumber": 8,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "determinate": true,
+      "value": "beta",
+      "reason": "pure decoder, observed"
+    }
+  ]
+}

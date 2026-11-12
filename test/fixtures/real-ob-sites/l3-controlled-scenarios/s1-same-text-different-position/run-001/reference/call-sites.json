@@ -1,0 +1,58 @@
+{
+  "capturedBy": "test-oracle",
+  "method": "author-annotated truth, each annotation cross-checked by independent node:vm evaluation (oracle checks in test/real-site-l3.test.ts)",
+  "note": "independent of OB-Recover output",
+  "oracleChecks": [
+    {
+      "label": "unobserved site really evaluates to beta",
+      "js": "later()",
+      "expect": "beta"
+    },
+    {
+      "label": "shadowed site really evaluates to X1",
+      "js": "shadowed()",
+      "expect": "X1"
+    }
+  ],
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 5,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "determinate": true,
+      "value": "beta",
+      "reason": "observed by run()"
+    },
+    {
+      "position": {
+        "lineNumber": 6,
+        "columnNumber": 2
+      },
+      "callText": "dec(1)",
+      "determinate": true,
+      "value": "beta",
+      "reason": "observed by run()"
+    },
+    {
+      "position": {
+        "lineNumber": 9,
+        "columnNumber": 9
+      },
+      "callText": "dec(1)",
+      "determinate": true,
+      "value": "beta",
+      "reason": "same global decoder but never executed by the entry function: determinate by oracle, unobserved"
+    },
+    {
+      "position": {
+        "lineNumber": 15,
+        "columnNumber": 9
+      },
+      "callText": "dec(1)",
+      "determinate": false,
+      "reason": "different binding: the inner dec returns X1, a literal beta would be wrong"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "capturedBy": "test-oracle",
+  "method": "author-annotated truth cross-checked by window.__l3Truth() evaluated in Chrome after capture stopped and by an independent node:vm evaluation (test/real-site-l3-browser.test.ts)",
+  "note": "independent of OB-Recover output",
+  "truthFromChrome": {
+    "values": {
+      "A": "Signature",
+      "B": "Signature",
+      "C": "Signature",
+      "D": "SHADOW-1"
+    },
+    "observedAtLoad": [
+      "A",
+      "C"
+    ],
+    "notExecutedAtLoad": [
+      "B",
+      "D"
+    ],
+    "mustStayUntouchedByRecovery": [
+      "B",
+      "D"
+    ]
+  },
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 18,
+        "columnNumber": 12
+      },
+      "callText": "_0x13d0(0x1)",
+      "determinate": true,
+      "value": "Signature",
+      "reason": "site A: top-level statement executed while the page loads; value from window.__l3Truth() evaluated in Chrome after capture stopped"
+    },
+    {
+      "position": {
+        "lineNumber": 21,
+        "columnNumber": 9
+      },
+      "callText": "_0x13d0(0x1)",
+      "determinate": true,
+      "value": "Signature",
+      "reason": "site B: same global decoder and same call text inside laterB(), which does not run during the capture window; the value is determinate but no run observed it, so insufficient-evidence is the expected category"
+    },
+    {
+      "position": {
+        "lineNumber": 19,
+        "columnNumber": 12
+      },
+      "callText": "_0x13d0(0x1)",
+      "determinate": true,
+      "value": "Signature",
+      "reason": "site C: top-level statement executed while the page loads; value from window.__l3Truth() evaluated in Chrome after capture stopped"
+    },
+    {
+      "position": {
+        "lineNumber": 27,
+        "columnNumber": 9
+      },
+      "callText": "_0x13d0(0x1)",
+      "determinate": false,
+      "reason": "site D: same call text but a different binding, the shadowed function inside shadowD returns SHADOW-1; the value of the global decoder would be wrong here"
+    }
+  ]
+}

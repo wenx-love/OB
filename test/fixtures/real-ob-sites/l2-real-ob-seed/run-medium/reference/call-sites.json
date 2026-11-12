@@ -1,0 +1,286 @@
+{
+  "capturedBy": "test-oracle",
+  "method": "node:vm execution of the unmodified script + @babel/parser AST (test/helpers/real-site-compare.ts buildOracleReference)",
+  "note": "independent of OB-Recover: no src analysis code is used; expected.js of other tools is not used",
+  "rotationRange": [
+    0,
+    926
+  ],
+  "reasonLegend": {
+    "oracle-after-finish": "top-level hex-named function called with literal arguments after the whole script finished in node:vm; the result is a string",
+    "inside-rotation-iife": "the call lies inside the string-array rotation IIFE: its value depends on the rotation phase, so it is not safely replaceable"
+  },
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 305
+      },
+      "callText": "_0xd31d2d(-0x18f,-0x197,-0x18d,-0x19a)",
+      "determinate": false,
+      "reason": "inside-rotation-iife"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 358
+      },
+      "callText": "_0x58ad32(0x166,0x14e,0x159,0x154)",
+      "determinate": false,
+      "reason": "inside-rotation-iife"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 408
+      },
+      "callText": "_0xd31d2d(-0x186,-0x187,-0x191,-0x184)",
+      "determinate": false,
+      "reason": "inside-rotation-iife"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 462
+      },
+      "callText": "_0xd31d2d(-0x18e,-0x183,-0x18e,-0x187)",
+      "determinate": false,
+      "reason": "inside-rotation-iife"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 517
+      },
+      "callText": "_0x58ad32(0x159,0x166,0x160,0x155)",
+      "determinate": false,
+      "reason": "inside-rotation-iife"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 567
+      },
+      "callText": "_0xd31d2d(-0x184,-0x181,-0x190,-0x185)",
+      "determinate": false,
+      "reason": "inside-rotation-iife"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 622
+      },
+      "callText": "_0xd31d2d(-0x17d,-0x197,-0x18c,-0x17d)",
+      "determinate": false,
+      "reason": "inside-rotation-iife"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 677
+      },
+      "callText": "_0x58ad32(0x14c,0x153,0x14a,0x13c)",
+      "determinate": false,
+      "reason": "inside-rotation-iife"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 726
+      },
+      "callText": "_0xd31d2d(-0x189,-0x17c,-0x183,-0x17a)",
+      "determinate": false,
+      "reason": "inside-rotation-iife"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3565
+      },
+      "callText": "_0x124122(0x4c1,0x4a2,0x4b0,0x4b1)",
+      "determinate": true,
+      "value": "windbreaker",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3633
+      },
+      "callText": "_0x124122(0x4bc,0x4b6,0x4b4,0x4ad)",
+      "determinate": true,
+      "value": "down-jacket",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3702
+      },
+      "callText": "_0x1d59cb(0xb9,0xb4,0xbc,0xb1)",
+      "determinate": true,
+      "value": "fleece",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3757
+      },
+      "callText": "_0x124122(0x4be,0x4c0,0x4a8,0x4b4)",
+      "determinate": true,
+      "value": "cny-199",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3801
+      },
+      "callText": "_0x124122(0x4a4,0x498,0x4a4,0x49e)",
+      "determinate": true,
+      "value": "cny-89",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3956
+      },
+      "callText": "_0x1d59cb(0xc3,0xd1,0xd6,0xca)",
+      "determinate": true,
+      "value": "push",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 3994
+      },
+      "callText": "_0x124122(0x4a9,0x4b3,0x4b4,0x4b0)",
+      "determinate": true,
+      "value": "ob-recover",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4138
+      },
+      "callText": "_0x124122(0x4ae,0x4c3,0x4c1,0x4b6)",
+      "determinate": true,
+      "value": "push",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4198
+      },
+      "callText": "_0x1d59cb(0xc7,0xd1,0xc8,0xde)",
+      "determinate": true,
+      "value": "push",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4242
+      },
+      "callText": "_0x1d59cb(0xc5,0xcc,0xc2,0xce)",
+      "determinate": true,
+      "value": "windbreaker",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4279
+      },
+      "callText": "_0x1d59cb(0xc6,0xd1,0xca,0xc3)",
+      "determinate": true,
+      "value": "push",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4323
+      },
+      "callText": "_0x1d59cb(0xc1,0xb7,0xbf,0xad)",
+      "determinate": true,
+      "value": "parka",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4360
+      },
+      "callText": "_0x124122(0x4b5,0x4ac,0x4bb,0x4b6)",
+      "determinate": true,
+      "value": "push",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4412
+      },
+      "callText": "_0x124122(0x4b0,0x4af,0x4b5,0x4b7)",
+      "determinate": true,
+      "value": "object",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4447
+      },
+      "callText": "_0x124122(0x4a8,0x499,0x4a8,0x49b)",
+      "determinate": true,
+      "value": "browser",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4482
+      },
+      "callText": "_0x124122(0x498,0x493,0x499,0x4a2)",
+      "determinate": true,
+      "value": "other",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4525
+      },
+      "callText": "_0x124122(0x4a3,0x498,0x4b0,0x4a1)",
+      "determinate": true,
+      "value": "__obResult",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4574
+      },
+      "callText": "_0x124122(0x4a4,0x496,0x48d,0x49d)",
+      "determinate": true,
+      "value": "title",
+      "reason": "oracle-after-finish"
+    },
+    {
+      "position": {
+        "lineNumber": 0,
+        "columnNumber": 4610
+      },
+      "callText": "_0x124122(0x4b3,0x4af,0x4b4,0x4ab)",
+      "determinate": true,
+      "value": "done",
+      "reason": "oracle-after-finish"
+    }
+  ]
+}

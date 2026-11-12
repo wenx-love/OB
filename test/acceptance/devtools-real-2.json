@@ -1,0 +1,102 @@
+{
+  "note": "real DevTools frontend + real panel.html iframe. Panel switched by InspectorView.showPanel (programmatic). Clicks are element.click() with userGesture; contextmenu is a dispatched DOM event, NOT real mouse input. Scripts reach the panel through the real chrome.devtools.network listener after a real page reload.",
+  "steps": {
+    "show": {
+      "selected": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover"
+    },
+    "envBeforeDock": {
+      "w": 554,
+      "h": 844,
+      "size": "sm",
+      "sidebar": "closed",
+      "layout": "col",
+      "scripts": 0,
+      "status": "就绪",
+      "statusTitle": "就绪",
+      "dbg": "未连接"
+    },
+    "dock": {
+      "before": "right",
+      "after": "bottom"
+    },
+    "envAfterDock": {
+      "w": 1898,
+      "h": 219,
+      "size": "lg",
+      "sidebar": "open",
+      "layout": "row",
+      "scripts": 0,
+      "status": "就绪",
+      "statusTitle": "就绪",
+      "dbg": "未连接"
+    },
+    "reload": {
+      "w": 1898,
+      "h": 219,
+      "size": "lg",
+      "sidebar": "open",
+      "layout": "row",
+      "scripts": 1,
+      "status": "捕获: ctx-test.js",
+      "statusTitle": "捕获: ctx-test.js",
+      "dbg": "未连接"
+    },
+    "recover": {
+      "w": 1898,
+      "h": 219,
+      "size": "lg",
+      "sidebar": "open",
+      "layout": "row",
+      "scripts": 1,
+      "status": "✅ 完成 (13ms) — 0 处已还原",
+      "statusTitle": "✅ 完成 (13ms) — 0 处已还原",
+      "dbg": "未连接"
+    },
+    "statusTitle": {
+      "text": "✅ 完成 (13ms) — 0 处已还原",
+      "title": "✅ 完成 (13ms) — 0 处已还原",
+      "equal": true
+    },
+    "grantClipboard": {},
+    "clipOriginal": {
+      "read": {
+        "err": "NotAllowedError: Failed to execute 'readText' on 'Clipboard': The Clipboard API has been blocked because of a permissions policy applied to the current document. See https://crbug.com/414348233 for more details."
+      },
+      "equalsSource": false,
+      "expectedLen": 193
+    },
+    "clipRecovered": {
+      "read": {
+        "err": "NotAllowedError: Failed to execute 'readText' on 'Clipboard': The Clipboard API has been blocked because of a permissions policy applied to the current document. See https://crbug.com/414348233 for more details."
+      },
+      "notSentinel": false
+    },
+    "ctxSelect": {
+      "selected": "_0xabc(1)",
+      "menuVisible": true
+    },
+    "ctxEval": {
+      "visible": true,
+      "text": "_0xabc(1)stringval1✅ 加入映射关闭",
+      "hasAdd": true
+    },
+    "recBeforeAdd": {
+      "call": 2,
+      "call2": 1,
+      "val1": 0,
+      "val1dq": 0,
+      "origCall": 2,
+      "status": "求值完成: string"
+    },
+    "ctxAddMapping": {
+      "call": 0,
+      "call2": 1,
+      "val1": 0,
+      "val1dq": 2,
+      "origCall": 2,
+      "status": "✅ 映射已加入，_0xabc(1) 已替换 2 处"
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob"
+}

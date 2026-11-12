@@ -1,0 +1,720 @@
+{
+  "schema": "ob-recover.l3-browser-replay-raw/1",
+  "note": "Raw evidence only. Real Chrome (headless=new) + real DevTools frontend + real panel + real service worker + real chrome.debugger; programmatic operation, NOT manual mouse. Judgements are made offline.",
+  "isRealSiteSample": false,
+  "startedAt": "2026-11-10T06:10:23.146Z",
+  "minConfidence": "high (default)",
+  "pageUrl": "http://127.0.0.1:8782/real-site-l3-same-text.html",
+  "pageFilesOnDisk": {
+    "html": {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    "js": {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    }
+  },
+  "distHashes": {
+    "background.js": "8db17026db8f0493ac1bb7711bed47049874be29431f8e27d0b4ba3254c4a45e",
+    "devtools.js": "870b0b747d5bfbe54af0fe8d81581f27bac8eb2a4ecea433f78f295c18edae65",
+    "panel.js": "9cbc65a3bf78195d36bea0ea029df92c74c77ecd2a78ce4a8cc12fb68282fb73",
+    "sandbox.js": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4"
+  },
+  "steps": {
+    "show": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover",
+    "loadPage": {
+      "ready": {
+        "ready": true,
+        "ms": 527
+      },
+      "scripts": [
+        "http://127.0.0.1:8782/real-site-l3-same-text.js | 1.5 KB"
+      ]
+    },
+    "connect": "已连接",
+    "startCapture": {
+      "panel": {
+        "cards": 0,
+        "status": "正在捕获",
+        "hits": "0",
+        "success": "0",
+        "failed": "0",
+        "verified": "0",
+        "vUnstable": "0",
+        "vFailed": "0",
+        "vInsufficient": "0",
+        "vPending": "0",
+        "vTotal": "0",
+        "notice": "",
+        "items": []
+      },
+      "engine": {
+        "hook": true,
+        "active": true,
+        "breakpoints": 2,
+        "stats": {
+          "breakpointsSet": 2,
+          "hits": 0,
+          "pauses": 0,
+          "success": 0,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "count": 0
+      }
+    },
+    "coverageStart": {
+      "started": true
+    },
+    "captureReload": {
+      "ready": {
+        "ready": true,
+        "ms": 9
+      },
+      "stable": {
+        "stable": true,
+        "hits": 2,
+        "ms": 4535
+      },
+      "selectedTab": "sources"
+    },
+    "pageStateAtLoad": {
+      "title": "l3-same-text-ready",
+      "l3Result": "{\"A\":\"Signature\",\"C\":\"Signature\"}",
+      "typeofLaterB": "function",
+      "typeofShadowD": "function"
+    },
+    "coverageAfterLoad": {
+      "scriptsInCoverage": 17,
+      "matched": 1,
+      "scripts": [
+        {
+          "url": "http://127.0.0.1:8782/real-site-l3-same-text.js",
+          "scriptId": "20",
+          "functions": [
+            {
+              "functionName": "",
+              "isBlockCoverage": false,
+              "ranges": [
+                {
+                  "startOffset": 0,
+                  "endOffset": 1576,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "functionName": "",
+              "isBlockCoverage": false,
+              "ranges": [
+                {
+                  "startOffset": 836,
+                  "endOffset": 954,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "functionName": "rot",
+              "isBlockCoverage": false,
+              "ranges": [
+                {
+                  "startOffset": 868,
+                  "endOffset": 939,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "functionName": "_0x13d0",
+              "isBlockCoverage": false,
+              "ranges": [
+                {
+                  "startOffset": 971,
+                  "endOffset": 1021,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "functionName": "laterB",
+              "isBlockCoverage": false,
+              "ranges": [
+                {
+                  "startOffset": 1074,
+                  "endOffset": 1118,
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "functionName": "shadowD",
+              "isBlockCoverage": false,
+              "ranges": [
+                {
+                  "startOffset": 1119,
+                  "endOffset": 1218,
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "functionName": "window.__l3Truth",
+              "isBlockCoverage": false,
+              "ranges": [
+                {
+                  "startOffset": 1332,
+                  "endOffset": 1535,
+                  "count": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "engineRawAfterLoad": {
+      "hook": true,
+      "active": true,
+      "breakpoints": 2,
+      "stats": {
+        "breakpointsSet": 4,
+        "hits": 2,
+        "pauses": 4,
+        "success": 2,
+        "failed": 0,
+        "forcedResumes": 0,
+        "foreignPauses": 0
+      },
+      "count": 1,
+      "captures": [
+        {
+          "key": "20|16|2|[{\"type\":\"number\",\"value\":1}]|success|{\"type\":\"string\",\"value\":\"Signature\"}",
+          "scriptId": "20",
+          "scriptUrl": "http://127.0.0.1:8782/real-site-l3-same-text.js",
+          "functionName": "_0x13d0",
+          "functionLocation": {
+            "lineNumber": 16,
+            "columnNumber": 2
+          },
+          "callLocation": {
+            "lineNumber": 18,
+            "columnNumber": 12
+          },
+          "callLocations": [
+            {
+              "lineNumber": 18,
+              "columnNumber": 12
+            },
+            {
+              "lineNumber": 19,
+              "columnNumber": 12
+            }
+          ],
+          "arguments": [
+            {
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "returnValue": {
+            "type": "string",
+            "value": "Signature"
+          },
+          "captureStatus": "success",
+          "count": 2,
+          "firstSeq": 1,
+          "lastSeq": 2,
+          "timestamp": 1794291042992
+        }
+      ],
+      "stability": [
+        {
+          "scriptId": "20",
+          "scriptUrl": "http://127.0.0.1:8782/real-site-l3-same-text.js",
+          "functionName": "_0x13d0",
+          "functionLocation": {
+            "lineNumber": 16,
+            "columnNumber": 2
+          },
+          "arguments": [
+            {
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "values": [
+            {
+              "type": "string",
+              "value": "Signature"
+            }
+          ],
+          "distinctReturnCount": 1,
+          "callCount": 2,
+          "stable": true,
+          "firstSeq": 1,
+          "lastSeq": 2
+        }
+      ]
+    },
+    "sourceBeforeApply": {
+      "ok": true,
+      "scriptId": "20",
+      "chars": 1576,
+      "bytes": 1576,
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "source": "// Phase 4.7 L3 controlled page: the same call text at several positions. NOT a real-site sample.\n// New file. test-pages/phase4-position-level-auto.js is untouched. Created in the batch that wrote the L3 tests; NOT executed in that batch.\n// Executed while the page loads (observable by the auto capture engine): positions A and C, same text _0x13d0(0x1).\n// NOT executed while the page loads: position B (laterB) with the same text, and position D (shadowD) whose _0x13d0 is a different function.\n// Expected recovery: A and C replaced by the observed value; B left as is (same text, never observed); D left as is (different binding).\n// The truth is only computed on demand through window.__l3Truth(), so reading it never adds capture records during the capture window.\nvar _0x13a1 = ['Signature', 'Document', 'License', 'Header'];\n(function (arr, n) {\n  var rot = function (k) {\n    while (--k) {\n      arr.push(arr.shift());\n    }\n  };\n  rot(++n);\n})(_0x13a1, 0x3);\nfunction _0x13d0(i) {\n  return _0x13a1[i - 0x0];\n}\nvar siteA = _0x13d0(0x1);\nvar siteC = _0x13d0(0x1);\nfunction laterB() {\n  return _0x13d0(0x1);\n}\nfunction shadowD() {\n  function _0x13d0(i) {\n    return 'SHADOW-' + i;\n  }\n  return _0x13d0(0x1);\n}\nwindow.laterB = laterB;\nwindow.shadowD = shadowD;\nwindow.__l3Result = { A: siteA, C: siteC };\nwindow.__l3Truth = function () {\n  return JSON.stringify({ values: { A: siteA, B: laterB(), C: siteC, D: shadowD() }, observedAtLoad: ['A', 'C'], notExecutedAtLoad: ['B', 'D'], mustStayUntouchedByRecovery: ['B', 'D'] });\n};\ndocument.title = 'l3-same-text-ready';\n"
+    },
+    "panelAfterLoad": {
+      "panel": {
+        "cards": 1,
+        "status": "正在捕获",
+        "hits": "2",
+        "success": "2",
+        "failed": "0",
+        "verified": "1",
+        "vUnstable": "0",
+        "vFailed": "0",
+        "vInsufficient": "0",
+        "vPending": "0",
+        "vTotal": "1",
+        "notice": "",
+        "items": [
+          {
+            "name": "_0x13d0",
+            "summary": "(1) → \"Signature\""
+          }
+        ]
+      },
+      "scripts": [
+        "http://127.0.0.1:8782/real-site-l3-same-text.js | 1.5 KB"
+      ]
+    },
+    "selectScript": {
+      "selection": {
+        "found": true,
+        "title": "http://127.0.0.1:8782/real-site-l3-same-text.js",
+        "activeAfterClick": true,
+        "titles": [
+          "http://127.0.0.1:8782/real-site-l3-same-text.js"
+        ]
+      },
+      "panes": {
+        "orig": [
+          "// Phase 4.7 L3 controlled page: the same call text at several positions. NOT a real-site sample.",
+          "// New file. test-pages/phase4-position-level-auto.js is untouched. Created in the batch that wrote the L3 tests; NOT executed in that batch.",
+          "// Executed while the page loads (observable by the auto capture engine): positions A and C, same text _0x13d0(0x1).",
+          "// NOT executed while the page loads: position B (laterB) with the same text, and position D (shadowD) whose _0x13d0 is a different function.",
+          "// Expected recovery: A and C replaced by the observed value; B left as is (same text, never observed); D left as is (different binding).",
+          "// The truth is only computed on demand through window.__l3Truth(), so reading it never adds capture records during the capture window.",
+          "var _0x13a1 = ['Signature', 'Document', 'License', 'Header'];",
+          "(function (arr, n) {",
+          "  var rot = function (k) {",
+          "    while (--k) {",
+          "      arr.push(arr.shift());",
+          "    }",
+          "  };",
+          "  rot(++n);",
+          "})(_0x13a1, 0x3);",
+          "function _0x13d0(i) {",
+          "  return _0x13a1[i - 0x0];",
+          "}",
+          "var siteA = _0x13d0(0x1);",
+          "var siteC = _0x13d0(0x1);",
+          "function laterB() {",
+          "  return _0x13d0(0x1);",
+          "}",
+          "function shadowD() {",
+          "  function _0x13d0(i) {",
+          "    return 'SHADOW-' + i;",
+          "  }",
+          "  return _0x13d0(0x1);",
+          "}",
+          "window.laterB = laterB;",
+          "window.shadowD = shadowD;",
+          "window.__l3Result = {",
+          "  A: siteA,",
+          "  C: siteC",
+          "};",
+          "window.__l3Truth = function () {",
+          "  return JSON.stringify({",
+          "    values: {",
+          "      A: siteA,",
+          "      B: laterB(),",
+          "      C: siteC,",
+          "      D: shadowD()",
+          "    },",
+          "    observedAtLoad: ['A', 'C'],",
+          "    notExecutedAtLoad: ['B', 'D'],",
+          "    mustStayUntouchedByRecovery: ['B', 'D']",
+          "  });",
+          "};",
+          "document.title = 'l3-same-text-ready';"
+        ],
+        "rec": []
+      }
+    },
+    "dryRun": {
+      "hidden": false,
+      "text": "替换前检查（dry-run，只检查，不修改任何代码）：可替换候选 2 个调用点，拒绝 0 项\n  可替换 _0x13d0(0x1) → \"Signature\"（19:13，已观测 2 次）\n  可替换 _0x13d0(0x1) → \"Signature\"（20:13，已观测 2 次）\n注意：部分候选存在同文本但没有证据支持的调用，后续替换必须按位置进行，不能按调用文本"
+    },
+    "apply1": {
+      "label": "first apply",
+      "before": {
+        "disabled": false,
+        "btnText": "应用已验证替换",
+        "hidden": true,
+        "text": ""
+      },
+      "result": {
+        "disabled": false,
+        "btnText": "应用已验证替换",
+        "hidden": false,
+        "text": "✅ Phase 4 位置级替换完成\n\n替换数量: 2 / 2\n拒绝数量: 0\n\n已替换：\n  19:13: _0x13d0(0x1) → \"Signature\"\n  20:13: _0x13d0(0x1) → \"Signature\"\n\n\n注意：原始源码保持不变，替换结果仅用于查看和复制。"
+      },
+      "panes": {
+        "orig": [
+          "// Phase 4.7 L3 controlled page: the same call text at several positions. NOT a real-site sample.",
+          "// New file. test-pages/phase4-position-level-auto.js is untouched. Created in the batch that wrote the L3 tests; NOT executed in that batch.",
+          "// Executed while the page loads (observable by the auto capture engine): positions A and C, same text _0x13d0(0x1).",
+          "// NOT executed while the page loads: position B (laterB) with the same text, and position D (shadowD) whose _0x13d0 is a different function.",
+          "// Expected recovery: A and C replaced by the observed value; B left as is (same text, never observed); D left as is (different binding).",
+          "// The truth is only computed on demand through window.__l3Truth(), so reading it never adds capture records during the capture window.",
+          "var _0x13a1 = ['Signature', 'Document', 'License', 'Header'];",
+          "(function (arr, n) {",
+          "  var rot = function (k) {",
+          "    while (--k) {",
+          "      arr.push(arr.shift());",
+          "    }",
+          "  };",
+          "  rot(++n);",
+          "})(_0x13a1, 0x3);",
+          "function _0x13d0(i) {",
+          "  return _0x13a1[i - 0x0];",
+          "}",
+          "var siteA = _0x13d0(0x1);",
+          "var siteC = _0x13d0(0x1);",
+          "function laterB() {",
+          "  return _0x13d0(0x1);",
+          "}",
+          "function shadowD() {",
+          "  function _0x13d0(i) {",
+          "    return 'SHADOW-' + i;",
+          "  }",
+          "  return _0x13d0(0x1);",
+          "}",
+          "window.laterB = laterB;",
+          "window.shadowD = shadowD;",
+          "window.__l3Result = {",
+          "  A: siteA,",
+          "  C: siteC",
+          "};",
+          "window.__l3Truth = function () {",
+          "  return JSON.stringify({",
+          "    values: {",
+          "      A: siteA,",
+          "      B: laterB(),",
+          "      C: siteC,",
+          "      D: shadowD()",
+          "    },",
+          "    observedAtLoad: ['A', 'C'],",
+          "    notExecutedAtLoad: ['B', 'D'],",
+          "    mustStayUntouchedByRecovery: ['B', 'D']",
+          "  });",
+          "};",
+          "document.title = 'l3-same-text-ready';"
+        ],
+        "rec": [
+          "// Phase 4.7 L3 controlled page: the same call text at several positions. NOT a real-site sample.",
+          "// New file. test-pages/phase4-position-level-auto.js is untouched. Created in the batch that wrote the L3 tests; NOT executed in that batch.",
+          "// Executed while the page loads (observable by the auto capture engine): positions A and C, same text _0x13d0(0x1).",
+          "// NOT executed while the page loads: position B (laterB) with the same text, and position D (shadowD) whose _0x13d0 is a different function.",
+          "// Expected recovery: A and C replaced by the observed value; B left as is (same text, never observed); D left as is (different binding).",
+          "// The truth is only computed on demand through window.__l3Truth(), so reading it never adds capture records during the capture window.",
+          "var _0x13a1 = ['Signature', 'Document', 'License', 'Header'];",
+          "(function (arr, n) {",
+          "  var rot = function (k) {",
+          "    while (--k) {",
+          "      arr.push(arr.shift());",
+          "    }",
+          "  };",
+          "  rot(++n);",
+          "})(_0x13a1, 0x3);",
+          "function _0x13d0(i) {",
+          "  return _0x13a1[i - 0x0];",
+          "}",
+          "var siteA = \"Signature\";",
+          "var siteC = \"Signature\";",
+          "function laterB() {",
+          "  return _0x13d0(0x1);",
+          "}",
+          "function shadowD() {",
+          "  function _0x13d0(i) {",
+          "    return 'SHADOW-' + i;",
+          "  }",
+          "  return _0x13d0(0x1);",
+          "}",
+          "window.laterB = laterB;",
+          "window.shadowD = shadowD;",
+          "window.__l3Result = { A: siteA, C: siteC };",
+          "window.__l3Truth = function () {",
+          "  return JSON.stringify({ values: { A: siteA, B: laterB(), C: siteC, D: shadowD() }, observedAtLoad: ['A', 'C'], notExecutedAtLoad: ['B', 'D'], mustStayUntouchedByRecovery: ['B', 'D'] });",
+          "};",
+          "document.title = 'l3-same-text-ready';",
+          " "
+        ]
+      }
+    },
+    "apply2": {
+      "label": "second apply",
+      "before": {
+        "disabled": false,
+        "btnText": "应用已验证替换",
+        "hidden": false,
+        "text": "✅ Phase 4 位置级替换完成\n\n替换数量: 2 / 2\n拒绝数量: 0\n\n已替换：\n  19:13: _0x13d0(0x1) → \"Signature\"\n  20:13: _0x13d0(0x1) → \"Signature\"\n\n\n注意：原始源码保持不变，替换结果仅用于查看和复制。"
+      },
+      "result": {
+        "disabled": false,
+        "btnText": "应用已验证替换",
+        "hidden": false,
+        "text": "✅ Phase 4 位置级替换完成\n\n替换数量: 2 / 2\n拒绝数量: 0\n\n已替换：\n  19:13: _0x13d0(0x1) → \"Signature\"\n  20:13: _0x13d0(0x1) → \"Signature\"\n\n\n注意：原始源码保持不变，替换结果仅用于查看和复制。"
+      },
+      "panes": {
+        "orig": [
+          "// Phase 4.7 L3 controlled page: the same call text at several positions. NOT a real-site sample.",
+          "// New file. test-pages/phase4-position-level-auto.js is untouched. Created in the batch that wrote the L3 tests; NOT executed in that batch.",
+          "// Executed while the page loads (observable by the auto capture engine): positions A and C, same text _0x13d0(0x1).",
+          "// NOT executed while the page loads: position B (laterB) with the same text, and position D (shadowD) whose _0x13d0 is a different function.",
+          "// Expected recovery: A and C replaced by the observed value; B left as is (same text, never observed); D left as is (different binding).",
+          "// The truth is only computed on demand through window.__l3Truth(), so reading it never adds capture records during the capture window.",
+          "var _0x13a1 = ['Signature', 'Document', 'License', 'Header'];",
+          "(function (arr, n) {",
+          "  var rot = function (k) {",
+          "    while (--k) {",
+          "      arr.push(arr.shift());",
+          "    }",
+          "  };",
+          "  rot(++n);",
+          "})(_0x13a1, 0x3);",
+          "function _0x13d0(i) {",
+          "  return _0x13a1[i - 0x0];",
+          "}",
+          "var siteA = _0x13d0(0x1);",
+          "var siteC = _0x13d0(0x1);",
+          "function laterB() {",
+          "  return _0x13d0(0x1);",
+          "}",
+          "function shadowD() {",
+          "  function _0x13d0(i) {",
+          "    return 'SHADOW-' + i;",
+          "  }",
+          "  return _0x13d0(0x1);",
+          "}",
+          "window.laterB = laterB;",
+          "window.shadowD = shadowD;",
+          "window.__l3Result = {",
+          "  A: siteA,",
+          "  C: siteC",
+          "};",
+          "window.__l3Truth = function () {",
+          "  return JSON.stringify({",
+          "    values: {",
+          "      A: siteA,",
+          "      B: laterB(),",
+          "      C: siteC,",
+          "      D: shadowD()",
+          "    },",
+          "    observedAtLoad: ['A', 'C'],",
+          "    notExecutedAtLoad: ['B', 'D'],",
+          "    mustStayUntouchedByRecovery: ['B', 'D']",
+          "  });",
+          "};",
+          "document.title = 'l3-same-text-ready';"
+        ],
+        "rec": [
+          "// Phase 4.7 L3 controlled page: the same call text at several positions. NOT a real-site sample.",
+          "// New file. test-pages/phase4-position-level-auto.js is untouched. Created in the batch that wrote the L3 tests; NOT executed in that batch.",
+          "// Executed while the page loads (observable by the auto capture engine): positions A and C, same text _0x13d0(0x1).",
+          "// NOT executed while the page loads: position B (laterB) with the same text, and position D (shadowD) whose _0x13d0 is a different function.",
+          "// Expected recovery: A and C replaced by the observed value; B left as is (same text, never observed); D left as is (different binding).",
+          "// The truth is only computed on demand through window.__l3Truth(), so reading it never adds capture records during the capture window.",
+          "var _0x13a1 = ['Signature', 'Document', 'License', 'Header'];",
+          "(function (arr, n) {",
+          "  var rot = function (k) {",
+          "    while (--k) {",
+          "      arr.push(arr.shift());",
+          "    }",
+          "  };",
+          "  rot(++n);",
+          "})(_0x13a1, 0x3);",
+          "function _0x13d0(i) {",
+          "  return _0x13a1[i - 0x0];",
+          "}",
+          "var siteA = \"Signature\";",
+          "var siteC = \"Signature\";",
+          "function laterB() {",
+          "  return _0x13d0(0x1);",
+          "}",
+          "function shadowD() {",
+          "  function _0x13d0(i) {",
+          "    return 'SHADOW-' + i;",
+          "  }",
+          "  return _0x13d0(0x1);",
+          "}",
+          "window.laterB = laterB;",
+          "window.shadowD = shadowD;",
+          "window.__l3Result = { A: siteA, C: siteC };",
+          "window.__l3Truth = function () {",
+          "  return JSON.stringify({ values: { A: siteA, B: laterB(), C: siteC, D: shadowD() }, observedAtLoad: ['A', 'C'], notExecutedAtLoad: ['B', 'D'], mustStayUntouchedByRecovery: ['B', 'D'] });",
+          "};",
+          "document.title = 'l3-same-text-ready';",
+          " "
+        ]
+      }
+    },
+    "stopCapture": {
+      "panel": {
+        "cards": 1,
+        "status": "已停止",
+        "hits": "2",
+        "success": "2",
+        "failed": "0",
+        "verified": "1",
+        "vUnstable": "0",
+        "vFailed": "0",
+        "vInsufficient": "0",
+        "vPending": "0",
+        "vTotal": "1",
+        "notice": "",
+        "items": [
+          {
+            "name": "_0x13d0",
+            "summary": "(1) → \"Signature\""
+          }
+        ]
+      },
+      "engine": {
+        "hook": true,
+        "active": false,
+        "breakpoints": 0,
+        "stats": {
+          "breakpointsSet": 4,
+          "hits": 2,
+          "pauses": 4,
+          "success": 2,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "count": 1
+      },
+      "pageResponsive": true
+    },
+    "truthAfterStop": {
+      "truth": "{\"values\":{\"A\":\"Signature\",\"B\":\"Signature\",\"C\":\"Signature\",\"D\":\"SHADOW-1\"},\"observedAtLoad\":[\"A\",\"C\"],\"notExecutedAtLoad\":[\"B\",\"D\"],\"mustStayUntouchedByRecovery\":[\"B\",\"D\"]}",
+      "engineCountBefore": 1,
+      "engineCountAfter": 1,
+      "engineHitsBefore": 2,
+      "engineHitsAfter": 2,
+      "capturesAfter": [
+        {
+          "key": "20|16|2|[{\"type\":\"number\",\"value\":1}]|success|{\"type\":\"string\",\"value\":\"Signature\"}",
+          "scriptId": "20",
+          "scriptUrl": "http://127.0.0.1:8782/real-site-l3-same-text.js",
+          "functionName": "_0x13d0",
+          "functionLocation": {
+            "lineNumber": 16,
+            "columnNumber": 2
+          },
+          "callLocation": {
+            "lineNumber": 18,
+            "columnNumber": 12
+          },
+          "callLocations": [
+            {
+              "lineNumber": 18,
+              "columnNumber": 12
+            },
+            {
+              "lineNumber": 19,
+              "columnNumber": 12
+            }
+          ],
+          "arguments": [
+            {
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "returnValue": {
+            "type": "string",
+            "value": "Signature"
+          },
+          "captureStatus": "success",
+          "count": 2,
+          "firstSeq": 1,
+          "lastSeq": 2,
+          "timestamp": 1794291042992
+        }
+      ]
+    },
+    "sourceAfterApply": {
+      "ok": true,
+      "scriptId": "20",
+      "chars": 1576,
+      "bytes": 1576,
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "source": "// Phase 4.7 L3 controlled page: the same call text at several positions. NOT a real-site sample.\n// New file. test-pages/phase4-position-level-auto.js is untouched. Created in the batch that wrote the L3 tests; NOT executed in that batch.\n// Executed while the page loads (observable by the auto capture engine): positions A and C, same text _0x13d0(0x1).\n// NOT executed while the page loads: position B (laterB) with the same text, and position D (shadowD) whose _0x13d0 is a different function.\n// Expected recovery: A and C replaced by the observed value; B left as is (same text, never observed); D left as is (different binding).\n// The truth is only computed on demand through window.__l3Truth(), so reading it never adds capture records during the capture window.\nvar _0x13a1 = ['Signature', 'Document', 'License', 'Header'];\n(function (arr, n) {\n  var rot = function (k) {\n    while (--k) {\n      arr.push(arr.shift());\n    }\n  };\n  rot(++n);\n})(_0x13a1, 0x3);\nfunction _0x13d0(i) {\n  return _0x13a1[i - 0x0];\n}\nvar siteA = _0x13d0(0x1);\nvar siteC = _0x13d0(0x1);\nfunction laterB() {\n  return _0x13d0(0x1);\n}\nfunction shadowD() {\n  function _0x13d0(i) {\n    return 'SHADOW-' + i;\n  }\n  return _0x13d0(0x1);\n}\nwindow.laterB = laterB;\nwindow.shadowD = shadowD;\nwindow.__l3Result = { A: siteA, C: siteC };\nwindow.__l3Truth = function () {\n  return JSON.stringify({ values: { A: siteA, B: laterB(), C: siteC, D: shadowD() }, observedAtLoad: ['A', 'C'], notExecutedAtLoad: ['B', 'D'], mustStayUntouchedByRecovery: ['B', 'D'] });\n};\ndocument.title = 'l3-same-text-ready';\n"
+    },
+    "pageResourceAfterApply": {
+      "base64Encoded": false,
+      "bytes": 1576,
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a"
+    },
+    "panelScreenshot": {
+      "file": "D:/Projects/ob-recover/test/acceptance/p47-l3-browser-replay-panel.png",
+      "bytes": 151502,
+      "sha256": "fcb8e4aba5dfda94f41b2e0c80c6e063e8a47f8a14aa55a703dfcf0ae6152571"
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "captureScriptId": "20",
+  "served": [
+    {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    },
+    {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    },
+    {
+      "name": "real-site-l3-same-text.html",
+      "sha256": "844c73ef6d1b0b1a811a0b5ef4cdf9b2eb85980402d313420332bc1a2a68b22e",
+      "bytes": 125
+    },
+    {
+      "name": "real-site-l3-same-text.js",
+      "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+      "bytes": 1576
+    }
+  ],
+  "finishedAt": "2026-11-10T06:11:04.133Z"
+}

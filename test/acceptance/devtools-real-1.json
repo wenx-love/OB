@@ -1,0 +1,44 @@
+{
+  "note": "real DevTools frontend + real panel.html iframe + real background/chrome.debugger. Panel switched via InspectorView.showPanel (programmatic, not a mouse click on the tab). Connect is triggered by element.click() inside the real panel.",
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "show": {
+    "selected": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover"
+  },
+  "panelTargetFound": true,
+  "before": {
+    "debugger": "未连接",
+    "runtime": "—",
+    "tabId": "122346909",
+    "connectDisabled": false,
+    "disconnectDisabled": true,
+    "logs": [
+      "15:51:44状态: disconnected",
+      "15:51:44状态: disconnected"
+    ],
+    "size": "sm",
+    "w": 554,
+    "h": 844
+  },
+  "click": 1,
+  "afterConnect": {
+    "debugger": "已连接",
+    "runtime": "已启用",
+    "tabId": "122346909",
+    "connectDisabled": true,
+    "disconnectDisabled": false,
+    "logs": [
+      "15:51:47分析完成: 0 个候选解码器",
+      "15:51:47发现脚本 [8]: (inline)",
+      "15:51:47分析完成: 0 个候选解码器",
+      "15:51:47已启用 beforeScriptExecution 插桩断点",
+      "15:51:47执行上下文已创建: http://127.0.0.1:8771",
+      "15:51:47执行上下文已创建: http://127.0.0.1:8771",
+      "15:51:47状态: connected",
+      "15:51:47已连接"
+    ],
+    "size": "sm",
+    "w": 554,
+    "h": 788
+  }
+}

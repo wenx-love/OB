@@ -1,0 +1,61 @@
+{
+  "args": [
+    "--remote-debugging-port=9402",
+    "--user-data-dir=C:/Users/Administrator/TEMP/opencode/ext-profile2",
+    "--load-extension=D:/Projects/ob-recover/dist",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-gpu",
+    "--headless=new",
+    "about:blank"
+  ],
+  "chrome": "Chrome/155.0.8059.40",
+  "webSocketDebuggerUrl": "ws://127.0.0.1:9402/devtools/browser/cdbd5c6e-36d8-4f3b-9884-b6c3a0ad6441",
+  "allTargets": [
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js",
+      "id": "DBC208D1432A2A315BF16FFFAB4703BB"
+    },
+    {
+      "type": "page",
+      "url": "about:blank",
+      "id": "0FBEC253C4C128F3FAD044C0A8E2CEF2"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html",
+      "id": "4C61F9448E6ED43E542FC06F632BE6B7"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/",
+      "id": "F9D6D06D95EF02BE06C76AA579CCC351"
+    },
+    {
+      "type": "background_page",
+      "url": "chrome-extension://nkeimhogjdpnpccoofpliimaahmaaome/background.html",
+      "id": "7E7BA253A9778E4D0A016AB6C5824236"
+    }
+  ],
+  "extensionTargets": [
+    {
+      "targetId": "DBC208D1432A2A315BF16FFFAB4703BB",
+      "type": "service_worker",
+      "title": "Service Worker chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js",
+      "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js",
+      "attached": false,
+      "canAccessOpener": false,
+      "browserContextId": "27848E4CF45A083ABF9615F9E94AABA4"
+    },
+    {
+      "targetId": "7E7BA253A9778E4D0A016AB6C5824236",
+      "type": "background_page",
+      "title": "Google Hangouts",
+      "url": "chrome-extension://nkeimhogjdpnpccoofpliimaahmaaome/background.html",
+      "attached": false,
+      "canAccessOpener": false,
+      "browserContextId": "27848E4CF45A083ABF9615F9E94AABA4"
+    }
+  ]
+}

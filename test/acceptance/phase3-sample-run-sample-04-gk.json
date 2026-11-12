@@ -1,0 +1,1149 @@
+{
+  "sample": "sample-04-gk",
+  "note": "open-source sample (kuizuo/js-deobfuscator example), raw CDP + headless Chrome, isolated: CSP default-src none + Fetch blocks all non-file requests; NOT a third-party site script; NOT the chrome.debugger extension path",
+  "bytes": 657339,
+  "discoveryMs": 3004,
+  "functions": 2137,
+  "candidates": 30,
+  "highCandidates": [
+    {
+      "name": "_0x4698",
+      "kind": "FunctionExpression",
+      "params": 2,
+      "staticCalls": 794,
+      "arr": "_0xe123",
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_0x5ca5",
+      "kind": "FunctionExpression",
+      "params": 2,
+      "staticCalls": 793,
+      "arr": "_0xe123",
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_doProcessBlock",
+      "kind": "ObjectMethod",
+      "params": 2,
+      "staticCalls": 0,
+      "arr": "_0x3993a1",
+      "b64": false,
+      "rc4": false
+    },
+    {
+      "name": "_doProcessBlock",
+      "kind": "ObjectMethod",
+      "params": 2,
+      "staticCalls": 0,
+      "arr": "_0x4b5ba9",
+      "b64": false,
+      "rc4": false
+    }
+  ],
+  "plans": [
+    {
+      "fn": "_0x4698",
+      "entry": {
+        "lineNumber": 2,
+        "columnNumber": 4
+      },
+      "returns": [
+        {
+          "lineNumber": 35,
+          "columnNumber": 4
+        }
+      ],
+      "closing": {
+        "lineNumber": 36,
+        "columnNumber": 0
+      },
+      "snippet": "    _0x5c7d36 = _0x5c7d36 - 0x0;"
+    },
+    {
+      "fn": "_0x5ca5",
+      "entry": {
+        "lineNumber": 38,
+        "columnNumber": 4
+      },
+      "returns": [
+        {
+          "lineNumber": 95,
+          "columnNumber": 4
+        }
+      ],
+      "closing": {
+        "lineNumber": 96,
+        "columnNumber": 0
+      },
+      "snippet": "    _0x5c7d36 = _0x5c7d36 - 0x0;"
+    },
+    {
+      "fn": "_doProcessBlock",
+      "entry": {
+        "lineNumber": 1807,
+        "columnNumber": 16
+      },
+      "returns": [],
+      "closing": {
+        "lineNumber": 1931,
+        "columnNumber": 12
+      },
+      "snippet": "                var _0x175c87 = function(_0x4e3225, _0xd96089, _0x5921ae, _0x44d1e0, _0x3074b3) {"
+    },
+    {
+      "fn": "_doProcessBlock",
+      "entry": {
+        "lineNumber": 2891,
+        "columnNumber": 16
+      },
+      "returns": [],
+      "closing": {
+        "lineNumber": 2989,
+        "columnNumber": 12
+      },
+      "snippet": "                var _0xab333c = function(_0x4fabec, _0x44b08b, _0x92384b, _0x28d22d, _0x428475) {"
+    }
+  ],
+  "startResult": {
+    "set": 10,
+    "skipped": [],
+    "errors": []
+  },
+  "pageResponsive": true,
+  "runMs": 12046,
+  "stats": {
+    "breakpointsSet": 10,
+    "hits": 108,
+    "pauses": 322,
+    "success": 107,
+    "failed": 0,
+    "forcedResumes": 0,
+    "foreignPauses": 0
+  },
+  "breakpointsBeforeStop": 10,
+  "breakpointsAfterStop": 0,
+  "foreignPauses": 7,
+  "foreignSamples": [
+    {
+      "reason": "other",
+      "hit": [],
+      "fn": "",
+      "line": 2,
+      "col": 0,
+      "scriptId": "6",
+      "depth": 8,
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "srcHead": {
+        "v": "(function anonymous(\n) {\ndebugger\n})"
+      },
+      "engineHitsSoFar": 53,
+      "stack": [
+        {
+          "fn": "",
+          "line": 2,
+          "col": 0
+        },
+        {
+          "fn": "_0x2d84a1",
+          "line": 10324,
+          "col": 201
+        },
+        {
+          "fn": "_0x123ac5",
+          "line": 10338,
+          "col": 12
+        }
+      ]
+    },
+    {
+      "reason": "other",
+      "hit": [],
+      "fn": "",
+      "line": 2,
+      "col": 0,
+      "scriptId": "7",
+      "depth": 9,
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "srcHead": {
+        "v": "(function anonymous(\n) {\ndebugger\n})"
+      },
+      "engineHitsSoFar": 62,
+      "stack": [
+        {
+          "fn": "",
+          "line": 2,
+          "col": 0
+        },
+        {
+          "fn": "_0x2d84a1",
+          "line": 10329,
+          "col": 205
+        },
+        {
+          "fn": "_0x2d84a1",
+          "line": 10332,
+          "col": 8
+        }
+      ]
+    },
+    {
+      "reason": "other",
+      "hit": [],
+      "fn": "",
+      "line": 2,
+      "col": 0,
+      "scriptId": "8",
+      "depth": 10,
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "srcHead": {
+        "v": "(function anonymous(\n) {\ndebugger\n})"
+      },
+      "engineHitsSoFar": 71,
+      "stack": [
+        {
+          "fn": "",
+          "line": 2,
+          "col": 0
+        },
+        {
+          "fn": "_0x2d84a1",
+          "line": 10329,
+          "col": 205
+        },
+        {
+          "fn": "_0x2d84a1",
+          "line": 10332,
+          "col": 8
+        }
+      ]
+    },
+    {
+      "reason": "other",
+      "hit": [],
+      "fn": "",
+      "line": 2,
+      "col": 0,
+      "scriptId": "9",
+      "depth": 11,
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "srcHead": {
+        "v": "(function anonymous(\n) {\ndebugger\n})"
+      },
+      "engineHitsSoFar": 80,
+      "stack": [
+        {
+          "fn": "",
+          "line": 2,
+          "col": 0
+        },
+        {
+          "fn": "_0x2d84a1",
+          "line": 10329,
+          "col": 205
+        },
+        {
+          "fn": "_0x2d84a1",
+          "line": 10332,
+          "col": 8
+        }
+      ]
+    },
+    {
+      "reason": "other",
+      "hit": [],
+      "fn": "",
+      "line": 2,
+      "col": 0,
+      "scriptId": "10",
+      "depth": 12,
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "srcHead": {
+        "v": "(function anonymous(\n) {\ndebugger\n})"
+      },
+      "engineHitsSoFar": 89,
+      "stack": [
+        {
+          "fn": "",
+          "line": 2,
+          "col": 0
+        },
+        {
+          "fn": "_0x2d84a1",
+          "line": 10329,
+          "col": 205
+        },
+        {
+          "fn": "_0x2d84a1",
+          "line": 10332,
+          "col": 8
+        }
+      ]
+    }
+  ],
+  "antiDebugAborted": false,
+  "blockedRequests": 0,
+  "blockedSamples": [],
+  "pageExceptions": 0,
+  "exceptionDetails": [],
+  "bpLocs": [
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 2,
+        "columnNumber": 4
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 2,
+        "columnNumber": 4
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 35,
+        "columnNumber": 4
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 35,
+        "columnNumber": 4
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 36,
+        "columnNumber": 0
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 35,
+        "columnNumber": 21
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 38,
+        "columnNumber": 4
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 38,
+        "columnNumber": 4
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 95,
+        "columnNumber": 4
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 95,
+        "columnNumber": 4
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 96,
+        "columnNumber": 0
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 95,
+        "columnNumber": 21
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 1807,
+        "columnNumber": 16
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 1807,
+        "columnNumber": 32
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 1931,
+        "columnNumber": 12
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 1931,
+        "columnNumber": 12
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 2891,
+        "columnNumber": 16
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 2891,
+        "columnNumber": 32
+      }
+    },
+    {
+      "req": {
+        "scriptId": "3",
+        "lineNumber": 2989,
+        "columnNumber": 12
+      },
+      "actual": {
+        "scriptId": "3",
+        "lineNumber": 2989,
+        "columnNumber": 12
+      }
+    }
+  ],
+  "pauseDiag": [
+    {
+      "reason": "other",
+      "hit": [
+        "4:2:4:3"
+      ],
+      "fn": "_0x4698",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 2,
+        "columnNumber": 4
+      },
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "depth": 4
+    },
+    {
+      "reason": "other",
+      "hit": [
+        "4:35:4:3"
+      ],
+      "fn": "_0x4698",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 35,
+        "columnNumber": 4
+      },
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "depth": 4
+    },
+    {
+      "reason": "ambiguous",
+      "hit": [
+        "4:36:0:3"
+      ],
+      "fn": "_0x4698",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 35,
+        "columnNumber": 21
+      },
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "depth": 4
+    },
+    {
+      "reason": "other",
+      "hit": [
+        "4:38:4:3"
+      ],
+      "fn": "_0x5ca5",
+      "loc": {
+        "scriptId": "3",
+        "lineNumber": 38,
+        "columnNumber": 4
+      },
+      "scopes": [
+        "local",
+        "global"
+      ],
+      "depth": 4
+    }
+  ],
+  "instrumentationPauses": 10,
+  "distinctCaptures": 44,
+  "successRatePerCall": 1,
+  "failureReasons": [
+    "capture stopped before the function returned"
+  ],
+  "byFunction": {
+    "_0x4698": {
+      "distinct": 26,
+      "calls": 68,
+      "failed": 1
+    },
+    "_0x5ca5": {
+      "distinct": 18,
+      "calls": 40,
+      "failed": 0
+    }
+  },
+  "tuplesFirstDiffersFromLast": 0,
+  "maxSeq": 108,
+  "rotationEndEstimateSeq_heuristic": 0,
+  "newReturnValuesForKnownArgsAfterThreshold": 0,
+  "distinctArgTuples": 43,
+  "argsWithConflictingReturns": 0,
+  "conflictSamples": [],
+  "sample40": [
+    {
+      "fn": "_0x4698",
+      "args": [
+        0,
+        -282
+      ],
+      "ret": "attribute",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        1,
+        1
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        1,
+        "TQPD"
+      ],
+      "ret": "pasEspoyUJrtZg.oNuOciUGhUMkFnNA.dcJBnXeAxIJHxiPTqiHzeXNYCkGzbZv",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        2,
+        2
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        2,
+        -1306
+      ],
+      "ret": "{}.constructor(\"return this\")( )",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        3,
+        3
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        3,
+        -849
+      ],
+      "ret": "log",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        4,
+        4
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        4,
+        "*QNN"
+      ],
+      "ret": "error",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        5,
+        5
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        5,
+        -1625
+      ],
+      "ret": "table",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        6,
+        6
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        6,
+        "!7[s"
+      ],
+      "ret": "apply",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        7,
+        7
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        7,
+        "%%r1"
+      ],
+      "ret": "return (function() ",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        8,
+        8
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        8,
+        "u7Mv"
+      ],
+      "ret": "{}.constructor(\"return this\")( )",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        9,
+        9
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        16,
+        -655
+      ],
+      "ret": "[EyUJZgNOiUGUMkFNAdJBXeAxIJHxiPTqiHzeXNYCkGzbZv]",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        10,
+        10
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        17,
+        "pZ5g"
+      ],
+      "ret": "Ywdpx",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        11,
+        11
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        18,
+        -763
+      ],
+      "ret": "replace",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        12,
+        12
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        19,
+        -906
+      ],
+      "ret": "split",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        13,
+        13
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        20,
+        "pZ5g"
+      ],
+      "ret": "length",
+      "status": "success",
+      "count": 3,
+      "seq": [
+        14,
+        16
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        21,
+        -826
+      ],
+      "ret": "charCodeAt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        17,
+        17
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        22,
+        "S2vk"
+      ],
+      "ret": "charCodeAt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        18,
+        18
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        21,
+        -1441
+      ],
+      "ret": "charCodeAt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        19,
+        19
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        21,
+        -1359
+      ],
+      "ret": "charCodeAt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        20,
+        20
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        23,
+        -792
+      ],
+      "ret": "length",
+      "status": "success",
+      "count": 15,
+      "seq": [
+        21,
+        35
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        24,
+        "yx(c"
+      ],
+      "ret": "charCodeAt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        36,
+        36
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        21,
+        -1098
+      ],
+      "ret": "charCodeAt",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        37,
+        37
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        33,
+        "f1jm"
+      ],
+      "ret": "apply",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        38,
+        38
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        34,
+        131
+      ],
+      "ret": "function *\\( *\\)",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        39,
+        39
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        35,
+        "*QNN"
+      ],
+      "ret": "\\+\\+ *(?:[a-zA-Z_$][0-9a-zA-Z_$]*)",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        40,
+        40
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        36,
+        -131
+      ],
+      "ret": "init",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        41,
+        41
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        37,
+        "ksc["
+      ],
+      "ret": "test",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        42,
+        42
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        38,
+        -450
+      ],
+      "ret": "chain",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        43,
+        43
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        39,
+        -22
+      ],
+      "ret": "test",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        44,
+        44
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        40,
+        -98
+      ],
+      "ret": "input",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        45,
+        45
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        1554,
+        1128
+      ],
+      "ret": "pJJcd",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        46,
+        99
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        142,
+        81
+      ],
+      "ret": "string",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        47,
+        100
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        23,
+        -166
+      ],
+      "ret": "length",
+      "status": "success",
+      "count": 7,
+      "seq": [
+        48,
+        101
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        53,
+        710
+      ],
+      "ret": "constructor",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        49,
+        49
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        1558,
+        1659
+      ],
+      "ret": "debu",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        50,
+        50
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        1559,
+        "598@"
+      ],
+      "ret": "gger",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        51,
+        51
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        295,
+        -134
+      ],
+      "ret": "call",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        52,
+        52
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        1560,
+        "BlsY"
+      ],
+      "ret": "action",
+      "status": "success",
+      "count": 1,
+      "seq": [
+        53,
+        53
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        1554,
+        1747
+      ],
+      "ret": "pJJcd",
+      "status": "success",
+      "count": 6,
+      "seq": [
+        57,
+        102
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        1561,
+        "%%r1"
+      ],
+      "ret": "constructor",
+      "status": "success",
+      "count": 6,
+      "seq": [
+        58,
+        103
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        1562,
+        "w^Z3"
+      ],
+      "ret": "debu",
+      "status": "success",
+      "count": 6,
+      "seq": [
+        59,
+        104
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        1563,
+        "w^Z3"
+      ],
+      "ret": "gger",
+      "status": "success",
+      "count": 6,
+      "seq": [
+        60,
+        105
+      ]
+    },
+    {
+      "fn": "_0x5ca5",
+      "args": [
+        1448,
+        "ENYe"
+      ],
+      "ret": "apply",
+      "status": "success",
+      "count": 6,
+      "seq": [
+        61,
+        106
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        1564,
+        1090
+      ],
+      "ret": "stateObject",
+      "status": "success",
+      "count": 6,
+      "seq": [
+        62,
+        107
+      ]
+    },
+    {
+      "fn": "_0x4698",
+      "args": [
+        1554,
+        1128
+      ],
+      "ret": null,
+      "status": "capture-failed",
+      "reason": "capture stopped before the function returned",
+      "count": 1,
+      "seq": [
+        108,
+        108
+      ]
+    }
+  ],
+  "engineLogs": [
+    {
+      "kind": "log",
+      "level": "info",
+      "message": "runtime capture started: 10 breakpoints, 0 skipped, 0 errors"
+    }
+  ]
+}

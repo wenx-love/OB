@@ -1,0 +1,45 @@
+{
+  "capturedBy": "ob-recover",
+  "method": "real Chrome 155 headless=new + real DevTools frontend + real panel + real service worker + real chrome.debugger; programmatic operation (element.click, Runtime.evaluate), NOT manual mouse; applied replacements parsed from the panel own apply report",
+  "note": "parsed from the panel own texts",
+  "dryRunText": "替换前检查（dry-run，只检查，不修改任何代码）：可替换候选 2 个调用点，拒绝 0 项\n  可替换 _0x13d0(0x1) → \"Signature\"（19:13，已观测 2 次）\n  可替换 _0x13d0(0x1) → \"Signature\"（20:13，已观测 2 次）\n注意：部分候选存在同文本但没有证据支持的调用，后续替换必须按位置进行，不能按调用文本",
+  "dryRunCandidates": [
+    {
+      "from": "_0x13d0(0x1)",
+      "to": "\"Signature\"",
+      "position": {
+        "lineNumber": 18,
+        "columnNumber": 12
+      },
+      "observed": 2
+    },
+    {
+      "from": "_0x13d0(0x1)",
+      "to": "\"Signature\"",
+      "position": {
+        "lineNumber": 19,
+        "columnNumber": 12
+      },
+      "observed": 2
+    }
+  ],
+  "applyText": "✅ Phase 4 位置级替换完成\n\n替换数量: 2 / 2\n拒绝数量: 0\n\n已替换：\n  19:13: _0x13d0(0x1) → \"Signature\"\n  20:13: _0x13d0(0x1) → \"Signature\"\n\n\n注意：原始源码保持不变，替换结果仅用于查看和复制。",
+  "applied": [
+    {
+      "position": {
+        "lineNumber": 18,
+        "columnNumber": 12
+      },
+      "original": "_0x13d0(0x1)",
+      "replaced": "\"Signature\""
+    },
+    {
+      "position": {
+        "lineNumber": 19,
+        "columnNumber": 12
+      },
+      "original": "_0x13d0(0x1)",
+      "replaced": "\"Signature\""
+    }
+  ]
+}

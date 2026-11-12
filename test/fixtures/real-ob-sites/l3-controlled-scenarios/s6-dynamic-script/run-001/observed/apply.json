@@ -1,0 +1,39 @@
+{
+  "capturedBy": "ob-recover",
+  "method": "real CaptureEngine + real node:vm execution + stub CDP transport (synthetic Debugger.paused events, test/helpers/capture-driver.ts)",
+  "note": "not real Chrome and not a CDP pause capture; the observed run used a different script version (V2) than the reference (V1)",
+  "applied": [
+    {
+      "position": {
+        "lineNumber": 5,
+        "columnNumber": 2
+      },
+      "original": "dec(0)",
+      "replaced": "\"epsilon\""
+    },
+    {
+      "position": {
+        "lineNumber": 6,
+        "columnNumber": 2
+      },
+      "original": "dec(0)",
+      "replaced": "\"epsilon\""
+    },
+    {
+      "position": {
+        "lineNumber": 7,
+        "columnNumber": 2
+      },
+      "original": "dec(1)",
+      "replaced": "\"delta\""
+    },
+    {
+      "position": {
+        "lineNumber": 8,
+        "columnNumber": 2
+      },
+      "original": "dec(1)",
+      "replaced": "\"delta\""
+    }
+  ]
+}

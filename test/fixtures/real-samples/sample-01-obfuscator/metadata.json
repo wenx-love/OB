@@ -1,0 +1,18 @@
+{
+  "name": "sample-01-obfuscator",
+  "source": "https://github.com/kuizuo/js-deobfuscator/tree/main/example/obfuscator",
+  "description": "javascript-obfuscator standard obfuscation with Base64 string array and control flow flattening",
+  "obfuscationType": "javascript-obfuscator",
+  "features": [
+    "String array with Base64 encoding",
+    "Array rotation (shift/push)",
+    "Control flow flattening",
+    "Dead code injection",
+    "Self-defending",
+    "Anti-debug"
+  ],
+  "inputSize": 13567,
+  "testGoal": "Verify string decoding, control flow recovery, and anti-debug removal",
+  "hasExpectedOutput": true,
+  "notes": "Standard javascript-obfuscator output with multiple protection layers. Expected output shows partial deobfuscation."
+}

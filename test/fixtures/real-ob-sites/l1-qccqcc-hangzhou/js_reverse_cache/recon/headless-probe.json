@@ -1,0 +1,7 @@
+{
+  "probe": "plain headless Chrome 155, no extension, one navigation",
+  "url": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3",
+  "chrome": "Chrome/155.0.8059.40",
+  "state": "{\"title\":\"403 Forbidden\",\"href\":\"https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3\",\"ready\":\"complete\",\"scripts\":0}",
+  "scriptSrcs": "[]"
+}

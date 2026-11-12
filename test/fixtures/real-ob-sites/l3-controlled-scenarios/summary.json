@@ -1,0 +1,453 @@
+{
+  "schema": "ob-recover.real-site-summary/2",
+  "layer": "L3",
+  "isRealSiteSample": false,
+  "perScenario": [
+    {
+      "scenario": "s0-positive-control",
+      "runId": "run-001",
+      "compareFile": "test/fixtures/real-ob-sites/l3-controlled-scenarios/s0-positive-control/run-001/compare.json",
+      "identity": {
+        "referenceSha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+        "observedSha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+        "afterApplySha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+        "basis": "the same source string is archived as script.js, executed by drive() and passed to the pipeline",
+        "referenceEqualsObserved": true,
+        "unchangedAfterApply": true
+      },
+      "counts": {
+        "correct-replacement": 4,
+        "safe-rejection": 0,
+        "insufficient-evidence": 0,
+        "version-mismatch": 0,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 4,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 0,
+        "sr": 0
+      },
+      "metrics": {
+        "precision": 1,
+        "recall": 1,
+        "falseReplacement": 0,
+        "unresolved": {
+          "count": 0,
+          "ratio": 0
+        },
+        "versionMismatch": {
+          "runs": 0,
+          "totalRuns": 1,
+          "ratio": 0
+        },
+        "safeRejectionRate": "n/a",
+        "sourceIntegrity": true,
+        "businessParity": "pass",
+        "rPos": 4,
+        "rNeg": 0
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": true,
+        "sourceIntegrity": true,
+        "safeRejectionRateIs100": "n/a",
+        "precisionIs100": true
+      },
+      "verdict": "inconclusive",
+      "exhaustive": true
+    },
+    {
+      "scenario": "s1-same-text-different-position",
+      "runId": "run-001",
+      "compareFile": "test/fixtures/real-ob-sites/l3-controlled-scenarios/s1-same-text-different-position/run-001/compare.json",
+      "identity": {
+        "referenceSha256": "8ea6de7faf97488df88845236fbbd0dd191b264d9d0090a85f82277acd661557",
+        "observedSha256": "8ea6de7faf97488df88845236fbbd0dd191b264d9d0090a85f82277acd661557",
+        "afterApplySha256": "8ea6de7faf97488df88845236fbbd0dd191b264d9d0090a85f82277acd661557",
+        "basis": "the same source string is archived as script.js, executed by drive() and passed to the pipeline",
+        "referenceEqualsObserved": true,
+        "unchangedAfterApply": true
+      },
+      "counts": {
+        "correct-replacement": 2,
+        "safe-rejection": 1,
+        "insufficient-evidence": 1,
+        "version-mismatch": 0,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 2,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 1,
+        "sr": 1
+      },
+      "metrics": {
+        "precision": 1,
+        "recall": 0.666667,
+        "falseReplacement": 0,
+        "unresolved": {
+          "count": 1,
+          "ratio": 0.333333
+        },
+        "versionMismatch": {
+          "runs": 0,
+          "totalRuns": 1,
+          "ratio": 0
+        },
+        "safeRejectionRate": 1,
+        "sourceIntegrity": true,
+        "businessParity": "pass",
+        "rPos": 3,
+        "rNeg": 1
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": true,
+        "sourceIntegrity": true,
+        "safeRejectionRateIs100": true,
+        "precisionIs100": true
+      },
+      "verdict": "pass",
+      "exhaustive": true
+    },
+    {
+      "scenario": "s2-array-rotation",
+      "runId": "run-001",
+      "compareFile": "test/fixtures/real-ob-sites/l3-controlled-scenarios/s2-array-rotation/run-001/compare.json",
+      "identity": {
+        "referenceSha256": "bd11e190f73922e7a4e82f6117e0a39d87bb7ed3e339c9169a165f55c172b504",
+        "observedSha256": "bd11e190f73922e7a4e82f6117e0a39d87bb7ed3e339c9169a165f55c172b504",
+        "afterApplySha256": "bd11e190f73922e7a4e82f6117e0a39d87bb7ed3e339c9169a165f55c172b504",
+        "basis": "the same source string is archived as script.js, executed by drive() and passed to the pipeline",
+        "referenceEqualsObserved": true,
+        "unchangedAfterApply": true
+      },
+      "counts": {
+        "correct-replacement": 0,
+        "safe-rejection": 4,
+        "insufficient-evidence": 0,
+        "version-mismatch": 0,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 0,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 0,
+        "sr": 4
+      },
+      "metrics": {
+        "precision": "n/a",
+        "recall": "n/a",
+        "falseReplacement": 0,
+        "unresolved": {
+          "count": 0,
+          "ratio": "n/a"
+        },
+        "versionMismatch": {
+          "runs": 0,
+          "totalRuns": 1,
+          "ratio": 0
+        },
+        "safeRejectionRate": 1,
+        "sourceIntegrity": true,
+        "businessParity": "not-evaluated",
+        "rPos": 0,
+        "rNeg": 4
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": true,
+        "sourceIntegrity": true,
+        "safeRejectionRateIs100": true,
+        "precisionIs100": "n/a"
+      },
+      "verdict": "inconclusive",
+      "exhaustive": true
+    },
+    {
+      "scenario": "s3-same-args-different-returns",
+      "runId": "run-001",
+      "compareFile": "test/fixtures/real-ob-sites/l3-controlled-scenarios/s3-same-args-different-returns/run-001/compare.json",
+      "identity": {
+        "referenceSha256": "8bd7505a51bf33815c562e3cae4caf100276922665bd238f958d899c262ff48c",
+        "observedSha256": "8bd7505a51bf33815c562e3cae4caf100276922665bd238f958d899c262ff48c",
+        "afterApplySha256": "8bd7505a51bf33815c562e3cae4caf100276922665bd238f958d899c262ff48c",
+        "basis": "the same source string is archived as script.js, executed by drive() and passed to the pipeline",
+        "referenceEqualsObserved": true,
+        "unchangedAfterApply": true
+      },
+      "counts": {
+        "correct-replacement": 0,
+        "safe-rejection": 2,
+        "insufficient-evidence": 0,
+        "version-mismatch": 0,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 0,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 0,
+        "sr": 2
+      },
+      "metrics": {
+        "precision": "n/a",
+        "recall": "n/a",
+        "falseReplacement": 0,
+        "unresolved": {
+          "count": 0,
+          "ratio": "n/a"
+        },
+        "versionMismatch": {
+          "runs": 0,
+          "totalRuns": 1,
+          "ratio": 0
+        },
+        "safeRejectionRate": 1,
+        "sourceIntegrity": true,
+        "businessParity": "not-evaluated",
+        "rPos": 0,
+        "rNeg": 2
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": true,
+        "sourceIntegrity": true,
+        "safeRejectionRateIs100": true,
+        "precisionIs100": "n/a"
+      },
+      "verdict": "inconclusive",
+      "exhaustive": true
+    },
+    {
+      "scenario": "s4-state-dependent",
+      "runId": "run-001",
+      "compareFile": "test/fixtures/real-ob-sites/l3-controlled-scenarios/s4-state-dependent/run-001/compare.json",
+      "identity": {
+        "referenceSha256": "ab007e4f991b0bc673fe664bd5cf3433325b190551450dcebd697895c83c81a6",
+        "observedSha256": "ab007e4f991b0bc673fe664bd5cf3433325b190551450dcebd697895c83c81a6",
+        "afterApplySha256": "ab007e4f991b0bc673fe664bd5cf3433325b190551450dcebd697895c83c81a6",
+        "basis": "the same source string is archived as script.js, executed by drive() and passed to the pipeline",
+        "referenceEqualsObserved": true,
+        "unchangedAfterApply": true
+      },
+      "counts": {
+        "correct-replacement": 0,
+        "safe-rejection": 3,
+        "insufficient-evidence": 0,
+        "version-mismatch": 0,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 0,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 0,
+        "sr": 3
+      },
+      "metrics": {
+        "precision": "n/a",
+        "recall": "n/a",
+        "falseReplacement": 0,
+        "unresolved": {
+          "count": 0,
+          "ratio": "n/a"
+        },
+        "versionMismatch": {
+          "runs": 0,
+          "totalRuns": 1,
+          "ratio": 0
+        },
+        "safeRejectionRate": 1,
+        "sourceIntegrity": true,
+        "businessParity": "not-evaluated",
+        "rPos": 0,
+        "rNeg": 3
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": true,
+        "sourceIntegrity": true,
+        "safeRejectionRateIs100": true,
+        "precisionIs100": "n/a"
+      },
+      "verdict": "inconclusive",
+      "exhaustive": true
+    },
+    {
+      "scenario": "s5-side-effect-decoder",
+      "runId": "run-001",
+      "compareFile": "test/fixtures/real-ob-sites/l3-controlled-scenarios/s5-side-effect-decoder/run-001/compare.json",
+      "identity": {
+        "referenceSha256": "7ab9485d6baee733ebd9dd25da7d48de357645eb369db028a1e5190c6efdf021",
+        "observedSha256": "7ab9485d6baee733ebd9dd25da7d48de357645eb369db028a1e5190c6efdf021",
+        "afterApplySha256": "7ab9485d6baee733ebd9dd25da7d48de357645eb369db028a1e5190c6efdf021",
+        "basis": "the same source string is archived as script.js, executed by drive() and passed to the pipeline",
+        "referenceEqualsObserved": true,
+        "unchangedAfterApply": true
+      },
+      "counts": {
+        "correct-replacement": 0,
+        "safe-rejection": 4,
+        "insufficient-evidence": 0,
+        "version-mismatch": 0,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 0,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 0,
+        "sr": 4
+      },
+      "metrics": {
+        "precision": "n/a",
+        "recall": "n/a",
+        "falseReplacement": 0,
+        "unresolved": {
+          "count": 0,
+          "ratio": "n/a"
+        },
+        "versionMismatch": {
+          "runs": 0,
+          "totalRuns": 1,
+          "ratio": 0
+        },
+        "safeRejectionRate": 1,
+        "sourceIntegrity": true,
+        "businessParity": "not-evaluated",
+        "rPos": 0,
+        "rNeg": 4
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": true,
+        "sourceIntegrity": true,
+        "safeRejectionRateIs100": true,
+        "precisionIs100": "n/a"
+      },
+      "verdict": "inconclusive",
+      "exhaustive": true
+    },
+    {
+      "scenario": "s6-dynamic-script",
+      "runId": "run-001",
+      "compareFile": "test/fixtures/real-ob-sites/l3-controlled-scenarios/s6-dynamic-script/run-001/compare.json",
+      "identity": {
+        "referenceSha256": "6a21ecf53d17ea8dc7992f35ca71e0fe60b287cf6500586d43864c2c2d965b0c",
+        "observedSha256": "3950b8c0efa52a5e35813bf9c2e64b73e0056fe70cd0a4db2ee58d3dbfa5aacc",
+        "afterApplySha256": "3950b8c0efa52a5e35813bf9c2e64b73e0056fe70cd0a4db2ee58d3dbfa5aacc",
+        "basis": "V1 archived as the reference script, V2 executed and recovered",
+        "referenceEqualsObserved": false,
+        "unchangedAfterApply": "n/a"
+      },
+      "counts": {
+        "correct-replacement": 0,
+        "safe-rejection": 0,
+        "insufficient-evidence": 0,
+        "version-mismatch": 4,
+        "false-replacement": 0
+      },
+      "detail": {
+        "tp": 0,
+        "frWrongValue": 0,
+        "frOnIndeterminate": 0,
+        "frNotInReference": 0,
+        "frSourceMutation": 0,
+        "un": 0,
+        "sr": 0
+      },
+      "metrics": {
+        "precision": "n/a",
+        "recall": "n/a",
+        "falseReplacement": "n/a",
+        "unresolved": {
+          "count": "n/a",
+          "ratio": "n/a"
+        },
+        "versionMismatch": {
+          "runs": 1,
+          "totalRuns": 1,
+          "ratio": 1
+        },
+        "safeRejectionRate": "n/a",
+        "sourceIntegrity": "n/a",
+        "businessParity": "not-evaluated",
+        "rPos": "n/a",
+        "rNeg": "n/a"
+      },
+      "hardConditions": {
+        "falseReplacementIsZero": "n/a",
+        "sourceIntegrity": "n/a",
+        "safeRejectionRateIs100": "n/a",
+        "precisionIs100": "n/a"
+      },
+      "verdict": "version-mismatch",
+      "exhaustive": true
+    }
+  ],
+  "aggregateAcrossScenarios": {
+    "label": "l3-controlled-scenarios",
+    "runs": 7,
+    "comparableRuns": 6,
+    "versionMismatchRuns": 1,
+    "counts": {
+      "correct-replacement": 6,
+      "safe-rejection": 14,
+      "insufficient-evidence": 1,
+      "version-mismatch": 4,
+      "false-replacement": 0
+    },
+    "detail": {
+      "tp": 6,
+      "frWrongValue": 0,
+      "frOnIndeterminate": 0,
+      "frNotInReference": 0,
+      "frSourceMutation": 0,
+      "un": 1,
+      "sr": 14
+    },
+    "metrics": {
+      "precision": 1,
+      "recall": 0.857143,
+      "falseReplacement": 0,
+      "unresolved": {
+        "count": 1,
+        "ratio": 0.142857
+      },
+      "versionMismatch": {
+        "runs": 1,
+        "totalRuns": 7,
+        "ratio": 0.142857
+      },
+      "safeRejectionRate": 1,
+      "sourceIntegrity": true,
+      "businessParity": "not-evaluated",
+      "rPos": 7,
+      "rNeg": 14
+    },
+    "hardConditions": {
+      "falseReplacementIsZero": true,
+      "sourceIntegrity": true,
+      "safeRejectionRateIs100": true,
+      "precisionIs100": true
+    },
+    "verdict": "pass"
+  },
+  "aggregateNote": "the aggregate sums DIFFERENT scripts (one reference set per scenario), so no position is counted twice; the formal result of each scenario is its own entry in perScenario and its own compare.json, and the aggregate is not the performance of any single scenario",
+  "notes": [
+    "L3 uses the real CaptureEngine over a stub CDP transport and real node:vm execution: it proves the comparison system and the pipeline on controlled scenarios only",
+    "it is not real Chrome evidence, it is not L1 evidence, and it does not make Phase 4.7 pass",
+    "the real Chrome replay of test-pages/real-site-l3-same-text.html was run separately: its own formal result is in l3-browser-replay/summary.json and is NOT part of this stub-transport aggregate"
+  ]
+}

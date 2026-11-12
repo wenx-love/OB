@@ -1,0 +1,222 @@
+{
+  "chrome": "Chrome/155.0.8059.40",
+  "note": "raw CDP + headless Chrome with the real CaptureEngine; targets chosen manually (lifecycle test, not discovery); NOT the chrome.debugger extension path",
+  "scenarios": [
+    {
+      "name": "S1 manual stop mid-run",
+      "checks": [
+        {
+          "name": "capture reached 10 hits before stop",
+          "pass": true,
+          "detail": 13
+        },
+        {
+          "name": "page finished after stop",
+          "pass": true
+        },
+        {
+          "name": "page ran all 100 iterations",
+          "pass": true
+        },
+        {
+          "name": "page is not left paused",
+          "pass": true
+        },
+        {
+          "name": "engine breakpoints cleared",
+          "pass": true
+        },
+        {
+          "name": "no pauses after stop",
+          "pass": true,
+          "detail": 0
+        },
+        {
+          "name": "no new hits after stop (<=2 in flight)",
+          "pass": true,
+          "detail": {
+            "hitsAtStop": 13,
+            "hitsFinal": 13
+          }
+        },
+        {
+          "name": "captures kept",
+          "pass": true
+        }
+      ],
+      "startResult": {
+        "set": 3,
+        "skipped": [],
+        "errors": []
+      },
+      "foreign": [],
+      "nav": [],
+      "finalStats": {
+        "breakpointsSet": 3,
+        "hits": 13,
+        "pauses": 39,
+        "success": 13,
+        "failed": 0,
+        "forcedResumes": 0,
+        "foreignPauses": 0
+      },
+      "captureCount": 13,
+      "engineEvents": [
+        {
+          "kind": "log",
+          "level": "info",
+          "message": "runtime capture started: 3 breakpoints, 0 skipped, 0 errors"
+        }
+      ]
+    },
+    {
+      "name": "S2 page refresh while capturing",
+      "checks": [
+        {
+          "name": "capture active before reload",
+          "pass": true
+        },
+        {
+          "name": "globalObjectCleared observed and engine reset",
+          "pass": true
+        },
+        {
+          "name": "engine inactive after reset",
+          "pass": true
+        },
+        {
+          "name": "engine breakpoints cleared locally",
+          "pass": true
+        },
+        {
+          "name": "reloaded page finished",
+          "pass": true
+        },
+        {
+          "name": "reloaded page not left paused (harness flag)",
+          "pass": true
+        },
+        {
+          "name": "page responsive after reload (Runtime.evaluate answers)",
+          "pass": true
+        },
+        {
+          "name": "no pauses after reset (old breakpoints did not survive the reload)",
+          "pass": true,
+          "detail": 0
+        },
+        {
+          "name": "captures from before reload kept",
+          "pass": true,
+          "detail": 6
+        }
+      ],
+      "startResult": {
+        "set": 3,
+        "skipped": [],
+        "errors": []
+      },
+      "foreign": [],
+      "nav": [
+        "Runtime.executionContextsCleared",
+        "Runtime.executionContextsCleared",
+        "Page.frameNavigated"
+      ],
+      "finalStats": {
+        "breakpointsSet": 3,
+        "hits": 6,
+        "pauses": 18,
+        "success": 6,
+        "failed": 0,
+        "forcedResumes": 0,
+        "foreignPauses": 0
+      },
+      "captureCount": 6,
+      "engineEvents": [
+        {
+          "kind": "log",
+          "level": "info",
+          "message": "runtime capture started: 3 breakpoints, 0 skipped, 0 errors"
+        }
+      ]
+    },
+    {
+      "name": "S3 user debugger statement and user breakpoint",
+      "checks": [
+        {
+          "name": "user debugger statement reported as foreign pause",
+          "pass": true,
+          "detail": {
+            "hit": [],
+            "reason": "other",
+            "fn": ""
+          }
+        },
+        {
+          "name": "user pause NOT auto-resumed (held >8s watchdog window)",
+          "pass": true
+        },
+        {
+          "name": "engine forced no resume",
+          "pass": true
+        },
+        {
+          "name": "capture continued after user resumed",
+          "pass": true
+        },
+        {
+          "name": "user breakpoint survived engine.stop()",
+          "pass": true,
+          "detail": {
+            "hit": [
+              "4:8:2:3"
+            ],
+            "reason": "other",
+            "fn": "userFn"
+          }
+        },
+        {
+          "name": "page finished after user resumed",
+          "pass": true
+        }
+      ],
+      "startResult": {
+        "set": 3,
+        "skipped": [],
+        "errors": []
+      },
+      "foreign": [
+        {
+          "hit": [],
+          "reason": "other",
+          "fn": ""
+        },
+        {
+          "hit": [
+            "4:8:2:3"
+          ],
+          "reason": "other",
+          "fn": "userFn"
+        }
+      ],
+      "nav": [],
+      "finalStats": {
+        "breakpointsSet": 3,
+        "hits": 18,
+        "pauses": 54,
+        "success": 18,
+        "failed": 0,
+        "forcedResumes": 0,
+        "foreignPauses": 0
+      },
+      "captureCount": 18,
+      "engineEvents": [
+        {
+          "kind": "log",
+          "level": "info",
+          "message": "runtime capture started: 3 breakpoints, 0 skipped, 0 errors"
+        }
+      ]
+    }
+  ]
+}

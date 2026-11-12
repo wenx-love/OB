@@ -1,0 +1,44 @@
+{
+  "note": "diagnosis: is the empty capture list caused by rAF not firing, or by an empty captures[] in capture-state? Reads engine state through the extension SW test hook.",
+  "steps": {
+    "show": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover",
+    "raf": "fired",
+    "reload": {
+      "scripts": 1
+    },
+    "connect": "已连接",
+    "capture": {
+      "cards": 0,
+      "status": "正在捕获",
+      "hits": "61",
+      "success": "61",
+      "failed": "0",
+      "tabId": 1574823111
+    },
+    "engineState": {
+      "tabId": 1574823111,
+      "viaSW": {
+        "hook": true,
+        "active": true,
+        "breakpoints": 3,
+        "captures": 10,
+        "stats": {
+          "breakpointsSet": 6,
+          "hits": 61,
+          "pauses": 183,
+          "success": 61,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "keys": [
+          "decOne:success:7",
+          "decOne:success:6",
+          "decOne:success:6"
+        ]
+      }
+    },
+    "rafAfter": "timeout"
+  },
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob"
+}

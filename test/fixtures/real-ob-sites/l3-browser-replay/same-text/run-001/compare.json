@@ -1,0 +1,128 @@
+{
+  "schema": "ob-recover.real-site-compare/1",
+  "runId": "run-001",
+  "sample": {
+    "id": "l3-browser-same-text",
+    "layer": "L3",
+    "kind": "controlled-browser-replay",
+    "isRealSiteSample": false,
+    "title": "same call text at four positions (A, C run at load; B, D do not), real Chrome 155 + real extension, capture threshold high (default)"
+  },
+  "provenance": {
+    "reference": {
+      "capturedBy": "test-oracle",
+      "method": "author-annotated truth cross-checked by window.__l3Truth() evaluated in Chrome after capture stopped and by an independent node:vm evaluation (test/real-site-l3-browser.test.ts)",
+      "note": "independent of OB-Recover output"
+    },
+    "observed": {
+      "capturedBy": "ob-recover",
+      "method": "real Chrome 155 headless=new + real DevTools frontend + real panel + real service worker + real chrome.debugger; programmatic operation (element.click, Runtime.evaluate), NOT manual mouse; applied replacements parsed from the panel own apply report",
+      "note": "raw evidence collected by scripts/p47-l3-browser-replay.ts and judged offline"
+    }
+  },
+  "identity": {
+    "referenceSha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+    "observedSha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+    "afterApplySha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+    "basis": "reference = sha256 of the page script on disk read by this test; observed = source OB-Recover read from Chrome through its own debugger-get-source (CDP) before apply; afterApply = the same read after both apply clicks. activeScript.source of the panel is module private and cannot be read from outside: that it was not mutated is evidenced indirectly by the second apply passing the URL + source equality gate",
+    "referenceEqualsObserved": true,
+    "unchangedAfterApply": true
+  },
+  "counts": {
+    "correct-replacement": 2,
+    "safe-rejection": 1,
+    "insufficient-evidence": 1,
+    "version-mismatch": 0,
+    "false-replacement": 0
+  },
+  "detail": {
+    "tp": 2,
+    "frWrongValue": 0,
+    "frOnIndeterminate": 0,
+    "frNotInReference": 0,
+    "frSourceMutation": 0,
+    "un": 1,
+    "sr": 1
+  },
+  "metrics": {
+    "precision": 1,
+    "recall": 0.666667,
+    "falseReplacement": 0,
+    "unresolved": {
+      "count": 1,
+      "ratio": 0.333333
+    },
+    "versionMismatch": {
+      "runs": 0,
+      "totalRuns": 1,
+      "ratio": 0
+    },
+    "safeRejectionRate": 1,
+    "sourceIntegrity": true,
+    "businessParity": "pass",
+    "rPos": 3,
+    "rNeg": 1
+  },
+  "hardConditions": {
+    "falseReplacementIsZero": true,
+    "sourceIntegrity": true,
+    "safeRejectionRateIs100": true,
+    "precisionIs100": true
+  },
+  "verdict": "pass",
+  "exhaustive": true,
+  "sites": [
+    {
+      "position": {
+        "lineNumber": 18,
+        "columnNumber": 12
+      },
+      "callText": "_0x13d0(0x1)",
+      "referenceDeterminate": true,
+      "referenceValue": "Signature",
+      "referenceReason": "site A: top-level statement executed while the page loads; value from window.__l3Truth() evaluated in Chrome after capture stopped",
+      "rejectionCodes": [],
+      "category": "correct-replacement",
+      "observedText": "\"Signature\"",
+      "observedValue": "Signature"
+    },
+    {
+      "position": {
+        "lineNumber": 19,
+        "columnNumber": 12
+      },
+      "callText": "_0x13d0(0x1)",
+      "referenceDeterminate": true,
+      "referenceValue": "Signature",
+      "referenceReason": "site C: top-level statement executed while the page loads; value from window.__l3Truth() evaluated in Chrome after capture stopped",
+      "rejectionCodes": [],
+      "category": "correct-replacement",
+      "observedText": "\"Signature\"",
+      "observedValue": "Signature"
+    },
+    {
+      "position": {
+        "lineNumber": 21,
+        "columnNumber": 9
+      },
+      "callText": "_0x13d0(0x1)",
+      "referenceDeterminate": true,
+      "referenceValue": "Signature",
+      "referenceReason": "site B: same global decoder and same call text inside laterB(), which does not run during the capture window; the value is determinate but no run observed it, so insufficient-evidence is the expected category",
+      "rejectionCodes": [],
+      "category": "insufficient-evidence",
+      "note": "no capture or rejection record covers this position"
+    },
+    {
+      "position": {
+        "lineNumber": 27,
+        "columnNumber": 9
+      },
+      "callText": "_0x13d0(0x1)",
+      "referenceDeterminate": false,
+      "referenceReason": "site D: same call text but a different binding, the shadowed function inside shadowD returns SHADOW-1; the value of the global decoder would be wrong here",
+      "rejectionCodes": [],
+      "category": "safe-rejection"
+    }
+  ]
+}

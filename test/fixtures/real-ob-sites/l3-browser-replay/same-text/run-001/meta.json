@@ -1,0 +1,21 @@
+{
+  "siteId": "l3-browser-same-text",
+  "runId": "run-001",
+  "layer": "L3",
+  "kind": "controlled-browser-replay",
+  "isRealSiteSample": false,
+  "url": "http://127.0.0.1:8782/real-site-l3-same-text.html",
+  "sha256": "909d0fd8edd0ad774359cac8798526f1dc10bcee7a3a88e2310493a8bb75a83a",
+  "bytes": 1576,
+  "fetchedAt": null,
+  "fetchedAtNote": "local test page served byte for byte by the replay script",
+  "capturedBy": "n/a-fixture-file",
+  "tooling": "scripts/p47-l3-browser-replay.ts (raw evidence collector) + test/real-site-l3-browser.test.ts (offline judgement)",
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "captureThreshold": "high (default)",
+  "rawEvidenceFile": "test/acceptance/p47-l3-browser-replay.json",
+  "rawEvidenceSha256": "6470dbcfa6b191d3a0b48158508c5bc52ec68e756233394d52d46cc7c4b230bc",
+  "screenshotFile": "test/acceptance/p47-l3-browser-replay-panel.png",
+  "screenshotSha256": "fcb8e4aba5dfda94f41b2e0c80c6e063e8a47f8a14aa55a703dfcf0ae6152571"
+}

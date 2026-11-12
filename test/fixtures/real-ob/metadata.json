@@ -1,0 +1,47 @@
+{
+  "generator": "javascript-obfuscator",
+  "generatorVersion": "5.9.0",
+  "note": "obfuscated.js is the unmodified generator output; never edit it by hand. source.js is hand-written plaintext. Generator installed outside the project.",
+  "options": {
+    "compact": true,
+    "controlFlowFlattening": false,
+    "deadCodeInjection": false,
+    "debugProtection": false,
+    "disableConsoleOutput": false,
+    "identifierNamesGenerator": "hexadecimal",
+    "log": false,
+    "numbersToExpressions": false,
+    "renameGlobals": false,
+    "selfDefending": false,
+    "simplify": true,
+    "splitStrings": false,
+    "stringArray": true,
+    "stringArrayCallsTransform": false,
+    "stringArrayEncoding": [
+      "base64"
+    ],
+    "stringArrayIndexShift": true,
+    "stringArrayRotate": true,
+    "stringArrayShuffle": true,
+    "stringArrayWrappersCount": 2,
+    "stringArrayWrappersChainedCalls": true,
+    "stringArrayWrappersParametersMaxCount": 4,
+    "stringArrayWrappersType": "function",
+    "stringArrayThreshold": 1,
+    "transformObjectKeys": false,
+    "unicodeEscapeSequence": false,
+    "target": "browser",
+    "seed": 20261109
+  },
+  "sourceSha256": "f3ee75f49909ae2f93473ac5e741ed436e114616777998d064e446431ec8d06c",
+  "obfuscatedSha256": "f0e5b6c7198cfb69f51ac427eba095219c5db86c74cb2970e8fba3be99fa6315",
+  "sourceBytes": 1075,
+  "obfuscatedBytes": 5179,
+  "generatedAt": "2026-11-09T11:23:34.953Z",
+  "staticFeatureCounts": {
+    "hexIdentifiers": 228,
+    "functionDeclarations": 16,
+    "pushShiftRotation": 2,
+    "debuggerKeyword": 0
+  }
+}

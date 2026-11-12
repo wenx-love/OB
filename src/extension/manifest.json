@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "OB-Recover",
+  "version": "0.2.0",
+  "description": "OB 混淆 JavaScript 静态 AST 还原工具 - DevTools 扩展",
+  "devtools_page": "devtools.html",
+  "permissions": ["storage", "debugger"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "sandbox": {
+    "pages": ["sandbox.html"]
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

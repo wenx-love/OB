@@ -1,0 +1,26 @@
+{
+  "siteId": "l1-qccqcc-hangzhou",
+  "layer": "L1",
+  "isRealSiteSample": true,
+  "runId": "20261110T1458Z",
+  "pageUrl": "https://hangzhou.qccqcc.com/list.html?keyword=%E5%86%B2%E9%94%8B%E8%A1%A3",
+  "apiUrl": "https://newopenapiweb.17qcc.com/api/services/app/SearchFactory/GetPageList",
+  "scriptUrl": "https://j.17qcc.com/combo?ajax-20&imglazy&pager-5&template-6&rollload&ajaxmethord-5&pluploadfull&qccer-1&hpaitop-5&hpailist-2",
+  "scriptPath": "js_reverse_cache/source/script.js",
+  "sha256": "cc7a8127fa8a5d17289a953e11d82ff528fe9ea42276810c5f03371abf760daf",
+  "bytes": 256820,
+  "lines": 1,
+  "bom": false,
+  "crlf": false,
+  "fetchedAt": "2026-11-10T15:12Z",
+  "capturedBy": "skill",
+  "tooling": "chrome-devtools-mcp get_network_request responseFilePath (already captured request, no extra request); js-reverse half MISSING by user decision (headless acceptance failed)",
+  "obfuscator": "jsjiami.com.v7",
+  "businessAnchors": ["QccJsWebVer 2026.10.21.1", "QccJsWebPostBaseUrl https://newopenapiweb.17qcc.com", "SearchFactory/GetPageList"],
+  "uncertainties": [
+    "the js-reverse half is missing: no initiator and no paused-frame capture, so reference runtime values cannot come from that tool",
+    "the body was saved from the browser network stack after br decoding; it is the page-visible response body, not a raw compressed payload",
+    "the CDN varies on User-Agent; a different UA family could receive different bytes",
+    "dynamic fields and GuestId differ per request and are not stored"
+  ]
+}

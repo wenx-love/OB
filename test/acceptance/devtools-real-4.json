@@ -1,0 +1,290 @@
+{
+  "note": "real DevTools frontend + real panel.html iframe + real background. Panel shown via InspectorView.showPanel (programmatic). Buttons via element.click(); screenshots from the top-level DevTools frontend, cropped to the panel iframe rect.",
+  "steps": {
+    "show": {
+      "selected": "chrome-extension://ijdobedejfjfindckpgabkamoeenejobOB-Recover"
+    },
+    "reload": {
+      "scripts": 1,
+      "status": "捕获: big.js",
+      "w": 554,
+      "h": 844
+    },
+    "recover": "✅ 完成 (130ms) — 223 处已还原",
+    "rects": {
+      "vw": 554,
+      "vh": 844,
+      "orig": {
+        "l": 0,
+        "t": 65,
+        "w": 554,
+        "h": 375,
+        "r": 554,
+        "b": 440
+      },
+      "code": {
+        "vbar": 12,
+        "hbar": 12,
+        "ch": 333,
+        "sh": 4700,
+        "cw": 542,
+        "sw": 959
+      }
+    },
+    "pixelSample": {
+      "panel": {
+        "w": 554,
+        "h": 844
+      },
+      "iframe": {
+        "src": "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/panel.html",
+        "l": 1344,
+        "t": 125,
+        "w": 554,
+        "h": 844
+      },
+      "code": {
+        "vbar": 12,
+        "hbar": 12,
+        "ch": 333,
+        "sh": 4700,
+        "cw": 542,
+        "sw": 959
+      },
+      "sample": {
+        "imgW": 1898,
+        "imgH": 982,
+        "blocks": [
+          {
+            "name": "panel-corner",
+            "px": 100,
+            "nearWhite": 0,
+            "min": 30
+          }
+        ]
+      }
+    },
+    "connect": "已连接",
+    "startCapture": {
+      "cards": 0,
+      "firstOpen": null,
+      "bodyH": null,
+      "bodyDisplay": null,
+      "bodyChildren": null,
+      "dockOpen": "true",
+      "dockPane": "capture",
+      "dockBodyH": 0,
+      "listH": 0,
+      "status": "正在捕获",
+      "hits": "221",
+      "success": "221",
+      "failed": "0",
+      "notice": ""
+    },
+    "bringToFront": {
+      "cards": 0,
+      "firstOpen": null,
+      "bodyH": null,
+      "bodyDisplay": null,
+      "bodyChildren": null,
+      "dockOpen": "true",
+      "dockPane": "capture",
+      "dockBodyH": 0,
+      "listH": 0,
+      "status": "正在捕获",
+      "hits": "221",
+      "success": "221",
+      "failed": "0",
+      "notice": ""
+    },
+    "expandCard": {
+      "skipped": "no capture cards",
+      "before": {
+        "cards": 0,
+        "firstOpen": null,
+        "bodyH": null,
+        "bodyDisplay": null,
+        "bodyChildren": null,
+        "dockOpen": "true",
+        "dockPane": "capture",
+        "dockBodyH": 0,
+        "listH": 0,
+        "status": "正在捕获",
+        "hits": "221",
+        "success": "221",
+        "failed": "0",
+        "notice": ""
+      }
+    },
+    "dockChain": {
+      "app": {
+        "size": "sm",
+        "short": "false",
+        "clientH": 0,
+        "innerH": 788
+      },
+      "chain": [
+        {
+          "id": "cap-list",
+          "cls": "decoder-list",
+          "hidden": false,
+          "display": "block",
+          "pos": "static",
+          "flex": "1 1 0px",
+          "h": 0,
+          "minH": "0px",
+          "maxH": "none",
+          "ov": "auto"
+        },
+        {
+          "id": "",
+          "cls": "dock-pane",
+          "hidden": false,
+          "display": "flex",
+          "pos": "static",
+          "flex": "1 1 0px",
+          "h": 0,
+          "minH": "0px",
+          "maxH": "none",
+          "ov": "hidden"
+        },
+        {
+          "id": "",
+          "cls": "dock-body",
+          "hidden": false,
+          "display": "flex",
+          "pos": "static",
+          "flex": "0 1 auto",
+          "h": 0,
+          "minH": "0px",
+          "maxH": "538px",
+          "ov": "visible"
+        },
+        {
+          "id": "dock",
+          "cls": "",
+          "hidden": false,
+          "display": "flex",
+          "pos": "relative",
+          "flex": "0 0 auto",
+          "h": 0,
+          "minH": "0px",
+          "maxH": "none",
+          "ov": "visible"
+        },
+        {
+          "id": "main",
+          "cls": "",
+          "hidden": false,
+          "display": "flex",
+          "pos": "static",
+          "flex": "1 1 0%",
+          "h": 0,
+          "minH": "0px",
+          "maxH": "none",
+          "ov": "hidden"
+        },
+        {
+          "id": "app",
+          "cls": "",
+          "hidden": false,
+          "display": "flex",
+          "pos": "relative",
+          "flex": "0 1 auto",
+          "h": 0,
+          "minH": "0px",
+          "maxH": "none",
+          "ov": "hidden"
+        },
+        {
+          "id": "",
+          "cls": "",
+          "hidden": false,
+          "display": "block",
+          "pos": "static",
+          "flex": "0 1 auto",
+          "h": 0,
+          "minH": "0px",
+          "maxH": "none",
+          "ov": "hidden"
+        },
+        {
+          "id": "",
+          "cls": "",
+          "hidden": false,
+          "display": "block",
+          "pos": "static",
+          "flex": "0 1 auto",
+          "h": 0,
+          "minH": "0px",
+          "maxH": "none",
+          "ov": "visible"
+        }
+      ]
+    },
+    "screenshotFrontend": {
+      "bytes": 76752
+    },
+    "frontendSelectedTab": {
+      "selected": "sources"
+    },
+    "reshowPanel": {
+      "raf": "fired",
+      "caps": {
+        "cards": 10,
+        "firstOpen": false,
+        "bodyH": 0,
+        "bodyDisplay": "none",
+        "bodyChildren": 15,
+        "dockOpen": "true",
+        "dockPane": "capture",
+        "dockBodyH": 181,
+        "listH": 86,
+        "status": "正在捕获",
+        "hits": "221",
+        "success": "221",
+        "failed": "0",
+        "notice": ""
+      }
+    },
+    "expandAfterReshow": {
+      "before": {
+        "cards": 10,
+        "firstOpen": false,
+        "bodyH": 0,
+        "bodyDisplay": "none",
+        "bodyChildren": 15,
+        "dockOpen": "true",
+        "dockPane": "capture",
+        "dockBodyH": 181,
+        "listH": 86,
+        "status": "正在捕获",
+        "hits": "221",
+        "success": "221",
+        "failed": "0",
+        "notice": ""
+      },
+      "after": {
+        "cards": 10,
+        "firstOpen": true,
+        "bodyH": 341,
+        "bodyDisplay": "block",
+        "bodyChildren": 15,
+        "dockOpen": "true",
+        "dockPane": "capture",
+        "dockBodyH": 181,
+        "listH": 86,
+        "status": "正在捕获",
+        "hits": "221",
+        "success": "221",
+        "failed": "0",
+        "notice": ""
+      }
+    },
+    "screenshotReshown": {
+      "bytes": 117400
+    }
+  },
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob"
+}

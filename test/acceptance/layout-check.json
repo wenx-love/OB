@@ -1,0 +1,3372 @@
+{
+  "note": "real built panel.html/panel.js/layout.ts loaded in a plain headless Chrome page with stubbed chrome.* APIs; NOT the real DevTools panel",
+  "sizes": {
+    "1842x780": {
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 1842,
+            "h": 780
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 780
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 780
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 1617,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 1617,
+              "h": 686
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 806,
+              "h": 686
+            },
+            "recovered": {
+              "x": 1036,
+              "y": 65,
+              "w": 806,
+              "h": 686
+            },
+            "dock": {
+              "x": 225,
+              "y": 751,
+              "w": 1617,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 88,
+          "editorsPctBelowBars": 96,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          }
+        },
+        "report-open": {
+          "viewport": {
+            "w": 1842,
+            "h": 780
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "report"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 780
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 780
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 1617,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 1617,
+              "h": 507
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 806,
+              "h": 507
+            },
+            "recovered": {
+              "x": 1036,
+              "y": 65,
+              "w": 806,
+              "h": 507
+            },
+            "dock": {
+              "x": 225,
+              "y": 572,
+              "w": 1617,
+              "h": 208
+            }
+          },
+          "editorsPctOfMain": 65,
+          "editorsPctBelowBars": 71,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          }
+        },
+        "capture-open": {
+          "viewport": {
+            "w": 1842,
+            "h": 780
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "capture"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 780
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 780
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 1617,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 1617,
+              "h": 507
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 806,
+              "h": 507
+            },
+            "recovered": {
+              "x": 1036,
+              "y": 65,
+              "w": 806,
+              "h": 507
+            },
+            "dock": {
+              "x": 225,
+              "y": 572,
+              "w": 1617,
+              "h": 208
+            }
+          },
+          "editorsPctOfMain": 65,
+          "editorsPctBelowBars": 71,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          }
+        },
+        "decoder-open": {
+          "viewport": {
+            "w": 1842,
+            "h": 780
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "decoder"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 780
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 780
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 1617,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 1617,
+              "h": 507
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 806,
+              "h": 507
+            },
+            "recovered": {
+              "x": 1036,
+              "y": 65,
+              "w": 806,
+              "h": 507
+            },
+            "dock": {
+              "x": 225,
+              "y": 572,
+              "w": 1617,
+              "h": 208
+            }
+          },
+          "editorsPctOfMain": 65,
+          "editorsPctBelowBars": 71,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          }
+        },
+        "runtime-open": {
+          "viewport": {
+            "w": 1842,
+            "h": 780
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 780
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 780
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 1617,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 1617,
+              "h": 507
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 806,
+              "h": 507
+            },
+            "recovered": {
+              "x": 1036,
+              "y": 65,
+              "w": 806,
+              "h": 507
+            },
+            "dock": {
+              "x": 225,
+              "y": 572,
+              "w": 1617,
+              "h": 208
+            }
+          },
+          "editorsPctOfMain": 65,
+          "editorsPctBelowBars": 71,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          }
+        },
+        "dock-collapsed": {
+          "viewport": {
+            "w": 1842,
+            "h": 780
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 780
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 780
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 1617,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 1617,
+              "h": 686
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 806,
+              "h": 686
+            },
+            "recovered": {
+              "x": 1036,
+              "y": 65,
+              "w": 806,
+              "h": 686
+            },
+            "dock": {
+              "x": 225,
+              "y": 751,
+              "w": 1617,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 88,
+          "editorsPctBelowBars": 96,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          }
+        },
+        "sidebar-toggled": {
+          "viewport": {
+            "w": 1842,
+            "h": 780
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 1842,
+              "h": 780
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 1842,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 1842,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 1842,
+              "h": 686
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 919,
+              "h": 686
+            },
+            "recovered": {
+              "x": 924,
+              "y": 65,
+              "w": 919,
+              "h": 686
+            },
+            "dock": {
+              "x": 0,
+              "y": 751,
+              "w": 1842,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 88,
+          "editorsPctBelowBars": 96,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 1842,
+            "clientW": 1842,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 1842,
+            "clientW": 1842,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 1842,
+            "clientW": 1842,
+            "spill": []
+          }
+        },
+        "after-reset": {
+          "viewport": {
+            "w": 1842,
+            "h": 780
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 780
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 780
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 1617,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 1617,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 1617,
+              "h": 686
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 806,
+              "h": 686
+            },
+            "recovered": {
+              "x": 1036,
+              "y": 65,
+              "w": 806,
+              "h": 686
+            },
+            "dock": {
+              "x": 225,
+              "y": 751,
+              "w": 1617,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 88,
+          "editorsPctBelowBars": 96,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 1617,
+            "clientW": 1617,
+            "spill": []
+          }
+        }
+      },
+      "func": {
+        "scriptsListed": 3,
+        "recoverEnabled": true,
+        "toolbarFile": "a-very-long-obfuscated-bundle-name-with-hash-3f9a2c7d1e8b4a6f5c0d9e2b7a1c3f84.chunk.min.js",
+        "firstItemTitleHasFullUrl": true,
+        "recoverDone": true,
+        "recoverStatus": "✅ 完成 (254ms) — 2 处已还原",
+        "transformCount": "2",
+        "copyButtonsEnabled": [
+          true,
+          true
+        ],
+        "toolbarCountChip": "2 处转换",
+        "codeTopDelta": {
+          "layout": "row",
+          "delta": 0
+        },
+        "searchCountOriginal": "1/111",
+        "scrollSync": {
+          "layout": "row",
+          "origTop": 400,
+          "origScrollable": true,
+          "recTop": 400,
+          "recScrollable": true
+        },
+        "messagesSentToBackground": {
+          "debugger-connect": 1,
+          "capture-clear": 1
+        },
+        "connected": {
+          "badge": "已连接",
+          "connectEnabled": false,
+          "disconnectEnabled": true,
+          "candidates": "1"
+        },
+        "stopEnabledAfterActive": true,
+        "resumeEnabledWhenPaused": true,
+        "connectedButtonMessages": {
+          "debugger-disconnect": 1,
+          "capture-start": 1,
+          "capture-stop": 1,
+          "manual-capture-get-frames": 1,
+          "debugger-resume": 1
+        },
+        "captureNotice": "",
+        "reportItemsFromEngine": 2,
+        "reportItemsSynthetic": true,
+        "reportFilter": {
+          "all_a1": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "orig_a1": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "new_str3": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "loc_L2": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "cross_orig_str3_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "cross_new_a1_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "cross_loc_str_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "all_str3_expect11": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "cleared": {
+            "shownText": "",
+            "visibleItems": 40,
+            "total": 40
+          }
+        },
+        "captureCards": 30,
+        "captureExpand": {
+          "open1": true,
+          "bodyH1": 363,
+          "open2": false,
+          "bodyH2": 0
+        },
+        "captureTabLiveDot": true,
+        "layoutModeCycle": [
+          {
+            "btn": "左右",
+            "layout": "row",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "上下",
+            "layout": "col",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "单栏",
+            "layout": "tabs",
+            "tabsBarVisible": true,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "自动",
+            "layout": "row",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          }
+        ],
+        "syncToggledOff": "false",
+        "syncAfterReset": "true",
+        "resetRestoresDefault": true
+      },
+      "ready": true
+    },
+    "1200x700": {
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 1200,
+            "h": 700
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 700
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 700
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 975,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 975,
+              "h": 606
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 485,
+              "h": 606
+            },
+            "recovered": {
+              "x": 715,
+              "y": 65,
+              "w": 485,
+              "h": 606
+            },
+            "dock": {
+              "x": 225,
+              "y": 671,
+              "w": 975,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 87,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          }
+        },
+        "report-open": {
+          "viewport": {
+            "w": 1200,
+            "h": 700
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "report"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 700
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 700
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 975,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 975,
+              "h": 445
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 485,
+              "h": 445
+            },
+            "recovered": {
+              "x": 715,
+              "y": 65,
+              "w": 485,
+              "h": 445
+            },
+            "dock": {
+              "x": 225,
+              "y": 510,
+              "w": 975,
+              "h": 190
+            }
+          },
+          "editorsPctOfMain": 64,
+          "editorsPctBelowBars": 70,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          }
+        },
+        "capture-open": {
+          "viewport": {
+            "w": 1200,
+            "h": 700
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "capture"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 700
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 700
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 975,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 975,
+              "h": 445
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 485,
+              "h": 445
+            },
+            "recovered": {
+              "x": 715,
+              "y": 65,
+              "w": 485,
+              "h": 445
+            },
+            "dock": {
+              "x": 225,
+              "y": 510,
+              "w": 975,
+              "h": 190
+            }
+          },
+          "editorsPctOfMain": 64,
+          "editorsPctBelowBars": 70,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          }
+        },
+        "decoder-open": {
+          "viewport": {
+            "w": 1200,
+            "h": 700
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "decoder"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 700
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 700
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 975,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 975,
+              "h": 445
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 485,
+              "h": 445
+            },
+            "recovered": {
+              "x": 715,
+              "y": 65,
+              "w": 485,
+              "h": 445
+            },
+            "dock": {
+              "x": 225,
+              "y": 510,
+              "w": 975,
+              "h": 190
+            }
+          },
+          "editorsPctOfMain": 64,
+          "editorsPctBelowBars": 70,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          }
+        },
+        "runtime-open": {
+          "viewport": {
+            "w": 1200,
+            "h": 700
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 700
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 700
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 975,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 975,
+              "h": 445
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 485,
+              "h": 445
+            },
+            "recovered": {
+              "x": 715,
+              "y": 65,
+              "w": 485,
+              "h": 445
+            },
+            "dock": {
+              "x": 225,
+              "y": 510,
+              "w": 975,
+              "h": 190
+            }
+          },
+          "editorsPctOfMain": 64,
+          "editorsPctBelowBars": 70,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          }
+        },
+        "dock-collapsed": {
+          "viewport": {
+            "w": 1200,
+            "h": 700
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 700
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 700
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 975,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 975,
+              "h": 606
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 485,
+              "h": 606
+            },
+            "recovered": {
+              "x": 715,
+              "y": 65,
+              "w": 485,
+              "h": 606
+            },
+            "dock": {
+              "x": 225,
+              "y": 671,
+              "w": 975,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 87,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          }
+        },
+        "sidebar-toggled": {
+          "viewport": {
+            "w": 1200,
+            "h": 700
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 1200,
+              "h": 700
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 1200,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 1200,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 1200,
+              "h": 606
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 598,
+              "h": 606
+            },
+            "recovered": {
+              "x": 603,
+              "y": 65,
+              "w": 598,
+              "h": 606
+            },
+            "dock": {
+              "x": 0,
+              "y": 671,
+              "w": 1200,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 87,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 1200,
+            "clientW": 1200,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 1200,
+            "clientW": 1200,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 1200,
+            "clientW": 1200,
+            "spill": []
+          }
+        },
+        "after-reset": {
+          "viewport": {
+            "w": 1200,
+            "h": 700
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "lg",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 700
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 700
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 975,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 975,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 975,
+              "h": 606
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 485,
+              "h": 606
+            },
+            "recovered": {
+              "x": 715,
+              "y": 65,
+              "w": 485,
+              "h": 606
+            },
+            "dock": {
+              "x": 225,
+              "y": 671,
+              "w": 975,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 87,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 975,
+            "clientW": 975,
+            "spill": []
+          }
+        }
+      },
+      "func": {
+        "scriptsListed": 3,
+        "recoverEnabled": true,
+        "toolbarFile": "a-very-long-obfuscated-bundle-name-with-hash-3f9a2c7d1e8b4a6f5c0d9e2b7a1c3f84.chunk.min.js",
+        "firstItemTitleHasFullUrl": true,
+        "recoverDone": true,
+        "recoverStatus": "✅ 完成 (71ms) — 2 处已还原",
+        "transformCount": "2",
+        "copyButtonsEnabled": [
+          true,
+          true
+        ],
+        "toolbarCountChip": "2 处转换",
+        "codeTopDelta": {
+          "layout": "row",
+          "delta": 0
+        },
+        "searchCountOriginal": "1/111",
+        "scrollSync": {
+          "layout": "row",
+          "origTop": 400,
+          "origScrollable": true,
+          "recTop": 400,
+          "recScrollable": true
+        },
+        "messagesSentToBackground": {
+          "debugger-connect": 1,
+          "capture-clear": 1
+        },
+        "connected": {
+          "badge": "已连接",
+          "connectEnabled": false,
+          "disconnectEnabled": true,
+          "candidates": "1"
+        },
+        "stopEnabledAfterActive": true,
+        "resumeEnabledWhenPaused": true,
+        "connectedButtonMessages": {
+          "debugger-disconnect": 1,
+          "capture-start": 1,
+          "capture-stop": 1,
+          "manual-capture-get-frames": 1,
+          "debugger-resume": 1
+        },
+        "captureNotice": "",
+        "reportItemsFromEngine": 2,
+        "reportItemsSynthetic": true,
+        "reportFilter": {
+          "all_a1": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "orig_a1": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "new_str3": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "loc_L2": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "cross_orig_str3_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "cross_new_a1_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "cross_loc_str_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "all_str3_expect11": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "cleared": {
+            "shownText": "",
+            "visibleItems": 40,
+            "total": 40
+          }
+        },
+        "captureCards": 30,
+        "captureExpand": {
+          "open1": true,
+          "bodyH1": 363,
+          "open2": false,
+          "bodyH2": 0
+        },
+        "captureTabLiveDot": true,
+        "layoutModeCycle": [
+          {
+            "btn": "左右",
+            "layout": "row",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "上下",
+            "layout": "col",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "单栏",
+            "layout": "tabs",
+            "tabsBarVisible": true,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "自动",
+            "layout": "row",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          }
+        ],
+        "syncToggledOff": "false",
+        "syncAfterReset": "true",
+        "resetRestoresDefault": true
+      },
+      "ready": true
+    },
+    "800x600": {
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 800,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "md",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 800,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 800,
+              "h": 506
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 398,
+              "h": 506
+            },
+            "recovered": {
+              "x": 403,
+              "y": 65,
+              "w": 398,
+              "h": 506
+            },
+            "dock": {
+              "x": 0,
+              "y": 571,
+              "w": 800,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 84,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          }
+        },
+        "report-open": {
+          "viewport": {
+            "w": 800,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "md",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "report"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 800,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 800,
+              "h": 368
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 398,
+              "h": 368
+            },
+            "recovered": {
+              "x": 403,
+              "y": 65,
+              "w": 398,
+              "h": 368
+            },
+            "dock": {
+              "x": 0,
+              "y": 433,
+              "w": 800,
+              "h": 167
+            }
+          },
+          "editorsPctOfMain": 61,
+          "editorsPctBelowBars": 69,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          }
+        },
+        "capture-open": {
+          "viewport": {
+            "w": 800,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "md",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "capture"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 800,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 800,
+              "h": 368
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 398,
+              "h": 368
+            },
+            "recovered": {
+              "x": 403,
+              "y": 65,
+              "w": 398,
+              "h": 368
+            },
+            "dock": {
+              "x": 0,
+              "y": 433,
+              "w": 800,
+              "h": 167
+            }
+          },
+          "editorsPctOfMain": 61,
+          "editorsPctBelowBars": 69,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          }
+        },
+        "decoder-open": {
+          "viewport": {
+            "w": 800,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "md",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "decoder"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 800,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 800,
+              "h": 368
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 398,
+              "h": 368
+            },
+            "recovered": {
+              "x": 403,
+              "y": 65,
+              "w": 398,
+              "h": 368
+            },
+            "dock": {
+              "x": 0,
+              "y": 433,
+              "w": 800,
+              "h": 167
+            }
+          },
+          "editorsPctOfMain": 61,
+          "editorsPctBelowBars": 69,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          }
+        },
+        "runtime-open": {
+          "viewport": {
+            "w": 800,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "md",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 800,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 800,
+              "h": 368
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 398,
+              "h": 368
+            },
+            "recovered": {
+              "x": 403,
+              "y": 65,
+              "w": 398,
+              "h": 368
+            },
+            "dock": {
+              "x": 0,
+              "y": 433,
+              "w": 800,
+              "h": 167
+            }
+          },
+          "editorsPctOfMain": 61,
+          "editorsPctBelowBars": 69,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          }
+        },
+        "dock-collapsed": {
+          "viewport": {
+            "w": 800,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "md",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 800,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 800,
+              "h": 506
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 398,
+              "h": 506
+            },
+            "recovered": {
+              "x": 403,
+              "y": 65,
+              "w": 398,
+              "h": 506
+            },
+            "dock": {
+              "x": 0,
+              "y": 571,
+              "w": 800,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 84,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          }
+        },
+        "sidebar-toggled": {
+          "viewport": {
+            "w": 800,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "md",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 220,
+              "h": 600
+            },
+            "main": {
+              "x": 225,
+              "y": 0,
+              "w": 575,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 225,
+              "y": 0,
+              "w": 575,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 225,
+              "y": 36,
+              "w": 575,
+              "h": 29
+            },
+            "editors": {
+              "x": 225,
+              "y": 65,
+              "w": 575,
+              "h": 506
+            },
+            "original": {
+              "x": 225,
+              "y": 65,
+              "w": 285,
+              "h": 506
+            },
+            "recovered": {
+              "x": 515,
+              "y": 65,
+              "w": 285,
+              "h": 506
+            },
+            "dock": {
+              "x": 225,
+              "y": 571,
+              "w": 575,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 84,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 575,
+            "clientW": 575,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 575,
+            "clientW": 575,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 575,
+            "clientW": 575,
+            "spill": []
+          }
+        },
+        "after-reset": {
+          "viewport": {
+            "w": 800,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "md",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "row",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 800,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 800,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 800,
+              "h": 506
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 398,
+              "h": 506
+            },
+            "recovered": {
+              "x": 403,
+              "y": 65,
+              "w": 398,
+              "h": 506
+            },
+            "dock": {
+              "x": 0,
+              "y": 571,
+              "w": 800,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 84,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 800,
+            "clientW": 800,
+            "spill": []
+          }
+        }
+      },
+      "func": {
+        "scriptsListed": 3,
+        "recoverEnabled": true,
+        "toolbarFile": "a-very-long-obfuscated-bundle-name-with-hash-3f9a2c7d1e8b4a6f5c0d9e2b7a1c3f84.chunk.min.js",
+        "firstItemTitleHasFullUrl": true,
+        "recoverDone": true,
+        "recoverStatus": "✅ 完成 (80ms) — 2 处已还原",
+        "transformCount": "2",
+        "copyButtonsEnabled": [
+          true,
+          true
+        ],
+        "toolbarCountChip": "2 处转换",
+        "codeTopDelta": {
+          "layout": "row",
+          "delta": 0
+        },
+        "searchCountOriginal": "1/111",
+        "scrollSync": {
+          "layout": "row",
+          "origTop": 400,
+          "origScrollable": true,
+          "recTop": 400,
+          "recScrollable": true
+        },
+        "messagesSentToBackground": {
+          "debugger-connect": 1,
+          "capture-clear": 1
+        },
+        "connected": {
+          "badge": "已连接",
+          "connectEnabled": false,
+          "disconnectEnabled": true,
+          "candidates": "1"
+        },
+        "stopEnabledAfterActive": true,
+        "resumeEnabledWhenPaused": true,
+        "connectedButtonMessages": {
+          "debugger-disconnect": 1,
+          "capture-start": 1,
+          "capture-stop": 1,
+          "manual-capture-get-frames": 1,
+          "debugger-resume": 1
+        },
+        "captureNotice": "",
+        "reportItemsFromEngine": 2,
+        "reportItemsSynthetic": true,
+        "reportFilter": {
+          "all_a1": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "orig_a1": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "new_str3": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "loc_L2": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "cross_orig_str3_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "cross_new_a1_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "cross_loc_str_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "all_str3_expect11": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "cleared": {
+            "shownText": "",
+            "visibleItems": 40,
+            "total": 40
+          }
+        },
+        "captureCards": 30,
+        "captureExpand": {
+          "open1": true,
+          "bodyH1": 341,
+          "open2": false,
+          "bodyH2": 0
+        },
+        "captureTabLiveDot": true,
+        "layoutModeCycle": [
+          {
+            "btn": "左右",
+            "layout": "row",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "上下",
+            "layout": "col",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "单栏",
+            "layout": "tabs",
+            "tabsBarVisible": true,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "自动",
+            "layout": "row",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          }
+        ],
+        "syncToggledOff": "false",
+        "syncAfterReset": "true",
+        "resetRestoresDefault": true
+      },
+      "ready": true
+    },
+    "500x600": {
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 500,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "sm",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "col",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 500,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 506
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 253
+            },
+            "recovered": {
+              "x": 0,
+              "y": 318,
+              "w": 500,
+              "h": 254
+            },
+            "dock": {
+              "x": 0,
+              "y": 571,
+              "w": 500,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 84,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          }
+        },
+        "report-open": {
+          "viewport": {
+            "w": 500,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "sm",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "tabs",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "report"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 500,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 368
+            },
+            "original": {
+              "x": 0,
+              "y": 94,
+              "w": 500,
+              "h": 339
+            },
+            "recovered": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "dock": {
+              "x": 0,
+              "y": 433,
+              "w": 500,
+              "h": 167
+            }
+          },
+          "editorsPctOfMain": 61,
+          "editorsPctBelowBars": 69,
+          "visibleEditors": 1,
+          "toolbar": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          }
+        },
+        "capture-open": {
+          "viewport": {
+            "w": 500,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "sm",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "tabs",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "capture"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 500,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 368
+            },
+            "original": {
+              "x": 0,
+              "y": 94,
+              "w": 500,
+              "h": 339
+            },
+            "recovered": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "dock": {
+              "x": 0,
+              "y": 433,
+              "w": 500,
+              "h": 167
+            }
+          },
+          "editorsPctOfMain": 61,
+          "editorsPctBelowBars": 69,
+          "visibleEditors": 1,
+          "toolbar": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          }
+        },
+        "decoder-open": {
+          "viewport": {
+            "w": 500,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "sm",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "tabs",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "decoder"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 500,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 368
+            },
+            "original": {
+              "x": 0,
+              "y": 94,
+              "w": 500,
+              "h": 339
+            },
+            "recovered": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "dock": {
+              "x": 0,
+              "y": 433,
+              "w": 500,
+              "h": 167
+            }
+          },
+          "editorsPctOfMain": 61,
+          "editorsPctBelowBars": 69,
+          "visibleEditors": 1,
+          "toolbar": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          }
+        },
+        "runtime-open": {
+          "viewport": {
+            "w": 500,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "sm",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "tabs",
+            "active": "original",
+            "dockOpen": "true",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 500,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 368
+            },
+            "original": {
+              "x": 0,
+              "y": 94,
+              "w": 500,
+              "h": 339
+            },
+            "recovered": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "dock": {
+              "x": 0,
+              "y": 433,
+              "w": 500,
+              "h": 167
+            }
+          },
+          "editorsPctOfMain": 61,
+          "editorsPctBelowBars": 69,
+          "visibleEditors": 1,
+          "toolbar": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          }
+        },
+        "dock-collapsed": {
+          "viewport": {
+            "w": 500,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "sm",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "col",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 500,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 506
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 253
+            },
+            "recovered": {
+              "x": 0,
+              "y": 318,
+              "w": 500,
+              "h": 254
+            },
+            "dock": {
+              "x": 0,
+              "y": 571,
+              "w": 500,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 84,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          }
+        },
+        "sidebar-toggled": {
+          "viewport": {
+            "w": 500,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "sm",
+            "short": "false",
+            "sidebar": "open",
+            "layout": "col",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 260,
+              "h": 600
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 500,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 506
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 253
+            },
+            "recovered": {
+              "x": 0,
+              "y": 318,
+              "w": 500,
+              "h": 254
+            },
+            "dock": {
+              "x": 0,
+              "y": 571,
+              "w": 500,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 84,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          }
+        },
+        "after-reset": {
+          "viewport": {
+            "w": 500,
+            "h": 600
+          },
+          "pageOverflowX": false,
+          "pageOverflowY": false,
+          "state": {
+            "size": "sm",
+            "short": "false",
+            "sidebar": "closed",
+            "layout": "col",
+            "active": "original",
+            "dockOpen": "false",
+            "dockPane": "runtime"
+          },
+          "rects": {
+            "sidebar": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "main": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 600
+            },
+            "toolbar": {
+              "x": 0,
+              "y": 0,
+              "w": 500,
+              "h": 36
+            },
+            "rtStrip": {
+              "x": 0,
+              "y": 36,
+              "w": 500,
+              "h": 29
+            },
+            "editors": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 506
+            },
+            "original": {
+              "x": 0,
+              "y": 65,
+              "w": 500,
+              "h": 253
+            },
+            "recovered": {
+              "x": 0,
+              "y": 318,
+              "w": 500,
+              "h": 254
+            },
+            "dock": {
+              "x": 0,
+              "y": 571,
+              "w": 500,
+              "h": 29
+            }
+          },
+          "editorsPctOfMain": 84,
+          "editorsPctBelowBars": 95,
+          "visibleEditors": 2,
+          "toolbar": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "rtStrip": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          },
+          "dockTabs": {
+            "scrollW": 500,
+            "clientW": 500,
+            "spill": []
+          }
+        }
+      },
+      "func": {
+        "scriptsListed": 3,
+        "recoverEnabled": true,
+        "toolbarFile": "a-very-long-obfuscated-bundle-name-with-hash-3f9a2c7d1e8b4a6f5c0d9e2b7a1c3f84.chunk.min.js",
+        "firstItemTitleHasFullUrl": true,
+        "recoverDone": true,
+        "recoverStatus": "✅ 完成 (80ms) — 2 处已还原",
+        "transformCount": "2",
+        "copyButtonsEnabled": [
+          true,
+          true
+        ],
+        "toolbarCountChip": "2 处转换",
+        "codeTopDelta": {
+          "layout": "col",
+          "delta": 254
+        },
+        "searchCountOriginal": "1/111",
+        "scrollSync": {
+          "layout": "col",
+          "origTop": 400,
+          "origScrollable": true,
+          "recTop": 400,
+          "recScrollable": true
+        },
+        "messagesSentToBackground": {
+          "debugger-connect": 1,
+          "capture-clear": 1
+        },
+        "connected": {
+          "badge": "已连接",
+          "connectEnabled": false,
+          "disconnectEnabled": true,
+          "candidates": "1"
+        },
+        "stopEnabledAfterActive": true,
+        "resumeEnabledWhenPaused": true,
+        "connectedButtonMessages": {
+          "debugger-disconnect": 1,
+          "capture-start": 1,
+          "capture-stop": 1,
+          "manual-capture-get-frames": 1,
+          "debugger-resume": 1
+        },
+        "captureNotice": "",
+        "reportItemsFromEngine": 2,
+        "reportItemsSynthetic": true,
+        "reportFilter": {
+          "all_a1": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "orig_a1": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "new_str3": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "loc_L2": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "cross_orig_str3_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "cross_new_a1_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "cross_loc_str_expect0": {
+            "shownText": "(显示 0/40)",
+            "visibleItems": 0,
+            "total": 40
+          },
+          "all_str3_expect11": {
+            "shownText": "(显示 11/40)",
+            "visibleItems": 11,
+            "total": 40
+          },
+          "cleared": {
+            "shownText": "",
+            "visibleItems": 40,
+            "total": 40
+          }
+        },
+        "captureCards": 30,
+        "captureExpand": {
+          "open1": true,
+          "bodyH1": 381,
+          "open2": false,
+          "bodyH2": 0
+        },
+        "captureTabLiveDot": true,
+        "overlayClickClosesSidebar": "closed",
+        "layoutModeCycle": [
+          {
+            "btn": "左右",
+            "layout": "row",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "上下",
+            "layout": "col",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "单栏",
+            "layout": "tabs",
+            "tabsBarVisible": true,
+            "pageOverflowX": false
+          },
+          {
+            "btn": "自动",
+            "layout": "col",
+            "tabsBarVisible": false,
+            "pageOverflowX": false
+          }
+        ],
+        "syncToggledOff": "false",
+        "syncAfterReset": "true",
+        "resetRestoresDefault": true
+      },
+      "ready": true
+    }
+  },
+  "live": [
+    {
+      "to": "1842x780",
+      "state": {
+        "size": "lg",
+        "short": "false",
+        "sidebar": "open",
+        "layout": "row",
+        "active": "original",
+        "dockOpen": "false",
+        "dockPane": "runtime"
+      },
+      "pageOverflowX": false,
+      "editorsPctOfMain": 88,
+      "visibleEditors": 2,
+      "toolbarSpill": [],
+      "rtStripSpill": []
+    },
+    {
+      "to": "1200x700",
+      "state": {
+        "size": "lg",
+        "short": "false",
+        "sidebar": "open",
+        "layout": "row",
+        "active": "original",
+        "dockOpen": "false",
+        "dockPane": "runtime"
+      },
+      "pageOverflowX": false,
+      "editorsPctOfMain": 87,
+      "visibleEditors": 2,
+      "toolbarSpill": [],
+      "rtStripSpill": []
+    },
+    {
+      "to": "800x600",
+      "state": {
+        "size": "md",
+        "short": "false",
+        "sidebar": "closed",
+        "layout": "row",
+        "active": "original",
+        "dockOpen": "false",
+        "dockPane": "runtime"
+      },
+      "pageOverflowX": false,
+      "editorsPctOfMain": 84,
+      "visibleEditors": 2,
+      "toolbarSpill": [],
+      "rtStripSpill": []
+    },
+    {
+      "to": "500x600",
+      "state": {
+        "size": "sm",
+        "short": "false",
+        "sidebar": "closed",
+        "layout": "col",
+        "active": "original",
+        "dockOpen": "false",
+        "dockPane": "runtime"
+      },
+      "pageOverflowX": false,
+      "editorsPctOfMain": 84,
+      "visibleEditors": 2,
+      "toolbarSpill": [],
+      "rtStripSpill": []
+    },
+    {
+      "to": "1842x780",
+      "state": {
+        "size": "lg",
+        "short": "false",
+        "sidebar": "open",
+        "layout": "row",
+        "active": "original",
+        "dockOpen": "false",
+        "dockPane": "runtime"
+      },
+      "pageOverflowX": false,
+      "editorsPctOfMain": 88,
+      "visibleEditors": 2,
+      "toolbarSpill": [],
+      "rtStripSpill": []
+    },
+    {
+      "to": "1200x450 (dock was open at 1200x700)",
+      "dockOpenBefore": "true",
+      "dockOpenAfter": "false",
+      "short": "true",
+      "editorsPctOfMain": 79,
+      "pageOverflowX": false
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "chrome": "Chrome/155.0.8059.40"
+}

@@ -1,0 +1,228 @@
+{
+  "note": "Phase 4.7 SW recycle probe: real Chrome + real extension; observes whether a breakpoint pause survives a service worker recycle. Evidence only, no root-cause claim.",
+  "method": "A: capture stopped first, then the service worker target is closed",
+  "page": "sw-recycle.html",
+  "steps": [
+    {
+      "name": "connect-and-start",
+      "status": "connected",
+      "state": {
+        "active": true,
+        "breakpoints": 0,
+        "stats": {
+          "breakpointsSet": 0,
+          "hits": 0,
+          "pauses": 0,
+          "success": 0,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": [],
+        "stability": []
+      }
+    },
+    {
+      "name": "first-run",
+      "pageResult": "{\"a\":\"Document\",\"b\":\"Document\",\"c\":\"License\",\"sum\":2}",
+      "state": {
+        "active": true,
+        "breakpoints": 2,
+        "stats": {
+          "breakpointsSet": 2,
+          "hits": 3,
+          "pauses": 6,
+          "success": 3,
+          "failed": 0,
+          "forcedResumes": 0,
+          "foreignPauses": 0
+        },
+        "captures": [
+          {
+            "key": "3|4|2|[{\"type\":\"number\",\"value\":1}]|success|{\"type\":\"string\",\"value\":\"Document\"}",
+            "scriptId": "3",
+            "scriptUrl": "http://127.0.0.1:8766/sw-recycle.js",
+            "functionName": "_0x3b2e",
+            "functionLocation": {
+              "lineNumber": 4,
+              "columnNumber": 2
+            },
+            "callLocation": {
+              "lineNumber": 7,
+              "columnNumber": 10
+            },
+            "callLocations": [
+              {
+                "lineNumber": 7,
+                "columnNumber": 10
+              },
+              {
+                "lineNumber": 8,
+                "columnNumber": 10
+              }
+            ],
+            "arguments": [
+              {
+                "type": "number",
+                "value": 1
+              }
+            ],
+            "returnValue": {
+              "type": "string",
+              "value": "Document"
+            },
+            "captureStatus": "success",
+            "count": 2,
+            "firstSeq": 1,
+            "lastSeq": 2,
+            "timestamp": 1794289648164
+          },
+          {
+            "key": "3|4|2|[{\"type\":\"number\",\"value\":2}]|success|{\"type\":\"string\",\"value\":\"License\"}",
+            "scriptId": "3",
+            "scriptUrl": "http://127.0.0.1:8766/sw-recycle.js",
+            "functionName": "_0x3b2e",
+            "functionLocation": {
+              "lineNumber": 4,
+              "columnNumber": 2
+            },
+            "callLocation": {
+              "lineNumber": 9,
+              "columnNumber": 10
+            },
+            "callLocations": [
+              {
+                "lineNumber": 9,
+                "columnNumber": 10
+              }
+            ],
+            "arguments": [
+              {
+                "type": "number",
+                "value": 2
+              }
+            ],
+            "returnValue": {
+              "type": "string",
+              "value": "License"
+            },
+            "captureStatus": "success",
+            "count": 1,
+            "firstSeq": 3,
+            "lastSeq": 3,
+            "timestamp": 1794289648167
+          }
+        ],
+        "stability": [
+          {
+            "scriptId": "3",
+            "scriptUrl": "http://127.0.0.1:8766/sw-recycle.js",
+            "functionName": "_0x3b2e",
+            "functionLocation": {
+              "lineNumber": 4,
+              "columnNumber": 2
+            },
+            "arguments": [
+              {
+                "type": "number",
+                "value": 1
+              }
+            ],
+            "values": [
+              {
+                "type": "string",
+                "value": "Document"
+              }
+            ],
+            "distinctReturnCount": 1,
+            "callCount": 2,
+            "stable": true,
+            "firstSeq": 1,
+            "lastSeq": 2
+          },
+          {
+            "scriptId": "3",
+            "scriptUrl": "http://127.0.0.1:8766/sw-recycle.js",
+            "functionName": "_0x3b2e",
+            "functionLocation": {
+              "lineNumber": 4,
+              "columnNumber": 2
+            },
+            "arguments": [
+              {
+                "type": "number",
+                "value": 2
+              }
+            ],
+            "values": [
+              {
+                "type": "string",
+                "value": "License"
+              }
+            ],
+            "distinctReturnCount": 1,
+            "callCount": 1,
+            "stable": true,
+            "firstSeq": 3,
+            "lastSeq": 3
+          }
+        ]
+      }
+    },
+    {
+      "name": "stop-capture-and-confirm-running",
+      "freeMarkerBefore": 1,
+      "responsive": true,
+      "state": {
+        "active": false,
+        "breakpoints": 0
+      }
+    },
+    {
+      "name": "recycle-sw",
+      "closedTarget": "0297AB0EF7153F16C8C3EF473E66FEA0",
+      "swPresentAfter": false,
+      "newTargetId": null,
+      "hookAfter": "no-sw"
+    },
+    {
+      "name": "wait-for-sw-restart",
+      "restarted": false,
+      "newTargetId": null,
+      "hook": "no-sw",
+      "debuggerStatusAfterRestart": "no-hook"
+    },
+    {
+      "name": "page-responsive-while-idle",
+      "responsive": true,
+      "freeMarkerNow": 1
+    },
+    {
+      "name": "reconnect-and-run-after-recycle",
+      "reconnectStatus": "no-hook",
+      "pageResult": "{\"a\":\"Document\",\"b\":\"Document\",\"c\":\"License\",\"sum\":2}",
+      "responsiveAfter": 2,
+      "state": {
+        "status": "disconnected",
+        "active": null,
+        "breakpoints": null,
+        "hits": null,
+        "captures": null
+      }
+    },
+    {
+      "name": "final-state",
+      "serviceWorkerTargets": [
+        "chrome-extension://ijdobedejfjfindckpgabkamoeenejob/background.js"
+      ],
+      "pageStillResponsive": true
+    }
+  ],
+  "conclusion": "still-undetermined: the service worker target did not come back within the wait bound after being closed, so its restarted in-memory state could not be inspected",
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "ijdobedejfjfindckpgabkamoeenejob",
+  "swFoundInitially": true,
+  "hookPresent": "object",
+  "tabId": 1049771940,
+  "swRestarted": false
+}

@@ -1,0 +1,4255 @@
+{
+  "schema": "ob-recover.panel-perf/1",
+  "runNo": "1",
+  "buildLabel": "before",
+  "buildPath": "C:\\Users\\Administrator\\TEMP\\opencode\\ob-backup-p47-perf-20261110\\dist",
+  "startedAt": "2026-11-10T15:30:03.647Z",
+  "note": "local page only; every non-local host is unresolvable; observation only; no capture started, no real site touched",
+  "conditions": {
+    "headless": false,
+    "resolverRules": "MAP * ~NOTFOUND , EXCLUDE 127.0.0.1",
+    "ports": {
+      "cdp": 9480,
+      "http": 8790
+    },
+    "probeTimeoutMs": 3000,
+    "analyzeWindowMs": 300000
+  },
+  "fixture": {
+    "path": "test/fixtures/p47-512kb-synthetic.js",
+    "bytes": 512064,
+    "sha256": "6a419264c85865c134c88ed52239eefd527fb2cbcb74ceb9af501d8e106ce207"
+  },
+  "dist": {
+    "background.js": "fa3ba6a45d02f8440d5d9f54708341e36429b13b695afb473433da39c1836509",
+    "devtools.js": "870b0b747d5bfbe54af0fe8d81581f27bac8eb2a4ecea433f78f295c18edae65",
+    "panel.js": "9cbc65a3bf78195d36bea0ea029df92c74c77ecd2a78ce4a8cc12fb68282fb73",
+    "sandbox.js": "2df0c21289c5f8bfc6419f54d24e2fb2f99f9e4245acd71d6c4c52e7016f2be4"
+  },
+  "steps": {
+    "clickConnect": {
+      "at": 12956,
+      "ms": 1,
+      "ok": true,
+      "value": {
+        "clicked": true,
+        "result": 1
+      }
+    },
+    "waitConnected": {
+      "at": 12958,
+      "ms": 1009,
+      "ok": true,
+      "value": {
+        "status": "已连接",
+        "ms": 1008
+      }
+    },
+    "navigateToHeavyPage": {
+      "at": 13969,
+      "ms": 11,
+      "ok": true,
+      "value": {
+        "navigatedAt": 13980
+      }
+    },
+    "finalLag": {
+      "at": 314144,
+      "ms": 210,
+      "ok": true,
+      "value": {
+        "installed": true,
+        "now": 300385,
+        "ticks": 54,
+        "maxGapMs": 209791,
+        "gapCount": 50,
+        "gaps": [
+          {
+            "at": 252086,
+            "gap": 830
+          },
+          {
+            "at": 253086,
+            "gap": 900
+          },
+          {
+            "at": 254299,
+            "gap": 1114
+          },
+          {
+            "at": 255086,
+            "gap": 687
+          },
+          {
+            "at": 256612,
+            "gap": 1426
+          },
+          {
+            "at": 258145,
+            "gap": 957
+          },
+          {
+            "at": 259086,
+            "gap": 841
+          },
+          {
+            "at": 260285,
+            "gap": 1099
+          },
+          {
+            "at": 261895,
+            "gap": 1510
+          },
+          {
+            "at": 263091,
+            "gap": 905
+          },
+          {
+            "at": 264264,
+            "gap": 1073
+          },
+          {
+            "at": 265086,
+            "gap": 722
+          },
+          {
+            "at": 266099,
+            "gap": 913
+          },
+          {
+            "at": 267200,
+            "gap": 1001
+          },
+          {
+            "at": 268086,
+            "gap": 786
+          },
+          {
+            "at": 269086,
+            "gap": 900
+          },
+          {
+            "at": 270086,
+            "gap": 900
+          },
+          {
+            "at": 271417,
+            "gap": 1230
+          },
+          {
+            "at": 272212,
+            "gap": 696
+          },
+          {
+            "at": 273086,
+            "gap": 773
+          }
+        ]
+      }
+    },
+    "finalLongTasks": {
+      "at": 314355,
+      "ms": 3,
+      "ok": true,
+      "value": {
+        "installed": true,
+        "supported": true,
+        "error": null,
+        "count": 28,
+        "maxMs": 209160,
+        "entries": [
+          {
+            "start": 214649,
+            "dur": 175,
+            "name": "self"
+          },
+          {
+            "start": 214826,
+            "dur": 149,
+            "name": "self"
+          },
+          {
+            "start": 214977,
+            "dur": 152,
+            "name": "self"
+          },
+          {
+            "start": 215131,
+            "dur": 158,
+            "name": "self"
+          },
+          {
+            "start": 215292,
+            "dur": 149,
+            "name": "self"
+          },
+          {
+            "start": 215443,
+            "dur": 164,
+            "name": "self"
+          },
+          {
+            "start": 215610,
+            "dur": 176,
+            "name": "self"
+          },
+          {
+            "start": 215787,
+            "dur": 137,
+            "name": "self"
+          },
+          {
+            "start": 215926,
+            "dur": 149,
+            "name": "self"
+          },
+          {
+            "start": 216077,
+            "dur": 160,
+            "name": "self"
+          },
+          {
+            "start": 216239,
+            "dur": 153,
+            "name": "self"
+          },
+          {
+            "start": 216394,
+            "dur": 174,
+            "name": "self"
+          },
+          {
+            "start": 216570,
+            "dur": 148,
+            "name": "self"
+          },
+          {
+            "start": 216720,
+            "dur": 168,
+            "name": "self"
+          },
+          {
+            "start": 216890,
+            "dur": 148,
+            "name": "self"
+          }
+        ]
+      }
+    },
+    "finalDec": {
+      "at": 314362,
+      "ms": 2,
+      "ok": true,
+      "value": {
+        "total": "149",
+        "analyzed": "149",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    "swDirect": {
+      "at": 314369,
+      "ms": 1,
+      "ok": true,
+      "value": {
+        "tabId": 984905320,
+        "status": "connected"
+      }
+    }
+  },
+  "probes": [
+    {
+      "t": 13981,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 18,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 0,
+        "ticks": 0,
+        "gapCount": 0
+      },
+      "dec": {
+        "total": "0",
+        "analyzed": "0",
+        "candidates": "0",
+        "high": "0",
+        "calls": "0",
+        "cards": 0
+      }
+    },
+    {
+      "t": 14517,
+      "panel": {
+        "ok": false,
+        "ms": 3013,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 20050,
+      "panel": {
+        "ok": false,
+        "ms": 3010,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 25587,
+      "panel": {
+        "ok": false,
+        "ms": 3017,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 31124,
+      "panel": {
+        "ok": false,
+        "ms": 3006,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 36658,
+      "panel": {
+        "ok": false,
+        "ms": 3010,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 42186,
+      "panel": {
+        "ok": false,
+        "ms": 3011,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 47705,
+      "panel": {
+        "ok": false,
+        "ms": 3011,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 53229,
+      "panel": {
+        "ok": false,
+        "ms": 3007,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 58746,
+      "panel": {
+        "ok": false,
+        "ms": 3002,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 64275,
+      "panel": {
+        "ok": false,
+        "ms": 3007,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 69803,
+      "panel": {
+        "ok": false,
+        "ms": 3008,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 75336,
+      "panel": {
+        "ok": false,
+        "ms": 3002,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 80850,
+      "panel": {
+        "ok": false,
+        "ms": 3009,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 86375,
+      "panel": {
+        "ok": false,
+        "ms": 3011,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 91899,
+      "panel": {
+        "ok": false,
+        "ms": 3009,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 97434,
+      "panel": {
+        "ok": false,
+        "ms": 3014,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 102968,
+      "panel": {
+        "ok": false,
+        "ms": 3016,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 108511,
+      "panel": {
+        "ok": false,
+        "ms": 3016,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 114042,
+      "panel": {
+        "ok": false,
+        "ms": 3008,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 119577,
+      "panel": {
+        "ok": false,
+        "ms": 3003,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 125096,
+      "panel": {
+        "ok": false,
+        "ms": 3005,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 130615,
+      "panel": {
+        "ok": false,
+        "ms": 3009,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 136147,
+      "panel": {
+        "ok": false,
+        "ms": 3008,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 141666,
+      "panel": {
+        "ok": false,
+        "ms": 3009,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 147199,
+      "panel": {
+        "ok": false,
+        "ms": 3013,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 152740,
+      "panel": {
+        "ok": false,
+        "ms": 3006,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 158261,
+      "panel": {
+        "ok": false,
+        "ms": 3006,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 5,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 163771,
+      "panel": {
+        "ok": false,
+        "ms": 3008,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 169304,
+      "panel": {
+        "ok": false,
+        "ms": 3002,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 174821,
+      "panel": {
+        "ok": false,
+        "ms": 3003,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 5,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 5,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 180350,
+      "panel": {
+        "ok": false,
+        "ms": 3014,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 185880,
+      "panel": {
+        "ok": false,
+        "ms": 3003,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 191404,
+      "panel": {
+        "ok": false,
+        "ms": 3007,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 5,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 5,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 196928,
+      "panel": {
+        "ok": false,
+        "ms": 3002,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 202435,
+      "panel": {
+        "ok": false,
+        "ms": 3003,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 207957,
+      "panel": {
+        "ok": false,
+        "ms": 3001,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 213471,
+      "panel": {
+        "ok": false,
+        "ms": 3012,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 218989,
+      "panel": {
+        "ok": false,
+        "ms": 3002,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 224512,
+      "panel": {
+        "ok": false,
+        "ms": 3003,
+        "timeout": true
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": null,
+      "dec": null
+    },
+    {
+      "t": 230024,
+      "panel": {
+        "ok": true,
+        "ms": 1431,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 2,
+        "gapCount": 2
+      },
+      "dec": {
+        "total": "49",
+        "analyzed": "49",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 232817,
+      "panel": {
+        "ok": true,
+        "ms": 328,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 3,
+        "gapCount": 3
+      },
+      "dec": null
+    },
+    {
+      "t": 235670,
+      "panel": {
+        "ok": true,
+        "ms": 931,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 3,
+        "gapCount": 3
+      },
+      "dec": {
+        "total": "51",
+        "analyzed": "51",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 237636,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 4,
+        "gapCount": 4
+      },
+      "dec": {
+        "total": "52",
+        "analyzed": "52",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 238684,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 5,
+        "gapCount": 5
+      },
+      "dec": {
+        "total": "53",
+        "analyzed": "53",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 239702,
+      "panel": {
+        "ok": true,
+        "ms": 75,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 6,
+        "gapCount": 6
+      },
+      "dec": {
+        "total": "54",
+        "analyzed": "54",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 240741,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 7,
+        "gapCount": 7
+      },
+      "dec": {
+        "total": "55",
+        "analyzed": "55",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 241572,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 8,
+        "gapCount": 8
+      },
+      "dec": {
+        "total": "56",
+        "analyzed": "56",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 242387,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 9,
+        "gapCount": 9
+      },
+      "dec": {
+        "total": "57",
+        "analyzed": "57",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 243180,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 10,
+        "gapCount": 10
+      },
+      "dec": {
+        "total": "58",
+        "analyzed": "58",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 244007,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 10,
+        "gapCount": 10
+      },
+      "dec": {
+        "total": "58",
+        "analyzed": "58",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 244523,
+      "panel": {
+        "ok": true,
+        "ms": 14,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 11,
+        "gapCount": 11
+      },
+      "dec": {
+        "total": "60",
+        "analyzed": "60",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 245360,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 12,
+        "gapCount": 12
+      },
+      "dec": {
+        "total": "61",
+        "analyzed": "61",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 246153,
+      "panel": {
+        "ok": true,
+        "ms": 239,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 12,
+        "gapCount": 12
+      },
+      "dec": {
+        "total": "62",
+        "analyzed": "62",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 247289,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 14,
+        "gapCount": 13
+      },
+      "dec": {
+        "total": "62",
+        "analyzed": "62",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 247798,
+      "panel": {
+        "ok": true,
+        "ms": 5,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 14,
+        "gapCount": 13
+      },
+      "dec": {
+        "total": "64",
+        "analyzed": "64",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 248604,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 15,
+        "gapCount": 14
+      },
+      "dec": {
+        "total": "64",
+        "analyzed": "64",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 249112,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 16,
+        "gapCount": 15
+      },
+      "dec": {
+        "total": "66",
+        "analyzed": "66",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 250058,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 17,
+        "gapCount": 16
+      },
+      "dec": {
+        "total": "66",
+        "analyzed": "66",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 250567,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 17,
+        "gapCount": 16
+      },
+      "dec": {
+        "total": "68",
+        "analyzed": "68",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 251379,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 18,
+        "gapCount": 17
+      },
+      "dec": {
+        "total": "69",
+        "analyzed": "69",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 252195,
+      "panel": {
+        "ok": true,
+        "ms": 178,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 18,
+        "gapCount": 17
+      },
+      "dec": {
+        "total": "70",
+        "analyzed": "70",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 253306,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 20,
+        "gapCount": 18
+      },
+      "dec": {
+        "total": "71",
+        "analyzed": "71",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 254079,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 21,
+        "gapCount": 19
+      },
+      "dec": {
+        "total": "71",
+        "analyzed": "71",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 254595,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 5,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 21,
+        "gapCount": 19
+      },
+      "dec": {
+        "total": "72",
+        "analyzed": "72",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 255112,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 22,
+        "gapCount": 20
+      },
+      "dec": {
+        "total": "74",
+        "analyzed": "74",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 256021,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 22,
+        "gapCount": 20
+      },
+      "dec": {
+        "total": "75",
+        "analyzed": "75",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 256777,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 23,
+        "gapCount": 21
+      },
+      "dec": {
+        "total": "75",
+        "analyzed": "75",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 257285,
+      "panel": {
+        "ok": true,
+        "ms": 11,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 24,
+        "gapCount": 22
+      },
+      "dec": {
+        "total": "77",
+        "analyzed": "77",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 258116,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 25,
+        "gapCount": 23
+      },
+      "dec": {
+        "total": "78",
+        "analyzed": "78",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 258924,
+      "panel": {
+        "ok": true,
+        "ms": 186,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 25,
+        "gapCount": 23
+      },
+      "dec": {
+        "total": "79",
+        "analyzed": "79",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 259918,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 26,
+        "gapCount": 24
+      },
+      "dec": {
+        "total": "79",
+        "analyzed": "79",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 260427,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 27,
+        "gapCount": 25
+      },
+      "dec": {
+        "total": "81",
+        "analyzed": "81",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 261206,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 28,
+        "gapCount": 26
+      },
+      "dec": {
+        "total": "82",
+        "analyzed": "82",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 261984,
+      "panel": {
+        "ok": true,
+        "ms": 185,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 28,
+        "gapCount": 26
+      },
+      "dec": {
+        "total": "83",
+        "analyzed": "83",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 263033,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 29,
+        "gapCount": 27
+      },
+      "dec": {
+        "total": "83",
+        "analyzed": "83",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 263541,
+      "panel": {
+        "ok": true,
+        "ms": 471,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 30,
+        "gapCount": 28
+      },
+      "dec": {
+        "total": "85",
+        "analyzed": "85",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 264827,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 31,
+        "gapCount": 29
+      },
+      "dec": {
+        "total": "86",
+        "analyzed": "86",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 265632,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 32,
+        "gapCount": 30
+      },
+      "dec": {
+        "total": "87",
+        "analyzed": "87",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 266460,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 33,
+        "gapCount": 31
+      },
+      "dec": {
+        "total": "88",
+        "analyzed": "88",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 267268,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 34,
+        "gapCount": 32
+      },
+      "dec": {
+        "total": "88",
+        "analyzed": "88",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 267772,
+      "panel": {
+        "ok": true,
+        "ms": 20,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 34,
+        "gapCount": 32
+      },
+      "dec": {
+        "total": "90",
+        "analyzed": "90",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 268769,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 35,
+        "gapCount": 33
+      },
+      "dec": {
+        "total": "90",
+        "analyzed": "90",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 269280,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 36,
+        "gapCount": 34
+      },
+      "dec": {
+        "total": "92",
+        "analyzed": "92",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 270073,
+      "panel": {
+        "ok": true,
+        "ms": 201,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 36,
+        "gapCount": 34
+      },
+      "dec": {
+        "total": "93",
+        "analyzed": "93",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 271095,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 38,
+        "gapCount": 35
+      },
+      "dec": {
+        "total": "94",
+        "analyzed": "94",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 271862,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 38,
+        "gapCount": 35
+      },
+      "dec": {
+        "total": "95",
+        "analyzed": "95",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 272616,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 39,
+        "gapCount": 36
+      },
+      "dec": {
+        "total": "95",
+        "analyzed": "95",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 273132,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 40,
+        "gapCount": 37
+      },
+      "dec": {
+        "total": "97",
+        "analyzed": "97",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 273940,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 40,
+        "gapCount": 37
+      },
+      "dec": {
+        "total": "97",
+        "analyzed": "97",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 274454,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 41,
+        "gapCount": 38
+      },
+      "dec": {
+        "total": "99",
+        "analyzed": "99",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 275204,
+      "panel": {
+        "ok": true,
+        "ms": 340,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 41,
+        "gapCount": 38
+      },
+      "dec": {
+        "total": "100",
+        "analyzed": "100",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 276370,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 43,
+        "gapCount": 39
+      },
+      "dec": {
+        "total": "101",
+        "analyzed": "101",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 277147,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 44,
+        "gapCount": 40
+      },
+      "dec": {
+        "total": "102",
+        "analyzed": "102",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 277898,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 44,
+        "gapCount": 40
+      },
+      "dec": {
+        "total": "103",
+        "analyzed": "103",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 278734,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 45,
+        "gapCount": 41
+      },
+      "dec": {
+        "total": "104",
+        "analyzed": "104",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 279527,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 46,
+        "gapCount": 42
+      },
+      "dec": {
+        "total": "105",
+        "analyzed": "105",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 280367,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 47,
+        "gapCount": 43
+      },
+      "dec": {
+        "total": "105",
+        "analyzed": "105",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 280880,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 47,
+        "gapCount": 43
+      },
+      "dec": {
+        "total": "107",
+        "analyzed": "107",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 281671,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 48,
+        "gapCount": 44
+      },
+      "dec": {
+        "total": "108",
+        "analyzed": "108",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 282507,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 49,
+        "gapCount": 45
+      },
+      "dec": {
+        "total": "109",
+        "analyzed": "109",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 283243,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 50,
+        "gapCount": 46
+      },
+      "dec": {
+        "total": "109",
+        "analyzed": "109",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 283752,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 50,
+        "gapCount": 46
+      },
+      "dec": {
+        "total": "111",
+        "analyzed": "111",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 284551,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 51,
+        "gapCount": 47
+      },
+      "dec": {
+        "total": "111",
+        "analyzed": "111",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 285058,
+      "panel": {
+        "ok": true,
+        "ms": 12,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 51,
+        "gapCount": 47
+      },
+      "dec": {
+        "total": "113",
+        "analyzed": "113",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 285896,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 52,
+        "gapCount": 48
+      },
+      "dec": {
+        "total": "114",
+        "analyzed": "114",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 286691,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 53,
+        "gapCount": 49
+      },
+      "dec": {
+        "total": "115",
+        "analyzed": "115",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 287460,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "115",
+        "analyzed": "115",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 287975,
+      "panel": {
+        "ok": true,
+        "ms": 5,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "116",
+        "analyzed": "116",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 288486,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "118",
+        "analyzed": "118",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 289493,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "118",
+        "analyzed": "118",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 290005,
+      "panel": {
+        "ok": true,
+        "ms": 6,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "120",
+        "analyzed": "120",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 290885,
+      "panel": {
+        "ok": true,
+        "ms": 219,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "121",
+        "analyzed": "121",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 291987,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "122",
+        "analyzed": "122",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 292853,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "123",
+        "analyzed": "123",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 293669,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "124",
+        "analyzed": "124",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 294502,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "124",
+        "analyzed": "124",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 295009,
+      "panel": {
+        "ok": true,
+        "ms": 23,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "126",
+        "analyzed": "126",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 296011,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "126",
+        "analyzed": "126",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 296514,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "128",
+        "analyzed": "128",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 297259,
+      "panel": {
+        "ok": true,
+        "ms": 318,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "129",
+        "analyzed": "129",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 298441,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "130",
+        "analyzed": "130",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 299292,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "130",
+        "analyzed": "130",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 299804,
+      "panel": {
+        "ok": true,
+        "ms": 15,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "132",
+        "analyzed": "132",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 300707,
+      "panel": {
+        "ok": true,
+        "ms": 5,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "133",
+        "analyzed": "133",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 301559,
+      "panel": {
+        "ok": true,
+        "ms": 171,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "134",
+        "analyzed": "134",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 302658,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "135",
+        "analyzed": "135",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 303447,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "135",
+        "analyzed": "135",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 303955,
+      "panel": {
+        "ok": true,
+        "ms": 7,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "137",
+        "analyzed": "137",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 304814,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "137",
+        "analyzed": "137",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 305322,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "139",
+        "analyzed": "139",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 306106,
+      "panel": {
+        "ok": true,
+        "ms": 285,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "140",
+        "analyzed": "140",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 307215,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "140",
+        "analyzed": "140",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 307725,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "142",
+        "analyzed": "142",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 308694,
+      "panel": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 1,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "143",
+        "analyzed": "143",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 309518,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "143",
+        "analyzed": "143",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 310033,
+      "panel": {
+        "ok": true,
+        "ms": 17,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "145",
+        "analyzed": "145",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 310906,
+      "panel": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "146",
+        "analyzed": "146",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 311736,
+      "panel": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 2,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "147",
+        "analyzed": "147",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 312521,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "148",
+        "analyzed": "148",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    },
+    {
+      "t": 313358,
+      "panel": {
+        "ok": true,
+        "ms": 4,
+        "timeout": false
+      },
+      "sw": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "page": {
+        "ok": true,
+        "ms": 3,
+        "timeout": false
+      },
+      "lag": {
+        "maxGapMs": 209791,
+        "ticks": 54,
+        "gapCount": 50
+      },
+      "dec": {
+        "total": "149",
+        "analyzed": "149",
+        "candidates": "1000",
+        "high": "1",
+        "calls": "2047",
+        "cards": 1000
+      }
+    }
+  ],
+  "panelLog": [],
+  "exceptions": [],
+  "chrome": "Chrome/155.0.8059.40",
+  "extensionId": "igniinkedpponnenhmlpghipfkhpfhan",
+  "lastDecKey": "149|1000|149",
+  "analysis": {
+    "done": false,
+    "windowMs": 300161,
+    "finalDecoderStats": {
+      "total": "149",
+      "analyzed": "149",
+      "candidates": "1000",
+      "high": "1",
+      "calls": "2047",
+      "cards": 1000
+    },
+    "probeCount": 141,
+    "panelTimeouts": 39,
+    "panelMaxMs": 3017,
+    "swTimeouts": 0,
+    "pageTimeouts": 0,
+    "pageMaxMs": 18
+  },
+  "verdict": {
+    "panelStayedResponsive": false,
+    "candidatesFound": 1000,
+    "analysisCompleted": false,
+    "note": "counts and timings only; no judgement about capture, validation or replacement"
+  },
+  "served": [
+    {
+      "at": 13977,
+      "path": "/index.html",
+      "status": 200,
+      "bytes": 156
+    },
+    {
+      "at": 13990,
+      "path": "/app.js",
+      "status": 200,
+      "bytes": 512064
+    },
+    {
+      "at": 14001,
+      "path": "/.well-known/appspecific/com.chrome.devtools.json",
+      "status": 404,
+      "bytes": 0
+    },
+    {
+      "at": 14036,
+      "path": "/favicon.ico",
+      "status": 404,
+      "bytes": 0
+    }
+  ],
+  "finishedAt": "2026-11-10T15:35:18.337Z"
+}

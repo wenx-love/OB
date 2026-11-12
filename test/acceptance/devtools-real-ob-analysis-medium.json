@@ -1,0 +1,266 @@
+{
+  "note": "offline analysis of unmodified round-1 engine records; oracle = decoder called after the script finished (report cross-check only, never used by the product); hypotheticalDryRun clears functionSuspect on a COPY only to show which per-site check would reject next - diagnostic, not a pass criterion",
+  "records": 86,
+  "foreignRecords": 13,
+  "iifeEnd": 906,
+  "groups": 50,
+  "byStatus": {
+    "pending": 0,
+    "verified": 40,
+    "unstable": 9,
+    "failed": 1,
+    "insufficient": 0
+  },
+  "verified": {
+    "total": 40,
+    "single": 34,
+    "multiple": 6,
+    "returnEqualsOracle": 40,
+    "returnDiffersFromOracle": 0,
+    "withSiteInsideRotationIife": 0
+  },
+  "realDryRun": {
+    "candidates": 12,
+    "rejections": 38,
+    "byReason": {
+      "status-unstable": 9,
+      "function-suspect": 28,
+      "status-failed": 1
+    }
+  },
+  "byFunctionStatus": {
+    "_0x124122 verified": 12,
+    "_0x194f unstable": 9,
+    "_0x194f verified": 28,
+    "pick failed": 1
+  },
+  "unstable": {
+    "total": 9,
+    "withSiteInsideRotationIife": 9
+  },
+  "candidateOracle": {
+    "total": 12,
+    "match": 12,
+    "mismatch": 0,
+    "sample": [
+      {
+        "fn": "_0x124122",
+        "pos": {
+          "lineNumber": 0,
+          "columnNumber": 3565
+        },
+        "callText": "_0x124122(0x4c1,0x4a2,0x4b0,0x4b1)",
+        "replacement": "\"windbreaker\"",
+        "oracle": "\"windbreaker\"",
+        "match": true
+      },
+      {
+        "fn": "_0x124122",
+        "pos": {
+          "lineNumber": 0,
+          "columnNumber": 3633
+        },
+        "callText": "_0x124122(0x4bc,0x4b6,0x4b4,0x4ad)",
+        "replacement": "\"down-jacket\"",
+        "oracle": "\"down-jacket\"",
+        "match": true
+      },
+      {
+        "fn": "_0x124122",
+        "pos": {
+          "lineNumber": 0,
+          "columnNumber": 3757
+        },
+        "callText": "_0x124122(0x4be,0x4c0,0x4a8,0x4b4)",
+        "replacement": "\"cny-199\"",
+        "oracle": "\"cny-199\"",
+        "match": true
+      },
+      {
+        "fn": "_0x124122",
+        "pos": {
+          "lineNumber": 0,
+          "columnNumber": 3801
+        },
+        "callText": "_0x124122(0x4a4,0x498,0x4a4,0x49e)",
+        "replacement": "\"cny-89\"",
+        "oracle": "\"cny-89\"",
+        "match": true
+      },
+      {
+        "fn": "_0x124122",
+        "pos": {
+          "lineNumber": 0,
+          "columnNumber": 3994
+        },
+        "callText": "_0x124122(0x4a9,0x4b3,0x4b4,0x4b0)",
+        "replacement": "\"ob-recover\"",
+        "oracle": "\"ob-recover\"",
+        "match": true
+      },
+      {
+        "fn": "_0x124122",
+        "pos": {
+          "lineNumber": 0,
+          "columnNumber": 4138
+        },
+        "callText": "_0x124122(0x4ae,0x4c3,0x4c1,0x4b6)",
+        "replacement": "\"push\"",
+        "oracle": "\"push\"",
+        "match": true
+      }
+    ]
+  },
+  "hypotheticalDryRun": {
+    "summary": {
+      "candidates": 12,
+      "rejections": 38,
+      "byReason": {
+        "status-unstable": 9,
+        "dynamic-arguments": 28,
+        "status-failed": 1
+      }
+    },
+    "firstRejections": [
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      },
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      },
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      },
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      },
+      {
+        "fn": "_0x194f",
+        "pos": null,
+        "codes": [
+          "status-unstable",
+          "same-args-different-returns"
+        ]
+      }
+    ]
+  },
+  "verifiedMismatch": [],
+  "verifiedSamples": [
+    {
+      "fn": "_0x124122",
+      "status": "verified",
+      "evidence": "single-observation",
+      "args": [
+        1217,
+        1186,
+        1200,
+        1201
+      ],
+      "observations": 1,
+      "distinct": 1,
+      "returns": [
+        "windbreaker"
+      ],
+      "oracle": "windbreaker",
+      "allMatchOracle": true,
+      "sites": 1,
+      "sitesInRotationIife": 0,
+      "suspect": false,
+      "siteText": [
+        "_0x124122(0x4c1,0x4a2,0x4b0,0x4b1)},{'id':0x2,'inStock':![],"
+      ]
+    },
+    {
+      "fn": "_0x124122",
+      "status": "verified",
+      "evidence": "single-observation",
+      "args": [
+        1212,
+        1206,
+        1204,
+        1197
+      ],
+      "observations": 1,
+      "distinct": 1,
+      "returns": [
+        "down-jacket"
+      ],
+      "oracle": "down-jacket",
+      "allMatchOracle": true,
+      "sites": 1,
+      "sitesInRotationIife": 0,
+      "suspect": false,
+      "siteText": [
+        "_0x124122(0x4bc,0x4b6,0x4b4,0x4ad)},{'id':0x3,'inStock':!![]"
+      ]
+    },
+    {
+      "fn": "_0x124122",
+      "status": "verified",
+      "evidence": "single-observation",
+      "args": [
+        1214,
+        1216,
+        1192,
+        1204
+      ],
+      "observations": 1,
+      "distinct": 1,
+      "returns": [
+        "cny-199"
+      ],
+      "oracle": "cny-199",
+      "allMatchOracle": true,
+      "sites": 1,
+      "sitesInRotationIife": 0,
+      "suspect": false,
+      "siteText": [
+        "_0x124122(0x4be,0x4c0,0x4a8,0x4b4),'fleece':_0x124122(0x4a4,"
+      ]
+    },
+    {
+      "fn": "_0x124122",
+      "status": "verified",
+      "evidence": "single-observation",
+      "args": [
+        1188,
+        1176,
+        1188,
+        1182
+      ],
+      "observations": 1,
+      "distinct": 1,
+      "returns": [
+        "cny-89"
+      ],
+      "oracle": "cny-89",
+      "allMatchOracle": true,
+      "sites": 1,
+      "sitesInRotationIife": 0,
+      "suspect": false,
+      "siteText": [
+        "_0x124122(0x4a4,0x498,0x4a4,0x49e)};function _0x1d59cb(_0x30"
+      ]
+    }
+  ]
+}
