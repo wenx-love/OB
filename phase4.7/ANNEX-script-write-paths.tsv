@@ -1,0 +1,167 @@
+file	api	argument	expanded	class	exclusiveCreateInFile
+fix-test-positions.ts	writeFileSync	file	('test/verified-replacer.test.ts')	cwd-relative-or-dynamic	False
+scripts\analyze-real-ob-e2e.ts	writeFileSync	ROOT + '/test/acceptance/devtools-real-ob-analysis' + SUFFIX + '.json'	('D:/Projects/ob-recover') + '/test/acceptance/devtools-(await dryRunReplacements((validateCaptures((Array.isArray(((JSON.parse(readFileSync(('D:/Projects/ob-recover') + '/test/acceptance/devtools-(await dryRunReplacemen…	project:test/acceptance	False
+scripts\capture-e2e.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/chrome-e2e-profile')	TEMP	False
+scripts\capture-e2e.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/chrome-e2e-profile')	TEMP	False
+scripts\capture-e2e.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + (process.env.ALL ? '/test/acceptance/phase3-engine-e2e-all-result.json' : '/test/acceptance/phase3-engine-e2e-result.json'))	project:test/acceptance	False
+scripts\capture-lifecycle.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/chrome-life-profile')	TEMP	False
+scripts\capture-lifecycle.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/chrome-life-profile')	TEMP	False
+scripts\capture-lifecycle.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/phase3-lifecycle-e2e-result.json')	project:test/acceptance	False
+scripts\capture-proto.mjs	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/chrome-proto-profile')	TEMP	False
+scripts\capture-proto.mjs	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/chrome-proto-profile')	TEMP	False
+scripts\capture-proto.mjs	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/phase3-proto-result.json')	project:test/acceptance	False
+scripts\capture-samples.ts	rmSync	dir	dir	cwd-relative-or-dynamic	False
+scripts\capture-samples.ts	mkdirSync	dir	dir	cwd-relative-or-dynamic	False
+scripts\capture-samples.ts	copyFileSync	dir + '/input.js'	dir + '/input.js'	cwd-relative-or-dynamic	False
+scripts\capture-samples.ts	writeFileSync	dir + '/index.html'	dir + '/index.html'	cwd-relative-or-dynamic	False
+scripts\capture-samples.ts	writeFileSync	ROOT + '/test/acceptance/phase3-sample-run-' + name + '.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-sample-run-' + name + '.json'	project:test/acceptance	False
+scripts\capture-samples.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/chrome-sample-profile')	TEMP	False
+scripts\capture-samples.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/chrome-sample-profile')	TEMP	False
+scripts\cli.ts	writeFileSync	resolve(out	resolve(out	cwd-relative-or-dynamic	False
+scripts\coverage-report.ts	writeFileSync	'D:/Projects/ob-recover/test/acceptance/phase3-1-coverage.json'	'D:/Projects/ob-recover/test/acceptance/phase3-1-coverage.json'	project:test/acceptance	False
+scripts\devtools-capture-diag.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-capture-diag-profile')	TEMP	False
+scripts\devtools-capture-diag.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-capture-diag-profile')	TEMP	False
+scripts\devtools-capture-diag.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-capture-diag.json')	project:test/acceptance	False
+scripts\devtools-capture-diag.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-capture-diag.json')	project:test/acceptance	False
+scripts\devtools-probe.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe-profile')	TEMP	False
+scripts\devtools-probe.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe-profile')	TEMP	False
+scripts\devtools-probe.ts	writeFileSync	OUT	('D:/Projects/ob-recover/test/acceptance/devtools-probe' + (process.env.HEADED ? '-headed' : '-headless') + '.json')	project:test/acceptance	False
+scripts\devtools-probe2.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe2-profile')	TEMP	False
+scripts\devtools-probe2.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe2-profile')	TEMP	False
+scripts\devtools-probe2.ts	writeFileSync	OUT	('D:/Projects/ob-recover/test/acceptance/devtools-probe2.json')	project:test/acceptance	False
+scripts\devtools-probe3.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe3-profile')	TEMP	False
+scripts\devtools-probe3.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe3-profile')	TEMP	False
+scripts\devtools-probe3.ts	writeFileSync	OUT	('D:/Projects/ob-recover/test/acceptance/devtools-probe3.json')	project:test/acceptance	False
+scripts\devtools-probe4.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe4-profile')	TEMP	False
+scripts\devtools-probe4.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe4-profile')	TEMP	False
+scripts\devtools-probe4.ts	writeFileSync	OUT	('D:/Projects/ob-recover/test/acceptance/devtools-probe4.json')	project:test/acceptance	False
+scripts\devtools-probe5.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe5-profile')	TEMP	False
+scripts\devtools-probe5.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe5-profile')	TEMP	False
+scripts\devtools-probe5.ts	writeFileSync	OUT	('D:/Projects/ob-recover/test/acceptance/devtools-probe5.json')	project:test/acceptance	False
+scripts\devtools-probe6.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe6-profile')	TEMP	False
+scripts\devtools-probe6.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-probe6-profile')	TEMP	False
+scripts\devtools-probe6.ts	writeFileSync	OUT	('D:/Projects/ob-recover/test/acceptance/devtools-probe6.json')	project:test/acceptance	False
+scripts\devtools-real-1.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real-profile')	TEMP	False
+scripts\devtools-real-1.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real-profile')	TEMP	False
+scripts\devtools-real-1.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-real-1.json')	project:test/acceptance	False
+scripts\devtools-real-2.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real2-profile')	TEMP	False
+scripts\devtools-real-2.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real2-profile')	TEMP	False
+scripts\devtools-real-2.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-real-2.json')	project:test/acceptance	False
+scripts\devtools-real-2.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-real-2.json')	project:test/acceptance	False
+scripts\devtools-real-3.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real3-profile')	TEMP	False
+scripts\devtools-real-3.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real3-profile')	TEMP	False
+scripts\devtools-real-3.ts	mkdirSync	SHOTS	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens')	project:test/acceptance	False
+scripts\devtools-real-3.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-real-3.json')	project:test/acceptance	False
+scripts\devtools-real-3.ts	writeFileSync	SHOTS + '/real-panel-corner.png'	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens') + '/real-panel-corner.png'	project:test/acceptance	False
+scripts\devtools-real-3.ts	writeFileSync	SHOTS + '/real-panel-capture.png'	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens') + '/real-panel-capture.png'	project:test/acceptance	False
+scripts\devtools-real-3.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-real-3.json')	project:test/acceptance	False
+scripts\devtools-real-4.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real4-profile')	TEMP	False
+scripts\devtools-real-4.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real4-profile')	TEMP	False
+scripts\devtools-real-4.ts	mkdirSync	SHOTS	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens')	project:test/acceptance	False
+scripts\devtools-real-4.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-real-4.json')	project:test/acceptance	False
+scripts\devtools-real-4.ts	writeFileSync	SHOTS + '/real-panel-frontend.png'	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens') + '/real-panel-frontend.png'	project:test/acceptance	False
+scripts\devtools-real-4.ts	writeFileSync	SHOTS + '/real-panel-frontend-capture.png'	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens') + '/real-panel-frontend-capture.png'	project:test/acceptance	False
+scripts\devtools-real-4.ts	writeFileSync	SHOTS + '/real-panel-frontend-capture-reshown.png'	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens') + '/real-panel-frontend-capture-reshown.png'	project:test/acceptance	False
+scripts\devtools-real-4.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-real-4.json')	project:test/acceptance	False
+scripts\devtools-real-5.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real5-profile')	TEMP	False
+scripts\devtools-real-5.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real5-profile')	TEMP	False
+scripts\devtools-real-5.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-real-5.json')	project:test/acceptance	False
+scripts\devtools-real-5.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-real-5.json')	project:test/acceptance	False
+scripts\devtools-real-ob-e2e.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real-ob-profile')	TEMP	False
+scripts\devtools-real-ob-e2e.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-real-ob-profile')	TEMP	False
+scripts\devtools-real-ob-e2e.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/' + ((process.env.TARGET_URL || '') ? 'devtools-real-site-e2e' : 'devtools-real-ob-e2e') + ((process.env.MIN_CONFIDENCE || '') ? '-' + (process.env.MIN_CONFIDENCE || '') : …	project:test/acceptance	False
+scripts\devtools-real-ob-e2e.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/' + ((process.env.TARGET_URL || '') ? 'devtools-real-site-e2e' : 'devtools-real-ob-e2e') + ((process.env.MIN_CONFIDENCE || '') ? '-' + (process.env.MIN_CONFIDENCE || '') : …	project:test/acceptance	False
+scripts\devtools-validation-e2e.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-validation-profile')	TEMP	False
+scripts\devtools-validation-e2e.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/devtools-validation-profile')	TEMP	False
+scripts\devtools-validation-e2e.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-validation-e2e.json')	project:test/acceptance	False
+scripts\devtools-validation-e2e.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/devtools-validation-e2e.json')	project:test/acceptance	False
+scripts\extension-conflict.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-conflict-profile')	TEMP	False
+scripts\extension-conflict.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-conflict-profile')	TEMP	False
+scripts\extension-conflict.ts	writeFileSync	ROOT + '/test/acceptance/phase3-1-page-screenshot.png'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-1-page-screenshot.png'	project:test/acceptance	False
+scripts\extension-conflict.ts	writeFileSync	ROOT + '/test/acceptance/phase3-1-conflict.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-1-conflict.json'	project:test/acceptance	False
+scripts\extension-integration.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-int-profile')	TEMP	False
+scripts\extension-integration.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-int-profile')	TEMP	False
+scripts\extension-integration.ts	writeFileSync	ROOT + '/test/acceptance/phase3-1-extension-integration.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-1-extension-integration.json'	project:test/acceptance	False
+scripts\extension-probe.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile')	TEMP	False
+scripts\extension-probe.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile')	TEMP	False
+scripts\extension-probe.ts	writeFileSync	ROOT + '/test/acceptance/phase3-1-probe.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-1-probe.json'	project:test/acceptance	False
+scripts\extension-probe.ts	writeFileSync	ROOT + '/test/acceptance/phase3-1-probe.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-1-probe.json'	project:test/acceptance	False
+scripts\extension-probe2.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile2')	TEMP	False
+scripts\extension-probe2.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile2')	TEMP	False
+scripts\extension-probe2.ts	writeFileSync	ROOT + '/test/acceptance/phase3-1-probe2.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-1-probe2.json'	project:test/acceptance	False
+scripts\extension-probe3.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile3')	TEMP	False
+scripts\extension-probe3.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile3')	TEMP	False
+scripts\extension-probe3.ts	writeFileSync	ROOT + '/test/acceptance/phase3-1-probe3.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-1-probe3.json'	project:test/acceptance	False
+scripts\extension-probe4.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile4')	TEMP	False
+scripts\extension-probe4.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile4')	TEMP	False
+scripts\extension-probe4.ts	writeFileSync	ROOT + '/test/acceptance/phase3-1-probe4.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-1-probe4.json'	project:test/acceptance	False
+scripts\extension-probe5.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile5')	TEMP	False
+scripts\extension-probe5.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ext-profile5')	TEMP	False
+scripts\extension-probe5.ts	writeFileSync	ROOT + '/test/acceptance/phase3-1-probe5.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-1-probe5.json'	project:test/acceptance	False
+scripts\gen-real-ob-sample.mjs	writeFileSync	OUT	(('D:/Projects/ob-recover/test/fixtures/real-ob') + '/obfuscated.js')	project:test/fixtures	False
+scripts\gen-real-ob-sample.mjs	writeFileSync	META	(('D:/Projects/ob-recover/test/fixtures/real-ob') + '/metadata.json')	project:test/fixtures	False
+scripts\manual-panel-accept.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ob-manual-panel-profile')	TEMP	False
+scripts\manual-panel-accept.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ob-manual-panel-profile')	TEMP	False
+scripts\manual-panel-accept.ts	writeFileSync	SHOT + name + '.png'	(('D:/Projects/ob-recover') + '/test/acceptance/phase4-manual-panel-') + name + '.png'	project:test/acceptance	False
+scripts\manual-panel-accept.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/phase4-manual-panel.json')	project:test/acceptance	False
+scripts\manual-panel-preview.ts	writeFileSync	OUT	('C:/Users/Administrator/TEMP/opencode/manual-panel-preview.json')	TEMP	False
+scripts\manual-real-accept.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ob-manual-real-profile')	TEMP	False
+scripts\manual-real-accept.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ob-manual-real-profile')	TEMP	False
+scripts\manual-real-accept.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/phase4-manual-real.json')	project:test/acceptance	False
+scripts\manual-real-probe.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ob-manual-real-profile')	TEMP	False
+scripts\manual-real-probe.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/ob-manual-real-profile')	TEMP	False
+scripts\manual-real-probe.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/phase4-manual-real-probe.json')	project:test/acceptance	False
+scripts\p47-l1-ob-run.ts	mkdirSync	OBS	(((('D:/Projects/ob-recover') + '/test/fixtures/real-ob-sites/l1-qccqcc-hangzhou') + '/run-20261110T1458Z') + '/observed')	project:test/fixtures	True
+scripts\p47-l1-ob-run.ts	writeFileSync	OUT	((((('D:/Projects/ob-recover') + '/test/fixtures/real-ob-sites/l1-qccqcc-hangzhou') + '/run-20261110T1458Z') + '/observed') + '/raw-run.nextpage3.json')	project:test/fixtures	True
+scripts\p47-l1-ob-run.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/l1-ob-profile')	TEMP	True
+scripts\p47-l1-ob-run.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/l1-ob-profile')	TEMP	True
+scripts\p47-l1-ob-run.ts	writeFileSync	LEDGER	((('D:/Projects/ob-recover') + '/test/fixtures/real-ob-sites/l1-qccqcc-hangzhou') + '/budget-ledger.json')	project:test/fixtures	True
+scripts\p47-l3-browser-replay.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-l3-replay-profile')	TEMP	False
+scripts\p47-l3-browser-replay.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-l3-replay-profile')	TEMP	False
+scripts\p47-l3-browser-replay.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-l3-browser-replay' + ((process.env.MIN_CONFIDENCE || '') ? '-' + (process.env.MIN_CONFIDENCE || '') : '') + '.json')	project:test/acceptance	False
+scripts\p47-l3-browser-replay.ts	writeFileSync	SHOT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-l3-browser-replay' + ((process.env.MIN_CONFIDENCE || '') ? '-' + (process.env.MIN_CONFIDENCE || '') : '') + '-panel.png')	project:test/acceptance	False
+scripts\p47-l3-browser-replay.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-l3-browser-replay' + ((process.env.MIN_CONFIDENCE || '') ? '-' + (process.env.MIN_CONFIDENCE || '') : '') + '.json')	project:test/acceptance	False
+scripts\p47-l3-coverage-control.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-l3-coverage-control-profile')	TEMP	False
+scripts\p47-l3-coverage-control.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-l3-coverage-control-profile')	TEMP	False
+scripts\p47-l3-coverage-control.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-l3-coverage-control.json')	project:test/acceptance	False
+scripts\p47-l3-coverage-control.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-l3-coverage-control.json')	project:test/acceptance	False
+scripts\p47-l3-decoder-diag.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-l3-decoder-diag-profile')	TEMP	False
+scripts\p47-l3-decoder-diag.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-l3-decoder-diag-profile')	TEMP	False
+scripts\p47-l3-decoder-diag.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-l3-decoder-count-diag.json')	project:test/acceptance	False
+scripts\p47-l3-decoder-diag.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-l3-decoder-count-diag.json')	project:test/acceptance	False
+scripts\p47-offline-connect-diag.ts	mkdirSync	ROOT + '/test/acceptance'	('D:/Projects/ob-recover') + '/test/acceptance'	project:test/acceptance	True
+scripts\p47-offline-connect-diag.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-offline-connect-diag-' + (String(process.env.SCENARIO || 'A').toUpperCase()) + '-run' + (String(process.env.RUN_NO || '1')) + '.json')	project:test/acceptance	True
+scripts\p47-offline-connect-diag.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-offline-diag-profile-' + (String(process.env.SCENARIO || 'A').toUpperCase()))	TEMP	True
+scripts\p47-offline-connect-diag.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-offline-diag-profile-' + (String(process.env.SCENARIO || 'A').toUpperCase()))	TEMP	True
+scripts\p47-panel-perf-verify.ts	mkdirSync	ROOT + '/test/acceptance'	('D:/Projects/ob-recover') + '/test/acceptance'	project:test/acceptance	True
+scripts\p47-panel-perf-verify.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-panel-perf-' + (process.env.BUILD_LABEL || 'after') + '-run' + (String(process.env.RUN_NO || '1')) + '.json')	project:test/acceptance	True
+scripts\p47-panel-perf-verify.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-panel-perf-profile')	TEMP	True
+scripts\p47-panel-perf-verify.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-panel-perf-profile')	TEMP	True
+scripts\p47-sw-recycle.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-sw-profile')	TEMP	False
+scripts\p47-sw-recycle.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-sw-profile')	TEMP	False
+scripts\p47-sw-recycle.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-sw-recycle' + ((process.env.METHOD || 'A') === 'A' ? '' : '-method' + (process.env.METHOD || 'A')) + '.json')	project:test/acceptance	False
+scripts\p47-worker-exec-verify.ts	mkdirSync	ROOT + '/test/acceptance'	('D:/Projects/ob-recover') + '/test/acceptance'	project:test/acceptance	True
+scripts\p47-worker-exec-verify.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/p47-worker-exec-run' + (String(process.env.RUN_NO || '1')) + '.json')	project:test/acceptance	True
+scripts\p47-worker-exec-verify.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-worker-exec-profile')	TEMP	True
+scripts\p47-worker-exec-verify.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/p47-worker-exec-profile')	TEMP	True
+scripts\panel-layout-check.ts	mkdirSync	SHOTS	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens')	project:test/acceptance	False
+scripts\panel-layout-check.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/layout-check-profile')	TEMP	False
+scripts\panel-layout-check.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/layout-check-profile')	TEMP	False
+scripts\panel-layout-check.ts	writeFileSync	SHOTS + '/' + w + 'x' + h + '-' + name + '.png'	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens') + '/' + w + 'x' + h + '-' + name + '.png'	project:test/acceptance	False
+scripts\panel-layout-check.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/layout-check.json')	project:test/acceptance	False
+scripts\panel-layout-check.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/layout-check.json')	project:test/acceptance	False
+scripts\panel-perf.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/panel-perf-profile')	TEMP	False
+scripts\panel-perf.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/panel-perf-profile')	TEMP	False
+scripts\panel-perf.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/panel-perf-' + (process.env.TAG || 'before') + '.json')	project:test/acceptance	False
+scripts\pixel-corner-check.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/pixel-profile')	TEMP	False
+scripts\pixel-corner-check.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/pixel-profile')	TEMP	False
+scripts\pixel-corner-check.ts	mkdirSync	SHOTS	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens')	project:test/acceptance	False
+scripts\pixel-corner-check.ts	writeFileSync	SHOTS + '/pixel-' + variant + '-800x600.png'	(('D:/Projects/ob-recover') + '/test/acceptance/layout-screens') + '/pixel-' + variant + '-800x600.png'	project:test/acceptance	False
+scripts\pixel-corner-check.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/pixel-corner-check.json')	project:test/acceptance	False
+scripts\pixel-corner-check.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/pixel-corner-check.json')	project:test/acceptance	False
+scripts\probe-call-location.ts	writeFileSync	ROOT + '/test/acceptance/phase3-2-calllocation-probe.json'	('D:/Projects/ob-recover') + '/test/acceptance/phase3-2-calllocation-probe.json'	project:test/acceptance	False
+scripts\refresh-perf.ts	rmSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/refresh-perf-profile')	TEMP	False
+scripts\refresh-perf.ts	mkdirSync	PROFILE	('C:/Users/Administrator/TEMP/opencode/refresh-perf-profile')	TEMP	False
+scripts\refresh-perf.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/refresh-perf-' + (process.env.TAG || 'before') + '-' + ((process.env.ONLY || 'B0,B0o,B1,S2').split(',')).join('_') + '.json')	project:test/acceptance	False
+scripts\refresh-perf.ts	writeFileSync	OUT	(('D:/Projects/ob-recover') + '/test/acceptance/refresh-perf-' + (process.env.TAG || 'before') + '-' + ((process.env.ONLY || 'B0,B0o,B1,S2').split(',')).join('_') + '.json')	project:test/acceptance	False
+scripts\sample-static-scan.ts	writeFileSync	OUT + n + '.json'	('D:/Projects/ob-recover/test/acceptance/phase3-sample-static-scan-') + n + '.json'	project:test/acceptance	False

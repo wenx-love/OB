@@ -1,0 +1,30 @@
+{
+  "checker_exit": 0,
+  "pre_checker_checks": 1592,
+  "verifier_exit": 0,
+  "verifier_passed": 114,
+  "parse_inline_exit": 0,
+  "control_config_exit": 0,
+  "build_checks": 193,
+  "determinism": true,
+  "lab": {
+    "scenarios": 11,
+    "passed": 11,
+    "failed": 0,
+    "limits": [
+      "injected faults only (throw / SIGKILL to self)",
+      "real disk errors, power loss and external kills are UNVERIFIED",
+      "scratch root deleted after each scenario"
+    ]
+  },
+  "post_checker_exit": 0,
+  "post_checker_checks": 1599,
+  "post_verifier_exit": 0,
+  "hygiene_exit": 0,
+  "publish": {
+    "ok": true,
+    "rid": "1edd9e749410c9fef2bb2e65",
+    "state": "verified",
+    "files": 26
+  }
+}

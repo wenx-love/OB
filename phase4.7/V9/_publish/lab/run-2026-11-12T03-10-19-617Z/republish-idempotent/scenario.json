@@ -1,0 +1,219 @@
+{
+  "name": "republish-idempotent",
+  "mode": "republish",
+  "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv",
+  "expected": null,
+  "steps": [
+    {
+      "label": "first publish ok",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "republish ok",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "same rid",
+      "pass": true,
+      "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+      "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+    },
+    {
+      "label": "tree unchanged",
+      "pass": true,
+      "actual": {
+        "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+        "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+        "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+      },
+      "expected": {
+        "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+        "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+        "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+      }
+    }
+  ],
+  "faults": null,
+  "code": {
+    "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+    "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+  },
+  "before": {
+    "tree": {
+      "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+      "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+      "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+    },
+    "current": {
+      "schema": "p47-publish-current-v1",
+      "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+      "files": [
+        {
+          "path": "a.txt",
+          "bytes": 6,
+          "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+        },
+        {
+          "path": "b.txt",
+          "bytes": 6,
+          "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+        },
+        {
+          "path": "c.txt",
+          "bytes": 6,
+          "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        }
+      ],
+      "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\journal.json"
+    },
+    "journal": {
+      "schema": "p47-publish-journal-v2",
+      "txid": "d3f745df6173fc1c-mwcyzvi0-680959",
+      "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+      "state": "verified",
+      "phase": "verified",
+      "files": [
+        {
+          "path": "a.txt",
+          "new": {
+            "bytes": 6,
+            "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+          },
+          "old": {
+            "exists": false,
+            "bytes": null,
+            "sha256": null
+          }
+        },
+        {
+          "path": "b.txt",
+          "new": {
+            "bytes": 6,
+            "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+          },
+          "old": {
+            "exists": false,
+            "bytes": null,
+            "sha256": null
+          }
+        },
+        {
+          "path": "c.txt",
+          "new": {
+            "bytes": 6,
+            "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "old": {
+            "exists": false,
+            "bytes": null,
+            "sha256": null
+          }
+        }
+      ],
+      "old_current": null,
+      "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+      "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+      "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\backup\\d3f745df6173fc1c-mwcyzvi0-680959",
+      "durability": {
+        "file_fsync": true,
+        "short_write_loop": true,
+        "dir_sync": false
+      },
+      "error": null,
+      "rollback": null,
+      "dir_sync": false
+    },
+    "lock": false
+  },
+  "after": {
+    "tree": {
+      "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+      "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+      "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+    },
+    "current": {
+      "schema": "p47-publish-current-v1",
+      "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+      "files": [
+        {
+          "path": "a.txt",
+          "bytes": 6,
+          "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+        },
+        {
+          "path": "b.txt",
+          "bytes": 6,
+          "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+        },
+        {
+          "path": "c.txt",
+          "bytes": 6,
+          "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        }
+      ],
+      "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\journal.json"
+    },
+    "journal": {
+      "schema": "p47-publish-journal-v2",
+      "txid": "d3f745df6173fc1c-mwcyzvi0-680959",
+      "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+      "state": "verified",
+      "phase": "verified",
+      "files": [
+        {
+          "path": "a.txt",
+          "new": {
+            "bytes": 6,
+            "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+          },
+          "old": {
+            "exists": false,
+            "bytes": null,
+            "sha256": null
+          }
+        },
+        {
+          "path": "b.txt",
+          "new": {
+            "bytes": 6,
+            "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+          },
+          "old": {
+            "exists": false,
+            "bytes": null,
+            "sha256": null
+          }
+        },
+        {
+          "path": "c.txt",
+          "new": {
+            "bytes": 6,
+            "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "old": {
+            "exists": false,
+            "bytes": null,
+            "sha256": null
+          }
+        }
+      ],
+      "old_current": null,
+      "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+      "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+      "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\backup\\d3f745df6173fc1c-mwcyzvi0-680959",
+      "durability": {
+        "file_fsync": true,
+        "short_write_loop": true,
+        "dir_sync": false
+      },
+      "error": null,
+      "rollback": null,
+      "dir_sync": false
+    },
+    "lock": false
+  }
+}

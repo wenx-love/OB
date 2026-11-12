@@ -1,0 +1,32 @@
+{
+  "checker_exit": 0,
+  "pre_checker_checks": 2317,
+  "verifier_exit": 0,
+  "verifier_passed": 121,
+  "parse_inline_exit": 0,
+  "control_config_exit": 0,
+  "build_checks": 924,
+  "determinism": true,
+  "lab": {
+    "scenarios": 17,
+    "passed": 17,
+    "failed": 0,
+    "evidence_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-worker-remediation-plan\\V9\\_publish\\lab\\run-2026-11-12T03-10-19-617Z",
+    "limits": [
+      "injected throw/SIGKILL/short-write only",
+      "real disk errors, power loss, external kills and multi-writer races are UNVERIFIED",
+      "scratch roots deleted after evidence capture"
+    ]
+  },
+  "lab_report_sha256": "2502a375a1b6b9e98dd39460cfdca127bdb9a2b15b0565df08e04f064644b07f",
+  "post_checker_exit": 0,
+  "post_checker_checks": 2326,
+  "post_verifier_exit": 0,
+  "hygiene_exit": 0,
+  "publish": {
+    "ok": true,
+    "rid": "380e5e9dd83370505c2555ad04acbd4b475f07473a041ac7d5e96e32db47a735",
+    "state": "verified",
+    "files": 37
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "schema": "p47-publish-current-v1",
+  "rid": "1edd9e749410c9fef2bb2e65",
+  "files": [
+    {
+      "path": "PHASE4.7-PHASE0-AUDIT-VECTORS-V8.json",
+      "bytes": 107767,
+      "sha256": "5f302e3b68da4d264f2b72e95eaae6f865d69123a079cd723d34ebbf89223daa"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-COMMAND-EXECUTION-REGISTRY-V8.json",
+      "bytes": 1356648,
+      "sha256": "edca94ff7b8b45794dcaac8fd316f147e06c2cdb655a8d6eabdd63ccad586c47"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-COMMAND-READ-WHITELIST-V8.tsv",
+      "bytes": 231068,
+      "sha256": "eb0230c085a23ff34209b02161b56ffa22c9b4ced61996c390b63bdb40a1ecc5"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-START-CONDITIONS-V8.md",
+      "bytes": 34096,
+      "sha256": "f189d4e3ca51965cc2f933430f5b67684c214be0b3994f8e171b53e12c4ac48b"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-V7-TO-V8-CHANGELOG.md",
+      "bytes": 4280,
+      "sha256": "7493f927c6adfe341faf804a96461a3f4ae5a16a2486d3c30a343d466fc80d3b"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-V8-DELIVERY-MANIFEST.md",
+      "bytes": 5291,
+      "sha256": "b8d8cace4e21d9025f8dde98f05fedb541039242b1c97ca298c526d6a9ae5805"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-V8-FAILURE-MODEL.md",
+      "bytes": 4081,
+      "sha256": "dfd4e8778727395f65da06965f65a6747fed0edaccd49f0b65d71d920e208bb2"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-V8-N01-N12-TRACEABILITY.md",
+      "bytes": 3780,
+      "sha256": "bb0566706eab350c48b493e19567740dbb5edaa6b78982472d5a5b352502ab87"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-V8-OPEN-ISSUES.md",
+      "bytes": 3286,
+      "sha256": "a7ed266b0b0581fd9cb222cbf4dc948e76f0659de9d2d3443169fa21a05197ca"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-V8-PUBLISH-PROTOCOL.md",
+      "bytes": 4190,
+      "sha256": "7cd0d9a72a7dd642e0e6844a2b167b741f3556b21af1de0a9d32d0555bd23dfd"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-V8-RUNTIME-TOOLS-STATUS.md",
+      "bytes": 2334,
+      "sha256": "e4785d4d2851feb9604d88985f8ce547909f42b0733bcf16b67f248b8230b48c"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-V8-SELF-CHECK.md",
+      "bytes": 3125,
+      "sha256": "0c17a2ee58f32aa9f133bf6619ad1a9927bb3af77e3997d278489bb9bf2533b6"
+    },
+    {
+      "path": "PHASE4.7-PHASE0-WRITE-AUDIT-SPEC-V8.md",
+      "bytes": 29781,
+      "sha256": "b70004a7a2f9cc7f3cccea12062a296e12edfb42e80012d7c5c21d563bcd260c"
+    },
+    {
+      "path": "p0v8-audit.cjs",
+      "bytes": 40155,
+      "sha256": "5f43707271faa2c5dc823cb320e007fb009126171f438b5c1891426d812dbe4e"
+    },
+    {
+      "path": "p0v8-build.cjs",
+      "bytes": 53304,
+      "sha256": "64d74d892e12ee622837b9e406f426b662091407a2a4bdce5c5fa8d451a3d030"
+    },
+    {
+      "path": "p0v8-check.cjs",
+      "bytes": 49366,
+      "sha256": "b77591df895c1f742426ad5a7946f0410b74fc033d99d617ae0389cb48362296"
+    },
+    {
+      "path": "p0v8-controlconfig-check.cjs",
+      "bytes": 1002,
+      "sha256": "c4cacf47f3e281f717dd58a269a97b90fe446d1ae3463e82cd8b9c59fb863673"
+    },
+    {
+      "path": "p0v8-flow.cjs",
+      "bytes": 8196,
+      "sha256": "d05cda5ed5da3971e533f710f9af580fa475047308a328a8dded3086a0765b68"
+    },
+    {
+      "path": "p0v8-hygiene.cjs",
+      "bytes": 4006,
+      "sha256": "1b71cc21f90a4d07274c557e62488b1b747f138c9a3dff29c61c65bb361fdcb1"
+    },
+    {
+      "path": "p0v8-lab.cjs",
+      "bytes": 4877,
+      "sha256": "9b25144450867c8531fa49f1b0362701801b913780aaf4212e45c76229a8ae11"
+    },
+    {
+      "path": "p0v8-lib.cjs",
+      "bytes": 7830,
+      "sha256": "0b5c606a2534494acd2989a14ecde546050afc73df555d00ade531d61596d58c"
+    },
+    {
+      "path": "p0v8-manifest.cjs",
+      "bytes": 5453,
+      "sha256": "fb06ac87c2970997264fecb4637434f8b8c7ccfb66295bb2d8650b310a833cc3"
+    },
+    {
+      "path": "p0v8-parse-inline.ps1",
+      "bytes": 1329,
+      "sha256": "d63dcbbb60103c3247052558d0791e9690574437dec410a1adf71851a8228c3d"
+    },
+    {
+      "path": "p0v8-publish.cjs",
+      "bytes": 14784,
+      "sha256": "f6e43e26c96d02e39286db24d51030cb02496c818fdce63839a315e9a171d95a"
+    },
+    {
+      "path": "p0v8-spec.cjs",
+      "bytes": 50469,
+      "sha256": "10481537da1148b0dbe9b54a14068e59e60a79f2271924edb1fcf1e48cbead10"
+    },
+    {
+      "path": "p0v8-verify.ps1",
+      "bytes": 6452,
+      "sha256": "bd34bab8332d59cc1d9ebd258fe0d9fadc9eeb7b371666d20db179c7d3354d21"
+    }
+  ],
+  "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-worker-remediation-plan\\V8\\_publish\\journal.json"
+}

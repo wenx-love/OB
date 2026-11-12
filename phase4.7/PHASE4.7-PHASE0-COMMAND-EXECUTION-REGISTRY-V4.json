@@ -1,0 +1,2140 @@
+﻿{
+    "schema":  "p47-phase0-command-registry-v4",
+    "generated_for":  "Phase 4.7 Phase 0 V4",
+    "run":  "D:/P47RUN/P47-20261111-01",
+    "run_id":  "P47-20261111-01",
+    "toolsrc":  "D:/P47TOOLS/p47-phase0-v4",
+    "tool_manifest":  "D:/P47TOOLS/p47-phase0-v4/RELEASE-MANIFEST.json",
+    "original":  "D:/Projects/ob-recover",
+    "identity":  {
+                     "admin_account":  "WENX\\Administrator",
+                     "admin_sid":  "S-1-5-21-2104787571-1265941319-592731904-500",
+                     "admin_sid_source":  "Approved account name in V5 3.5/16 and V2 3.5/4.1; SID resolved read-only from local account database and current token on 2026-11-11; user confirmation required before C00/C02.",
+                     "system_sid":  "S-1-5-18",
+                     "codex_group":  "WENX\\CodexSandboxUsers",
+                     "codex_account_env":  "P0_CODEX_ACCOUNT",
+                     "codex_accounts":  [
+                                            "WENX\\CodexSandboxOffline",
+                                            "WENX\\CodexSandboxOnLine"
+                                        ],
+                     "admin_sid_env":  "P0_ADMIN_ACCOUNT_SID",
+                     "no_group_sid_substitution":  true
+                 },
+    "executables":  {
+                        "powershell":  {
+                                           "path":  "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+                                           "bytes":  495616,
+                                           "sha256":  "60c9b29843624dd8af6b6a7b26147753be6aeef65098b9a503cc50850afe410f"
+                                       },
+                        "node":  {
+                                     "path":  "D:/Nvm/nodejs/node.exe",
+                                     "bytes":  86997320,
+                                     "sha256":  "0d0f5e39f9f3d9587bc19f73eab3c2c9c4903fd02d6dbf9c853dd81b3d95fad4"
+                                 },
+                        "robocopy":  {
+                                         "path":  "C:/Windows/System32/robocopy.exe",
+                                         "bytes":  192512,
+                                         "sha256":  "84abbd32d074881164b8cf6b30593828e53f368c3854854aefe5b3cf06d3e356"
+                                     }
+                    },
+    "tool_release":  {
+                         "required":  true,
+                         "release_id":  "p47-phase0-v4",
+                         "schema":  "p47-phase0-tool-release-v1",
+                         "manifest_sha256_env":  "P0_TOOLSRC_MANIFEST_SHA256",
+                         "files":  [
+                                       "payload/bootstrap/p0-init.ps1",
+                                       "payload/bootstrap/p0-acl.ps1",
+                                       "payload/bootstrap/p0-stage.ps1",
+                                       "payload/tools/p0-dispatch.ps1",
+                                       "payload/tools/p0-verify-release.ps1",
+                                       "payload/tools/p0-audit.cjs",
+                                       "payload/tools/fs-guard.cjs",
+                                       "payload/tools/p0-simulate.cjs",
+                                       "payload/tools/p0-manifest.cjs",
+                                       "payload/tools/p0-archive.cjs",
+                                       "payload/tools/p0-copy.cjs",
+                                       "payload/tools/p0-c10.ps1",
+                                       "payload/tools/p0-no-plugin.cjs",
+                                       "payload/tools/p0-neutralize.cjs",
+                                       "payload/tools/p0-compare.cjs",
+                                       "payload/tools/p0-index.cjs",
+                                       "payload/tools/p0-report.cjs",
+                                       "payload/tools/cases/p0-simulation-cases-v1.json",
+                                       "payload/tools/cases/p0-neutralize-map-v1.json"
+                                   ],
+                         "roles":  {
+                                       "payload/bootstrap/p0-init.ps1":  "init",
+                                       "payload/bootstrap/p0-acl.ps1":  "acl",
+                                       "payload/bootstrap/p0-stage.ps1":  "stage",
+                                       "payload/tools/p0-dispatch.ps1":  "dispatcher",
+                                       "payload/tools/p0-verify-release.ps1":  "verifier",
+                                       "payload/tools/p0-audit.cjs":  "audit",
+                                       "payload/tools/fs-guard.cjs":  "guard",
+                                       "payload/tools/p0-simulate.cjs":  "tool",
+                                       "payload/tools/p0-manifest.cjs":  "tool",
+                                       "payload/tools/p0-archive.cjs":  "tool",
+                                       "payload/tools/p0-copy.cjs":  "tool",
+                                       "payload/tools/p0-c10.ps1":  "tool",
+                                       "payload/tools/p0-no-plugin.cjs":  "tool",
+                                       "payload/tools/p0-neutralize.cjs":  "tool",
+                                       "payload/tools/p0-compare.cjs":  "tool",
+                                       "payload/tools/p0-index.cjs":  "tool",
+                                       "payload/tools/p0-report.cjs":  "tool",
+                                       "payload/tools/cases/p0-simulation-cases-v1.json":  "case",
+                                       "payload/tools/cases/p0-neutralize-map-v1.json":  "case"
+                                   },
+                         "preflight":  "C00 verifies manifest hash and dispatcher/verifier/audit hashes without executing TOOLSRC scripts; C05-PRE verifies all 19 files before C01; C05-FINAL verifies the 16 staged payload/tools files before C06."
+                     },
+    "trust_chain":  {
+                        "trust_anchor":  "User-approved V4 registry hash plus user-approved RELEASE-MANIFEST.json SHA-256 in P0_TOOLSRC_MANIFEST_SHA256.",
+                        "c00_executes_tools":  false,
+                        "c05_pre_before_c01":  true,
+                        "c05_final_after_c04":  true,
+                        "no_self_approval":  true,
+                        "missing_or_mismatch":  "fail closed before target execution; no fallback, no download, no ORIGINAL node_modules"
+                    },
+    "path_policy":  {
+                        "component_wise":  true,
+                        "no_string_prefix_match":  true,
+                        "denied_read_absolute":  true,
+                        "read_allow_may_read_protected_write":  true,
+                        "write_allow_is_exclusive":  true,
+                        "protected_write_exact_paths_supported":  true,
+                        "reparse_or_symlink":  "deny and stop",
+                        "wildcards":  "forbidden in write/read roots; exact paths only"
+                    },
+    "cache_policy":  {
+                         "vite_default":  "COPY/node_modules/.vite",
+                         "vite_temp_default":  "COPY/node_modules/.vite-temp",
+                         "copy_temp":  "COPY/tmp",
+                         "root_dot_vite_forbidden":  true,
+                         "wildcards_forbidden":  true
+                     },
+    "commands":  [
+                     {
+                         "id":  "C00",
+                         "step":  "S0",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-Command",
+                                      "$ErrorActionPreference=\u0027Stop\u0027;$sid=\u0027S-1-5-21-2104787571-1265941319-592731904-500\u0027;$name=\u0027WENX\\Administrator\u0027;$id=[Security.Principal.WindowsIdentity]::GetCurrent();if($id.User.Value -ne $sid -or $id.Name -ne $name){exit 45};$p=New-Object Security.Principal.WindowsPrincipal($id);if(-not $p.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){exit 46};if($env:P0_ADMIN_ACCOUNT_SID -ne $sid){exit 45};$e=$env:P0_TOOLSRC_MANIFEST_SHA256;if($e -notmatch \u0027^[0-9a-fA-F]{64}$\u0027){exit 43};$root=\u0027D:\\P47TOOLS\\p47-phase0-v4\u0027;$m=Join-Path $root \u0027RELEASE-MANIFEST.json\u0027;if(-not(Test-Path -LiteralPath $m -PathType Leaf)){exit 44};$h=(Get-FileHash -LiteralPath $m -Algorithm SHA256).Hash.ToLower();if($h -ne $e.ToLower()){exit 44};$j=Get-Content -LiteralPath $m -Raw|ConvertFrom-Json;if($j.schema -ne \u0027p47-phase0-tool-release-v1\u0027 -or $j.release_id -ne \u0027p47-phase0-v4\u0027){exit 44};foreach($rel in @(\u0027payload/tools/p0-dispatch.ps1\u0027,\u0027payload/tools/p0-verify-release.ps1\u0027,\u0027payload/tools/p0-audit.cjs\u0027)){$f=Join-Path $root $rel;if(-not(Test-Path -LiteralPath $f -PathType Leaf)){exit 44};$x=$j.files|Where-Object{$_.path -eq $rel};if(-not $x){exit 44};if((Get-FileHash -LiteralPath $f -Algorithm SHA256).Hash.ToLower() -ne $x.sha256.ToLower()){exit 44}};[pscustomobject]@{user=$id.Name;sid=$id.User.Value;admin=$true;manifest_sha256=$h;tool_release=\u0027p47-phase0-v4\u0027;run_id=\u0027P47-20261111-01\u0027}|ConvertTo-Json -Compress"
+                                  ],
+                         "cwd":  "C:/Users/Administrator",
+                         "env":  {
+                                     "P0_ADMIN_ACCOUNT_SID":  "required",
+                                     "P0_TOOLSRC_MANIFEST_SHA256":  "required"
+                                 },
+                         "inputs":  [
+                                        "D:/P47TOOLS/p47-phase0-v4/RELEASE-MANIFEST.json"
+                                    ],
+                         "outputs":  [
+                                         {
+                                             "path":  "console",
+                                             "archive_by":  "C20"
+                                         }
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47TOOLS/p47-phase0-v4",
+                                                  "C:/Windows/System32/WindowsPowerShell"
+                                              ],
+                         "write_allow_roots":  [
+
+                                               ],
+                         "protected_write_paths":  [
+
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover"
+                                               ],
+                         "metadata_roots":  [
+                                                "D:/P47RUN"
+                                            ],
+                         "tool_files":  [
+
+                                        ],
+                         "exec_id":  "C00-E01",
+                         "gate":  "user approved V4; admin SID confirmed; TOOLSRC manifest hash supplied",
+                         "fail_closed":  [
+                                             "P0_ADMIN_ACCOUNT_SID missing or mismatch",
+                                             "P0_TOOLSRC_MANIFEST_SHA256 missing or invalid",
+                                             "account name/SID mismatch",
+                                             "non-admin token",
+                                             "TOOLSRC missing",
+                                             "manifest schema/release mismatch",
+                                             "dispatcher/verifier/audit hash mismatch"
+                                         ],
+                         "audit":  "no-write; console only; C20 archives"
+                     },
+                     {
+                         "id":  "C05",
+                         "step":  "S0/S1",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "exec_ids":  {
+                                          "PRE":  "C05-PRE-E01",
+                                          "FINAL":  "C05-FINAL-E01"
+                                      },
+                         "argv_by_phase":  {
+                                               "PRE":  [
+                                                           "-NoProfile",
+                                                           "-NonInteractive",
+                                                           "-ExecutionPolicy",
+                                                           "Bypass",
+                                                           "-File",
+                                                           "D:/P47TOOLS/p47-phase0-v4/payload/tools/p0-dispatch.ps1",
+                                                           "-CommandId",
+                                                           "C05-PRE",
+                                                           "-ToolSrc",
+                                                           "D:/P47TOOLS/p47-phase0-v4",
+                                                           "-ExpectedManifestSha256Env",
+                                                           "P0_TOOLSRC_MANIFEST_SHA256",
+                                                           "-ExecId",
+                                                           "C05-PRE-E01"
+                                                       ],
+                                               "FINAL":  [
+                                                             "-NoProfile",
+                                                             "-NonInteractive",
+                                                             "-ExecutionPolicy",
+                                                             "Bypass",
+                                                             "-File",
+                                                             "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                                             "-CommandId",
+                                                             "C05-FINAL",
+                                                             "-ToolSrc",
+                                                             "D:/P47RUN/P47-20261111-01/tools",
+                                                             "-Run",
+                                                             "D:/P47RUN/P47-20261111-01",
+                                                             "-ExpectedManifestSha256Env",
+                                                             "P0_TOOLSRC_MANIFEST_SHA256",
+                                                             "-ExecId",
+                                                             "C05-FINAL-E01",
+                                                             "-Out",
+                                                             "D:/P47RUN/P47-20261111-01/out/C05/C05-FINAL-E01"
+                                                         ]
+                                           },
+                         "cwd_by_phase":  {
+                                              "PRE":  "C:/Users/Administrator",
+                                              "FINAL":  "D:/P47RUN/P47-20261111-01"
+                                          },
+                         "env":  {
+                                     "P0_TOOLSRC_MANIFEST_SHA256":  "required"
+                                 },
+                         "inputs_by_phase":  {
+                                                 "PRE":  [
+                                                             "D:/P47TOOLS/p47-phase0-v4/RELEASE-MANIFEST.json"
+                                                         ],
+                                                 "FINAL":  [
+                                                               "D:/P47TOOLS/p47-phase0-v4/RELEASE-MANIFEST.json",
+                                                               "D:/P47RUN/P47-20261111-01/tools"
+                                                           ]
+                                             },
+                         "outputs_by_phase":  {
+                                                  "PRE":  [
+                                                              {
+                                                                  "path":  "console",
+                                                                  "archive_by":  "C20"
+                                                              }
+                                                          ],
+                                                  "FINAL":  [
+                                                                "D:/P47RUN/P47-20261111-01/out/C05/C05-FINAL-E01/release-verification.json",
+                                                                "D:/P47RUN/P47-20261111-01/out/audit/C05/C05-FINAL-E01/write-audit.jsonl",
+                                                                "D:/P47RUN/P47-20261111-01/out/audit/C05/C05-FINAL-E01/write-summary.json"
+                                                            ]
+                                              },
+                         "read_allow_roots":  [
+                                                  "D:/P47TOOLS/p47-phase0-v4",
+                                                  "D:/P47RUN/P47-20261111-01/tools",
+                                                  "C:/Windows/System32/WindowsPowerShell"
+                                              ],
+                         "write_allow_by_phase":  {
+                                                      "PRE":  [
+
+                                                              ],
+                                                      "FINAL":  [
+                                                                    "D:/P47RUN/P47-20261111-01/out/C05/C05-FINAL-E01",
+                                                                    "D:/P47RUN/P47-20261111-01/out/audit/C05/C05-FINAL-E01",
+                                                                    "D:/P47RUN/P47-20261111-01/tmp"
+                                                                ]
+                                                  },
+                         "protected_write_paths":  [
+
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-dispatch.ps1",
+                                            "payload/tools/p0-verify-release.ps1",
+                                            "payload/tools/p0-audit.cjs"
+                                        ],
+                         "gate":  "C00 pass for PRE; C04 pass for FINAL; PRE before C01; FINAL before C06",
+                         "fail_closed":  [
+                                             "manifest hash mismatch",
+                                             "file set mismatch",
+                                             "path escape",
+                                             "symlink or reparse point",
+                                             "audit module missing or wrong role",
+                                             "PRE attempted after RUN creation"
+                                         ],
+                         "audit":  "PRE no-write; FINAL writes authoritative audit only"
+                     },
+                     {
+                         "id":  "C01",
+                         "step":  "S0",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47TOOLS/p47-phase0-v4/payload/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C01",
+                                      "-ToolSrc",
+                                      "D:/P47TOOLS/p47-phase0-v4",
+                                      "-RunRoot",
+                                      "D:/P47RUN",
+                                      "-RunId",
+                                      "P47-20261111-01",
+                                      "-AuditVersion",
+                                      "p47-write-audit-v4",
+                                      "-ExecId",
+                                      "C01-E01"
+                                  ],
+                         "cwd":  "C:/Users/Administrator",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp"
+                                 },
+                         "inputs":  [
+                                        "D:/P47TOOLS/p47-phase0-v4/payload/bootstrap/p0-init.ps1"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C01/C01-E01/init.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C01/C01-E01/bootstrap.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C01/C01-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47TOOLS/p47-phase0-v4",
+                                                  "C:/Windows/System32/WindowsPowerShell"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN",
+                                                   "D:/P47RUN/P47-20261111-01",
+                                                   "D:/P47RUN/P47-20261111-01/out",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit",
+                                                   "D:/P47RUN/P47-20261111-01/tools",
+                                                   "D:/P47RUN/P47-20261111-01/bootstrap",
+                                                   "D:/P47RUN/P47-20261111-01/controls",
+                                                   "D:/P47RUN/P47-20261111-01/acl-probe",
+                                                   "D:/P47RUN/P47-20261111-01/baseline",
+                                                   "D:/P47RUN/P47-20261111-01/trust",
+                                                   "D:/P47RUN/P47-20261111-01/evidence",
+                                                   "D:/P47RUN/P47-20261111-01/tmp",
+                                                   "D:/P47RUN/P47-20261111-01/sandbox",
+                                                   "D:/P47RUN/P47-20261111-01/exp",
+                                                   "D:/P47RUN/P47-20261111-01/review"
+                                               ],
+                         "protected_write_paths":  [
+
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover"
+                                               ],
+                         "tool_files":  [
+                                            "payload/bootstrap/p0-init.ps1",
+                                            "payload/tools/p0-dispatch.ps1",
+                                            "payload/tools/p0-audit.cjs"
+                                        ],
+                         "exec_id":  "C01-E01",
+                         "gate":  "C05-PRE pass; RUN absent",
+                         "fail_closed":  [
+                                             "RUN exists",
+                                             "TOOLSRC missing",
+                                             "target tool hash mismatch",
+                                             "sentinel exists",
+                                             "audit bootstrap cannot initialize"
+                                         ],
+                         "audit":  "p47-write-audit-v4; finite bootstrap memory list, then write_intent/write_result"
+                     },
+                     {
+                         "id":  "C02",
+                         "step":  "S0",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47TOOLS/p47-phase0-v4/payload/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C02",
+                                      "-Run",
+                                      "D:/P47RUN/P47-20261111-01",
+                                      "-AdminAccount",
+                                      "WENX\\Administrator",
+                                      "-AdminSid",
+                                      "S-1-5-21-2104787571-1265941319-592731904-500",
+                                      "-SystemSid",
+                                      "S-1-5-18",
+                                      "-CodexGroupName",
+                                      "WENX\\CodexSandboxUsers",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C02/C02-E01",
+                                      "-ExecId",
+                                      "C02-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp"
+                                 },
+                         "inputs":  [
+                                        "D:/P47TOOLS/p47-phase0-v4/payload/bootstrap/p0-acl.ps1"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C02/C02-E01/acl-before.json",
+                                         "D:/P47RUN/P47-20261111-01/out/C02/C02-E01/acl-after.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C02/C02-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C02/C02-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01",
+                                                  "D:/P47TOOLS/p47-phase0-v4",
+                                                  "C:/Windows/System32/WindowsPowerShell"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01",
+                                                   "D:/P47RUN/P47-20261111-01/out/C02/C02-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C02/C02-E01"
+                                               ],
+                         "protected_write_paths":  [
+                                                       "D:/P47RUN"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover"
+                                               ],
+                         "tool_files":  [
+                                            "payload/bootstrap/p0-acl.ps1",
+                                            "payload/tools/p0-dispatch.ps1",
+                                            "payload/tools/p0-audit.cjs"
+                                        ],
+                         "exec_id":  "C02-E01",
+                         "gate":  "C01 complete; Codex group exists; SID confirmed",
+                         "fail_closed":  [
+                                             "current account name/SID mismatch",
+                                             "admin token missing",
+                                             "administrators group used as substitute",
+                                             "Codex group has write",
+                                             "ACL readback mismatch",
+                                             "parent ACL changed"
+                                         ],
+                         "audit":  "p47-write-audit-v4; ACL before/after, ACE decisions"
+                     },
+                     {
+                         "id":  "C03",
+                         "step":  "S0",
+                         "role":  "codex-readonly-plus-admin-observer",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-Command",
+                                      "$ErrorActionPreference=\u0027Stop\u0027;$acct=$env:P0_CODEX_ACCOUNT;if(-not $acct){exit 51};$id=[Security.Principal.WindowsIdentity]::GetCurrent();if($id.Name -ne $acct){exit 52};if($id.User.Value -eq \u0027S-1-5-21-2104787571-1265941319-592731904-500\u0027){exit 53};$pr=New-Object Security.Principal.WindowsPrincipal($id);if($pr.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){exit 53};$ok=$false;foreach($g in $id.Groups){try{if($g.Translate([Security.Principal.NTAccount]).Value -eq \u0027WENX\\CodexSandboxUsers\u0027){$ok=$true}}catch{}};if(-not $ok){exit 54};$r=[IO.File]::ReadAllText(\u0027D:\\P47RUN\\P47-20261111-01\\acl-probe\\read-sentinel\u0027);if($r -ne \u0027P47-READ-SENTINEL\u0027){exit 55};$f=$null;try{$f=[IO.File]::Open(\u0027D:\\P47RUN\\P47-20261111-01\\acl-probe\\write-access-sentinel\u0027,[IO.FileMode]::Open,[IO.FileAccess]::Write,[IO.FileShare]::None);exit 56}catch [UnauthorizedAccessException]{}finally{if($f){$f.Dispose()}};[pscustomobject]@{account=$id.Name;sid=$id.User.Value;read=\u0027ok\u0027;write=\u0027denied\u0027;pid=$PID}|ConvertTo-Json -Compress"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "P0_CODEX_ACCOUNT":  "required"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/acl-probe/read-sentinel",
+                                        "D:/P47RUN/P47-20261111-01/acl-probe/write-access-sentinel"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C03/C03-E01/codex-console.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C03/C03-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C03/C03-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01"
+                                              ],
+                         "write_allow_roots":  [
+
+                                               ],
+                         "protected_write_paths":  [
+
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover"
+                                               ],
+                         "observer":  {
+                                          "account":  "WENX\\Administrator",
+                                          "write_roots":  [
+                                                              "D:/P47RUN/P47-20261111-01/out/C03/C03-E01",
+                                                              "D:/P47RUN/P47-20261111-01/out/audit/C03/C03-E01"
+                                                          ],
+                                          "rule":  "Codex only emits stdout; administrator observes and writes transcript/audit; actor=Codex, recorder=Administrator"
+                                      },
+                         "tool_files":  [
+
+                                        ],
+                         "exec_id":  "C03-E01",
+                         "gate":  "C02 readback matches; sentinels exist; P0_CODEX_ACCOUNT approved",
+                         "fail_closed":  [
+                                             "read sentinel failed",
+                                             "write handle granted",
+                                             "account is admin",
+                                             "Codex group missing",
+                                             "Codex attempted a file write",
+                                             "observer writes after the fact only"
+                                         ],
+                         "audit":  "actor=Codex; recorder=Administrator; no Codex writes"
+                     },
+                     {
+                         "id":  "C04",
+                         "step":  "S1",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47TOOLS/p47-phase0-v4/payload/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C04",
+                                      "-ToolSrc",
+                                      "D:/P47TOOLS/p47-phase0-v4",
+                                      "-Run",
+                                      "D:/P47RUN/P47-20261111-01",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C04/C04-E01",
+                                      "-ExecId",
+                                      "C04-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp"
+                                 },
+                         "inputs":  [
+                                        "D:/P47TOOLS/p47-phase0-v4/payload/tools"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/tools",
+                                         "D:/P47RUN/P47-20261111-01/out/C04/C04-E01/stage.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C04/C04-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C04/C04-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47TOOLS/p47-phase0-v4",
+                                                  "C:/Windows/System32/WindowsPowerShell",
+                                                  "C:/Windows/System32"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/tools",
+                                                   "D:/P47RUN/P47-20261111-01/out/C04/C04-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C04/C04-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_paths":  [
+
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover",
+                                                   "D:/P47RUN/P47-20261111-01/baseline",
+                                                   "D:/P47RUN/P47-20261111-01/controls",
+                                                   "D:/P47RUN/P47-20261111-01/exp"
+                                               ],
+                         "metadata_roots":  [
+                                                "D:/P47RUN/P47-20261111-01"
+                                            ],
+                         "tool_files":  [
+                                            "payload/bootstrap/p0-stage.ps1",
+                                            "payload/tools/p0-dispatch.ps1",
+                                            "payload/tools/p0-audit.cjs"
+                                        ],
+                         "exec_id":  "C04-E01",
+                         "gate":  "C03 pass; C05-PRE pass; tools target absent",
+                         "fail_closed":  [
+                                             "any target file already exists",
+                                             "ORIGINAL read",
+                                             "tool source missing",
+                                             "write outside tools/out/audit/tmp",
+                                             "download or install attempt"
+                                         ],
+                         "audit":  "p47-write-audit-v4; every staged file, no reuse"
+                     },
+                     {
+                         "id":  "C06",
+                         "step":  "S2",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C06",
+                                      "-Cases",
+                                      "D:/P47RUN/P47-20261111-01/tools/cases/p0-simulation-cases-v1.json",
+                                      "-Controls",
+                                      "D:/P47RUN/P47-20261111-01/controls",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C06/C06-E01",
+                                      "-ExecId",
+                                      "C06-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C06/C06-E01/write-audit.jsonl",
+                                     "P0_GUARD_MODE":  "simulation",
+                                     "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C06/C06-E01/guard.jsonl",
+                                     "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/controls;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C06/C06-E01;D:/P47RUN/P47-20261111-01/out/audit/C06/C06-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/controls;D:/P47RUN/P47-20261111-01/out/C06/C06-E01;D:/P47RUN/P47-20261111-01/out/audit/C06/C06-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/tools/cases/p0-simulation-cases-v1.json",
+                                        "D:/P47RUN/P47-20261111-01/controls"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C06/C06-E01/results.json",
+                                         "D:/P47RUN/P47-20261111-01/out/C06/C06-E01/guard.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C06/C06-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C06/C06-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/controls",
+                                                  "D:/P47RUN/P47-20261111-01/tools",
+                                                  "D:/P47RUN/P47-20261111-01/out/C06/C06-E01",
+                                                  "D:/P47RUN/P47-20261111-01/out/audit/C06/C06-E01",
+                                                  "D:/P47RUN/P47-20261111-01/tmp"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/controls",
+                                                   "D:/P47RUN/P47-20261111-01/out/C06/C06-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C06/C06-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_paths":  [
+
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover",
+                                                   "D:/P47RUN/P47-20261111-01/baseline",
+                                                   "D:/P47RUN/P47-20261111-01/exp"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/fs-guard.cjs",
+                                            "payload/tools/p0-simulate.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1",
+                                            "payload/tools/cases/p0-simulation-cases-v1.json"
+                                        ],
+                         "exec_id":  "C06-E01",
+                         "gate":  "C05-FINAL pass; cases registered",
+                         "fail_closed":  [
+                                             "forbidden read succeeded",
+                                             "forbidden write succeeded",
+                                             "false positive",
+                                             "false negative",
+                                             "unregistered access",
+                                             "worker preload missing"
+                                         ],
+                         "audit":  "p47-write-audit-v4; API/FD/copy/link/worker events"
+                     },
+                     {
+                         "id":  "C07",
+                         "step":  "S3/S8",
+                         "role":  "manifest-reader-admin-only",
+                         "executable":  "powershell",
+                         "exec_ids":  {
+                                          "M0":  "C07-M0-E01",
+                                          "M1":  "C07-M1-E01",
+                                          "before":  "C07-B-${TARGET_EXEC_ID}-E01",
+                                          "after":  "C07-A-${TARGET_EXEC_ID}-E01"
+                                      },
+                         "argv_by_mode":  {
+                                              "M0":  [
+                                                         "-NoProfile",
+                                                         "-NonInteractive",
+                                                         "-ExecutionPolicy",
+                                                         "Bypass",
+                                                         "-File",
+                                                         "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                                         "-CommandId",
+                                                         "C07",
+                                                         "-ManifestMode",
+                                                         "M0",
+                                                         "-Source",
+                                                         "D:/Projects/ob-recover",
+                                                         "-Baseline",
+                                                         "D:/P47RUN/P47-20261111-01/baseline",
+                                                         "-ExecId",
+                                                         "C07-M0-E01",
+                                                         "-Out",
+                                                         "D:/P47RUN/P47-20261111-01/out/C07/C07-M0-E01"
+                                                     ],
+                                              "before":  [
+                                                             "-NoProfile",
+                                                             "-NonInteractive",
+                                                             "-ExecutionPolicy",
+                                                             "Bypass",
+                                                             "-File",
+                                                             "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                                             "-CommandId",
+                                                             "C07",
+                                                             "-ManifestMode",
+                                                             "before",
+                                                             "-TargetExecId",
+                                                             "${TARGET_EXEC_ID}",
+                                                             "-Source",
+                                                             "D:/Projects/ob-recover",
+                                                             "-ExecId",
+                                                             "C07-B-${TARGET_EXEC_ID}-E01",
+                                                             "-Out",
+                                                             "D:/P47RUN/P47-20261111-01/out/C07/C07-B-${TARGET_EXEC_ID}-E01"
+                                                         ],
+                                              "after":  [
+                                                            "-NoProfile",
+                                                            "-NonInteractive",
+                                                            "-ExecutionPolicy",
+                                                            "Bypass",
+                                                            "-File",
+                                                            "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                                            "-CommandId",
+                                                            "C07",
+                                                            "-ManifestMode",
+                                                            "after",
+                                                            "-TargetExecId",
+                                                            "${TARGET_EXEC_ID}",
+                                                            "-Source",
+                                                            "D:/Projects/ob-recover",
+                                                            "-ExecId",
+                                                            "C07-A-${TARGET_EXEC_ID}-E01",
+                                                            "-Out",
+                                                            "D:/P47RUN/P47-20261111-01/out/C07/C07-A-${TARGET_EXEC_ID}-E01"
+                                                        ],
+                                              "M1":  [
+                                                         "-NoProfile",
+                                                         "-NonInteractive",
+                                                         "-ExecutionPolicy",
+                                                         "Bypass",
+                                                         "-File",
+                                                         "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                                         "-CommandId",
+                                                         "C07",
+                                                         "-ManifestMode",
+                                                         "M1",
+                                                         "-Source",
+                                                         "D:/Projects/ob-recover",
+                                                         "-M0",
+                                                         "D:/P47RUN/P47-20261111-01/baseline/m0.json",
+                                                         "-ExecId",
+                                                         "C07-M1-E01",
+                                                         "-Out",
+                                                         "D:/P47RUN/P47-20261111-01/out/C07/C07-M1-E01"
+                                                     ]
+                                          },
+                         "binding":  {
+                                         "TARGET_EXEC_ID":  [
+                                                                "C08-E01",
+                                                                "C09-E01",
+                                                                "C10-P-E01",
+                                                                "C10-N-E01",
+                                                                "C10-S-E01",
+                                                                "C11-E01",
+                                                                "C12-E01",
+                                                                "C13-E01",
+                                                                "C14-E01",
+                                                                "C15-E01",
+                                                                "C16-E01",
+                                                                "C17-E01",
+                                                                "C18-E01",
+                                                                "C19-E01",
+                                                                "C20-E01"
+                                                            ]
+                                     },
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp"
+                                 },
+                         "inputs":  [
+                                        "D:/Projects/ob-recover"
+                                    ],
+                         "outputs_by_mode":  {
+                                                 "M0":  [
+                                                            "D:/P47RUN/P47-20261111-01/baseline/m0.json",
+                                                            "D:/P47RUN/P47-20261111-01/out/C07/C07-M0-E01"
+                                                        ],
+                                                 "before":  [
+                                                                "D:/P47RUN/P47-20261111-01/out/C07/C07-B-${TARGET_EXEC_ID}-E01"
+                                                            ],
+                                                 "after":  [
+                                                               "D:/P47RUN/P47-20261111-01/out/C07/C07-A-${TARGET_EXEC_ID}-E01"
+                                                           ],
+                                                 "M1":  [
+                                                            "D:/P47RUN/P47-20261111-01/out/C07/C07-M1-E01"
+                                                        ]
+                                             },
+                         "read_allow_roots":  [
+                                                  "D:/Projects/ob-recover",
+                                                  "D:/P47RUN/P47-20261111-01/tools",
+                                                  "D:/P47RUN/P47-20261111-01/baseline"
+                                              ],
+                         "write_allow_by_mode":  {
+                                                     "M0":  [
+                                                                "D:/P47RUN/P47-20261111-01/baseline",
+                                                                "D:/P47RUN/P47-20261111-01/out/C07/C07-M0-E01",
+                                                                "D:/P47RUN/P47-20261111-01/out/audit/C07/C07-M0-E01"
+                                                            ],
+                                                     "before":  [
+                                                                    "D:/P47RUN/P47-20261111-01/out/C07/C07-B-${TARGET_EXEC_ID}-E01",
+                                                                    "D:/P47RUN/P47-20261111-01/out/audit/C07/C07-B-${TARGET_EXEC_ID}-E01"
+                                                                ],
+                                                     "after":  [
+                                                                   "D:/P47RUN/P47-20261111-01/out/C07/C07-A-${TARGET_EXEC_ID}-E01",
+                                                                   "D:/P47RUN/P47-20261111-01/out/audit/C07/C07-A-${TARGET_EXEC_ID}-E01"
+                                                               ],
+                                                     "M1":  [
+                                                                "D:/P47RUN/P47-20261111-01/out/C07/C07-M1-E01",
+                                                                "D:/P47RUN/P47-20261111-01/out/audit/C07/C07-M1-E01"
+                                                            ]
+                                                 },
+                         "protected_write_roots":  [
+                                                       "D:/Projects/ob-recover"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/exp",
+                                                   "D:/P47RUN/P47-20261111-01/controls",
+                                                   "D:/P47RUN/P47-20261111-01/evidence",
+                                                   "D:/P47RUN/P47-20261111-01/trust"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-manifest.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "gate":  "C06 pass; mode in M0/before/after/M1; target exec id in enum",
+                         "fail_closed":  [
+                                             "ORIGINAL write",
+                                             "M0 overwrite",
+                                             "target exec id outside enum",
+                                             "M0/M1 repeated",
+                                             "before/after repeated for same target",
+                                             "manifest content fed to product tests",
+                                             "C07-E01 reused"
+                                         ],
+                         "audit":  "p47-write-audit-v4; each sub-exec has own output and audit; no shared summary"
+                     },
+                     {
+                         "id":  "C08",
+                         "step":  "S3",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C08",
+                                      "-Source",
+                                      "D:/Projects/ob-recover",
+                                      "-Manifest",
+                                      "D:/P47RUN/P47-20261111-01/baseline/m0.json",
+                                      "-Dest",
+                                      "D:/P47RUN/P47-20261111-01/baseline/snapshot-01",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C08/C08-E01",
+                                      "-ExecId",
+                                      "C08-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp"
+                                 },
+                         "inputs":  [
+                                        "D:/Projects/ob-recover",
+                                        "D:/P47RUN/P47-20261111-01/baseline/m0.json"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/baseline/snapshot-01",
+                                         "D:/P47RUN/P47-20261111-01/out/C08/C08-E01/archive.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C08/C08-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C08/C08-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/Projects/ob-recover",
+                                                  "D:/P47RUN/P47-20261111-01/baseline",
+                                                  "D:/P47RUN/P47-20261111-01/tools"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/baseline/snapshot-01",
+                                                   "D:/P47RUN/P47-20261111-01/out/C08/C08-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C08/C08-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_roots":  [
+                                                       "D:/Projects/ob-recover"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/exp",
+                                                   "D:/P47RUN/P47-20261111-01/controls",
+                                                   "D:/P47RUN/P47-20261111-01/evidence",
+                                                   "D:/P47RUN/P47-20261111-01/trust"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-archive.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C08-E01",
+                         "gate":  "C07-M0-E01 pass; tool release verified",
+                         "fail_closed":  [
+                                             "source changed during read",
+                                             "link or reparse point",
+                                             "M0 overwrite",
+                                             "ORIGINAL write"
+                                         ],
+                         "audit":  "p47-write-audit-v4; every archived file"
+                     },
+                     {
+                         "id":  "C09",
+                         "step":  "S4",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C09",
+                                      "-Snapshot",
+                                      "D:/P47RUN/P47-20261111-01/baseline/snapshot-01",
+                                      "-DestRoot",
+                                      "D:/P47RUN/P47-20261111-01/exp",
+                                      "-Copies",
+                                      "pristine-01,no-plugin-01,sandbox-01",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C09/C09-E01",
+                                      "-ExecId",
+                                      "C09-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/baseline/snapshot-01"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                         "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                         "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                         "D:/P47RUN/P47-20261111-01/out/C09/C09-E01/copies.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C09/C09-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C09/C09-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/baseline/snapshot-01",
+                                                  "D:/P47RUN/P47-20261111-01/tools"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                                   "D:/P47RUN/P47-20261111-01/out/C09/C09-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C09/C09-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_roots":  [
+                                                       "D:/P47RUN/P47-20261111-01/baseline",
+                                                       "D:/Projects/ob-recover"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-copy.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C09-E01",
+                         "gate":  "C08 pass; targets absent",
+                         "fail_closed":  [
+                                             "copies differ",
+                                             "hardlink or junction",
+                                             "shared writable cache",
+                                             "target not empty"
+                                         ],
+                         "audit":  "p47-write-audit-v4; every copied file"
+                     },
+                     {
+                         "id":  "C10",
+                         "step":  "S5/S6/S7",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "exec_ids":  {
+                                          "P":  "C10-P-E01",
+                                          "N":  "C10-N-E01",
+                                          "S":  "C10-S-E01"
+                                      },
+                         "argv_by_variant":  {
+                                                 "P":  [
+                                                           "-NoProfile",
+                                                           "-NonInteractive",
+                                                           "-ExecutionPolicy",
+                                                           "Bypass",
+                                                           "-File",
+                                                           "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                                           "-CommandId",
+                                                           "C10",
+                                                           "-Variant",
+                                                           "P",
+                                                           "-Copy",
+                                                           "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                           "-Tools",
+                                                           "D:/P47RUN/P47-20261111-01/tools",
+                                                           "-Out",
+                                                           "D:/P47RUN/P47-20261111-01/out/C10/C10-P-E01",
+                                                           "-Node",
+                                                           "D:/Nvm/nodejs/node.exe",
+                                                           "-Test",
+                                                           "test/string-decoder.test.ts",
+                                                           "-ExecId",
+                                                           "C10-P-E01"
+                                                       ],
+                                                 "N":  [
+                                                           "-NoProfile",
+                                                           "-NonInteractive",
+                                                           "-ExecutionPolicy",
+                                                           "Bypass",
+                                                           "-File",
+                                                           "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                                           "-CommandId",
+                                                           "C10",
+                                                           "-Variant",
+                                                           "N",
+                                                           "-Copy",
+                                                           "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                           "-Tools",
+                                                           "D:/P47RUN/P47-20261111-01/tools",
+                                                           "-Out",
+                                                           "D:/P47RUN/P47-20261111-01/out/C10/C10-N-E01",
+                                                           "-Node",
+                                                           "D:/Nvm/nodejs/node.exe",
+                                                           "-Test",
+                                                           "test/string-decoder.test.ts",
+                                                           "-ExecId",
+                                                           "C10-N-E01"
+                                                       ],
+                                                 "S":  [
+                                                           "-NoProfile",
+                                                           "-NonInteractive",
+                                                           "-ExecutionPolicy",
+                                                           "Bypass",
+                                                           "-File",
+                                                           "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                                           "-CommandId",
+                                                           "C10",
+                                                           "-Variant",
+                                                           "S",
+                                                           "-Copy",
+                                                           "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                                           "-Tools",
+                                                           "D:/P47RUN/P47-20261111-01/tools",
+                                                           "-Out",
+                                                           "D:/P47RUN/P47-20261111-01/out/C10/C10-S-E01",
+                                                           "-Node",
+                                                           "D:/Nvm/nodejs/node.exe",
+                                                           "-Test",
+                                                           "test/string-decoder.test.ts",
+                                                           "-ExecId",
+                                                           "C10-S-E01"
+                                                       ]
+                                             },
+                         "variant_copies":  {
+                                                "P":  "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                "N":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                "S":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                            },
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env_by_variant":  {
+                                                "P":  {
+                                                          "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                                          "TEMP":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp",
+                                                          "TMP":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp",
+                                                          "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-P-E01/write-audit.jsonl",
+                                                          "P0_GUARD_MODE":  "realcopy",
+                                                          "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C10/C10-P-E01/guard.jsonl",
+                                                          "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/pristine-01;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C10/C10-P-E01;D:/P47RUN/P47-20261111-01/out/audit/C10/C10-P-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                                          "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/p0-probe.vite.config.mjs;D:/P47RUN/P47-20261111-01/exp/pristine-01/node_modules/.vite;D:/P47RUN/P47-20261111-01/exp/pristine-01/node_modules/.vite-temp;D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp;D:/P47RUN/P47-20261111-01/out/C10/C10-P-E01;D:/P47RUN/P47-20261111-01/out/audit/C10/C10-P-E01",
+                                                          "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp/no-plugin-01;D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                                          "P0_PROBE_CONFIG_SHA256":  "18a06117ec70f2d5ed872f52d7e546a2fb64f93293e91acbb9f178fff2d80003"
+                                                      },
+                                                "N":  {
+                                                          "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                                          "TEMP":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/tmp",
+                                                          "TMP":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/tmp",
+                                                          "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-N-E01/write-audit.jsonl",
+                                                          "P0_GUARD_MODE":  "realcopy",
+                                                          "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C10/C10-N-E01/guard.jsonl",
+                                                          "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C10/C10-N-E01;D:/P47RUN/P47-20261111-01/out/audit/C10/C10-N-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                                          "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/p0-probe.vite.config.mjs;D:/P47RUN/P47-20261111-01/exp/no-plugin-01/node_modules/.vite;D:/P47RUN/P47-20261111-01/exp/no-plugin-01/node_modules/.vite-temp;D:/P47RUN/P47-20261111-01/exp/no-plugin-01/tmp;D:/P47RUN/P47-20261111-01/out/C10/C10-N-E01;D:/P47RUN/P47-20261111-01/out/audit/C10/C10-N-E01",
+                                                          "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp/pristine-01;D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                                          "P0_PROBE_CONFIG_SHA256":  "18a06117ec70f2d5ed872f52d7e546a2fb64f93293e91acbb9f178fff2d80003"
+                                                      },
+                                                "S":  {
+                                                          "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                                          "TEMP":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                                          "TMP":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                                          "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-S-E01/write-audit.jsonl",
+                                                          "P0_GUARD_MODE":  "realcopy",
+                                                          "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C10/C10-S-E01/guard.jsonl",
+                                                          "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C10/C10-S-E01;D:/P47RUN/P47-20261111-01/out/audit/C10/C10-S-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                                          "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/p0-probe.vite.config.mjs;D:/P47RUN/P47-20261111-01/exp/sandbox-01/node_modules/.vite;D:/P47RUN/P47-20261111-01/exp/sandbox-01/node_modules/.vite-temp;D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp;D:/P47RUN/P47-20261111-01/out/C10/C10-S-E01;D:/P47RUN/P47-20261111-01/out/audit/C10/C10-S-E01",
+                                                          "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp/pristine-01;D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                          "P0_PROBE_CONFIG_SHA256":  "18a06117ec70f2d5ed872f52d7e546a2fb64f93293e91acbb9f178fff2d80003"
+                                                      }
+                                            },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                        "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                        "D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                    ],
+                         "outputs_by_variant":  {
+                                                    "P":  [
+                                                              "D:/P47RUN/P47-20261111-01/out/C10/C10-P-E01/vitest.json",
+                                                              "D:/P47RUN/P47-20261111-01/out/C10/C10-P-E01/guard.jsonl",
+                                                              "D:/P47RUN/P47-20261111-01/out/C10/C10-P-E01/result.json",
+                                                              "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-P-E01/write-audit.jsonl",
+                                                              "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-P-E01/write-summary.json"
+                                                          ],
+                                                    "N":  [
+                                                              "D:/P47RUN/P47-20261111-01/out/C10/C10-N-E01/vitest.json",
+                                                              "D:/P47RUN/P47-20261111-01/out/C10/C10-N-E01/guard.jsonl",
+                                                              "D:/P47RUN/P47-20261111-01/out/C10/C10-N-E01/result.json",
+                                                              "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-N-E01/write-audit.jsonl",
+                                                              "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-N-E01/write-summary.json"
+                                                          ],
+                                                    "S":  [
+                                                              "D:/P47RUN/P47-20261111-01/out/C10/C10-S-E01/vitest.json",
+                                                              "D:/P47RUN/P47-20261111-01/out/C10/C10-S-E01/guard.jsonl",
+                                                              "D:/P47RUN/P47-20261111-01/out/C10/C10-S-E01/result.json",
+                                                              "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-S-E01/write-audit.jsonl",
+                                                              "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-S-E01/write-summary.json"
+                                                          ]
+                                                },
+                         "write_allow_by_variant":  {
+                                                        "P":  [
+                                                                  "D:/P47RUN/P47-20261111-01/exp/pristine-01/p0-probe.vite.config.mjs",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/pristine-01/node_modules/.vite",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/pristine-01/node_modules/.vite-temp",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp",
+                                                                  "D:/P47RUN/P47-20261111-01/out/C10/C10-P-E01",
+                                                                  "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-P-E01"
+                                                              ],
+                                                        "N":  [
+                                                                  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/p0-probe.vite.config.mjs",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/node_modules/.vite",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/node_modules/.vite-temp",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/tmp",
+                                                                  "D:/P47RUN/P47-20261111-01/out/C10/C10-N-E01",
+                                                                  "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-N-E01"
+                                                              ],
+                                                        "S":  [
+                                                                  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/p0-probe.vite.config.mjs",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/node_modules/.vite",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/node_modules/.vite-temp",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                                                  "D:/P47RUN/P47-20261111-01/out/C10/C10-S-E01",
+                                                                  "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-S-E01"
+                                                              ]
+                                                    },
+                         "protected_write_roots_by_variant":  {
+                                                                  "P":  [
+                                                                            "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist"
+                                                                        ],
+                                                                  "N":  [
+                                                                            "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/dist"
+                                                                        ],
+                                                                  "S":  [
+                                                                            "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist"
+                                                                        ]
+                                                              },
+                         "tool_files":  [
+                                            "payload/tools/p0-c10.ps1",
+                                            "payload/tools/fs-guard.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "gate":  "C09 pass; P first; N after P; S after P; each variant unique",
+                         "fail_closed":  [
+                                             "Vitest failed",
+                                             "no worker preload event",
+                                             "deny read/write failed",
+                                             "allow outside roots",
+                                             "dist write",
+                                             "probe config hash mismatch"
+                                         ],
+                         "audit":  "p47-write-audit-v4; worker events and probe config",
+                         "cwd_by_variant":  {
+                                                "P":  "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                "N":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                "S":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                            },
+                         "read_allow_by_variant":  {
+                                                       "P":  [
+                                                                 "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                                 "D:/P47RUN/P47-20261111-01/tools",
+                                                                 "D:/P47RUN/P47-20261111-01/out/C10/C10-P-E01",
+                                                                 "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-P-E01",
+                                                                 "D:/P47RUN/P47-20261111-01/tmp"
+                                                             ],
+                                                       "N":  [
+                                                                 "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                                 "D:/P47RUN/P47-20261111-01/tools",
+                                                                 "D:/P47RUN/P47-20261111-01/out/C10/C10-N-E01",
+                                                                 "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-N-E01",
+                                                                 "D:/P47RUN/P47-20261111-01/tmp"
+                                                             ],
+                                                       "S":  [
+                                                                 "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                                                 "D:/P47RUN/P47-20261111-01/tools",
+                                                                 "D:/P47RUN/P47-20261111-01/out/C10/C10-S-E01",
+                                                                 "D:/P47RUN/P47-20261111-01/out/audit/C10/C10-S-E01",
+                                                                 "D:/P47RUN/P47-20261111-01/tmp"
+                                                             ]
+                                                   },
+                         "denied_read_by_variant":  {
+                                                        "P":  [
+                                                                  "D:/Projects/ob-recover",
+                                                                  "D:/P47RUN/P47-20261111-01/baseline",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                                              ],
+                                                        "N":  [
+                                                                  "D:/Projects/ob-recover",
+                                                                  "D:/P47RUN/P47-20261111-01/baseline",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                                              ],
+                                                        "S":  [
+                                                                  "D:/Projects/ob-recover",
+                                                                  "D:/P47RUN/P47-20261111-01/baseline",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                                  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01"
+                                                              ]
+                                                    }
+                     },
+                     {
+                         "id":  "C11",
+                         "step":  "S6",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C11",
+                                      "-Copy",
+                                      "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                      "-Config",
+                                      "D:/P47RUN/P47-20261111-01/exp/pristine-01/tsconfig.json",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C11/C11-E01",
+                                      "-ExecId",
+                                      "C11-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                         "env":  {
+                                     "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C11/C11-E01/write-audit.jsonl",
+                                     "P0_GUARD_MODE":  "tsc",
+                                     "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C11/C11-E01/guard.jsonl",
+                                     "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/pristine-01;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C11/C11-E01;D:/P47RUN/P47-20261111-01/out/audit/C11/C11-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/out/C11/C11-E01;D:/P47RUN/P47-20261111-01/out/audit/C11/C11-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp/no-plugin-01;D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/exp/pristine-01/tsconfig.json",
+                                        "D:/P47RUN/P47-20261111-01/out/C09/C09-E01/copies.json"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C11/C11-E01/tsc.log",
+                                         "D:/P47RUN/P47-20261111-01/out/C11/C11-E01/result.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C11/C11-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C11/C11-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                  "D:/P47RUN/P47-20261111-01/tools",
+                                                  "D:/P47RUN/P47-20261111-01/out/C11/C11-E01",
+                                                  "D:/P47RUN/P47-20261111-01/out/audit/C11/C11-E01",
+                                                  "D:/P47RUN/P47-20261111-01/tmp"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/out/C11/C11-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C11/C11-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_roots":  [
+                                                       "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover",
+                                                   "D:/P47RUN/P47-20261111-01/baseline",
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/fs-guard.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C11-E01",
+                         "gate":  "C10-P-E01 pass; tsc dependency hash equals copies.json; --noEmit",
+                         "fail_closed":  [
+                                             "missing --noEmit",
+                                             "any JS/d.ts/map/tsbuildinfo/dist output",
+                                             "tsc.js hash mismatch",
+                                             "ORIGINAL read"
+                                         ],
+                         "audit":  "p47-write-audit-v4; output tree before/after",
+                         "target_argv":  [
+                                             "D:/P47RUN/P47-20261111-01/exp/pristine-01/node_modules/typescript/lib/tsc.js",
+                                             "-p",
+                                             "D:/P47RUN/P47-20261111-01/exp/pristine-01/tsconfig.json",
+                                             "--noEmit"
+                                         ]
+                     },
+                     {
+                         "id":  "C12",
+                         "step":  "S6",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C12",
+                                      "-Copy",
+                                      "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C12/C12-E01",
+                                      "-ExecId",
+                                      "C12-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                         "env":  {
+                                     "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C12/C12-E01/write-audit.jsonl",
+                                     "P0_GUARD_MODE":  "test",
+                                     "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C12/C12-E01/guard.jsonl",
+                                     "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/pristine-01;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C12/C12-E01;D:/P47RUN/P47-20261111-01/out/audit/C12/C12-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/node_modules/.vite;D:/P47RUN/P47-20261111-01/exp/pristine-01/node_modules/.vite-temp;D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp;D:/P47RUN/P47-20261111-01/out/C12/C12-E01;D:/P47RUN/P47-20261111-01/out/audit/C12/C12-E01;D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/manifest.json;D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/devtools.html;D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/panel.html;D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/panel.css;D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/panel-layout.css;D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/sandbox.html;D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/icon16.png;D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/icon48.png;D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/icon128.png",
+                                     "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp/no-plugin-01;D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                     "P0_ICON16_PRESENT":  "from-initial-manifest",
+                                     "P0_ICON48_PRESENT":  "from-initial-manifest",
+                                     "P0_ICON128_PRESENT":  "from-initial-manifest"
+                                 },
+                         "binding":  {
+                                         "P0_ICON16_PRESENT":  "0 or 1 from C12 initial manifest",
+                                         "P0_ICON48_PRESENT":  "0 or 1 from C12 initial manifest",
+                                         "P0_ICON128_PRESENT":  "0 or 1 from C12 initial manifest"
+                                     },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/exp/pristine-01/vite.config.ts",
+                                        "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C12/C12-E01/vitest.json",
+                                         "D:/P47RUN/P47-20261111-01/out/C12/C12-E01/write-summary.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C12/C12-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C12/C12-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                  "D:/P47RUN/P47-20261111-01/tools",
+                                                  "D:/P47RUN/P47-20261111-01/out/C12/C12-E01",
+                                                  "D:/P47RUN/P47-20261111-01/out/audit/C12/C12-E01",
+                                                  "D:/P47RUN/P47-20261111-01/tmp"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01/node_modules/.vite",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01/node_modules/.vite-temp",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01/tmp",
+                                                   "D:/P47RUN/P47-20261111-01/out/C12/C12-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C12/C12-E01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/manifest.json",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/devtools.html",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/panel.html",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/panel.css",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/panel-layout.css",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/sandbox.html"
+                                               ],
+                         "conditional_writes":  [
+                                                    {
+                                                        "path":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/icon16.png",
+                                                        "guard_env":  "P0_ICON16_PRESENT",
+                                                        "allow_only_when":  "0"
+                                                    },
+                                                    {
+                                                        "path":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/icon48.png",
+                                                        "guard_env":  "P0_ICON48_PRESENT",
+                                                        "allow_only_when":  "0"
+                                                    },
+                                                    {
+                                                        "path":  "D:/P47RUN/P47-20261111-01/exp/pristine-01/dist/icon128.png",
+                                                        "guard_env":  "P0_ICON128_PRESENT",
+                                                        "allow_only_when":  "0"
+                                                    }
+                                                ],
+                         "protected_write_paths":  [
+
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover",
+                                                   "D:/P47RUN/P47-20261111-01/baseline",
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/fs-guard.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C12-E01",
+                         "gate":  "C10-P-E01 pass; original plugin unchanged; cache paths exact",
+                         "fail_closed":  [
+                                             "other dist artifact write",
+                                             "icon write when present",
+                                             "history write",
+                                             "unregistered write",
+                                             "root .vite write"
+                                         ],
+                         "audit":  "p47-write-audit-v4; six targets and icon predicate"
+                     },
+                     {
+                         "id":  "C13",
+                         "step":  "S6",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C13",
+                                      "-Copy",
+                                      "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                      "-ControlConfig",
+                                      "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/control.vite.config.mjs",
+                                      "-ExpectedSha256",
+                                      "18a06117ec70f2d5ed872f52d7e546a2fb64f93293e91acbb9f178fff2d80003",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C13/C13-E01",
+                                      "-ExecId",
+                                      "C13-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                         "env":  {
+                                     "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C13/C13-E01/write-audit.jsonl",
+                                     "P0_GUARD_MODE":  "test",
+                                     "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C13/C13-E01/guard.jsonl",
+                                     "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C13/C13-E01;D:/P47RUN/P47-20261111-01/out/audit/C13/C13-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/control.vite.config.mjs;D:/P47RUN/P47-20261111-01/exp/no-plugin-01/node_modules/.vite;D:/P47RUN/P47-20261111-01/exp/no-plugin-01/node_modules/.vite-temp;D:/P47RUN/P47-20261111-01/exp/no-plugin-01/tmp;D:/P47RUN/P47-20261111-01/out/C13/C13-E01;D:/P47RUN/P47-20261111-01/out/audit/C13/C13-E01",
+                                     "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp/pristine-01;D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                        "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/control.vite.config.mjs"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/control.vite.config.mjs",
+                                         "D:/P47RUN/P47-20261111-01/out/C13/C13-E01/config-diff.json",
+                                         "D:/P47RUN/P47-20261111-01/out/C13/C13-E01/vitest.json",
+                                         "D:/P47RUN/P47-20261111-01/out/C13/C13-E01/dist-before.json",
+                                         "D:/P47RUN/P47-20261111-01/out/C13/C13-E01/dist-after.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C13/C13-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C13/C13-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                                  "D:/P47RUN/P47-20261111-01/tools",
+                                                  "D:/P47RUN/P47-20261111-01/out/C13/C13-E01",
+                                                  "D:/P47RUN/P47-20261111-01/out/audit/C13/C13-E01",
+                                                  "D:/P47RUN/P47-20261111-01/tmp"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/control.vite.config.mjs",
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/node_modules/.vite",
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/node_modules/.vite-temp",
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/tmp",
+                                                   "D:/P47RUN/P47-20261111-01/out/C13/C13-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C13/C13-E01"
+                                               ],
+                         "protected_write_roots":  [
+                                                       "D:/P47RUN/P47-20261111-01/exp/no-plugin-01/dist"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover",
+                                                   "D:/P47RUN/P47-20261111-01/baseline",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-no-plugin.cjs",
+                                            "payload/tools/fs-guard.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C13-E01",
+                         "gate":  "C10-N-E01 pass; control config hash fixed; dist zero-write",
+                         "fail_closed":  [
+                                             "config hash mismatch",
+                                             "removed plugin count not exactly one",
+                                             "other key changed",
+                                             "dist write",
+                                             "root .vite write"
+                                         ],
+                         "audit":  "p47-write-audit-v4; config, dist before/after"
+                     },
+                     {
+                         "id":  "C14",
+                         "step":  "S7",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C14",
+                                      "-Copy",
+                                      "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                      "-Mapping",
+                                      "D:/P47RUN/P47-20261111-01/tools/cases/p0-neutralize-map-v1.json",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C14/C14-E01",
+                                      "-ExecId",
+                                      "C14-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                         "env":  {
+                                     "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C14/C14-E01/write-audit.jsonl",
+                                     "P0_GUARD_MODE":  "neutralize",
+                                     "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C14/C14-E01/guard.jsonl",
+                                     "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C14/C14-E01;D:/P47RUN/P47-20261111-01/out/audit/C14/C14-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01;D:/P47RUN/P47-20261111-01/out/C14/C14-E01;D:/P47RUN/P47-20261111-01/out/audit/C14/C14-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp/pristine-01;D:/P47RUN/P47-20261111-01/exp/no-plugin-01"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/tools/cases/p0-neutralize-map-v1.json"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C14/C14-E01/mapping-result.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C14/C14-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C14/C14-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                                  "D:/P47RUN/P47-20261111-01/tools",
+                                                  "D:/P47RUN/P47-20261111-01/out/C14/C14-E01",
+                                                  "D:/P47RUN/P47-20261111-01/out/audit/C14/C14-E01",
+                                                  "D:/P47RUN/P47-20261111-01/tmp"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                                   "D:/P47RUN/P47-20261111-01/out/C14/C14-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C14/C14-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_paths":  [
+
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover",
+                                                   "D:/P47RUN/P47-20261111-01/baseline",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-neutralize.cjs",
+                                            "payload/tools/fs-guard.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1",
+                                            "payload/tools/cases/p0-neutralize-map-v1.json"
+                                        ],
+                         "exec_id":  "C14-E01",
+                         "gate":  "C09 pass; mapping reversible; no old script execution",
+                         "fail_closed":  [
+                                             "unregistered file changed",
+                                             "irreversible mapping",
+                                             "old script executed",
+                                             "ORIGINAL read"
+                                         ],
+                         "audit":  "p47-write-audit-v4; each mapping before/after hash"
+                     },
+                     {
+                         "id":  "C15",
+                         "step":  "S7",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C15",
+                                      "-Copy",
+                                      "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                      "-Config",
+                                      "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tsconfig.json",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C15/C15-E01",
+                                      "-ExecId",
+                                      "C15-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                         "env":  {
+                                     "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C15/C15-E01/write-audit.jsonl",
+                                     "P0_GUARD_MODE":  "tsc",
+                                     "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C15/C15-E01/guard.jsonl",
+                                     "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C15/C15-E01;D:/P47RUN/P47-20261111-01/out/audit/C15/C15-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/out/C15/C15-E01;D:/P47RUN/P47-20261111-01/out/audit/C15/C15-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp/pristine-01;D:/P47RUN/P47-20261111-01/exp/no-plugin-01"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tsconfig.json",
+                                        "D:/P47RUN/P47-20261111-01/out/C09/C09-E01/copies.json"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C15/C15-E01/tsc.log",
+                                         "D:/P47RUN/P47-20261111-01/out/C15/C15-E01/result.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C15/C15-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C15/C15-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                                  "D:/P47RUN/P47-20261111-01/tools",
+                                                  "D:/P47RUN/P47-20261111-01/out/C15/C15-E01",
+                                                  "D:/P47RUN/P47-20261111-01/out/audit/C15/C15-E01",
+                                                  "D:/P47RUN/P47-20261111-01/tmp"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/out/C15/C15-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C15/C15-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_roots":  [
+                                                       "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover",
+                                                   "D:/P47RUN/P47-20261111-01/baseline",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/fs-guard.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C15-E01",
+                         "gate":  "C14 pass; C10-S-E01 pass; exact --noEmit",
+                         "fail_closed":  [
+                                             "missing --noEmit",
+                                             "any compile output",
+                                             "dist write",
+                                             "tsc.js hash mismatch",
+                                             "C10-S not run"
+                                         ],
+                         "audit":  "p47-write-audit-v4; output tree before/after",
+                         "target_argv":  [
+                                             "D:/P47RUN/P47-20261111-01/exp/sandbox-01/node_modules/typescript/lib/tsc.js",
+                                             "-p",
+                                             "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tsconfig.json",
+                                             "--noEmit"
+                                         ]
+                     },
+                     {
+                         "id":  "C16",
+                         "step":  "S7",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C16",
+                                      "-Copy",
+                                      "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C16/C16-E01",
+                                      "-ExecId",
+                                      "C16-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                         "env":  {
+                                     "NODE_OPTIONS":  "--require D:/P47RUN/P47-20261111-01/tools/fs-guard.cjs",
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C16/C16-E01/write-audit.jsonl",
+                                     "P0_GUARD_MODE":  "test",
+                                     "P0_GUARD_LOG":  "D:/P47RUN/P47-20261111-01/out/C16/C16-E01/guard.jsonl",
+                                     "P0_GUARD_READ_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01;D:/P47RUN/P47-20261111-01/tools;D:/P47RUN/P47-20261111-01/out/C16/C16-E01;D:/P47RUN/P47-20261111-01/out/audit/C16/C16-E01;D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_GUARD_WRITE_ALLOW":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/node_modules/.vite;D:/P47RUN/P47-20261111-01/exp/sandbox-01/node_modules/.vite-temp;D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp;D:/P47RUN/P47-20261111-01/out/C16/C16-E01;D:/P47RUN/P47-20261111-01/out/audit/C16/C16-E01;D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/manifest.json;D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/devtools.html;D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/panel.html;D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/panel.css;D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/panel-layout.css;D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/sandbox.html;D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/icon16.png;D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/icon48.png;D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/icon128.png",
+                                     "P0_GUARD_DENY":  "D:/Projects/ob-recover;D:/P47RUN/P47-20261111-01/baseline;D:/P47RUN/P47-20261111-01/exp/pristine-01;D:/P47RUN/P47-20261111-01/exp/no-plugin-01",
+                                     "P0_ICON16_PRESENT":  "from-initial-manifest",
+                                     "P0_ICON48_PRESENT":  "from-initial-manifest",
+                                     "P0_ICON128_PRESENT":  "from-initial-manifest"
+                                 },
+                         "binding":  {
+                                         "P0_ICON16_PRESENT":  "0 or 1 from C16 initial manifest",
+                                         "P0_ICON48_PRESENT":  "0 or 1 from C16 initial manifest",
+                                         "P0_ICON128_PRESENT":  "0 or 1 from C16 initial manifest"
+                                     },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/exp/sandbox-01/vite.config.ts",
+                                        "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C16/C16-E01/vitest.json",
+                                         "D:/P47RUN/P47-20261111-01/out/C16/C16-E01/write-summary.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C16/C16-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C16/C16-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/exp/sandbox-01",
+                                                  "D:/P47RUN/P47-20261111-01/tools",
+                                                  "D:/P47RUN/P47-20261111-01/out/C16/C16-E01",
+                                                  "D:/P47RUN/P47-20261111-01/out/audit/C16/C16-E01",
+                                                  "D:/P47RUN/P47-20261111-01/tmp"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01/node_modules/.vite",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01/node_modules/.vite-temp",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01/tmp",
+                                                   "D:/P47RUN/P47-20261111-01/out/C16/C16-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C16/C16-E01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/manifest.json",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/devtools.html",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/panel.html",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/panel.css",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/panel-layout.css",
+                                                   "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/sandbox.html"
+                                               ],
+                         "conditional_writes":  [
+                                                    {
+                                                        "path":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/icon16.png",
+                                                        "guard_env":  "P0_ICON16_PRESENT",
+                                                        "allow_only_when":  "0"
+                                                    },
+                                                    {
+                                                        "path":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/icon48.png",
+                                                        "guard_env":  "P0_ICON48_PRESENT",
+                                                        "allow_only_when":  "0"
+                                                    },
+                                                    {
+                                                        "path":  "D:/P47RUN/P47-20261111-01/exp/sandbox-01/dist/icon128.png",
+                                                        "guard_env":  "P0_ICON128_PRESENT",
+                                                        "allow_only_when":  "0"
+                                                    }
+                                                ],
+                         "protected_write_paths":  [
+
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover",
+                                                   "D:/P47RUN/P47-20261111-01/baseline",
+                                                   "D:/P47RUN/P47-20261111-01/exp/pristine-01",
+                                                   "D:/P47RUN/P47-20261111-01/exp/no-plugin-01"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/fs-guard.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C16-E01",
+                         "gate":  "C14 pass; C10-S-E01 pass; original plugin same six targets",
+                         "fail_closed":  [
+                                             "other dist write",
+                                             "icon predicate violation",
+                                             "history write",
+                                             "unregistered write",
+                                             "root .vite write"
+                                         ],
+                         "audit":  "p47-write-audit-v4; six targets and icon predicate"
+                     },
+                     {
+                         "id":  "C17",
+                         "step":  "S8",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C17",
+                                      "-M0",
+                                      "D:/P47RUN/P47-20261111-01/baseline/m0.json",
+                                      "-M1",
+                                      "D:/P47RUN/P47-20261111-01/out/C07/C07-M1-E01/m1.json",
+                                      "-Copies",
+                                      "D:/P47RUN/P47-20261111-01/out/C09/C09-E01/copies.json",
+                                      "-Results",
+                                      "D:/P47RUN/P47-20261111-01/out",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C17/C17-E01",
+                                      "-ExecId",
+                                      "C17-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C17/C17-E01/write-audit.jsonl"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/baseline/m0.json",
+                                        "D:/P47RUN/P47-20261111-01/out/C07/C07-M1-E01/m1.json",
+                                        "D:/P47RUN/P47-20261111-01/out/C09/C09-E01/copies.json"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C17/C17-E01/diff.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C17/C17-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C17/C17-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/baseline",
+                                                  "D:/P47RUN/P47-20261111-01/out",
+                                                  "D:/P47RUN/P47-20261111-01/tools"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/out/C17/C17-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C17/C17-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_roots":  [
+                                                       "D:/P47RUN/P47-20261111-01/baseline",
+                                                       "D:/P47RUN/P47-20261111-01/evidence",
+                                                       "D:/P47RUN/P47-20261111-01/trust"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-compare.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C17-E01",
+                         "gate":  "C07-M1-E01 pass; C16 pass; all input hashes match",
+                         "fail_closed":  [
+                                             "input hash mismatch",
+                                             "overwrite input",
+                                             "difference treated as authorization"
+                                         ],
+                         "audit":  "p47-write-audit-v4; output writes only"
+                     },
+                     {
+                         "id":  "C18",
+                         "step":  "S8",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "state":  "DISABLED_UNTIL_SECOND_ARCHIVE_BOUND",
+                         "argv":  null,
+                         "argv_template":  [
+                                               "-NoProfile",
+                                               "-NonInteractive",
+                                               "-ExecutionPolicy",
+                                               "Bypass",
+                                               "-File",
+                                               "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                               "-CommandId",
+                                               "C18",
+                                               "-Source",
+                                               "D:/P47RUN/P47-20261111-01/baseline/snapshot-01",
+                                               "-Manifest",
+                                               "D:/P47RUN/P47-20261111-01/baseline/m0.json",
+                                               "-Dest",
+                                               "${SECOND_ARCHIVE}",
+                                               "-Out",
+                                               "D:/P47RUN/P47-20261111-01/out/C18/C18-E01",
+                                               "-ExecId",
+                                               "C18-E01"
+                                           ],
+                         "binding":  {
+                                         "SECOND_ARCHIVE":  "user-supplied-absolute-path"
+                                     },
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C18/C18-E01/write-audit.jsonl"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/baseline/snapshot-01"
+                                    ],
+                         "outputs":  [
+                                         "${SECOND_ARCHIVE}",
+                                         "D:/P47RUN/P47-20261111-01/out/C18/C18-E01/archive.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C18/C18-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C18/C18-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/baseline/snapshot-01",
+                                                  "D:/P47RUN/P47-20261111-01/tools"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "${SECOND_ARCHIVE}",
+                                                   "D:/P47RUN/P47-20261111-01/out/C18/C18-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C18/C18-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_roots":  [
+                                                       "D:/P47RUN/P47-20261111-01/baseline",
+                                                       "D:/Projects/ob-recover"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover",
+                                                   "D:/P47RUN/P47-20261111-01/exp"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-archive.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C18-E01",
+                         "gate":  "C17 pass; user binds SECOND_ARCHIVE absolute path; target absent",
+                         "fail_closed":  [
+                                             "SECOND_ARCHIVE unbound",
+                                             "target exists",
+                                             "overwrite",
+                                             "different location retry"
+                                         ],
+                         "audit":  "p47-write-audit-v4; every archived file"
+                     },
+                     {
+                         "id":  "C19",
+                         "step":  "S8",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C19",
+                                      "-Inputs",
+                                      "D:/P47RUN/P47-20261111-01/out",
+                                      "-Evidence",
+                                      "D:/P47RUN/P47-20261111-01/evidence",
+                                      "-Trust",
+                                      "D:/P47RUN/P47-20261111-01/trust",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C19/C19-E01",
+                                      "-ExecId",
+                                      "C19-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C19/C19-E01/write-audit.jsonl"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/out",
+                                        "D:/P47RUN/P47-20261111-01/evidence",
+                                        "D:/P47RUN/P47-20261111-01/trust"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/evidence/index-v4.json",
+                                         "D:/P47RUN/P47-20261111-01/trust/index-v4.json",
+                                         "D:/P47RUN/P47-20261111-01/out/C19/C19-E01/index.json",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C19/C19-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C19/C19-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/out",
+                                                  "D:/P47RUN/P47-20261111-01/evidence",
+                                                  "D:/P47RUN/P47-20261111-01/trust"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/evidence",
+                                                   "D:/P47RUN/P47-20261111-01/trust",
+                                                   "D:/P47RUN/P47-20261111-01/out/C19/C19-E01",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C19/C19-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_roots":  [
+                                                       "D:/P47RUN/P47-20261111-01/baseline",
+                                                       "D:/Projects/ob-recover"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-index.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C19-E01",
+                         "gate":  "C17 pass; C18 complete/disabled/failed recorded",
+                         "fail_closed":  [
+                                             "old segment rewrite",
+                                             "hash chain break",
+                                             "baseline write",
+                                             "ORIGINAL read"
+                                         ],
+                         "audit":  "p47-write-audit-v4; new segments only"
+                     },
+                     {
+                         "id":  "C20",
+                         "step":  "S9",
+                         "role":  "authorized-admin",
+                         "executable":  "powershell",
+                         "argv":  [
+                                      "-NoProfile",
+                                      "-NonInteractive",
+                                      "-ExecutionPolicy",
+                                      "Bypass",
+                                      "-File",
+                                      "D:/P47RUN/P47-20261111-01/tools/p0-dispatch.ps1",
+                                      "-CommandId",
+                                      "C20",
+                                      "-Results",
+                                      "D:/P47RUN/P47-20261111-01/out",
+                                      "-Review",
+                                      "D:/P47RUN/P47-20261111-01/review",
+                                      "-Out",
+                                      "D:/P47RUN/P47-20261111-01/out/C20/C20-E01",
+                                      "-ExecId",
+                                      "C20-E01"
+                                  ],
+                         "cwd":  "D:/P47RUN/P47-20261111-01",
+                         "env":  {
+                                     "TEMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "TMP":  "D:/P47RUN/P47-20261111-01/tmp",
+                                     "P0_AUDIT_PATH":  "D:/P47RUN/P47-20261111-01/out/audit/C20/C20-E01/write-audit.jsonl"
+                                 },
+                         "inputs":  [
+                                        "D:/P47RUN/P47-20261111-01/out",
+                                        "D:/P47RUN/P47-20261111-01/evidence",
+                                        "D:/P47RUN/P47-20261111-01/trust",
+                                        "D:/P47RUN/P47-20261111-01/baseline"
+                                    ],
+                         "outputs":  [
+                                         "D:/P47RUN/P47-20261111-01/out/C20/C20-E01/report.md",
+                                         "D:/P47RUN/P47-20261111-01/review/review-report.md",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C20/C20-E01/write-audit.jsonl",
+                                         "D:/P47RUN/P47-20261111-01/out/audit/C20/C20-E01/write-summary.json"
+                                     ],
+                         "read_allow_roots":  [
+                                                  "D:/P47RUN/P47-20261111-01/out",
+                                                  "D:/P47RUN/P47-20261111-01/evidence",
+                                                  "D:/P47RUN/P47-20261111-01/trust",
+                                                  "D:/P47RUN/P47-20261111-01/baseline"
+                                              ],
+                         "write_allow_roots":  [
+                                                   "D:/P47RUN/P47-20261111-01/out/C20/C20-E01",
+                                                   "D:/P47RUN/P47-20261111-01/review",
+                                                   "D:/P47RUN/P47-20261111-01/out/audit/C20/C20-E01",
+                                                   "D:/P47RUN/P47-20261111-01/tmp"
+                                               ],
+                         "protected_write_roots":  [
+                                                       "D:/P47RUN/P47-20261111-01/evidence",
+                                                       "D:/P47RUN/P47-20261111-01/trust",
+                                                       "D:/Projects/ob-recover"
+                                                   ],
+                         "denied_read_roots":  [
+                                                   "D:/Projects/ob-recover"
+                                               ],
+                         "tool_files":  [
+                                            "payload/tools/p0-report.cjs",
+                                            "payload/tools/p0-audit.cjs",
+                                            "payload/tools/p0-dispatch.ps1"
+                                        ],
+                         "exec_id":  "C20-E01",
+                         "gate":  "C17/C19 pass; C18 status recorded (complete/disabled/failed); report always produced",
+                         "fail_closed":  [
+                                             "exit claimed without C18 status",
+                                             "old report overwrite",
+                                             "Codex file write",
+                                             "independent-run false claim"
+                                         ],
+                         "audit":  "p47-write-audit-v4; report and review files"
+                     }
+                 ]
+}

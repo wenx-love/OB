@@ -1,0 +1,22 @@
+{
+  "schema": "p47-publish-current-v1",
+  "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+  "files": [
+    {
+      "path": "a.txt",
+      "bytes": 6,
+      "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+    },
+    {
+      "path": "b.txt",
+      "bytes": 6,
+      "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+    },
+    {
+      "path": "c.txt",
+      "bytes": 6,
+      "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+    }
+  ],
+  "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct\\_publish\\journal.json"
+}

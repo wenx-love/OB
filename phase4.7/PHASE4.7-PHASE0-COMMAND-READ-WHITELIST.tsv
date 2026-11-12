@@ -1,0 +1,18 @@
+command_id	command	cwd	read_roots	write_roots	forbidden	output	notes
+C01	p0-root-init（管理员初始化脚本；argv 在执行清单登记）	D:\P47RUN\<run>	<run> 状态	D:\P47RUN\<run>；<run>\controls；<run>\baseline；<run>\trust；<run>\sandbox；<run>\exp\*	D:\Projects\ob-recover 任何写入/ACL；运行根之外；网络	out\p0-init.log	只创建目录/根；不写原项目
+C02	p0-acl-set-readback（管理员 ACL 脚本）	D:\P47RUN\<run>	<run> ACL	D:\P47RUN\<run> ACL；<run>\out\acl	D:\Projects\ob-recover ACL；扩权；其他用户目录	out\acl-before.json；out\acl-after.json	设置后逐条读回；与期望比对
+C03	p0-codex-acl-probe（Codex 只读身份）	<run>\acl-probe	<run>\acl-probe\sentinel-read	<run>\acl-probe\sentinel-write（预期拒绝）；<run>\out\acl	D:\Projects\ob-recover；截断冻结文件；扩权	out\acl-probe.json	读成功、写拒绝；失败即 FAIL
+C04	p0-tool-integrity	<run>\tools	<run>\tools	<run>\out\tools	工具目录外写入	out\tool-hashes.json	复算工具哈希并核对已公布值
+C05	p0-detector-sim	<run>\controls	<run>\controls；<run>\tools	<run>\controls；<run>\out\detector	D:\Projects\ob-recover；真实副本；网络	out\detector-report.json	假保护区/假历史/假 baseline；阳性/阴性对照
+C06	p0-m0-manifest	<run>	D:\Projects\ob-recover（只读，仅清单工具）；<run>\tools	<run>\baseline；<run>\out\m0	D:\Projects\ob-recover 写入；产品测试读取原项目	out\m0.tsv；out\m0.sha256	两套哈希实现；逐文件
+C07	p0-archive	<run>	D:\Projects\ob-recover（只读，仅归档工具）；<run>\tools	<run>\baseline；<run>\out\archive	D:\Projects\ob-recover 写入；修改历史证据	out\archive.zip；out\archive.sha256	逐条核对；只读
+C08	p0-copy-derive	<run>	<run>\baseline；<run>\out\m0	D:\P47RUN\<run>\sandbox；<run>\exp\pristine-*；<run>\exp\no-plugin-*	链接/硬链接回原项目；共享可写目录	out\copy-derive.json	同一哈希快照；各自依赖/TEMP/cache
+C09	p0-copy-verify	<run>	<run>\baseline；三副本	D:\P47RUN\<run>\out\copy	D:\Projects\ob-recover	out\copy-verify.json	逐文件等于 M0；无链接回原项目
+C10	p0-realcopy-guard	<run>\sandbox	三副本	D:\P47RUN\<run>\sandbox；<run>\exp\*；<run>\out\guard	D:\Projects\ob-recover；网络	out\guard-realcopy.json	真实副本读写判定；保护区拒写/拒读
+C11	node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit	<run>\sandbox 或实验副本	该副本	D:\P47RUN\<run>\out\tsc（仅日志）	D:\Projects\ob-recover；无 --noEmit；产生 JS/d.ts/map/tsbuildinfo；写 dist	out\tsc.log	唯一允许的 tsc 形式；执行后核对 dist 不变
+C12	node node_modules/vitest/vitest.mjs run	<run>\exp\pristine-*	该副本	D:\P47RUN\<run>\exp\pristine-* cache/tmp；<run>\out\vitest-pristine	D:\Projects\ob-recover；历史证据；写 dist	out\vitest-pristine.log	原样配置；不写历史证据
+C13	node node_modules/vitest/vitest.mjs run --config <no-plugin-config>	<run>\exp\no-plugin-*	该副本	D:\P47RUN\<run>\exp\no-plugin-* cache/tmp；<run>\out\vitest-noplugin	D:\Projects\ob-recover；历史证据；写 dist	out\vitest-noplugin.log	无插件对照；只在该副本
+C14	p0-plugin-control（登记脚本）	<run>\exp\pristine-*；<run>\exp\no-plugin-*	两个实验副本	D:\P47RUN\<run>\exp\*\dist；<run>\out\plugin-control	D:\Projects\ob-recover；<run>\sandbox 证据；未登记写入	out\plugin-control.json	插件写自身 dist 是预期观察；写历史证据即失败
+C15	p0-neutralize-equivalence（tsc --noEmit + Vitest）	<run>\sandbox	中和副本	D:\P47RUN\<run>\sandbox；<run>\out\neutralize	D:\Projects\ob-recover；把中和结果带回原样副本	out\neutralize.json	中和前后逐用例一致；tsc 必须 --noEmit
+C16	p0-evidence-index	<run>	<run>\evidence；<run>\trust	<run>\evidence；<run>\trust（只追加）；<run>\out	D:\Projects\ob-recover；<run>\baseline；覆盖历史	out\evidence-index.tsv	独占创建；哈希链
+C17	p0-report	<run>	<run>\out；<run>\evidence	<run>\out；<run>\review	D:\Projects\ob-recover；修改输入/证据	out\phase0-report.md	阶段报告；无条件停审

@@ -1,0 +1,4282 @@
+{
+  "schema": "p47-publish-lab-v2",
+  "run_id": "run-2026-11-12T03-10-19-617Z",
+  "evidence_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-worker-remediation-plan\\V9\\_publish\\lab\\run-2026-11-12T03-10-19-617Z",
+  "scenarios": 17,
+  "passed": 17,
+  "failed": 0,
+  "results": [
+    {
+      "name": "first-publish",
+      "mode": "first",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-first-publish-mwcyzvfo",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-first-publish-mwcyzvfo\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvfv-22155a",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-first-publish-mwcyzvfo\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-first-publish-mwcyzvfo\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-first-publish-mwcyzvfo\\_publish\\backup\\d3f745df6173fc1c-mwcyzvfv-22155a",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-first-publish-mwcyzvfo\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvfv-22155a",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-first-publish-mwcyzvfo\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-first-publish-mwcyzvfo\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-first-publish-mwcyzvfo\\_publish\\backup\\d3f745df6173fc1c-mwcyzvfv-22155a",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "republish-idempotent",
+      "mode": "republish",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "republish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "same rid",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        },
+        {
+          "label": "tree unchanged",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvi0-680959",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\backup\\d3f745df6173fc1c-mwcyzvi0-680959",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvi0-680959",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-republish-idempotent-mwcyzvhv\\_publish\\backup\\d3f745df6173fc1c-mwcyzvi0-680959",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "determinism",
+      "mode": "determinism",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-determinism-mwcyzvkc",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "republish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "same rid",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        },
+        {
+          "label": "tree unchanged",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-determinism-mwcyzvkc\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvkj-001c1b",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-determinism-mwcyzvkc\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-determinism-mwcyzvkc\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-determinism-mwcyzvkc\\_publish\\backup\\d3f745df6173fc1c-mwcyzvkj-001c1b",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-determinism-mwcyzvkc\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvkj-001c1b",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-determinism-mwcyzvkc\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-determinism-mwcyzvkc\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-determinism-mwcyzvkc\\_publish\\backup\\d3f745df6173fc1c-mwcyzvkj-001c1b",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "fault-stage",
+      "mode": "fault",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-stage-mwcyzvmo",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "fault detected",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "state rolled-back",
+          "pass": true,
+          "actual": "rolled-back",
+          "expected": "rolled-back"
+        },
+        {
+          "label": "tree restored",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        },
+        {
+          "label": "pointer restored",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        },
+        {
+          "label": "status clean after rollback",
+          "pass": true,
+          "actual": [],
+          "expected": []
+        }
+      ],
+      "faults": {
+        "throwAt": "stage"
+      },
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-stage-mwcyzvmo\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvmv-c202ac",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-stage-mwcyzvmo\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-stage-mwcyzvmo\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-stage-mwcyzvmo\\_publish\\backup\\d3f745df6173fc1c-mwcyzvmv-c202ac",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-stage-mwcyzvmo\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzvol-bd20ba",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "prepared",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-fault-stage-mwcyzvmo\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-stage-mwcyzvmo\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-stage-mwcyzvmo\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-stage-mwcyzvmo\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzvol-bd20ba",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": null
+          },
+          "error": "injected fault at stage",
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": []
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "fault-backup",
+      "mode": "fault",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-backup-mwcyzvpm",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "fault detected",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "state rolled-back",
+          "pass": true,
+          "actual": "rolled-back",
+          "expected": "rolled-back"
+        },
+        {
+          "label": "tree restored",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        },
+        {
+          "label": "pointer restored",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        },
+        {
+          "label": "status clean after rollback",
+          "pass": true,
+          "actual": [],
+          "expected": []
+        }
+      ],
+      "faults": {
+        "throwAt": "backup"
+      },
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-backup-mwcyzvpm\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvpr-04cdb2",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-backup-mwcyzvpm\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-backup-mwcyzvpm\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-backup-mwcyzvpm\\_publish\\backup\\d3f745df6173fc1c-mwcyzvpr-04cdb2",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-backup-mwcyzvpm\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzvrq-dfb3ac",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "prepared",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-fault-backup-mwcyzvpm\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-backup-mwcyzvpm\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-backup-mwcyzvpm\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-backup-mwcyzvpm\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzvrq-dfb3ac",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": "injected fault at backup",
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": []
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "fault-switch-b",
+      "mode": "fault",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "fault detected",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "state rolled-back",
+          "pass": true,
+          "actual": "rolled-back",
+          "expected": "rolled-back"
+        },
+        {
+          "label": "tree restored",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        },
+        {
+          "label": "pointer restored",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        },
+        {
+          "label": "status clean after rollback",
+          "pass": true,
+          "actual": [],
+          "expected": []
+        }
+      ],
+      "faults": {
+        "throwAt": "switch:b.txt"
+      },
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvth-ab23e0",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb\\_publish\\backup\\d3f745df6173fc1c-mwcyzvth-ab23e0",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzvv4-0bb672",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "switching",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-fault-switch-b-mwcyzvtb\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzvv4-0bb672",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": "injected fault at switch:b.txt",
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": [
+              {
+                "path": "a.txt",
+                "restored": "old"
+              },
+              {
+                "path": "b.txt",
+                "restored": "old"
+              },
+              {
+                "path": "c.txt",
+                "restored": "old"
+              }
+            ]
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "fault-pointer",
+      "mode": "fault",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-pointer-mwcyzvxh",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "fault detected",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "state rolled-back",
+          "pass": true,
+          "actual": "rolled-back",
+          "expected": "rolled-back"
+        },
+        {
+          "label": "tree restored",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        },
+        {
+          "label": "pointer restored",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        },
+        {
+          "label": "status clean after rollback",
+          "pass": true,
+          "actual": [],
+          "expected": []
+        }
+      ],
+      "faults": {
+        "throwAt": "pointer"
+      },
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-pointer-mwcyzvxh\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzvxn-c8135c",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-pointer-mwcyzvxh\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-pointer-mwcyzvxh\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-pointer-mwcyzvxh\\_publish\\backup\\d3f745df6173fc1c-mwcyzvxn-c8135c",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-pointer-mwcyzvxh\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzvzm-5b8f7b",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "switching",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-fault-pointer-mwcyzvxh\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-pointer-mwcyzvxh\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-pointer-mwcyzvxh\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-pointer-mwcyzvxh\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzvzm-5b8f7b",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": "injected fault at pointer",
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": [
+              {
+                "path": "a.txt",
+                "restored": "old"
+              },
+              {
+                "path": "b.txt",
+                "restored": "old"
+              },
+              {
+                "path": "c.txt",
+                "restored": "old"
+              }
+            ]
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "fault-postverify",
+      "mode": "fault",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-postverify-mwcyzw25",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "fault detected",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "state rolled-back",
+          "pass": true,
+          "actual": "rolled-back",
+          "expected": "rolled-back"
+        },
+        {
+          "label": "tree restored",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        },
+        {
+          "label": "pointer restored",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        },
+        {
+          "label": "status clean after rollback",
+          "pass": true,
+          "actual": [],
+          "expected": []
+        }
+      ],
+      "faults": {
+        "throwAt": "postverify"
+      },
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-postverify-mwcyzw25\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzw2a-8b9db1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-postverify-mwcyzw25\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-postverify-mwcyzw25\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-postverify-mwcyzw25\\_publish\\backup\\d3f745df6173fc1c-mwcyzw2a-8b9db1",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-postverify-mwcyzw25\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzw3v-1119fd",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "committed",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-fault-postverify-mwcyzw25\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-postverify-mwcyzw25\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-postverify-mwcyzw25\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-postverify-mwcyzw25\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzw3v-1119fd",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": "injected fault at postverify",
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": [
+              {
+                "path": "a.txt",
+                "restored": "old"
+              },
+              {
+                "path": "b.txt",
+                "restored": "old"
+              },
+              {
+                "path": "c.txt",
+                "restored": "old"
+              }
+            ]
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "rollback-failed",
+      "mode": "fault",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-rollback-failed-mwcyzw6m",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "fault detected",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "state rollback-failed",
+          "pass": true,
+          "actual": "rollback-failed",
+          "expected": "rollback-failed"
+        },
+        {
+          "label": "status reports issues",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "recover cannot silently pass",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        }
+      ],
+      "faults": {
+        "throwAt": "switch:b.txt",
+        "rollbackAt": "b.txt"
+      },
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-rollback-failed-mwcyzw6m\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzw6t-498511",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-rollback-failed-mwcyzw6m\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-rollback-failed-mwcyzw6m\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-rollback-failed-mwcyzw6m\\_publish\\backup\\d3f745df6173fc1c-mwcyzw6t-498511",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-rollback-failed-mwcyzw6m\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzw8v-0aea45",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "switching",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-rollback-failed-mwcyzw6m\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-rollback-failed-mwcyzw6m\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-rollback-failed-mwcyzw6m\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-rollback-failed-mwcyzw6m\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzw8v-0aea45",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": "injected fault at switch:b.txt",
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": [
+              {
+                "path": "a.txt",
+                "restored": "old"
+              },
+              {
+                "path": "b.txt",
+                "restored": "old"
+              },
+              {
+                "path": "c.txt",
+                "restored": "old"
+              }
+            ]
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "kill-switch-b",
+      "mode": "kill",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "child was terminated (not a clean exit)",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "recover ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "recover state",
+          "pass": true,
+          "actual": "rolled-back",
+          "expected": "rolled-back"
+        },
+        {
+          "label": "tree restored after kill",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        },
+        {
+          "label": "pointer restored after kill",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzwbr-110f63",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\backup\\d3f745df6173fc1c-mwcyzwbr-110f63",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "child": {
+        "status": 1,
+        "signal": null,
+        "stderr": ""
+      },
+      "afterKill": {
+        "tree": {
+          "a.txt": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387",
+          "b.txt": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzwhb-3bffab",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "switching",
+          "phase": "switching",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-kill-switch-b-mwcyzwbm\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzwhb-3bffab",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": true
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzwhb-3bffab",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "switching",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-kill-switch-b-mwcyzwbm\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-switch-b-mwcyzwbm\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzwhb-3bffab",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": [
+              {
+                "path": "a.txt",
+                "restored": "old"
+              },
+              {
+                "path": "b.txt",
+                "restored": "old"
+              },
+              {
+                "path": "c.txt",
+                "restored": "old"
+              }
+            ]
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "kill-pointer",
+      "mode": "kill",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "child was terminated (not a clean exit)",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "recover ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "recover state",
+          "pass": true,
+          "actual": "rolled-back",
+          "expected": "rolled-back"
+        },
+        {
+          "label": "tree restored after kill",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        },
+        {
+          "label": "pointer restored after kill",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzwk5-b92c65",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\backup\\d3f745df6173fc1c-mwcyzwk5-b92c65",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "child": {
+        "status": 1,
+        "signal": null,
+        "stderr": ""
+      },
+      "afterKill": {
+        "tree": {
+          "a.txt": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387",
+          "b.txt": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742",
+          "c.txt": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzwpo-822abf",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "switching",
+          "phase": "switching",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-kill-pointer-mwcyzwk0\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzwpo-822abf",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": true
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzwpo-822abf",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "switching",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-kill-pointer-mwcyzwk0\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-pointer-mwcyzwk0\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzwpo-822abf",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": [
+              {
+                "path": "a.txt",
+                "restored": "old"
+              },
+              {
+                "path": "b.txt",
+                "restored": "old"
+              },
+              {
+                "path": "c.txt",
+                "restored": "old"
+              }
+            ]
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "kill-then-publish",
+      "mode": "kill",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "child was terminated (not a clean exit)",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "unfinished transaction refuses new publish",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "recover ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "recover state",
+          "pass": true,
+          "actual": "rolled-back",
+          "expected": "rolled-back"
+        },
+        {
+          "label": "tree restored after kill",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        },
+        {
+          "label": "pointer restored after kill",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzwut-b8f335",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\backup\\d3f745df6173fc1c-mwcyzwut-b8f335",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "child": {
+        "status": 1,
+        "signal": null,
+        "stderr": ""
+      },
+      "afterKill": {
+        "tree": {
+          "a.txt": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387",
+          "b.txt": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzx0c-e662e8",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "switching",
+          "phase": "switching",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-kill-then-publish-mwcyzwuj\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzx0c-e662e8",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": true
+      },
+      "refusal": "E_UNFINISHED_TX: previous transaction is switching; run recover first",
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzx0c-e662e8",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "switching",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-kill-then-publish-mwcyzwuj\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-kill-then-publish-mwcyzwuj\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzx0c-e662e8",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": [
+              {
+                "path": "a.txt",
+                "restored": "old"
+              },
+              {
+                "path": "b.txt",
+                "restored": "old"
+              },
+              {
+                "path": "c.txt",
+                "restored": "old"
+              }
+            ]
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "post-gate-undo",
+      "mode": "undo",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-post-gate-undo-mwcyzx39",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "second publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "undo ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "undo state",
+          "pass": true,
+          "actual": "rolled-back",
+          "expected": "rolled-back"
+        },
+        {
+          "label": "tree restored by undo",
+          "pass": true,
+          "actual": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          },
+          "expected": {
+            "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+            "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+            "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+          }
+        },
+        {
+          "label": "pointer restored by undo",
+          "pass": true,
+          "actual": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "expected": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d"
+        },
+        {
+          "label": "status clean after undo",
+          "pass": true,
+          "actual": [],
+          "expected": []
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-post-gate-undo-mwcyzx39\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzx3j-a82d2a",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-post-gate-undo-mwcyzx39\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-post-gate-undo-mwcyzx39\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-post-gate-undo-mwcyzx39\\_publish\\backup\\d3f745df6173fc1c-mwcyzx3j-a82d2a",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-post-gate-undo-mwcyzx39\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzx5m-87c124",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "rolled-back",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-post-gate-undo-mwcyzx39\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-post-gate-undo-mwcyzx39\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-post-gate-undo-mwcyzx39\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-post-gate-undo-mwcyzx39\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzx5m-87c124",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": {
+            "attempted": true,
+            "result": "rolled-back",
+            "error": null,
+            "files": [
+              {
+                "path": "a.txt",
+                "restored": "old"
+              },
+              {
+                "path": "b.txt",
+                "restored": "old"
+              },
+              {
+                "path": "c.txt",
+                "restored": "old"
+              }
+            ]
+          },
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "lock-refusal",
+      "mode": "lock",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-lock-refusal-mwcyzx8q",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "lock refuses publisher",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "publish after lock release",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-lock-refusal-mwcyzx8q\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzx8x-596e68",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-lock-refusal-mwcyzx8q\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-lock-refusal-mwcyzx8q\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-lock-refusal-mwcyzx8q\\_publish\\backup\\d3f745df6173fc1c-mwcyzx8x-596e68",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387",
+          "b.txt": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742",
+          "c.txt": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-lock-refusal-mwcyzx8q\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzxaw-770008",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-lock-refusal-mwcyzx8q\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-lock-refusal-mwcyzx8q\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-lock-refusal-mwcyzx8q\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-lock-refusal-mwcyzx8q\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzxaw-770008",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "short-write",
+      "mode": "shortwrite",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "short-write loop completes",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "tree is B",
+          "pass": true,
+          "actual": {
+            "a.txt": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387",
+            "b.txt": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742",
+            "c.txt": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+          },
+          "expected": {
+            "a.txt": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387",
+            "b.txt": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742",
+            "c.txt": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+          }
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzxcz-f1428c",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct\\_publish\\backup\\d3f745df6173fc1c-mwcyzxcz-f1428c",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "after": {
+        "tree": {
+          "a.txt": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387",
+          "b.txt": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742",
+          "c.txt": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "a0e0a0d4930f5b21-mwcyzxeu-5987eb",
+          "rid": "a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "0f23ea4a7feb827897cbe772cf4984beb12a88d6e056d466836f074c522f2387"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "ec478c67376c495ac663843e88490f912f2473af454a09b26874af413c803742"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "82d155b9d013d98528ff89bc555c32f311adf84f2b699f18b3ff4579299f54c5"
+              },
+              "old": {
+                "exists": true,
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              }
+            }
+          ],
+          "old_current": "{\n  \"schema\": \"p47-publish-current-v1\",\n  \"rid\": \"d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d\",\n  \"files\": [\n    {\n      \"path\": \"a.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43\"\n    },\n    {\n      \"path\": \"b.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d\"\n    },\n    {\n      \"path\": \"c.txt\",\n      \"bytes\": 6,\n      \"sha256\": \"4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10\"\n    }\n  ],\n  \"journal\": \"C:\\\\Users\\\\Administrator\\\\TEMP\\\\opencode\\\\p47-lab-v9\\\\run-short-write-mwcyzxct\\\\_publish\\\\journal.json\"\n}",
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct\\_publish\\releases\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct\\_publish\\staging\\a0e0a0d4930f5b21d96028b84f3437631ccdbba592e1e8b28cfbc43a008ef455",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-short-write-mwcyzxct\\_publish\\backup\\a0e0a0d4930f5b21-mwcyzxeu-5987eb",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "release-corrupt",
+      "mode": "release-corrupt",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "status detects release corruption",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzxh8-ed6146",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3\\_publish\\backup\\d3f745df6173fc1c-mwcyzxh8-ed6146",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "status": {
+        "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3",
+        "pointer": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3\\_publish\\journal.json"
+        },
+        "release": null,
+        "journal_state": "verified",
+        "issues": [
+          "release: release file mismatch a.txt"
+        ],
+        "staging": []
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzxh8-ed6146",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-release-corrupt-mwcyzxh3\\_publish\\backup\\d3f745df6173fc1c-mwcyzxh8-ed6146",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    },
+    {
+      "name": "pointer-corrupt",
+      "mode": "pointer-corrupt",
+      "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja",
+      "expected": null,
+      "steps": [
+        {
+          "label": "first publish ok",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "status detects pointer corruption",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        }
+      ],
+      "faults": null,
+      "code": {
+        "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+        "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+      },
+      "before": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzxjf-baff77",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja\\_publish\\backup\\d3f745df6173fc1c-mwcyzxjf-baff77",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      },
+      "status": {
+        "root": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja",
+        "pointer": {
+          "schema": "p47-publish-current-v1",
+          "rid": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja\\_publish\\journal.json"
+        },
+        "release": null,
+        "journal_state": "verified",
+        "issues": [
+          "CURRENT rid does not match its file index",
+          "release: release directory missing",
+          "journal rid differs from CURRENT"
+        ],
+        "staging": []
+      },
+      "after": {
+        "tree": {
+          "a.txt": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43",
+          "b.txt": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d",
+          "c.txt": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+        },
+        "current": {
+          "schema": "p47-publish-current-v1",
+          "rid": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "files": [
+            {
+              "path": "a.txt",
+              "bytes": 6,
+              "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+            },
+            {
+              "path": "b.txt",
+              "bytes": 6,
+              "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+            },
+            {
+              "path": "c.txt",
+              "bytes": 6,
+              "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+            }
+          ],
+          "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja\\_publish\\journal.json"
+        },
+        "journal": {
+          "schema": "p47-publish-journal-v2",
+          "txid": "d3f745df6173fc1c-mwcyzxjf-baff77",
+          "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "state": "verified",
+          "phase": "verified",
+          "files": [
+            {
+              "path": "a.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "b.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            },
+            {
+              "path": "c.txt",
+              "new": {
+                "bytes": 6,
+                "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+              },
+              "old": {
+                "exists": false,
+                "bytes": null,
+                "sha256": null
+              }
+            }
+          ],
+          "old_current": null,
+          "release_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja\\_publish\\releases\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "staging_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja\\_publish\\staging\\d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+          "backup_dir": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-pointer-corrupt-mwcyzxja\\_publish\\backup\\d3f745df6173fc1c-mwcyzxjf-baff77",
+          "durability": {
+            "file_fsync": true,
+            "short_write_loop": true,
+            "dir_sync": false
+          },
+          "error": null,
+          "rollback": null,
+          "dir_sync": false
+        },
+        "lock": false
+      }
+    }
+  ],
+  "code": {
+    "publish_sha256": "3799fecc5b784d02bf8e2d77d42282915624a0f44885d51eb7b9fd78455e264c",
+    "lab_sha256": "354af10dc234b818e5b7ec274d7aea5dda42decf6bdde5575090855607b42774"
+  },
+  "limits": [
+    "injected throw/SIGKILL/short-write only",
+    "real disk errors, power loss, external kills and multi-writer races are UNVERIFIED",
+    "scratch roots deleted after evidence capture"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+    "takenAt":  "2026-11-11 12:55:03",
+    "files":  518,
+    "manifestFiles":  518,
+    "countMatches":  true,
+    "added":  0,
+    "removed":  0,
+    "changed":  0,
+    "treeItems":  2328,
+    "treeUnreadable":  0,
+    "projectItems":  604,
+    "projectMaxChange":  "2026-11-10 23:42:21",
+    "projectMaxChangeItem":  "docs",
+    "nodeModulesItems":  1724,
+    "nodeModulesMaxChange":  "2026-11-10 22:51:00",
+    "nodeModulesMaxChangeItem":  "node_modules\\.vite\\vitest\\da39a3ee5e6b4b0d3255bfef95601890afd80709\\results.json",
+    "changedSinceMidnight":  0,
+    "changedSinceMidnightList":  [
+
+                                 ]
+}

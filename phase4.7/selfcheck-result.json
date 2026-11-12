@@ -1,0 +1,231 @@
+{
+    "startedAt":  "2026-11-11 12:24:20",
+    "manifest":  {
+                     "filesBefore":  518,
+                     "filesAfter":  518,
+                     "added":  0,
+                     "removed":  0,
+                     "changedLines":  0,
+                     "sha256Before":  "e74774e4e0ccce4ed7b337ea77a19268a61319a7b175911562f63ae204eed615",
+                     "sha256After":  "e74774e4e0ccce4ed7b337ea77a19268a61319a7b175911562f63ae204eed615"
+                 },
+    "usn":  {
+                "filesChecked":  519,
+                "missing":  0,
+                "differing":  0,
+                "differingList":  [
+
+                                  ],
+                "maxUsn":  "0x10e1d6620",
+                "maxUsnFile":  "docs\\PHASE4.7-PANEL-PERFORMANCE-FIX.md",
+                "journalPositionAtRoundStart":  "0x10e318b10",
+                "filesAtOrAboveRoundStart":  0
+            },
+    "meta":  {
+                 "itemsBefore":  604,
+                 "itemsAfter":  604,
+                 "differing":  0,
+                 "differingList":  [
+
+                                   ],
+                 "helperSelfCheck":  [
+                                         "helper self-check: sizeof(BY_HANDLE_FILE_INFORMATION) = 52 (must be 52)",
+                                         "cross-check against Get-Item: size mismatches=0 ; last-write mismatches=0"
+                                     ],
+                 "latestChangeTime":  "2026-11-10 23:42:21",
+                 "latestChangeItem":  "docs"
+             },
+    "wholeTree":  {
+                      "filesBefore":  2011,
+                      "filesAfter":  2011,
+                      "identical":  true,
+                      "differingLines":  0,
+                      "sha256":  "9a3d0e928c2d99d095afcb5bd898b531971e530b79cab59b1890deed886433a6",
+                      "crossCheckLine":  [
+                                             "cross-check Node crypto vs PowerShell Get-FileHash on project files: shaMismatch=0 sizeMismatch=0 missingInPowerShell=0 missingInNode=0"
+                                         ]
+                  },
+    "nodeModulesCache":  {
+                             "node_modules\\.vite-temp":  {
+                                                              "lastWrite":  "2026-11-10 22:50:26",
+                                                              "children":  0
+                                                          },
+                             "node_modules\\.vite\\vitest\\da39a3ee5e6b4b0d3255bfef95601890afd80709\\results.json":  {
+                                                                                                                         "lastWrite":  "2026-11-10 22:51:00",
+                                                                                                                         "children":  null
+                                                                                                                     }
+                         },
+    "journal":  [
+                    "Usn Journal ID   : 0x01db32a6f22e1aa4",
+                    "Next Usn         : 0x000000010e6d1d80"
+                ],
+    "processes":  {
+                      "chrome":  0,
+                      "nodeRunners":  0,
+                      "listeners":  0
+                  },
+    "newestProjectFile":  "docs\\PHASE4.7-PANEL-PERFORMANCE-FIX.md @ 2026-11-10 23:42:21",
+    "deliverables":  {
+                         "ANNEX-script-write-paths.tsv":  {
+                                                              "bytes":  25032,
+                                                              "sha256":  "a03057af1735ce3cfc02092eb50facbc7d6880c8ebb14c3b388ee084ddef8985",
+                                                              "modified":  "2026-11-11 11:00:34"
+                                                          },
+                         "assemble.cjs":  {
+                                              "bytes":  5687,
+                                              "sha256":  "8cfdb5685e9239c22312a2aa897a9dd39414cac630eff458cbd22a07f3bf6d27",
+                                              "modified":  "2026-11-11 12:19:49"
+                                          },
+                         "backup-compare.tsv":  {
+                                                    "bytes":  4536,
+                                                    "sha256":  "fa15c06f814f18ac651ed1664a892e981a0b13966c7f2b7fe888ee29bcdfb454",
+                                                    "modified":  "2026-11-11 11:40:44"
+                                                },
+                         "compare-backups.cjs":  {
+                                                     "bytes":  3577,
+                                                     "sha256":  "4ea7f72a5a9902d34534cf8bee772c41e9e4fe65fd2358037a439e5c2c7bc813",
+                                                     "modified":  "2026-11-11 11:40:12"
+                                                 },
+                         "final-selfcheck.ps1":  {
+                                                     "bytes":  9282,
+                                                     "sha256":  "28156d06324d67154d9aac908c4985d559fc0e099933606b24c9a6010521a07e",
+                                                     "modified":  "2026-11-11 12:22:44"
+                                                 },
+                         "gen-appendix.cjs":  {
+                                                  "bytes":  15020,
+                                                  "sha256":  "a41ebb47e026a46c784afd66233edcde93f2e666211f1eac4d351867b9f8a590",
+                                                  "modified":  "2026-11-11 12:11:33"
+                                              },
+                         "MANIFEST-after-node-full.tsv":  {
+                                                              "bytes":  234972,
+                                                              "sha256":  "9a3d0e928c2d99d095afcb5bd898b531971e530b79cab59b1890deed886433a6",
+                                                              "modified":  "2026-11-11 12:24:35"
+                                                          },
+                         "MANIFEST-plan-node-full.tsv":  {
+                                                             "bytes":  234972,
+                                                             "sha256":  "9a3d0e928c2d99d095afcb5bd898b531971e530b79cab59b1890deed886433a6",
+                                                             "modified":  "2026-11-11 11:36:13"
+                                                         },
+                         "meta-scan-1.tsv":  {
+                                                 "bytes":  73980,
+                                                 "sha256":  "523e22ed3e0e50e855ab21524dd78d89f94a32c2da72865dfd84bdb0389c75ea",
+                                                 "modified":  "2026-11-11 10:49:57"
+                                             },
+                         "meta-scan-2.tsv":  {
+                                                 "bytes":  82389,
+                                                 "sha256":  "98e9317c7010aba74f2d5dda28dcd686edf9d519cdb07ae70aedb398f09306b7",
+                                                 "modified":  "2026-11-11 11:09:39"
+                                             },
+                         "meta-scan-3.tsv":  {
+                                                 "bytes":  82389,
+                                                 "sha256":  "98e9317c7010aba74f2d5dda28dcd686edf9d519cdb07ae70aedb398f09306b7",
+                                                 "modified":  "2026-11-11 12:24:34"
+                                             },
+                         "oc-export.cjs":  {
+                                               "bytes":  1602,
+                                               "sha256":  "1b929c544224a78ef023d3f024fdd401d58dabcf0caea9f4d8b5bcba055627a7",
+                                               "modified":  "2026-11-11 10:37:21"
+                                           },
+                         "oc-find.cjs":  {
+                                             "bytes":  1251,
+                                             "sha256":  "d6ee44b50985f545fdb9df305549b3f3ce22f844bcf8941c8ebf56701a9f7417",
+                                             "modified":  "2026-11-11 10:34:15"
+                                         },
+                         "oc-inspect.cjs":  {
+                                                "bytes":  1797,
+                                                "sha256":  "81810af1a51fd076e4a4b1dbffb64511fabbe1e7bfe266c9ddfa92d9de3b6fa6",
+                                                "modified":  "2026-11-11 10:36:18"
+                                            },
+                         "oc-schema.cjs":  {
+                                               "bytes":  952,
+                                               "sha256":  "8f7c1e62ca8c80065d2e20d1122cb34f701c91a2d17bff5e32efa1c85b0018aa",
+                                               "modified":  "2026-11-11 10:25:39"
+                                           },
+                         "part-1.md":  {
+                                           "bytes":  23424,
+                                           "sha256":  "0738137b84ff7e290eb904092bedd189696fe90ac71a4adb622f9a75f79834af",
+                                           "modified":  "2026-11-11 12:15:30"
+                                       },
+                         "part-2.md":  {
+                                           "bytes":  32554,
+                                           "sha256":  "52bcf3fdbf198d08d3b3049a9f634c2a5831a51971bf806908704e7eb9413a06",
+                                           "modified":  "2026-11-11 12:19:49"
+                                       },
+                         "part-3.md":  {
+                                           "bytes":  41952,
+                                           "sha256":  "dfb31acfed5f30212d2da18bc34b65ca95a163a64d5aca709f243d915d0e2695",
+                                           "modified":  "2026-11-11 12:19:49"
+                                       },
+                         "part-4.md":  {
+                                           "bytes":  24723,
+                                           "sha256":  "3335caa3f3f1101194c57f56c76cada70a5af6b53e006d9137ec6b0f2c1db81e",
+                                           "modified":  "2026-11-11 12:22:44"
+                                       },
+                         "part-appendix-b.md":  {
+                                                    "bytes":  27759,
+                                                    "sha256":  "04d3e1918ba87a39ade17887275c3b05797ddb7d85ed8e30140149f5338246f6",
+                                                    "modified":  "2026-11-11 11:36:13"
+                                                },
+                         "part-appendix-c.md":  {
+                                                    "bytes":  12651,
+                                                    "sha256":  "4285dd886041d643327ce869f9fa5f35d30b2c4505b5c1e19b220e0f3eb2f9d3",
+                                                    "modified":  "2026-11-11 12:11:03"
+                                                },
+                         "PHASE4.7-WORKER-REMEDIATION-PLAN.original-recovered.md":  {
+                                                                                        "bytes":  30512,
+                                                                                        "sha256":  "22c284f145f1f21bd74d06a7ba5b4b220dc466c44ef4f1f088f1625bea2f09a7",
+                                                                                        "modified":  "2026-11-11 10:37:21"
+                                                                                    },
+                         "PHASE4.7-WORKER-REMEDIATION-PLAN.rebuilt.md":  {
+                                                                             "bytes":  194221,
+                                                                             "sha256":  "d5b497c1b5a4b7b3d58474ce1d8d1e8e94c219045e3b6c5d2d6bd8db16ee4dfb",
+                                                                             "modified":  "2026-11-11 12:23:25"
+                                                                         },
+                         "scan-meta.ps1":  {
+                                               "bytes":  8965,
+                                               "sha256":  "7f6df082e6dd0a874b98334a268a330ff124f2669f3495e0064549b0a7f10890",
+                                               "modified":  "2026-11-11 10:49:41"
+                                           },
+                         "scan-meta-2.ps1":  {
+                                                 "bytes":  6279,
+                                                 "sha256":  "112ff76c2e35c18b3dcb6080795536638018578569da064c9cdd3dce4c4c61d3",
+                                                 "modified":  "2026-11-11 11:09:24"
+                                             },
+                         "scan-meta-3.ps1":  {
+                                                 "bytes":  3553,
+                                                 "sha256":  "25bdf089a49a342202aa1c03ac7ad57a50285a185fa3001e002c2482dde93cd8",
+                                                 "modified":  "2026-11-11 11:18:53"
+                                             },
+                         "sddl-scan-1.tsv":  {
+                                                 "bytes":  418617,
+                                                 "sha256":  "faacaae724ac98c4ea6b920b7f6631e6628c67f664970812efaabb7446060b9f",
+                                                 "modified":  "2026-11-11 10:49:58"
+                                             },
+                         "selfcheck-after.tsv":  {
+                                                     "bytes":  81828,
+                                                     "sha256":  "e74774e4e0ccce4ed7b337ea77a19268a61319a7b175911562f63ae204eed615",
+                                                     "modified":  "2026-11-11 12:24:21"
+                                                 },
+                         "selfcheck-before.tsv":  {
+                                                      "bytes":  81828,
+                                                      "sha256":  "e74774e4e0ccce4ed7b337ea77a19268a61319a7b175911562f63ae204eed615",
+                                                      "modified":  "2026-11-11 10:06:46"
+                                                  },
+                         "usn-raw.csv":  {
+                                             "bytes":  28,
+                                             "sha256":  "9b68e46d8a0da638970a38341af86abb595b59a81b5a04dd58446a97e2d9420f",
+                                             "modified":  "2026-11-11 10:25:19"
+                                         },
+                         "usn-snapshot-1.tsv":  {
+                                                    "bytes":  61674,
+                                                    "sha256":  "432168df6d722bb68c96037b957db67aca97cff0cccc8b800ecfb29176d1f96a",
+                                                    "modified":  "2026-11-11 10:34:36"
+                                                },
+                         "usn-snapshot-2.tsv":  {
+                                                    "bytes":  61674,
+                                                    "sha256":  "432168df6d722bb68c96037b957db67aca97cff0cccc8b800ecfb29176d1f96a",
+                                                    "modified":  "2026-11-11 12:24:33"
+                                                }
+                     },
+    "finishedAt":  "2026-11-11 12:24:36"
+}

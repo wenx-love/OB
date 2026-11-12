@@ -1,0 +1,22 @@
+{
+  "schema": "p47-publish-current-v1",
+  "rid": "d3f745df6173fc1c20f8e04b128f21d977c1d6072bcfe44b2df465ef6960898d",
+  "files": [
+    {
+      "path": "a.txt",
+      "bytes": 6,
+      "sha256": "4e83ec697d1820d124454c4762a93f04291de579b138f743ca2760f3a3fb4f43"
+    },
+    {
+      "path": "b.txt",
+      "bytes": 6,
+      "sha256": "76a5c59efde01ebae8a817ca7be8ca789094f601985610649cd1ecf6802bfe3d"
+    },
+    {
+      "path": "c.txt",
+      "bytes": 6,
+      "sha256": "4596c27cc91f23d7350e363e27f878499ca6e3d51b821c33b69267267776ad10"
+    }
+  ],
+  "journal": "C:\\Users\\Administrator\\TEMP\\opencode\\p47-lab-v9\\run-fault-switch-b-mwcyzvtb\\_publish\\journal.json"
+}

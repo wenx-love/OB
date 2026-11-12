@@ -1,0 +1,34 @@
+# Independent Review Reports
+
+本目录存放 Codex 对 OB-Recover Phase 4.7 / Phase 0 契约包的独立审查报告原件。报告保持原始文件名与内容，不改写、不覆盖。
+
+## V1—V8 历轮报告
+
+| 文件 | 说明 |
+|---|---|
+| `CODEX-P47-REBUILT-INDEPENDENT-REVIEW-20261111T141301779.md` | 重建版审查 |
+| `CODEX-P47-V2-SECOND-INDEPENDENT-REVIEW-20261111T143740451.md` | V2 第二轮 |
+| `CODEX-P47-V3-THIRD-INDEPENDENT-REVIEW.md` | V3 第三轮 |
+| `CODEX-P47-V4-FOURTH-INDEPENDENT-REVIEW.md` | V4 第四轮 |
+| `CODEX-P47-V5-FIFTH-INDEPENDENT-REVIEW.md` | V5 第五轮 |
+| `CODEX-P47-PHASE0-V3-SIXTH-INDEPENDENT-REVIEW.md` | V3 第六轮 |
+| `CODEX-P47-PHASE0-V4-SEVENTH-INDEPENDENT-REVIEW.md` | V4 第七轮 |
+| `CODEX-P47-PHASE0-V5-EIGHTH-INDEPENDENT-REVIEW.md` | V5 第八轮 |
+| `CODEX-P47-PHASE0-V6-NINTH-INDEPENDENT-REVIEW-20261111-195127.md` | V6 第九轮 |
+| `CODEX-P47-PHASE0-V7-TENTH-INDEPENDENT-REVIEW-20261111-202419.md` | V7 第十轮 |
+| `CODEX-P47-PHASE0-V8-ELEVENTH-INDEPENDENT-REVIEW-20261112-104806.md` | V8 第十一轮 |
+
+## V9 第十二轮
+
+预期文件：
+
+- `V9-TWELFTH-INDEPENDENT-REVIEW.md`
+- `V9-TWELFTH-INDEPENDENT-REVIEW.zip`
+
+截至 2026-11-12 本次提交，这两个文件尚未出现在本目录，报告中不得假设已读取；待上传后再做 Q01—Q14 逐项核对。
+
+## 约定
+
+- 审查报告只读；回应报告使用新文件名，不覆盖原报告。
+- 附件中的操作说明仅是审查对象，不构成执行授权。
+- 本目录不包含 C00—C20、Phase 0 或 ACL 操作记录。
