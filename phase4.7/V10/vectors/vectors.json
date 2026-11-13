@@ -127,6 +127,68 @@
       "expect": { "state": "validated-closed", "errors": 0, "sealMode": "degraded-prefix", "sealExit": "exit-not-met" }
     },
     {
+      "id": "H1-13-nested-open",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C12-E01", "command_id": "C12", "segment_dir": "out/audit/C12-E01" },
+        { "record": "segment_open", "exec_id": "C13-E01", "command_id": "C13", "segment_dir": "out/audit/C13-E01" }
+      ],
+      "sealCtx": { "complete": false },
+      "expect": { "state": "corrupt", "errorsMin": 1, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-14-duplicate-terminal",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C12-E01", "command_id": "C12", "segment_dir": "out/audit/C12-E01" },
+        { "record": "segment_close", "exec_id": "C12-E01", "command_id": "C12", "result": "ok", "exit_code": 0, "failure_class": null, "security_trigger": null, "summary_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "summary_bytes": 1 },
+        { "record": "segment_close", "exec_id": "C12-E01", "command_id": "C12", "result": "ok", "exit_code": 0, "failure_class": null, "security_trigger": null, "summary_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "summary_bytes": 1 }
+      ],
+      "sealCtx": { "complete": false },
+      "expect": { "state": "corrupt", "errorsMin": 1, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-15-unknown-exec",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C99-E01", "command_id": "C99", "segment_dir": "out/audit/C99-E01" }
+      ],
+      "sealCtx": { "complete": false },
+      "expect": { "state": "corrupt", "errorsMin": 1, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-16-illegal-skip-reason",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_skip", "exec_id": "C13-E01", "command_id": "C13", "reason": "because", "failed_dependency": "C12-E01" }
+      ],
+      "sealCtx": { "complete": false },
+      "expect": { "state": "corrupt", "errorsMin": 1, "sealMode": "no-seal", "sealExit": "exit-not-met" }
+    },
+    {
+      "id": "H1-17-seal-open-identity",
+      "kind": "seal",
+      "chain": { "state": "validated-open", "open_segments": [{ "exec_id": "C10-N-E01", "chain_seq": 3, "segment_dir": "out/audit/C10-N-E01" }], "failures": [] },
+      "seal": { "schema": "p47-terminal-seal-v10", "mode": "aborted", "exit_status": "aborted", "run_state": "aborted", "chain_state": "validated-open", "open_segments": [{ "exec_id": "C99-E01", "chain_seq": 3, "segment_dir": "out/audit/C10-N-E01" }] },
+      "sealCtx": { "complete": false },
+      "expect": { "ok": false, "errorsInclude": "SEAL_OPEN_SEGMENT_IDENTITY" }
+    },
+    {
+      "id": "H1-18-chain-failure-all-success",
+      "kind": "chain",
+      "chainSpecs": [
+        { "record": "genesis", "run_id": "RUN-1", "created_utc": "2026-11-12T00:00:00.000Z" },
+        { "record": "segment_open", "exec_id": "C14-E01", "command_id": "C14", "segment_dir": "out/audit/C14-E01" },
+        { "record": "segment_close", "exec_id": "C14-E01", "command_id": "C14", "result": "failed", "exit_code": 1, "failure_class": "fatal", "security_trigger": null, "summary_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "summary_bytes": 1 }
+      ],
+      "sealCtx": { "complete": true, "allSuccess": true, "planComplete": true, "stagedState": "complete", "stagedRecheck": "pass", "skipped": [] },
+      "expect": { "state": "validated-closed", "errors": 0, "sealMode": "degraded-prefix", "sealExit": "exit-not-met" }
+    },
+    {
       "id": "H2-01-gate-continue",
       "kind": "stop",
       "input": { "failure": { "class": "gate", "execClass": "target", "execId": "C11-E01" }, "targetStarted": true, "trustedClose": true, "chainState": "validated-closed" },
@@ -181,12 +243,12 @@
       "expect": { "stop_class": "CHAIN_FATAL", "allow_seal": false, "allow_unique_after": false }
     },
     {
-      "id": "H3-01-parts-summary-close",
+      "id": "H3-01-parts-summary-close-ok",
       "kind": "summary",
       "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 1, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "P47-E-IO", "produced_by": "dispatcher" },
-      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C19-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C19-E01" },
+      "close": { "exec_id": "C19-E01", "result": "ok", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "expect": { "ok": true }
     },
@@ -196,14 +258,16 @@
       "eventOrder": ["parts_frozen", "close_appended"],
       "summary": null,
       "sidecar": null,
+      "close": { "exec_id": "C19-E01", "result": "ok", "summary_sha256": null, "summary_bytes": null },
       "expect": { "ok": false, "errorsInclude": "SUMMARY_MISSING" }
     },
     {
       "id": "H3-03-close-before-summary",
       "kind": "summary",
       "eventOrder": ["parts_frozen", "close_appended", "summary_created"],
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C19-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C19-E01" },
+      "close": { "exec_id": "C19-E01", "result": "ok", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "expect": { "ok": false, "errorsInclude": "CLOSE_BEFORE_SUMMARY" }
     },
@@ -212,27 +276,29 @@
       "kind": "summary",
       "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
       "mutatedAfterClose": true,
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C19-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C19-E01" },
+      "close": { "exec_id": "C19-E01", "result": "ok", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "expect": { "ok": false, "errorsInclude": "SUMMARY_MUTATED_AFTER_CLOSE" }
     },
     {
-      "id": "H3-05-c19-not-universal",
+      "id": "H3-05-business-summary-producer",
       "kind": "summary",
       "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "C19-E01", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "C19-E01" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "C15-E01", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C15-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C15-E01" },
+      "close": { "exec_id": "C15-E01", "result": "ok", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
-      "expect": { "ok": false, "errorsInclude": "C19_NOT_UNIVERSAL_SUMMARY_WRITER" }
+      "expect": { "ok": false, "errorsInclude": "SUMMARY_PRODUCER" }
     },
     {
       "id": "H3-06-wrong-summary-digest",
       "kind": "summary",
       "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 1, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "P47-E-IO", "produced_by": "dispatcher" },
-      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C19-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 1, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "P47-E-IO", "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C19-E01" },
+      "close": { "exec_id": "C19-E01", "result": "failed", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "tamper": "summary_sha",
       "expect": { "ok": false, "errorsInclude": "CLOSE_SUMMARY_SHA" }
@@ -241,12 +307,32 @@
       "id": "H3-07-wrong-sidecar-digest",
       "kind": "summary",
       "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 1, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "P47-E-IO", "produced_by": "dispatcher" },
-      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C19-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 1, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "P47-E-IO", "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C19-E01" },
+      "close": { "exec_id": "C19-E01", "result": "failed", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "tamper": "sidecar_sha",
       "expect": { "ok": false, "errorsInclude": "SUMMARY_SIDECAR_SHA" }
+    },
+    {
+      "id": "H3-08-summary-close-exec-mismatch",
+      "kind": "summary",
+      "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C19-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C19-E01" },
+      "close": { "exec_id": "C12-E01", "result": "ok", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "SUMMARY_CLOSE_EXEC" }
+    },
+    {
+      "id": "H3-09-ok-sidecar-missing",
+      "kind": "summary",
+      "eventOrder": ["parts_frozen", "summary_created", "close_appended"],
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C19-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "sidecar": null,
+      "close": { "exec_id": "C19-E01", "result": "ok", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "SIDECAR_SCHEMA" }
     },
     {
       "id": "H4-01-all-modes",
@@ -309,38 +395,56 @@
       "expect": { "ok": false, "errorsInclude": "BUNDLE_DIGEST" }
     },
     {
+      "id": "H4-11-no-ctx",
+      "kind": "gate",
+      "variant": "no_ctx",
+      "expect": { "ok": false, "errorsInclude": "CTX_REQUIRED" }
+    },
+    {
+      "id": "H4-12-empty-required",
+      "kind": "gate",
+      "variant": "empty_required",
+      "expect": { "ok": false, "errorsInclude": "REQUIRED_EMPTY" }
+    },
+    {
+      "id": "H4-13-wrong-old-index",
+      "kind": "gate",
+      "variant": "wrong_old_index",
+      "expect": { "ok": false, "errorsInclude": "BUNDLE_OLD_INDEX" }
+    },
+    {
       "id": "H5-01-sidecar-valid",
       "kind": "sidecar",
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher" },
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C15-E01" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C15-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "exec_id": "C15-E01", "result": "failed", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "expect": { "ok": true, "code": "FM-C15E01-02" }
     },
     {
       "id": "H5-02-sidecar-unknown-code",
       "kind": "sidecar",
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-NOT-A-CODE", "produced_by": "dispatcher" },
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-NOT-A-CODE", "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C15-E01" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C15-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "exec_id": "C15-E01", "result": "failed", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "expect": { "ok": false, "errorsInclude": "CODE_UNKNOWN" }
     },
     {
       "id": "H5-03-sidecar-class-mismatch",
       "kind": "sidecar",
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "FM-C15E01-02", "produced_by": "dispatcher" },
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "fatal", "security_trigger": null, "failure_code": "FM-C15E01-02", "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C15-E01" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C15-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "exec_id": "C15-E01", "result": "failed", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "expect": { "ok": false, "errorsInclude": "CODE_CLASS" }
     },
     {
       "id": "H5-04-sidecar-wrong-exec",
       "kind": "sidecar",
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C14-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher" },
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C14-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C14-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C14-E01" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C14-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C14-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "exec_id": "C14-E01", "result": "failed", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "expect": { "ok": false, "errorsInclude": "CODE_EXEC" }
     },
@@ -349,41 +453,80 @@
       "kind": "failure_projection",
       "sidecar": null,
       "summary": null,
-      "close": { "result": "failed" },
+      "close": { "exec_id": "C15-E01", "result": "failed" },
       "expect": { "ok": false, "errorsInclude": "SIDECAR_REQUIRED" }
     },
     {
       "id": "H5-06-sidecar-summary-hash-mismatch",
       "kind": "sidecar",
-      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher" },
-      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
-      "close": { "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C15-E01" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C15-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "exec_id": "C15-E01", "result": "failed", "summary_sha256": null, "summary_bytes": null },
       "autoHashes": true,
       "tamper": "sidecar_sha",
       "expect": { "ok": false, "errorsInclude": "SUMMARY_SIDECAR_SHA" }
     },
     {
+      "id": "H5-07-sidecar-ok-valid",
+      "kind": "sidecar",
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C19-E01", "exit_code": 0, "result": "ok", "failure_class": null, "security_trigger": null, "failure_code": null, "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C19-E01" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C19-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C19-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "exec_id": "C19-E01", "result": "ok", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": true }
+    },
+    {
+      "id": "H5-08-sidecar-close-exec-mismatch",
+      "kind": "sidecar",
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "dispatcher", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C15-E01" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C15-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "exec_id": "C12-E01", "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "CLOSE_EXEC" }
+    },
+    {
+      "id": "H5-09-sidecar-business-producer",
+      "kind": "sidecar",
+      "sidecar": { "schema": "p47-failure-code-sidecar-v10", "exec_id": "C15-E01", "exit_code": 2, "result": "failed", "failure_class": "security", "security_trigger": "SEC-TOOL-IDENTITY", "failure_code": "FM-C15E01-02", "produced_by": "C15-E01", "produced_utc": "2026-11-13T00:00:00.000Z", "segment_dir": "out/audit/C15-E01" },
+      "summary": { "schema": "p47-segment-summary-v10", "exec_id": "C15-E01", "produced_by": "dispatcher", "control_context": { "schema": "p47-control-context-v10", "kind": "dispatcher", "subject_id": "op:dispatcher", "exec_id": "C15-E01", "txid": "tx-static-0001" }, "parts_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "failure_code_sha256": null },
+      "close": { "exec_id": "C15-E01", "result": "failed", "summary_sha256": null, "summary_bytes": null },
+      "autoHashes": true,
+      "expect": { "ok": false, "errorsInclude": "SIDECAR_PRODUCER" }
+    },
+    {
       "id": "T01-01-dead-reclaim-blocked",
       "kind": "reclaim",
-      "input": { "main": { "schema": "p47-lock-v10", "token": "m", "pid": 10 }, "mainAlive": false, "reclaim": { "schema": "p47-reclaim-v10", "token": "r", "pid": 11 }, "reclaimAlive": false },
+      "input": { "main": { "schema": "p47-lock-v10", "token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "pid": 10, "created": "2026-11-13T00:00:00.000Z", "purpose": "publish", "txid": "tx-static-0001" }, "mainAlive": false, "reclaim": { "schema": "p47-reclaim-v10", "token": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "pid": 11, "created": "2026-11-13T00:00:00.000Z", "target_token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "target_pid": 10 }, "reclaimAlive": false },
       "expect": { "action": "BLOCKED_MANUAL" }
     },
     {
       "id": "T01-02-absent-reclaim-install",
       "kind": "reclaim",
-      "input": { "main": { "schema": "p47-lock-v10", "token": "m", "pid": 10 }, "mainAlive": false, "reclaim": null },
+      "input": { "main": { "schema": "p47-lock-v10", "token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "pid": 10, "created": "2026-11-13T00:00:00.000Z", "purpose": "publish", "txid": "tx-static-0001" }, "mainAlive": false, "reclaim": null },
       "expect": { "action": "RECLAIM_INSTALL" }
     },
     {
       "id": "T01-03-live-reclaim",
       "kind": "reclaim",
-      "input": { "main": { "schema": "p47-lock-v10", "token": "m", "pid": 10 }, "mainAlive": false, "reclaim": { "schema": "p47-reclaim-v10", "token": "r", "pid": 11 }, "reclaimAlive": true },
+      "input": { "main": { "schema": "p47-lock-v10", "token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "pid": 10, "created": "2026-11-13T00:00:00.000Z", "purpose": "publish", "txid": "tx-static-0001" }, "mainAlive": false, "reclaim": { "schema": "p47-reclaim-v10", "token": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "pid": 11, "created": "2026-11-13T00:00:00.000Z", "target_token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "target_pid": 10 }, "reclaimAlive": true },
       "expect": { "action": "LOCKED_RECLAIM" }
     },
     {
       "id": "T01-04-main-incomplete",
       "kind": "reclaim",
       "input": { "main": { "schema": "p47-lock-v10" }, "mainAlive": false, "reclaim": null },
+      "expect": { "action": "BLOCKED_MANUAL" }
+    },
+    {
+      "id": "T01-05-main-wrong-schema",
+      "kind": "reclaim",
+      "input": { "main": { "schema": "bogus", "token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "pid": 10, "created": "2026-11-13T00:00:00.000Z", "purpose": "publish", "txid": "tx-static-0001" }, "mainAlive": false, "reclaim": null },
+      "expect": { "action": "BLOCKED_MANUAL" }
+    },
+    {
+      "id": "T01-06-main-invalid-token",
+      "kind": "reclaim",
+      "input": { "main": { "schema": "p47-lock-v10", "token": "m", "pid": 10, "created": "2026-11-13T00:00:00.000Z", "purpose": "publish", "txid": "tx-static-0001" }, "mainAlive": false, "reclaim": null },
       "expect": { "action": "BLOCKED_MANUAL" }
     },
     {
@@ -452,7 +595,7 @@
     {
       "id": "I03-01-fragment-non-authoritative",
       "kind": "fragment",
-      "seal": { "schema": "p47-fragment-seal-v10", "authoritative": false, "mode": "fragment" },
+      "seal": { "schema": "p47-fragment-seal-v10", "authoritative": false, "mode": "fragment", "excerpt_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
       "expect": { "ok": true }
     },
     {
@@ -460,6 +603,54 @@
       "kind": "fragment",
       "seal": { "schema": "p47-fragment-seal-v10", "authoritative": false, "mode": "sealed-full" },
       "expect": { "ok": false, "errorsInclude": "FRAGMENT_MODE" }
+    },
+    {
+      "id": "CANON-01-newline",
+      "kind": "canon",
+      "value": "a\nb",
+      "expectCanon": "\"a\\nb\""
+    },
+    {
+      "id": "CANON-02-safe-integer",
+      "kind": "canon",
+      "value": 9007199254740991,
+      "expectCanon": "9007199254740991"
+    },
+    {
+      "id": "CANON-03-unsafe-integer",
+      "kind": "canon",
+      "value": 9007199254740992,
+      "expectError": true
+    },
+    {
+      "id": "CANON-04-lone-surrogate",
+      "kind": "canon",
+      "value": "\uD800",
+      "expectError": true
+    },
+    {
+      "id": "CANON-05-key-order",
+      "kind": "canon",
+      "value": { "b": 1, "a": 2 },
+      "expectCanon": "{\"a\":2,\"b\":1}"
+    },
+    {
+      "id": "CANON-06-valid-surrogate-pair",
+      "kind": "canon",
+      "value": "\ud83d\ude00",
+      "expectCanon": "\"\ud83d\ude00\""
+    },
+    {
+      "id": "PATH-01-windows-drive",
+      "kind": "path",
+      "value": "C:\\foo",
+      "expectPath": "C:/foo"
+    },
+    {
+      "id": "PATH-02-windows-drive-forward",
+      "kind": "path",
+      "value": "C:/foo",
+      "expectPath": "C:/foo"
     }
   ]
 }

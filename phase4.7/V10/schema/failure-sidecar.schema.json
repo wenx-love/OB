@@ -6,15 +6,36 @@
   "required": ["schema", "exec_id", "exit_code", "result", "failure_class", "security_trigger", "failure_code", "produced_by", "produced_utc", "segment_dir"],
   "properties": {
     "schema": { "const": "p47-failure-code-sidecar-v10" },
-    "exec_id": { "type": "string" },
+    "exec_id": { "type": "string", "minLength": 1 },
     "exit_code": { "type": "integer" },
-    "result": { "enum": ["failed", "aborted"] },
-    "failure_class": { "enum": ["gate", "fatal", "security"] },
+    "result": { "enum": ["ok", "failed", "aborted"] },
+    "failure_class": { "type": ["string", "null"], "enum": ["gate", "fatal", "security", null] },
     "security_trigger": { "type": ["string", "null"] },
-    "failure_code": { "type": "string", "minLength": 1 },
-    "produced_by": { "type": "string" },
+    "failure_code": { "type": ["string", "null"] },
+    "produced_by": { "enum": ["dispatcher", "audit-control"] },
     "produced_utc": { "type": "string", "format": "date-time" },
-    "segment_dir": { "type": "string" }
+    "segment_dir": { "type": "string", "minLength": 1 }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "properties": { "result": { "const": "ok" } } },
+      "then": {
+        "properties": {
+          "failure_class": { "const": null },
+          "security_trigger": { "const": null },
+          "failure_code": { "const": null }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "result": { "enum": ["failed", "aborted"] } } },
+      "then": {
+        "properties": {
+          "failure_class": { "enum": ["gate", "fatal", "security"] },
+          "failure_code": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  ]
 }

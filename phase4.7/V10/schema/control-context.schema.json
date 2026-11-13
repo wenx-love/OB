@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-control-context-v10",
+  "title": "p47 trusted control context",
+  "type": "object",
+  "required": ["schema", "kind", "subject_id", "exec_id", "txid"],
+  "properties": {
+    "schema": { "const": "p47-control-context-v10" },
+    "kind": { "enum": ["dispatcher", "audit-control"] },
+    "subject_id": { "enum": ["op:dispatcher", "op:audit-control"] },
+    "exec_id": { "type": "string", "minLength": 1 },
+    "txid": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

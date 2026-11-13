@@ -2,12 +2,29 @@
 
 const crypto = require('crypto');
 
+function assertWellFormedString(s) {
+  for (let i = 0; i < s.length; i += 1) {
+    const c = s.charCodeAt(i);
+    if (c >= 0xd800 && c <= 0xdbff) {
+      const d = s.charCodeAt(i + 1);
+      if (!(d >= 0xdc00 && d <= 0xdfff)) throw new Error('lone high surrogate');
+      i += 1;
+    } else if (c >= 0xdc00 && c <= 0xdfff) {
+      throw new Error('lone low surrogate');
+    }
+  }
+}
+
 function canon(value) {
-  if (value === null || typeof value === 'boolean' || typeof value === 'string') {
+  if (value === null || typeof value === 'boolean') {
+    return JSON.stringify(value);
+  }
+  if (typeof value === 'string') {
+    assertWellFormedString(value);
     return JSON.stringify(value);
   }
   if (typeof value === 'number') {
-    if (!Number.isFinite(value)) throw new Error('non-finite number');
+    if (!Number.isSafeInteger(value)) throw new Error('unsafe or non-integer number');
     return JSON.stringify(value);
   }
   if (Array.isArray(value)) {
@@ -15,6 +32,7 @@ function canon(value) {
   }
   if (typeof value === 'object') {
     const keys = Object.keys(value).sort();
+    for (const k of keys) assertWellFormedString(k);
     return '{' + keys.map((k) => JSON.stringify(k) + ':' + canon(value[k])).join(',') + '}';
   }
   throw new Error('unsupported canonical value: ' + typeof value);
@@ -43,10 +61,21 @@ function deepClone(value) {
 function normalizeRel(p) {
   if (typeof p !== 'string' || p.length === 0) throw new Error('empty path');
   let s = p.replace(/\\/g, '/');
-  const absolute = s.startsWith('/') || /^[A-Za-z]:\//.test(s);
   s = s.replace(/\/+/g, '/');
+  let prefix = '';
+  let rest = s;
+  if (s.startsWith('//')) {
+    prefix = '//';
+    rest = s.slice(2);
+  } else if (s.startsWith('/')) {
+    prefix = '/';
+    rest = s.slice(1);
+  } else if (/^[A-Za-z]:\//.test(s)) {
+    prefix = s.slice(0, 2) + '/';
+    rest = s.slice(3);
+  }
   const out = [];
-  for (const part of s.split('/')) {
+  for (const part of rest.split('/')) {
     if (part === '' || part === '.') continue;
     if (part === '..') {
       if (out.length === 0) throw new Error('path escape');
@@ -55,8 +84,7 @@ function normalizeRel(p) {
       out.push(part);
     }
   }
-  const normalized = (absolute ? (s.startsWith('/') ? '/' : s.slice(0, 3)) : '') + out.join('/');
-  return absolute ? normalized : out.join('/');
+  return prefix ? prefix + out.join('/') : out.join('/');
 }
 
 function isPathPrefix(parent, child) {

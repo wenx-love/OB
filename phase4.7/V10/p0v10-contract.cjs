@@ -8,6 +8,9 @@ const SIDECAR_SCHEMA = 'p47-failure-code-sidecar-v10';
 const SEAL_SCHEMA = 'p47-terminal-seal-v10';
 const FRAGMENT_SEAL_SCHEMA = 'p47-fragment-seal-v10';
 const GATE_BUNDLE_SCHEMA = 'p47-gate-bundle-v10';
+const CONTROL_CONTEXT_SCHEMA = 'p47-control-context-v10';
+const TRUSTED_PRODUCERS = new Set(['dispatcher', 'audit-control']);
+const SKIP_REASONS = new Set(['dependency-failed', 'target-skipped', 'c18-unbound', 'run-stopped']);
 
 const STOP = Object.freeze({
   NORMAL: 'NORMAL',
@@ -47,6 +50,26 @@ function chainError(errors, index, code, detail) {
   errors.push({ index, code, detail });
 }
 
+function execSet(execRegistry) {
+  if (!execRegistry) return null;
+  const list = Array.isArray(execRegistry) ? execRegistry : execRegistry.execs;
+  if (!Array.isArray(list)) return null;
+  return new Set(list.map((e) => (typeof e === 'string' ? e : e.exec_id)));
+}
+
+function validControlContext(ctx, execId) {
+  const errors = [];
+  if (!ctx || ctx.schema !== CONTROL_CONTEXT_SCHEMA) errors.push('CONTROL_CONTEXT_SCHEMA');
+  if (!ctx || !TRUSTED_PRODUCERS.has(ctx.kind)) errors.push('CONTROL_CONTEXT_KIND');
+  if (!ctx || !['op:dispatcher', 'op:audit-control'].includes(ctx.subject_id)) errors.push('CONTROL_CONTEXT_SUBJECT');
+  if (ctx && ctx.exec_id !== execId) errors.push('CONTROL_CONTEXT_EXEC');
+  return errors;
+}
+
+function segmentKey(seg) {
+  return [seg.exec_id || '', seg.chain_seq === undefined ? '' : seg.chain_seq, seg.segment_dir || ''].join('\u0000');
+}
+
 function classifyChain(records, opts) {
   const options = opts || {};
   if (!Array.isArray(records)) {
@@ -58,6 +81,7 @@ function classifyChain(records, opts) {
       last_record_sha256: null,
       errors: [{ index: 0, code: 'CHAIN_NOT_ARRAY', detail: 'records must be array' }],
       validated_prefix_len: 0,
+      failures: [],
     };
   }
   if (records.length === 0) {
@@ -70,6 +94,7 @@ function classifyChain(records, opts) {
         last_record_sha256: null,
         errors: [{ index: 0, code: 'CHAIN_REMOVED', detail: 'expected chain is absent' }],
         validated_prefix_len: 0,
+        failures: [],
         origin: options.origin,
       };
     }
@@ -81,12 +106,15 @@ function classifyChain(records, opts) {
       last_record_sha256: null,
       errors: [],
       validated_prefix_len: 0,
+      failures: [],
       origin: options.origin || 'absent',
     };
   }
 
   const errors = [];
   const open = [];
+  const failures = [];
+  const execs = execSet(options.execRegistry);
   let prev = null;
   let prevHash = null;
   let prevBytes = 0;
@@ -111,9 +139,13 @@ function classifyChain(records, opts) {
     const type = r.record;
     if (type === 'segment_open') {
       if (typeof r.exec_id !== 'string' || r.exec_id.length === 0) chainError(errors, i, 'OPEN_EXEC', 'open missing exec_id');
+      if (execs && !execs.has(r.exec_id)) chainError(errors, i, 'EXEC_UNKNOWN', 'open exec not registered');
+      if (open.length > 0) chainError(errors, i, 'NESTED_OPEN', 'nested segment_open is not allowed');
       open.push({ exec_id: r.exec_id, command_id: r.command_id, segment_dir: r.segment_dir, chain_seq: r.chain_seq });
     } else if (type === 'segment_close') {
       const top = open[open.length - 1];
+      if (typeof r.exec_id !== 'string' || r.exec_id.length === 0) chainError(errors, i, 'CLOSE_EXEC', 'close missing exec_id');
+      if (execs && !execs.has(r.exec_id)) chainError(errors, i, 'EXEC_UNKNOWN', 'close exec not registered');
       if (!top) {
         chainError(errors, i, 'CLOSE_WITHOUT_OPEN', 'close without open');
       } else if (top.exec_id !== r.exec_id || top.command_id !== r.command_id) {
@@ -134,9 +166,18 @@ function classifyChain(records, opts) {
         } else if (r.security_trigger !== null) {
           chainError(errors, i, 'CLOSE_NON_SECURITY_TRIGGER', 'non-security close trigger must be null');
         }
+        failures.push({
+          exec_id: r.exec_id,
+          result: r.result,
+          failure_class: r.failure_class,
+          security_trigger: r.security_trigger,
+          chain_seq: r.chain_seq,
+        });
       }
     } else if (type === 'segment_skip') {
-      if (typeof r.reason !== 'string' || r.reason.length === 0) chainError(errors, i, 'SKIP_REASON', 'skip needs reason');
+      if (typeof r.reason !== 'string' || !SKIP_REASONS.has(r.reason)) {
+        chainError(errors, i, 'SKIP_REASON', 'skip reason not registered');
+      }
     } else if (type === 'genesis' && i !== 0) {
       chainError(errors, i, 'GENESIS_POSITION', 'genesis only at index 0');
     } else if (type !== 'genesis') {
@@ -163,6 +204,7 @@ function classifyChain(records, opts) {
       last_record_sha256: prev ? L.sha256Canon(prev) : null,
       errors,
       validated_prefix_len: errors[0].index,
+      failures,
       origin: options.origin || 'present',
     };
   }
@@ -186,6 +228,7 @@ function classifyChain(records, opts) {
     last_record_sha256: prev ? L.sha256Canon(prev) : null,
     errors,
     validated_prefix_len: errors.length ? errors[0].index : records.length,
+    failures,
     origin: options.origin || 'present',
   };
 }
@@ -198,12 +241,13 @@ function sealDecision(chain, ctx) {
   if (chain.open_segments && chain.open_segments.length > 0) {
     return { mode: SEAL.ABORTED, exit: 'aborted', run_state: 'aborted', reason: 'open-segments' };
   }
-  if (c.securityFailure) {
+  const failures = chain.failures || [];
+  if (c.securityFailure || failures.some((f) => f.failure_class === 'security')) {
     return { mode: SEAL.ABORTED, exit: 'aborted', run_state: 'aborted', reason: 'security-failure' };
   }
   const complete = c.complete === true && c.allSuccess === true && c.planComplete === true &&
     c.stagedState === 'complete' && c.stagedRecheck === 'pass' &&
-    (!c.skipped || c.skipped.length === 0) && chain.state === 'validated-closed';
+    (!c.skipped || c.skipped.length === 0) && failures.length === 0 && chain.state === 'validated-closed';
   if (complete) {
     return { mode: SEAL.FULL, exit: 'complete', run_state: 'completed', reason: 'complete' };
   }
@@ -217,8 +261,11 @@ function validateTerminalSeal(seal, chain, ctx) {
   if (seal && seal.mode !== expected.mode) errors.push('SEAL_MODE');
   if (seal && seal.exit_status !== expected.exit) errors.push('SEAL_EXIT');
   if (seal && seal.run_state !== expected.run_state) errors.push('SEAL_RUN_STATE');
+  if (seal && seal.chain_state !== chain.state) errors.push('SEAL_CHAIN_STATE');
   if (seal && Array.isArray(seal.open_segments)) {
-    if (seal.open_segments.length !== (chain.open_segments || []).length) errors.push('SEAL_OPEN_SEGMENTS');
+    const actual = (seal.open_segments || []).map(segmentKey).sort();
+    const expectedSegments = (chain.open_segments || []).map(segmentKey).sort();
+    if (JSON.stringify(actual) !== JSON.stringify(expectedSegments)) errors.push('SEAL_OPEN_SEGMENT_IDENTITY');
   } else {
     errors.push('SEAL_OPEN_SEGMENTS_FIELD');
   }
@@ -305,6 +352,45 @@ function stopDecision(input) {
   };
 }
 
+function validateSidecarShape(sidecar, summary, close) {
+  const errors = [];
+  if (!sidecar || sidecar.schema !== SIDECAR_SCHEMA) errors.push('SIDECAR_SCHEMA');
+  if (!sidecar) return errors;
+  if (typeof sidecar.exec_id !== 'string' || sidecar.exec_id.length === 0) errors.push('SIDECAR_EXEC');
+  if (!Number.isInteger(sidecar.exit_code)) errors.push('SIDECAR_EXIT');
+  if (!['ok', 'failed', 'aborted'].includes(sidecar.result)) errors.push('SIDECAR_RESULT');
+  if (!TRUSTED_PRODUCERS.has(sidecar.produced_by)) errors.push('SIDECAR_PRODUCER');
+  if (typeof sidecar.produced_utc !== 'string') errors.push('SIDECAR_PRODUCED_UTC');
+  if (typeof sidecar.segment_dir !== 'string') errors.push('SIDECAR_SEGMENT_DIR');
+  if (sidecar.result === 'ok') {
+    if (sidecar.failure_class !== null) errors.push('SIDECAR_OK_CLASS');
+    if (sidecar.security_trigger !== null) errors.push('SIDECAR_OK_TRIGGER');
+    if (sidecar.failure_code !== null) errors.push('SIDECAR_OK_CODE');
+  } else {
+    if (!['gate', 'fatal', 'security'].includes(sidecar.failure_class)) errors.push('SIDECAR_CLASS');
+    if (sidecar.failure_class === 'security') {
+      if (typeof sidecar.security_trigger !== 'string' || sidecar.security_trigger.length === 0) errors.push('SIDECAR_SECURITY_TRIGGER');
+    } else if (sidecar.security_trigger !== null) {
+      errors.push('SIDECAR_NON_SECURITY_TRIGGER');
+    }
+    if (typeof sidecar.failure_code !== 'string' || sidecar.failure_code.length === 0) errors.push('SIDECAR_CODE');
+  }
+  if (summary && summary.exec_id !== sidecar.exec_id) errors.push('SUMMARY_EXEC');
+  if (close && close.exec_id !== sidecar.exec_id) errors.push('CLOSE_EXEC');
+  if (close && close.result !== sidecar.result) errors.push('SIDECAR_CLOSE_RESULT');
+  if (summary && sidecar) {
+    let sdigest = null;
+    try { sdigest = L.sha256Canon(sidecar); } catch (e) { errors.push('SIDECAR_CANON'); }
+    if (sdigest && summary.failure_code_sha256 !== sdigest) errors.push('SUMMARY_SIDECAR_SHA');
+  }
+  if (summary && close) {
+    let sumDigest = null;
+    try { sumDigest = L.sha256Canon(summary); } catch (e) { errors.push('SUMMARY_CANON'); }
+    if (sumDigest && close.summary_sha256 !== sumDigest) errors.push('CLOSE_SUMMARY_SHA');
+  }
+  return errors;
+}
+
 function validateSummaryLifecycle(input) {
   const i = input || {};
   const errors = [];
@@ -338,21 +424,21 @@ function validateSummaryLifecycle(input) {
     } else {
       errors.push('CLOSE_SUMMARY_BYTES_FIELD');
     }
+    if (summary.exec_id !== close.exec_id) errors.push('SUMMARY_CLOSE_EXEC');
   }
-  if (summary && sidecar) {
-    let sdigest = null;
-    try { sdigest = L.sha256Canon(sidecar); } catch (e) { errors.push('SIDECAR_CANON'); }
-    if (sdigest && summary.failure_code_sha256 !== sdigest) errors.push('SUMMARY_SIDECAR_SHA');
-    if (sidecar.exec_id !== summary.exec_id) errors.push('SIDECAR_EXEC');
-  }
-  if (summary && summary.produced_by && summary.exec_id) {
-    const producer = summary.produced_by;
-    if (producer === 'C19-E01' && summary.exec_id !== 'C19-E01') errors.push('C19_NOT_UNIVERSAL_SUMMARY_WRITER');
-    if (producer !== 'dispatcher' && producer !== 'audit-control' && producer !== summary.exec_id) {
-      errors.push('SUMMARY_PRODUCER');
+  if (summary) {
+    if (!TRUSTED_PRODUCERS.has(summary.produced_by)) errors.push('SUMMARY_PRODUCER');
+    errors.push(...validControlContext(summary.control_context, summary.exec_id));
+    if (summary.control_context && summary.produced_by !== summary.control_context.kind) {
+      errors.push('SUMMARY_PRODUCER_CONTEXT');
     }
   }
-  return { ok: errors.length === 0, errors };
+  errors.push(...validateSidecarShape(sidecar, summary, close));
+  if (i.map) {
+    const mapResult = validateFailureSidecar(sidecar, i.map, summary, close, i.execRegistry);
+    errors.push(...mapResult.errors);
+  }
+  return { ok: errors.length === 0, errors: Array.from(new Set(errors)) };
 }
 
 function validateFailureMap(map, triggerRegistry, execRegistry) {
@@ -404,18 +490,10 @@ function validateFailureMap(map, triggerRegistry, execRegistry) {
 }
 
 function validateFailureSidecar(sidecar, map, summary, close, execRegistry) {
-  const errors = [];
-  if (!sidecar || sidecar.schema !== SIDECAR_SCHEMA) errors.push('SIDECAR_SCHEMA');
-  if (!summary || summary.schema !== SUMMARY_SCHEMA) errors.push('SUMMARY_SCHEMA');
-  if (!close) errors.push('CLOSE_MISSING');
-  if (!sidecar) return { ok: false, errors };
-  if (!Number.isInteger(sidecar.exit_code)) errors.push('SIDECAR_EXIT');
-  if (!['failed', 'aborted'].includes(sidecar.result)) errors.push('SIDECAR_RESULT');
-  if (!['gate', 'fatal', 'security'].includes(sidecar.failure_class)) errors.push('SIDECAR_CLASS');
-  if (sidecar.failure_class === 'security') {
-    if (typeof sidecar.security_trigger !== 'string' || sidecar.security_trigger.length === 0) errors.push('SIDECAR_SECURITY_TRIGGER');
-  } else if (sidecar.security_trigger !== null) {
-    errors.push('SIDECAR_NON_SECURITY_TRIGGER');
+  const errors = validateSidecarShape(sidecar, summary, close);
+  if (!sidecar) return { ok: false, errors, code: null };
+  if (sidecar.result === 'ok') {
+    return { ok: errors.length === 0, errors, code: null };
   }
   const entry = ((map && map.codes) || []).find((c) => c.code === sidecar.failure_code);
   if (!entry) {
@@ -430,31 +508,17 @@ function validateFailureSidecar(sidecar, map, summary, close, execRegistry) {
       errors.push('CODE_EXIT');
     }
   }
-  if (summary && sidecar) {
-    let sdigest = null;
-    try { sdigest = L.sha256Canon(sidecar); } catch (e) { errors.push('SIDECAR_CANON'); }
-    if (sdigest && summary.failure_code_sha256 !== sdigest) errors.push('SUMMARY_SIDECAR_SHA');
-    if (summary.exec_id !== sidecar.exec_id) errors.push('SUMMARY_EXEC');
-  }
-  if (summary && close) {
-    let sumDigest = null;
-    try { sumDigest = L.sha256Canon(summary); } catch (e) { errors.push('SUMMARY_CANON'); }
-    if (sumDigest && close.summary_sha256 !== sumDigest) errors.push('CLOSE_SUMMARY_SHA');
-    if (close.result && close.result !== sidecar.result) errors.push('SIDECAR_CLOSE_RESULT');
-  }
-  if (sidecar.produced_by !== 'dispatcher' && sidecar.produced_by !== 'audit-control') {
-    errors.push('SIDECAR_PRODUCER');
-  }
   return { ok: errors.length === 0, errors, code: sidecar.failure_code };
 }
 
 function projectFailureCode(input) {
   const i = input || {};
-  if (i.close && i.close.result === 'ok') {
-    return { ok: true, failure_code: null, failure_class: null, security_trigger: null };
-  }
   if (!i.sidecar) {
     return { ok: false, errors: ['SIDECAR_REQUIRED'], failure_code: null };
+  }
+  if (i.close && i.close.result === 'ok') {
+    const shape = validateSidecarShape(i.sidecar, i.summary, i.close);
+    return { ok: shape.length === 0, errors: shape, failure_code: null, failure_class: null, security_trigger: null };
   }
   const r = validateFailureSidecar(i.sidecar, i.map, i.summary, i.close, i.execRegistry);
   return Object.assign({}, r, { failure_code: r.code || i.sidecar.failure_code });
@@ -462,12 +526,18 @@ function projectFailureCode(input) {
 
 function reclaimDecision(input) {
   const i = input || {};
-  const incomplete = (x) => !x || x.schema === undefined || x.token === undefined || x.pid === undefined;
+  const tokenOk = (x) => typeof x === 'string' && /^[0-9a-f]{32}$/.test(x);
+  const pidOk = (x) => Number.isInteger(x) && x > 0;
+  const mainOk = (x) => x && x.schema === 'p47-lock-v10' && tokenOk(x.token) && pidOk(x.pid) &&
+    typeof x.created === 'string' && ['publish', 'recover', 'undo', 'accept'].includes(x.purpose) &&
+    (typeof x.txid === 'string' || x.txid === null);
+  const reclaimOk = (x) => x && x.schema === 'p47-reclaim-v10' && tokenOk(x.token) && pidOk(x.pid) &&
+    typeof x.created === 'string' && tokenOk(x.target_token) && pidOk(x.target_pid);
   if (!i.main) return { action: 'ACQUIRE', reason: 'no-main-lock' };
-  if (incomplete(i.main)) return { action: 'BLOCKED_MANUAL', reason: 'main-incomplete' };
+  if (!mainOk(i.main)) return { action: 'BLOCKED_MANUAL', reason: 'main-incomplete' };
   if (i.mainAlive === true) return { action: 'LOCKED', reason: 'main-alive' };
   if (!i.reclaim) return { action: 'RECLAIM_INSTALL', reason: 'reclaim-absent' };
-  if (incomplete(i.reclaim)) return { action: 'BLOCKED_MANUAL', reason: 'reclaim-incomplete' };
+  if (!reclaimOk(i.reclaim)) return { action: 'BLOCKED_MANUAL', reason: 'reclaim-incomplete' };
   if (i.reclaimAlive === true) return { action: 'LOCKED_RECLAIM', reason: 'reclaim-alive' };
   return { action: 'BLOCKED_MANUAL', reason: 'reclaim-dead' };
 }
@@ -564,12 +634,22 @@ function gateKey(g) {
 function validateGateBundle(bundle, requiredConfig, ctx) {
   const errors = [];
   const config = requiredConfig || {};
-  const required = config.required || [];
+  const required = Array.isArray(config.required) ? config.required : [];
   const reqKeys = required.map(gateKey);
   const reqSet = new Set(reqKeys);
+  if (required.length === 0) errors.push('REQUIRED_EMPTY');
   if (reqSet.size !== reqKeys.length) errors.push('REQUIRED_DUPLICATE');
+  if (!ctx || typeof ctx !== 'object') {
+    errors.push('CTX_REQUIRED');
+  } else {
+    for (const field of ['txid', 'rid', 'old_index_digest', 'new_index_digest', 'policy_digest']) {
+      if (typeof ctx[field] !== 'string' || ctx[field].length === 0) errors.push('CTX_FIELD:' + field);
+    }
+    if (!ctx.tool_versions || typeof ctx.tool_versions !== 'object') errors.push('CTX_TOOL_VERSIONS');
+  }
   if (!bundle || bundle.schema !== GATE_BUNDLE_SCHEMA) errors.push('BUNDLE_SCHEMA');
   if (!bundle) return { ok: false, errors, present: [], required: reqKeys };
+  const c = ctx || {};
   if (bundle.canonicalization !== 'p47-canon-v1') errors.push('BUNDLE_CANON');
   if (typeof bundle.old_index_digest !== 'string' || bundle.old_index_digest.length !== 64) errors.push('OLD_INDEX_DIGEST');
   if (typeof bundle.bundle_digest !== 'string' || bundle.bundle_digest.length !== 64) {
@@ -586,13 +666,17 @@ function validateGateBundle(bundle, requiredConfig, ctx) {
   } else {
     errors.push('REQUIRED_GATES_MISSING');
   }
-  if (ctx && bundle.txid !== ctx.txid) errors.push('BUNDLE_TXID');
-  if (ctx && bundle.rid !== ctx.rid) errors.push('BUNDLE_RID');
-  if (ctx && config.txid && bundle.txid !== config.txid) errors.push('CONFIG_TXID');
-  if (ctx && config.rid && bundle.rid !== config.rid) errors.push('CONFIG_RID');
-  if (ctx && config.new_index_digest && bundle.new_index_digest !== config.new_index_digest) errors.push('NEW_INDEX');
-  if (ctx && config.policy_digest && bundle.policy_digest !== config.policy_digest) errors.push('POLICY');
-  if (ctx && config.tool_versions) {
+  if (bundle.txid !== c.txid) errors.push('BUNDLE_TXID');
+  if (bundle.rid !== c.rid) errors.push('BUNDLE_RID');
+  if (bundle.old_index_digest !== c.old_index_digest) errors.push('BUNDLE_OLD_INDEX');
+  if (bundle.new_index_digest !== c.new_index_digest) errors.push('BUNDLE_NEW_INDEX');
+  if (bundle.policy_digest !== c.policy_digest) errors.push('BUNDLE_POLICY');
+  if (config.txid && bundle.txid !== config.txid) errors.push('CONFIG_TXID');
+  if (config.rid && bundle.rid !== config.rid) errors.push('CONFIG_RID');
+  if (config.old_index_digest && bundle.old_index_digest !== config.old_index_digest) errors.push('CONFIG_OLD_INDEX');
+  if (config.new_index_digest && bundle.new_index_digest !== config.new_index_digest) errors.push('CONFIG_NEW_INDEX');
+  if (config.policy_digest && bundle.policy_digest !== config.policy_digest) errors.push('CONFIG_POLICY');
+  if (config.tool_versions) {
     for (const [k, v] of Object.entries(config.tool_versions)) {
       if (!bundle.tool_versions || bundle.tool_versions[k] !== v) errors.push('TOOL_VERSION:' + k);
     }
@@ -617,8 +701,8 @@ function validateGateBundle(bundle, requiredConfig, ctx) {
   }
   let retryUsed = false;
   for (const [key, inv] of byKey) {
-    if (ctx && inv.txid && inv.txid !== ctx.txid) errors.push('INVOCATION_TXID:' + key);
-    if (ctx && inv.rid && inv.rid !== ctx.rid) errors.push('INVOCATION_RID:' + key);
+    if (inv.txid !== c.txid) errors.push('INVOCATION_TXID:' + key);
+    if (inv.rid !== c.rid) errors.push('INVOCATION_RID:' + key);
     if (typeof inv.input_digest !== 'string' || inv.input_digest.length !== 64) errors.push('INPUT_DIGEST:' + key);
     if (typeof inv.evidence_digest !== 'string' || inv.evidence_digest.length !== 64) errors.push('EVIDENCE_DIGEST:' + key);
     if (Array.isArray(inv.attempts) && inv.attempts.length > 0) {
@@ -650,6 +734,7 @@ function validateFragmentSeal(seal) {
   if (!seal || seal.schema !== FRAGMENT_SEAL_SCHEMA) errors.push('FRAGMENT_SCHEMA');
   if (seal && seal.authoritative !== false) errors.push('FRAGMENT_AUTHORITATIVE');
   if (seal && seal.mode !== 'fragment') errors.push('FRAGMENT_MODE');
+  if (seal && (typeof seal.excerpt_digest !== 'string' || seal.excerpt_digest.length !== 64)) errors.push('FRAGMENT_EXCERPT_DIGEST');
   if (seal && [SEAL.FULL, SEAL.ABORTED, SEAL.DEGRADED].includes(seal.mode)) errors.push('FRAGMENT_TERMINAL_MODE');
   return { ok: errors.length === 0, errors };
 }
@@ -661,6 +746,7 @@ module.exports = {
   SEAL_SCHEMA,
   FRAGMENT_SEAL_SCHEMA,
   GATE_BUNDLE_SCHEMA,
+  CONTROL_CONTEXT_SCHEMA,
   STOP,
   SEAL,
   linkChain,

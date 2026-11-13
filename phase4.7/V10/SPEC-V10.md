@@ -60,7 +60,8 @@ seal_mode(chain, ctx):
 
 - 只使用 `sealed-full | aborted | degraded-prefix`；不使用 `aborted-prefix`。
 - `run_state=completed` 仅 sealed-full；其余 `aborted`。
-- `sealed-full` 不能由“尾 close”单独推导；必须完整计划、全部成功、staged/recheck 通过。
+- `sealed-full` 不能由“尾 close”单独推导；必须完整计划、全部成功、无失败 close、staged/recheck 通过。
+- 链中已有 `result=failed|aborted` 的 close 时，即使调用方传入 `allSuccess=true`，也不得生成 sealed-full；按失败类别进入 aborted 或 degraded-prefix。
 - fragment 使用独立 `p47-fragment-seal-v10`，`authoritative=false`，不得产生任何终端模式。
 
 ## 2. 停止矩阵（H2）
@@ -97,7 +98,9 @@ seal_mode(chain, ctx):
 ```
 
 - summary 必须先于 close 创建并验证；正常 close 不得引用尚未创建/验证的 summary。
-- 每段 summary 由受信 dispatcher/audit-control 代表本 exec 生成；`C19` 不是其他段 summary 的统一事后创建者。
+- 每段 summary 由受信 dispatcher/audit-control 代表本 exec 生成；`produced_by` 只能是 `dispatcher|audit-control`，业务 exec 不得自证。
+- summary 必须含 `control_context`：`{schema:'p47-control-context-v10',kind,subject_id,exec_id,txid}`；`kind`/`subject_id` 必须是受信控制主体，`exec_id` 必须等于本段 exec。
+- summary、sidecar、close 三者的 `exec_id` 必须一致；close 的 `result` 必须与 sidecar 一致。
 - `C19` 的 index 与其本段 summary 分别登记路径、主体、生命周期。
 - 创建失败按真实失败/summary 缺失处理；不预填假摘要。
 - 缺 summary、错摘要、close 后篡改均拒绝；不得放宽 summary 必填规则。
@@ -119,7 +122,9 @@ gate_invocation_id = gate_id + "\u0000" + mode + "\u0000" + subject_id
 - checker：`staging`、`pending`、`accepting` 各一次。
 - verifier：`release`、`accepting` 各一次。
 - 操作命名空间至少含 `op:checker`、`op:verifier`、`op:dispatcher`、`op:publish`、`op:recover`、`op:status`、`op:undo`、`op:accept`。
-- 每次调用绑定 txid/rid、正式 new index、工具/策略摘要、canonical 输入、实际结果和证据摘要。
+- 每次调用绑定 txid/rid、正式 old/new index、工具/策略摘要、canonical 输入、实际结果和证据摘要。
+- `validateGateBundle` 必须收到可信 `ctx`（txid/rid/old_index_digest/new_index_digest/policy_digest/tool_versions）；缺失或不完整一律拒绝，不能跳过绑定检查。
+- 必需调用集合必须非空；空 required 视为配置错误。
 - 缺失任一 mode、同调用重复、额外未批准调用、错 subject/mode/事务/证据均失败。
 - 重试：保留每次 attempt；`retry_allowed=false` 时任何 FAILED 都拒绝；允许重试时 final PASS 不能抹去既有失败记录。
 
@@ -137,7 +142,7 @@ gate_invocation_id = gate_id + "\u0000" + mode + "\u0000" + subject_id
 
 ### 5.1 旁证
 
-每段在 summary 前生成 `p47-failure-code-sidecar-v10`：
+每段在 summary 前生成 `p47-failure-code-sidecar-v10`；成功段允许 `result=ok` 且 `failure_class/security_trigger/failure_code` 全为 null：
 
 ```json
 {"schema":"p47-failure-code-sidecar-v10","exec_id":"C15-E01",
@@ -147,15 +152,17 @@ gate_invocation_id = gate_id + "\u0000" + mode + "\u0000" + subject_id
 ```
 
 - 生产主体：该段的 dispatcher/audit-control，不是业务/产品。
+- 成功 sidecar：`result=ok`，三个失败字段均为 null；失败 sidecar：`result=failed|aborted`，class/code 非空，security 必须有 trigger。
 - 冻结时机：parts 冻结后、summary 创建前；之后只读。
 - summary v10 记录 `failure_code_path`、`failure_code_sha256`；`segment_close` 绑定 `summary_sha256`。
-- checker 验证 sidecar schema、hash、exec/exit/class/trigger、code 在 map 中且 allowed subject 正确。
+- checker 验证 sidecar schema、hash、exec/exit/class/trigger、code 在 map 中且 allowed subject 正确；summary 的 `control_context` 必须是受信控制上下文。
 - 无 close 的 launch/operator 记录仍是链外非权威证据。
 - 未知/歧义 code 拒绝；必须有有效分支正例。
 
 ## 6. 锁与 reclaim
 
 - 主锁获取：唯一候选 + 原子硬链接安装；`wx` 回退对不完整记录保守拒绝。
+- 主锁/reclaim 必须满足精确 schema、32-hex token、正整数 pid；错误 schema、错误 token、错误 pid 或缺失字段一律 `BLOCKED_MANUAL`，不进入回收。
 - 已有且不能证明为活持有者的 `LOCK.reclaim`：`BLOCKED_MANUAL`，保留现场，零写入。
 - 只有 reclaim 不存在时才允许安装自己的 reclaim；不再用 rename 移动已存在的 reclaim。
 - 主锁/reclaim 空或不完整、部分初始化：`BLOCKED_MANUAL`。

@@ -19,11 +19,11 @@
 
 | 条件 | 代码 | 向量 | 通过条件 |
 |---|---|---|---|
-| H1 合法 skip/open 不误判 | `p0v10-contract.cjs` `classifyChain` / `sealDecision` | H1-01—H1-11 | close/skip/open/open+skip 各状态正确；坏 hash/seq/配对才 corrupt；无 genesis 不生成 seal |
+| H1 合法 skip/open 不误判 | `p0v10-contract.cjs` `classifyChain` / `sealDecision` | H1-01—H1-18 | close/skip/open/open+skip 各状态正确；nested open/重复终态/未知 exec/非法 skip/同数量错身份 open_segments/已有失败却 allSuccess 均拒绝或降级；坏 hash/seq/配对才 corrupt；无 genesis 不生成 seal |
 | H2 停止矩阵 | `stopDecision` | H2-01—H2-09 | gate CONTINUE；target/baseline fatal BUSINESS_HALT；infra/before/after/finalizer/bind/seal fatal HALT_ALL；security 不降级；pre-run 无伪链；orphan 无 A；chain corrupt 无 seal |
-| H3 summary 顺序 | `validateSummaryLifecycle` | H3-01—H3-07 | parts→summary→close；缺 summary/错摘要/close 后篡改拒绝；C19 不是别段统一 writer |
-| H4 门禁复合身份 | `validateGateBundle` / `gateKey` | H4-01—H4-10 | checker staging/pending/accepting + verifier release/accepting 全通过；缺/重/额外/错 subject/tx/evidence/digest 拒绝；重试保留失败 |
-| H5 failure_code 旁证 | `validateFailureSidecar` / `projectFailureCode` | H5-01—H5-06 | 有效 sidecar 投影；未知码/错 class/错 exec/hash 不符/缺 sidecar 拒绝 |
+| H3 summary 顺序 | `validateSummaryLifecycle` / `validateSidecarShape` | H3-01—H3-09 | ok/failed 段都需一致 sidecar；parts→summary→close；summary/sidecar/close 同 exec；业务自证 summary 拒绝；缺 summary/错摘要/close 后篡改拒绝 |
+| H4 门禁复合身份 | `validateGateBundle` / `gateKey` | H4-01—H4-13 | checker staging/pending/accepting + verifier release/accepting 全通过；缺/重/额外/错 subject/tx/evidence/digest/old index/无 ctx/空 required 拒绝；重试保留失败 |
+| H5 failure_code 旁证 | `validateFailureSidecar` / `projectFailureCode` | H5-01—H5-09 | 成功/失败 sidecar 均校验；未知码/错 class/错 exec/close exec 错/hash 不符/producer 非控制面/缺 sidecar 拒绝 |
 
 ## 3. 其他约束
 
@@ -35,6 +35,7 @@
 | I02 file↔dir | `classifyMemberDelta` | I02-01—I02-03 |
 | I03 链格式 | `linkChain` / `classifyChain` | H1 系列；`SPEC-V10.md` §1 |
 | 片段 seal | `validateFragmentSeal` | I03-01—I03-02 |
+| canonical/path | `canon` / `normalizeRel` | CANON-01—06、PATH-01—02 |
 
 ## 4. Q01—Q14 静态映射
 

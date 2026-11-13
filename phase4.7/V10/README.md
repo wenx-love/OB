@@ -11,8 +11,8 @@ p0v10-contract.cjs          纯契约函数（链、停止、summary、错误码
 p0v10-check.cjs             只读契约检查器；不写文件、不启动进程
 p0v10-independent-check.cjs 独立只读检查器：不 import contract，重算链/gate/summary/sidecar 关键不变量
 inputs/                     钉扎静态输入（exec/trigger/failure map/protect/gate/member）
-schema/                     JSON Schema（lock/journal/gate/seal/sidecar/protect/member）
-vectors/vectors.json        静态向量（链/停止/summary/门禁/错误码/锁/保护/成员）
+schema/                     JSON Schema（lock/reclaim/journal/gate/seal/summary/sidecar/protect/member/control-context）
+vectors/vectors.json        静态向量（链/停止/summary/门禁/错误码/锁/保护/成员/canon/path）
 tests/TEST-DESIGN.md        测试设计与 Q01—Q14 映射
 ```
 

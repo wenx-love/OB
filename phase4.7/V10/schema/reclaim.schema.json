@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-reclaim-v10",
+  "title": "p47 reclaim record",
+  "type": "object",
+  "required": ["schema", "token", "pid", "created", "target_token", "target_pid"],
+  "properties": {
+    "schema": { "const": "p47-reclaim-v10" },
+    "token": { "type": "string", "pattern": "^[0-9a-f]{32}$" },
+    "pid": { "type": "integer", "minimum": 1 },
+    "created": { "type": "string", "format": "date-time" },
+    "target_token": { "type": "string", "pattern": "^[0-9a-f]{32}$" },
+    "target_pid": { "type": "integer", "minimum": 1 }
+  },
+  "additionalProperties": false
+}

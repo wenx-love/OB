@@ -35,9 +35,21 @@ function makeSeal(chain, ctx) {
   };
 }
 
-function runChain(v, failures) {
+function makeSeal(chain, ctx) {
+  const d = C.sealDecision(chain, ctx || {});
+  return {
+    schema: C.SEAL_SCHEMA,
+    mode: d.mode,
+    exit_status: d.exit,
+    run_state: d.run_state,
+    chain_state: chain.state,
+    open_segments: chain.open_segments || [],
+  };
+}
+
+function runChain(v, ctx, failures) {
   const records = buildChain(v.chainSpecs, v.mutate);
-  const chain = C.classifyChain(records, { origin: v.chainOrigin });
+  const chain = C.classifyChain(records, { origin: v.chainOrigin, execRegistry: ctx.execs });
   const exp = v.expect || {};
   if (exp.state) assert(chain.state === exp.state, 'state=' + chain.state + ' expected ' + exp.state, failures);
   if (exp.errors !== undefined) assert(chain.errors.length === exp.errors, 'errors=' + chain.errors.length + ' expected ' + exp.errors, failures);
@@ -48,12 +60,11 @@ function runChain(v, failures) {
     const d = C.sealDecision(chain, v.sealCtx);
     if (exp.sealMode) assert(d.mode === exp.sealMode, 'sealMode=' + d.mode + ' expected ' + exp.sealMode, failures);
     if (exp.sealExit) assert(d.exit === exp.sealExit, 'sealExit=' + d.exit + ' expected ' + exp.sealExit, failures);
-    if (d.mode !== C.SEAL.NONE && d.mode !== C.SEAL.FULL) {
-      // open/security/degraded shapes are checked by sealDecision itself
+    if (d.mode !== C.SEAL.NONE) {
+      const seal = makeSeal(chain, v.sealCtx);
+      const validated = C.validateTerminalSeal(seal, chain, v.sealCtx);
+      assert(validated.ok, 'terminal seal self-check: ' + validated.errors.join(','), failures);
     }
-    const seal = makeSeal(chain, v.sealCtx);
-    const validated = C.validateTerminalSeal(seal, chain, v.sealCtx);
-    assert(validated.ok, 'terminal seal self-check: ' + validated.errors.join(','), failures);
   }
   return chain;
 }
@@ -65,7 +76,7 @@ function runStop(v, failures) {
   }
 }
 
-function runSummary(v, failures) {
+function runSummary(v, ctx, failures) {
   const summary = v.summary ? L.deepClone(v.summary) : null;
   const sidecar = v.sidecar ? L.deepClone(v.sidecar) : null;
   const close = v.close ? L.deepClone(v.close) : null;
@@ -82,6 +93,8 @@ function runSummary(v, failures) {
     summary,
     sidecar,
     close,
+    map: ctx.map,
+    execRegistry: ctx.execs,
   });
   const exp = v.expect || {};
   if (exp.ok !== undefined) assert(r.ok === exp.ok, 'ok=' + r.ok + ' expected ' + exp.ok, failures);
@@ -107,7 +120,7 @@ function buildGateBundle(config, variant) {
     schema: C.GATE_BUNDLE_SCHEMA,
     txid: config.txid,
     rid: config.rid,
-    old_index_digest: '0'.repeat(64),
+    old_index_digest: config.old_index_digest,
     new_index_digest: config.new_index_digest,
     policy_digest: config.policy_digest,
     canonicalization: 'p47-canon-v1',
@@ -130,6 +143,8 @@ function buildGateBundle(config, variant) {
     bundle.invocations[0].evidence_digest = 'short';
   } else if (variant === 'wrong_subject') {
     bundle.invocations[0].subject_id = 'op:verifier';
+  } else if (variant === 'wrong_old_index') {
+    bundle.old_index_digest = 'f'.repeat(64);
   } else if (variant === 'retry_allowed' || variant === 'retry_denied') {
     bundle.retry_allowed = variant === 'retry_allowed';
     bundle.invocations[0].attempts = [
@@ -145,9 +160,22 @@ function buildGateBundle(config, variant) {
 }
 
 function runGate(v, config, failures) {
-  const bundle = buildGateBundle(config, v.variant);
-  const ctx = { txid: config.txid, rid: config.rid, new_index_digest: config.new_index_digest };
-  const r = C.validateGateBundle(bundle, config, ctx);
+  let cfg = config;
+  if (v.variant === 'empty_required') {
+    cfg = Object.assign({}, config, { required: [] });
+  }
+  const bundle = buildGateBundle(cfg, v.variant);
+  const ctx = {
+    txid: cfg.txid,
+    rid: cfg.rid,
+    old_index_digest: cfg.old_index_digest,
+    new_index_digest: cfg.new_index_digest,
+    policy_digest: cfg.policy_digest,
+    tool_versions: cfg.tool_versions,
+  };
+  const r = v.variant === 'no_ctx'
+    ? C.validateGateBundle(bundle, cfg)
+    : C.validateGateBundle(bundle, cfg, ctx);
   const exp = v.expect || {};
   if (exp.ok !== undefined) assert(r.ok === exp.ok, 'ok=' + r.ok + ' expected ' + exp.ok, failures);
   if (exp.errorsInclude) assert(r.errors.some((e) => e.includes(exp.errorsInclude)), 'missing error ' + exp.errorsInclude + ' got ' + r.errors.join(','), failures);
@@ -179,6 +207,32 @@ function runFailureProjection(v, map, failures) {
   if (exp.errorsInclude) assert((r.errors || []).some((e) => e.includes(exp.errorsInclude)), 'missing error ' + exp.errorsInclude, failures);
 }
 
+function runSeal(v, failures) {
+  const r = C.validateTerminalSeal(v.seal, v.chain, v.sealCtx || {});
+  const exp = v.expect || {};
+  if (exp.ok !== undefined) assert(r.ok === exp.ok, 'ok=' + r.ok + ' expected ' + exp.ok, failures);
+  if (exp.errorsInclude) assert(r.errors.includes(exp.errorsInclude), 'missing error ' + exp.errorsInclude + ' got ' + r.errors.join(','), failures);
+}
+
+function runCanon(v, failures) {
+  try {
+    const out = L.canon(v.value);
+    if (v.expectError) failures.push('expected canon error');
+    else if (v.expectCanon !== undefined && out !== v.expectCanon) failures.push('canon=' + out + ' expected ' + v.expectCanon);
+  } catch (e) {
+    if (!v.expectError) failures.push('canon exception: ' + e.message);
+  }
+}
+
+function runPath(v, failures) {
+  try {
+    const out = L.normalizeRel(v.value);
+    if (out !== v.expectPath) failures.push('path=' + out + ' expected ' + v.expectPath);
+  } catch (e) {
+    failures.push('path exception: ' + e.message);
+  }
+}
+
 function runMembers(v, failures) {
   const r = C.classifyMemberDelta(v.old || [], v.new || []);
   const exp = v.expect || {};
@@ -192,13 +246,22 @@ function runMembers(v, failures) {
 function runVector(v, ctx, failures) {
   switch (v.kind) {
     case 'chain':
-      runChain(v, failures);
+      runChain(v, ctx, failures);
+      break;
+    case 'seal':
+      runSeal(v, failures);
+      break;
+    case 'canon':
+      runCanon(v, failures);
+      break;
+    case 'path':
+      runPath(v, failures);
       break;
     case 'stop':
       runStop(v, failures);
       break;
     case 'summary':
-      runSummary(v, failures);
+      runSummary(v, ctx, failures);
       break;
     case 'gate':
       runGate(v, ctx.gateConfig, failures);
@@ -258,7 +321,7 @@ function main() {
   for (const v of vectors || []) {
     const vf = [];
     try {
-      runVector(v, { map, protectPolicy, gateConfig }, vf);
+      runVector(v, { map, protectPolicy, gateConfig, execs: execs.execs }, vf);
     } catch (e) {
       vf.push('exception:' + e.message);
     }

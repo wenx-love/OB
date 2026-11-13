@@ -11,8 +11,8 @@
 | `node --check p0v10-check.cjs` | PASS | 语法解析 |
 | `node --check p0v10-independent-check.cjs` | PASS | 语法解析 |
 | JSON parse（inputs/schema/vectors） | PASS | 只读解析 |
-| `node p0v10-check.cjs --json` | PASS 60/60 | 契约向量；`input_map.ok=true` |
-| `node p0v10-independent-check.cjs` | PASS | 不 import contract；链/summary/sidecar/输入摘要独立复核 |
+| `node p0v10-check.cjs --json` | PASS 84/84 | 契约向量；`input_map.ok=true` |
+| `node p0v10-independent-check.cjs` | PASS | 不 import contract；链/summary/sidecar/gate/canon/path/输入摘要独立复核 |
 
 ## 未执行
 

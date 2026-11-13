@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p47-segment-summary-v10",
+  "title": "p47 segment summary",
+  "type": "object",
+  "required": ["schema", "exec_id", "produced_by", "control_context", "parts_digest", "failure_code_sha256"],
+  "properties": {
+    "schema": { "const": "p47-segment-summary-v10" },
+    "exec_id": { "type": "string", "minLength": 1 },
+    "produced_by": { "enum": ["dispatcher", "audit-control"] },
+    "control_context": { "$ref": "p47-control-context-v10" },
+    "parts_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "failure_code_sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" }
+  },
+  "additionalProperties": false
+}
